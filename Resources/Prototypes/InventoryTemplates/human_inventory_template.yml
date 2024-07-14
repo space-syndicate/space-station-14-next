@@ -1,4 +1,4 @@
-﻿- type: inventoryTemplate
+- type: inventoryTemplate
   id: human
   slots:
     - name: shoes
@@ -8,6 +8,27 @@
       uiWindowPos: 1,0
       strippingWindowPos: 1,3
       displayName: Shoes
+    - name: socks # Andromeda-Underwear
+      slotTexture: socks
+      slotFlags: SOCKS
+      stripTime: 6
+      uiWindowPos: 3,0
+      strippingWindowPos: 0,6
+      displayName: Socks
+    - name: underwearb # Andromeda-Underwear
+      slotTexture: underwearb
+      slotFlags: UNDERWEARB
+      stripTime: 6
+      uiWindowPos: 3,1
+      strippingWindowPos: 1,6
+      displayName: Panties
+    - name: underweart # Andromeda-Underwear
+      slotTexture: underweart
+      slotFlags: UNDERWEART
+      stripTime: 6
+      uiWindowPos: 3,2
+      strippingWindowPos: 2,6
+      displayName: Bra
     - name: jumpsuit
       slotTexture: uniform
       slotFlags: INNERCLOTHING

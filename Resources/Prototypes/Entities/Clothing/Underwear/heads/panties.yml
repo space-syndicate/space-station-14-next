@@ -1,0 +1,62 @@
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomPantiesCap
+  name: трусики капитана
+  description: В них ещё больше золота, чем в боксерах капитана.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/heads/capitan/panties.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomPantiesCE
+  name: трусики СИ
+  description: Эти трусики носят либо фембои, либо женщины, реально хотевшие получить столь сложную для них должность. Вы явно заслужили носить это.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/heads/ce/panties.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomPantiesCMO
+  name: трусики ГВ
+  description: Шесть уколов гипоспрея явно стоят того, чтобы успеть украсть, либо понюхать их.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/heads/cmo/panties.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomPantiesHOP
+  name: трусики ГП
+  description: На этот раз без кармана.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/heads/hop/panties.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomPantiesHOS
+  name: трусики ГСБ
+  description: Тут нет ни красного красителя, ни крови особо буйных заключенных. Тогда что-же это?
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/heads/hos/panties.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomPantiesQM
+  name: трусики КМ
+  description: О да! Они очень сильно пропитаны потом от столь сильных нагрузок, если вы, конечно, лидер, а не босс.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/heads/qm/panties.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomPantiesRD
+  name: трусики НР
+  description: Может стать артефактом для изучения вашим любимым ученым.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/heads/rd/panties.rsi

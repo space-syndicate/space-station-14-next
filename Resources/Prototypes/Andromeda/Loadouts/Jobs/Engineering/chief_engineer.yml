@@ -1,0 +1,34 @@
+# Panties
+
+- type: loadout
+  id: CEBoxers
+  equipment: CEBoxers
+
+- type: startingGear
+  id: CEBoxers
+  equipment:
+    underwearb: ClothingUnderwearBottomBoxersCE
+
+
+- type: loadout
+  id: CEPanties
+  equipment: CEPanties
+
+- type: startingGear
+  id: CEPanties
+  equipment:
+    underwearb: ClothingUnderwearBottomPantiesCE
+
+
+# Bra
+
+
+- type: loadout
+  id: CEBra
+  equipment: CEBra
+
+- type: startingGear
+  id: CEBra
+  equipment:
+    underweart: ClothingUnderwearTopBraCE
+

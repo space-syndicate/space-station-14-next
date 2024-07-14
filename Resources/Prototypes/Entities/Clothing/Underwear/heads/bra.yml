@@ -1,0 +1,62 @@
+- type: entity
+  parent: ClothingUnderwearTopBase
+  id: ClothingUnderwearTopBraCap
+  name: бра капитана
+  description: Вам мало золота на трусах? Мы добавим вам еще, чтобы ваш вес явно увеличился на 1-2 килограмма.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Top/heads/capitan/bra.rsi
+
+- type: entity
+  parent: ClothingUnderwearTopBase
+  id: ClothingUnderwearTopBraCE
+  name: бра СИ
+  description: Лифчик для настоящих мужчин.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Top/heads/ce/bra.rsi
+
+- type: entity
+  parent: ClothingUnderwearTopBase
+  id: ClothingUnderwearTopBraCMO
+  name: бра ГВ
+  description: Нужно положить сюда гипоспрей, чтобы агенты его не нашли. Ведь все мы знаем, что делают с некрофилами...
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Top/heads/cmo/bra.rsi
+
+- type: entity
+  parent: ClothingUnderwearTopBase
+  id: ClothingUnderwearTopBraHOP
+  name: бра ГП
+  description: Если у ваших трусиков нет кармана для карт, то почему бы и не положить карту в лифчик?
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Top/heads/hop/bra.rsi
+
+- type: entity
+  parent: ClothingUnderwearTopBase
+  id: ClothingUnderwearTopBraHOS
+  name: бра ГСБ
+  description: Вам жмёт, почему бы не обвинить в этом случайного заключенного?
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Top/heads/hos/bra.rsi
+
+- type: entity
+  parent: ClothingUnderwearTopBase
+  id: ClothingUnderwearTopBraQM
+  name: бра КМ
+  description: Познайте искусство автономного отдела, но для начала переложите всю ответственность на крепкого мужчину.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Top/heads/qm/bra.rsi
+
+- type: entity
+  parent: ClothingUnderwearTopBase
+  id: ClothingUnderwearTopBraRD
+  name: бра НР
+  description: Аномально разных размеров для каждой научной руководительницы.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Top/heads/rd/bra.rsi

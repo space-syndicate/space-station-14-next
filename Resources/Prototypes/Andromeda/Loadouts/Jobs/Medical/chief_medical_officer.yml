@@ -1,0 +1,34 @@
+# Panties
+
+- type: loadout
+  id: CMOBoxers
+  equipment: CMOBoxers
+
+- type: startingGear
+  id: CMOBoxers
+  equipment:
+    underwearb: ClothingUnderwearBottomBoxersCMO
+
+
+- type: loadout
+  id: CMOPanties
+  equipment: CMOPanties
+
+- type: startingGear
+  id: CMOPanties
+  equipment:
+    underwearb: ClothingUnderwearBottomPantiesCMO
+
+
+# Bra
+
+
+- type: loadout
+  id: CMOBra
+  equipment: CMOBra
+
+- type: startingGear
+  id: CMOBra
+  equipment:
+    underweart: ClothingUnderwearTopBraCMO
+

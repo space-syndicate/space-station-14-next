@@ -1,0 +1,34 @@
+# Panties
+
+- type: loadout
+  id: CaptainBoxers
+  equipment: CaptainBoxers
+
+- type: startingGear
+  id: CaptainBoxers
+  equipment:
+    underwearb: ClothingUnderwearBottomBoxersCap
+
+
+- type: loadout
+  id: CaptainPanties
+  equipment: CaptainPanties
+
+- type: startingGear
+  id: CaptainPanties
+  equipment:
+    underwearb: ClothingUnderwearBottomPantiesCap
+
+
+# Bra
+
+
+- type: loadout
+  id: CaptainBra
+  equipment: CaptainBra
+
+- type: startingGear
+  id: CaptainBra
+  equipment:
+    underweart: ClothingUnderwearTopBraCap
+

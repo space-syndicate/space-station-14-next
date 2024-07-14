@@ -1,0 +1,71 @@
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomBoxersCap
+  name: боксеры капитана
+  description: Эти пафосные трусы покрашены в синий цвет и украшены золотом. Неплохая добыча для врагов НаноТрейзен.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/heads/capitan/boxers.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomBoxersCE
+  name: боксеры СИ
+  description: Пропитанные радиационным фоном и металлом настоящие мужские трусы.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/heads/ce/boxers.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomBoxersCMO
+  name: боксеры ГВ
+  description: Занюхнув их, вы уснёте. Главный врач все продумал и пропитал их хлоралгидратом.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/heads/cmo/boxers.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+        - ReagentId: ChloralHydrate
+          Quantity: 20
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomBoxersHOP
+  name: боксеры ГП
+  description: Труханы с большим карманом спереди, чтобы хранить там еще больше ID-карт!
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/heads/hop/boxers.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomBoxersHOS
+  name: боксеры ГСБ
+  description: Вместо красного красителя использована кровь особо буйных заключенных.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/heads/hos/boxers.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomBoxersQM
+  name: боксеры КМ
+  description: 'На задней этикетке написана подробная инструкция о создании Каргонии с весомыми причинами: "Дождись репрессий от капитана, либо устрой их сам".'
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/heads/qm/boxers.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomBoxersRD
+  name: боксеры НР
+  description: Как бы вам не хотелось, но они не из плазмы.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/heads/rd/boxers.rsi

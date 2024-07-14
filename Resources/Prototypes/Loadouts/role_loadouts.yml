@@ -3,6 +3,11 @@
   id: JobCaptain
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - CaptainUnderwearTop
+  - CaptainUnderwearBottom
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - CaptainHead
   - CaptainNeck
   - CaptainJumpsuit
@@ -16,6 +21,11 @@
   id: JobHeadOfPersonnel
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - HoPUnderwearTop
+  - HoPUnderwearBottom
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - HoPHead
   - HoPNeck
@@ -32,6 +42,11 @@
   id: JobPassenger
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - PassengerJumpsuit
   - CommonBackpack
@@ -48,6 +63,11 @@
   id: JobBartender
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - BartenderHead
   - BartenderJumpsuit
@@ -62,6 +82,11 @@
   id: JobServiceWorker
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - BartenderJumpsuit
   - CommonBackpack
@@ -74,6 +99,11 @@
   id: JobChef
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - ChefHead
   - ChefMask
@@ -89,6 +119,11 @@
   id: JobLibrarian
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - LibrarianJumpsuit
   - CommonBackpack
@@ -101,6 +136,11 @@
   id: JobLawyer
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - LawyerNeck
   - LawyerJumpsuit
@@ -114,6 +154,11 @@
   id: JobChaplain
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - ChaplainHead
   - ChaplainMask
@@ -130,6 +175,11 @@
   id: JobJanitor
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - JanitorHead
   - JanitorJumpsuit
@@ -146,6 +196,11 @@
   id: JobBotanist
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - BotanistHead
   - BotanistJumpsuit
@@ -160,6 +215,11 @@
   id: JobClown
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - ClownHead
   - ClownJumpsuit
@@ -174,6 +234,11 @@
   id: JobMime
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - MimeHead
   - MimeMask
@@ -188,6 +253,11 @@
   id: JobMusician
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - MusicianJumpsuit
   - CommonBackpack
@@ -203,6 +273,11 @@
   id: JobQuartermaster
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - QMUnderwearTop
+  - QMUnderwearBottom
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - QuartermasterHead
   - QuartermasterNeck
@@ -219,6 +294,11 @@
   id: JobCargoTechnician
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - CargoTechnicianHead
   - CargoTechnicianJumpsuit
@@ -234,6 +314,11 @@
   id: JobSalvageSpecialist
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - SalvageSpecialistBackpack
   - SalvageSpecialistOuterClothing
@@ -248,6 +333,11 @@
   id: JobChiefEngineer
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - CEUnderwearTop
+  - CEUnderwearBottom
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - ChiefEngineerHead
   - ChiefEngineerJumpsuit
@@ -263,6 +353,11 @@
   id: JobTechnicalAssistant
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - TechnicalAssistantJumpsuit
   - StationEngineerBackpack
@@ -274,6 +369,11 @@
   id: JobStationEngineer
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - StationEngineerHead
   - StationEngineerJumpsuit
@@ -289,6 +389,11 @@
   id: JobAtmosphericTechnician
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - AtmosphericTechnicianJumpsuit
   - AtmosphericTechnicianBackpack
@@ -303,6 +408,11 @@
   id: JobResearchDirector
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - RDUnderwearTop
+  - RDUnderwearBottom
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - ResearchDirectorHead
   - ResearchDirectorNeck
@@ -320,6 +430,11 @@
   id: JobScientist
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - ScientistHead
   - ScientistNeck
@@ -338,6 +453,11 @@
   id: JobResearchAssistant
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - ResearchAssistantJumpsuit
   - ScientistBackpack
@@ -351,6 +471,11 @@
   id: JobHeadOfSecurity
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - HOSUnderwearTop
+  - HOSUnderwearBottom
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - HeadofSecurityHead
   - HeadofSecurityNeck
   - HeadofSecurityJumpsuit
@@ -366,6 +491,11 @@
   id: JobWarden
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - WardenHead
   - WardenJumpsuit
   - SecurityBackpack
@@ -380,6 +510,11 @@
   id: JobSecurityOfficer
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - SecurityHead
   - SecurityJumpsuit
   - SecurityBackpack
@@ -395,6 +530,11 @@
   id: JobDetective
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - DetectiveHead
   - DetectiveNeck
@@ -410,6 +550,11 @@
   id: JobSecurityCadet
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - SecurityCadetJumpsuit
   - SecurityBackpack
   - SurvivalSecurity
@@ -421,6 +566,11 @@
   id: JobChiefMedicalOfficer
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - CMOUnderwearTop
+  - CMOUnderwearBottom
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - ChiefMedicalOfficerHead
   - MedicalMask
@@ -439,6 +589,11 @@
   id: JobMedicalDoctor
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - MedicalDoctorHead
   - MedicalMask
@@ -457,6 +612,11 @@
   id: JobMedicalIntern
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - MedicalInternJumpsuit
   - MedicalBackpack
@@ -469,6 +629,11 @@
   id: JobChemist
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - MedicalMask
   - ChemistJumpsuit
@@ -484,6 +649,11 @@
   id: JobParamedic
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - ParamedicHead
   - MedicalMask
@@ -502,6 +672,11 @@
   id: JobZookeeper
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - CommonBackpack
   - Glasses
@@ -513,6 +688,11 @@
   id: JobReporter
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - ReporterJumpsuit
   - CommonBackpack
@@ -525,6 +705,11 @@
   id: JobPsychologist
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - MedicalBackpack
   - Glasses
@@ -536,6 +721,11 @@
   id: JobBoxer
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - GroupTankHarness
   - BoxerJumpsuit
   - BoxerGloves

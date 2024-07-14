@@ -2,6 +2,11 @@
   id: JobIAA
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - LawyerNeck
   - LawyerJumpsuit
   - CommonBackpack
@@ -13,6 +18,11 @@
   id: JobPilot
   groups:
   - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
   - SecurityJumpsuit
   - SecurityBackpack
   - SecurityOuterClothing
