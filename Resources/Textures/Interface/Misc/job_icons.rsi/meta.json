@@ -197,6 +197,9 @@
         },
         {
             "name": "Admin"
+        },
+        {
+            "name": "Changeling"
         }
     ]
 }
