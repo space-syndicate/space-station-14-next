@@ -104,10 +104,10 @@
   source: "https://github.com/space-wizards/space-station-14/blob/9168fc629c555b8c395d695d291faea1eeda1db6/Resources/Audio/Effects/pop.ogg"
 
 - files:
-  - demon_attack1.ogg
-  - demon_consume.ogg
-  - demon_dies.ogg
-  - bite.ogg
+    - demon_attack1.ogg
+    - demon_consume.ogg
+    - demon_dies.ogg
+    - bite.ogg
   copyright: '"demon_attack1.ogg", "demon_consume.ogg", "demon_dies.ogg", and "bite.ogg" by /tg/station'
   license: "CC-BY-SA-3.0"
   source: "https://github.com/tgstation/tgstation/commit/d4f678a1772007ff8d7eddd21cf7218c8e07bfc0"
@@ -123,31 +123,74 @@
   source: "https://freesound.org/people/thomas_evdokimoff/sounds/202193/"
 
 - files: ["hydraulic_press.ogg"]
-  copyright: 'Created by chainsaw_dinner_party on Freesound.org. Extended and converted to MONO and .ogg by EmoGarbage404 (github)'
+  copyright: "Created by chainsaw_dinner_party on Freesound.org. Extended and converted to MONO and .ogg by EmoGarbage404 (github)"
   license: "CC0-1.0"
   source: "https://freesound.org/people/chainsaw_dinner_party/sounds/403075/"
 
 - files: ["metal_crunch.ogg"]
-  copyright: 'Created by PNMCarrieRailfan on Freesound.org. Edited and exported to .ogg by EmoGarbage404 (github)'
+  copyright: "Created by PNMCarrieRailfan on Freesound.org. Edited and exported to .ogg by EmoGarbage404 (github)"
   license: "CC-BY-NC-4.0"
   source: "https://freesound.org/people/PNMCarrieRailfan/sounds/682439/"
 
-- files: ["metal_slam5.ogg", "metal_break1.ogg", "metal_break1.ogg", "metal_break1.ogg", "metal_break1.ogg", "metal_break5.ogg", "metal_glass_break1.ogg", "metal_glass_break2.ogg"]
-  copyright: 'Created by and released in a sound pack by PNMCarrieRailfan on Freesound.org. Cut, edited and exported to mono .ogg by mirrorcult (github)'
+- files:
+    [
+      "metal_slam5.ogg",
+      "metal_break1.ogg",
+      "metal_break1.ogg",
+      "metal_break1.ogg",
+      "metal_break1.ogg",
+      "metal_break5.ogg",
+      "metal_glass_break1.ogg",
+      "metal_glass_break2.ogg",
+    ]
+  copyright: "Created by and released in a sound pack by PNMCarrieRailfan on Freesound.org. Cut, edited and exported to mono .ogg by mirrorcult (github)"
   license: "CC-BY-NC-4.0"
   source: "https://freesound.org/people/PNMCarrieRailfan/packs/38016/"
 
-- files: ["glass_break1.ogg", "glass_break2.ogg", "glass_break3.ogg", "glass_break4.ogg", "glass_smack.ogg", "glass_smash.ogg", "metal_thud1.ogg", "metal_thud2.ogg", "metal_thud3.ogg", "weak_hit.ogg", "wood_destroy1.ogg", "window_shatter1.ogg", "window_shatter2.ogg", "window_shatter3.ogg"]
+- files:
+    [
+      "glass_break1.ogg",
+      "glass_break2.ogg",
+      "glass_break3.ogg",
+      "glass_break4.ogg",
+      "glass_smack.ogg",
+      "glass_smash.ogg",
+      "metal_thud1.ogg",
+      "metal_thud2.ogg",
+      "metal_thud3.ogg",
+      "weak_hit.ogg",
+      "wood_destroy1.ogg",
+      "window_shatter1.ogg",
+      "window_shatter2.ogg",
+      "window_shatter3.ogg",
+    ]
   copyright: "CM-SS13 at 84dc482572649ae7c2264c71ea1fe9fd169e4774"
   license: "CC-BY-SA-3.0"
   source: "https://github.com/cmss13-devs/cmss13"
 
-- files: ["glass_crack1.ogg", "glass_crack2.ogg", "glass_crack3.ogg", "glass_crack4.ogg", "metal_scrape1.ogg", "metal_scrape2.ogg", "metal_scrape3.ogg"]
+- files:
+    [
+      "glass_crack1.ogg",
+      "glass_crack2.ogg",
+      "glass_crack3.ogg",
+      "glass_crack4.ogg",
+      "metal_scrape1.ogg",
+      "metal_scrape2.ogg",
+      "metal_scrape3.ogg",
+    ]
   copyright: "Baystation 12 at 23c0d851246ebbaeb0df647318ce9874da895d3d"
   license: "CC-BY-SA-3.0"
   source: "https://github.com/Baystation12/Baystation12"
 
-- files: ["wood_destroy2.ogg", "wood_destroy3.ogg", "wood_destroy_heavy1.ogg", "metal_slam1.ogg", "metal_slam2.ogg", "metal_slam3.ogg"]
+- files:
+    [
+      "wood_destroy2.ogg",
+      "wood_destroy3.ogg",
+      "wood_destroy_heavy1.ogg",
+      "metal_slam1.ogg",
+      "metal_slam2.ogg",
+      "metal_slam3.ogg",
+    ]
   copyright: "Based on sounds from OpenSourceWeb at edb003dc8ff5009476a9bcb74e79206039fb3390, edited and reworked by mirrorcult"
   license: "CC-BY-SA-3.0"
   source: "https://github.com/Open-SourceWeb/OpenSourceWeb"
@@ -207,7 +250,20 @@
   license: CC0-1.0
   source: https://freesound.org/people/martian/sounds/19261/
 
-- files: ["explosion_small1.ogg", "explosion_small2.ogg", "explosion_small3.ogg", "explosion1.ogg", "explosion2.ogg", "explosion3.ogg", "explosion4.ogg", "explosion5.ogg", "explosion6.ogg", "explosionfar.ogg", "explosionsmallfar.ogg"]
+- files:
+    [
+      "explosion_small1.ogg",
+      "explosion_small2.ogg",
+      "explosion_small3.ogg",
+      "explosion1.ogg",
+      "explosion2.ogg",
+      "explosion3.ogg",
+      "explosion4.ogg",
+      "explosion5.ogg",
+      "explosion6.ogg",
+      "explosionfar.ogg",
+      "explosionsmallfar.ogg",
+    ]
   copyright: "vgstation at c5edbfd7179288080f081e2b8ac2496b7e4455db"
   license: CC-BY-SA-3.0
   source: https://github.com/vgstation-coders/vgstation13/tree/c5edbfd7179288080f081e2b8ac2496b7e4455db/sound/effects
@@ -233,6 +289,10 @@
   source: https://github.com/YuriyKiss/space-station-14/commit/971a135a9c83aed46e967aac9302ab5b35562b5f
 
 - files: [inneranomaly.ogg]
-  copyright: 'created by waveplaySFX on Freesound'
+  copyright: "created by waveplaySFX on Freesound"
   license: "CC0-1.0"
   source: https://freesound.org/people/waveplaySFX/sounds/553744/
+
+- files: [changeling_shriek.ogg]
+  copyright: whateverusername0
+  license: CC-BY-SA-3.0
