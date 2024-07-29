@@ -30,7 +30,7 @@
 - type: gamePreset
   id: AllAtOnce
   alias:
-  - all
+    - all
   name: all-at-once-title
   description: all-at-once-description
   showInVote: false
@@ -47,10 +47,10 @@
 - type: gamePreset
   id: AllerAtOnce
   alias:
-  - allall
-  - aller
-  - badidea
-  - punishment
+    - allall
+    - aller
+    - badidea
+    - punishment
   name: aller-at-once-title
   description: aller-at-once-description
   showInVote: false #Please god dont do this
@@ -67,32 +67,33 @@
     - SpaceTrafficControlEventScheduler
     - SpaceTrafficControlFriendlyEventScheduler
     - BasicRoundstartVariation
+    - Changeling
 
 - type: gamePreset
   id: Extended
   alias:
-  - extended
-  - shittersafari
+    - extended
+    - shittersafari
   name: extended-title
   showInVote: false #2boring2vote
   description: extended-description
   rules:
-  - BasicStationEventScheduler
-  - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
-  - BasicRoundstartVariation
+    - BasicStationEventScheduler
+    - MeteorSwarmScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
 
 - type: gamePreset
   id: Greenshift
   alias:
-  - greenshift
-  - shittersafarideluxeedition
+    - greenshift
+    - shittersafarideluxeedition
   name: greenshift-title
   showInVote: false #4boring4vote
   description: greenshift-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler 
-  - BasicRoundstartVariation
+    - SpaceTrafficControlFriendlyEventScheduler
+    - BasicRoundstartVariation
 
 - type: gamePreset
   id: Secret
@@ -121,13 +122,13 @@
 - type: gamePreset
   id: SecretGreenshift #For Admin Use: Runs Greenshift but shows "Secret" in lobby.
   alias:
-  - secretgreenshift
+    - secretgreenshift
   name: secret-title
   showInVote: false #Admin Use
   description: secret-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler 
-  - BasicRoundstartVariation
+    - SpaceTrafficControlFriendlyEventScheduler
+    - BasicRoundstartVariation
 
 - type: gamePreset
   id: Sandbox
@@ -204,36 +205,36 @@
 - type: gamePreset
   id: Zombie
   alias:
-  - zombie
-  - zombies
-  - Zombies
-  - zz14
-  - zomber
+    - zombie
+    - zombies
+    - Zombies
+    - zz14
+    - zomber
   name: zombie-title
   description: zombie-description
   showInVote: false
   rules:
-  - Zombie
-  - BasicStationEventScheduler
-  - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
-  - BasicRoundstartVariation
+    - Zombie
+    - BasicStationEventScheduler
+    - MeteorSwarmScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
 
 - type: gamePreset
   id: Zombieteors
   alias:
-  - zombieteors
-  - zombombies
-  - meteombies
+    - zombieteors
+    - zombombies
+    - meteombies
   name: zombieteors-title
   description: zombieteors-description
   showInVote: false
   rules:
-  - Zombie
-  - BasicStationEventScheduler
-  - KesslerSyndromeScheduler
-  - SpaceTrafficControlEventScheduler
-  - BasicRoundstartVariation
+    - Zombie
+    - BasicStationEventScheduler
+    - KesslerSyndromeScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
 
 - type: gamePreset
   id: Changeling
