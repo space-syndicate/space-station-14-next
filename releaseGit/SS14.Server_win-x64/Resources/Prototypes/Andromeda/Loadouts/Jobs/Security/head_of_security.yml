@@ -1,0 +1,34 @@
+# Panties
+
+- type: loadout
+  id: HOSBoxers
+  equipment: HOSBoxers
+
+- type: startingGear
+  id: HOSBoxers
+  equipment:
+    underwearb: ClothingUnderwearBottomBoxersHOS
+
+
+- type: loadout
+  id: HOSPanties
+  equipment: HOSPanties
+
+- type: startingGear
+  id: HOSPanties
+  equipment:
+    underwearb: ClothingUnderwearBottomPantiesHOS
+
+
+# Bra
+
+
+- type: loadout
+  id: HOSBra
+  equipment: HOSBra
+
+- type: startingGear
+  id: HOSBra
+  equipment:
+    underweart: ClothingUnderwearTopBraHOS
+

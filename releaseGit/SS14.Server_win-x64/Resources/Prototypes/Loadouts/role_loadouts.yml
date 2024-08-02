@@ -1,0 +1,780 @@
+# Command
+- type: roleLoadout
+  id: JobCaptain
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - CaptainUnderwearTop
+  - CaptainUnderwearBottom
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - CaptainHead
+  - CaptainNeck
+  - CaptainJumpsuit
+  - CaptainBackpack
+  - CaptainOuterClothing
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobHeadOfPersonnel
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - HoPUnderwearTop
+  - HoPUnderwearBottom
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - HoPHead
+  - HoPNeck
+  - HoPJumpsuit
+  - HoPBackpack
+  - HoPOuterClothing
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+# Civilian
+- type: roleLoadout
+  id: JobPassenger
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - PassengerJumpsuit
+  - CommonBackpack
+  - PassengerFace
+  - PassengerGloves
+  - PassengerOuterClothing
+  - PassengerShoes
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobBartender
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - BartenderHead
+  - BartenderJumpsuit
+  - CommonBackpack
+  - BartenderOuterClothing
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobServiceWorker
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - BartenderJumpsuit
+  - CommonBackpack
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobChef
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - ChefHead
+  - ChefMask
+  - ChefJumpsuit
+  - CommonBackpack
+  - ChefOuterClothing
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobLibrarian
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - LibrarianJumpsuit
+  - CommonBackpack
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobLawyer
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - LawyerNeck
+  - LawyerJumpsuit
+  - CommonBackpack
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobChaplain
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - ChaplainHead
+  - ChaplainMask
+  - ChaplainNeck
+  - ChaplainJumpsuit
+  - CommonBackpack
+  - ChaplainOuterClothing
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobJanitor
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - JanitorHead
+  - JanitorJumpsuit
+  - JanitorGloves
+  - CommonBackpack
+  - JanitorOuterClothing
+  - Glasses
+  - Survival
+  - Trinkets
+  - JanitorPlunger
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobBotanist
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - BotanistHead
+  - BotanistJumpsuit
+  - BotanistBackpack
+  - BotanistOuterClothing
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobClown
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - ClownHead
+  - ClownJumpsuit
+  - ClownBackpack
+  - ClownOuterClothing
+  - ClownShoes
+  - Glasses
+  - SurvivalClown
+  - Trinkets
+
+- type: roleLoadout
+  id: JobMime
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - MimeHead
+  - MimeMask
+  - MimeJumpsuit
+  - MimeBackpack
+  - MimeOuterClothing
+  - Glasses
+  - Survival
+  - Trinkets
+
+- type: roleLoadout
+  id: JobMusician
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - MusicianJumpsuit
+  - CommonBackpack
+  - MusicianOuterClothing
+  - Glasses
+  - Survival
+  - Trinkets
+  - Instruments
+  - GroupSpeciesBreathTool
+
+# Cargo
+- type: roleLoadout
+  id: JobQuartermaster
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - QMUnderwearTop
+  - QMUnderwearBottom
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - QuartermasterHead
+  - QuartermasterNeck
+  - QuartermasterJumpsuit
+  - CargoTechnicianBackpack
+  - QuartermasterOuterClothing
+  - QuartermasterShoes
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobCargoTechnician
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - CargoTechnicianHead
+  - CargoTechnicianJumpsuit
+  - CargoTechnicianBackpack
+  - CargoTechnicianOuterClothing
+  - CargoTechnicianShoes
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobSalvageSpecialist
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - SalvageSpecialistBackpack
+  - SalvageSpecialistOuterClothing
+  - SalvageSpecialistShoes
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+# Engineering
+- type: roleLoadout
+  id: JobChiefEngineer
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - CEUnderwearTop
+  - CEUnderwearBottom
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - ChiefEngineerHead
+  - ChiefEngineerJumpsuit
+  - ChiefEngineerBackpack # Corvax-Loadouts
+  - ChiefEngineerNeck
+  - ChiefEngineerOuterClothing
+  - ChiefEngineerShoes
+  - SurvivalExtended
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobTechnicalAssistant
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - TechnicalAssistantJumpsuit
+  - StationEngineerBackpack
+  - SurvivalExtended
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobStationEngineer
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - StationEngineerHead
+  - StationEngineerJumpsuit
+  - StationEngineerBackpack
+  - StationEngineerOuterClothing
+  - StationEngineerShoes
+  - StationEngineerID
+  - SurvivalExtended
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobAtmosphericTechnician
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - AtmosphericTechnicianJumpsuit
+  - AtmosphericTechnicianBackpack
+  - AtmosphericTechnicianOuterClothing
+  - AtmosphericTechnicianShoes
+  - SurvivalExtended
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+# Science
+- type: roleLoadout
+  id: JobResearchDirector
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - RDUnderwearTop
+  - RDUnderwearBottom
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - ResearchDirectorHead
+  - ResearchDirectorNeck
+  - ResearchDirectorJumpsuit
+  - ScientistBackpack
+  - ResearchDirectorOuterClothing
+  - ScientistGloves
+  - ResearchDirectorShoes
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobScientist
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - ScientistHead
+  - ScientistNeck
+  - ScientistJumpsuit
+  - ScientistBackpack
+  - ScientistOuterClothing
+  - ScientistGloves
+  - ScientistShoes
+  - ScientistPDA
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobResearchAssistant
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - ResearchAssistantJumpsuit
+  - ScientistBackpack
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+# Security
+- type: roleLoadout
+  id: JobHeadOfSecurity
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - HOSUnderwearTop
+  - HOSUnderwearBottom
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - HeadofSecurityHead
+  - HeadofSecurityNeck
+  - HeadofSecurityJumpsuit
+  - SecurityBackpack
+  - SecurityBelt
+  - HeadofSecurityOuterClothing
+  - SecurityShoes
+  - SurvivalSecurity
+  - Trinkets
+  - GroupSpeciesBreathToolSecurity
+
+- type: roleLoadout
+  id: JobWarden
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - WardenHead
+  - WardenJumpsuit
+  - SecurityBackpack
+  - SecurityBelt
+  - WardenOuterClothing
+  - SecurityShoes
+  - SurvivalSecurity
+  - Trinkets
+  - GroupSpeciesBreathToolSecurity
+
+- type: roleLoadout
+  id: JobSecurityOfficer
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - SecurityHead
+  - SecurityJumpsuit
+  - SecurityBackpack
+  - SecurityOuterClothing
+  - SecurityShoes
+  - SecurityPDA
+  - SecurityBelt
+  - SurvivalSecurity
+  - Trinkets
+  - GroupSpeciesBreathToolSecurity
+
+- type: roleLoadout
+  id: JobDetective
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - DetectiveHead
+  - DetectiveNeck
+  - DetectiveJumpsuit
+  - SecurityBackpack
+  - DetectiveOuterClothing
+  - SecurityShoes
+  - SurvivalSecurity
+  - Trinkets
+  - GroupSpeciesBreathToolSecurity
+
+- type: roleLoadout
+  id: JobSecurityCadet
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - SecurityCadetJumpsuit
+  - SecurityBackpack
+  - SurvivalSecurity
+  - Trinkets
+  - GroupSpeciesBreathToolSecurity
+
+# Medical
+- type: roleLoadout
+  id: JobChiefMedicalOfficer
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - CMOUnderwearTop
+  - CMOUnderwearBottom
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - ChiefMedicalOfficerHead
+  - MedicalMask
+  - ChiefMedicalOfficerJumpsuit
+  - MedicalGloves
+  - MedicalBackpack
+  - ChiefMedicalOfficerOuterClothing
+  - ChiefMedicalOfficerNeck
+  - ChiefMedicalOfficerShoes
+  - Glasses
+  - SurvivalMedical
+  - Trinkets
+  - GroupSpeciesBreathToolMedical
+
+- type: roleLoadout
+  id: JobMedicalDoctor
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - MedicalDoctorHead
+  - MedicalMask
+  - MedicalDoctorJumpsuit
+  - MedicalGloves
+  - MedicalBackpack
+  - MedicalDoctorOuterClothing
+  - MedicalShoes
+  - MedicalDoctorPDA
+  - Glasses
+  - SurvivalMedical
+  - Trinkets
+  - GroupSpeciesBreathToolMedical
+
+- type: roleLoadout
+  id: JobMedicalIntern
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - MedicalInternJumpsuit
+  - MedicalBackpack
+  - Glasses
+  - SurvivalMedical
+  - Trinkets
+  - GroupSpeciesBreathToolMedical
+
+- type: roleLoadout
+  id: JobChemist
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - MedicalMask
+  - ChemistJumpsuit
+  - MedicalGloves
+  - ChemistBackpack
+  - ChemistOuterClothing
+  - MedicalShoes
+  - SurvivalMedical
+  - Trinkets
+  - GroupSpeciesBreathToolMedical
+
+- type: roleLoadout
+  id: JobParamedic
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - ParamedicHead
+  - MedicalMask
+  - ParamedicJumpsuit
+  - MedicalGloves
+  - MedicalBackpack
+  - ParamedicOuterClothing
+  - ParamedicShoes
+  - Glasses
+  - SurvivalMedical
+  - Trinkets
+  - GroupSpeciesBreathToolMedical
+
+# Wildcards
+- type: roleLoadout
+  id: JobZookeeper
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - CommonBackpack
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobReporter
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - ReporterJumpsuit
+  - CommonBackpack
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobPsychologist
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - MedicalBackpack
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobBoxer
+  groups:
+  - Inventory # Corvax-Loadouts
+  # A-13 Loadouts start
+  - BasicUnderwearBottom
+  - BasicUnderwearTop
+  - BasicUnderwearSocks
+  # A-13 Loadouts end
+  - GroupTankHarness
+  - BoxerJumpsuit
+  - BoxerGloves
+  - CommonBackpack
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+# These loadouts are used for non-crew spawns, like off-station antags and event mobs
+# They will be used without player configuration, thus they will only ever apply what is forced by MinLimit
+
+- type: roleLoadout
+  id: RoleSurvivalStandard
+  groups:
+  - Survival
+  - GroupSpeciesBreathTool
+  - GroupTankHarness
+
+- type: roleLoadout
+  id: RoleSurvivalClown
+  groups:
+  - SurvivalClown
+  - GroupTankHarness
+
+- type: roleLoadout
+  id: RoleSurvivalExtended
+  groups:
+  - SurvivalExtended
+  - GroupSpeciesBreathTool
+  - GroupTankHarness
+
+- type: roleLoadout
+  id: RoleSurvivalMedical
+  groups:
+  - SurvivalMedical
+  - GroupSpeciesBreathToolMedical
+  - GroupTankHarness
+
+- type: roleLoadout
+  id: RoleSurvivalSecurity
+  groups:
+  - SurvivalSecurity
+  - GroupSpeciesBreathToolSecurity
+  - GroupTankHarness
+
+- type: roleLoadout
+  id: RoleSurvivalSyndicate
+  groups:
+  - SurvivalSyndicate
+  - GroupSpeciesBreathTool
+  - GroupTankHarness

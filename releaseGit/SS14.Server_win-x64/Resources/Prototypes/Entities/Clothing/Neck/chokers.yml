@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckChokerSpike
+  name: чокер с шипами
+  description: Устрашающий ошейник с шипами, который почему-то считается женским украшением под названием "чокер"... Почему?
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Chokers/spike.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Chokers/spike.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckChokerHeart
+  name: чокер с сердечком
+  description: Ошейник, зовущийся чокером, с большим золотым сердечком спереди. Для домашних питомцев? Да? По крайней мере хочется верить.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Chokers/heart.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Chokers/heart.rsi

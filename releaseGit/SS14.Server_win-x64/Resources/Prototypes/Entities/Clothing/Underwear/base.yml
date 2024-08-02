@@ -1,0 +1,52 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: ClothingUnderwearBase
+  components:
+  - type: Sprite
+    state: icon
+  - type: Item
+    size: Tiny
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialCloth1
+      amount: 1
+  - type: Food
+    requiresSpecialDigestion: true
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+
+- type: entity
+  abstract: true
+  parent: ClothingUnderwearBase
+  id: ClothingUnderwearBottomBase
+  components:
+  - type: Clothing
+    slots:
+    - underwearb
+  - type: StealTarget
+    stealGroup: Panties
+
+- type: entity
+  abstract: true
+  parent: ClothingUnderwearBase
+  id: ClothingUnderwearTopBase
+  components:
+  - type: Clothing
+    slots:
+    - underweart
+
+- type: entity
+  abstract: true
+  parent: ClothingUnderwearBase
+  id: ClothingUnderwearSocksBase
+  components:
+  - type: Clothing
+    slots:
+    - socks

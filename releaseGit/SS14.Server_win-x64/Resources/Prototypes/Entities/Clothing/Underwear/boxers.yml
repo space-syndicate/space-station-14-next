@@ -1,0 +1,34 @@
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomBoxersWhite
+  name: боксеры
+  description: Стандартное нижнее белье Nanotrasen для сотрудников станции. Окрашено в белый цвет.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/boxers.rsi
+  - type: StealTarget
+    stealGroup: Panties
+
+# SpaceNinja
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomBoxersSpaceNinja
+  name: повязка на пах
+  description: Кусок обычной ткани. Вроде бы сделано только для парней.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/SpaceNinja/boxers.rsi
+  - type: StealTarget
+    stealGroup: Panties
+
+# DeathSquad
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomBoxersDeathSquad
+  name: боксеры эскадрона смерти
+  description: Самые технологичные боксеры в галактике.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/deathboxers.rsi
+  - type: StealTarget
+    stealGroup: Panties

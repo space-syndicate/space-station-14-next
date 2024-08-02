@@ -1,0 +1,71 @@
+- type: entity
+  parent: ClothingUnderwearSocksBase
+  id: ClothingUnderwearSocksHigh
+  name: высокие носки
+  description: Высокие носки Nanotrasen для работников станции. Окрашены в белый цвет.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Socks/socksknee.rsi
+
+- type: entity
+  parent: ClothingUnderwearSocksBase
+  id: ClothingUnderwearSocksNormal
+  name: носки
+  description: Стандартные носки Nanotrasen для работников станции. Окрашены в белый цвет.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Socks/socksnorm.rsi
+
+- type: entity
+  parent: ClothingUnderwearSocksBase
+  id: ClothingUnderwearSocksShort
+  name: короткие носки
+  description: Короткие носки Nanotrasen для работников станции. Окрашены в белый цвет.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Socks/socksshort.rsi
+
+- type: entity
+  parent: ClothingUnderwearSocksBase
+  id: ClothingUnderwearSocksThigh
+  name: чулки
+  description: Мы получим ваш труд, а вы получите условно бесплатный товар.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Socks/socksthigh.rsi
+
+- type: entity
+  parent: ClothingUnderwearSocksBase
+  id: ClothingUnderwearSocksFishnettights
+  name: чулки в сетку
+  description: Теперь вы можете видеть свои ноги.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Socks/fishnettights.rsi
+
+- type: entity
+  parent: ClothingUnderwearSocksBase
+  id: ClothingUnderwearSocksPantyhose
+  name: колготки
+  description: Для понастоящему серьезной работы.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Socks/pantyhose.rsi
+
+- type: entity
+  parent: ClothingUnderwearSocksBase
+  id: ClothingUnderwearSocksGarters
+  name: чулки с подвязкой
+  description: Если вам мало просто чулков.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Socks/garters.rsi
+
+- type: entity
+  parent: ClothingUnderwearSocksBase
+  id: ClothingUnderwearSocksRich
+  name: богатые чулки
+  description: Те самые чулки, которые покажут что вы богатая сучка.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Socks/richsocksthigh.rsi

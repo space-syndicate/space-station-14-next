@@ -1,0 +1,65 @@
+- type: entity
+  parent: ClothingUnderwearTopBase
+  id: ClothingUnderwearTopBraWhite
+  name: бра
+  description: Только наши лифчики Nanotrasen могут легко сниматься и надеваться.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Top/bra.rsi
+
+- type: entity
+  parent: ClothingUnderwearTopBase
+  id: ClothingUnderwearTopBraSports
+  name: спортивное бра
+  description: Лифчик для занятий спортом. Ведь бег от ухажеров является спортом?
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Top/sportsbra.rsi
+
+- type: entity
+  parent: ClothingUnderwearTopBase
+  id: ClothingUnderwearTopBraSportsAlternative
+  name: альтернативное спортивное бра
+  description: Лифчик для занятий спортом. Альтернативная версия. На этот раз будут не ухажеры, а насильники. Пойдёт?
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Top/sportsbraalt.rsi
+
+#etc
+- type: entity
+  parent: ClothingUnderwearTopBase
+  id: ClothingUnderwearTopNekoBra
+  name: неко бра
+  description: Для тех кто любит "кошек".
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Top/nekobra.rsi
+
+- type: entity
+  parent: ClothingUnderwearTopBase
+  id: ClothingUnderwearToplaceBra
+  name: кружевное бра
+  description: Для ваших массивных документов.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Top/lacebra.rsi
+
+# SpaceNinja
+- type: entity
+  parent: ClothingUnderwearTopBase
+  id: ClothingUnderwearTopSpaceNinja
+  name: повязка на грудь
+  description: Кусок обычной ткани.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Top/SpaceNinja/bra.rsi
+
+# Deathsquad
+- type: entity
+  parent: ClothingUnderwearTopBase
+  id: ClothingUnderwearTopDeathBra
+  name: бра эскадрона смерти
+  description: Самые технологичные бра в галактике.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Top/deathbra.rsi

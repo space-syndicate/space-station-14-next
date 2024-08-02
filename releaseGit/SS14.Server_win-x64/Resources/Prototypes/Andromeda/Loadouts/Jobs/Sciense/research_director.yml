@@ -1,0 +1,34 @@
+# Panties
+
+- type: loadout
+  id: RDBoxers
+  equipment: RDBoxers
+
+- type: startingGear
+  id: RDBoxers
+  equipment:
+    underwearb: ClothingUnderwearBottomBoxersRD
+
+
+- type: loadout
+  id: RDPanties
+  equipment: RDPanties
+
+- type: startingGear
+  id: RDPanties
+  equipment:
+    underwearb: ClothingUnderwearBottomPantiesRD
+
+
+# Bra
+
+
+- type: loadout
+  id: RDBra
+  equipment: RDBra
+
+- type: startingGear
+  id: RDBra
+  equipment:
+    underweart: ClothingUnderwearTopBraRD
+

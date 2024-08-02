@@ -1,0 +1,34 @@
+# Panties
+
+- type: loadout
+  id: QMBoxers
+  equipment: QMBoxers
+
+- type: startingGear
+  id: QMBoxers
+  equipment:
+    underwearb: ClothingUnderwearBottomBoxersQM
+
+
+- type: loadout
+  id: QMPanties
+  equipment: QMPanties
+
+- type: startingGear
+  id: QMPanties
+  equipment:
+    underwearb: ClothingUnderwearBottomPantiesQM
+
+
+# Bra
+
+
+- type: loadout
+  id: QMBra
+  equipment: QMBra
+
+- type: startingGear
+  id: QMBra
+  equipment:
+    underweart: ClothingUnderwearTopBraQM
+

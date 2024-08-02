@@ -1,0 +1,196 @@
+# Panties
+
+- type: loadout
+  id: WhiteBoxers
+  equipment: WhiteBoxers
+
+- type: startingGear
+  id: WhiteBoxers
+  equipment:
+    underwearb: ClothingUnderwearBottomBoxersWhite
+
+
+- type: loadout
+  id: WhitePanties
+  equipment: WhitePanties
+
+- type: startingGear
+  id: WhitePanties
+  equipment:
+    underwearb: ClothingUnderwearBottomPantiesWhite
+
+
+- type: loadout
+  id: WhitePantiesNeko
+  equipment: WhitePantiesNeko
+
+- type: startingGear
+  id: WhitePantiesNeko
+  equipment:
+    underwearb: ClothingUnderwearBottomPantiesNeko
+
+
+- type: loadout
+  id: PantiesLace
+  equipment: PantiesLace
+
+- type: startingGear
+  id: PantiesLace
+  equipment:
+    underwearb: ClothingUnderwearBottomPantiesLace
+
+
+- type: loadout
+  id: PantiesThong
+  equipment: PantiesThong
+
+- type: startingGear
+  id: PantiesThong
+  equipment:
+    underwearb: ClothingUnderwearBottomPantiesThong
+
+
+# Bra
+
+- type: loadout
+  id: BraWhite
+  equipment: BraWhite
+
+- type: startingGear
+  id: BraWhite
+  equipment:
+    underweart: ClothingUnderwearTopBraWhite
+
+
+- type: loadout
+  id: BraSports
+  equipment: BraSports
+
+- type: startingGear
+  id: BraSports
+  equipment:
+    underweart: ClothingUnderwearTopBraSports
+
+  
+- type: loadout
+  id: BraNeko
+  equipment: BraNeko
+
+- type: startingGear
+  id: BraNeko
+  equipment:
+    underweart: ClothingUnderwearTopNekoBra
+
+
+- type: loadout
+  id: BraLace
+  equipment: BraLace
+
+- type: startingGear
+  id: BraLace
+  equipment:
+    underweart: ClothingUnderwearToplaceBra
+
+
+- type: loadout
+  id: BraSportsAlt
+  equipment: BraSportsAlt
+
+- type: startingGear
+  id: BraSportsAlt
+  equipment:
+    underweart: ClothingUnderwearTopBraSportsAlternative
+
+
+#Socks
+
+- type: loadout
+  id: SocksNormal
+  equipment: SocksNormal
+
+- type: startingGear
+  id: SocksNormal
+  equipment:
+    socks: ClothingUnderwearSocksNormal
+
+
+- type: loadout
+  id: SocksHigh
+  equipment: SocksHigh
+
+- type: startingGear
+  id: SocksHigh
+  equipment:
+    socks: ClothingUnderwearSocksHigh
+
+
+- type: loadout
+  id: SocksShort
+  equipment: SocksShort
+
+- type: startingGear
+  id: SocksShort
+  equipment:
+    socks: ClothingUnderwearSocksShort
+
+
+- type: loadout
+  id: SocksBee
+  equipment: SocksBee
+
+- type: startingGear
+  id: SocksBee
+  equipment:
+    socks: ClothingUnderSocksBee
+
+
+- type: loadout
+  id: SocksCoder
+  equipment: SocksCoder
+
+- type: startingGear
+  id: SocksCoder
+  equipment:
+    socks: ClothingUnderSocksCoder
+
+
+- type: loadout
+  id: SocksPantyhose
+  equipment: SocksPantyhose
+
+- type: startingGear
+  id: SocksPantyhose
+  equipment:
+    socks: ClothingUnderwearSocksPantyhose
+
+
+- type: loadout
+  id: SocksFishnettights
+  equipment: SocksFishnettights
+
+- type: startingGear
+  id: SocksFishnettights
+  equipment:
+    socks: ClothingUnderwearSocksFishnettights
+
+
+- type: loadout
+  id: SocksGarters
+  equipment: SocksGarters
+
+- type: startingGear
+  id: SocksGarters
+  equipment:
+    socks: ClothingUnderwearSocksGarters
+
+
+- type: loadout
+  id: SocksRich
+  equipment: SocksRich
+
+- type: startingGear
+  id: SocksRich
+  equipment:
+    socks: ClothingUnderwearSocksRich
+
+
