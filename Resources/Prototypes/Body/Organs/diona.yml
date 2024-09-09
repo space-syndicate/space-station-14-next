@@ -24,10 +24,14 @@
   - type: FlavorProfile
     flavors:
       - people
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
 
 - type: entity
   id: OrganDionaBrain
-  parent: [BaseDionaOrgan, OrganHumanBrain]
+  parent: BaseDionaOrgan
   name: brain
   description: "The central hub of a diona's pseudo-neurological activity, its root-like tendrils search for its former body."
   components:
@@ -51,6 +55,11 @@
         reagents:
         - ReagentId: GreyMatter
           Quantity: 5
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Brain
 
 - type: entity
   id: OrganDionaEyes
@@ -62,6 +71,11 @@
     layers:
       - state: eyeball-l
       - state: eyeball-r
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Eyes
 
 - type: entity
   id: OrganDionaStomach
@@ -96,6 +110,11 @@
   - type: Item
     size: Small
     heldPrefix: stomach
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach
 
 - type: entity
   id: OrganDionaLungs
@@ -108,7 +127,7 @@
   - type: Item
     size: Small
     heldPrefix: lungs
-  - type: Lung 
+  - type: Lung
   - type: Metabolizer
     removeEmpty: true
     solutionOnBody: false
@@ -127,6 +146,11 @@
       Lung:
         maxVol: 100
         canReact: False
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
 
 # Organs that turn into nymphs on removal
 - type: entity
@@ -137,9 +161,14 @@
   description: "The source of incredible, unending intelligence. Honk."
   components:
   - type: Brain
-  - type: Nymph # This will make the organs turn into a nymph when they're removed. 
+  - type: Nymph # This will make the organs turn into a nymph when they're removed.
     entityPrototype: OrganDionaNymphBrain
     transferMind: true
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Brain
 
 - type: entity
   id: OrganDionaStomachNymph
@@ -150,6 +179,11 @@
   components:
   - type: Nymph
     entityPrototype: OrganDionaNymphStomach
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach
 
 - type: entity
   id: OrganDionaLungsNymph
@@ -160,6 +194,11 @@
   components:
   - type: Nymph
     entityPrototype: OrganDionaNymphLungs
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
 
 # Nymphs that the organs will turn into
 - type: entity
@@ -176,11 +215,11 @@
 
 - type: entity
   id: OrganDionaNymphStomach
-  parent: MobDionaNymphAccent 
+  parent: MobDionaNymphAccent
   categories: [ HideSpawnMenu ]
   name: diona nymph
   suffix: Stomach
-  description: Contains the stomach of a formerly fully-formed Diona. It doesn't taste any better for it. 
+  description: Contains the stomach of a formerly fully-formed Diona. It doesn't taste any better for it.
   components:
   - type: IsDeadIC
   - type: Body
@@ -192,7 +231,7 @@
   categories: [ HideSpawnMenu ]
   name: diona nymph
   suffix: Lungs
-  description: Contains the lungs of a formerly fully-formed Diona. Breathtaking. 
+  description: Contains the lungs of a formerly fully-formed Diona. Breathtaking.
   components:
   - type: IsDeadIC
   - type: Body
