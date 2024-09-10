@@ -1,7 +1,7 @@
 - type: gameMapPool
   id: CorvaxDefaultMapPool
   maps:
-  - CorvaxDelta
+  - Boykisser
   - CorvaxAvrite
   - CorvaxSilly
   - CorvaxAstra
