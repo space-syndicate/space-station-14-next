@@ -8,3 +8,22 @@
   id: ResearchDirectorJumpskirtClassical
   equipment:
     jumpsuit: ClothingUniformJumpskirtRDClassical
+
+# Panties
+
+- type: loadout
+  id: RDBoxers
+  equipment:
+    underwearb: ClothingUnderwearBottomBoxersRD
+
+- type: loadout
+  id: RDPanties
+  equipment:
+    underwearb: ClothingUnderwearBottomPantiesRD
+
+# Bra
+
+- type: loadout
+  id: RDBra
+  equipment:
+    underweart: ClothingUnderwearTopBraRD

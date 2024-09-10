@@ -8,3 +8,22 @@
   id: HeadofSecurityJumpskirtBlack
   equipment:
     jumpsuit: ClothingUniformJumpskirtHoSBlack
+
+# Panties
+
+- type: loadout
+  id: HOSBoxers
+  equipment:
+    underwearb: ClothingUnderwearBottomBoxersHOS
+
+- type: loadout
+  id: HOSPanties
+  equipment:
+    underwearb: ClothingUnderwearBottomPantiesHOS
+
+# Bra
+
+- type: loadout
+  id: HOSBra
+  equipment:
+    underweart: ClothingUnderwearTopBraHOS

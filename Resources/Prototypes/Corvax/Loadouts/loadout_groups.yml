@@ -12,3 +12,165 @@
   - ChiefEngineerBackpack
   - ChiefEngineerSatchel
   - ChiefEngineerDuffel
+
+#Command
+- type: loadoutGroup
+  id: CaptainUnderwearBottom
+  name: Капитан, трусы
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CaptainBoxers
+  - CaptainPanties
+
+- type: loadoutGroup
+  id: CaptainUnderwearTop
+  name: Капитан, бра
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - CaptainBra
+
+- type: loadoutGroup
+  id: HoPUnderwearBottom
+  name: Глава персонала, трусы
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - HOPBoxers
+  - HOPPanties
+
+- type: loadoutGroup
+  id: HoPUnderwearTop
+  name: Глава персонала, бра
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - HOPBra
+
+- type: loadoutGroup
+  id: QMUnderwearBottom
+  name: Квартирмейстер, трусы
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - QMBoxers
+  - QMPanties
+
+- type: loadoutGroup
+  id: QMUnderwearTop
+  name: Квартирмейстер, бра
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - QMBra
+
+- type: loadoutGroup
+  id: CEUnderwearBottom
+  name: Старший инженер, трусы
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CEBoxers
+  - CEPanties
+
+- type: loadoutGroup
+  id: CEUnderwearTop
+  name: Старший инженер, бра
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - CEBra
+
+- type: loadoutGroup
+  id: CMOUnderwearBottom
+  name: Главный врач, трусы
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CMOBoxers
+  - CMOPanties
+
+- type: loadoutGroup
+  id: CMOUnderwearTop
+  name: Главный врач, бра
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - CMOBra
+
+- type: loadoutGroup
+  id: RDUnderwearBottom
+  name: Научный руководитель, трусы
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - RDBoxers
+  - RDPanties
+
+- type: loadoutGroup
+  id: RDUnderwearTop
+  name: Научный руководитель, бра
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - RDBra
+
+- type: loadoutGroup
+  id: HOSUnderwearBottom
+  name: Глава службы безопасности, трусы
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - HOSBoxers
+  - HOSPanties
+
+- type: loadoutGroup
+  id: HOSUnderwearTop
+  name: Глава службы безопасности, бра
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - HOSBra
+
+# Civilian
+
+- type: loadoutGroup
+  id: BasicUnderwearBottom
+  name: Общие, трусы
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - WhiteBoxers
+  - WhitePanties
+  - WhitePantiesNeko
+  - PantiesLace
+  - PantiesThong
+
+- type: loadoutGroup
+  id: BasicUnderwearTop
+  name: Общие, бра
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - BraWhite
+  - BraSports
+  - BraNeko
+  - BraLace
+  - BraSportsAlt
+
+- type: loadoutGroup
+  id: BasicUnderwearSocks
+  name: Общие, носки
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - SocksNormal
+  - SocksHigh
+  - SocksShort
+  - SocksBee
+  - SocksCoder
+  - SocksPantyhose
+  - SocksFishnettights
+  - SocksGarters
+  - SocksRich
