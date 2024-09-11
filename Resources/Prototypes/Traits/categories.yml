@@ -10,3 +10,8 @@
 - type: traitCategory
   id: Quirks
   name: trait-category-quirks
+
+- type: traitCategory # corvax-next
+  id: SizeTraits
+  name: Рост
+  maxTraitPoints: 1

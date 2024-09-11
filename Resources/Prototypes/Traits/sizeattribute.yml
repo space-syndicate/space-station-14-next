@@ -1,0 +1,31 @@
+- type: trait # corvax-next
+  id: Tall
+  name: Высокий
+  description: У вас проблемы с гигантизмом.
+  category: SizeTraits
+  cost: 1
+  whitelist:
+    components:
+      - SizeAttributeWhitelist
+  blacklist:
+    components:
+      - SizeAttribute
+  components:
+    - type: SizeAttribute
+      tall: true
+
+- type: trait
+  id: Short
+  name: Низкий
+  description: Вы коротковаты ростом.
+  category: SizeTraits
+  cost: 1
+  whitelist:
+    components:
+      - SizeAttributeWhitelist
+  blacklist:
+    components:
+      - SizeAttribute
+  components:
+    - type: SizeAttribute
+      short: true
