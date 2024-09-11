@@ -1,4 +1,4 @@
-- type: trait # corvax-next
+- type: trait # Corvax-Next
   id: Tall
   name: Высокий
   description: У вас проблемы с гигантизмом.

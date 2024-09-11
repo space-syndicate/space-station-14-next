@@ -1,0 +1,4 @@
+- type: traitCategory # Corvax-Next
+  id: SizeTraits
+  name: Рост
+  maxTraitPoints: 1
