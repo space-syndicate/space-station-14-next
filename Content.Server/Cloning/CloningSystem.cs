@@ -33,7 +33,6 @@ using Robust.Shared.Containers;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Serialization.Manager;
 
 namespace Content.Server.Cloning
 {
@@ -61,9 +60,6 @@ namespace Content.Server.Cloning
         [Dependency] private readonly SharedMindSystem _mindSystem = default!;
         [Dependency] private readonly MetaDataSystem _metaSystem = default!;
         [Dependency] private readonly SharedJobSystem _jobs = default!;
-
-        // corvax-next
-        [Dependency] private readonly ISerializationManager _serialization = default!;
 
         public readonly Dictionary<MindComponent, EntityUid> ClonesWaitingForMind = new();
         public const float EasyModeCloningCost = 0.7f;
@@ -216,17 +212,6 @@ namespace Content.Server.Cloning
 
             var mob = Spawn(speciesPrototype.Prototype, _transformSystem.GetMapCoordinates(uid));
             _humanoidSystem.CloneAppearance(bodyToClone, mob);
-
-            // corvax-next
-            foreach (var comp in EntityManager.GetComponents(bodyToClone))
-            {
-                if (comp is ITransferredByCloning)
-                {
-                    var copy = _serialization.CreateCopy(comp, notNullableOverride: true);
-                    copy.Owner = mob;
-                    EntityManager.AddComponent(mob, copy, overwrite: true);
-                }
-            }
 
             var ev = new CloningEvent(bodyToClone, mob);
             RaiseLocalEvent(bodyToClone, ref ev);

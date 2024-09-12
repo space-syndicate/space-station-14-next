@@ -63,9 +63,7 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-  - type: SizeAttributeWhitelist # corvax-next
-    tall: false
-    short: false
+  - type: HeightTraitBlacklist # Corvax-Next
 
 - type: entity
   parent: BaseSpeciesDummy

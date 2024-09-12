@@ -1,4 +1,4 @@
-- type: traitCategory # Corvax-Next
-  id: SizeTraits
+- type: traitCategory
+  id: HeightTraits
   name: Рост
   maxTraitPoints: 1
