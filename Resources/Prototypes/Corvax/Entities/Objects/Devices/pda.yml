@@ -26,3 +26,17 @@
       accentVColor: "#DFDFDF"
     - type: Icon
       state: pda-seniorofficer
+
+- type: entity
+  parent: BasePDA
+  id: BlueShieldPDA
+  name: blue shield PDA
+  description: An unremarkable PDA.
+  components:
+    - type: Pda
+      id: BlueShieldIDCard
+      state: pda-blueshield
+    - type: PdaBorderColor
+      borderColor: "#B7B7B6"
+    - type: Icon
+      state: pda-blueshield

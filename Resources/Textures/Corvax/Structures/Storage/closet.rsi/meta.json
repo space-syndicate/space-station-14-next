@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Sprite created by karmen4ik",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "blueshield"
+    },
+    {
+      "name": "blueshield_door"
+    },
+    {
+      "name": "blueshield_open"
+    },
+    {
+      "name": "locked"
+    },
+    {
+      "name": "sparking",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "unlocked"
+    },
+    {
+      "name": "welded"
+    }
+  ]
+}

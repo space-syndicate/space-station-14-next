@@ -97,3 +97,14 @@
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/rd_classical.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/rd_classical.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtBlueShield
+  name: blue shield officer's jumpsuit skirt
+  description: The purple uniform of the officer "Blue Shield" is made of dense materials.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpskirt/blueshield.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpskirt/blueshield.rsi

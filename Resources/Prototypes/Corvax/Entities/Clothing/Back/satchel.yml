@@ -18,3 +18,12 @@
   components:
   - type: Sprite
     sprite: Corvax/Back/Satchels/ce.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelBlueShield
+  name: officer satchel "Blue Shield"
+  description: It looks like a military development, although the coloring is unusual. A very stylish and practical bag.
+  components:
+  - type: Sprite
+    sprite: Corvax/Back/Satchels/blueshield.rsi

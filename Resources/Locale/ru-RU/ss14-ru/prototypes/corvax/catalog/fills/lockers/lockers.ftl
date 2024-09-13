@@ -1,0 +1,9 @@
+ent-LockerBlueShieldOfficerFilled = { ent-LockerBlueShieldOfficer }
+    .desc = { ent-LockerBlueShieldOfficer.desc }
+    .suffix = Заполненный
+ent-LockerBlueShieldOfficerFilledHardsuit = { ent-LockerBlueShieldOfficer }
+    .desc = { ent-LockerBlueShieldOfficer.desc }
+    .suffix = Заполненный, Скафандр
+ent-SuitStorageBlueShield = { ent-SuitStorageBase }
+    .desc = { ent-SuitStorageBase.desc }
+    .suffix = Синий Щит

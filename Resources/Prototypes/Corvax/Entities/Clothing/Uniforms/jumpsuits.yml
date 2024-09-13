@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitSuperstarCop
   name: superstar cop uniform
@@ -85,3 +85,25 @@
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/rd_classical.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/rd_classical.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBlueShield
+  name: blue shield officer's jumpsuit
+  description: The purple uniform of the officer "Blue Shield" is made of dense materials.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/blueshield.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/blueshield.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAltBlueShield
+  name: officer turtleneck "Blue Shield"
+  description: Dark turtleneck made of dense materials.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/alt_blueshield.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/alt_blueshield.rsi

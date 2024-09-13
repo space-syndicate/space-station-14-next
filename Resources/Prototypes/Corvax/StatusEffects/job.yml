@@ -13,3 +13,11 @@
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: Pilot
   jobName: job-name-pilot
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBlueShield
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: BlueShield
+  jobName: job-name-bso
