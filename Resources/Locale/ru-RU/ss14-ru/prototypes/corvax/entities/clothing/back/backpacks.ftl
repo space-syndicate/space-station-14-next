@@ -4,5 +4,5 @@ ent-ClothingDeathSquadronBackpack = рюкзак эскадрона смерти
     .desc = Вместительный рюкзак использующий технологию БлюСпейс.
 ent-ClothingBackpackCE = рюкзак старшего инженера
     .desc = Технически продвинутый рюкзак.
-ent-ClothingBackpackBlueShield = рюкзак офицера "Синий Щит"
+ent-ClothingBackpackBlueShield = рюкзак офицера синий щит
     .desc = Он похож на военную разработку, хотя расцветка необычная. Очень стильный и практичный рюкзак.
