@@ -14,3 +14,7 @@ ent-ClothingUniformJumpsuitHoSBlack = чёрный комбинезон глав
     .desc = Это чёрный костюм главы службы безопасности.
 ent-ClothingUniformJumpsuitRDClassical = классический костюм научного руководителя
     .desc = Это классический костюм научного руководителя.
+ent-ClothingUniformJumpsuitBlueShield = комбинезон офицера синий щит
+    .desc = Пурпурная униформа офицера синий щит изготовлена из плотных материалов.
+ent-ClothingUniformJumpsuitAltBlueShield = водолазка офицера синий щит
+    .desc = Темная водолазка из плотных материалов.

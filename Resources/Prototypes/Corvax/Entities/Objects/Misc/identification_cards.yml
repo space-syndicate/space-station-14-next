@@ -21,3 +21,15 @@
         - state: idpilot
     - type: PresetIdCard
       job: Pilot
+
+- type: entity
+  parent: IDCardStandard
+  id: BlueShieldIDCard
+  name: blue shield ID card
+  components:
+    - type: Sprite
+      layers:
+        - state: centcom
+        - state: idblueshield
+    - type: PresetIdCard
+      job: BlueShieldOfficer

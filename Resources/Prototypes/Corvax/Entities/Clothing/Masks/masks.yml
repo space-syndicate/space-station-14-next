@@ -1,0 +1,19 @@
+- type: entity
+  parent: [ClothingMaskGas, BaseRestrictedContraband]
+  id: ClothingMaskGasBlueShield
+  name: blue shield gas mask
+  description: A special protective gas mask for bodyguards.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Corvax/Clothing/Mask/gasblueshield.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Mask/gasblueshield.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.95
+        Heat: 0.95

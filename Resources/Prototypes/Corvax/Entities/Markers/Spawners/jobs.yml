@@ -9,3 +9,15 @@
     layers:
       - state: green
       - state: seniorofficer
+
+- type: entity
+  id: SpawnPointBlueShieldOfficer
+  parent: SpawnPointJobBase
+  name: officer blue shield
+  components:
+  - type: SpawnPoint
+    job_id: BlueShieldOfficer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger # TODO Если мы хотим, мы можем добавить иконку. Но пока без нее

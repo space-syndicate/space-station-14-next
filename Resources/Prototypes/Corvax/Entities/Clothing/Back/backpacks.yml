@@ -31,3 +31,12 @@
   components:
   - type: Sprite
     sprite: Corvax/Back/Backpacks/ce.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackBlueShield
+  name: officer backpack "Blue Shield"
+  description: It looks like a military development, although the coloring is unusual. A very stylish and practical backpack.
+  components:
+  - type: Sprite
+    sprite: Corvax/Back/Backpacks/blueshield.rsi

@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterBlueShield
+  categories: [ HideSpawnMenu ]
+  name: blue shield winter coat hood
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Head/Hoods/Coat/hoodblueshield.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Head/Hoods/Coat/hoodblueshield.rsi

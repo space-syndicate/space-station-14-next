@@ -1,0 +1,50 @@
+- type: entityTable
+  id: LockerFillBlueShieldOfficerNoHardsuit
+  table: !type:AllSelector
+    children:
+    - id: Flash
+    - id: HoloprojectorSecurity
+    - id: TrackingImplanter
+    - id: TrackingImplanter
+    - id: OxygenTankFilled
+    - id: WeaponDisabler
+    - id: BoxZiptie
+    - id: MedkitFilled
+    - id: ClothingNeckCloakBlueShield
+    - id: ClothingUniformJumpsuitAltBlueShield
+    - id: ClothingOuterWinterBlueShield
+
+# Hardsuit table, used for suit storage as well
+- type: entityTable
+  id: FillBlueShieldOfficerHardsuit
+  table: !type:AllSelector
+    children:
+    - id: ClothingMaskGasBlueShield
+    - id: ClothingOuterHardsuitBlueShield
+    - id: OxygenTankFilled
+
+# No hardsuit locker
+- type: entity
+  id: LockerBlueShieldOfficerFilled
+  suffix: Filled
+  parent: LockerBlueShieldOfficer
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillBlueShieldOfficerNoHardsuit
+
+# No hardsuit + Hardsuit locker
+- type: entity
+  id: LockerBlueShieldOfficerFilledHardsuit
+  suffix: Filled, Hardsuit
+  parent: LockerBlueShieldOfficer
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: LockerFillBlueShieldOfficerNoHardsuit
+        - !type:NestedSelector
+          tableId: FillBlueShieldOfficerHardsuit

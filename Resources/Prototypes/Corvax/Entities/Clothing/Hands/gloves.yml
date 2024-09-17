@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: ClothingHandsBase
   id: ClothingHandsGlovesAerostatic
   name: aerostatic gloves
@@ -21,3 +21,14 @@
     - type: Clothing
       sprite: Corvax/Clothing/Hands/Gloves/centcom_naval.rsi
     - type: Insulated
+
+- type: entity
+  parent: ClothingHandsGlovesCombat
+  id: ClothingHandsGlovesCombatBlueShield
+  name: purple combat gloves
+  description: These tactical gloves are fireproof and impact resistant. Unlike simple combat gloves, they have a purple hue.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Hands/Gloves/combatblueshield.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Hands/Gloves/combatblueshield.rsi

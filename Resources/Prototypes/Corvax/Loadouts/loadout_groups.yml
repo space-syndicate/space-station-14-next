@@ -12,3 +12,33 @@
   - ChiefEngineerBackpack
   - ChiefEngineerSatchel
   - ChiefEngineerDuffel
+
+- type: loadoutGroup
+  id: BlueshieldHead
+  name: loadout-group-blue-shield-head
+  minLimit: 0
+  loadouts:
+  - BlueshieldHead
+
+- type: loadoutGroup
+  id: BlueShieldJumpsuit
+  name: loadout-group-blue-shield-jumpsuit
+  loadouts:
+  - BlueShieldJumpsuit
+  - BlueShieldAltJumpsuit
+  - BlueShieldJumpskirt
+
+- type: loadoutGroup
+  id: BlueshieldBackpack
+  name: loadout-group-blue-shield-backpack
+  loadouts:
+  - BlueShieldBackpack
+  - BlueShieldDuffel
+  - BlueShieldSatchel
+
+- type: loadoutGroup
+  id: BlueshielOuter
+  name: loadout-group-blue-shield-outer
+  loadouts:
+  - BlueshieldOterArmor
+  - BlueShieldOuterWinter
