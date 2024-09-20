@@ -150,7 +150,7 @@ public abstract class SharedResearchSystem : EntitySystem
         TechnologyPrototype technology,
         bool includeCost = true,
         bool includeTier = true,
-        bool includePrereqs = false,
+        bool includePrereqs = true, # Corvax-Next-EDIT-RNDResearch
         TechDisciplinePrototype? disciplinePrototype = null)
     {
         var description = new FormattedMessage();

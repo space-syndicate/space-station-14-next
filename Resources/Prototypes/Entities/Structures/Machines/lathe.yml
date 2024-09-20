@@ -343,6 +343,8 @@
       - ClothingBackpackDuffelHolding
       - WelderExperimental
       - JawsOfLife
+      - MechEquipmentDrill # Corvax-Next-RNDResearch
+      - WeaponGrapplingGun # Corvax-Next-RNDResearch
       - FauxTileAstroGrass
       - FauxTileMowedAstroGrass
       - FauxTileJungleAstroGrass
@@ -954,6 +956,7 @@
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - SyndicateBodyBag # Corvax-Next-AdvancedBodyBags
+      - HandheldCrewMonitor # Corvax-Next-RNDResearch
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget

@@ -1,5 +1,6 @@
 ﻿- type: entity
-  id: ResearchAndDevelopmentServer
+  id: BaseResearchAndDevelopmentServer # Corvax-Next-EDIT-RNDResearch
+  abstract: true # Corvax-Next-RNDResearch
   parent: [ BaseMachinePowered, ConstructibleMachine ]
   name: R&D server
   description: Contains the collective knowledge of the station's scientists. Destroying it would send them back to the stone age. You don't want that do you?
@@ -12,12 +13,12 @@
       - state: server_o
         map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: ResearchServer
-  - type: TechnologyDatabase
-    supportedDisciplines:
-    - Industrial
-    - Arsenal
-    - Experimental
-    - CivilianServices
+  - type: TechnologyDatabase # Corvax-Next-RNDResearch
+#    supportedDisciplines:
+#    - Industrial
+#    - Arsenal
+#    - Experimental
+#    - CivilianServices
   - type: ApcPowerReceiver
     powerLoad: 200
   - type: ExtensionCableReceiver
@@ -57,6 +58,88 @@
   - type: GuideHelp
     guides:
     - Science
+
+- type: entity # Corvax-Next-RNDResearch
+  parent: BaseResearchAndDevelopmentServer
+  id: ResearchAndDevelopmentServer
+  components:
+  - type: TechnologyDatabase
+    supportedDisciplines:
+# <-- ENGINEERING -->
+    - Powercells
+    - EngineeringAdvancedTools
+    - AtmosphericTools
+    - PowerGeneration
+    - EngineeringMachines
+    - MechanicalCompressionMachines
+    - AtmosphericMachines
+# <-- SCIENTIFIC -->
+    - GravityManipulation
+    - QuantumLeaping
+    - BluespaceStorage
+    - AnomalousResearch
+    - AnomalousResearchMachines
+    - XenoArcheologyMachines
+    - AlternativeResearchMachines
+    - AbnormalArtifactManipulationMachines
+# <-- ROBOTICS -->
+    - Robotics
+    - CritterMech
+    - HONKMech
+    - RipleyAPLUMech
+    - MechanizedTreatmentModules
+    - GrapplingModules
+    - SpaceScanningModules
+    - AdvancedToolsModules
+    - HydroponicsModules
+    - EntertainmentAdvancedModules
+    - SalvageEquipmentModules
+    - RoboticCleanlinessModules
+    - XenoArcheologyModules
+    - RoboticsMachines
+# <-- SECURITY -->
+    - RiotControl
+    - WarCrimes
+# <-- ARMORY -->
+    - AnomalyCoreHarnessing
+    - DraconicAmmunition
+    - UraniumAmmunition
+    - Explosive
+    - CombatLaser
+    - CombatLaserConcentrated
+    - CombatLaserWaveHarnessing
+    - CombatLaserExperimental
+# <-- SERVICE -->
+    - EntertainmentAdvanced
+    - EntertainmentAdvancedMachines
+    - FauxAstroTiles
+    - CleaningAdvanced
+    - SprayAdvanced
+    - HydroponicsMachines
+    - MeatManipulationMachine
+# <-- SHAFT -->
+    - SalvageWeapons
+    - SalvageEquipment
+    - Grappling
+    - SpaceScanning
+    - SalvageWeaponsMachines
+    - SalvageEquipmentMachines
+    - SpaceScanningMachines
+# <-- CARGO -->
+    - BluespaceCargoTransportMachines
+# <-- MEDICAL -->
+    - CrewMonitoring
+    - BiochemicalStasis
+    - BiochemicalStasisMachines
+    - Chemistry
+# <-- EQUIPMENT -->
+    - MagneticBoots
+    - QuantumMagneticBoots
+# <-- SHUTTLE -->
+    - ShuttleWeapon
+    - Shuttlecraft
+# <-- TELECOMMUNICATIONS -->
+    - AudioVisualCommunicationMachines
 
 - type: entity
   id: BaseResearchAndDevelopmentPointSource

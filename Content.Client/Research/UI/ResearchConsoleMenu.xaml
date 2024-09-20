@@ -4,15 +4,14 @@
                       xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
                       Title="{Loc 'research-console-menu-title'}"
                       MinSize="625 400"
-                      SetSize="760 550"> <!-- Corvax-Localization -->
+                      SetSize="1260 740"> <!-- Corvax-Next-RNDResearch -->
     <BoxContainer Orientation="Vertical"
                   HorizontalExpand="True"
                   VerticalExpand="True">
-        <BoxContainer Orientation="Horizontal"
-                      HorizontalExpand="True"
+        <BoxContainer Orientation="Vertical"
+                      HorizontalExpand="False"
                       VerticalExpand="False"
-                      MinHeight="85"
-                      Margin="10">
+                      HorizontalAlignment="Right"
             <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
                 <RichTextLabel Name="ResearchAmountLabel"/>
                 <RichTextLabel Name="MainDisciplineLabel"/>
@@ -30,22 +29,24 @@
             <BoxContainer Orientation="Vertical"
                           VerticalExpand="True"
                           HorizontalExpand="True"
-                          SizeFlagsStretchRatio="2"
+                          SizeFlagsStretchRatio="1"
                           Margin="10 0 10 10"
                           MinWidth="175">
+                <RichTextLabel Name="ResearchAmountLabel" HorizontalAlignment="Center" Margin="0 0 0 10"/>
                 <Label Text="{Loc 'research-console-available-text'}" HorizontalAlignment="Center"/>
                 <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 10"/>
                 <PanelContainer VerticalExpand="True">
                     <PanelContainer.PanelOverride>
-                        <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                        <gfx:StyleBoxFlat BackgroundColor="#212121" />
                     </PanelContainer.PanelOverride>
                     <ScrollContainer
                         HScrollEnabled="False"
-                        HorizontalExpand="True"
+                        HorizontalExpand="False"
                         VerticalExpand="True">
                         <BoxContainer
                             Name="AvailableCardsContainer"
-                            Orientation="Vertical"
+                            Orientation="Horizontal"
+                            HorizontalExpand="True"
                             VerticalExpand="True">
                         </BoxContainer>
                     </ScrollContainer>
@@ -55,11 +56,11 @@
                 <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 10"/>
                 <PanelContainer VerticalExpand="True">
                     <PanelContainer.PanelOverride>
-                        <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                        <gfx:StyleBoxFlat BackgroundColor="#212121" />
                     </PanelContainer.PanelOverride>
                     <ScrollContainer
                         HScrollEnabled="False"
-                        HorizontalExpand="True"
+                        HorizontalExpand="False"
                         VerticalExpand="True">
                         <BoxContainer
                             Name="UnlockedCardsContainer"
@@ -76,11 +77,12 @@
                           Margin="0 0 10 10">
                 <PanelContainer VerticalExpand="True" MinSize="0 200">
                     <PanelContainer.PanelOverride>
-                        <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                        <gfx:StyleBoxFlat BackgroundColor="#212121" />
                     </PanelContainer.PanelOverride>
                     <ScrollContainer
                         HScrollEnabled="False"
                         HorizontalExpand="True"
+                        VerticalExpand="True"
                         SizeFlagsStretchRatio="2"
                         VerticalExpand="True">
                         <BoxContainer
