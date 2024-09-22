@@ -63,6 +63,7 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+  - type: HeightTraitBlacklist # Corvax-Next
 
 - type: entity
   parent: BaseSpeciesDummy
