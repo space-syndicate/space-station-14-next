@@ -38,8 +38,8 @@
           pride: { visible: true }
       enum.NukeVisuals.Deployed:
         enum.NukeVisualLayers.Base:
-          False: { state: nuclearbomb_gay }
-          True:  { state: nuclearbomb_gay }
+          False: { state: nuclearbomb_base }
+          True:  { state: nuclearbomb_deployed }
         enum.NukeVisualLayers.Unlit:
           True:  { visible: true }
           False: { visible: false }
