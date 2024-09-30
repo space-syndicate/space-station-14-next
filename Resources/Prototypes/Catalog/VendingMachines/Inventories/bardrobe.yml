@@ -2,6 +2,7 @@
   id: BarDrobeInventory
   startingInventory:
     ClothingHeadHatBowlerHat: 2
+    ClothingHeadBarmenBeret: 2
     ClothingHeadHatTophat: 2
     ClothingEyesHudBeer: 2
     ClothingEyesEyepatchHudBeer: 2

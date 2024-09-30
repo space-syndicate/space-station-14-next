@@ -85,3 +85,14 @@
     sprite: Corvax/Clothing/Head/Hats/caphat.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Head/Hats/caphat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadBarmenBeret
+  name: barmen beret
+  description: Cool beret that shows your mastership in making tides dizzy.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Head/Hats/beret_barmen.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Head/Hats/beret_barmen.rsi
