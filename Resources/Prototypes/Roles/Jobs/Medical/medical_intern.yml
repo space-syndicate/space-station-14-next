@@ -15,6 +15,14 @@
   access:
   - Medical
   - Maintenance
+  special:
+  - !type:AddComponentSpecial
+    components:
+    #start-backmen: surgery
+    #- type: CPRTraining
+    - type: SurgerySpeedModifier
+      SpeedModifier: 1.5
+    #end-backmen: surgery
 
 - type: startingGear
   id: MedicalInternGear
