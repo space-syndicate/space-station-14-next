@@ -14,5 +14,5 @@ ent-ClothingHeadHatBeretSecurityMedic = берет бригмедика
     .desc = Прочный берет с эмблемой медицинской службы.
 ent-ClothingHeadCaptainHat = капитанская шляпа
     .desc = Особая шляпа, сделанная на заказ для капитана.
-ent-ClothingHeadHatBeretBlueShield = офицерский берет "Синий Щит"
+ent-ClothingHeadHatBeretBlueShield = офицерский берет синий щит
     .desc = Золотая вышивка в виде щита видна на берете и выглядит солидно. Он вручается лучшим телохранителям из лучших в знак отличительных качеств.

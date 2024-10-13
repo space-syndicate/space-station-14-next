@@ -1,2 +1,2 @@
-ent-LockerBlueShieldOfficer = шкаф офицера "Синий Щит"
+ent-LockerBlueShieldOfficer = шкаф офицера синий щит
     .desc = Стандартное хранилище NanoTrasen.
