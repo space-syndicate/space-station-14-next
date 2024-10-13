@@ -21,3 +21,15 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobBlueShieldOfficer
+  groups:
+  - Inventory # Corvax-Loadouts
+  - BlueshieldHead
+  - BlueShieldJumpsuit
+  - BlueshieldBackpack
+  - BlueshielOuter
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool

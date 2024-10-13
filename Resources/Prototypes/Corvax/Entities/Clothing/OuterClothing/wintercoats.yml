@@ -1,0 +1,22 @@
+- type: entity
+  parent: [AllowSuitStorageClothing, ClothingOuterWinterCoatToggleable]
+  id: ClothingOuterWinterBlueShield
+  name: officer "Blue Shield" armored winter coat
+  description: Insulated armor winter coat with a minimalistic design made of durable material.
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.6
+        Caustic: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/WinterCoats/blueshield.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/WinterCoats/blueshield.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodWinterBlueShield

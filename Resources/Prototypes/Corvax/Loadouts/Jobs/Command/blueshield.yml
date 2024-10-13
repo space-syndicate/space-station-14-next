@@ -1,0 +1,51 @@
+# Head
+
+- type: loadout
+  id: BlueshieldHead
+  equipment:
+    head: ClothingHeadHatBeretBlueShield
+
+# Jumpsuit
+- type: loadout
+  id: BlueShieldJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBlueShield
+
+- type: loadout
+  id: BlueShieldAltJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAltBlueShield
+
+- type: loadout
+  id: BlueShieldJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtBlueShield
+
+# Backpacks
+
+- type: loadout
+  id: BlueShieldBackpack
+  equipment:
+    back: ClothingBackpackBlueShield
+
+- type: loadout
+  id: BlueShieldDuffel
+  equipment:
+    back: ClothingBackpackDuffelBlueShield
+
+- type: loadout
+  id: BlueShieldSatchel
+  equipment:
+    back: ClothingBackpackSatchelBlueShield
+
+# OuterClothing
+
+- type: loadout
+  id: BlueshieldOterArmor
+  equipment:
+    outerClothing: ClothingOuterArmorBlueShield
+
+- type: loadout
+  id: BlueShieldOuterWinter
+  equipment:
+    outerClothing: ClothingOuterWinterBlueShield

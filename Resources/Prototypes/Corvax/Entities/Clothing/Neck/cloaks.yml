@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakCentcomBlack
   name: special operations officer cloak
@@ -15,3 +15,12 @@
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Neck/Cloaks/admiral.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakBlueShield
+  name: cloak of the officer "Blue Shield"
+  description: A cloak for defenders risking their breasts for NanoTrasen!
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Neck/Cloaks/blueshield.rsi

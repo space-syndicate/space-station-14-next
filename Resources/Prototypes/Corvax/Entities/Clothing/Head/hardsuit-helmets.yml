@@ -40,3 +40,43 @@
         Shock: 0.1
         Cold: 0.2
         Radiation: 0.2
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitBlueShield
+  name: blue shield hardsuit helmet
+  description: The helmet from the Blue Shield suit.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Head/hardsuits/blueshield.rsi
+    layers:
+    - state: icon
+    - state: icon-flash
+      visible: false
+      map: [ "light" ]
+  - type: HandheldLight
+    addPrefix: false
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+  - type: PointLight
+    color: "#87d3bc"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9

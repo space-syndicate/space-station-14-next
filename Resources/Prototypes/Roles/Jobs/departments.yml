@@ -59,6 +59,7 @@
   roles:
   - Captain
   - IAA # Corvax-IAA
+  - BlueShieldOfficer # Corvax-next
   - ChiefEngineer
   - ChiefMedicalOfficer
   - HeadOfPersonnel

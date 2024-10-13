@@ -1,0 +1,60 @@
+- type: job
+  id: BlueShieldOfficer
+  name: job-name-bso
+  description: job-description-bso
+  playTimeTracker: JobBlueShield
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 72000
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 36000
+  - !type:AgeRequirement
+    requiredAge: 21
+  weight: 19
+  startingGear: BlueShieldOfficerGear
+  icon: "JobIconBlueShield"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  access: #Стандартный Расширенный доступ
+  - Bar
+  - Brig
+  - Detective
+  - Cargo
+  - Chapel
+  - Chemistry
+  - Command
+  - Cryogenics
+  - Engineering
+  - External
+  - Hydroponics
+  - Janitor
+  - Kitchen
+  - Maintenance
+  - Medical
+  - Quartermaster
+  - Research
+  - Salvage
+  - Security
+  - Service
+  - Theatre
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: BlueShieldOfficerGear
+  equipment:
+    shoes: ClothingShoesBootsJackFilled
+    id: BlueShieldPDA
+    eyes: ClothingEyesGlassesCommand
+    ears: ClothingHeadsetAltCommand
+    belt: ClothingBeltAssaultFilled
+    gloves: ClothingHandsGlovesCombatBlueShield
+    pocket1: WeaponPistolMk58
+  storage:
+    back:
+    - BoxSurvivalSecurity
+    - MagazinePistol
+    - WeaponDisabler

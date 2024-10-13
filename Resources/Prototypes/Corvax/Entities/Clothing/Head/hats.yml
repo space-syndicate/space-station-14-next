@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadCapCentcomBlack
   name: special operations officer cap
@@ -85,3 +85,14 @@
     sprite: Corvax/Clothing/Head/Hats/caphat.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Head/Hats/caphat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretBlueShield
+  name: officer beret "Blue Shield"
+  description: The gold embroidery of the shield is visible on the beret and looks solid. It is given to the best bodyguards of the best as a sign of distinctive qualities.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Head/Hats/beret_blueshield.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Head/Hats/beret_blueshield.rsi
