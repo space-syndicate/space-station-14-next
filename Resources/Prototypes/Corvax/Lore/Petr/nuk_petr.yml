@@ -28,32 +28,32 @@
         - type: StationNameSetup
           mapNameTemplate: "Petr Outpost"
 #-------------------------------------Объявлялка войны-----------  
-- type: entity
-  parent: BaseItem
-  id: PetrDeclarationOfWar
-  name: Декларатор войны
-  description: Объявите всем, что петрищевцы начинают новый терракт! Тогда другие подпольные ячейки проспонсируют вас.
-  components:
-    - type: Sprite
-      sprite: Objects/Devices/declaration_of_war.rsi
-      layers:
-        - state: declarator
-    - type: Item
-    - type: UseDelay
-      delay: 0.5
-    - type: ActivatableUI
-      inHandsOnly: true
-      singleUser: true
-      requireActiveHand: false
-      key: enum.WarDeclaratorUiKey.Key
-    - type: UserInterface
-      interfaces:
-        enum.WarDeclaratorUiKey.Key:
-          type: WarDeclaratorBoundUserInterface
-    - type: WarDeclarator
-      message: Силы Красной пролетарской Вечной Революции сообщают, что идут в атаку на продажную корпорацию НаноТрейзени требуют от них выдать всех капиталистических акул и их прихвостней, что угнетают простых рабочих станции.
-    - type: AccessReader
-      access: [["PetrAccess"]]
+# - type: entity
+  # parent: BaseItem
+  # id: PetrDeclarationOfWar
+  # name: Декларатор войны
+  # description: Объявите всем, что петрищевцы начинают новый терракт! Тогда другие подпольные ячейки проспонсируют вас.
+  # components:
+    # - type: Sprite
+      # sprite: Objects/Devices/declaration_of_war.rsi
+      # layers:
+        # - state: declarator
+    # - type: Item
+    # - type: UseDelay
+      # delay: 0.5
+    # - type: ActivatableUI
+      # inHandsOnly: true
+      # singleUser: true
+      # requireActiveHand: false
+      # key: enum.WarDeclaratorUiKey.Key
+    # - type: UserInterface
+      # interfaces:
+        # enum.WarDeclaratorUiKey.Key:
+          # type: WarDeclaratorBoundUserInterface
+    # - type: WarDeclarator
+      # message: Силы Красной пролетарской Вечной Революции сообщают, что идут в атаку на продажную корпорацию НаноТрейзени требуют от них выдать всех капиталистических акул и их прихвостней, что угнетают простых рабочих станции.
+    # - type: AccessReader
+      # access: [["PetrAccess"]]
 #-----------------------------------------------гиры-----------------------------  
 #------------------------------------боевик---------- 
 - type: startingGear
@@ -89,47 +89,50 @@
     ears: PetrHeadset
     pocket1: PetrPaperOffi
     pocket2: PetrBaseUplinkRadio50TC 
-  inhand:
-    - PetrDeclarationOfWar    
+  # inhand:
+    # - PetrDeclarationOfWar    
 #-----------------------------------------------антаги-----------------------------  
 - type: antag
   id: NukPetr
-  name: Боевик Петрищевец
+  name: name-of-NukPetr
   antagonist: true
   setPreference: true
-  objective: Уничтожте всех глав, сотрудников безопасности и учёных НТ.
+  objective: objective-of-NukPetr
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 50 
+    time: 36000 
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 10 
+    time: 18000 
 
 - type: antag
   id: NukPetrSpec
-  name: Инженер Петрищевец
+  name: name-of-NukPetrSpec
   antagonist: true
   setPreference: true
-  objective: Уничтожте всех глав, сотрудников безопасности и учёных НТ, делая упор на технические средства.
+  objective: objective-of-NukPetrSpec
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 50 
+    time: 43200 
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 10 
+    time: 18000 
+  - !type:DepartmentTimeRequirement
+    department: Engineering
+    time: 12000 
 
 - type: antag
   id: NukPetrCommander
-  name: Командир Петрищевец
+  name: name-of-NukPetrCommander
   antagonist: true
   setPreference: true
-  objective: Руководите отрядом, дабы избавить пролетариев НТ от капиталистического гнёта их глав, сотрудников безопасности и учёных.
+  objective: objective-of-NukPetrCommander
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 100 
+    time: 82800
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 50 
+    time: 54000
 #-----------------------------------------------набор правил-----------------------------  
 - type: entity
   parent: BaseNukeopsRule
@@ -195,11 +198,11 @@
         prototype: NukPetr
 #-----------------------------------------------режим-----------------------------  
 - type: gamePreset
-  id: NukePetr
+  id: PetrRaid
   alias:
     - petr
-  name: Ядерные Петрищевцы
-  description: Экстремисты-Петрищевцы летят в атаку на станцию, дабы уничтожить глав, учёных и сотрудников СБ. Они готовы даже взорвать станцию! Защищайтесь!
+  name: name-of-PetrRaid
+  description: description-of-PetrRaid
   showInVote: false
   rules:
     - NukPetr
