@@ -77,11 +77,12 @@ public sealed class SolutionHeaterSystem : EntitySystem
     {
         args.AddPercentageUpgrade("solution-heater-upgrade-heat", entity.Comp.HeatPerSecond / entity.Comp.BaseHeatPerSecond);
     }
+    // End Corvax-Next
+
     private void OnItemPlaced(Entity<SolutionHeaterComponent> entity, ref ItemPlacedEvent args)
     {
         TryTurnOn(entity);
     }
-    // End Corvax-Next
 
     private void OnItemRemoved(Entity<SolutionHeaterComponent> entity, ref ItemRemovedEvent args)
     {
