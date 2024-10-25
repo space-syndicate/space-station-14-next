@@ -1,6 +1,7 @@
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Binary.Components;
 using Content.Server.Atmos.Piping.Components;
+using Content.Server.Construction; // Corvax-Next
 using Content.Server.NodeContainer;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.Nodes;
@@ -28,6 +29,8 @@ namespace Content.Server.Atmos.Piping.Binary.EntitySystems
             SubscribeLocalEvent<GasRecyclerComponent, AtmosDeviceUpdateEvent>(OnUpdate);
             SubscribeLocalEvent<GasRecyclerComponent, AtmosDeviceDisabledEvent>(OnDisabled);
             SubscribeLocalEvent<GasRecyclerComponent, ExaminedEvent>(OnExamined);
+            SubscribeLocalEvent<GasRecyclerComponent, RefreshPartsEvent>(OnRefreshParts); // Corvax-Next
+            SubscribeLocalEvent<GasRecyclerComponent, UpgradeExamineEvent>(OnUpgradeExamine); // Corvax-Next
         }
 
         private void OnEnabled(EntityUid uid, GasRecyclerComponent comp, ref AtmosDeviceEnabledEvent args)
@@ -116,5 +119,26 @@ namespace Content.Server.Atmos.Piping.Binary.EntitySystems
 
             _appearance.SetData(uid, PumpVisuals.Enabled, comp.Reacting);
         }
+
+        // Corvax-Next
+        private void OnRefreshParts(EntityUid uid, GasRecyclerComponent component, RefreshPartsEvent args)
+        {
+            var ratingTemp = args.PartRatings["Capacitor"];
+            var ratingPressure = args.PartRatings["Manipulator"];
+
+            var copy = new GasRecyclerComponent();
+
+            component.MinTemp = copy.MinTemp * MathF.Pow(0.95f, ratingTemp - 1);
+            component.MinPressure = copy.MinPressure * MathF.Pow(0.8f, ratingPressure - 1);
+        }
+
+        private void OnUpgradeExamine(EntityUid uid, GasRecyclerComponent component, UpgradeExamineEvent args)
+        {
+            var copy = new GasRecyclerComponent();
+
+            args.AddPercentageUpgrade("gas-recycler-upgrade-min-temp", component.MinTemp / copy.MinTemp);
+            args.AddPercentageUpgrade("gas-recycler-upgrade-min-pressure", component.MinPressure / copy.MinPressure);
+        }
+        // End Corvax-Next
     }
 }

@@ -23,6 +23,9 @@ namespace Content.Server.Kitchen.Components
         [DataField("failureResult", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
         public string BadRecipeEntityId = "FoodBadRecipe";
 
+        [ViewVariables(VVAccess.ReadOnly)]
+        public float FinalCookTimeMultiplier = 1.0f; // Corvax-Next: machine parts
+
         #region  audio
         [DataField("beginCookingSound")]
         public SoundSpecifier StartCookingSound = new SoundPathSpecifier("/Audio/Machines/microwave_start_beep.ogg");

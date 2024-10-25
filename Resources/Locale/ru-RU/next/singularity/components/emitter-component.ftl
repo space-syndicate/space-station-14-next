@@ -1,0 +1,1 @@
+emitter-component-upgrade-fire-rate = скорость выстрела

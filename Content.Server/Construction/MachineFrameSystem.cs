@@ -8,6 +8,7 @@ using Content.Shared.Tag;
 using Content.Shared.Popups;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
+using Content.Shared.Construction.Prototypes; // Corvax-Next
 
 namespace Content.Server.Construction;
 
@@ -62,6 +63,17 @@ public sealed class MachineFrameSystem : EntitySystem
         // If this changes in the future, then RegenerateProgress() also needs to be updated.
         // Note that one entity is ALLOWED to satisfy more than one kind of component or tag requirements. This is
         // necessary in order to avoid weird entity-ordering shenanigans in RegenerateProgress().
+
+        // Corvax-Next: restore upgradeable parts
+        // Handle parts
+        if (TryComp<MachinePartComponent>(args.Used, out var machinePart))
+        {
+            if (TryInsertPart(uid, args.Used, component, machinePart))
+                args.Handled = true;
+            return;
+        }
+        // End Corvax-Next
+
         if (TryComp<StackComponent>(args.Used, out var stack))
         {
             if (TryInsertStack(uid, args.Used, component, stack))
@@ -155,6 +167,62 @@ public sealed class MachineFrameSystem : EntitySystem
         return true;
     }
 
+    // Frontier: restore upgradeable parts
+    /// <returns>Whether or not the function had any effect. Does not indicate success.</returns>
+    private bool TryInsertPart(EntityUid uid, EntityUid used, MachineFrameComponent component, MachinePartComponent machinePart)
+    {
+        if (!component.Requirements.ContainsKey(machinePart.PartType))
+            return false;
+
+        if (component.Progress[machinePart.PartType] >= component.Requirements[machinePart.PartType])
+            return false;
+
+        // Check for stack
+        if (TryComp<StackComponent>(used, out var stack))
+        {
+            int needed = component.Requirements[machinePart.PartType] - component.Progress[machinePart.PartType];
+            var count = stack.Count;
+            if (count < needed)
+            {
+                if (!_container.TryRemoveFromContainer(used))
+                    return false;
+
+                if (!_container.Insert(used, component.PartContainer))
+                    return true;
+
+                component.Progress[machinePart.PartType] += count;
+                return true;
+            }
+
+            var splitStack = _stack.Split(used, needed, Transform(uid).Coordinates, stack);
+
+            if (splitStack == null)
+                return false;
+
+            if (!_container.Insert(splitStack.Value, component.PartContainer))
+                return true;
+
+            component.Progress[machinePart.PartType] += needed;
+        }
+        // No stack
+        else
+        {
+            if (!_container.TryRemoveFromContainer(used))
+                return false;
+
+            if (!_container.Insert(used, component.PartContainer))
+                return true;
+
+            component.Progress[machinePart.PartType]++;
+        }
+
+        if (IsComplete(component))
+            _popupSystem.PopupEntity(Loc.GetString("machine-frame-component-on-complete"), uid);
+
+        return true;
+    }
+    // End Corvax-Next
+
     /// <returns>Whether or not the function had any effect. Does not indicate success.</returns>
     private bool TryInsertStack(EntityUid uid, EntityUid used, MachineFrameComponent component, StackComponent stack)
     {
@@ -203,6 +271,14 @@ public sealed class MachineFrameSystem : EntitySystem
         if (!component.HasBoard)
             return false;
 
+        // Corvax-Next: restore upgradeable parts
+        foreach (var (type, amount) in component.Requirements)
+        {
+            if (component.Progress[type] < amount)
+                return false;
+        }
+        // End Corvax-Next
+
         foreach (var (type, amount) in component.MaterialRequirements)
         {
             if (component.MaterialProgress[type] < amount)
@@ -226,13 +302,22 @@ public sealed class MachineFrameSystem : EntitySystem
 
     public void ResetProgressAndRequirements(MachineFrameComponent component, MachineBoardComponent machineBoard)
     {
+        component.Requirements = new Dictionary<ProtoId<MachinePartPrototype>, int>(machineBoard.Requirements); // Corvax-Next: upgradeable machine parts
         component.MaterialRequirements = new Dictionary<ProtoId<StackPrototype>, int>(machineBoard.StackRequirements);
         component.ComponentRequirements = new Dictionary<string, GenericPartInfo>(machineBoard.ComponentRequirements);
         component.TagRequirements = new Dictionary<ProtoId<TagPrototype>, GenericPartInfo>(machineBoard.TagRequirements);
 
+        component.Progress.Clear(); // Corvax-Next: upgradeable machine parts
         component.MaterialProgress.Clear();
         component.ComponentProgress.Clear();
         component.TagProgress.Clear();
+
+        // Corvax-Next: upgradeable machine parts
+        foreach (var (partType, _) in component.Requirements)
+        {
+            component.Progress[partType] = 0;
+        }
+        // End Corvax-Next
 
         foreach (var (stackType, _) in component.MaterialRequirements)
         {
@@ -254,10 +339,12 @@ public sealed class MachineFrameSystem : EntitySystem
     {
         if (!component.HasBoard)
         {
+            component.Requirements.Clear(); // Corvax-Next
             component.TagRequirements.Clear();
             component.MaterialRequirements.Clear();
             component.ComponentRequirements.Clear();
             component.TagRequirements.Clear();
+            component.Progress.Clear(); // Corvax-Next
             component.MaterialProgress.Clear();
             component.ComponentProgress.Clear();
             component.TagProgress.Clear();
@@ -276,6 +363,26 @@ public sealed class MachineFrameSystem : EntitySystem
 
         foreach (var part in component.PartContainer.ContainedEntities)
         {
+            // Corvax-Next: upgradeable machine parts
+            if (TryComp<MachinePartComponent>(part, out var machinePart))
+            {
+                var type = machinePart.PartType;
+                if (!component.Requirements.ContainsKey(type))
+                    continue;
+
+                int quantity = 1;
+                if (TryComp<StackComponent>(part, out var partStack))
+                    quantity = partStack.Count;
+
+                if (!component.Progress.ContainsKey(type))
+                    component.Progress[type] = quantity;
+                else
+                    component.Progress[type] += quantity;
+
+                continue;
+            }
+            // End Corvax-Next
+
             if (TryComp<StackComponent>(part, out var stack))
             {
                 var type = stack.StackTypeId;

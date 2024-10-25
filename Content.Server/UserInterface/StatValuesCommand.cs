@@ -7,6 +7,7 @@ using Content.Server.Item;
 using Content.Server.Power.Components;
 using Content.Shared.Administration;
 using Content.Shared.Item;
+using Content.Shared.Materials; // Corvax-Next
 using Content.Shared.Research.Prototypes;
 using Content.Shared.UserInterface;
 using Content.Shared.Weapons.Melee;
@@ -225,7 +226,7 @@ public sealed class StatValuesCommand : IConsoleCommand
 
             foreach (var (material, count) in proto.Materials)
             {
-                var materialPrice = _proto.Index(material).Price;
+                var materialPrice = _proto.Index<MaterialPrototype>(material).Price;
                 cost += materialPrice * count;
             }
 

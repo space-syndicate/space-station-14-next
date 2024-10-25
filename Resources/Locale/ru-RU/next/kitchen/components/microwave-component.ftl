@@ -1,0 +1,1 @@
+microwave-component-upgrade-cook-time = время готовки

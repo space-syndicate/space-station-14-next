@@ -2,6 +2,7 @@ using Content.Server.Atmos.EntitySystems;
 using Content.Server.Chat.Systems;
 using Content.Server.Cloning.Components;
 using Content.Server.DeviceLinking.Systems;
+using Content.Server.Construction; // Corvax-Next
 using Content.Server.EUI;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Humanoid;
@@ -75,6 +76,8 @@ namespace Content.Server.Cloning
             SubscribeLocalEvent<CloningPodComponent, AnchorStateChangedEvent>(OnAnchor);
             SubscribeLocalEvent<CloningPodComponent, ExaminedEvent>(OnExamined);
             SubscribeLocalEvent<CloningPodComponent, GotEmaggedEvent>(OnEmagged);
+            SubscribeLocalEvent<CloningPodComponent, RefreshPartsEvent>(OnPartsRefreshed); // Corvax-Next
+            SubscribeLocalEvent<CloningPodComponent, UpgradeExamineEvent>(OnUpgradeExamine); // Corvax-Next
         }
 
         private void OnComponentInit(EntityUid uid, CloningPodComponent clonePod, ComponentInit args)
@@ -340,5 +343,26 @@ namespace Content.Server.Cloning
         {
             ClonesWaitingForMind.Clear();
         }
+
+        // Corvax-Next
+        private void OnPartsRefreshed(EntityUid uid, CloningPodComponent component, RefreshPartsEvent args)
+        {
+            var materialRating = args.PartRatings["MatterBin"];
+            var speedRating = args.PartRatings["Manipulator"];
+
+            var copy = new CloningPodComponent();
+
+            component.UsedBiomass = (int)(copy.UsedBiomass * MathF.Pow(0.85f, materialRating - 1));
+            component.CloningTime = copy.CloningTime * MathF.Pow(0.75f, speedRating - 1);
+        }
+
+        private void OnUpgradeExamine(EntityUid uid, CloningPodComponent component, UpgradeExamineEvent args)
+        {
+            var copy = new CloningPodComponent();
+
+            args.AddPercentageUpgrade("cloning-pod-component-upgrade-speed", copy.CloningTime / component.CloningTime);
+            args.AddPercentageUpgrade("cloning-pod-component-upgrade-biomass-requirement", copy.UsedBiomass / component.UsedBiomass);
+        }
+        // End Corvax-Next
     }
 }

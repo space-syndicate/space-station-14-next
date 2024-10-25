@@ -5,6 +5,7 @@ using Content.Server.DeviceLinking.Events;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Projectiles;
+using Content.Server.Construction; // Corvax-Next
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared.Database;
 using Content.Shared.Examine;
@@ -50,6 +51,8 @@ namespace Content.Server.Singularity.EntitySystems
             SubscribeLocalEvent<EmitterComponent, ExaminedEvent>(OnExamined);
             SubscribeLocalEvent<EmitterComponent, AnchorStateChangedEvent>(OnAnchorStateChanged);
             SubscribeLocalEvent<EmitterComponent, SignalReceivedEvent>(OnSignalReceived);
+            SubscribeLocalEvent<EmitterComponent, RefreshPartsEvent>(OnRefreshParts); // Corvax-Next
+            SubscribeLocalEvent<EmitterComponent, UpgradeExamineEvent>(OnUpgradeExamine); // Corvax-Next
         }
 
         private void OnAnchorStateChanged(EntityUid uid, EmitterComponent component, ref AnchorStateChangedEvent args)
@@ -330,5 +333,23 @@ namespace Content.Server.Singularity.EntitySystems
                 component.BoltType = boltType;
             }
         }
+
+        // Corvax-Next
+        private void OnRefreshParts(EntityUid uid, EmitterComponent component, RefreshPartsEvent args)
+        {
+            var fireRateRating = args.PartRatings["Capacitor"];
+
+            var copy = new EmitterComponent();
+
+            component.FireInterval = copy.FireInterval * MathF.Pow(0.8f, fireRateRating - 1);
+            component.FireBurstDelayMin = copy.FireBurstDelayMin * MathF.Pow(0.8f, fireRateRating - 1);
+            component.FireBurstDelayMax = copy.FireBurstDelayMax * MathF.Pow(0.8f, fireRateRating - 1);
+        }
+
+        private void OnUpgradeExamine(EntityUid uid, EmitterComponent component, UpgradeExamineEvent args)
+        {
+            args.AddPercentageUpgrade("emitter-component-upgrade-fire-rate", (float)(new EmitterComponent().FireInterval.TotalSeconds / component.FireInterval.TotalSeconds));
+        }
+        // End Corvax-Next
     }
 }

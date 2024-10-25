@@ -1,0 +1,1 @@
+seed-extractor-component-upgrade-seed-yield = урожайность

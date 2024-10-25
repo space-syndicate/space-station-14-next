@@ -32,6 +32,7 @@ namespace Content.Server.Construction
             InitializeInteractions();
             InitializeInitial();
             InitializeMachines();
+            InitializeMachineUpgrades(); // Corvax-Next
 
             SubscribeLocalEvent<ConstructionComponent, ComponentInit>(OnConstructionInit);
             SubscribeLocalEvent<ConstructionComponent, ComponentStartup>(OnConstructionStartup);

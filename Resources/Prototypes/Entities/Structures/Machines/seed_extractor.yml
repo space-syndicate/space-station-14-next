@@ -35,3 +35,6 @@
   - type: SeedExtractor
   - type: Machine
     board: SeedExtractorMachineCircuitboard
+  - type: UpgradePowerDraw # Corvax-Next
+    powerDrawMultiplier: 0.75
+    scaling: Exponential

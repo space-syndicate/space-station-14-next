@@ -26,8 +26,10 @@ public sealed class GeneratorSystem : SharedGeneratorSystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly PuddleSystem _puddle = default!;
 
+    private EntityQuery<UpgradePowerSupplierComponent> _upgradeQuery; // Corvax-Next 
     public override void Initialize()
     {
+        _upgradeQuery = GetEntityQuery<UpgradePowerSupplierComponent>(); // Corvax-Next
 
         UpdatesBefore.Add(typeof(PowerNetSystem));
 
@@ -225,7 +227,8 @@ public sealed class GeneratorSystem : SharedGeneratorSystem
 
             supplier.Enabled = true;
 
-            supplier.MaxSupply = gen.TargetPower;
+            var upgradeMultiplier = _upgradeQuery.CompOrNull(uid)?.ActualScalar ?? 1f; // Corvax-Next
+            supplier.MaxSupply = gen.TargetPower * upgradeMultiplier; // Corvax-Next
 
             var eff = 1 / CalcFuelEfficiency(gen.TargetPower, gen.OptimalPower, gen);
             var consumption = gen.OptimalBurnRate * frameTime * eff;

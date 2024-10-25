@@ -1,0 +1,1 @@
+fat-extractor-component-rate = скорость извлечения

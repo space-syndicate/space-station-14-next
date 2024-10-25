@@ -1,0 +1,1 @@
+medical-scanner-upgrade-cloning = шанс неудачного клонирования

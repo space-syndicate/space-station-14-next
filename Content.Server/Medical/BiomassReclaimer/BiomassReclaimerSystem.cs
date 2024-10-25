@@ -3,6 +3,7 @@ using Content.Server.Body.Components;
 using Content.Server.Botany.Components;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Materials;
+using Content.Server.Construction; // Corvax-Next
 using Content.Server.Power.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Audio;
@@ -109,6 +110,8 @@ namespace Content.Server.Medical.BiomassReclaimer
             SubscribeLocalEvent<BiomassReclaimerComponent, PowerChangedEvent>(OnPowerChanged);
             SubscribeLocalEvent<BiomassReclaimerComponent, SuicideByEnvironmentEvent>(OnSuicideByEnvironment);
             SubscribeLocalEvent<BiomassReclaimerComponent, ReclaimerDoAfterEvent>(OnDoAfter);
+            SubscribeLocalEvent<BiomassReclaimerComponent, RefreshPartsEvent>(OnRefreshParts); // Corvax-Next
+            SubscribeLocalEvent<BiomassReclaimerComponent, UpgradeExamineEvent>(OnUpgradeExamine); // Corvax-Next
         }
 
         private void OnSuicideByEnvironment(Entity<BiomassReclaimerComponent> ent, ref SuicideByEnvironmentEvent args)
@@ -263,5 +266,27 @@ namespace Content.Server.Medical.BiomassReclaimer
 
             return true;
         }
+
+        // Corvax-Next
+        private void OnRefreshParts(EntityUid uid, BiomassReclaimerComponent component, RefreshPartsEvent args)
+        {
+            var laserRating = args.PartRatings["Manipulator"];
+            var manipRating = args.PartRatings["MatterBin"];
+
+            // Processing time slopes downwards with part rating.
+            component.ProcessingTimePerUnitMass =
+                0.5f / MathF.Pow(0.75f, laserRating - 1);
+
+            // Yield slopes upwards with part rating.
+            component.YieldPerUnitMass =
+                0.4f * MathF.Pow(1.25f, manipRating - 1);
+        }
+
+        private void OnUpgradeExamine(EntityUid uid, BiomassReclaimerComponent component, UpgradeExamineEvent args)
+        {
+            args.AddPercentageUpgrade("biomass-reclaimer-component-upgrade-speed", 0.5f / component.ProcessingTimePerUnitMass);
+            args.AddPercentageUpgrade("biomass-reclaimer-component-upgrade-biomass-yield", component.YieldPerUnitMass / 0.4f);
+        }
+        // End Corvax-Next
     }
 }

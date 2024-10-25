@@ -29,6 +29,12 @@
           state: "smes-op1"
           shader: unshaded
     - type: Smes
+    - type: UpgradeBattery # Corvax-Next
+      maxChargeMultiplier: 2
+      baseMaxCharge: 8000000
+    - type: UpgradePowerSupplyRamping # Corvax-Next
+      scaling: Linear
+      supplyRampingMultiplier: 1 
     - type: Appearance
     - type: Battery
       startingCharge: 0

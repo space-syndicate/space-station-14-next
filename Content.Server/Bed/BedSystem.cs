@@ -1,4 +1,6 @@
 using Content.Server.Actions;
+using Content.Server.Construction; // Corvax-Next
+using Content.Shared.Emag.Components; // Corvax-Next
 using Content.Server.Bed.Components;
 using Content.Server.Body.Systems;
 using Content.Server.Power.Components;
@@ -34,6 +36,8 @@ namespace Content.Server.Bed
             SubscribeLocalEvent<StasisBedComponent, UnstrappedEvent>(OnStasisUnstrapped);
             SubscribeLocalEvent<StasisBedComponent, PowerChangedEvent>(OnPowerChanged);
             SubscribeLocalEvent<StasisBedComponent, GotEmaggedEvent>(OnEmagged);
+            SubscribeLocalEvent<StasisBedComponent, RefreshPartsEvent>(OnRefreshParts); // Corvax-Next
+            SubscribeLocalEvent<StasisBedComponent, UpgradeExamineEvent>(OnUpgradeExamine); // Corvax-Next
         }
 
         private void OnStrapped(Entity<HealOnBuckleComponent> bed, ref StrappedEvent args)
@@ -133,5 +137,24 @@ namespace Content.Server.Bed
                 RaiseLocalEvent(buckledEntity, ref metabolicEvent);
             }
         }
+
+        // Corvax-Next
+        private void OnRefreshParts(EntityUid uid, StasisBedComponent component, RefreshPartsEvent args)
+        {
+            var metabolismRating = args.PartRatings["Capacitor"];
+            StasisBedComponent copy = new StasisBedComponent();
+
+            component.Multiplier = copy.Multiplier * metabolismRating; //linear scaling so it's not OP
+            if (HasComp<EmaggedComponent>(uid))
+                component.Multiplier = 1f / component.Multiplier;
+        }
+
+        private void OnUpgradeExamine(EntityUid uid, StasisBedComponent component, UpgradeExamineEvent args)
+        {
+            StasisBedComponent copy = new StasisBedComponent();
+
+            args.AddPercentageUpgrade("stasis-bed-component-upgrade-stasis", component.Multiplier / copy.Multiplier);
+        }
+        // End Corvax-Next
     }
 }

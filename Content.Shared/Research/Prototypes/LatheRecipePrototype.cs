@@ -5,6 +5,7 @@ using Content.Shared.Materials;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary; // Corvax-Next
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Research.Prototypes
@@ -55,12 +56,21 @@ namespace Content.Shared.Research.Prototypes
         [DataField("completetime")]
         public TimeSpan CompleteTime = TimeSpan.FromSeconds(5);
 
+        // Corvax-Next
         /// <summary>
         ///     The materials required to produce this recipe.
         ///     Takes a material ID as string.
         /// </summary>
-        [DataField]
-        public Dictionary<ProtoId<MaterialPrototype>, int> Materials = new();
+        [ViewVariables]
+        public Dictionary<string, int> Materials
+        {
+            get => _materials;
+            private set => _materials = value;
+        }
+
+        [DataField("materials", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<int, MaterialPrototype>))]
+        private Dictionary<string, int> _materials = new();
+        // End Corvax-Next
 
         [DataField]
         public bool ApplyMaterialDiscount = true;

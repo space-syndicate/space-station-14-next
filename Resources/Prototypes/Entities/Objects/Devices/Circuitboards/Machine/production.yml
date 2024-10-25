@@ -6,9 +6,10 @@
   components:
     - type: MachineBoard
       prototype: Autolathe
+      requirements: # Corvax-Next
+        MatterBin: 3 # Corvax-Next stackRequirements<requirements
+        Manipulator: 1 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        MatterBin: 3
-        Manipulator: 1
         Glass: 1
 
 - type: entity
@@ -19,8 +20,9 @@
   components:
   - type: MachineBoard
     prototype: AutolatheHyperConvection
+    requirements: # Corvax-Next
+      MatterBin: 3 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      MatterBin: 3
       Glass: 1
     tagRequirements:
       Igniter:
@@ -35,9 +37,9 @@
   components:
     - type: MachineBoard
       prototype: Protolathe
-      stackRequirements:
-        MatterBin: 2
-        Manipulator: 2
+      requirements: # Corvax-Next
+        MatterBin: 2 # Corvax-Next stackRequirements<requirements
+        Manipulator: 2 # Corvax-Next stackRequirements<requirements
       tagRequirements:
         GlassBeaker:
           amount: 2
@@ -51,8 +53,8 @@
   components:
   - type: MachineBoard
     prototype: ProtolatheHyperConvection
-    stackRequirements:
-      MatterBin: 2
+    requirements: # Corvax-Next
+      MatterBin: 2 # Corvax-Next stackRequirements<requirements
     tagRequirements:
       GlassBeaker:
         amount: 2
@@ -69,8 +71,9 @@
   components:
     - type: MachineBoard
       prototype: Biofabricator
+      requirements: # Corvax-Next
+        MatterBin: 4 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        MatterBin: 4
         Glass: 1
 
 - type: entity
@@ -83,9 +86,9 @@
       state: security
     - type: MachineBoard
       prototype: SecurityTechFab
-      stackRequirements:
-        MatterBin: 2
-        Manipulator: 2
+      requirements: # Corvax-Next
+        MatterBin: 2 # Corvax-Next stackRequirements<requirements
+        Manipulator: 2 # Corvax-Next stackRequirements<requirements
       tagRequirements:
         GlassBeaker:
           amount: 2
@@ -101,9 +104,9 @@
       state: security
     - type: MachineBoard
       prototype: AmmoTechFab
-      stackRequirements:
-        MatterBin: 1
-        Manipulator: 1
+      requirements: # Corvax-Next
+        MatterBin: 1 # Corvax-Next stackRequirements<requirements
+        Manipulator: 1 # Corvax-Next stackRequirements<requirements
 
 - type: entity
   id: MedicalTechFabCircuitboard
@@ -115,9 +118,9 @@
       state: medical
     - type: MachineBoard
       prototype: MedicalTechFab
-      stackRequirements:
-        MatterBin: 2
-        Manipulator: 2
+      requirements: # Corvax-Next
+        MatterBin: 2 # Corvax-Next stackRequirements<requirements
+        Manipulator: 2 # Corvax-Next stackRequirements<requirements
       tagRequirements:
         GlassBeaker:
           amount: 2
@@ -134,9 +137,9 @@
     state: science
   - type: MachineBoard
     prototype: CircuitImprinter
-    stackRequirements:
-      MatterBin: 1
-      Manipulator: 1
+    requirements: # Corvax-Next
+      MatterBin: 1 # Corvax-Next stackRequirements<requirements
+      Manipulator: 1 # Corvax-Next stackRequirements<requirements
     tagRequirements:
       GlassBeaker:
         amount: 2
@@ -152,8 +155,8 @@
     state: science
   - type: MachineBoard
     prototype: CircuitImprinterHyperConvection
-    stackRequirements:
-      MatterBin: 2
+    requirements: # Corvax-Next
+      MatterBin: 2 # Corvax-Next stackRequirements<requirements
     tagRequirements:
       GlassBeaker:
         amount: 2
@@ -171,13 +174,11 @@
     state: science
   - type: MachineBoard
     prototype: ExosuitFabricator
+    requirements: # Corvax-Next
+      MatterBin: 1 # Corvax-Next stackRequirements<requirements
+      Manipulator: 3 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      MatterBin: 1
-      Manipulator: 3
       Glass: 5
-  - type: GuideHelp
-    guides:
-    - Robotics
 
 # yes i know this prototype name is long i'm just following conventions
 - type: entity
@@ -203,8 +204,8 @@
     state: service
   - type: MachineBoard
     prototype: Biogenerator
-    stackRequirements:
-      MatterBin: 2
+    requirements: # Corvax-Next
+      MatterBin: 2 # Corvax-Next stackRequirements<requirements
     tagRequirements:
       GlassBeaker:
         amount: 1
@@ -217,9 +218,9 @@
   components:
   - type: MachineBoard
     prototype: UniformPrinter
-    stackRequirements:
-      MatterBin: 1
-      Manipulator: 2
+    requirements: # Corvax-Next
+      MatterBin: 1 # Corvax-Next stackRequirements<requirements
+      Manipulator: 2 # Corvax-Next stackRequirements<requirements
 
 - type: entity
   id: VaccinatorMachineCircuitboard
@@ -230,9 +231,10 @@
     state: medical
   - type: MachineBoard
     prototype: Vaccinator
+    requirements: # Corvax-Next
+      MatterBin: 1 # Corvax-Next stackRequirements<requirements
+      Manipulator: 1 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      MatterBin: 1
-      Manipulator: 1
       Cable: 5
     tagRequirements:
         GlassBeaker:
@@ -269,9 +271,10 @@
       state: science
     - type: MachineBoard
       prototype: MachineArtifactAnalyzer
+      requirements: # Corvax-Next
+        Manipulator: 3 # Corvax-Next stackRequirements<requirements
+        Capacitor: 1 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Manipulator: 3
-        Capacitor: 1
         Glass: 5
 
 - type: entity
@@ -284,8 +287,9 @@
     state: science
   - type: MachineBoard
     prototype: MachineArtifactCrusher
+    requirements: # Corvax-Next
+      Manipulator: 2 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      Manipulator: 2
       Glass: 1
       Steel: 5
 
@@ -299,8 +303,9 @@
       state: science
     - type: MachineBoard
       prototype: MachineAnomalyVessel
+      requirements: # Corvax-Next
+        Capacitor: 3 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 3
         Cable: 1
         PlasmaGlass: 10
 
@@ -314,8 +319,9 @@
     state: science
   - type: MachineBoard
     prototype: MachineAnomalyVesselExperimental
+    requirements: # Corvax-Next
+      Capacitor: 3 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      Capacitor: 3
       Cable: 5
       PlasmaGlass: 15
       MetalRod: 4
@@ -330,9 +336,10 @@
       state: science
     - type: MachineBoard
       prototype: MachineAnomalySynchronizer
+      requirements: # Corvax-Next
+        Manipulator: 2 # Corvax-Next stackRequirements<requirements
+        Capacitor: 5 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Manipulator: 2
-        Capacitor: 5
         PlasmaGlass: 5
         Cable: 5
 
@@ -346,8 +353,9 @@
       state: science
     - type: MachineBoard
       prototype: MachineAPE
+      requirements: # Corvax-Next
+        Capacitor: 2 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 2
         Cable: 1
         Glass: 1
 
@@ -361,9 +369,10 @@
     state: engineering
   - type: MachineBoard
     prototype: GasThermoMachineFreezer
+    requirements: # Corvax-Next
+      MatterBin: 2 # Corvax-Next stackRequirements<requirements
+      Capacitor: 2 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
       Cable: 5
   - type: Construction
     deconstructionTarget: null
@@ -380,9 +389,10 @@
     state: engineering
   - type: MachineBoard
     prototype: GasThermoMachineHeater
+    requirements: # Corvax-Next
+      MatterBin: 2 # Corvax-Next stackRequirements<requirements
+      Capacitor: 2 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
       Cable: 5
   - type: Construction
     graph: ThermomachineBoard
@@ -399,9 +409,10 @@
     state: engineering
   - type: MachineBoard
     prototype: GasThermoMachineHellfireFreezer
+    requirements: # Corvax-Next
+      MatterBin: 2 # Corvax-Next stackRequirements<requirements
+      Capacitor: 2 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
       Plasma: 1
   - type: Construction
     deconstructionTarget: null
@@ -418,9 +429,10 @@
     state: engineering
   - type: MachineBoard
     prototype: GasThermoMachineHellfireHeater
+    requirements: # Corvax-Next
+      MatterBin: 2 # Corvax-Next stackRequirements<requirements
+      Capacitor: 2 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
       Plasma: 1
   - type: Construction
     graph: ThermomachineBoard
@@ -437,8 +449,9 @@
     state: engineering
   - type: MachineBoard
     prototype: BaseGasCondenser
+    requirements: # Corvax-Next
+      MatterBin: 1 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      MatterBin: 1
       Glass: 1
 
 - type: entity
@@ -451,9 +464,10 @@
     state: engineering
   - type: MachineBoard
     prototype: PortableScrubber
+    requirements: # Corvax-Next
+      MatterBin: 1 # Corvax-Next stackRequirements<requirements
+      Manipulator: 2 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      MatterBin: 1
-      Manipulator: 2
       Cable: 5
       Glass: 2
 
@@ -467,9 +481,10 @@
     state: engineering
   - type: MachineBoard
     prototype: SpaceHeater
+    requirements: # Corvax-Next
+      MatterBin: 1 # Corvax-Next stackRequirements<requirements
+      Capacitor: 2 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      MatterBin: 1
-      Capacitor: 2
       Cable: 5
 
 - type: entity
@@ -482,9 +497,10 @@
       state: medical
     - type: MachineBoard
       prototype: CloningPod
+      requirements: # Corvax-Next
+        MatterBin: 2 # Corvax-Next stackRequirements<requirements
+        Manipulator: 2 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        MatterBin: 2
-        Manipulator: 2
         Glass: 1
         Cable: 1
 
@@ -498,8 +514,9 @@
       state: medical
     - type: MachineBoard
       prototype: MedicalScanner
+      requirements: # Corvax-Next
+        Capacitor: 1 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 1
         Glass: 5
         Cable: 1
 
@@ -539,8 +556,9 @@
       state: medical
     - type: MachineBoard
       prototype: ChemMaster
+      requirements: # Corvax-Next
+        Capacitor: 1 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 1
         Glass: 1
         Cable: 1
       tagRequirements:
@@ -558,8 +576,9 @@
       state: medical
     - type: MachineBoard
       prototype: ChemDispenserEmpty
+      requirements: # Corvax-Next
+        Capacitor: 1 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 1
         Glass: 1
         Steel: 3
       tagRequirements:
@@ -575,9 +594,10 @@
   components:
     - type: MachineBoard
       prototype: BiomassReclaimer
+      requirements: # Corvax-Next
+        MatterBin: 2 # Corvax-Next stackRequirements<requirements
+        Manipulator: 1 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        MatterBin: 2
-        Manipulator: 1
         Steel: 5
       tagRequirements:
         Knife:
@@ -614,9 +634,10 @@
       state: service
     - type: MachineBoard
       prototype: SeedExtractor
+      requirements: # Corvax-Next
+        Manipulator: 2 # Corvax-Next stackRequirements<requirements
+        Capacitor: 1 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Manipulator: 2
-        Capacitor: 1
         # replacing the console screen
         Glass: 1
         Cable: 2
@@ -632,13 +653,11 @@
       state: power_mod
     - type: MachineBoard
       prototype: SMESBasicEmpty
+      requirements: # Corvax-Next
+        Capacitor: 1 # Corvax-Next stackRequirements<requirements
+        PowerCell: 4 # Corvax-Next componentRequirements<requirements
       stackRequirements:
-        Capacitor: 1
         CableHV: 10
-      componentRequirements:
-        PowerCell:
-          amount: 4
-          defaultPrototype: PowerCellSmall
 
 - type: entity
   id: CellRechargerCircuitboard
@@ -651,8 +670,9 @@
       state: charger_APC
     - type: MachineBoard
       prototype: PowerCellRecharger
+      requirements: # Corvax-Next
+        Capacitor: 2 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 2
         Cable: 5
     - type: PhysicalComposition
       materialComposition:
@@ -672,8 +692,9 @@
       state: charger_APC
     - type: MachineBoard
       prototype: PowerCageRecharger
+      requirements: # Corvax-Next
+        Capacitor: 4 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 4
         Steel: 5
         Cable: 10
     - type: PhysicalComposition
@@ -694,8 +715,9 @@
       state: charger_APC
     - type: MachineBoard
       prototype: BorgCharger
+      requirements: # Corvax-Next
+        Capacitor: 2 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 2
         Cable: 5
     - type: PhysicalComposition
       materialComposition:
@@ -715,8 +737,9 @@
       state: charger_APC
     - type: MachineBoard
       prototype: WeaponCapacitorRecharger
+      requirements: # Corvax-Next
+        Capacitor: 2 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 2
         CableMV: 5
     - type: PhysicalComposition
       materialComposition:
@@ -736,8 +759,9 @@
     state: charger_APC
   - type: MachineBoard
     prototype: TurboItemRecharger
+    requirements: # Corvax-Next
+      Capacitor: 2 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      Capacitor: 2
       CableMV: 5
   - type: PhysicalComposition
     materialComposition:
@@ -752,14 +776,12 @@
   components:
     - type: MachineBoard
       prototype: SubstationBasicEmpty
+      requirements: # Corvax-Next
+        Capacitor: 1 # Corvax-Next stackRequirements<requirements
+        PowerCell: 1 # Corvax-Next componentRequirements<requirements
       stackRequirements:
-        Capacitor: 1
         CableMV: 5
         CableHV: 5
-      componentRequirements:
-        PowerCell:
-          amount: 1
-          defaultPrototype: PowerCellSmall
     - type: PhysicalComposition
       materialComposition:
         Glass: 200
@@ -810,8 +832,9 @@
       state: engineering
     - type: MachineBoard
       prototype: PortableGeneratorPacman
+      requirements: # Corvax-Next
+        Capacitor: 1 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 1
         CableHV: 5
     - type: PhysicalComposition
       materialComposition:
@@ -828,8 +851,9 @@
   components:
   - type: MachineBoard
     prototype: Thruster
+    requirements: # Corvax-Next
+      Capacitor: 4 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      Capacitor: 4
       Steel: 5
 
 - type: entity
@@ -839,9 +863,10 @@
   components:
   - type: MachineBoard
     prototype: Gyroscope
+    requirements: # Corvax-Next
+      Manipulator: 2 # Corvax-Next stackRequirements<requirements
+      Capacitor: 1 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      Manipulator: 2
-      Capacitor: 1
       Glass: 2
 
 - type: entity
@@ -853,8 +878,9 @@
       state: engineering
     - type: MachineBoard
       prototype: PortableGeneratorSuperPacman
+      requirements: # Corvax-Next
+        Capacitor: 2 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 2
         CableHV: 10
     - type: PhysicalComposition
       materialComposition:
@@ -873,8 +899,9 @@
       state: engineering
     - type: MachineBoard
       prototype: PortableGeneratorJrPacman
+      requirements: # Corvax-Next
+        Capacitor: 1 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 1
         Cable: 10
     - type: PhysicalComposition
       materialComposition:
@@ -892,9 +919,9 @@
   components:
     - type: MachineBoard
       prototype: KitchenReagentGrinder
-      stackRequirements:
-        MatterBin: 2
-        Manipulator: 2
+      requirements: # Corvax-Next
+        MatterBin: 2 # Corvax-Next stackRequirements<requirements
+        Manipulator: 2 # Corvax-Next stackRequirements<requirements
       tagRequirements:
         GlassBeaker:
           amount: 1
@@ -908,8 +935,9 @@
   components:
     - type: MachineBoard
       prototype: ChemistryHotplate
+      requirements: # Corvax-Next
+        Capacitor: 2 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 2
         Glass: 1
 
 - type: entity
@@ -920,8 +948,9 @@
   components:
   - type: MachineBoard
     prototype: KitchenElectricGrill
+    requirements: # Corvax-Next
+      Capacitor: 4 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      Capacitor: 4
       Glass: 2
       Cable: 5
 
@@ -934,9 +963,10 @@
       state: medical
     - type: MachineBoard
       prototype: StasisBed
+      requirements: # Corvax-Next
+        Capacitor: 1 # Corvax-Next stackRequirements<requirements
+        Manipulator: 1 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 1
-        Manipulator: 1
         Cable: 3
         Steel: 2
 
@@ -950,8 +980,9 @@
     state: medical
   - type: MachineBoard
     prototype: MachineElectrolysisUnit
+    requirements: # Corvax-Next
+      Capacitor: 2 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      Capacitor: 2
       Cable: 1
 
 - type: entity
@@ -964,8 +995,9 @@
     state: medical
   - type: MachineBoard
     prototype: MachineCentrifuge
+    requirements: # Corvax-Next
+      Manipulator: 1 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      Manipulator: 1
       Steel: 1
 
 - type: entity
@@ -977,9 +1009,10 @@
       state: supply
     - type: MachineBoard
       prototype: OreProcessor
+      requirements: # Corvax-Next
+        MatterBin: 1 # Corvax-Next stackRequirements<requirements
+        Manipulator: 3 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        MatterBin: 1
-        Manipulator: 3
         Glass: 1
 
 - type: entity
@@ -991,9 +1024,10 @@
     state: supply
   - type: MachineBoard
     prototype: OreProcessorIndustrial
+    requirements: # Corvax-Next
+      MatterBin: 1 # Corvax-Next stackRequirements<requirements
+      Manipulator: 3 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      MatterBin: 1
-      Manipulator: 3
       Glass: 1
 
 - type: entity
@@ -1003,9 +1037,9 @@
   components:
   - type: MachineBoard
     prototype: Sheetifier
-    stackRequirements:
-      MatterBin: 1
-      Manipulator: 1
+    requirements: # Corvax-Next
+      MatterBin: 1 # Corvax-Next stackRequirements<requirements
+      Manipulator: 1 # Corvax-Next stackRequirements<requirements
 
 - type: entity
   id: MicrowaveMachineCircuitboard
@@ -1016,8 +1050,9 @@
       state: service
     - type: MachineBoard
       prototype: KitchenMicrowave
+      requirements: # Corvax-Next
+        Capacitor: 1 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 1
         Glass: 2
         Cable: 2
     - type: Tag
@@ -1033,8 +1068,9 @@
       state: service
     - type: MachineBoard
       prototype: SyndicateMicrowave
+      requirements: # Corvax-Next
+        Capacitor: 1 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 1
         Glass: 2
         Cable: 2
 
@@ -1047,8 +1083,8 @@
       state: service
     - type: MachineBoard
       prototype: FatExtractor
-      stackRequirements:
-        Manipulator: 1
+      requirements: # Corvax-Next
+        Manipulator: 1 # Corvax-Next stackRequirements<requirements
       componentRequirements:
         Utensil:
           amount: 1
@@ -1062,9 +1098,10 @@
   components:
   - type: MachineBoard
     prototype: MachineFlatpacker
+    requirements: # Corvax-Next
+      Manipulator: 2 # Corvax-Next stackRequirements<requirements
+      MatterBin: 1 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      Manipulator: 2
-      MatterBin: 1
       Steel: 1
 
 - type: entity
@@ -1076,8 +1113,9 @@
       state: engineering
     - type: MachineBoard
       prototype: Emitter
+      requirements: # Corvax-Next
+        Capacitor: 2 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 2
         CableHV: 5
         Glass: 2
 
@@ -1136,9 +1174,10 @@
   components:
   - type: MachineBoard
     prototype: GasRecycler
+    requirements: # Corvax-Next
+      Capacitor: 1 # Corvax-Next stackRequirements<requirements
+      Manipulator: 1 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      Capacitor: 1
-      Manipulator: 1
       Steel: 10
       Plasma: 5
 
@@ -1169,8 +1208,9 @@
       state: supply
     - type: MachineBoard
       prototype: CargoTelepad
+      requirements: # Corvax-Next
+        Capacitor: 2 # Corvax-Next stackRequirements<requirements
       stackRequirements:
-        Capacitor: 2
         Steel: 5
 
 - type: entity
@@ -1212,8 +1252,9 @@
     state: supply
   - type: MachineBoard
     prototype: SalvageMagnet
+    requirements: # Corvax-Next
+      Capacitor: 4 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      Capacitor: 4
       Steel: 5
       CableHV: 5
       Cable: 2
@@ -1226,9 +1267,10 @@
   components:
   - type: MachineBoard
     prototype: GravityGeneratorMini
+    requirements: # Corvax-Next
+      Capacitor: 4 # Corvax-Next stackRequirements<requirements
+      MatterBin: 3 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      Capacitor: 4
-      MatterBin: 3
       Steel: 5
       CableHV: 5
       Uranium: 2
@@ -1241,9 +1283,10 @@
   components:
   - type: MachineBoard
     prototype: StationAnchor
+    requirements: # Corvax-Next
+      Capacitor: 4 # Corvax-Next stackRequirements<requirements
+      MatterBin: 3 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      Capacitor: 4
-      MatterBin: 3
       Steel: 10
       Glass: 5
       CableHV: 8
@@ -1256,9 +1299,10 @@
   components:
   - type: MachineBoard
     prototype: ReagentGrinderIndustrial
+    requirements: # Corvax-Next
+      MatterBin: 1 # Corvax-Next stackRequirements<requirements
+      Manipulator: 3 # Corvax-Next stackRequirements<requirements
     stackRequirements:
-      MatterBin: 1
-      Manipulator: 3
       Glass: 1
 
 - type: entity
@@ -1282,8 +1326,8 @@
   components:
   - type: MachineBoard
     prototype: CutterMachine
+    requirements: # Corvax-Next
+      Capacitor: 1 # Corvax-Next stackRequirements<requirements
+      Manipulator: 1 # Corvax-Next stackRequirements<requirements
     stackRequirements:
       Steel: 2
-      Capacitor: 1
-      Manipulator: 1
-      Cable: 1

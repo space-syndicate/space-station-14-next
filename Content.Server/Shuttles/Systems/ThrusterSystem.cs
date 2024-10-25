@@ -2,6 +2,7 @@ using System.Numerics;
 using Content.Server.Audio;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Server.Construction; // Corvax-Next
 using Content.Server.Shuttles.Components;
 using Content.Shared.Damage;
 using Content.Shared.Examine;
@@ -55,6 +56,8 @@ public sealed class ThrusterSystem : EntitySystem
         SubscribeLocalEvent<ThrusterComponent, ExaminedEvent>(OnThrusterExamine);
 
         SubscribeLocalEvent<ShuttleComponent, TileChangedEvent>(OnShuttleTileChange);
+        SubscribeLocalEvent<ThrusterComponent, RefreshPartsEvent>(OnRefreshParts); // Corvax-Next
+        SubscribeLocalEvent<ThrusterComponent, UpgradeExamineEvent>(OnUpgradeExamine); // Corvax-Next
     }
 
     private void OnThrusterExamine(EntityUid uid, ThrusterComponent component, ExaminedEvent args)
@@ -586,4 +589,28 @@ public sealed class ThrusterSystem : EntitySystem
     {
         return (int)Math.Log2((int)flag);
     }
+
+    // Corvax-Next
+    private void OnRefreshParts(EntityUid uid, ThrusterComponent component, RefreshPartsEvent args)
+    {
+        if (component.IsOn) // safely disable thruster to prevent negative thrust
+            DisableThruster(uid, component);
+
+        var copy = new ThrusterComponent();
+
+        var thrustRating = args.PartRatings["Capacitor"];
+
+        component.Thrust = copy.Thrust * MathF.Pow(1.15f, thrustRating - 1);
+
+        if (component.Enabled && CanEnable(uid, component))
+            EnableThruster(uid, component);
+    }
+
+    private void OnUpgradeExamine(EntityUid uid, ThrusterComponent component, UpgradeExamineEvent args)
+    {
+        var copy = new ThrusterComponent();
+
+        args.AddPercentageUpgrade("thruster-comp-upgrade-thrust", component.Thrust / copy.Thrust);
+    }
+    // End Corvax-Next
 }

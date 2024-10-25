@@ -5,6 +5,7 @@ using Content.Shared.Examine;
 using Content.Shared.Destructible;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.Atmos.EntitySystems;
+using Content.Server.Construction; // Corvax-Next
 using Content.Server.Power.Components;
 using Content.Server.NodeContainer;
 using Robust.Server.GameObjects;
@@ -40,6 +41,8 @@ namespace Content.Server.Atmos.Portable
             SubscribeLocalEvent<PortableScrubberComponent, ExaminedEvent>(OnExamined);
             SubscribeLocalEvent<PortableScrubberComponent, DestructionEventArgs>(OnDestroyed);
             SubscribeLocalEvent<PortableScrubberComponent, GasAnalyzerScanEvent>(OnScrubberAnalyzed);
+            SubscribeLocalEvent<PortableScrubberComponent, RefreshPartsEvent>(OnRefreshParts); // Corvax-Next
+            SubscribeLocalEvent<PortableScrubberComponent, UpgradeExamineEvent>(OnUpgradeExamine); // Corvax-Next
         }
 
         private bool IsFull(PortableScrubberComponent component)
@@ -156,5 +159,26 @@ namespace Content.Server.Atmos.Portable
             args.GasMixtures ??= new List<(string, GasMixture?)>();
             args.GasMixtures.Add((Name(uid), component.Air));
         }
+
+        // Corvax-Next
+        private void OnRefreshParts(EntityUid uid, PortableScrubberComponent component, RefreshPartsEvent args)
+        {
+            var pressureRating = args.PartRatings["MatterBin"];
+            var transferRating = args.PartRatings["Manipulator"];
+
+            var copy = new PortableScrubberComponent();
+
+            component.MaxPressure = copy.MaxPressure * MathF.Pow(1.5f, pressureRating - 1);
+            component.TransferRate = copy.TransferRate * MathF.Pow(1.4f, transferRating - 1);
+        }
+
+        private void OnUpgradeExamine(EntityUid uid, PortableScrubberComponent component, UpgradeExamineEvent args)
+        {
+            var copy = new PortableScrubberComponent();
+
+            args.AddPercentageUpgrade("portable-scrubber-component-upgrade-max-pressure", component.MaxPressure / copy.MaxPressure);
+            args.AddPercentageUpgrade("portable-scrubber-component-upgrade-transfer-rate", component.TransferRate / copy.TransferRate);
+        }
+        // End Corvax-Next
     }
 }

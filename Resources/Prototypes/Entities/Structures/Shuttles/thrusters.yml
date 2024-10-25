@@ -192,6 +192,9 @@
             collection: MetalBreak
         - !type:ChangeConstructionNodeBehavior
           node: machineFrame
+  - type: UpgradePowerDraw # Corvax-Next
+    powerDrawMultiplier: 0.75
+    scaling: Exponential
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Electronic

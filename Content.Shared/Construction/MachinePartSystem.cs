@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Shared.Construction.Components;
+using Content.Shared.Construction.Prototypes; // Corvax-Next: restore MachinePartComponent
 using Content.Shared.Examine;
 using Content.Shared.Lathe;
 using Content.Shared.Materials;
@@ -20,6 +21,7 @@ namespace Content.Shared.Construction
         {
             base.Initialize();
             SubscribeLocalEvent<MachineBoardComponent, ExaminedEvent>(OnMachineBoardExamined);
+            SubscribeLocalEvent<MachinePartComponent, ExaminedEvent>(OnMachinePartExamined); // Corvax-Next: restore upgradeable machine parts
         }
 
         private void OnMachineBoardExamined(EntityUid uid, MachineBoardComponent component, ExaminedEvent args)
@@ -55,8 +57,35 @@ namespace Content.Shared.Construction
                         ("amount", info.Amount),
                         ("requiredElement", examineName)));
                 }
+
+                // Corvax-Next: restore upgradeable parts
+                foreach (var (part, amount) in component.Requirements)
+                {
+                    var partProto = _prototype.Index(part);
+                    var name = _prototype.Index(partProto.StockPartPrototype).Name;
+                    args.PushMarkup(Loc.GetString("machine-board-component-required-element-entry-text",
+                        ("amount", amount),
+                        ("requiredElement", Loc.GetString(name))));
+                }
+                // End Corvax-Next
             }
         }
+
+        // Corvax-Next: restore upgradeable machine parts
+        private void OnMachinePartExamined(EntityUid uid, MachinePartComponent component, ExaminedEvent args)
+        {
+            if (!args.IsInDetailsRange)
+                return;
+
+            using (args.PushGroup(nameof(MachinePartComponent)))
+            {
+                args.PushMarkup(Loc.GetString("machine-part-component-on-examine-rating-text",
+                    ("rating", component.Rating)));
+                args.PushMarkup(Loc.GetString("machine-part-component-on-examine-type-text", ("type",
+                    Loc.GetString(_prototype.Index<MachinePartPrototype>(component.PartType).Name))));
+            }
+        }
+        // End Corvax-Next
 
         public Dictionary<string, int> GetMachineBoardMaterialCost(Entity<MachineBoardComponent> entity, int coefficient = 1)
         {

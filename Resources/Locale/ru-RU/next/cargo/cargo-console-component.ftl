@@ -1,0 +1,1 @@
+cargo-telepad-delay-upgrade = задержка отправки

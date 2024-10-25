@@ -17,6 +17,12 @@
       shader: unshaded
     - state: full
       shader: unshaded
+  - type: UpgradeBattery # Corvax-Next
+    maxChargeMultiplier: 2
+    baseMaxCharge: 2500000
+  - type: UpgradePowerSupplyRamping # Corvax-Next
+    scaling: Linear
+    supplyRampingMultiplier: 1
   - type: Battery
     maxCharge: 2500000
     startingCharge: 0

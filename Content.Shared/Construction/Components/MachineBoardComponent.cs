@@ -1,13 +1,23 @@
+using Content.Shared.Construction.Prototypes; // Corvax-Next: upgradeable components
 using Content.Shared.Stacks;
 using Content.Shared.Tag;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary; // Corvax-Next: upgradeable components
 
 namespace Content.Shared.Construction.Components;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class MachineBoardComponent : Component
 {
+    // Corvax-Next: keep upgradeable components
+    /// <summary>
+    /// Entities needed to construct this machine, discriminated by component.
+    /// </summary>
+    [DataField]
+    public Dictionary<ProtoId<MachinePartPrototype>, int> Requirements = new();
+    // End Corvax-Next
+
     /// <summary>
     /// The stacks needed to construct this machine
     /// </summary>

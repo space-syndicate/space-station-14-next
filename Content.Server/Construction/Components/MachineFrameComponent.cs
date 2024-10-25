@@ -1,8 +1,9 @@
-﻿using Content.Shared.Construction.Components;
+using Content.Shared.Construction.Prototypes; // Corvax-Next: upgradeable machine parts
 using Content.Shared.Stacks;
 using Content.Shared.Tag;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary; // Corvax-Next: upgradeable machine parts
 
 namespace Content.Server.Construction.Components
 {
@@ -15,6 +16,9 @@ namespace Content.Server.Construction.Components
         [ViewVariables]
         public bool HasBoard => BoardContainer?.ContainedEntities.Count != 0;
 
+        [ViewVariables] // Corvax-Next: upgradeable machine parts
+        public Dictionary<ProtoId<MachinePartPrototype>, int> Progress = new(); // Corvax-Next: upgradeable machine parts
+
         [ViewVariables]
         public readonly Dictionary<ProtoId<StackPrototype>, int> MaterialProgress = new();
 
@@ -23,6 +27,9 @@ namespace Content.Server.Construction.Components
 
         [ViewVariables]
         public readonly Dictionary<ProtoId<TagPrototype>, int> TagProgress = new();
+
+        [ViewVariables] // Corvax-Next: upgradeable machine parts
+        public Dictionary<ProtoId<MachinePartPrototype>, int> Requirements = new(); // Corvax-Next: upgradeable machine parts
 
         [ViewVariables]
         public Dictionary<ProtoId<StackPrototype>, int> MaterialRequirements = new();

@@ -9,6 +9,7 @@ using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Stack;
+using Content.Server.Construction; // Corvax-Next
 using Content.Shared.Atmos;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
@@ -73,6 +74,8 @@ namespace Content.Server.Lathe
             SubscribeLocalEvent<TechnologyDatabaseComponent, LatheGetRecipesEvent>(OnGetRecipes);
             SubscribeLocalEvent<EmagLatheRecipesComponent, LatheGetRecipesEvent>(GetEmagLatheRecipes);
             SubscribeLocalEvent<LatheHeatProducingComponent, LatheStartPrintingEvent>(OnHeatStartPrinting);
+            SubscribeLocalEvent<LatheComponent, RefreshPartsEvent>(OnPartsRefresh); // Corvax-Next
+            SubscribeLocalEvent<LatheComponent, UpgradeExamineEvent>(OnUpgradeExamine); // Corvax-Next
         }
         public override void Update(float frameTime)
         {
@@ -178,7 +181,7 @@ namespace Content.Server.Lathe
             foreach (var (mat, amount) in recipe.Materials)
             {
                 var adjustedAmount = recipe.ApplyMaterialDiscount
-                    ? (int) (-amount * component.MaterialUseMultiplier)
+                    ? (int) (-amount * component.FinalMaterialUseMultiplier) // Corvax-Next: MaterialUseMultiplier<FinalMaterialUseMultiplier
                     : -amount;
 
                 _materialStorage.TryChangeMaterialAmount(uid, mat, adjustedAmount);
@@ -202,7 +205,7 @@ namespace Content.Server.Lathe
 
             var lathe = EnsureComp<LatheProducingComponent>(uid);
             lathe.StartTime = _timing.CurTime;
-            lathe.ProductionLength = time;
+            lathe.ProductionLength = time * component.FinalTimeMultiplier; // Corvax-Next: TimeMultiplier<FinalTimeMultiplier
             component.CurrentRecipe = recipe;
 
             var ev = new LatheStartPrintingEvent(recipe);
@@ -326,6 +329,10 @@ namespace Content.Server.Lathe
             _appearance.SetData(uid, LatheVisuals.IsRunning, false);
 
             _materialStorage.UpdateMaterialWhitelist(uid);
+            // This code is licensed under AGPLv3. See LICENSE-AGPLv3.txt
+            component.FinalTimeMultiplier = component.TimeMultiplier;
+            component.FinalMaterialUseMultiplier = component.MaterialUseMultiplier;
+            // End of modified code
         }
 
         /// <summary>
@@ -396,5 +403,25 @@ namespace Content.Server.Lathe
             UpdateUserInterfaceState(uid, component);
         }
         #endregion
+
+        // Corvax-Next
+        // This code is licensed under AGPLv3. See LICENSE-AGPLv3.txt
+        private void OnPartsRefresh(EntityUid uid, LatheComponent component, RefreshPartsEvent args)
+        {
+            var printTimeRating = args.PartRatings[component.MachinePartPrintSpeed];
+            var materialUseRating = args.PartRatings[component.MachinePartMaterialUse];
+
+            component.FinalTimeMultiplier = component.TimeMultiplier * MathF.Pow(component.PartRatingPrintTimeMultiplier, printTimeRating - 1);
+            component.FinalMaterialUseMultiplier = component.MaterialUseMultiplier * MathF.Pow(component.PartRatingMaterialUseMultiplier, materialUseRating - 1);
+
+            Dirty(uid, component);
+        }
+
+        private void OnUpgradeExamine(EntityUid uid, LatheComponent component, UpgradeExamineEvent args)
+        {
+            args.AddPercentageUpgrade("lathe-component-upgrade-speed", 1 / component.FinalTimeMultiplier);
+            args.AddPercentageUpgrade("lathe-component-upgrade-material-use", component.FinalMaterialUseMultiplier);
+        }
+        // End Corvax-Next
     }
 }

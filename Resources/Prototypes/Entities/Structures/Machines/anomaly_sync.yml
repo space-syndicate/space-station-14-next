@@ -49,6 +49,9 @@
   - type: ApcPowerReceiver
     powerLoad: 2500
     needsPower: true
+  - type: UpgradePowerDraw # Corvax-Next
+    powerDrawMultiplier: 0.80
+    scaling: Exponential
   - type: ItemPlacer
     whitelist:
       components:

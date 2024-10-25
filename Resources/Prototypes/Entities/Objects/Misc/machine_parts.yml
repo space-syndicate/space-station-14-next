@@ -6,7 +6,7 @@
   abstract: true
   components:
     - type: Sprite
-      sprite: Objects/Misc/stock_parts.rsi
+      sprite: Next/Objects/Misc/stock_parts.rsi # Corvax-Next
     - type: Item
       size: Tiny
     - type: Stack
@@ -24,6 +24,9 @@
     - type: Tag
       tags:
         - CapacitorStockPart
+    - type: MachinePart # Corvax-Next
+      part: Capacitor # Corvax-Next
+      rating: 1 # Corvax-Next
     - type: Stack
       stackType: Capacitor
 
@@ -36,6 +39,9 @@
   components:
     - type: Sprite
       state: micro_mani
+    - type: MachinePart # Corvax-Next
+      part: Manipulator # Corvax-Next
+      rating: 1 # Corvax-Next
     - type: Stack
       stackType: Manipulator
 
@@ -48,5 +54,8 @@
   components:
     - type: Sprite
       state: matter_bin
+    - type: MachinePart # Corvax-Next
+      part: MatterBin # Corvax-Next
+      rating: 1 # Corvax-Next
     - type: Stack
       stackType: MatterBin

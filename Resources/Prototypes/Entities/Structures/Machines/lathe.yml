@@ -327,6 +327,13 @@
       - AdvancedMineralScannerEmpty
       - WeaponGauntletGorilla
       - SynthesizerInstrument
+      - RPED # Corvax-Next
+      - AdvancedCapacitorStockPart # Corvax-Next
+      - AdvancedMatterBinStockPart # Corvax-Next
+      - NanoManipulatorStockPart # Corvax-Next
+      - SuperCapacitorStockPart # Corvax-Next
+      - SuperMatterBinStockPart # Corvax-Next
+      - PicoManipulatorStockPart # Corvax-Next
       - ClothingShoesBootsMagSci
       - ClothingShoesBootsMoon
       - ClothingShoesBootsSpeed

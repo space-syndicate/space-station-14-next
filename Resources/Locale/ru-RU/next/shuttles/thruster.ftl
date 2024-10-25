@@ -1,0 +1,1 @@
+thruster-comp-upgrade-thrust = сила двигателя

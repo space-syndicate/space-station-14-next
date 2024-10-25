@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Nutrition.Components;
+using Content.Server.Construction; // Corvax-Next
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Storage.Components;
@@ -32,6 +33,8 @@ public sealed class FatExtractorSystem : EntitySystem
         SubscribeLocalEvent<FatExtractorComponent, StorageAfterCloseEvent>(OnClosed);
         SubscribeLocalEvent<FatExtractorComponent, StorageAfterOpenEvent>(OnOpen);
         SubscribeLocalEvent<FatExtractorComponent, PowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<FatExtractorComponent, RefreshPartsEvent>(OnRefreshParts); // Corvax-Next
+        SubscribeLocalEvent<FatExtractorComponent, UpgradeExamineEvent>(OnUpgradeExamine); // Corvax-Next
     }
 
     private void OnGotEmagged(EntityUid uid, FatExtractorComponent component, ref GotEmaggedEvent args)
@@ -143,4 +146,17 @@ public sealed class FatExtractorSystem : EntitySystem
             }
         }
     }
+
+    // Corvax-Next
+    private void OnRefreshParts(EntityUid uid, FatExtractorComponent component, RefreshPartsEvent args)
+    {
+        var rating = args.PartRatings["Manipulator"] - 1;
+        component.NutritionPerSecond = 10 + (int)(10 * rating);
+    }
+
+    private void OnUpgradeExamine(EntityUid uid, FatExtractorComponent component, UpgradeExamineEvent args)
+    {
+        args.AddPercentageUpgrade("fat-extractor-component-rate", (float)component.NutritionPerSecond / 10);
+    }
+    // End Corvax-Next
 }

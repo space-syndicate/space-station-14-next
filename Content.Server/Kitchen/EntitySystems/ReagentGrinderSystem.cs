@@ -22,6 +22,7 @@ using System.Linq;
 using Content.Server.Jittering;
 using Content.Shared.Jittering;
 using Content.Shared.Power;
+using Content.Server.Construction; // Corvax-Next
 
 namespace Content.Server.Kitchen.EntitySystems
 {
@@ -58,6 +59,8 @@ namespace Content.Server.Kitchen.EntitySystems
             SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderStartMessage>(OnStartMessage);
             SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderEjectChamberAllMessage>(OnEjectChamberAllMessage);
             SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderEjectChamberContentMessage>(OnEjectChamberContentMessage);
+            SubscribeLocalEvent<ReagentGrinderComponent, RefreshPartsEvent>(OnRefreshParts); // Corvax-Next
+            SubscribeLocalEvent<ReagentGrinderComponent, UpgradeExamineEvent>(OnUpgradeExamine); // Corvax-Next
         }
 
         private void OnToggleAutoModeMessage(Entity<ReagentGrinderComponent> entity, ref ReagentGrinderToggleAutoModeMessage message)
@@ -338,5 +341,27 @@ namespace Content.Server.Kitchen.EntitySystems
         {
             return CompOrNull<ExtractableComponent>(uid)?.JuiceSolution is not null;
         }
+
+        // Corvax-Next
+        /// <remarks>
+        /// Gotta be efficient, you know? you're saving a whole extra second here and everything.
+        /// </remarks>
+        private void OnRefreshParts(Entity<ReagentGrinderComponent> entity, ref RefreshPartsEvent args)
+        {
+            var ratingWorkTime = args.PartRatings["Manipulator"];
+            var ratingStorage = args.PartRatings["MatterBin"];
+
+            entity.Comp.WorkTimeMultiplier = MathF.Pow(0.6f, ratingWorkTime - 1);
+            entity.Comp.StorageMaxEntities = 4 + (int)(4 * (ratingStorage - 1));
+        }
+
+        private void OnUpgradeExamine(Entity<ReagentGrinderComponent> entity, ref UpgradeExamineEvent args)
+        {
+            var copy = new ReagentGrinderComponent();
+
+            args.AddPercentageUpgrade("reagent-grinder-component-upgrade-work-time", entity.Comp.WorkTimeMultiplier);
+            args.AddNumberUpgrade("reagent-grinder-component-upgrade-storage", entity.Comp.StorageMaxEntities - copy.StorageMaxEntities);
+        }
+        // End Corvax-Next
     }
 }

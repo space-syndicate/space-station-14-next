@@ -34,13 +34,13 @@ namespace Content.Shared.Lathe
         public SoundSpecifier? ProducingSound;
 
         [DataField]
-        public string? ReagentOutputSlotId;
+        public string? ReagentOutputSlotId; // Corvax-Next
 
         /// <summary>
         /// The default amount that's displayed in the UI for selecting the print amount.
         /// </summary>
         [DataField, AutoNetworkedField]
-        public int DefaultProductionAmount = 1;
+        public int DefaultProductionAmount = 1; // Corvax-Next
 
         #region Visualizer info
         [DataField]
@@ -50,10 +50,10 @@ namespace Content.Shared.Lathe
         public string? RunningState;
 
         [DataField]
-        public string? UnlitIdleState;
+        public string? UnlitIdleState; // Corvax-Next
 
         [DataField]
-        public string? UnlitRunningState;
+        public string? UnlitRunningState; // Corvax-Next
         #endregion
 
         /// <summary>
@@ -74,6 +74,46 @@ namespace Content.Shared.Lathe
         /// </summary>
         [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
         public float MaterialUseMultiplier = 1;
+
+        //Corvax-Next Upgrade Code Restore
+        /// <summary>
+        /// A modifier that changes how long it takes to print a recipe
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+        public float FinalTimeMultiplier = 1;
+
+        /// <summary>
+        /// A modifier that changes how much of a material is needed to print a recipe
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+        public float FinalMaterialUseMultiplier = 1;
+
+        public const float DefaultPartRatingMaterialUseMultiplier = 0.85f;
+
+        /// <summary>
+        /// The machine part that reduces how long it takes to print a recipe.
+        /// </summary>
+        [DataField]
+        public ProtoId<MachinePartPrototype> MachinePartPrintSpeed = "Manipulator";
+
+        /// <summary>
+        /// The value that is used to calculate the modified <see cref="TimeMultiplier"/>
+        /// </summary>
+        [DataField]
+        public float PartRatingPrintTimeMultiplier = 0.5f;
+
+        /// <summary>
+        /// The machine part that reduces how much material it takes to print a recipe.
+        /// </summary>
+        [DataField]
+        public ProtoId<MachinePartPrototype> MachinePartMaterialUse = "MatterBin";
+
+        /// <summary>
+        /// The value that is used to calculate the modifier <see cref="MaterialUseMultiplier"/>
+        /// </summary>
+        [DataField]
+        public float PartRatingMaterialUseMultiplier = DefaultPartRatingMaterialUseMultiplier;
+        // End Corvax-Next
         #endregion
     }
 

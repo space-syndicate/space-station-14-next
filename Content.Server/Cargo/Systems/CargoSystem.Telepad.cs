@@ -3,6 +3,7 @@ using Content.Server.Cargo.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Station.Components;
+using Content.Server.Construction; // Corvax-Next
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.Components;
 using Content.Shared.DeviceLinking;
@@ -23,6 +24,8 @@ public sealed partial class CargoSystem
         // Shouldn't need re-anchored event
         SubscribeLocalEvent<CargoTelepadComponent, AnchorStateChangedEvent>(OnTelepadAnchorChange);
         SubscribeLocalEvent<FulfillCargoOrderEvent>(OnTelepadFulfillCargoOrder);
+        SubscribeLocalEvent<CargoTelepadComponent, RefreshPartsEvent>(OnRefreshParts); // Corvax-Next
+        SubscribeLocalEvent<CargoTelepadComponent, UpgradeExamineEvent>(OnUpgradeExamine); // Corvax-Next
     }
 
     private void OnTelepadFulfillCargoOrder(ref FulfillCargoOrderEvent args)
@@ -161,4 +164,18 @@ public sealed partial class CargoSystem
     {
         SetEnabled(uid, component);
     }
+
+    // Corvax-Next
+    private void OnRefreshParts(EntityUid uid, CargoTelepadComponent component, RefreshPartsEvent args)
+    {
+        var rating = args.PartRatings["Capacitor"] - 1;
+
+        component.Delay = new CargoTelepadComponent().Delay * MathF.Pow(0.8f, rating);
+    }
+
+    private void OnUpgradeExamine(EntityUid uid, CargoTelepadComponent component, UpgradeExamineEvent args)
+    {
+        args.AddPercentageUpgrade("cargo-telepad-delay-upgrade", component.Delay / new CargoTelepadComponent().Delay);
+    }
+    // End Corvax-Next
 }

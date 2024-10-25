@@ -1,6 +1,7 @@
 using Content.Server.Chemistry.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Server.Construction; // Corvax-Next
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components.SolutionManager;
@@ -23,6 +24,8 @@ public sealed class SolutionHeaterSystem : EntitySystem
         SubscribeLocalEvent<SolutionHeaterComponent, PowerChangedEvent>(OnPowerChanged);
         SubscribeLocalEvent<SolutionHeaterComponent, ItemPlacedEvent>(OnItemPlaced);
         SubscribeLocalEvent<SolutionHeaterComponent, ItemRemovedEvent>(OnItemRemoved);
+        SubscribeLocalEvent<SolutionHeaterComponent, RefreshPartsEvent>(OnRefreshParts); // Corvax-Next
+        SubscribeLocalEvent<SolutionHeaterComponent, UpgradeExamineEvent>(OnUpgradeExamine); // Corvax-Next
     }
 
     private void TurnOn(EntityUid uid)
@@ -62,10 +65,23 @@ public sealed class SolutionHeaterSystem : EntitySystem
         }
     }
 
+    // Corvax-Next
+    private void OnRefreshParts(Entity<SolutionHeaterComponent> entity, ref RefreshPartsEvent args)
+    {
+        var heatRating = args.PartRatings["Capacitor"] - 1;
+
+        entity.Comp.HeatPerSecond = entity.Comp.BaseHeatPerSecond * MathF.Pow(1.5f, heatRating);
+    }
+
+    private void OnUpgradeExamine(Entity<SolutionHeaterComponent> entity, ref UpgradeExamineEvent args)
+    {
+        args.AddPercentageUpgrade("solution-heater-upgrade-heat", entity.Comp.HeatPerSecond / entity.Comp.BaseHeatPerSecond);
+    }
     private void OnItemPlaced(Entity<SolutionHeaterComponent> entity, ref ItemPlacedEvent args)
     {
         TryTurnOn(entity);
     }
+    // End Corvax-Next
 
     private void OnItemRemoved(Entity<SolutionHeaterComponent> entity, ref ItemRemovedEvent args)
     {

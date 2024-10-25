@@ -1,5 +1,6 @@
 using Content.Server.Cloning;
 using Content.Server.Medical.Components;
+using Content.Server.Construction; // Corvax-Next
 using Content.Shared.Destructible;
 using Content.Shared.ActionBlocker;
 using Content.Shared.DragDrop;
@@ -45,6 +46,8 @@ namespace Content.Server.Medical
             SubscribeLocalEvent<MedicalScannerComponent, PortDisconnectedEvent>(OnPortDisconnected);
             SubscribeLocalEvent<MedicalScannerComponent, AnchorStateChangedEvent>(OnAnchorChanged);
             SubscribeLocalEvent<MedicalScannerComponent, CanDropTargetEvent>(OnCanDragDropOn);
+            SubscribeLocalEvent<MedicalScannerComponent, RefreshPartsEvent>(OnRefreshParts); // Corvax-Next
+            SubscribeLocalEvent<MedicalScannerComponent, UpgradeExamineEvent>(OnUpgradeExamine); // Corvax-Next
         }
 
         private void OnCanDragDropOn(EntityUid uid, MedicalScannerComponent component, ref CanDropTargetEvent args)
@@ -246,5 +249,19 @@ namespace Content.Server.Medical
             _climbSystem.ForciblySetClimbing(contained, uid);
             UpdateAppearance(uid, scannerComponent);
         }
+
+        // Corvax-Next
+        private void OnRefreshParts(EntityUid uid, MedicalScannerComponent component, RefreshPartsEvent args)
+        {
+            var ratingFail = args.PartRatings["Capacitor"];
+
+            component.CloningFailChanceMultiplier = MathF.Pow(0.75f, ratingFail - 1);
+        }
+
+        private void OnUpgradeExamine(EntityUid uid, MedicalScannerComponent component, UpgradeExamineEvent args)
+        {
+            args.AddPercentageUpgrade("medical-scanner-upgrade-cloning", component.CloningFailChanceMultiplier);
+        }
+        // End Corvax-Next
     }
 }
