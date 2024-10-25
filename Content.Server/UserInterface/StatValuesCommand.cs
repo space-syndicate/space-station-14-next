@@ -226,7 +226,7 @@ public sealed class StatValuesCommand : IConsoleCommand
 
             foreach (var (material, count) in proto.Materials)
             {
-                var materialPrice = _proto.Index<MaterialPrototype>(material).Price;
+                var materialPrice = _proto.Index<MaterialPrototype>(material).Price; // Corvax-Next
                 cost += materialPrice * count;
             }
 
