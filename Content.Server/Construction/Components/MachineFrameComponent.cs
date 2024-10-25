@@ -1,9 +1,9 @@
+using Content.Shared.Construction.Components;
 using Content.Shared.Construction.Prototypes; // Corvax-Next: upgradeable machine parts
 using Content.Shared.Stacks;
 using Content.Shared.Tag;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary; // Corvax-Next: upgradeable machine parts
 
 namespace Content.Server.Construction.Components
 {
