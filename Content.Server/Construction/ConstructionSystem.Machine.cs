@@ -1,6 +1,6 @@
 using Content.Server.Construction.Components;
 using Content.Shared.Construction.Components;
-using Content.Shared.Construction.Prototypes;
+using Content.Shared.Construction.Prototypes; // Corvax-Next
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes; // Corvax-Next
 
