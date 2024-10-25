@@ -167,7 +167,7 @@ public sealed class MachineFrameSystem : EntitySystem
         return true;
     }
 
-    // Frontier: restore upgradeable parts
+    // Corvax-Next: restore upgradeable parts
     /// <returns>Whether or not the function had any effect. Does not indicate success.</returns>
     private bool TryInsertPart(EntityUid uid, EntityUid used, MachineFrameComponent component, MachinePartComponent machinePart)
     {
