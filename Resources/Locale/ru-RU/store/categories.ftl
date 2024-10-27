@@ -21,3 +21,7 @@ store-caregory-spellbook-defensive = Защитные заклинания
 store-caregory-spellbook-utility = Вспомогательные заклинания
 store-caregory-spellbook-equipment = Волшебное снаряжение
 store-caregory-spellbook-events = Заклинания событий
+# Changeling
+store-ling-category-combat = Боевые
+store-ling-category-sting = Жалящие
+store-ling-category-utility = Вспомогательные
