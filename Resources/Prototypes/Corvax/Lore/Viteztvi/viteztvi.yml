@@ -1147,7 +1147,7 @@
   id: JobEventVitzEfreitor
 
 - type: job
-  id: VitzEfreitor
+  id: VitzEfreitorJ
   name: Ефрейтор Витезтви
   description: job-vitz-efreitor
   playTimeTracker: JobEventVitzEfreitor
@@ -1162,7 +1162,7 @@
   id: JobEventVitzPilot
 
 - type: job
-  id: VitzPilot
+  id: VitzPilotJ
   name: Пилот Витезтви
   description: job-vitz-solder
   playTimeTracker: JobEventVitzPilot
@@ -1178,7 +1178,7 @@
   id: JobEventVitzStarshina
 
 - type: job
-  id: VitzStarshina
+  id: VitzStarshinaJ
   name: Старшина Витезтви
   description: job-vitz-starshina
   playTimeTracker: JobEventVitzStarshina
@@ -1194,7 +1194,7 @@
   id: JobEventVitzZven
 
 - type: job
-  id: VitzZven
+  id: VitzZvenJ
   name: Командир звена Витезтви
   description: job-vitz-zven
   playTimeTracker: JobEventVitzZven
@@ -1211,7 +1211,7 @@
   id: JobEventVitzMrHill
 
 - type: job
-  id: VitzMrHill
+  id: VitzMrHillJ
   name: Хилл
   description: job-vitz-hill
   playTimeTracker: JobEventVitzMrHill

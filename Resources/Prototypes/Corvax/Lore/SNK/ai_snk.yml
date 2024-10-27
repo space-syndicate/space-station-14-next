@@ -194,26 +194,6 @@
         - !type:HTNPrimitiveTask
           operator: !type:MedibotInjectOperator
             targetKey: InjectTarget
-#---------------------------------------Всякие Фразочки-----------------------------------
-
-#-------------------------------------Кто является противником-----------------------------------
-- type: npcFaction
-  id: SNKBot
-  hostile:
-  - SimpleHostile
-  - Xeno
-  - NanoTrasen
-  - Syndicate
-  - Passive
-  - PetsNT
-  - Zombie
-  - Revolutionary
-  - Noocraty
-  - NoocratyBot
-  friendly:
-  - SNKBot
-  - SNK
-  - SNKBotR
 #--------------------------------------Сочетание правил ВИ-----------------------------------------
 #-----------------С ходить-бродить----------
 #------обыч-----------

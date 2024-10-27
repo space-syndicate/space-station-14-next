@@ -3277,7 +3277,7 @@
 #------------------------------------винтовка-тяж-------
 - type: entity
   parent: SNKBackpackStd
-  id: CNKBackpackFilledAutoHigh
+  id: CNKBackpackFilledRifleHigh
   suffix: СНК, Винтовка(тяжёлый)
   components:
   - type: StorageFill

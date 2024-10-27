@@ -3592,7 +3592,7 @@
   - NoocUplinkBack
 #------категория мед.средства
 - type: listing
-  id: Stimpack
+  id: NoocStimpack
   name: Боевой стимулятор
   description: Ускорься! Но победи пока не наступили побочные эффекты
   productEntity: Stimpack
@@ -3602,7 +3602,7 @@
   - NoocUplinkMed
   
 - type: listing
-  id: EmergencyMedipen
+  id: NoocEmergencyMedipen
   name: Экстренный медипен
   description: Какое средство экстренной помощи есть, такое и используем...
   productEntity: EmergencyMedipen
@@ -3612,7 +3612,7 @@
   - NoocUplinkMed
   
 - type: listing
-  id: Brutepack
+  id: NoocBrutepack
   name: Набор для лечения травм
   description: Помогает от травм механического характера
   productEntity: Brutepack
@@ -3622,7 +3622,7 @@
   - NoocUplinkMed
   
 - type: listing
-  id: Ointment
+  id: NoocOintment
   name: Лечебная мазь
   description: Хороша от ожёгов и переохлаждения
   productEntity: Ointment
@@ -3632,7 +3632,7 @@
   - NoocUplinkMed
   
 - type: listing
-  id: NocturineChemistryBottle
+  id: NoocNocturineChemistryBottle
   name: Бутылочка ноктюрина
   description: 30u быстродействующего усыпляющего средства
   productEntity: NocturineChemistryBottle
@@ -3642,7 +3642,7 @@
   - NoocUplinkMed
   
 - type: listing
-  id: ClothingBackpackDuffelSyndicateMedicalBundleFilled
+  id: NoocClothingBackpackDuffelSyndicateMedicalBundleFilled
   name: Медицинский набор
   description: Набор полезных химических средств
   productEntity: ClothingBackpackDuffelSyndicateMedicalBundleFilled

@@ -1982,7 +1982,7 @@
         Piercing: 3
 #------------------------------------автомат----------     
 - type: entity
-  id: NoocPowerGan
+  id: MirtNoocPowerGan
   parent: BaseItem
   abstract: true
   components:
@@ -2057,7 +2057,7 @@
         Piercing: 3
 #------------------------------------пистолет----------   
 - type: entity
-  id: NoocPowerPistol
+  id: MirtNoocPowerPistol
   parent: BaseItem
   abstract: true
   components:
@@ -2131,7 +2131,7 @@
         Piercing: 3
 #------------------------------------пулемёт----------   
 - type: entity
-  id: NoocPowerMG
+  id: MirtNoocPowerMG
   parent: BaseItem
   abstract: true
   components:
@@ -2204,7 +2204,7 @@
         Piercing: 3
 #------------------------------------хладопушка----------     
 - type: entity
-  id: NoocPowerGanCold
+  id: MirtNoocPowerGanCold
   parent: BaseItem
   abstract: true
   components:
@@ -2280,10 +2280,6 @@
 - type: accessLevel
   id: MirtAccess
   name: access-mirt
-  
-- type: accessLevel
-  id: NoocAccess
-  name: access-nooc
 #------------------------------------закрытый шлюз---------- 
 - type: entity
   parent: DoorElectronics
@@ -2315,7 +2311,7 @@
 - type: entity
   parent: AirlockExternalShuttleLocked
   name: Стыковочный шлюз
-  id: SNKAirlockShuttleEasyPryLocked
+  id: MirtAirlockShuttleEasyPryLocked
   suffix: Миртан
   description: Чтобы успешно прилепиться к космическим объектам.
   components:
@@ -3581,7 +3577,7 @@
       - id: NoocPowerCellOne
 #-----------------------------Ящик особого ноократского оружия------------------
 - type: entity
-  id: MirtCrateWeaponsNO
+  id: MirtCrateWeaponsOE
   parent: MirtCrate
   name: Ящик особого оружия Ноократии Эранта
   suffix: Миртан
@@ -3670,7 +3666,7 @@
       - id: MirtCloakOfInk
 #-----------------------------Ящик усиленной экипировки армии------------------
 - type: entity
-  id: MirtCrateWeaponsEA
+  id: MirtCrateWeaponsEAU
   parent: MirtCrate
   name: Ящик стандартной экипировки армии Империи Миртана
   suffix: Миртан

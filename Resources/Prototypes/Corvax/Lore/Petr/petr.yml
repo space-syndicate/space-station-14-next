@@ -2742,36 +2742,6 @@
     Telecrystal: 4
   categories:
   - PetrUplinkAmmo
-  
-- type: listing
-  id: BoxLethalshot
-  name: Коробка дробовиковых зарядов .50
-  description: Известная во всём НТ и ОПЗ коробка на 16 зарядов.
-  productEntity: BoxLethalshot
-  cost:
-    Telecrystal: 3
-  categories:
-  - PetrUplinkAmmo
-#---взрывчатка---  
-- type: listing
-  id: BoxLethalshot
-  name: Коробка дробовиковых зарядов .50
-  description: Известная во всём НТ и ОПЗ коробка на 16 зарядов.
-  productEntity: BoxLethalshot
-  cost:
-    Telecrystal: 3
-  categories:
-  - PetrUplinkAmmo
-  
-- type: listing
-  id: BoxLethalshot
-  name: Коробка дробовиковых зарядов .50
-  description: Известная во всём НТ и ОПЗ коробка на 16 зарядов.
-  productEntity: BoxLethalshot
-  cost:
-    Telecrystal: 3
-  categories:
-  - PetrUplinkAmmo
 #------категория электроника----------
 - type: listing
   id: PetrCommsComputerCircuitboard
@@ -2804,7 +2774,7 @@
   - PetrUplinkElectronic
   
 - type: listing
-  id: Emag
+  id: PetrEmag
   name: Криптографический секвенсор
   description: Используется для дешифровки и перепрошивки систем доступа НТ.
   productEntity: Emag
