@@ -75,3 +75,5 @@ ent-ClothingOuterHardsuitMime = скафандр мима
     .desc = Самодельный мимский скафандр.
 ent-ClothingOuterHardsuitSanta = скафандр Санты
     .desc = Весёлый, праздничный скафандр, который защищает весёлого дарителя подарков во время полётов на космосанях. Предоставляет некоторую защиту от ударов астероидов.
+ent-ChangelingClothingOuterHardsuit = { ent-ClothingOuterHardsuitLing }
+    .desc = { ent-ClothingOuterHardsuitLing.desc }

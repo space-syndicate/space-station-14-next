@@ -55,3 +55,5 @@ ent-ClothingHeadHelmetJusticeEmpty = { ent-ClothingHeadHelmetJustice }
     .desc = { ent-ClothingHeadHelmetJustice.desc }
 ent-ActionToggleJusticeHelm = Переключить шлем правосудия
     .desc = Включает или выключает  шлем правосудия.
+ent-ChangelingClothingHeadHelmet = хитиновый шлем
+    .desc = { ent-ClothingOuterArmorChangeling.desc }

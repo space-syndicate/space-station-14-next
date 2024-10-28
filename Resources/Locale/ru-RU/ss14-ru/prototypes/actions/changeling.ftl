@@ -26,7 +26,7 @@ ent-ActionExitStasis = Выйти из стазиса
 ent-ActionToggleArmblade = Рука-клинок
     .desc = Преобразует одну из ваших рук в крепкое лезвие из кости и плоти. Уберите лезвие при повторном использовании. Стоимость: 15 химикатов.
 
-ent-ActionCreateBoneShard = Молот из плоти
+ent-ActionCreateBoneShard = Костяной осколок
     .desc = Отколите куски своей кости и создайте метательную звезду. Стоимость: 15 химикатов.
 
 ent-ActionToggleChitinousArmor = Хитинистая броня
