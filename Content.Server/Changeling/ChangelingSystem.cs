@@ -367,12 +367,13 @@ public sealed partial class ChangelingSystem : EntitySystem
         if (!comp.Equipment.TryGetValue(proto.Id, out var item) && item == null)
         {
             item = Spawn(proto, Transform(uid).Coordinates);
-            if (clothingSlot != null && !_inventory.TryEquip(uid, (EntityUid) item, clothingSlot, force: true))
+            var equipped = clothingSlot != null && _inventory.TryEquip(uid, (EntityUid)item, clothingSlot, force: true);
+            if (clothingSlot != null && !equipped)
             {
                 QueueDel(item);
                 return false;
             }
-            else if (!_hands.TryForcePickupAnyHand(uid, (EntityUid) item))
+            else if (!equipped && !_hands.TryForcePickupAnyHand(uid, (EntityUid) item))
             {
                 _popup.PopupEntity(Loc.GetString("changeling-fail-hands"), uid, uid);
                 QueueDel(item);
