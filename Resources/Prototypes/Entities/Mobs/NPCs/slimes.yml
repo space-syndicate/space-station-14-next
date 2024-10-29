@@ -113,7 +113,6 @@
   - type: TypingIndicator
     proto: slime
 
-
 - type: entity
   name: basic slime
   id: MobAdultSlimes
