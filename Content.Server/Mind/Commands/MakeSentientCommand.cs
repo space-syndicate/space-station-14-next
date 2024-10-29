@@ -1,7 +1,11 @@
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared.Emoting;
+using Content.Server._EinsteinEngine.Language; // Corvax-Languages
 using Content.Shared.Examine;
+using Content.Shared._EinsteinEngine.Language; // Corvax-Languages
+using Content.Shared._EinsteinEngine.Language.Components; // Corvax-Languages
+using Content.Shared._EinsteinEngine.Language.Systems; // Corvax-Languages
 using Content.Shared.Mind.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Speech;
@@ -55,6 +59,15 @@ namespace Content.Server.Mind.Commands
             {
                 entityManager.EnsureComponent<SpeechComponent>(uid);
                 entityManager.EnsureComponent<EmotingComponent>(uid);
+
+// Corvax-Languages-Start
+                var language = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
+                var speaker = entityManager.EnsureComponent<LanguageSpeakerComponent>(uid);
+                // If the entity already speaks some language (like monkey or robot), we do nothing else
+                // Otherwise, we give them the fallback language
+                if (speaker.SpokenLanguages.Count == 0)
+                    language.AddLanguage(uid, SharedLanguageSystem.FallbackLanguagePrototype);
+// Corvax-Languages-End
             }
 
             entityManager.EnsureComponent<ExaminerComponent>(uid);

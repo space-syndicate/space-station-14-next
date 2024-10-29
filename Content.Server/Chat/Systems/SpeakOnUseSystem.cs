@@ -1,4 +1,5 @@
 using Content.Server.Chat;
+using Content.Shared.Chat; // Corvax-Languages
 using Content.Shared.Dataset;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Timing;
@@ -36,7 +37,7 @@ public sealed partial class SpeakOnUIClosedSystem : EntitySystem
             return;
 
         var message = Loc.GetString(_random.Pick(messagePack.Values));
-        _chat.TrySendInGameICMessage(uid, message, InGameICChatType.Speak, true);
+        _chat.TrySendInGameICMessage(uid, message, SharedChatSystem.InGameICChatType.Speak, true); // Corvax-Languages
         _useDelay.TryResetDelay((uid, useDelay));
     }
 }

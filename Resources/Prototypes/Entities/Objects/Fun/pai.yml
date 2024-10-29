@@ -75,6 +75,26 @@
           Searching: { state: pai-searching-overlay }
           On: { state: pai-on-overlay }
   - type: StationMap
+  - type: LanguageKnowledge # Corvax-Languages
+ # Corvax-Languages
+    speaks:
+    - SolCommon
+    - RobotTalk
+    - GraySpeak
+    - Draconic
+    - RootSpeak
+    - Moffic
+    - Bubblish
+    - GalacticCommon
+    understands:
+    - SolCommon
+    - RobotTalk
+    - GraySpeak
+    - Draconic
+    - RootSpeak
+    - Moffic
+    - Bubblish
+    - GalacticCommon
 
 - type: entity
   parent: [ PersonalAI, BaseSyndicateContraband]

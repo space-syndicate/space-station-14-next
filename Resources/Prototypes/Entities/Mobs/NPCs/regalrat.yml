@@ -123,6 +123,13 @@
       gender: male
   - type: TTS # Corvax-TTS
     voice: Rat
+  - type: LanguageKnowledge # Corvax-Languages
+    speaks:
+    - GalacticCommon
+    - Mouse
+    understands:
+    - GalacticCommon
+    - Mouse
 
 - type: entity
   id: MobRatKingBuff
@@ -200,6 +207,14 @@
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded"]
       state: eyes
       shader: unshaded
+  - type: LanguageKnowledge # Corvax-Languages
+    speaks:
+    - Mouse
+    understands:
+    - GalacticCommon
+    - Mouse
+
+
 
   - type: SpriteMovement
     movementLayers:

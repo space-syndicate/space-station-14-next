@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared.Chat; // Corvax-Languages
 using Content.Shared.Chat.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -46,7 +47,7 @@ public sealed class AutoEmoteSystem : EntitySystem
 
                 if (autoEmotePrototype.WithChat)
                 {
-                    _chatSystem.TryEmoteWithChat(uid, autoEmotePrototype.EmoteId, autoEmotePrototype.HiddenFromChatWindow ? ChatTransmitRange.HideChat : ChatTransmitRange.Normal);
+                    _chatSystem.TryEmoteWithChat(uid, autoEmotePrototype.EmoteId, autoEmotePrototype.HiddenFromChatWindow ? SharedChatSystem.ChatTransmitRange.HideChat : SharedChatSystem.ChatTransmitRange.Normal); // Corvax-Languages
                 }
                 else
                 {

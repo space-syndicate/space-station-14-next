@@ -60,6 +60,7 @@
   - type: Tag
     tags:
     - BypassInteractionRangeChecks
+  - type: UniversalLanguageSpeaker # Corvax-Language
 
 - type: entity
   id: ActionGhostBoo

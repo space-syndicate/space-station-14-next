@@ -187,6 +187,9 @@ binds:
 - function: OpenCharacterMenu
   type: State
   key: C
+- function: OpenLanguageMenu # Corvax-Language
+  type: State # Corvax-Language
+  key: L # Corvax-Language
 - function: OpenEmotesMenu
   type: State
   key: Y
