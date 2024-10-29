@@ -256,7 +256,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         // This message may have a radio prefix, and should then be whispered to the resolved radio channel
         if (checkRadioPrefix)
         {
-            if (TryProccessRadioMessage(source, message, out var modMessage, out var channel)) // // Corvax-Languages
+            if (TryProccessRadioMessage(source, message, out var modMessage, out var channel)) // Corvax-Languages
             {
                 SendEntityWhisper(source, modMessage, range, channel, nameOverride, language, hideLog, ignoreActionBlocker);
                 return;
