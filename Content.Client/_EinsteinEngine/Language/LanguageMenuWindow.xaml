@@ -4,7 +4,7 @@
                SetSize="300 300">
     <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
         <PanelContainer Name="CurrentLanguageContainer" Access="Public" StyleClasses="PdaBorderRect">
-            <Label Name="CurrentLanguageLabel" Access="Public" Text="Current Language:" HorizontalExpand="True"></Label>
+            <Label Name="CurrentLanguageLabel" Access="Public" Text="Текущий язык:" HorizontalExpand="True"></Label>
         </PanelContainer>
 
         <ui:HLine></ui:HLine>
