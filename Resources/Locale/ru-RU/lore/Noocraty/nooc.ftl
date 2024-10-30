@@ -136,6 +136,7 @@ ent-NoocBackpackPassengerFilled = Ноократский армейский рю
     .suffix =  Ноократия, Пассажира, Без оружия
 ent-NoocBackpackFilled = Ноократский армейский рюкзак
     .suffix =  Ноократия, Без оружия
+    .desc =  Стандартный армейский рюкзак Ноократии Эранта для бойцов низкого и среднего классов.
 ent-NoocBackpackFilledRifle = Ноократский армейский рюкзак
     .suffix =  Ноократия, Винтовка
 ent-NoocBackpackFilledMG = Ноократский армейский рюкзак
