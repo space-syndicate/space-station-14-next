@@ -191,6 +191,7 @@ ent-SNKCartridgeDrobLazer = Лазерный заряд
     .suffix =  СНК
 ent-SNKMagazinePistolPistStd = Магазин к пистолету "Нюра" (.24)
     .suffix =  СНК
+    .desc = Магазин к пистолету "Нюра" (.24)
 ent-SNKMagazinePistolPistPoi = Магазин к пистолету "Нюра" (.24 ядовитые)
     .suffix =  СНК
 ent-SNKMagazinePistolRifleStd = Магазин к пистолету "Громыхало" (.34)
