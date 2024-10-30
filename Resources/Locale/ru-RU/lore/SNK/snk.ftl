@@ -363,6 +363,7 @@ ent-SNKMen = Военный СНК
     .desc =  job-snk
 ent-SNKSatchelsFilledPistPist = Офицерская плечевая сумка СНК
     .suffix =  СНК, Пистолет(пистолет)
+    .desc =  Офицерская плечевая сумка СНК. Лёгкая и практичная
 ent-SNKSatchelsFilledPistRifle = Офицерская плечевая сумка СНК
     .suffix =  СНК, Пистолет(винтовка)
 ent-CNKBackpackFilledSMGPist = Армейский рюкзак CНК
