@@ -77,6 +77,7 @@ ent-PetrCartridgeRevolver = Револьверная пуля (.40 rifle)
     .suffix =  Петрищев
 ent-PetrMagazinePistol = Магазин к пистолету "Горький" (.32 rifle)
     .suffix =  Петрищев
+    .desc = Маленький, но тяжёлый.
 ent-PetrSpeedLoader = Спидлоадер револьвера (.40)
 ent-PetrMagazineSMG = Магазин к пистолету-пулемёту "Коллективист" (.32 auto боевые)
     .suffix =  Петрищев
