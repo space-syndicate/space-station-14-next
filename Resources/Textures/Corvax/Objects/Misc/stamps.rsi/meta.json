@@ -12,6 +12,12 @@
     },
     {
       "name": "stamp-iaa"
+    },
+    {
+      "name": "stamp-librarian"
+    },
+    {
+      "name": "stamp-reporter"
     }
   ]
 }

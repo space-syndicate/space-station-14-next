@@ -25,3 +25,31 @@
   - type: Sprite
     sprite: Corvax/Objects/Misc/stamps.rsi
     state: stamp-psychologist
+
+- type: entity
+  name: reporter's rubber stamp
+  parent: RubberStampBase
+  id: RubberStampReporter
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-reporter
+    stampedColor: "#3d3a3d"
+    stampState: "paper_stamp-reporter"
+  - type: Sprite
+    sprite: Corvax/Objects/Misc/stamps.rsi
+    state: stamp-reporter
+
+- type: entity
+  name: librarian's rubber stamp
+  parent: RubberStampBase
+  id: RubberStampLibrarian
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-librarian
+    stampedColor: "#795548"
+    stampState: "paper_stamp-librarian"
+  - type: Sprite
+    sprite: Corvax/Objects/Misc/stamps.rsi
+    state: stamp-librarian
