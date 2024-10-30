@@ -221,6 +221,7 @@ ent-MirtIDCardOfficer = Чип миртанского офицера
     .suffix =  Миртан
 ent-MirtIDCardSolder = Чип миртанского солдата
     .suffix =  Миртан
+    .desc = Данный чип служит в роли электронного пропуска на объектах Империи Миртана
 ent-MirtIDCardEngener = Чип миртанского инквизитора
     .suffix =  Миртан
 ent-MirtIDCardLogist = Чип миртанского старшего инквизитора
