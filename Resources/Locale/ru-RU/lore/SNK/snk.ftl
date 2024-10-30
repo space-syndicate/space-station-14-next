@@ -139,6 +139,7 @@ ent-SNKBeltEnge = Пояс инженера СНК
     .suffix =  СНК
 ent-SNKBeltOffiFilled = Пояс офицера СНК
     .suffix =  Filled, СНК, Офицер
+	.desc =  Этот пояс используют солдаты СНК для ношения амуниции, пистолетов и прочего боевого снаряжения
 ent-SNKBeltSoldFilled = Пояс военного СНК
     .suffix =  Filled, СНК, Солдат
 ent-SNKBeltMedicFilled = Пояс медика СНК
