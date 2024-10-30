@@ -144,6 +144,7 @@ ent-UmporIDCardSolder = ID-карты умпорского солдата
     .suffix =  Умпорский
 ent-UmporIDCardMedic = ID-карты умпорского армейского медика
     .suffix =  Умпорский
+    .desc =  Данная карта служит в роли электронного пропуска на военных объектах Умпорской Федерации
 ent-UmporIDCardEngener = ID-карты умпорского военного инженера
     .suffix =  Умпорский
 ent-UmporIDCardLogist = ID-карты умпорского логиста
