@@ -181,6 +181,7 @@ ent-SNKCartridgeHighRifleStd = Тяжёлая винтовочная пуля (.
     .suffix =  СНК
 ent-SNKCartridgeDrobStd = Заряд дроби (.45)
     .suffix =  СНК
+    .desc = Заряд дроби СНК (.45)
 ent-SNKCartridgeDrobBul = Дробовиковая пуля (.45)
     .suffix =  СНК
 ent-SNKCartridgeDrobHea = Зажигательная дробь (.45)
