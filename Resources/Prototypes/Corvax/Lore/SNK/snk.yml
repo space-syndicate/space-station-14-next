@@ -1603,6 +1603,7 @@
 - type: entity
   id: SNKMagazineSMGElectro
   name: Магазин к пистолету-пулемёту "Хартред"
+  description: Небольшой, лёгкий, наэлектризованный. Порой потрескивает.
   suffix: СНК
   parent: BaseSNKMagazineSMGElectro
   components:
