@@ -701,16 +701,15 @@
 #------------------------------------пистолет---------- 
 - type: entity
   id: UmporBulletPistol
-  name: name-of-UmporBulletPistol
-  suffix: Umpor
+  name: Лёгкая пистолетная пуля (.15 rifle)
+  suffix: Умпорский
   parent: BaseBullet
   noSpawn: true
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 11
-        
+        Piercing: 11       
 #-------------------------------------картриджи---------------------------------------------------------------------------------
 #------------------------------------винтовка---------- 
 - type: Tag
