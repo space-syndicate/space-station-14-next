@@ -3176,7 +3176,7 @@
       excess: 380
     - type: Loadout
       prototypes: [ MirtTgGearLMG ]
-  
+      
 - type: entity
   name: Миртанский боец тяжёлого оружия Спавнер
   id: MirtMobHumanTg
@@ -3192,7 +3192,7 @@
     randomizeName: false
   - type: RandomMetadata
     nameSegments:
-    - MirtName-t
+    - MirtName-o
     - MirtNameTwo
   - type: RandomHumanoidSpawner
     settings: MirtTgR
