@@ -43,7 +43,6 @@
 
 - type: htnCompound
   id: MeleeAttackTargetCompoundBotSNK
-  preconditions:
   branches:
     # Move to melee range and hit them
     - tasks:
@@ -386,8 +385,6 @@
   - type: BasicEntityAmmoProvider
     proto: SNKCartridgeDrobStd
     capacity: 9
-    count: 9
-    spread: 15
   - type: Gun
     showExamineText: false
     fireRate: 1.1
@@ -730,7 +727,7 @@
 - type: entity
   name: Спавнер бота Радист СНК
   suffix: Бот, СНК, безОруж, бег
-  id: SpawnMobSNKrad
+  id: SpawnMobSNK
   parent: MarkerBase
   components:
   - type: Sprite
@@ -740,34 +737,34 @@
     - state: engineer
   - type: ConditionalSpawner
     prototypes:
-    - MobSNKrad
+    - MobSNKRad
 #-------------Без оружия ждущий--------------- 
 - type: entity
-  parent: SpawnMobSNKrad
-  id: SpawnMobSNKradStop
+  parent: SpawnMobSNKRad
+  id: SpawnMobSNKRadStop
   suffix: Бот, СНК, безОруж, стоп
   components:
   - type: ConditionalSpawner
     prototypes:
-    - MobSNKradStop
+    - MobSNKRadStop
 #-------------Вооружён бегающий---------------  
 - type: entity
-  parent: SpawnMobSNKrad
-  id: SpawnMobSNKradWeapon
+  parent: SpawnMobSNKRad
+  id: SpawnMobSNKRadWeapon
   suffix: Бот, СНК, Оруж, бег
   components:
   - type: ConditionalSpawner
     prototypes:
-    - MobSNKradWeapon
+    - MobSNKRadWeapon
 #-------------Вооружён ждущий---------------  
 - type: entity
-  parent: SpawnMobSNKrad
-  id: SpawnMobSNKradWeaponStop
+  parent: SpawnMobSNKRad
+  id: SpawnMobSNKRadWeaponStop
   suffix: Бот, СНК, Оруж, стоп
   components:
   - type: ConditionalSpawner
     prototypes:
-    - MobSNKradWeaponStop
+    - MobSNKRadWeaponStop
 #-------------------------------Офицер----------------------
 #-------------Без оружия бегающий---------------
 - type: entity
