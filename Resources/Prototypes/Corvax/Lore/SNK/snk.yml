@@ -1073,9 +1073,6 @@
       types:
         Piercing: 7
         Blunt: 6
-  - type: ProjectileSpread
-    count: 1
-    spread: 5
 #---------------зажигательные---------------------
 - type: entity
   id: SNKBulletDrobHea
