@@ -3,15 +3,15 @@ highlights-captain = Капитан, "Кэп", Командование
 highlights-head-of-personnel = Глава персонала, "ГП", Сервис, Командование
 highlights-chief-engineer = Старший инженер, "СИ", Инженер, "Инж", Командование
 highlights-chief-medical-officer = Главный врач, "ГВ", Медицинский, "Мед", Командование
-highlights-head-of-security = Глава Службы Безопасности, "ГСБ", Безопасность, "Охрана", Командование
+highlights-head-of-security = Глава Службы Безопасности, "ГСБ", Безопасности, "СБ", Командование
 highlights-quartermaster = Квартирмейстер, "КМ", Карго, Командование
 highlights-research-director = Научный Руководитель, "НР", Наука, Учёный, "НИО", Командование
 
 # Безопасность
-highlights-detective = Детектив, "Дек", Безопасность, "СБ"
-highlights-security-cadet = Кадет Службы Безопасности, Кадет, Безопасность, "СБ"
-highlights-security-officer = Офицер Службы Безопасности, "Охрана", Офицер, Безопасность, "СБ"
-highlights-warden = Смотритель, Безопасность, "СБ"
+highlights-detective = Детектив, "Дек", Безопасности, "СБ"
+highlights-security-cadet = Кадет Службы Безопасности, Кадет, "СБ"
+highlights-security-officer = Офицер Службы Безопасности, Офицер, "СБ"
+highlights-warden = Смотритель, Безопасности, "СБ"
 
 # Карго
 highlights-cargo-technician = Грузчик, Снабжение, Карго
