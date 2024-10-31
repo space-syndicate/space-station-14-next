@@ -1,6 +1,8 @@
 #--------------------------------------------
 - type: salvageFaction
   id: SNK
+  name: name-of-salvage-faction-snk
+  desc: salvage-faction-snk
   entries:
     - proto: MobSNK
       prob: 0.5
