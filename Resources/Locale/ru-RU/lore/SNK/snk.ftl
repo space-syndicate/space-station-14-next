@@ -552,3 +552,5 @@ ent-SNKCrateAmmo = Ящик боеприпасов СНК
 ent-SNKCrateArmor = Ящик брони СНК
     .suffix =  СНК
     .desc =  Хранит в себе тяжёлые бронекомплекты и скафандры СНК
+name-of-salvage-faction-snk = СНК
+salvage-faction-snk = Небольшой гарнизон солдат Союза Независимых Колоний
