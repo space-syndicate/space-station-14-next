@@ -1089,9 +1089,9 @@
       types:
         Piercing: 3
         Heat: 10
-    - type: ProjectileSpread
-      count: 4
-      spread: 11
+  - type: ProjectileSpread
+    count: 4
+    spread: 11
 #-------------------------------------------лучи----------------------------------------------
 #---------------------------------лазер карабин------------- 
 - type: hitscan
