@@ -1,5 +1,5 @@
-roles-antag-syndicate-agent-name = Агент Синдиката
-roles-antag-syndicate-agent-objective = Выполните свои задачи и не попадитесь.
+roles-antag-traitor-name = Предатель
+roles-antag-traitor-objective = Выполните свои задачи и не попадитесь.
 roles-antag-syndicate-agent-sleeper-name = Спящий агент Синдиката
 roles-antag-syndicate-agent-sleeper-objective = Разновидность агента Синдиката, который может активироваться и начать действие в любой момент смены.
 roles-antag-initial-infected-name = Нулевой заражённый

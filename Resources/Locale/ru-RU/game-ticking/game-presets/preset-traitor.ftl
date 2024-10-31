@@ -21,11 +21,6 @@ traitor-death-match-end-round-description-entry = КПК { $originalName }, с {
 ## TraitorRole
 
 # TraitorRole
-traitor-role-greeting =
-    Вы - агент организации { $corporation } на задании [color = darkred]Синдиката.[/color].
-    Ваши цели и кодовые слова перечислены в меню персонажа.
-    Воспользуйтесь аплинком, встроенным в ваш КПК, чтобы приобрести всё необходимое для выполнения работы.
-    Смерть Nanotrasen!
 traitor-role-codewords =
     Кодовые слова следующие: [color = lightgray]
     { $codewords }.[/color]
@@ -34,6 +29,22 @@ traitor-role-codewords =
 traitor-role-uplink-code =
     Установите рингтон Вашего КПК на [color = lightgray]{ $code }[/color] чтобы заблокировать или разблокировать аплинк.
     Не забудьте заблокировать его и сменить код, иначе кто угодно из экипажа станции сможет открыть аплинк!
+
+traitor-role-moreinfo =
+    Найдите больше информации о вашей роли в меню персонажа.
+
+traitor-role-nouplink =
+    У вас нет аплинка синдиката. Распоряжайтесь ресурсами с умом.
+
+traitor-role-allegiances =
+    Ваша союзники:
+
+traitor-role-notes =
+    Заметки от вашего нанимателя:
+
+traitor-role-clarity =
+    Союзники и дополнительные заметки являются рекомендациями. Вам не обязательно строго их придерживаться.
+
 # don't need all the flavour text for character menu
 traitor-role-codewords-short =
     Кодовые слова:
