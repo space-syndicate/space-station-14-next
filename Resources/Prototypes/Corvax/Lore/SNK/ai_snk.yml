@@ -727,7 +727,7 @@
 - type: entity
   name: Спавнер бота Радист СНК
   suffix: Бот, СНК, безОруж, бег
-  id: SpawnMobSNK
+  id: SpawnMobSNKRad
   parent: MarkerBase
   components:
   - type: Sprite
