@@ -1078,7 +1078,7 @@
   id: SNKBulletDrobHea
   name: Зажигательная дробь (.45 rifle)
   suffix: СНК
-  parent: BaseBullet
+  parent: SNKBulletDrobStd
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -1124,7 +1124,7 @@
 - type: entity
   id: SNKRedLaserDrob
   name: Лазерная дробь
-  parent: BaseBullet
+  parent: SNKBulletDrobStd
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
