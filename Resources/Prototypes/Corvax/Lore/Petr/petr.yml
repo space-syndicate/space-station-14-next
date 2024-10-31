@@ -356,7 +356,7 @@
   - type: AccessReader
     access: [[ "PetrAccess" ]]
   - type: CommunicationsConsole
-    title: "Призрак Коммунизма"
+    title: "Ghost-of-Communism-stamp"
     color: "#670c0c"
     canShuttle: false
     global: true #announce to everyone they're about to fuck shit up
@@ -3119,8 +3119,9 @@
   - Passive
   - PetsNT
   - Zombie
-  - Revolutionary
   - Noocraty
   - NoocratyBot
+  - UmporBot
+  - Umpor
   friendly:
-  - PetrGjlgjkmyfz
+  - Revolutionary

@@ -44,8 +44,6 @@
 - type: htnCompound
   id: MeleeAttackTargetCompoundBotSNK
   preconditions:
-    - !type:KeyExistsPrecondition
-      key: Target
   branches:
     # Move to melee range and hit them
     - tasks:
@@ -491,7 +489,7 @@
   name: Радист СНК
   suffix: Бот, СНК, безОруж, бег
   parent: MobSNK
-  id: MobSNKrad
+  id: MobSNKRad
   components:
   - type: Loadout
     prototypes:
@@ -501,7 +499,7 @@
   name: Радист СНК
   suffix: Бот, СНК, безОруж, стоп
   parent: MobSNKStop
-  id: MobSNKradStop
+  id: MobSNKRadStop
   components:
   - type: Loadout
     prototypes:
@@ -509,8 +507,8 @@
 #-------------Вооружён бегающий---------------  
 - type: entity
   suffix: Бот, СНК, Оруж, бег
-  parent: MobSNKrad
-  id: MobSNKradWeapon
+  parent: MobSNKRad
+  id: MobSNKRadWeapon
   components:
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 2
@@ -531,8 +529,8 @@
 #-------------Вооружён ждущий--------------- 
 - type: entity
   suffix: Бот, СНК, Оруж, стоп
-  parent: MobSNKradWeapon
-  id: MobSNKradWeaponStop
+  parent: MobSNKRadWeapon
+  id: MobSNKRadWeaponStop
   components:
   - type: HTN
     rootTask:

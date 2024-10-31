@@ -140,7 +140,6 @@
     state: icon
   - type: Item
     sprite: Corvax/Lore/SNK/Equipment/snk_back_std.rsi
-    state: icon
     size: Huge
   - type: Clothing
     quickEquip: false
@@ -820,56 +819,6 @@
   - type: Clothing
     sprite: Corvax/Lore/SNK/Equipment/snk_belt_sol.rsi
   - type: Storage
-    whitelist:
-      tags:
-        - CigPack
-        - Taser
-        - Powerdrill
-        - Wirecutter
-        - Crowbar
-        - Screwdriver
-        - Flashlight
-        - Wrench
-        - GeigerCounter
-        - Flare
-        - CableCoil
-        - CigPack
-        - Radio
-        - HolofanProjector
-        - Multitool
-        - AppraisalTool
-        - JawsOfLife
-        - GPS
-        - MagazinePistolHighCapacity
-        - CombatKnife
-        - Sidearm
-        - Brutepack
-        - Ointment
-        - Bloodpack
-        - Gauze
-        - EmergencyMedipen
-        - Multitool
-        - SNKPistolPist
-        - SNKMagazine
-        - SNKPistolRifle
-        - Paper
-      components:
-        - Stunbaton
-        - FlashOnTrigger
-        - SmokeOnTrigger
-        - Flash
-        - Handcuff
-        - RangedMagazine
-        - Ammo
-        - SprayPainter
-        - NetworkConfigurator
-        - RCD
-        - RCDAmmo
-        - Welder
-        - PowerCell
-        - Geiger
-        - TrayScanner
-        - GasAnalyzer
   - type: Appearance
 
 - type: entity
@@ -1172,6 +1121,9 @@
     count: 7
     spread: 20
 #-------------------------------------------энергошарики-----------------------
+- type: Tag
+  id: SNKElectro
+
 - type: entity
   id: SNKElectro
   name: Электрошары
