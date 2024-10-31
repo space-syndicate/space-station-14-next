@@ -99,6 +99,7 @@ ent-VitzAirlockSolderLockedGlass = Стеклянный шлюз
     .suffix =  Витезтви, Locked
 ent-VitzAirlockPilotLockedGlass = Стеклянный шлюз
     .suffix =  Витезтви, Пилот, Locked
+	.desc = Он открывается, закрывается, порой пропускает или не пропускает воздух...
 ent-VitzAirlockOfficerLockedGlass = Стеклянный шлюз
     .suffix =  Витезтви, Офицер, Locked
 ent-VitzAirlockPiloOffiLockedGlass = Стеклянный шлюз
