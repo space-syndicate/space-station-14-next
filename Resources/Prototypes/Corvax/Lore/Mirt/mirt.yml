@@ -164,7 +164,7 @@
         Slash: 0.8
         Piercing: 0.8 
         Shock: 1.1 
-        Сaustic: 0.95
+        Caustic: 0.95
         Poison: 0.95
   - type: ClothingSpeedModifier
     walkModifier: 0.95
@@ -184,7 +184,7 @@
   - type: Armor
     modifiers:
       coefficients:
-        Сaustic: 0.95
+        Caustic: 0.95
         Poison: 0.95
   - type: ClothingSpeedModifier
     walkModifier: 1.25
@@ -227,7 +227,7 @@
         Slash: 0.85
         Piercing: 0.85
         Heat: 0.9
-        Сaustic: 0.9
+        Caustic: 0.9
         Poison: 0.9
   - type: BreathMask
   - type: ContainerFill
@@ -267,7 +267,7 @@
   - type: Armor
     modifiers:
       coefficients:
-        Сaustic: 0.95
+        Caustic: 0.95
         Poison: 0.95
 #------------------------------------бронированные перчатки----------     
 - type: entity
@@ -297,7 +297,7 @@
         Slash: 0.8
         Piercing: 0.8 
         Shock: 1.1 
-        Сaustic: 0.95
+        Caustic: 0.95
         Poison: 0.95
 #--------------------------------------------------плащи-------------------------------------- 
 #------------------------------------офицерский---------- 
@@ -313,7 +313,7 @@
   - type: Armor
     modifiers:
       coefficients:
-        Сaustic: 0.9
+        Caustic: 0.9
         Poison: 0.9
 #------------------------------------специалиста---------- 
 - type: entity
@@ -348,7 +348,7 @@
   - type: Armor
     modifiers:
       coefficients:
-        Сaustic: 0.95
+        Caustic: 0.95
         Poison: 0.95
 #------------------------------------плащ скаута----------   
 #-----------------------сам плащ----------------  
@@ -369,7 +369,7 @@
         Cold: 0.9
         Heat: 0.9
         Radiation: 0.95
-        Сaustic: 0.8
+        Caustic: 0.8
         Poison: 0.8
   - type: ToggleableClothing
     clothingPrototype: MirtHoodCloakRaz
@@ -387,7 +387,7 @@
   name: Капюшон плаща скаута
   suffix: Миртан
   description: Закрывает половину головы. Но позволяет активировать маскировку.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: Corvax/Lore/Mirt/Armor/mirt_cloak_r_hood.rsi
@@ -399,7 +399,7 @@
         Cold: 0.9
         Heat: 0.9
         Radiation: 0.95
-        Сaustic: 0.95
+        Caustic: 0.95
         Poison: 0.95
   - type: ToggleClothing
     action: ActionTogglePhaseCloak
@@ -448,7 +448,7 @@
         Slash: 0.75
         Piercing: 0.75 
         Heat: 0.75
-        Сaustic: 0.8
+        Caustic: 0.8
         Poison: 0.8
   - type: ExplosionResistance
     damageCoefficient: 0.80
@@ -471,7 +471,7 @@
         Slash: 0.6
         Piercing: 0.6
         Heat: 0.6
-        Сaustic: 0.7
+        Caustic: 0.7
         Poison: 0.7
   - type: ExplosionResistance
     damageCoefficient: 0.75
@@ -495,7 +495,7 @@
         Piercing: 0.95 
         Heat: 0.7
         Cold: 0.7
-        Сaustic: 0.7
+        Caustic: 0.7
         Poison: 0.7
   - type: ExplosionResistance
     damageCoefficient: 0.9
@@ -519,7 +519,7 @@
         Slash: 0.5
         Piercing: 0.5
         Radiation: 0.7
-        Сaustic: 0.5
+        Caustic: 0.5
         Poison: 0.5
   - type: ClothingSpeedModifier
     walkModifier: 0.80
@@ -536,7 +536,7 @@
   name: Шлем боевого скафандра
   suffix: Миртан
   description: Стандартный простой шлем скафандра для армии Империи Миртана
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: BreathMask
   - type: Sprite
@@ -552,7 +552,7 @@
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.9
-        Сaustic: 0.9
+        Caustic: 0.9
         Poison: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.8
@@ -575,7 +575,7 @@
         Slash: 0.3
         Piercing: 0.3
         Radiation: 0.6
-        Сaustic: 0.4
+        Caustic: 0.4
         Poison: 0.4
   - type: ClothingSpeedModifier
     walkModifier: 0.6
@@ -592,7 +592,7 @@
   name: Шлем бронированного скафандра
   suffix: Миртан
   description: Стандартный простой шлем скафандра для армии Умпорской Федерации
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: BreathMask
   - type: Sprite
@@ -608,7 +608,7 @@
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.9
-        Сaustic: 0.9
+        Caustic: 0.9
         Poison: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.8
@@ -631,7 +631,7 @@
         Slash: 0.4
         Piercing: 0.4
         Radiation: 0.7
-        Сaustic: 0.6
+        Caustic: 0.6
         Poison: 0.6
   - type: ClothingSpeedModifier
     walkModifier: 0.80
@@ -648,7 +648,7 @@
   name: Шлем инквизиторского скафандра
   suffix: Миртан
   description: Стандартный простой шлем скафандра для армии Умпорской Федерации
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: BreathMask
   - type: Sprite
@@ -666,7 +666,7 @@
         Blunt: 0.85
         Slash: 0.85
         Piercing: 0.85
-        Сaustic: 0.95
+        Caustic: 0.95
         Poison: 0.95
   - type: ExplosionResistance
     damageCoefficient: 0.8
@@ -691,7 +691,7 @@
         Piercing: 0.95
         Heat: 0.9
         Cold: 0.9
-        Сaustic: 0.9
+        Caustic: 0.9
         Poison: 0.9
 #------------------------------------очки скаута----------
 - type: entity
@@ -808,14 +808,14 @@
         coefficients:
           Blunt: 0.55
           Slash: 0.55
-          Сaustic: 0.8
+          Caustic: 0.8
           Poison: 0.8
           Piercing: 0.7 
       activeBlockModifier:
         coefficients:
           Blunt: 0.3
           Slash: 0.3
-          Сaustic: 0.7
+          Caustic: 0.7
           Poison: 0.7
           Piercing: 0.5 
         flatReductions:
@@ -842,14 +842,14 @@
         coefficients:
           Blunt: 0.4
           Slash: 0.4
-          Сaustic: 0.7
+          Caustic: 0.7
           Poison: 0.7
           Piercing: 0.55 
       activeBlockModifier:
         coefficients:
           Blunt: 0.1
           Slash: 0.1
-          Сaustic: 0.6
+          Caustic: 0.6
           Poison: 0.6
           Piercing: 0.4 
         flatReductions:
@@ -886,7 +886,7 @@
     damageContainers:
       - Biological
     damage:
-      Сaustic: -10
+      Caustic: -10
       Poison: -10
       Heat: -5
       groups:
@@ -1077,7 +1077,7 @@
   name: Тяжёлый заряд (hhc)
   suffix: Миртан
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1095,7 +1095,7 @@
   name: Лёгкий заряд  (lhc)
   suffix: Миртан
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1112,7 +1112,7 @@
   id: MirtBulletPistol
   name: Стандартный заряд (shc)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1125,11 +1125,14 @@
   - type: StaminaDamageOnCollide
     damage: 5     
 #------------------------------------пожарный лазер---------- 
+- type: Tag
+  id: MirtFireLaser
+
 - type: entity
   id: MirtFireLaser
   name: Осколок зенитного заряда
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1595,7 +1598,6 @@
     useKey: false
     fireRate: 6
     selectedMode: Burst
-    shotsPerBurstModified: 5
     availableModes:
       - Burst
     soundGunshot:
@@ -2403,7 +2405,7 @@
 #-----------------------------канал----------------------------------------  
 - type: radioChannel
   id: MirtRadio
-  name: Миртанский
+  name: name-of-MirtRadio
   keycode: 'р' 
   frequency: 1939
   color: "#a73800"
@@ -2689,7 +2691,7 @@
   name: Военный Империи Миртана
   description: job-mirt
   playTimeTracker: JobEventMirtan
-  startingGear: MirtanSoldGear
+  startingGear: MirtSoldGearAuto
   supervisors: job-supervisors-everyone
   canBeAntag: false
   access:
@@ -3004,6 +3006,18 @@
   - Сник
   - Магевер
 #-------------------------------------хуй знает что это, но вот оно работает и ладно---------------------------
+- type: npcFaction
+  id: Mirt
+  hostile:
+  - SimpleHostile
+  - Xeno
+  - Zombie
+  - Syndicate
+  - Revolutionary
+  - Dragon
+  friendly:
+  - Noocraty
+  - NoocratyBot
 #---------------------------------ополченец----------
 - type: randomHumanoidSettings
   speciesBlacklist: 
@@ -3045,7 +3059,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ MirtGrGear ]
   
@@ -3109,7 +3123,7 @@
         110: Critical
         220: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ MirtSoldGearAuto ]
   
@@ -3173,7 +3187,7 @@
         115: Critical
         230: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ MirtTgGearLMG ]
       
@@ -3237,7 +3251,7 @@
         115: Critical
         230: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ MirtOffiGear ]
   
@@ -3301,7 +3315,7 @@
         105: Critical
         210: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ MirtInkGear ]
   
@@ -3365,7 +3379,7 @@
         105: Critical
         210: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ MirtOffiInkGear ]
   
@@ -3429,7 +3443,7 @@
         105: Critical
         210: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ MirtRazGear ]
   

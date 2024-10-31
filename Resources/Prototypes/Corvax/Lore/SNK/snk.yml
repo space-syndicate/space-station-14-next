@@ -754,7 +754,7 @@
   name: Шлем боевого скафандра СНК
   suffix: СНК
   description: Тяжёлый. Именно из-за шлема скафандр получил прозвище "Сердитый дед".
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: BreathMask
   - type: Sprite
@@ -973,7 +973,7 @@
   name: Пистолетная пуля (.24 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -985,7 +985,7 @@
   name: Пистолетная пуля (.24 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -999,7 +999,7 @@
   name: Винтовочная пуля (.34 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1011,7 +1011,7 @@
   name: Винтовочная пуля (.34 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1024,7 +1024,7 @@
   name: Винтовочная пуля (.34 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1038,7 +1038,7 @@
   name: Тяжёлая винтовочная пуля (.55 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1051,38 +1051,47 @@
   name: Заряд дроби (.45 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
         Piercing: 8
+  - type: ProjectileSpread
+    count: 6
+    spread: 15
 #---------------пуля---------------------
 - type: entity
   id: SNKBulletDrobPul
   name: Дробовиковая пуля (.45 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
         Piercing: 7
         Blunt: 6
+  - type: ProjectileSpread
+    count: 1
+    spread: 5
 #---------------зажигательные---------------------
 - type: entity
   id: SNKBulletDrobHea
   name: Зажигательная дробь (.45 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
         Piercing: 3
         Heat: 10
+    - type: ProjectileSpread
+      count: 4
+      spread: 11
 #-------------------------------------------лучи----------------------------------------------
 #---------------------------------лазер карабин------------- 
 - type: hitscan
@@ -1119,7 +1128,7 @@
   id: SNKRedLaserDrob
   name: Лазерная дробь
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1131,12 +1140,15 @@
     sprite: Corvax/Lore/SNK/Weapon/snk_projectiles.rsi
     layers:
       - state: lazer
+  - type: ProjectileSpread
+    count: 7
+    spread: 20
 #-------------------------------------------энергошарики-----------------------
 - type: entity
   id: SNKElectro
   name: Электрошары
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1257,8 +1269,6 @@
   components:
   - type: CartridgeAmmo
     proto: SNKBulletDrobStd
-    count: 6
-    spread: 15
     soundEject:
       collection: ShellEject
   - type: Tag
@@ -1276,8 +1286,6 @@
   components:
   - type: CartridgeAmmo
     proto: SNKBulletDrobPul
-    count: 1
-    spread: 5
   - type: Tag
     tags:
       - SNKCartridgeDrobBul
@@ -1293,8 +1301,6 @@
   components:
   - type: CartridgeAmmo
     proto: SNKBulletDrobHea
-    count: 4
-    spread: 11
     soundEject:
       collection: ShellEject
   - type: Tag
@@ -1337,8 +1343,6 @@
     - state: base
   - type: CartridgeAmmo
     proto: SNKRedLaserDrob
-    count: 7
-    spread: 20
     soundEject:
       collection: ShellEject
   - type: Tag
@@ -3073,7 +3077,7 @@
 #-----------------------------канал----------------------------------------  
 - type: radioChannel
   id: SNKRadio
-  name: СНК
+  name: name-of-SNKRadio
   keycode: 's' 
   frequency: 1527
   color: "#001a68"
@@ -3532,10 +3536,7 @@
   - SimpleHostile
   - Xeno
   - Zombie
-  - SyndiBot
-  - NuclearNPC
-  - OPZ
-  - OPZBot
+  - Dragon
   friendly:
   - SNKBot
   - SNK
@@ -3546,10 +3547,7 @@
   - SimpleHostile
   - Xeno
   - Zombie
-  - SyndiBot
-  - NuclearNPC
-  - OPZ
-  - OPZBot
+  - Dragon
   friendly:
   - SNKBot
   - SNK
@@ -3593,7 +3591,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ SNKSoldGear ]
     - type: NpcFactionMember
@@ -3658,7 +3656,7 @@
         105: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ SNKOffiGear ]
     - type: NpcFactionMember
@@ -3723,7 +3721,7 @@
         105: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ SNKEngeGear ]
     - type: NpcFactionMember
@@ -3788,7 +3786,7 @@
         110: Critical
         210: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ SNKMediGear ]
     - type: NpcFactionMember
@@ -3853,7 +3851,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ SNKRadioGear ]
     - type: NpcFactionMember

@@ -618,7 +618,7 @@
   name: Инжектор заживитель
   suffix: Ноократия
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     noRot: false
@@ -638,7 +638,7 @@
   name: Инжектор противовоспалитель
   suffix: Ноократия
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     noRot: false
@@ -657,7 +657,7 @@
   name: Инжектор антирад
   suffix: Ноократия
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     noRot: false
@@ -1901,7 +1901,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ NoocVisGear ]
     - type: NpcFactionMember
@@ -1967,7 +1967,7 @@
         105: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ NoocSrGear ]
     - type: NpcFactionMember
@@ -2032,7 +2032,7 @@
         105: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ NoocSrMedGear ]
     - type: NpcFactionMember
@@ -2098,7 +2098,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ NoocNizGear ]
     - type: NpcFactionMember
@@ -2127,7 +2127,7 @@
 #---------------------------------------------------------------Бумаги------------------------------------------------------------
 #-----------------------------------Высокий класс-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: NoocPaperVis
   name: Памятка ноократского военного высокого класса
   suffix: Ноократия
@@ -2145,7 +2145,7 @@
       Краткий лор государства: Ноократия Эранта бескровно отделилась от ОПЗ на условиях договоров союза, научного сотрудничества и совместной обороны. Она построила классовое общество на основе теста, проверяющего талант, интеллектуальные  способности, обучаемость, способность действовать и применять знания в критических ситуациях и так далее. Экзамен Эранта. Впоследствии высшие классы стали купающимися в роскоши богачами и правителями. Высокие стали руководителями, командирами и иного рода управленцами. Средние стали хорошим квалифицированным персоналом. Низкие были пригодны для выполнения простой не требущей особых навыков рутинной и скучной или опасной работы. Низшие стали бедными пригодными лишь для самой непотребной и грязной работы. Развился культ почетания и раболепствия перед теми, кто классом выше или презрения по отношению к тем, кто ниже. Именно из-за этого Умпорская Федерация подняла кровавое восстание и отделилась. Ноократия презирает умпорцев, считая их неотёсанными дикарями и всячески старается их покорять, порабощать, ослаблять, уничтожать, желая вернуть их сектора под свои знамёна.
 #-----------------------------------Средний класс-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: NoocPaperSr
   name: Памятка ноократского военного среднего класса
   suffix: Ноократия
@@ -2163,7 +2163,7 @@
       Краткий лор государства: Ноократия Эранта бескровно отделилась от ОПЗ на условиях договоров союза, научного сотрудничества и совместной обороны. Она построила классовое общество на основе теста, проверяющего талант, интеллектуальные  способности, обучаемость, способность действовать и применять знания в критических ситуациях и так далее. Экзамен Эранта. Впоследствии высшие классы стали купающимися в роскоши богачами и правителями. Высокие стали руководителями, командирами и иного рода управленцами. Средние стали хорошим квалифицированным персоналом. Низкие были пригодны для выполнения простой не требущей особых навыков рутинной и скучной или опасной работы. Низшие стали бедными пригодными лишь для самой непотребной и грязной работы. Развился культ почетания и раболепствия перед теми, кто классом выше или презрения по отношению к тем, кто ниже. Именно из-за этого Умпорская Федерация подняла кровавое восстание и отделилась. Ноократия презирает умпорцев, считая их неотёсанными дикарями и всячески старается их покорять, порабощать, ослаблять, уничтожать, желая вернуть их сектора под свои знамёна.
 #-----------------------------------Низкий класс-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: NoocPaperNiz
   name: Памятка ноократского военного низкого класса
   suffix: Ноократия
@@ -2376,7 +2376,7 @@
 #-----------------------------канал----------------------------------------  
 - type: radioChannel
   id: NoocRadio
-  name: Ноократский
+  name: name-of-NoocRadio
   keycode: 'э' 
   frequency: 1551
   color: "#44b69d"
@@ -2444,9 +2444,8 @@
       state: charger_APC
     - type: MachineBoard
       prototype: NoocPowerCellRecharger
-      requirements:
+      stackRequirements:
         Capacitor: 3
-      materialRequirements:
         Cable: 5
     - type: PhysicalComposition
       materialComposition:
@@ -2696,7 +2695,7 @@
       - id: NoocCap
       - id: NoocGlovesVis
       - id: NoocGlovesVis
-      - id: NooceBelt
+      - id: NoocBelt
       - id: NooceBelt
       - id: NoocSatchels
       - id: NoocSatchels
@@ -3656,7 +3655,7 @@
   abstract: true
   components:
   - type: Store
-    name: Категории
+    name: Nooc-Category
     categories:
     - NoocUplinkArmor
     - NoocUplinkWeaponry
@@ -3711,7 +3710,7 @@
   id: NoocUplinkImplant
   name: Имплант-аплинк Ноократии
   description: Имплант с встроенным аплинком, закупленным у Киберсан и переделанным под нужды Ноократии
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: SubdermalImplant
     implantAction: ActionOpenUplinkImplant

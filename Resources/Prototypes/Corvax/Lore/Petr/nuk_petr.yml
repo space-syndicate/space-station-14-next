@@ -12,7 +12,7 @@
   parent:
   - BaseStation
   - BaseStationPetr
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Transform
 

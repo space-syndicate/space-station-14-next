@@ -301,7 +301,7 @@
   name: Шлем пехотного бронескафандра Витезтви
   suffix: Витезтви
   description: Укреплённый шлем бронескафандра корпорации Витезтви. Бойцам нравится его визор. Они называют его "матёрым" и "малясь устрашающим".
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: BreathMask
   - type: Sprite
@@ -358,7 +358,7 @@
   name: Шлем флотского скафандра Витезтви
   suffix: Витезтви
   description: Облегчённая версия пехотного шлема скфандра. Меньше механической брони, но больше защитных покрытий от агрессивных сред. В дополнение - визор опредления целей.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: BreathMask
   - type: Sprite
@@ -552,19 +552,6 @@
   - type: Sprite
     layers:
     - state: base
-      map: ["enum.GunVisualLayers.Base"]
-
-- type: entity
-  id: MagazineSMGViteztviRubber
-  name: Магазин к пистолету-пулемёту "Орлик" (.35 auto резиновые)
-  suffix: Витезтви
-  parent: BaseMagazineSMGViteztvi
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgePistolRubber
-  - type: Sprite
-    layers:
-    - state: rubber
       map: ["enum.GunVisualLayers.Base"]
 #-------------------------------------стволы---------------------------------------------------------------------------------
 #------------------------------------пистолет-пулемёт----------     
@@ -825,7 +812,7 @@
     - state: default
     - state: efr
   - type: PresetIdCard
-    job: VitzEfreitor
+    job: VitzEfreitorJ
 #------------------------------------карта старшина----------    
 - type: entity
   parent: VitzIDCard
@@ -837,7 +824,7 @@
     - state: default
     - state: str
   - type: PresetIdCard
-    job: VitzStarshina
+    job: VitzStarshinaJ
 #------------------------------------карта пилот----------     
 - type: entity
   parent: VitzIDCard
@@ -849,7 +836,7 @@
     - state: default
     - state: sta
   - type: PresetIdCard
-    job: VitzPilot
+    job: VitzPilotJ
 #------------------------------------карта звеньевой----------     
 - type: entity
   parent: VitzIDCard
@@ -861,7 +848,7 @@
     - state: default
     - state: zvn
   - type: PresetIdCard
-    job: VitzZven
+    job: VitzZvenJ
 #------------------------------------мистер хилл----------     
 - type: entity
   parent: VitzIDCard
@@ -873,7 +860,7 @@
     - state: default
     - state: hill
   - type: PresetIdCard
-    job: VitzMrHill   
+    job: VitzMrHillJ
 #------------------------------------стандарт КПК---------- 
 - type: entity
   abstract: true
@@ -972,7 +959,7 @@
 #-----------------------------канал----------------------------------------  
 - type: radioChannel
   id: VitzRadioPeh
-  name: ВитезтвиАрм
+  name: name-of-VitzRadioPeh
   keycode: 'й' 
   frequency: 8855
   color: "#FFFDD0"
@@ -980,7 +967,7 @@
   
 - type: radioChannel
   id: VitzRadioFlot
-  name: ВитезтвиФлот
+  name: name-of-VitzRadioFlot
   keycode: 'ю' 
   frequency: 8856
   color: "#86821d"
@@ -988,7 +975,7 @@
   
 - type: radioChannel
   id: VitzRadioComm
-  name: ВитезтвиКом
+  name: name-of-VitzRadioComm
   keycode: 'я' 
   frequency: 8857
   color: "#b3ae4b"
@@ -1480,7 +1467,7 @@
         110: Critical
         205: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ VitzEfreitorGear ]
   
@@ -1536,7 +1523,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ VitzPilotGear ]
   
@@ -1592,7 +1579,7 @@
         115: Critical
         210: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ VitzStarshinaGear ]
   
@@ -1648,7 +1635,7 @@
         105: Critical
         205: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ VitzZvenGear ]
   
@@ -1704,7 +1691,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ VitzMrHillGear]
   
@@ -1727,7 +1714,7 @@
 #---------------------------------------------------------------Бумаги------------------------------------------------------------
 #-----------------------------------ефрейтор-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: VitzPaperEfreitor
   name: Памятка пехотинца Втезтви
   suffix: Витезтви
@@ -1745,7 +1732,7 @@
       Краткий лор корпорации: Уже более 350 лет корпорация Витезтви предлагает всем желающим услуги найми боевых подразделений. Но сдаёт в аренду не группы и отряды спецназа, как многие их конкуренты, а роты, дивизии, полки и армии хорошо обученных пехотинцев, а также эскадрильи, авиаполки и целые флоты космолётов. Кроме того Витезтви является крупным производителем и поставщиком самого разного пехотного вооружения, снаряжения, а так же оружия для бронетехники и космических кораблей. Подавляющее большинство оружия СБ НТ аышло с конвейров заводов корпорации Витезтви.
 #-----------------------------------пилот-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: VitzPaperPilot
   name: Памятка пилота Витезтви
   suffix: Витезтви
@@ -1763,7 +1750,7 @@
       Краткий лор корпорации: Уже более 350 лет корпорация Витезтви предлагает всем желающим услуги найми боевых подразделений. Но сдаёт в аренду не группы и отряды спецназа, как многие их конкуренты, а роты, дивизии, полки и армии хорошо обученных пехотинцев, а также эскадрильи, авиаполки и целые флоты космолётов. Кроме того Витезтви является крупным производителем и поставщиком самого разного пехотного вооружения, снаряжения, а так же оружия для бронетехники и космических кораблей. Подавляющее большинство оружия СБ НТ аышло с конвейров заводов корпорации Витезтви.
 #-----------------------------------старшина-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: VitzPaperStarshina
   name: Памятка старшины Витезтви
   suffix: Витезтви
@@ -1781,7 +1768,7 @@
       Краткий лор корпорации: Уже более 350 лет корпорация Витезтви предлагает всем желающим услуги найми боевых подразделений. Но сдаёт в аренду не группы и отряды спецназа, как многие их конкуренты, а роты, дивизии, полки и армии хорошо обученных пехотинцев, а также эскадрильи, авиаполки и целые флоты космолётов. Кроме того Витезтви является крупным производителем и поставщиком самого разного пехотного вооружения, снаряжения, а так же оружия для бронетехники и космических кораблей. Подавляющее большинство оружия СБ НТ аышло с конвейров заводов корпорации Витезтви.
 #-----------------------------------Звеньевой-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: VitzPaperZven
   name: Памятка звеньевого Витезтви
   suffix: Витезтви
@@ -1799,7 +1786,7 @@
       Краткий лор корпорации: Уже более 350 лет корпорация Витезтви предлагает всем желающим услуги найми боевых подразделений. Но сдаёт в аренду не группы и отряды спецназа, как многие их конкуренты, а роты, дивизии, полки и армии хорошо обученных пехотинцев, а также эскадрильи, авиаполки и целые флоты космолётов. Кроме того Витезтви является крупным производителем и поставщиком самого разного пехотного вооружения, снаряжения, а так же оружия для бронетехники и космических кораблей. Подавляющее большинство оружия СБ НТ аышло с конвейров заводов корпорации Витезтви.
 #-----------------------------------Мистер Хилл-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: VitzPaperMrHill
   name: Памятка Мистера Хилла
   suffix: Витезтви
