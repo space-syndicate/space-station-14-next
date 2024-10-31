@@ -1057,7 +1057,14 @@
     damage:
       types:
         Piercing: 8
+    
+- type: entity
+  id: SNKBulletDrobStdSpread
+  categories: [ HideSpawnMenu ]
+  parent: SNKBulletDrobStd
+  components:
   - type: ProjectileSpread
+    proto: SNKBulletDrobStd
     count: 6
     spread: 15
 #---------------пуля---------------------
@@ -1073,12 +1080,22 @@
       types:
         Piercing: 7
         Blunt: 6
+    
+- type: entity
+  id: SNKBulletDrobPulSpread
+  categories: [ HideSpawnMenu ]
+  parent: SNKBulletDrobPul
+  components:
+  - type: ProjectileSpread
+    proto: SNKBulletDrobPul
+    count: 1
+    spread: 5
 #---------------зажигательные---------------------
 - type: entity
   id: SNKBulletDrobHea
   name: Зажигательная дробь (.45 rifle)
   suffix: СНК
-  parent: SNKBulletDrobStd
+  parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -1086,7 +1103,14 @@
       types:
         Piercing: 3
         Heat: 10
+      
+- type: entity
+  id: SNKBulletDrobHeaSpread
+  categories: [ HideSpawnMenu ]
+  parent: SNKBulletDrobHea
+  components:
   - type: ProjectileSpread
+    proto: SNKBulletDrobHea
     count: 4
     spread: 11
 #-------------------------------------------лучи----------------------------------------------
@@ -1124,7 +1148,7 @@
 - type: entity
   id: SNKRedLaserDrob
   name: Лазерная дробь
-  parent: SNKBulletDrobStd
+  parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -1137,7 +1161,14 @@
     sprite: Corvax/Lore/SNK/Weapon/snk_projectiles.rsi
     layers:
       - state: lazer
+    
+- type: entity
+  id: SNKRedLaserDrobSpread
+  categories: [ HideSpawnMenu ]
+  parent: SNKRedLaserDrob
+  components:
   - type: ProjectileSpread
+    proto: SNKRedLaserDrob
     count: 7
     spread: 20
 #-------------------------------------------энергошарики-----------------------
@@ -1265,7 +1296,7 @@
   parent: BaseShellShotgun
   components:
   - type: CartridgeAmmo
-    proto: SNKBulletDrobStd
+    proto: SNKBulletDrobStdSpread
     soundEject:
       collection: ShellEject
   - type: Tag
@@ -1282,7 +1313,7 @@
   parent: BaseCartridgeRifle
   components:
   - type: CartridgeAmmo
-    proto: SNKBulletDrobPul
+    proto: SNKBulletDrobPulSpread
   - type: Tag
     tags:
       - SNKCartridgeDrobBul
@@ -1297,7 +1328,7 @@
   parent: BaseShellShotgun
   components:
   - type: CartridgeAmmo
-    proto: SNKBulletDrobHea
+    proto: SNKBulletDrobHeaSpread
     soundEject:
       collection: ShellEject
   - type: Tag
@@ -1339,7 +1370,7 @@
     layers:
     - state: base
   - type: CartridgeAmmo
-    proto: SNKRedLaserDrob
+    proto: SNKRedLaserDrobSpread
     soundEject:
       collection: ShellEject
   - type: Tag
