@@ -129,7 +129,6 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 
     private void OnObjectivesTextGetInfo(EntityUid uid, TraitorRuleComponent comp, ref ObjectivesTextGetInfoEvent args)
     {
-        args.AgentName = Loc.GetString($"traitor-{comp.ObjectiveIssuer}-roundend");
         args.Faction = Loc.GetString($"traitor-round-end-agent-name");
     }
 
