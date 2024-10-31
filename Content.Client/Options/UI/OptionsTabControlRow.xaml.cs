@@ -121,6 +121,7 @@ public sealed partial class OptionsTabControlRow : Control
         return AddOption(new OptionSliderFloatCVar(this, _cfg, cVar, slider, min, max, scale, FormatPercent));
     }
     
+    // Corvax-Highlights-Start
     /// <summary>
     /// Add a color slider option, backed by a simple string CVar.
     /// </summary>
@@ -133,6 +134,7 @@ public sealed partial class OptionsTabControlRow : Control
     {
         return AddOption(new OptionColorSliderCVar(this, _cfg, cVar, slider));
     }
+    // Corvax-Highlights-End
 
     /// <summary>
     /// Add a slider option, backed by a simple integer CVar.
@@ -549,6 +551,7 @@ public sealed class OptionColorSliderCVar : BaseOptionCVar<string>
         }
     }
 
+    // Corvax-Highlights-Start
     /// <summary>
     /// Creates a new instance of this type.
     /// </summary>
@@ -576,6 +579,7 @@ public sealed class OptionColorSliderCVar : BaseOptionCVar<string>
             UpdateLabelColor();
         };
     }
+    // Corvax-Highlights-End
 
     private void UpdateLabelColor()
     {

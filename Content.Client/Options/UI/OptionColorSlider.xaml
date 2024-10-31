@@ -1,3 +1,4 @@
+<!-- Corvax-Highlights-Start -->
 <Control xmlns="https://spacestation14.io">
     <BoxContainer Orientation="Vertical">
         <Label Name="TitleLabel" Access="Public" />
@@ -5,3 +6,4 @@
         <ColorSelectorSliders Name="Slider" Access="Public" HorizontalExpand="True" />
     </BoxContainer>
 </Control>
+<!-- Corvax-Highlights-End -->

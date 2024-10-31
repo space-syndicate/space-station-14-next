@@ -1,7 +1,6 @@
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
-using Content.Client.CharacterInfo;
 using Content.Client.Administration.Managers;
 using Content.Client.Chat;
 using Content.Client.Chat.Managers;
@@ -41,11 +40,16 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using static Content.Client.CharacterInfo.CharacterInfoSystem;
 
+// Corvax-Highlights-Start
+using Content.Client.CharacterInfo;
+using static Content.Client.CharacterInfo.CharacterInfoSystem;
+using Content.Shared.Corvax.CCCVars;
+// Corvax-Highlights-End
 
 namespace Content.Client.UserInterface.Systems.Chat;
 
+// Corvax-Highlights
 public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterInfoSystem>
 {
     [Dependency] private readonly IClientAdminManager _admin = default!;
@@ -68,7 +72,9 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     [UISystemDependency] private readonly TransformSystem? _transform = default;
     [UISystemDependency] private readonly MindSystem? _mindSystem = default!;
     [UISystemDependency] private readonly RoleCodewordSystem? _roleCodewordSystem = default!;
+    // Corvax-Highlights-Start
     [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
+    // Corvax-Highlights-End
 
     [ValidatePrototypeId<ColorPalettePrototype>]
     private const string ChatNamePalette = "ChatNames";
@@ -153,6 +159,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     /// </summary>
     private readonly Dictionary<ChatChannel, int> _unreadMessages = new();
 
+    // Corvax-Highlights-Start
     /// <summary>
     ///     A list of words to be highlighted in the chatbox.
     /// </summary>
@@ -169,6 +176,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     ///     A bool to keep track if the 'CharacterUpdated' event is a new player attaching or the opening of the character info panel.
     /// </summary>
     private bool _charInfoIsAttach = false;
+    // Corvax-Highlights-End
 
     // TODO add a cap for this for non-replays
     public readonly List<(GameTick Tick, ChatMessage Msg)> History = new();
@@ -193,7 +201,9 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     public event Action<ChatSelectChannel>? SelectableChannelsChanged;
     public event Action<ChatChannel, int?>? UnreadMessageCountsUpdated;
     public event Action<ChatMessage>? MessageAdded;
+    // Corvax-Highlights-Start
     public event Action<string>? HighlightsUpdated;
+    // Corvax-Highlights-End
 
     public override void Initialize()
     {
@@ -262,19 +272,21 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
 
         _config.OnValueChanged(CCVars.ChatWindowOpacity, OnChatWindowOpacityChanged);
 
-        _config.OnValueChanged(CCVars.ChatAutoFillHighlights, (value) => { _autoFillHighlightsEnabled = value; });
-        _autoFillHighlightsEnabled = _config.GetCVar(CCVars.ChatAutoFillHighlights);
+        // Corvax-Highlights-Start
+        _config.OnValueChanged(CCCVars.ChatAutoFillHighlights, (value) => { _autoFillHighlightsEnabled = value; });
+        _autoFillHighlightsEnabled = _config.GetCVar(CCCVars.ChatAutoFillHighlights);
 
-        _config.OnValueChanged(CCVars.ChatHighlightsColor, (value) => { _highlightsColor = value; });
-        _highlightsColor = _config.GetCVar(CCVars.ChatHighlightsColor);
+        _config.OnValueChanged(CCCVars.ChatHighlightsColor, (value) => { _highlightsColor = value; });
+        _highlightsColor = _config.GetCVar(CCCVars.ChatHighlightsColor);
 
         // Load highlights if any were saved.
-        string highlights = _config.GetCVar(CCVars.ChatHighlights);
+        string highlights = _config.GetCVar(CCCVars.ChatHighlights);
 
         if (!string.IsNullOrEmpty(highlights))
         {
             UpdateHighlights(highlights);
         }
+        // Corvax-Highlights-End
     }
 
     public void OnScreenLoad()
@@ -292,6 +304,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         SetMainChat(false);
     }
 
+    // Corvax-Highlights-Start
     public void OnSystemLoaded(CharacterInfoSystem system)
     {
         system.OnCharacterUpdate += CharacterUpdated;
@@ -302,11 +315,6 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         system.OnCharacterUpdate -= CharacterUpdated;
     }
 
-    private void OnChatWindowOpacityChanged(float opacity)
-    {
-        SetChatWindowOpacity(opacity);
-    }
-
     private void CharacterUpdated(CharacterData data)
     {
         // If the _charInfoIsAttach is false then the character panel created the event, dismiss.
@@ -314,7 +322,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
             return;
 
         var (_, job, _, _, entityName) = data;
-        
+
         // If the character has a normal name (eg. "Name Surname" and not "Name Initial Surname" or a particular species name) 
         // subdivide it so that the name and surname individually get highlighted.
         if (entityName.Count(c => c == ' ') == 1)
@@ -324,13 +332,44 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
 
         // Convert the job title to kebab-case and use it as a key for the loc file.
         string jobKey = job.Replace(' ', '-').ToLower();
-        
+
         if (Loc.TryGetString($"highlights-{jobKey}", out var jobMatches))
             newHighlights += '\n' + jobMatches.Replace(", ", "\n");
 
         UpdateHighlights(newHighlights);
         HighlightsUpdated?.Invoke(newHighlights);
         _charInfoIsAttach = false;
+    }
+
+    public void UpdateHighlights(string highlights)
+    {
+        // Save the newly provided list of highlighs if different.
+        if (!_config.GetCVar(CCCVars.ChatHighlights).Equals(highlights, StringComparison.CurrentCultureIgnoreCase))
+        {
+            _config.SetCVar(CCCVars.ChatHighlights, highlights);
+            _config.SaveToFile();
+        }
+
+        // If the word is surrounded by "" we replace them with a whole-word regex tag.
+        highlights = highlights.Replace("\"", "\\b");
+
+        // Fill the array with the highlights separated by newlines, disregarding empty entries.
+        string[] arrHighlights = highlights.Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        _highlights.Clear();
+        foreach (var keyword in arrHighlights)
+        {
+            _highlights.Add(keyword);
+        }
+
+        // Arrange the list in descending order so that when highlighting,
+        // the full word (eg. "Security") appears before the abbreviation (eg. "Sec").
+        _highlights.Sort((x, y) => y.Length.CompareTo(x.Length));
+    }
+    // Corvax-Highlights-End
+
+    private void OnChatWindowOpacityChanged(float opacity)
+    {
+        SetChatWindowOpacity(opacity);
     }
 
     private void SetChatWindowOpacity(float opacity)
@@ -497,12 +536,14 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     private void OnAttachedChanged(EntityUid uid)
     {
         UpdateChannelPermissions();
-        
+
+        // Corvax-Highlights-Start
         if (_autoFillHighlightsEnabled)
         {
             _charInfoIsAttach = true;
             _characterInfo.RequestCharacterInfo();
         }
+        // Corvax-Highlights-End
     }
 
     private void AddSpeechBubble(ChatMessage msg, SpeechBubble.SpeechType speechType)
@@ -659,31 +700,6 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
             _unreadMessages[channel] = 0;
             UnreadMessageCountsUpdated?.Invoke(channel, 0);
         }
-    }
-
-    public void UpdateHighlights(string highlights)
-    {
-        // Save the newly provided list of highlighs if different.
-        if (!_config.GetCVar(CCVars.ChatHighlights).Equals(highlights, StringComparison.CurrentCultureIgnoreCase))
-        {
-            _config.SetCVar(CCVars.ChatHighlights, highlights);
-            _config.SaveToFile();
-        }
-
-        // If the word is surrounded by "" we replace them with a whole-word regex tag.
-        highlights = highlights.Replace("\"", "\\b");
-
-        // Fill the array with the highlights separated by newlines, disregarding empty entries.
-        string[] arrHighlights = highlights.Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
-        _highlights.Clear();
-        foreach (var keyword in arrHighlights)
-        {
-            _highlights.Add(keyword);
-        }
-
-        // Arrange the list in descending order so that when highlighting,
-        // the full word (eg. "Security") appears before the abbreviation (eg. "Sec").
-        _highlights.Sort((x, y) => y.Length.CompareTo(x.Length));
     }
 
     public override void FrameUpdate(FrameEventArgs delta)
@@ -926,11 +942,13 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
                 msg.WrappedMessage = SharedChatSystem.InjectTagInsideTag(msg, "Name", "color", GetNameColor(SharedChatSystem.GetStringInsideTag(msg, "Name")));
         }
 
+        // Corvax-Highlights-Start
         // Color any words choosen by the client.
         foreach (var highlight in _highlights)
         {
             msg.WrappedMessage = SharedChatSystem.InjectTagAroundString(msg, highlight, "color", _highlightsColor);
         }
+        // Corvax-Highlights-End
 
         // Color any codewords for minds that have roles that use them
         if (_player.LocalUser != null && _mindSystem != null && _roleCodewordSystem != null)
