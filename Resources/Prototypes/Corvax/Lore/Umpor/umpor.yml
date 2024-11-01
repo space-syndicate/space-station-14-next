@@ -562,21 +562,6 @@
   - type: Clothing
     sprite: Corvax/Lore/Umpor/Equipment/umpor_belt_s.rsi
   - type: Storage
-    whitelist:
-      tags:
-        - CigPack
-        - Taser
-        - UmpornKnife
-        - UmporMagazinePistol
-        - UmporPistol
-      components:
-        - Stunbaton
-        - FlashOnTrigger
-        - SmokeOnTrigger
-        - Flash
-        - Handcuff
-        - RangedMagazine
-        - Ammo
   - type: Appearance
 
 - type: entity
@@ -603,37 +588,6 @@
   - type: Clothing
     sprite: Corvax/Lore/Umpor/Equipment/umpor_belt_m.rsi
   - type: Storage
-    whitelist:
-      tags:
-        - Wrench
-        - Bottle
-        - Spray
-        - Brutepack
-        - Bloodpack
-        - Gauze
-        - Ointment
-        - CigPack
-        - PillCanister
-        - Radio
-        - DiscreteHealthAnalyzer
-        - SurgeryTool
-        - CigPack
-        - Taser
-        - UmpornKnife
-        - UmporMagazinePistol
-        - UmporPistol
-      components:
-        - Hypospray
-        - Injector
-        - Pill
-        - HandLabeler
-        - Stunbaton
-        - FlashOnTrigger
-        - SmokeOnTrigger
-        - Flash
-        - Handcuff
-        - RangedMagazine
-        - Ammo
   - type: Appearance
 
 - type: entity
