@@ -1,3 +1,5 @@
+using Content.Shared.Backmen.Targeting;
+using Content.Shared.Body.Components;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.MedicalScanner;
@@ -13,14 +15,16 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
     public float BloodLevel;
     public bool? ScanMode;
     public bool? Bleeding;
+    public Dictionary<TargetBodyPart, TargetIntegrity>? Body; // backmen: surgery
 
-    public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding)
+    public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, Dictionary<TargetBodyPart, TargetIntegrity>? body)
     {
         TargetEntity = targetEntity;
         Temperature = temperature;
         BloodLevel = bloodLevel;
         ScanMode = scanMode;
         Bleeding = bleeding;
+        Body = body; // backmen: surgery
     }
 }
 
