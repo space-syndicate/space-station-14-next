@@ -380,6 +380,17 @@
     reflectProb: 0.95
     reflects:
       - Energy
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      cell_slot: !type:ContainerSlot
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
 #-----------------------капюшон плаща---------------- 
 - type: entity
   parent: [ClothingHeadHardsuitBase, BaseToggleClothing]
@@ -718,6 +729,16 @@
           type: RadarConsoleBoundUserInterface
   - type: Computer
     board: RadarConsoleCircuitboard
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
 #-------------------------------------печать офицера-----------------    
 - type: entity
   name: Печать армии Империи Миртана

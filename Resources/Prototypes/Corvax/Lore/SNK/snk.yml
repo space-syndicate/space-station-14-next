@@ -210,7 +210,7 @@
     sprite: Corvax/Lore/SNK/Equipment/snk_back_radio.rsi
   - type: Storage
     grid:
-    - 0,0,4,2
+    - 0,0,4,3
     maxItemSize: Huge
   - type: EncryptionKeyHolder
     keysExtractionMethod: Prying

@@ -46,6 +46,9 @@
   components:
   - type: Sprite
     sprite: Corvax/Lore/Noocraty/Equipment/nooc_back.rsi
+  - type: Storage
+    grid:
+    - 0,0,6,4
 #------------------------------------плечевая сумка---------- 
 - type: entity
   parent: ClothingBackpack

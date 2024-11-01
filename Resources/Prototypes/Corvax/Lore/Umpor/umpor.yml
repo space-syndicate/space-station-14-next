@@ -94,7 +94,7 @@
     sprite: Corvax/Lore/Umpor/Equipment/umpor_back_radio.rsi
   - type: Storage
     grid:
-    - 0,0,4,3
+    - 0,0,4,4
     maxItemSize: Huge
   - type: EncryptionKeyHolder
     keysExtractionMethod: Prying

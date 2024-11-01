@@ -24,7 +24,7 @@ entities:
       name: Map Entity
     - type: Transform
     - type: Map
-      mapPaused: False
+      mapPaused: True
     - type: PhysicsMap
     - type: GridTree
     - type: MovedGrids
@@ -109,8 +109,6 @@ entities:
     - type: SpreaderGrid
     - type: Shuttle
     - type: GridPathfinding
-    - type: BecomesStation
-      id: PetrOutpost
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
@@ -589,6 +587,8 @@ entities:
           localAnchorA: -32,4.5
           damping: 2456.4634
           stiffness: 22049.164
+    - type: GravityShake
+      shakeTimes: 10
   - uid: 2034
     components:
     - type: MetaData
@@ -8630,6 +8630,8 @@ entities:
       lastSignals:
         DoorStatus: False
         DockStatus: True
+    - type: Door
+      changeAirtight: False
   - uid: 1791
     components:
     - type: Transform
@@ -8643,6 +8645,8 @@ entities:
       lastSignals:
         DoorStatus: False
         DockStatus: True
+    - type: Door
+      changeAirtight: False
   - uid: 2469
     components:
     - type: Transform
@@ -8656,6 +8660,8 @@ entities:
       lastSignals:
         DoorStatus: False
         DockStatus: True
+    - type: Door
+      changeAirtight: False
   - uid: 2470
     components:
     - type: Transform
@@ -8669,6 +8675,8 @@ entities:
       lastSignals:
         DoorStatus: False
         DockStatus: True
+    - type: Door
+      changeAirtight: False
 - proto: PetrAirlockSolderLocked
   entities:
   - uid: 300
