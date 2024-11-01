@@ -734,6 +734,13 @@
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      board: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
   - type: ItemSlots
     slots:
       cell_slot:
@@ -776,13 +783,27 @@
   components:
   - type: Paper
     content: |
-      От: 12ая туrма
+      [color=#a73800]█░░░░░░░█░░░░░░░█[/color]
+      [color=#a73800]█░░░█████████░░░█[/color]      [head=3]Бланк документа[/head]
+      [color=#a73800]██░░█░█░█░█░█░░██[/color]               [head=3]MIRT[/head]
+      [color=#a73800]░█░░░░█░█░█░░░░█░[/color]
+      [color=#a73800]░█░░░░░░█░░░░░░█░[/color]
+      =============================================
+                          НАИМЕНОВАНИЕ ДОКУМЕНТА
+      =============================================
       
-      Кому: 94ай когоrта
+      От: 
       
-      Запрос: 
+      Кому: 94ая когоrта
       
-      Срочность: (Крайня, Сильная, Средняя, Малая, Незначительная)
+      Полное sодержание документа sо всей необходимой инфоrмацией и опиsанием
+      
+      Срочность: (Кrайня, Sильная, Srедняя, Малая, Незначительная)
+      
+      =============================================
+      
+             [italic]Место для печатей[/italic]      
+      
 #---------------------------------Сумка фаеров---------------------
 - type: entity
   parent: BaseAmmoProvider
