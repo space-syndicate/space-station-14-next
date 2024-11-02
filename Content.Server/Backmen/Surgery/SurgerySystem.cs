@@ -1,11 +1,15 @@
 using Content.Shared.Bed.Sleep;
+using Content.Shared.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
 using Content.Server.Chat.Systems;
 using Content.Server.Popups;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Interaction;
+using Content.Shared.Inventory;
+using Content.Shared.Medical.Surgery.Steps;
 using Content.Shared.Medical.Surgery.Conditions;
 using Content.Shared.Medical.Surgery.Effects.Step;
 using Content.Server.Atmos.Rotting;
@@ -14,6 +18,7 @@ using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Prototypes;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
@@ -75,6 +80,18 @@ public sealed class SurgerySystem : SharedSurgerySystem
         }
         //Logger.Debug($"Setting UI state with {surgeries}, {body} and {SurgeryUIKey.Key}");
         _ui.SetUiState(body, SurgeryUIKey.Key, new SurgeryBuiState(surgeries));
+        /*
+            Reason we do this is because when applying a BUI State, it rolls back the state on the entity temporarily,
+            which just so happens to occur right as we're checking for step completion, so we end up with the UI
+            not updating at all until you change tools or reopen the window.
+        */
+
+        var actors = _ui.GetActors(body, SurgeryUIKey.Key).ToArray();
+        if (actors.Length == 0)
+            return;
+
+        var filter = Filter.Entities(actors);
+        RaiseNetworkEvent(new Shared.Medical.Surgery.SurgeryUiRefreshEvent(GetNetEntity(body)), filter);
     }
 
     private void SetDamage(EntityUid body,
@@ -174,7 +191,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
             var ev = new BodyPartEnableChangedEvent(true);
             RaiseLocalEvent(targetPart.Id, ref ev);
             // This is basically an equalizer, severing a part will badly damage it.
-            // and affixing it will heal it a bit if its not too badly damaged.
+            // and affixing it will heal it a bit if it's not too badly damaged.
             _body.TryChangeIntegrity(targetPart, targetPart.Component.Integrity - BodyPartComponent.IntegrityAffixPart, false,
                 _body.GetTargetBodyPart(targetPart.Component.PartType, targetPart.Component.Symmetry), out _);
         }
