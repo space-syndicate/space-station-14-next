@@ -55,7 +55,7 @@
 - type: guideEntry
   id: Surgery
   name: guide-entry-surgery
-  text: "/ServerInfo/Guidebook/Medical/Surgery.xml"
+  text: "/ServerInfo/Corvax/Guidebook/Medical/Surgery.xml"
   children:
   - Part Manipulation
   - Organ Manipulation
@@ -64,18 +64,18 @@
 - type: guideEntry
   id: Part Manipulation
   name: guide-entry-partmanipulation
-  text: "/ServerInfo/Guidebook/Medical/PartManipulation.xml"
+  text: "/ServerInfo/Corvax/Guidebook/Medical/PartManipulation.xml"
   filterEnabled: true
 
 - type: guideEntry
   id: Organ Manipulation
   name: guide-entry-organmanipulation
-  text: "/ServerInfo/Guidebook/Medical/OrganManipulation.xml"
+  text: "/ServerInfo/Corvax/Guidebook/Medical/OrganManipulation.xml"
   filterEnabled: true
 
 - type: guideEntry
   id: Utility Surgeries
   name: guide-entry-utilitysurgeries
-  text: "/ServerInfo/Guidebook/Medical/UtilitySurgeries.xml"
+  text: "/ServerInfo/Corvax/Guidebook/Medical/UtilitySurgeries.xml"
   filterEnabled: true
 
