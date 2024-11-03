@@ -43,9 +43,6 @@
 
 - type: htnCompound
   id: MeleeAttackTargetCompoundBotSNK
-  preconditions:
-    - !type:KeyExistsPrecondition
-      key: Target
   branches:
     # Move to melee range and hit them
     - tasks:
@@ -194,26 +191,6 @@
         - !type:HTNPrimitiveTask
           operator: !type:MedibotInjectOperator
             targetKey: InjectTarget
-#---------------------------------------Всякие Фразочки-----------------------------------
-
-#-------------------------------------Кто является противником-----------------------------------
-- type: npcFaction
-  id: SNKBot
-  hostile:
-  - SimpleHostile
-  - Xeno
-  - NanoTrasen
-  - Syndicate
-  - Passive
-  - PetsNT
-  - Zombie
-  - Revolutionary
-  - Noocraty
-  - NoocratyBot
-  friendly:
-  - SNKBot
-  - SNK
-  - SNKBotR
 #--------------------------------------Сочетание правил ВИ-----------------------------------------
 #-----------------С ходить-бродить----------
 #------обыч-----------
@@ -408,8 +385,6 @@
   - type: BasicEntityAmmoProvider
     proto: SNKCartridgeDrobStd
     capacity: 9
-    count: 9
-    spread: 15
   - type: Gun
     showExamineText: false
     fireRate: 1.1
@@ -511,7 +486,7 @@
   name: Радист СНК
   suffix: Бот, СНК, безОруж, бег
   parent: MobSNK
-  id: MobSNKrad
+  id: MobSNKRad
   components:
   - type: Loadout
     prototypes:
@@ -521,7 +496,7 @@
   name: Радист СНК
   suffix: Бот, СНК, безОруж, стоп
   parent: MobSNKStop
-  id: MobSNKradStop
+  id: MobSNKRadStop
   components:
   - type: Loadout
     prototypes:
@@ -529,8 +504,8 @@
 #-------------Вооружён бегающий---------------  
 - type: entity
   suffix: Бот, СНК, Оруж, бег
-  parent: MobSNKrad
-  id: MobSNKradWeapon
+  parent: MobSNKRad
+  id: MobSNKRadWeapon
   components:
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 2
@@ -551,8 +526,8 @@
 #-------------Вооружён ждущий--------------- 
 - type: entity
   suffix: Бот, СНК, Оруж, стоп
-  parent: MobSNKradWeapon
-  id: MobSNKradWeaponStop
+  parent: MobSNKRadWeapon
+  id: MobSNKRadWeaponStop
   components:
   - type: HTN
     rootTask:
@@ -752,7 +727,7 @@
 - type: entity
   name: Спавнер бота Радист СНК
   suffix: Бот, СНК, безОруж, бег
-  id: SpawnMobSNKrad
+  id: SpawnMobSNKRad
   parent: MarkerBase
   components:
   - type: Sprite
@@ -762,34 +737,34 @@
     - state: engineer
   - type: ConditionalSpawner
     prototypes:
-    - MobSNKrad
+    - MobSNKRad
 #-------------Без оружия ждущий--------------- 
 - type: entity
-  parent: SpawnMobSNKrad
-  id: SpawnMobSNKradStop
+  parent: SpawnMobSNKRad
+  id: SpawnMobSNKRadStop
   suffix: Бот, СНК, безОруж, стоп
   components:
   - type: ConditionalSpawner
     prototypes:
-    - MobSNKradStop
+    - MobSNKRadStop
 #-------------Вооружён бегающий---------------  
 - type: entity
-  parent: SpawnMobSNKrad
-  id: SpawnMobSNKradWeapon
+  parent: SpawnMobSNKRad
+  id: SpawnMobSNKRadWeapon
   suffix: Бот, СНК, Оруж, бег
   components:
   - type: ConditionalSpawner
     prototypes:
-    - MobSNKradWeapon
+    - MobSNKRadWeapon
 #-------------Вооружён ждущий---------------  
 - type: entity
-  parent: SpawnMobSNKrad
-  id: SpawnMobSNKradWeaponStop
+  parent: SpawnMobSNKRad
+  id: SpawnMobSNKRadWeaponStop
   suffix: Бот, СНК, Оруж, стоп
   components:
   - type: ConditionalSpawner
     prototypes:
-    - MobSNKradWeaponStop
+    - MobSNKRadWeaponStop
 #-------------------------------Офицер----------------------
 #-------------Без оружия бегающий---------------
 - type: entity

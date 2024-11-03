@@ -249,6 +249,7 @@
     - type: Tag
       tags:
         - WhitelistChameleon
+        - FireHelmet
     - type: HideLayerClothing
       slots:
         - Hair
@@ -281,6 +282,7 @@
     - type: Tag
       tags:
         - WhitelistChameleon
+        - FireHelmet
     - type: HideLayerClothing
       slots:
         - Hair
@@ -500,9 +502,8 @@
     - type: InstantAction
       useDelay: 1
       itemIconStyle: BigItem
-      event: !type:ToggleActionEvent
+      event: !type:ToggleActionEvent # changeling
 
-# changeling
 - type: entity
   parent: ClothingHeadBase
   id: ChangelingClothingHeadHelmet

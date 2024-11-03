@@ -46,6 +46,9 @@
   components:
   - type: Sprite
     sprite: Corvax/Lore/Noocraty/Equipment/nooc_back.rsi
+  - type: Storage
+    grid:
+    - 0,0,6,4
 #------------------------------------плечевая сумка---------- 
 - type: entity
   parent: ClothingBackpack
@@ -405,43 +408,6 @@
     sprite: Corvax/Lore/Noocraty/Equipment/nooc_belt.rsi
   - type: Storage
     maxItemSize: Normal
-    whitelist:
-      tags:
-        - Powerdrill
-        - Wirecutter
-        - Crowbar
-        - Screwdriver
-        - Flashlight
-        - Wrench
-        - GeigerCounter
-        - Flare
-        - CableCoil
-        - CigPack
-        - Radio
-        - HolofanProjector
-        - Multitool
-        - AppraisalTool
-        - JawsOfLife
-        - GPS
-        - CigPack
-        - Taser
-      components:
-        - SprayPainter
-        - NetworkConfigurator
-        - RCD
-        - RCDAmmo
-        - Welder
-        - PowerCell
-        - Geiger
-        - TrayScanner
-        - GasAnalyzer
-        - Stunbaton
-        - FlashOnTrigger
-        - SmokeOnTrigger
-        - Flash
-        - Handcuff
-        - RangedMagazine
-        - Ammo
   - type: Appearance
 
 - type: entity
@@ -471,53 +437,6 @@
     sprite: Corvax/Lore/Noocraty/Equipment/nooc_belt.rsi
   - type: Storage
     maxItemSize: Normal
-    whitelist:
-      tags:
-        - Powerdrill
-        - Bottle
-        - Spray
-        - Brutepack
-        - Bloodpack
-        - Gauze
-        - Ointment
-        - Wirecutter
-        - Crowbar
-        - Screwdriver
-        - Flashlight
-        - Wrench
-        - GeigerCounter
-        - Flare
-        - CableCoil
-        - CigPack
-        - Radio
-        - HolofanProjector
-        - Multitool
-        - AppraisalTool
-        - JawsOfLife
-        - GPS
-        - CigPack
-        - Taser
-      components:
-        - Hypospray
-        - Injector
-        - Pill
-        - HandLabeler
-        - SprayPainter
-        - NetworkConfigurator
-        - RCD
-        - RCDAmmo
-        - Welder
-        - PowerCell
-        - Geiger
-        - TrayScanner
-        - GasAnalyzer
-        - Stunbaton
-        - FlashOnTrigger
-        - SmokeOnTrigger
-        - Flash
-        - Handcuff
-        - RangedMagazine
-        - Ammo
   - type: Appearance
 
 - type: entity
@@ -618,7 +537,7 @@
   name: Инжектор заживитель
   suffix: Ноократия
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     noRot: false
@@ -638,7 +557,7 @@
   name: Инжектор противовоспалитель
   suffix: Ноократия
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     noRot: false
@@ -657,7 +576,7 @@
   name: Инжектор антирад
   suffix: Ноократия
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     noRot: false
@@ -733,11 +652,11 @@
       - NoocCartridgeHilRadi
 #-----------------наполняемый------------      
 - type: Tag
-  id: NoocCartridgeHilEmpty
+  id: NoocCartridgeHillEmpty
 
 - type: entity
-  parent: BaseArrow
-  id: NoocCartridgeHilEmpty
+  parent: BaseItem
+  id: NoocCartridgeHillEmpty
   name: Инжектор наполняемый
   suffix: Ноократия
   description: Наполняемый инжектор, в который можно залить 10u чего угодно
@@ -747,6 +666,24 @@
     layers:
     - state: base
       map: ["enum.AmmoVisualLayers.Base"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.2
+        density: 5
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
   - type: Projectile
     damage:
       types:
@@ -768,7 +705,15 @@
     size: Tiny 
   - type: Tag
     tags:
-      - NoocCartridgeHilEmpty
+      - NoocCartridgeHillEmpty     
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+    embedOnThrow: false
+  - type: ThrowingAngle
+    angle: 0
+  - type: Ammo
+    muzzleFlash: null
+  - type: Appearance
 #-----------------------------Коробка инжекторов------------------
 - type: entity
   name: Коробка лечащих инжекторов
@@ -789,7 +734,7 @@
         amount: 4
       - id: NoocCartridgeHilRadi
         amount: 4
-      - id: NoocCartridgeHilEmpty
+      - id: NoocCartridgeHillEmpty
         amount: 4
   - type: Sprite
     layers:
@@ -955,7 +900,7 @@
         - NoocCartridgeHilMech
         - NoocCartridgeHilHeat
         - NoocCartridgeHilRadi
-        - NoocCartridgeHilEmpty
+        - NoocCartridgeHillEmpty
     proto: NoocCartridgeHilMech
     capacity: 5
   - type: Sprite
@@ -983,7 +928,7 @@
         - NoocCartridgeHilMech
         - NoocCartridgeHilHeat
         - NoocCartridgeHilRadi
-        - NoocCartridgeHilEmpty
+        - NoocCartridgeHillEmpty
     proto: NoocCartridgeHilHeat
     capacity: 5
   - type: Sprite
@@ -1011,7 +956,7 @@
         - NoocCartridgeHilMech
         - NoocCartridgeHilHeat
         - NoocCartridgeHilRadi
-        - NoocCartridgeHilEmpty
+        - NoocCartridgeHillEmpty
     proto: NoocCartridgeHilRadi
     capacity: 5
   - type: Sprite
@@ -1039,8 +984,8 @@
         - NoocCartridgeHilMech
         - NoocCartridgeHilHeat
         - NoocCartridgeHilRadi
-        - NoocCartridgeHilEmpty
-    proto: NoocCartridgeHilEmpty
+        - NoocCartridgeHillEmpty
+    proto: NoocCartridgeHillEmpty
     capacity: 5
   - type: Sprite
     sprite: Corvax/Lore/Noocraty/Weapon/nooc_cure_rifle_magazine.rsi
@@ -1901,7 +1846,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ NoocVisGear ]
     - type: NpcFactionMember
@@ -1967,7 +1912,7 @@
         105: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ NoocSrGear ]
     - type: NpcFactionMember
@@ -2032,7 +1977,7 @@
         105: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ NoocSrMedGear ]
     - type: NpcFactionMember
@@ -2098,7 +2043,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ NoocNizGear ]
     - type: NpcFactionMember
@@ -2127,7 +2072,7 @@
 #---------------------------------------------------------------Бумаги------------------------------------------------------------
 #-----------------------------------Высокий класс-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: NoocPaperVis
   name: Памятка ноократского военного высокого класса
   suffix: Ноократия
@@ -2145,7 +2090,7 @@
       Краткий лор государства: Ноократия Эранта бескровно отделилась от ОПЗ на условиях договоров союза, научного сотрудничества и совместной обороны. Она построила классовое общество на основе теста, проверяющего талант, интеллектуальные  способности, обучаемость, способность действовать и применять знания в критических ситуациях и так далее. Экзамен Эранта. Впоследствии высшие классы стали купающимися в роскоши богачами и правителями. Высокие стали руководителями, командирами и иного рода управленцами. Средние стали хорошим квалифицированным персоналом. Низкие были пригодны для выполнения простой не требущей особых навыков рутинной и скучной или опасной работы. Низшие стали бедными пригодными лишь для самой непотребной и грязной работы. Развился культ почетания и раболепствия перед теми, кто классом выше или презрения по отношению к тем, кто ниже. Именно из-за этого Умпорская Федерация подняла кровавое восстание и отделилась. Ноократия презирает умпорцев, считая их неотёсанными дикарями и всячески старается их покорять, порабощать, ослаблять, уничтожать, желая вернуть их сектора под свои знамёна.
 #-----------------------------------Средний класс-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: NoocPaperSr
   name: Памятка ноократского военного среднего класса
   suffix: Ноократия
@@ -2163,7 +2108,7 @@
       Краткий лор государства: Ноократия Эранта бескровно отделилась от ОПЗ на условиях договоров союза, научного сотрудничества и совместной обороны. Она построила классовое общество на основе теста, проверяющего талант, интеллектуальные  способности, обучаемость, способность действовать и применять знания в критических ситуациях и так далее. Экзамен Эранта. Впоследствии высшие классы стали купающимися в роскоши богачами и правителями. Высокие стали руководителями, командирами и иного рода управленцами. Средние стали хорошим квалифицированным персоналом. Низкие были пригодны для выполнения простой не требущей особых навыков рутинной и скучной или опасной работы. Низшие стали бедными пригодными лишь для самой непотребной и грязной работы. Развился культ почетания и раболепствия перед теми, кто классом выше или презрения по отношению к тем, кто ниже. Именно из-за этого Умпорская Федерация подняла кровавое восстание и отделилась. Ноократия презирает умпорцев, считая их неотёсанными дикарями и всячески старается их покорять, порабощать, ослаблять, уничтожать, желая вернуть их сектора под свои знамёна.
 #-----------------------------------Низкий класс-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: NoocPaperNiz
   name: Памятка ноократского военного низкого класса
   suffix: Ноократия
@@ -2376,7 +2321,7 @@
 #-----------------------------канал----------------------------------------  
 - type: radioChannel
   id: NoocRadio
-  name: Ноократский
+  name: name-of-NoocRadio
   keycode: 'э' 
   frequency: 1551
   color: "#44b69d"
@@ -2444,9 +2389,8 @@
       state: charger_APC
     - type: MachineBoard
       prototype: NoocPowerCellRecharger
-      requirements:
+      stackRequirements:
         Capacitor: 3
-      materialRequirements:
         Cable: 5
     - type: PhysicalComposition
       materialComposition:
@@ -2696,8 +2640,8 @@
       - id: NoocCap
       - id: NoocGlovesVis
       - id: NoocGlovesVis
-      - id: NooceBelt
-      - id: NooceBelt
+      - id: NoocBelt
+      - id: NoocBelt
       - id: NoocSatchels
       - id: NoocSatchels
       - id: NoocCloak
@@ -3111,7 +3055,25 @@
   components:
   - type: Paper
     content: |
-      Форма: PLVIS-NOERT-016
+      [color=#00a2e9]█░█░░░░░█░░░░░█░█[/color]
+      [color=#00a2e9]░█░░░░░░█░░░░░░█░[/color]      [head=3]Бланк документа[/head]
+      [color=#00a2e9]█░█░░░██░██░░░█░█[/color]               [head=3]VCPH[/head]
+      [color=#00a2e9]░█░░░██░░░██░░░█░[/color]
+      [color=#00a2e9]█░█░░█░░░░░█░░█░█[/color]
+      =============================================
+                          НАИМЕНОВАНИЕ ДОКУМЕНТА
+      =============================================
+      
+      Дата:
+      Составитель документа:
+      Должность составителя:
+      
+      
+      Полное содержание документа со всей необходимой информацией и описанием
+      
+      =============================================
+      
+                                  [italic]Место для печатей[/italic]
 #-------------------------------------Кто является противником-----------------------------------
 - type: npcFaction
   id: NoocratyBot
@@ -3592,7 +3554,7 @@
   - NoocUplinkBack
 #------категория мед.средства
 - type: listing
-  id: Stimpack
+  id: NoocStimpack
   name: Боевой стимулятор
   description: Ускорься! Но победи пока не наступили побочные эффекты
   productEntity: Stimpack
@@ -3602,7 +3564,7 @@
   - NoocUplinkMed
   
 - type: listing
-  id: EmergencyMedipen
+  id: NoocEmergencyMedipen
   name: Экстренный медипен
   description: Какое средство экстренной помощи есть, такое и используем...
   productEntity: EmergencyMedipen
@@ -3612,7 +3574,7 @@
   - NoocUplinkMed
   
 - type: listing
-  id: Brutepack
+  id: NoocBrutepack
   name: Набор для лечения травм
   description: Помогает от травм механического характера
   productEntity: Brutepack
@@ -3622,7 +3584,7 @@
   - NoocUplinkMed
   
 - type: listing
-  id: Ointment
+  id: NoocOintment
   name: Лечебная мазь
   description: Хороша от ожёгов и переохлаждения
   productEntity: Ointment
@@ -3632,7 +3594,7 @@
   - NoocUplinkMed
   
 - type: listing
-  id: NocturineChemistryBottle
+  id: NoocNocturineChemistryBottle
   name: Бутылочка ноктюрина
   description: 30u быстродействующего усыпляющего средства
   productEntity: NocturineChemistryBottle
@@ -3642,7 +3604,7 @@
   - NoocUplinkMed
   
 - type: listing
-  id: ClothingBackpackDuffelSyndicateMedicalBundleFilled
+  id: NoocClothingBackpackDuffelSyndicateMedicalBundleFilled
   name: Медицинский набор
   description: Набор полезных химических средств
   productEntity: ClothingBackpackDuffelSyndicateMedicalBundleFilled
@@ -3656,7 +3618,7 @@
   abstract: true
   components:
   - type: Store
-    name: Категории
+    name: Nooc-Category
     categories:
     - NoocUplinkArmor
     - NoocUplinkWeaponry
@@ -3711,7 +3673,7 @@
   id: NoocUplinkImplant
   name: Имплант-аплинк Ноократии
   description: Имплант с встроенным аплинком, закупленным у Киберсан и переделанным под нужды Ноократии
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: SubdermalImplant
     implantAction: ActionOpenUplinkImplant

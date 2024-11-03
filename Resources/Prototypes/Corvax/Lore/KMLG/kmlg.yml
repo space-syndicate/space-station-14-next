@@ -55,7 +55,7 @@
       coefficients:
         Blunt: 0.95
         Shock: 0.9 
-        Сaustic: 0.9
+        Caustic: 0.9
         Heat: 0.95
         Cold: 0.95
 #------------------------------------старший инженер---------- 
@@ -75,7 +75,7 @@
       coefficients:
         Blunt: 0.9
         Shock: 0.9 
-        Сaustic: 0.9
+        Caustic: 0.9
         Heat: 0.9
         Cold: 0.9
 #------------------------------------пилот---------- 
@@ -406,7 +406,7 @@
   name: Капюшон корпоративной куртки
   suffix: KMLG
   description: Закрывает голову от холода и стужи.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: Corvax/Lore/KMLG/Equipment/kmlg_coat_hood.rsi
@@ -686,7 +686,7 @@
   name: Сотрудник Космологистики
   description: job-kmlg
   playTimeTracker: JobEventKMLG
-  startingGear: KMLGSoldGear
+  startingGear: KMLGGearCt
   supervisors: job-supervisors-everyone
   canBeAntag: false
   access:
@@ -946,7 +946,7 @@
 #-----------------------------канал----------------------------------------  
 - type: radioChannel
   id: KMLGRadio
-  name: Космологистика
+  name: name-of-KMLGRadio
   keycode: 'г' 
   frequency: 3456
   color: "#394e35"
@@ -1463,7 +1463,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ KMLGGearCt ]
   
@@ -1518,7 +1518,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ KMLGGearCc ]
   
@@ -1573,7 +1573,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ KMLGGearRm ]
   
@@ -1628,7 +1628,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ KMLGGearE ]
   
@@ -1683,7 +1683,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ KMLGGearCe ]
   
@@ -1738,7 +1738,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ KMLGGearS ]
   
@@ -1793,7 +1793,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ KMLGGearCs ]
   
@@ -1848,7 +1848,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ KMLGGearSw ]
   
@@ -1903,7 +1903,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ KMLGGearP ]
   

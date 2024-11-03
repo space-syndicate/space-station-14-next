@@ -94,7 +94,7 @@
     sprite: Corvax/Lore/Umpor/Equipment/umpor_back_radio.rsi
   - type: Storage
     grid:
-    - 0,0,4,3
+    - 0,0,4,4
     maxItemSize: Huge
   - type: EncryptionKeyHolder
     keysExtractionMethod: Prying
@@ -334,7 +334,6 @@
     storedRotation: -90
   - type: ActivatableUI
     key: enum.HealthAnalyzerUiKey.Key
-    closeOnHandDeselect: false
   - type: UserInterface
     interfaces:
       enum.HealthAnalyzerUiKey.Key:
@@ -563,21 +562,6 @@
   - type: Clothing
     sprite: Corvax/Lore/Umpor/Equipment/umpor_belt_s.rsi
   - type: Storage
-    whitelist:
-      tags:
-        - CigPack
-        - Taser
-        - UmpornKnife
-        - UmporMagazinePistol
-        - UmporPistol
-      components:
-        - Stunbaton
-        - FlashOnTrigger
-        - SmokeOnTrigger
-        - Flash
-        - Handcuff
-        - RangedMagazine
-        - Ammo
   - type: Appearance
 
 - type: entity
@@ -604,37 +588,6 @@
   - type: Clothing
     sprite: Corvax/Lore/Umpor/Equipment/umpor_belt_m.rsi
   - type: Storage
-    whitelist:
-      tags:
-        - Wrench
-        - Bottle
-        - Spray
-        - Brutepack
-        - Bloodpack
-        - Gauze
-        - Ointment
-        - CigPack
-        - PillCanister
-        - Radio
-        - DiscreteHealthAnalyzer
-        - SurgeryTool
-        - CigPack
-        - Taser
-        - UmpornKnife
-        - UmporMagazinePistol
-        - UmporPistol
-      components:
-        - Hypospray
-        - Injector
-        - Pill
-        - HandLabeler
-        - Stunbaton
-        - FlashOnTrigger
-        - SmokeOnTrigger
-        - Flash
-        - Handcuff
-        - RangedMagazine
-        - Ammo
   - type: Appearance
 
 - type: entity
@@ -680,7 +633,7 @@
   name: name-of-UmporBulletHeavyRifle
   suffix: Umpor
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -692,7 +645,7 @@
   name: name-of-UmporBulletLightRifle
   suffix: Umpor
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -701,16 +654,15 @@
 #------------------------------------пистолет---------- 
 - type: entity
   id: UmporBulletPistol
-  name: name-of-UmporBulletPistol
-  suffix: Umpor
+  name: Лёгкая пистолетная пуля (.15 rifle)
+  suffix: Умпорский
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 11
-        
+        Piercing: 11       
 #-------------------------------------картриджи---------------------------------------------------------------------------------
 #------------------------------------винтовка---------- 
 - type: Tag
@@ -1423,7 +1375,7 @@
 #-----------------------------канал----------------------------------------  
 - type: radioChannel
   id: UmporRadio
-  name: Умпорский
+  name: name-of-UmporRadio
   keycode: 'у' 
   frequency: 1678
   color: "#666666"
@@ -1680,7 +1632,7 @@
   id: UmporPelletShotgun
   name: name-of-UmporPelletShotgun
   suffix: Umpor
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
   - type: Sprite
@@ -1905,7 +1857,7 @@
         120: Critical
         210: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ UmporOfficerGear ]
     - type: NpcFactionMember
@@ -1971,7 +1923,7 @@
         110: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ UmporSolderGear ]
     - type: NpcFactionMember
@@ -2036,7 +1988,7 @@
         110: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ UmporEngenerGear ]
     - type: NpcFactionMember
@@ -2101,7 +2053,7 @@
         110: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ UmporBilderGear ]
     - type: NpcFactionMember
@@ -2166,7 +2118,7 @@
         110: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ UmporRadistGear ]
     - type: NpcFactionMember
@@ -2231,7 +2183,7 @@
         105: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ UmporMedicGear ]
     - type: NpcFactionMember
@@ -2296,7 +2248,7 @@
         105: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ UmporLogistGear ]
     - type: NpcFactionMember
@@ -2325,7 +2277,7 @@
 #---------------------------------------------------------------Бумаги------------------------------------------------------------
 #-----------------------------------Офицер-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: UmporPaperOfficer
   name: name-of-UmporPaperOfficer
   parent: Paper
@@ -2347,7 +2299,7 @@
       Краткий лор государства: Умпорская Федерация около трёхсот лет назад военным способом отделилась от Ноократии Эранта. Они считают, что ноократия построена на угнетении бедных трудящихся, даже самых трудолюбивых. которым просто не повезло с природным талантом. Сами же упорцы восхваляют как раз достижения честного труда. За время своего существования Федерация пережила пару разрушительных войн с Ноократией Эранта, научный и образовательный регресс, бедность, разгул преступност и тяготы поствоенной разрухи. Тем не менее народ умудряется жить даже в условиях полных неудач. на данный момент пик всеобщего спада пройде и начался государственный подъём. Этого удалось достичь за счёт трудолюбия граждан смены курса правительства, гуманитарной помощи от других государств, а так же из-за привлечения капиталов крупных корпораций, вроде НаноТрейзен, Витезтви, Гефест (Глобальная инициатива). 
 #-----------------------------------Солдат-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: UmporPaperSolder
   name: name-of-UmporPaperSolder
   parent: Paper
@@ -2368,7 +2320,7 @@
       Краткий лор государства: Умпорская Федерация около трёхсот лет назад военным способом отделилась от Ноократии Эранта. Они считают, что ноократия построена на угнетении бедных трудящихся, даже самых трудолюбивых. которым просто не повезло с природным талантом. Сами же упорцы восхваляют как раз достижения честного труда. За время своего существования Федерация пережила пару разрушительных войн с Ноократией Эранта, научный и образовательный регресс, бедность, разгул преступност и тяготы поствоенной разрухи. Тем не менее народ умудряется жить даже в условиях полных неудач. на данный момент пик всеобщего спада пройде и начался государственный подъём. Этого удалось достичь за счёт трудолюбия граждан смены курса правительства, гуманитарной помощи от других государств, а так же из-за привлечения капиталов крупных корпораций, вроде НаноТрейзен, Витезтви, Гефест (Глобальная инициатива). 
 #-----------------------------------Инженер-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: UmporPaperEngeneer
   name: name-of-UmporPaperEngeneer
   parent: Paper
@@ -2390,7 +2342,7 @@
       Краткий лор государства: Умпорская Федерация около трёхсот лет назад военным способом отделилась от Ноократии Эранта. Они считают, что ноократия построена на угнетении бедных трудящихся, даже самых трудолюбивых. которым просто не повезло с природным талантом. Сами же упорцы восхваляют как раз достижения честного труда. За время своего существования Федерация пережила пару разрушительных войн с Ноократией Эранта, научный и образовательный регресс, бедность, разгул преступност и тяготы поствоенной разрухи. Тем не менее народ умудряется жить даже в условиях полных неудач. на данный момент пик всеобщего спада пройде и начался государственный подъём. Этого удалось достичь за счёт трудолюбия граждан смены курса правительства, гуманитарной помощи от других государств, а так же из-за привлечения капиталов крупных корпораций, вроде НаноТрейзен, Витезтви, Гефест (Глобальная инициатива). 
 #-----------------------------------Инженер-строитель-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: UmporPaperBilder
   name: name-of-UmporPaperBilder
   parent: Paper
@@ -2411,7 +2363,7 @@
       Краткий лор государства: Умпорская Федерация около трёхсот лет назад военным способом отделилась от Ноократии Эранта. Они считают, что ноократия построена на угнетении бедных трудящихся, даже самых трудолюбивых. которым просто не повезло с природным талантом. Сами же упорцы восхваляют как раз достижения честного труда. За время своего существования Федерация пережила пару разрушительных войн с Ноократией Эранта, научный и образовательный регресс, бедность, разгул преступност и тяготы поствоенной разрухи. Тем не менее народ умудряется жить даже в условиях полных неудач. на данный момент пик всеобщего спада пройде и начался государственный подъём. Этого удалось достичь за счёт трудолюбия граждан смены курса правительства, гуманитарной помощи от других государств, а так же из-за привлечения капиталов крупных корпораций, вроде НаноТрейзен, Витезтви, Гефест (Глобальная инициатива). 
 #-----------------------------------Радист-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: UmporPaperRadist
   name: name-of-UmporPaperRadist
   parent: Paper
@@ -2433,7 +2385,7 @@
       Краткий лор государства: Умпорская Федерация около трёхсот лет назад военным способом отделилась от Ноократии Эранта. Они считают, что ноократия построена на угнетении бедных трудящихся, даже самых трудолюбивых. которым просто не повезло с природным талантом. Сами же упорцы восхваляют как раз достижения честного труда. За время своего существования Федерация пережила пару разрушительных войн с Ноократией Эранта, научный и образовательный регресс, бедность, разгул преступност и тяготы поствоенной разрухи. Тем не менее народ умудряется жить даже в условиях полных неудач. на данный момент пик всеобщего спада пройде и начался государственный подъём. Этого удалось достичь за счёт трудолюбия граждан смены курса правительства, гуманитарной помощи от других государств, а так же из-за привлечения капиталов крупных корпораций, вроде НаноТрейзен, Витезтви, Гефест (Глобальная инициатива). 
 #-----------------------------------Медик-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: UmporPaperMedic
   name: name-of-UmporPaperMedic
   parent: Paper
@@ -2455,7 +2407,7 @@
       Краткий лор государства: Умпорская Федерация около трёхсот лет назад военным способом отделилась от Ноократии Эранта. Они считают, что ноократия построена на угнетении бедных трудящихся, даже самых трудолюбивых. которым просто не повезло с природным талантом. Сами же упорцы восхваляют как раз достижения честного труда. За время своего существования Федерация пережила пару разрушительных войн с Ноократией Эранта, научный и образовательный регресс, бедность, разгул преступност и тяготы поствоенной разрухи. Тем не менее народ умудряется жить даже в условиях полных неудач. на данный момент пик всеобщего спада пройде и начался государственный подъём. Этого удалось достичь за счёт трудолюбия граждан смены курса правительства, гуманитарной помощи от других государств, а так же из-за привлечения капиталов крупных корпораций, вроде НаноТрейзен, Витезтви, Гефест (Глобальная инициатива). 
 #-----------------------------------Логист-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: UmporPaperLogist
   name: name-of-UmporPaperLogist
   parent: Paper
@@ -2627,7 +2579,7 @@
 - type: latheRecipe
   id: UmporHatchet
   result: UmporHatchet
-  category: Instruments
+  category: Tools
   completetime: 3
   materials:
     Steel: 400
@@ -2636,7 +2588,7 @@
 - type: latheRecipe
   id: UmporSpade
   result: UmporSpade
-  category: Instruments
+  category: Tools
   completetime: 3
   materials:
     Steel: 400
@@ -2654,7 +2606,7 @@
 - type: latheRecipe
   id: UmporHealthAnalyzerUnpowered
   result: UmporHealthAnalyzerUnpowered
-  category: Instruments
+  category: Tools
   completetime: 3
   materials:
     Steel: 200
@@ -3121,7 +3073,25 @@
   components:
   - type: Paper
     content: |
-      Форма: UMP-ARM-PLT-114
+      [color=#9d9d9d]░░░░░░░█████░░░██[/color]
+      [color=#9d9d9d]█████░░░░█░░░███░[/color]      [head=3]Бланк документа[/head]
+      [color=#9d9d9d]░░░░█████░█████░░[/color]               [head=3]UMPH[/head]
+      [color=#9d9d9d]████░░░░█░████░░░[/color]
+      [color=#9d9d9d]░░░█████░█░░░░░░░[/color]
+      =============================================
+                          НАИМЕНОВАНИЕ ДОКУМЕНТА
+      =============================================
+      
+      Дата:
+      Составитель документа:
+      Должность составителя:
+      
+      
+      Полное содержание документа со всей необходимой информацией и описанием
+      
+      =============================================
+      
+                                  [italic]Место для печатей[/italic]
 #-------------------------------------Кто является противником-----------------------------------
 - type: npcFaction
   id: UmporBot
@@ -3129,14 +3099,14 @@
   - SimpleHostile
   - Xeno
   - Zombie
-  - SyndiBot
-  - NuclearNPC
+  - Syndicate
+  - Revolutionary
   - Noocraty
   - NoocratyBot
+  - Dragon
   friendly:
   - UmporBot
   - Umpor
-  - UmporBotR
   
 - type: npcFaction
   id: Umpor
@@ -3144,14 +3114,14 @@
   - SimpleHostile
   - Xeno
   - Zombie
-  - SyndiBot
-  - NuclearNPC
+  - Syndicate
+  - Revolutionary
   - Noocraty
   - NoocratyBot
+  - Dragon
   friendly:
   - UmporBot
   - Umpor
-  - UmporBotR
 #-------------------------------------Спавнер потеряных-----------------------------------  
 - type: entity
   name: name-of-LostUmporSpawner

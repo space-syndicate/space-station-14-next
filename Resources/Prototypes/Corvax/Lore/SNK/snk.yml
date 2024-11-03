@@ -140,7 +140,6 @@
     state: icon
   - type: Item
     sprite: Corvax/Lore/SNK/Equipment/snk_back_std.rsi
-    state: icon
     size: Huge
   - type: Clothing
     quickEquip: false
@@ -211,7 +210,7 @@
     sprite: Corvax/Lore/SNK/Equipment/snk_back_radio.rsi
   - type: Storage
     grid:
-    - 0,0,4,2
+    - 0,0,4,3
     maxItemSize: Huge
   - type: EncryptionKeyHolder
     keysExtractionMethod: Prying
@@ -754,7 +753,7 @@
   name: Шлем боевого скафандра СНК
   suffix: СНК
   description: Тяжёлый. Именно из-за шлема скафандр получил прозвище "Сердитый дед".
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: BreathMask
   - type: Sprite
@@ -803,10 +802,25 @@
   components:
   - type: Paper
     content: |
-      От: 54й пехотный полк
+      [color=#000000]░░░░░░█████░░░░░░[/color]
+      [color=#000000]░░░░░█░░█░░█░░░░░[/color]      [head=3]Бланк документа[/head]
+      [color=#000000]░░░░█████████░░░░[/color]               [head=3]SNK[/head]
+      [color=#000000]░░░░░█░░█░░█░░░░░[/color]
+      [color=#000000]░░░░░░█████░░░░░░[/color]
+      =============================================
+                          НАИМЕНОВАНИЕ ДОКУМЕНТА
+      =============================================
+      
+      От: 
       Кому: 5й Штаб операции
       Запрос: 
       Срочность: (Крайня, Сильная, Средняя, Малая, Незначительная)
+      
+      Полное содержание документа со всей необходимой информацией и описанием
+      
+      =============================================
+      
+                                  [italic]Место для печатей[/italic]
 #-------------------------------------пояс стрелка--------------------------------------- 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -820,56 +834,6 @@
   - type: Clothing
     sprite: Corvax/Lore/SNK/Equipment/snk_belt_sol.rsi
   - type: Storage
-    whitelist:
-      tags:
-        - CigPack
-        - Taser
-        - Powerdrill
-        - Wirecutter
-        - Crowbar
-        - Screwdriver
-        - Flashlight
-        - Wrench
-        - GeigerCounter
-        - Flare
-        - CableCoil
-        - CigPack
-        - Radio
-        - HolofanProjector
-        - Multitool
-        - AppraisalTool
-        - JawsOfLife
-        - GPS
-        - MagazinePistolHighCapacity
-        - CombatKnife
-        - Sidearm
-        - Brutepack
-        - Ointment
-        - Bloodpack
-        - Gauze
-        - EmergencyMedipen
-        - Multitool
-        - SNKPistolPist
-        - SNKMagazine
-        - SNKPistolRifle
-        - Paper
-      components:
-        - Stunbaton
-        - FlashOnTrigger
-        - SmokeOnTrigger
-        - Flash
-        - Handcuff
-        - RangedMagazine
-        - Ammo
-        - SprayPainter
-        - NetworkConfigurator
-        - RCD
-        - RCDAmmo
-        - Welder
-        - PowerCell
-        - Geiger
-        - TrayScanner
-        - GasAnalyzer
   - type: Appearance
 
 - type: entity
@@ -973,7 +937,7 @@
   name: Пистолетная пуля (.24 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -985,7 +949,7 @@
   name: Пистолетная пуля (.24 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -999,7 +963,7 @@
   name: Винтовочная пуля (.34 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1011,7 +975,7 @@
   name: Винтовочная пуля (.34 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1024,7 +988,7 @@
   name: Винтовочная пуля (.34 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1038,7 +1002,7 @@
   name: Тяжёлая винтовочная пуля (.55 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1051,38 +1015,68 @@
   name: Заряд дроби (.45 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
         Piercing: 8
+    
+- type: entity
+  id: SNKBulletDrobStdSpread
+  categories: [ HideSpawnMenu ]
+  parent: SNKBulletDrobStd
+  components:
+  - type: ProjectileSpread
+    proto: SNKBulletDrobStd
+    count: 6
+    spread: 15
 #---------------пуля---------------------
 - type: entity
   id: SNKBulletDrobPul
   name: Дробовиковая пуля (.45 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
         Piercing: 7
         Blunt: 6
+    
+- type: entity
+  id: SNKBulletDrobPulSpread
+  categories: [ HideSpawnMenu ]
+  parent: SNKBulletDrobPul
+  components:
+  - type: ProjectileSpread
+    proto: SNKBulletDrobPul
+    count: 1
+    spread: 5
 #---------------зажигательные---------------------
 - type: entity
   id: SNKBulletDrobHea
   name: Зажигательная дробь (.45 rifle)
   suffix: СНК
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
         Piercing: 3
         Heat: 10
+      
+- type: entity
+  id: SNKBulletDrobHeaSpread
+  categories: [ HideSpawnMenu ]
+  parent: SNKBulletDrobHea
+  components:
+  - type: ProjectileSpread
+    proto: SNKBulletDrobHea
+    count: 4
+    spread: 11
 #-------------------------------------------лучи----------------------------------------------
 #---------------------------------лазер карабин------------- 
 - type: hitscan
@@ -1119,7 +1113,7 @@
   id: SNKRedLaserDrob
   name: Лазерная дробь
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1131,12 +1125,25 @@
     sprite: Corvax/Lore/SNK/Weapon/snk_projectiles.rsi
     layers:
       - state: lazer
+    
+- type: entity
+  id: SNKRedLaserDrobSpread
+  categories: [ HideSpawnMenu ]
+  parent: SNKRedLaserDrob
+  components:
+  - type: ProjectileSpread
+    proto: SNKRedLaserDrob
+    count: 7
+    spread: 20
 #-------------------------------------------энергошарики-----------------------
+- type: Tag
+  id: SNKElectro
+
 - type: entity
   id: SNKElectro
   name: Электрошары
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1256,9 +1263,7 @@
   parent: BaseShellShotgun
   components:
   - type: CartridgeAmmo
-    proto: SNKBulletDrobStd
-    count: 6
-    spread: 15
+    proto: SNKBulletDrobStdSpread
     soundEject:
       collection: ShellEject
   - type: Tag
@@ -1275,9 +1280,7 @@
   parent: BaseCartridgeRifle
   components:
   - type: CartridgeAmmo
-    proto: SNKBulletDrobPul
-    count: 1
-    spread: 5
+    proto: SNKBulletDrobPulSpread
   - type: Tag
     tags:
       - SNKCartridgeDrobBul
@@ -1292,9 +1295,7 @@
   parent: BaseShellShotgun
   components:
   - type: CartridgeAmmo
-    proto: SNKBulletDrobHea
-    count: 4
-    spread: 11
+    proto: SNKBulletDrobHeaSpread
     soundEject:
       collection: ShellEject
   - type: Tag
@@ -1336,9 +1337,7 @@
     layers:
     - state: base
   - type: CartridgeAmmo
-    proto: SNKRedLaserDrob
-    count: 7
-    spread: 20
+    proto: SNKRedLaserDrobSpread
     soundEject:
       collection: ShellEject
   - type: Tag
@@ -1603,6 +1602,7 @@
 - type: entity
   id: SNKMagazineSMGElectro
   name: Магазин к пистолету-пулемёту "Хартред"
+  description: Небольшой, лёгкий, наэлектризованный. Порой потрескивает.
   suffix: СНК
   parent: BaseSNKMagazineSMGElectro
   components:
@@ -3072,7 +3072,7 @@
 #-----------------------------канал----------------------------------------  
 - type: radioChannel
   id: SNKRadio
-  name: СНК
+  name: name-of-SNKRadio
   keycode: 's' 
   frequency: 1527
   color: "#001a68"
@@ -3277,7 +3277,7 @@
 #------------------------------------винтовка-тяж-------
 - type: entity
   parent: SNKBackpackStd
-  id: CNKBackpackFilledAutoHigh
+  id: CNKBackpackFilledRifleHigh
   suffix: СНК, Винтовка(тяжёлый)
   components:
   - type: StorageFill
@@ -3531,10 +3531,7 @@
   - SimpleHostile
   - Xeno
   - Zombie
-  - SyndiBot
-  - NuclearNPC
-  - OPZ
-  - OPZBot
+  - Dragon
   friendly:
   - SNKBot
   - SNK
@@ -3545,10 +3542,7 @@
   - SimpleHostile
   - Xeno
   - Zombie
-  - SyndiBot
-  - NuclearNPC
-  - OPZ
-  - OPZBot
+  - Dragon
   friendly:
   - SNKBot
   - SNK
@@ -3592,7 +3586,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ SNKSoldGear ]
     - type: NpcFactionMember
@@ -3657,7 +3651,7 @@
         105: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ SNKOffiGear ]
     - type: NpcFactionMember
@@ -3722,7 +3716,7 @@
         105: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ SNKEngeGear ]
     - type: NpcFactionMember
@@ -3787,7 +3781,7 @@
         110: Critical
         210: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ SNKMediGear ]
     - type: NpcFactionMember
@@ -3852,7 +3846,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ SNKRadioGear ]
     - type: NpcFactionMember

@@ -165,7 +165,7 @@
   name: Шлем скафандра "Звезда"
   suffix: Петрищев
   description: Шлем от стандартного скафандра Петрищевцев.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: BreathMask
   - type: Sprite
@@ -218,7 +218,7 @@
   name: Шлем скафандра "Серп"
   suffix: Петрищев
   description: Уникальный по своему прифилю. Серповидный рог придаёт ургозы его внешнему виду.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: BreathMask
   - type: Sprite
@@ -271,7 +271,7 @@
   name: Шлем скафандра "Молот"
   suffix: Петрищев
   description: Крупный и тяжёлый. В таком не повертишь головой, зато система амортизации и защита позволяет выдерживать попадания пуль в лоб!
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: BreathMask
   - type: Sprite
@@ -298,6 +298,35 @@
   - type: ShowJobIcons
   - type: ShowCriminalRecordIcons
 #---------------------------------------------------пояс и снаряжение---------------------------------------
+#---------------------------------Стандартная форма---------------------
+- type: entity
+  id: PetrPaperForm
+  name: Документ Петрищевцев
+  suffix: KMLG
+  parent: Paper
+  components:
+  - type: Paper
+    content: |
+      [color=#670c0c]░░░░░░░█████░░░░░[/color]
+      [color=#670c0c]████░░░░░█░░░░█░░[/color]      [head=3]Бланк документа[/head]
+      [color=#670c0c]░░░░██░░░█░░██░░░[/color]               [head=3]PETR[/head]
+      [color=#670c0c]░░░░░███████░░░░░[/color]
+      [color=#670c0c]░░░░░░░░░█░░░░░░░[/color]
+      =============================================
+                          НАИМЕНОВАНИЕ ДОКУМЕНТА
+      =============================================
+      
+      Дата:
+      Составитель документа:
+      Должность составителя:
+      
+      
+      Полное содержание документа со всей необходимой информацией и описанием
+      
+      =============================================
+      
+                                  [italic]Место для печатей[/italic]
+
 #-------------------------------------печать-----------------      
 - type: entity
   name: Печать Петрищевцев
@@ -306,7 +335,7 @@
   id: PetrRubberStamp
   components:
   - type: Stamp
-    stampedName: Призрак Коммунизма
+    stampedName: Ghost-of-Communism-stamp
     stampedColor: "#670c0c"
     stampState: "paper_stamp-generic"
   - type: Sprite
@@ -356,7 +385,7 @@
   - type: AccessReader
     access: [[ "PetrAccess" ]]
   - type: CommunicationsConsole
-    title: "Призрак Коммунизма"
+    title: "Ghost-of-Communism-stamp"
     color: "#670c0c"
     canShuttle: false
     global: true #announce to everyone they're about to fuck shit up
@@ -380,56 +409,6 @@
   - type: Clothing
     sprite: Corvax/Lore/Petr/Equipment/petr_belt_s.rsi
   - type: Storage
-    whitelist:
-      tags:
-        - CigPack
-        - Taser
-        - Powerdrill
-        - Wirecutter
-        - Crowbar
-        - Screwdriver
-        - Flashlight
-        - Wrench
-        - GeigerCounter
-        - Flare
-        - CableCoil
-        - CigPack
-        - Radio
-        - HolofanProjector
-        - Multitool
-        - AppraisalTool
-        - JawsOfLife
-        - GPS
-        - MagazinePistolHighCapacity
-        - CombatKnife
-        - Sidearm
-        - PetrExGrenade
-        - PetrSmokeGrenade
-        - PetrWeaponRevolver
-        - PetrPistol
-        - PetrSMG
-        - PetrMagazineShotgun
-        - PetrMagazineRifle
-        - PetrMagazineSMG
-        - PetrSpeedLoader
-        - PetrMagazinePistol
-      components:
-        - Stunbaton
-        - FlashOnTrigger
-        - SmokeOnTrigger
-        - Flash
-        - Handcuff
-        - RangedMagazine
-        - Ammo
-        - SprayPainter
-        - NetworkConfigurator
-        - RCD
-        - RCDAmmo
-        - Welder
-        - PowerCell
-        - Geiger
-        - TrayScanner
-        - GasAnalyzer
   - type: Appearance
 
 - type: entity
@@ -459,56 +438,6 @@
   - type: Storage
     grid:
     - 0,0,8,2
-    whitelist:
-      tags:
-        - CigPack
-        - Taser
-        - Powerdrill
-        - Wirecutter
-        - Crowbar
-        - Screwdriver
-        - Flashlight
-        - Wrench
-        - GeigerCounter
-        - Flare
-        - CableCoil
-        - CigPack
-        - Radio
-        - HolofanProjector
-        - Multitool
-        - AppraisalTool
-        - JawsOfLife
-        - GPS
-        - MagazinePistolHighCapacity
-        - CombatKnife
-        - Sidearm
-        - PetrExGrenade
-        - PetrSmokeGrenade
-        - PetrWeaponRevolver
-        - PetrPistol
-        - PetrSMG
-        - PetrMagazineShotgun
-        - PetrMagazineRifle
-        - PetrMagazineSMG
-        - PetrSpeedLoader
-        - PetrMagazinePistol
-      components:
-        - Stunbaton
-        - FlashOnTrigger
-        - SmokeOnTrigger
-        - Flash
-        - Handcuff
-        - RangedMagazine
-        - Ammo
-        - SprayPainter
-        - NetworkConfigurator
-        - RCD
-        - RCDAmmo
-        - Welder
-        - PowerCell
-        - Geiger
-        - TrayScanner
-        - GasAnalyzer
   - type: Appearance
 
 - type: entity
@@ -545,7 +474,7 @@
   name: Винтовочная пуля (.27 rifle)
   suffix: Петрищев
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -557,7 +486,7 @@
   name: Пистолетная пуля (.32 rifle)
   suffix: Петрищев
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -569,7 +498,7 @@
   name: Револьверная пуля (.40 rifle)
   suffix: Петрищев
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1367,7 +1296,7 @@
 #-----------------------------канал----------------------------------------  
 - type: radioChannel
   id: PetrRadio
-  name: Петрищев
+  name: name-of-PetrRadio
   keycode: 'в' 
   frequency: 1917
   color: "#d20000"
@@ -1433,7 +1362,7 @@
   name: Боевик Петрищевцев
   description: job-petr
   playTimeTracker: JobEventPetr
-  startingGear: PetrEfreitorGear
+  startingGear: PetrSoldGear
   supervisors: job-supervisors-everyone
   canBeAntag: false
   access:
@@ -1667,7 +1596,7 @@
     outerClothing: PetrHardsuitSerp
     id: PetrPDASold
     ears: PetrHeadset
-    belt: PetrBeltSpecFilled
+    belt: PetrBeltSpecFilledExp
     pocket1: PetrPaperSerp
 #------------------------------------Молот----------  
 - type: startingGear
@@ -1760,7 +1689,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ PetrNovGear ]
   
@@ -1816,7 +1745,7 @@
         105: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ PetrSoldGear ]
   
@@ -1872,7 +1801,7 @@
         100: Critical
         210: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ PetrSpecGear ]
   
@@ -1929,7 +1858,7 @@
         100: Critical
         210: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ PetrSaperGear ]
   
@@ -1985,7 +1914,7 @@
         105: Critical
         210: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ PetrOffiGear ]
   
@@ -2041,7 +1970,7 @@
         110: Critical
         210: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ PetrSerpGear ]
   
@@ -2097,7 +2026,7 @@
         110: Critical
         210: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ PetrMolotGear ]
   
@@ -2120,7 +2049,7 @@
 #---------------------------------------------------------------Бумаги------------------------------------------------------------
 #-----------------------------------новобранец-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: PetrPaperNov
   name: Памятка новобранца Петрищевца
   suffix: Петрищев
@@ -2136,7 +2065,7 @@
       Краткий лор организации: Петрищевцы - это радикальная экстримистская группировка вечных революционеров-коммунистов. Они были изгнаны из СССП и сейчас стремятся совершить галактичскую Коммунистическую революцию.
 #-----------------------------------боевик-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: PetrPaperSold
   name: Памятка боевика Петрищевца
   suffix: Петрищев
@@ -2152,7 +2081,7 @@
       Краткий лор организации: Петрищевцы - это радикальная экстримистская группировка вечных революционеров-коммунистов. Они были изгнаны из СССП и сейчас стремятся совершить галактичскую Коммунистическую революцию.
 #-----------------------------------специалист-инженер-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: PetrPaperSpecEng
   name: Памятка специалиста-инженера Петрищевца
   suffix: Петрищев
@@ -2168,7 +2097,7 @@
       Краткий лор организации: Петрищевцы - это радикальная экстримистская группировка вечных революционеров-коммунистов. Они были изгнаны из СССП и сейчас стремятся совершить галактичскую Коммунистическую революцию.
 #-----------------------------------специалист-подрывник-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: PetrPaperSpecSap
   name: Памятка специалиста-подрывника Петрищевца
   suffix: Петрищев
@@ -2184,7 +2113,7 @@
       Краткий лор организации: Петрищевцы - это радикальная экстримистская группировка вечных революционеров-коммунистов. Они были изгнаны из СССП и сейчас стремятся совершить галактичскую Коммунистическую революцию.
 #-----------------------------------командир-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: PetrPaperOffi
   name: Памятка командира Петрищевца
   suffix: Петрищев
@@ -2200,7 +2129,7 @@
       Краткий лор организации: Петрищевцы - это радикальная экстримистская группировка вечных революционеров-коммунистов. Они были изгнаны из СССП и сейчас стремятся совершить галактичскую Коммунистическую революцию.
 #-----------------------------------Серп-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: PetrPaperSerp
   name: Памятка оператора "Серп" Петрищевцев
   suffix: Петрищев
@@ -2216,7 +2145,7 @@
       Краткий лор организации: Петрищевцы - это радикальная экстримистская группировка вечных революционеров-коммунистов. Они были изгнаны из СССП и сейчас стремятся совершить галактичскую Коммунистическую революцию.
 #-----------------------------------Молот-----------------------------
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: PetrPaperMolot
   name: Памятка оператора "Молот" Петрищевцев
   suffix: Петрищев
@@ -2742,36 +2671,6 @@
     Telecrystal: 4
   categories:
   - PetrUplinkAmmo
-  
-- type: listing
-  id: BoxLethalshot
-  name: Коробка дробовиковых зарядов .50
-  description: Известная во всём НТ и ОПЗ коробка на 16 зарядов.
-  productEntity: BoxLethalshot
-  cost:
-    Telecrystal: 3
-  categories:
-  - PetrUplinkAmmo
-#---взрывчатка---  
-- type: listing
-  id: BoxLethalshot
-  name: Коробка дробовиковых зарядов .50
-  description: Известная во всём НТ и ОПЗ коробка на 16 зарядов.
-  productEntity: BoxLethalshot
-  cost:
-    Telecrystal: 3
-  categories:
-  - PetrUplinkAmmo
-  
-- type: listing
-  id: BoxLethalshot
-  name: Коробка дробовиковых зарядов .50
-  description: Известная во всём НТ и ОПЗ коробка на 16 зарядов.
-  productEntity: BoxLethalshot
-  cost:
-    Telecrystal: 3
-  categories:
-  - PetrUplinkAmmo
 #------категория электроника----------
 - type: listing
   id: PetrCommsComputerCircuitboard
@@ -2804,7 +2703,7 @@
   - PetrUplinkElectronic
   
 - type: listing
-  id: Emag
+  id: PetrEmag
   name: Криптографический секвенсор
   description: Используется для дешифровки и перепрошивки систем доступа НТ.
   productEntity: Emag
@@ -3059,7 +2958,7 @@
   abstract: true
   components:
   - type: Store
-    name: Категории
+    name: Petr-Category
     categories:
     - PetrUplinkArmor
     - PetrUplinkWeaponry
@@ -3110,7 +3009,7 @@
     - NukeOpsUplink
 #-----------------------------------------------точки спавна-----------------------------  
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: SpawnPointLoneNukeOperative
   id: SpawnPointNukPetrCommander
   name: Спавн-точка Командир Петрищевец
@@ -3120,7 +3019,7 @@
     description: Руководите своим революционным штурмовым отрядом, дабы свергнуть всех капиталистических наймитов и буржуазных узурпаторов.
         
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: SpawnPointLoneNukeOperative
   id: SpawnPointNukPetr
   name: Спавн-точка Боевик Петрищевец
@@ -3130,7 +3029,7 @@
     description: С идеями Ленина в сердце очистите космос от проклятых акул капитализма.
     
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: SpawnPointLoneNukeOperative
   id: SpawnPointNukPetrSpec
   name: Спавн-точка Инженер Петрищевец
@@ -3149,8 +3048,9 @@
   - Passive
   - PetsNT
   - Zombie
-  - Revolutionary
   - Noocraty
   - NoocratyBot
+  - UmporBot
+  - Umpor
   friendly:
-  - PetrGjlgjkmyfz
+  - Revolutionary

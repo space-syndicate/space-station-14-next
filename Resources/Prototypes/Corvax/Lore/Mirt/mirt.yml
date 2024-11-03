@@ -164,7 +164,7 @@
         Slash: 0.8
         Piercing: 0.8 
         Shock: 1.1 
-        Сaustic: 0.95
+        Caustic: 0.95
         Poison: 0.95
   - type: ClothingSpeedModifier
     walkModifier: 0.95
@@ -184,7 +184,7 @@
   - type: Armor
     modifiers:
       coefficients:
-        Сaustic: 0.95
+        Caustic: 0.95
         Poison: 0.95
   - type: ClothingSpeedModifier
     walkModifier: 1.25
@@ -227,7 +227,7 @@
         Slash: 0.85
         Piercing: 0.85
         Heat: 0.9
-        Сaustic: 0.9
+        Caustic: 0.9
         Poison: 0.9
   - type: BreathMask
   - type: ContainerFill
@@ -267,7 +267,7 @@
   - type: Armor
     modifiers:
       coefficients:
-        Сaustic: 0.95
+        Caustic: 0.95
         Poison: 0.95
 #------------------------------------бронированные перчатки----------     
 - type: entity
@@ -297,7 +297,7 @@
         Slash: 0.8
         Piercing: 0.8 
         Shock: 1.1 
-        Сaustic: 0.95
+        Caustic: 0.95
         Poison: 0.95
 #--------------------------------------------------плащи-------------------------------------- 
 #------------------------------------офицерский---------- 
@@ -313,7 +313,7 @@
   - type: Armor
     modifiers:
       coefficients:
-        Сaustic: 0.9
+        Caustic: 0.9
         Poison: 0.9
 #------------------------------------специалиста---------- 
 - type: entity
@@ -348,7 +348,7 @@
   - type: Armor
     modifiers:
       coefficients:
-        Сaustic: 0.95
+        Caustic: 0.95
         Poison: 0.95
 #------------------------------------плащ скаута----------   
 #-----------------------сам плащ----------------  
@@ -369,7 +369,7 @@
         Cold: 0.9
         Heat: 0.9
         Radiation: 0.95
-        Сaustic: 0.8
+        Caustic: 0.8
         Poison: 0.8
   - type: ToggleableClothing
     clothingPrototype: MirtHoodCloakRaz
@@ -380,6 +380,17 @@
     reflectProb: 0.95
     reflects:
       - Energy
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      cell_slot: !type:ContainerSlot
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
 #-----------------------капюшон плаща---------------- 
 - type: entity
   parent: [ClothingHeadHardsuitBase, BaseToggleClothing]
@@ -387,7 +398,7 @@
   name: Капюшон плаща скаута
   suffix: Миртан
   description: Закрывает половину головы. Но позволяет активировать маскировку.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: Corvax/Lore/Mirt/Armor/mirt_cloak_r_hood.rsi
@@ -399,7 +410,7 @@
         Cold: 0.9
         Heat: 0.9
         Radiation: 0.95
-        Сaustic: 0.95
+        Caustic: 0.95
         Poison: 0.95
   - type: ToggleClothing
     action: ActionTogglePhaseCloak
@@ -448,7 +459,7 @@
         Slash: 0.75
         Piercing: 0.75 
         Heat: 0.75
-        Сaustic: 0.8
+        Caustic: 0.8
         Poison: 0.8
   - type: ExplosionResistance
     damageCoefficient: 0.80
@@ -471,7 +482,7 @@
         Slash: 0.6
         Piercing: 0.6
         Heat: 0.6
-        Сaustic: 0.7
+        Caustic: 0.7
         Poison: 0.7
   - type: ExplosionResistance
     damageCoefficient: 0.75
@@ -495,7 +506,7 @@
         Piercing: 0.95 
         Heat: 0.7
         Cold: 0.7
-        Сaustic: 0.7
+        Caustic: 0.7
         Poison: 0.7
   - type: ExplosionResistance
     damageCoefficient: 0.9
@@ -519,7 +530,7 @@
         Slash: 0.5
         Piercing: 0.5
         Radiation: 0.7
-        Сaustic: 0.5
+        Caustic: 0.5
         Poison: 0.5
   - type: ClothingSpeedModifier
     walkModifier: 0.80
@@ -536,7 +547,7 @@
   name: Шлем боевого скафандра
   suffix: Миртан
   description: Стандартный простой шлем скафандра для армии Империи Миртана
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: BreathMask
   - type: Sprite
@@ -552,7 +563,7 @@
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.9
-        Сaustic: 0.9
+        Caustic: 0.9
         Poison: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.8
@@ -575,7 +586,7 @@
         Slash: 0.3
         Piercing: 0.3
         Radiation: 0.6
-        Сaustic: 0.4
+        Caustic: 0.4
         Poison: 0.4
   - type: ClothingSpeedModifier
     walkModifier: 0.6
@@ -592,7 +603,7 @@
   name: Шлем бронированного скафандра
   suffix: Миртан
   description: Стандартный простой шлем скафандра для армии Умпорской Федерации
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: BreathMask
   - type: Sprite
@@ -608,7 +619,7 @@
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.9
-        Сaustic: 0.9
+        Caustic: 0.9
         Poison: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.8
@@ -631,7 +642,7 @@
         Slash: 0.4
         Piercing: 0.4
         Radiation: 0.7
-        Сaustic: 0.6
+        Caustic: 0.6
         Poison: 0.6
   - type: ClothingSpeedModifier
     walkModifier: 0.80
@@ -648,7 +659,7 @@
   name: Шлем инквизиторского скафандра
   suffix: Миртан
   description: Стандартный простой шлем скафандра для армии Умпорской Федерации
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: BreathMask
   - type: Sprite
@@ -666,7 +677,7 @@
         Blunt: 0.85
         Slash: 0.85
         Piercing: 0.85
-        Сaustic: 0.95
+        Caustic: 0.95
         Poison: 0.95
   - type: ExplosionResistance
     damageCoefficient: 0.8
@@ -691,7 +702,7 @@
         Piercing: 0.95
         Heat: 0.9
         Cold: 0.9
-        Сaustic: 0.9
+        Caustic: 0.9
         Poison: 0.9
 #------------------------------------очки скаута----------
 - type: entity
@@ -718,6 +729,23 @@
           type: RadarConsoleBoundUserInterface
   - type: Computer
     board: RadarConsoleCircuitboard
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      board: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
 #-------------------------------------печать офицера-----------------    
 - type: entity
   name: Печать армии Империи Миртана
@@ -755,13 +783,27 @@
   components:
   - type: Paper
     content: |
-      От: 12ая туrма
+      [color=#a73800]█░░░░░░░█░░░░░░░█[/color]
+      [color=#a73800]█░░░█████████░░░█[/color]      [head=3]Бланк документа[/head]
+      [color=#a73800]██░░█░█░█░█░█░░██[/color]               [head=3]MIRT[/head]
+      [color=#a73800]░█░░░░█░█░█░░░░█░[/color]
+      [color=#a73800]░█░░░░░░█░░░░░░█░[/color]
+      =============================================
+                          НАИМЕНОВАНИЕ ДОКУМЕНТА
+      =============================================
       
-      Кому: 94ай когоrта
+      От: 
       
-      Запрос: 
+      Кому: 94ая когоrта
       
-      Срочность: (Крайня, Сильная, Средняя, Малая, Незначительная)
+      Полное sодержание документа sо всей необходимой инфоrмацией и опиsанием
+      
+      Срочность: (Кrайня, Sильная, Srедняя, Малая, Незначительная)
+      
+      =============================================
+      
+             [italic]Место для печатей[/italic]      
+      
 #---------------------------------Сумка фаеров---------------------
 - type: entity
   parent: BaseAmmoProvider
@@ -808,14 +850,14 @@
         coefficients:
           Blunt: 0.55
           Slash: 0.55
-          Сaustic: 0.8
+          Caustic: 0.8
           Poison: 0.8
           Piercing: 0.7 
       activeBlockModifier:
         coefficients:
           Blunt: 0.3
           Slash: 0.3
-          Сaustic: 0.7
+          Caustic: 0.7
           Poison: 0.7
           Piercing: 0.5 
         flatReductions:
@@ -842,14 +884,14 @@
         coefficients:
           Blunt: 0.4
           Slash: 0.4
-          Сaustic: 0.7
+          Caustic: 0.7
           Poison: 0.7
           Piercing: 0.55 
       activeBlockModifier:
         coefficients:
           Blunt: 0.1
           Slash: 0.1
-          Сaustic: 0.6
+          Caustic: 0.6
           Poison: 0.6
           Piercing: 0.4 
         flatReductions:
@@ -886,7 +928,7 @@
     damageContainers:
       - Biological
     damage:
-      Сaustic: -10
+      Caustic: -10
       Poison: -10
       Heat: -5
       groups:
@@ -1077,7 +1119,7 @@
   name: Тяжёлый заряд (hhc)
   suffix: Миртан
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1095,7 +1137,7 @@
   name: Лёгкий заряд  (lhc)
   suffix: Миртан
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1112,7 +1154,7 @@
   id: MirtBulletPistol
   name: Стандартный заряд (shc)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1125,11 +1167,14 @@
   - type: StaminaDamageOnCollide
     damage: 5     
 #------------------------------------пожарный лазер---------- 
+- type: Tag
+  id: MirtFireLaser
+
 - type: entity
   id: MirtFireLaser
   name: Осколок зенитного заряда
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -1595,7 +1640,6 @@
     useKey: false
     fireRate: 6
     selectedMode: Burst
-    shotsPerBurstModified: 5
     availableModes:
       - Burst
     soundGunshot:
@@ -1982,7 +2026,7 @@
         Piercing: 3
 #------------------------------------автомат----------     
 - type: entity
-  id: NoocPowerGan
+  id: MirtNoocPowerGan
   parent: BaseItem
   abstract: true
   components:
@@ -2057,7 +2101,7 @@
         Piercing: 3
 #------------------------------------пистолет----------   
 - type: entity
-  id: NoocPowerPistol
+  id: MirtNoocPowerPistol
   parent: BaseItem
   abstract: true
   components:
@@ -2131,7 +2175,7 @@
         Piercing: 3
 #------------------------------------пулемёт----------   
 - type: entity
-  id: NoocPowerMG
+  id: MirtNoocPowerMG
   parent: BaseItem
   abstract: true
   components:
@@ -2204,7 +2248,7 @@
         Piercing: 3
 #------------------------------------хладопушка----------     
 - type: entity
-  id: NoocPowerGanCold
+  id: MirtNoocPowerGanCold
   parent: BaseItem
   abstract: true
   components:
@@ -2280,10 +2324,6 @@
 - type: accessLevel
   id: MirtAccess
   name: access-mirt
-  
-- type: accessLevel
-  id: NoocAccess
-  name: access-nooc
 #------------------------------------закрытый шлюз---------- 
 - type: entity
   parent: DoorElectronics
@@ -2315,7 +2355,7 @@
 - type: entity
   parent: AirlockExternalShuttleLocked
   name: Стыковочный шлюз
-  id: SNKAirlockShuttleEasyPryLocked
+  id: MirtAirlockShuttleEasyPryLocked
   suffix: Миртан
   description: Чтобы успешно прилепиться к космическим объектам.
   components:
@@ -2407,7 +2447,7 @@
 #-----------------------------канал----------------------------------------  
 - type: radioChannel
   id: MirtRadio
-  name: Миртанский
+  name: name-of-MirtRadio
   keycode: 'р' 
   frequency: 1939
   color: "#a73800"
@@ -2693,7 +2733,7 @@
   name: Военный Империи Миртана
   description: job-mirt
   playTimeTracker: JobEventMirtan
-  startingGear: MirtanSoldGear
+  startingGear: MirtSoldGearAuto
   supervisors: job-supervisors-everyone
   canBeAntag: false
   access:
@@ -3008,6 +3048,18 @@
   - Сник
   - Магевер
 #-------------------------------------хуй знает что это, но вот оно работает и ладно---------------------------
+- type: npcFaction
+  id: Mirt
+  hostile:
+  - SimpleHostile
+  - Xeno
+  - Zombie
+  - Syndicate
+  - Revolutionary
+  - Dragon
+  friendly:
+  - Noocraty
+  - NoocratyBot
 #---------------------------------ополченец----------
 - type: randomHumanoidSettings
   speciesBlacklist: 
@@ -3049,7 +3101,7 @@
         100: Critical
         200: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ MirtGrGear ]
   
@@ -3113,7 +3165,7 @@
         110: Critical
         220: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ MirtSoldGearAuto ]
   
@@ -3177,10 +3229,10 @@
         115: Critical
         230: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ MirtTgGearLMG ]
-  
+      
 - type: entity
   name: Миртанский боец тяжёлого оружия Спавнер
   id: MirtMobHumanTg
@@ -3196,7 +3248,7 @@
     randomizeName: false
   - type: RandomMetadata
     nameSegments:
-    - MirtName-t
+    - MirtName-o
     - MirtNameTwo
   - type: RandomHumanoidSpawner
     settings: MirtTgR
@@ -3241,7 +3293,7 @@
         115: Critical
         230: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ MirtOffiGear ]
   
@@ -3305,7 +3357,7 @@
         105: Critical
         210: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ MirtInkGear ]
   
@@ -3369,7 +3421,7 @@
         105: Critical
         210: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ MirtOffiInkGear ]
   
@@ -3433,7 +3485,7 @@
         105: Critical
         210: Dead
     - type: Stamina
-      excess: 380
+      critThreshold: 380
     - type: Loadout
       prototypes: [ MirtRazGear ]
   
@@ -3581,7 +3633,7 @@
       - id: NoocPowerCellOne
 #-----------------------------Ящик особого ноократского оружия------------------
 - type: entity
-  id: MirtCrateWeaponsNO
+  id: MirtCrateWeaponsOE
   parent: MirtCrate
   name: Ящик особого оружия Ноократии Эранта
   suffix: Миртан
@@ -3670,7 +3722,7 @@
       - id: MirtCloakOfInk
 #-----------------------------Ящик усиленной экипировки армии------------------
 - type: entity
-  id: MirtCrateWeaponsEA
+  id: MirtCrateWeaponsEAU
   parent: MirtCrate
   name: Ящик стандартной экипировки армии Империи Миртана
   suffix: Миртан
