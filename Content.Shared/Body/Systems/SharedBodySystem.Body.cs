@@ -11,6 +11,7 @@ using Content.Shared.Gibbing.Components;
 using Content.Shared.Gibbing.Events;
 using Content.Shared.Gibbing.Systems;
 using Content.Shared.Inventory;
+using Content.Shared.Rejuvenate;
 using Content.Shared.Standing;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -49,6 +50,7 @@ public partial class SharedBodySystem
         SubscribeLocalEvent<BodyComponent, CanDragEvent>(OnBodyCanDrag);
         SubscribeLocalEvent<BodyComponent, DamageChangedEvent>(OnDamageChanged);
         SubscribeLocalEvent<BodyComponent, StandAttemptEvent>(OnStandAttempt);
+        SubscribeLocalEvent<BodyComponent, RejuvenateEvent>(OnRejuvenate);
     }
 
     private void OnBodyInserted(Entity<BodyComponent> ent, ref EntInsertedIntoContainerMessage args)
@@ -141,21 +143,30 @@ public partial class SharedBodySystem
 
     private void OnDamageChanged(Entity<BodyComponent> ent, ref DamageChangedEvent args)
     {
+        if (!_gameTiming.IsFirstTimePredicted)
+            return;
+
+        DebugTools.Assert(ent.Comp is not null);
         if (args.PartMultiplier == 0
-            || ent.Comp is null
             || args.TargetPart is null
             || args.DamageDelta is null
-            || !args.DamageIncreased
-            && !args.DamageDecreased)
+            || args is { DamageIncreased: false, DamageDecreased: false })
             return;
 
         var (targetType, targetSymmetry) = ConvertTargetBodyPart(args.TargetPart.Value);
-        Logger.Debug($"Applying damage to {ToPrettyString(ent)} with {ent.Comp} and {args} {targetType} {targetSymmetry}");
+        Log.Debug($"Applying damage to {ToPrettyString(ent)} with {ent.Comp} and {args} {targetType} {targetSymmetry}");
         foreach (var part in GetBodyChildrenOfType(ent, targetType, ent.Comp)
             .Where(part => part.Component.Symmetry == targetSymmetry))
         {
-            if (_gameTiming.IsFirstTimePredicted)
                 ApplyPartDamage(part, args.DamageDelta, targetType, args.TargetPart.Value, args.CanSever, args.PartMultiplier);
+        }
+    }
+
+    private void OnRejuvenate(Entity<BodyComponent> ent, ref RejuvenateEvent args)
+    {
+        foreach (var part in GetBodyChildren(ent, ent.Comp))
+        {
+            TryChangeIntegrity(part, part.Component.Integrity - BodyPartComponent.MaxIntegrity, false, GetTargetBodyPart(part), out _);
         }
     }
 
@@ -341,7 +352,7 @@ public partial class SharedBodySystem
         foreach (var part in parts)
         {
 
-            _gibbingSystem.TryGibEntityWithRef(bodyId, part.Id, GibType.Gib, GibContentsOption.Skip, ref gibs,
+            _gibbingSystem.TryGibEntityWithRef(bodyId, part.Id, GibType.Gib, GibContentsOption.Drop, ref gibs,
                 playAudio: false, launchGibs: true, launchDirection: splatDirection, launchImpulse: GibletLaunchImpulse * splatModifier,
                 launchImpulseVariance: GibletLaunchImpulseVariance, launchCone: splatCone);
 
@@ -380,18 +391,28 @@ public partial class SharedBodySystem
     {
         var gibs = new HashSet<EntityUid>();
 
-        _gibbingSystem.TryGibEntityWithRef(partId, partId, GibType.Gib, GibContentsOption.Drop, ref gibs,
-                playAudio: true, launchGibs: true, launchDirection: splatDirection, launchImpulse: GibletLaunchImpulse * splatModifier,
-                launchImpulseVariance: GibletLaunchImpulseVariance, launchCone: splatCone);
+        _gibbingSystem.TryGibEntityWithRef(
+            partId,
+            partId,
+            GibType.Gib,
+            GibContentsOption.Drop,
+            ref gibs,
+            playAudio: true,
+            launchGibs: true,
+            launchDirection: splatDirection,
+            launchImpulse: GibletLaunchImpulse * splatModifier,
+            launchImpulseVariance: GibletLaunchImpulseVariance,
+            launchCone: splatCone);
 
         if (TryComp<InventoryComponent>(partId, out var inventory))
         {
-            foreach (var item in _inventory.GetHandOrInventoryEntities(partId))
+            foreach (var item in _inventory.GetHandOrInventoryEntities((partId, null, inventory)))
             {
                 SharedTransform.AttachToGridOrMap(item);
                 gibs.Add(item);
             }
         }
+
         _audioSystem.PlayPredicted(gibSoundOverride, Transform(partId).Coordinates, null);
         return gibs;
     }

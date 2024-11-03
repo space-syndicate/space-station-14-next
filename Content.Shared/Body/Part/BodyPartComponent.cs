@@ -1,4 +1,4 @@
-﻿using Content.Shared.Backmen.Surgery.Tools;
+using Content.Shared.Backmen.Surgery.Tools;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
@@ -69,9 +69,15 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     /// How much health the body part has until it pops out.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float Integrity = 70f;
+    public float Integrity = MaxIntegrity;
 
     public const float MaxIntegrity = 70;
+    public const float LightIntegrity = 56;
+    public const float SomewhatIntegrity = 42;
+    public const float MedIntegrity = 28;
+    public const float HeavyIntegrity = 17.5f;
+    public const float CritIntegrity = 7;
+    public const float IntegrityAffixPart = 7;
 
     /// <summary>
     /// Whether this body part is enabled or not.
