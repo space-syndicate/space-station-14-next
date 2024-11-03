@@ -15,15 +15,17 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
     public float BloodLevel;
     public bool? ScanMode;
     public bool? Bleeding;
+    public bool? Unrevivable;
     public Dictionary<TargetBodyPart, TargetIntegrity>? Body; // backmen: surgery
 
-    public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, Dictionary<TargetBodyPart, TargetIntegrity>? body)
+    public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable, Dictionary<TargetBodyPart, TargetIntegrity>? body)
     {
         TargetEntity = targetEntity;
         Temperature = temperature;
         BloodLevel = bloodLevel;
         ScanMode = scanMode;
         Bleeding = bleeding;
+        Unrevivable = unrevivable;
         Body = body; // backmen: surgery
     }
 }
