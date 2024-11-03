@@ -25,6 +25,8 @@ public sealed partial class ChangelingRuleSystem : GameRuleSystem<ChangelingRule
 
     public readonly SoundSpecifier BriefingSound = new SoundPathSpecifier("/Audio/Ambience/Antag/changeling_start.ogg");
 
+    public readonly EntProtoId ChangelingPrototypeEntityId = "Changeling";
+
     public readonly ProtoId<AntagPrototype> ChangelingPrototypeId = "Changeling";
 
     public readonly ProtoId<NpcFactionPrototype> ChangelingFactionId = "Changeling";
@@ -39,6 +41,13 @@ public sealed partial class ChangelingRuleSystem : GameRuleSystem<ChangelingRule
 
         SubscribeLocalEvent<ChangelingRuleComponent, AfterAntagEntitySelectedEvent>(OnSelectAntag);
         SubscribeLocalEvent<ChangelingRuleComponent, ObjectivesTextPrependEvent>(OnTextPrepend);
+        SubscribeLocalEvent<ChangelingRuleComponent, GetBriefingEvent>(OnGetBriefing);
+    }
+
+    private void OnGetBriefing(EntityUid uid, ChangelingRuleComponent comp, ref GetBriefingEvent args)
+    {
+        TryComp<MetaDataComponent>(uid, out var metaData);
+        args.Append(Loc.GetString("changeling-role-greeting", ("name", metaData?.EntityName ?? "Unknown")));
     }
 
     private void OnSelectAntag(EntityUid uid, ChangelingRuleComponent comp, ref AfterAntagEntitySelectedEvent args)
@@ -54,10 +63,9 @@ public sealed partial class ChangelingRuleSystem : GameRuleSystem<ChangelingRule
         if (TryComp<MetaDataComponent>(target, out var metaData))
         {
             var briefing = Loc.GetString("changeling-role-greeting", ("name", metaData?.EntityName ?? "Unknown"));
-            var briefingShort = Loc.GetString("changeling-role-greeting-short", ("name", metaData?.EntityName ?? "Unknown"));
 
             _antag.SendBriefing(target, briefing, Color.Yellow, BriefingSound);
-            _role.MindAddRole(mindId, new RoleBriefingComponent { Briefing = briefingShort }, mind, true);
+            _role.MindAddRole(mindId, ChangelingPrototypeEntityId.ToString(), mind, true);
         }
         // hivemind stuff
         _npcFaction.RemoveFaction(target, NanotrasenFactionId, false);
