@@ -35,6 +35,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -69,6 +70,8 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private readonly Content.Server.Backmen.Arrivals.CentcommSystem _centcommSystem = default!;
+
 
     private const float ShuttleSpawnBuffer = 1f;
 
@@ -81,13 +84,14 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     {
         _emergencyShuttleEnabled = _configManager.GetCVar(CCVars.EmergencyShuttleEnabled);
         // Don't immediately invoke as roundstart will just handle it.
-        Subs.CVar(_configManager, CCVars.EmergencyShuttleEnabled, SetEmergencyShuttleEnabled);
+
+        //Subs.CVar(_configManager, CCVars.EmergencyShuttleEnabled, SetEmergencyShuttleEnabled);
+        _configManager.OnValueChanged(CCVars.EmergencyShuttleEnabled, value => SetEmergencyShuttleEnabled(value), true);
 
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
-        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundCleanup);
-        SubscribeLocalEvent<StationEmergencyShuttleComponent, StationPostInitEvent>(OnStationStartup);
-        SubscribeLocalEvent<StationCentcommComponent, ComponentShutdown>(OnCentcommShutdown);
-        SubscribeLocalEvent<StationCentcommComponent, MapInitEvent>(OnStationInit);
+        SubscribeLocalEvent<StationEmergencyShuttleComponent, ComponentStartup>(OnStationStartup);
+        //SubscribeLocalEvent<StationCentcommComponent, ComponentShutdown>(OnCentcommShutdown); // backmen: centcom
+        SubscribeLocalEvent<StationCentcommComponent, ComponentInit>(OnCentcommInit);
 
         SubscribeLocalEvent<EmergencyShuttleComponent, FTLStartedEvent>(OnEmergencyFTL);
         SubscribeLocalEvent<EmergencyShuttleComponent, FTLCompletedEvent>(OnEmergencyFTLComplete);
@@ -495,90 +499,27 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         }
     }
 
-    private void AddCentcomm(EntityUid station, StationCentcommComponent component)
+// start-backmen: centcom
+    private void AddCentcomm(StationCentcommComponent component)
     {
-        DebugTools.Assert(LifeStage(station) >= EntityLifeStage.MapInitialized);
-        if (component.MapEntity != null || component.Entity != null)
-        {
-            Log.Warning("Attempted to re-add an existing centcomm map.");
-            return;
-        }
+        var centcom = EntityManager.System<Content.Server.Backmen.Arrivals.CentcommSystem>();
 
-        // Check for existing centcomms and just point to that
-        var query = AllEntityQuery<StationCentcommComponent>();
-        while (query.MoveNext(out var otherComp))
-        {
-            if (otherComp == component)
-                continue;
-
-            if (!Exists(otherComp.MapEntity) || !Exists(otherComp.Entity))
-            {
-                Log.Error($"Discovered invalid centcomm component?");
-                ClearCentcomm(otherComp);
-                continue;
-            }
-
-            component.MapEntity = otherComp.MapEntity;
-            component.Entity = otherComp.Entity;
-            component.ShuttleIndex = otherComp.ShuttleIndex;
-            return;
-        }
-
-        if (string.IsNullOrEmpty(component.Map.ToString()))
-        {
-            Log.Warning("No CentComm map found, skipping setup.");
-            return;
-        }
-
-        var map = _mapSystem.CreateMap(out var mapId);
-        var grid = _map.LoadGrid(mapId, component.Map.ToString(), new MapLoadOptions()
-        {
-            LoadMap = false,
-        });
-
-        if (!Exists(map))
-        {
-            Log.Error($"Failed to set up centcomm map!");
-            QueueDel(grid);
-            return;
-        }
-
-        if (!Exists(grid))
-        {
-            Log.Error($"Failed to set up centcomm grid!");
-            QueueDel(map);
-            return;
-        }
-
-        var xform = Transform(grid.Value);
-        if (xform.ParentUid != map || xform.MapUid != map)
-        {
-            Log.Error($"Centcomm grid is not parented to its own map?");
-            QueueDel(map);
-            QueueDel(grid);
-            return;
-        }
-
-        component.MapEntity = map;
-        _metaData.SetEntityName(map, Loc.GetString("map-name-centcomm"));
-        component.Entity = grid;
-        _shuttle.TryAddFTLDestination(mapId, true, out _);
-        Log.Info($"Created centcomm grid {ToPrettyString(grid)} on map {ToPrettyString(map)} for station {ToPrettyString(station)}");
+        centcom.EnsureCentcom(true);
+        component.MapEntity = centcom.CentComMapUid;
+        component.Entity = centcom.CentComGrid;
+        component.ShuttleIndex = centcom.ShuttleIndex;
     }
 
     public HashSet<EntityUid> GetCentcommMaps()
     {
-        var query = AllEntityQuery<StationCentcommComponent>();
-        var maps = new HashSet<EntityUid>(Count<StationCentcommComponent>());
+        var maps = new HashSet<EntityUid>();
 
-        while (query.MoveNext(out var comp))
-        {
-            if (comp.MapEntity != null)
-                maps.Add(comp.MapEntity.Value);
-        }
+        if(_centcommSystem.CentComMapUid.IsValid())
+            maps.Add(_centcommSystem.CentComMapUid);
 
         return maps;
     }
+// end-backmen: centcom
 
     private void AddEmergencyShuttle(Entity<StationEmergencyShuttleComponent?, StationCentcommComponent?> ent)
     {
@@ -622,18 +563,8 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             return;
         }
 
-        ent.Comp2.ShuttleIndex += Comp<MapGridComponent>(shuttle.Value).LocalAABB.Width + ShuttleSpawnBuffer;
-
-        // Update indices for all centcomm comps pointing to same map
-        var query = AllEntityQuery<StationCentcommComponent>();
-
-        while (query.MoveNext(out var comp))
-        {
-            if (comp == ent.Comp2 || comp.MapEntity != ent.Comp2.MapEntity)
-                continue;
-
-            comp.ShuttleIndex = ent.Comp2.ShuttleIndex;
-        }
+        centcomm.ShuttleIndex = _centcommSystem.ShuttleIndex;
+        _centcommSystem.ShuttleIndex += _mapManager.GetGrid(shuttle.Value).LocalAABB.Width + ShuttleSpawnBuffer;
 
         ent.Comp1.EmergencyShuttle = shuttle;
         EnsureComp<ProtectedGridComponent>(shuttle.Value);

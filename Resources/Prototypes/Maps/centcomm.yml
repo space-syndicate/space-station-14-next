@@ -1,10 +1,10 @@
 - type: gameMap
-  id: CentComm
+  id: centcommcorvax
   mapName: 'Central Command'
-  mapPath: /Maps/centcomm.yml
-  minPlayers: 10
+  mapPath: /Maps/corvax_centcomm.yml
+  minPlayers: 0
   stations:
-    centcomm:
+    centcommcorvax:
       stationProto: NanotrasenCentralCommand
       components:
         - type: StationNameSetup
@@ -12,3 +12,7 @@
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'TG'
+        - type: StationJobs
+          availableJobs:
+            CCOperator: [ 2, 2]
+            CCSecurity: [ 3, 3]

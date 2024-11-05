@@ -1,0 +1,78 @@
+- type: job
+  id: CCOperator
+  name: Оператор ЦК
+  description: Оператор Центрального Командования. Истинный бюрократ.
+  playTimeTracker: JobCentralCommandOperator
+  setPreference: true
+  startingGear: CCOperator
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom2 # Corvax-JobSupervisors
+  whitelisted: true
+  canBeAntag: false
+  weight: 1
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  setHideFromConsole: true
+  accessGroups:
+    - AllAccess
+  access:
+    - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, TrackingImplant ]
+
+- type: job
+  id: CCSecurity
+  name: Служба Безопасности ЦентКом
+  description: Не звонит вам и не просит последние три цифры с карты.
+  playTimeTracker: JobCentralCommandSecurity
+  setPreference: true
+  startingGear: OfficerCentCom
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom2 # Corvax-JobSupervisors
+  whitelisted: true
+  canBeAntag: false
+  weight: 1
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  setHideFromConsole: true
+  accessGroups:
+    - AllAccess
+  access:
+    - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, TrackingImplant ]
+
+- type: startingGear
+  id: Operator
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficer
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesBootsJack
+    eyes: ClothingEyesGlassesSunglasses
+    head: ClothingHeadHatBeretCentcomNaval
+    id: CentcomPDA
+    ears: ClothingHeadsetCentCom
+    pocket1: PenCentcom
+    pocket2: BoxFolderCentComClipboard
+    gloves: ClothingHandsGlovesCombat
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled
+
+- type: startingGear
+  id: OfficerCentCom
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoSAlt
+    back: ClothingBackpackFilled
+    mask: ClothingMaskGasSecurity
+    shoes: ClothingShoesBootsJack
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorBasic
+    suitstorage: WeaponPistolMk58
+    head: ClothingHeadHatBeretHoS
+    id: CentcomPDA
+    ears: ClothingHeadsetCentCom
+    belt: ClothingBeltSecurity
+    pocket2: MagazinePistol

@@ -1,0 +1,8 @@
+﻿- type: department
+  id: Центральное Командование
+  description: Лучшие из лучших. Только по вайтлисту.
+  color: "#13db0f"
+  roles:
+    - CCSecurity
+    - CCOperator
+    - CCIntern

@@ -1,0 +1,60 @@
+﻿- type: entity
+  parent: ComputerId
+  id: CCComputerId
+  name: Консоль ID карт ЦК
+  description: Terminal for programming Nanotrasen employee ID cards to access parts of the station.
+  components:
+    - type: IdCardConsole
+      accessLevels:
+        - CentralCommand
+        - Armory
+        - Atmospherics
+        - Bar
+        - Brig
+        - Blueshield
+        - Detective
+        - Captain
+        - Cargo
+        - Chapel
+        - Chemistry
+        - ChiefEngineer
+        - ChiefMedicalOfficer
+        - Command
+        - Cryogenics
+        - Engineering
+        - External
+        - HeadOfPersonnel
+        - HeadOfSecurity
+        - Hydroponics
+        - Janitor
+        - Kitchen
+        - Lawyer
+        - Magistrat
+        - Maintenance
+        - Medical
+        - NanotrasenRepresentive
+        - Quartermaster
+        - Research
+        - ResearchDirector
+        - Salvage
+        - Security
+        - Service
+        - Theatre
+      privilegedIdSlot:
+        name: id-card-console-privileged-id
+        ejectSound: /Audio/Machines/id_swipe.ogg
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectOnBreak: true
+        swap: false
+        whitelist:
+          components:
+            - IdCard
+      targetIdSlot:
+        name: id-card-console-target-id
+        ejectSound: /Audio/Machines/id_swipe.ogg
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectOnBreak: true
+        swap: false
+        whitelist:
+          components:
+            - IdCard

@@ -1,0 +1,6 @@
+- type: weightedRandom
+  id: DefaultCentcomPool
+  weights:
+    centcommcorvax: 1
+#    CentCommv2: 0.35 // soon
+#    CentCommv3: 0.7 // soon
