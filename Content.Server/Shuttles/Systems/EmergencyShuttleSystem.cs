@@ -84,14 +84,13 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     {
         _emergencyShuttleEnabled = _configManager.GetCVar(CCVars.EmergencyShuttleEnabled);
         // Don't immediately invoke as roundstart will just handle it.
-
-        //Subs.CVar(_configManager, CCVars.EmergencyShuttleEnabled, SetEmergencyShuttleEnabled);
-        _configManager.OnValueChanged(CCVars.EmergencyShuttleEnabled, value => SetEmergencyShuttleEnabled(value), true);
+        Subs.CVar(_configManager, CCVars.EmergencyShuttleEnabled, SetEmergencyShuttleEnabled);
 
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
-        SubscribeLocalEvent<StationEmergencyShuttleComponent, ComponentStartup>(OnStationStartup);
-        //SubscribeLocalEvent<StationCentcommComponent, ComponentShutdown>(OnCentcommShutdown); // backmen: centcom
-        SubscribeLocalEvent<StationCentcommComponent, ComponentInit>(OnCentcommInit);
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundCleanup);
+        SubscribeLocalEvent<StationEmergencyShuttleComponent, StationPostInitEvent>(OnStationStartup);
+        //SubscribeLocalEvent<StationCentcommComponent, ComponentShutdown>(OnCentcommShutdown);
+        SubscribeLocalEvent<StationCentcommComponent, MapInitEvent>(OnStationInit);
 
         SubscribeLocalEvent<EmergencyShuttleComponent, FTLStartedEvent>(OnEmergencyFTL);
         SubscribeLocalEvent<EmergencyShuttleComponent, FTLCompletedEvent>(OnEmergencyFTLComplete);
@@ -400,6 +399,8 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
 
         // TODO: Need filter extensions or something don't blame me.
         _audio.PlayGlobal(audioFile, Filter.Broadcast(), true);
+
+        _centcommSystem.EnableFtl(_centcommSystem.CentComMapUid); // backmen: centcom
     }
 
     private void OnStationInit(EntityUid uid, StationCentcommComponent component, MapInitEvent args)
@@ -500,14 +501,21 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     }
 
 // start-backmen: centcom
-    private void AddCentcomm(StationCentcommComponent component)
+    private void AddCentcomm(EntityUid station, StationCentcommComponent component)
     {
         var centcom = EntityManager.System<Content.Server.Backmen.Arrivals.CentcommSystem>();
+        DebugTools.Assert(LifeStage(station)>= EntityLifeStage.MapInitialized);
+        if (component.MapEntity != null || component.Entity != null)
+        {
+            Log.Warning("Attempted to re-add an existing centcomm map.");
+        }
 
         centcom.EnsureCentcom(true);
+
         component.MapEntity = centcom.CentComMapUid;
         component.Entity = centcom.CentComGrid;
         component.ShuttleIndex = centcom.ShuttleIndex;
+        Log.Info($"Attached centcomm grid {ToPrettyString(centcom.CentComGrid)} on map {ToPrettyString(centcom.CentComMapUid)} for station {ToPrettyString(station)}");
     }
 
     public HashSet<EntityUid> GetCentcommMaps()
@@ -552,7 +560,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         var shuttle = _map.LoadGrid(map.MapId, shuttlePath.ToString(), new MapLoadOptions()
         {
             // Should be far enough... right? I'm too lazy to bounds check CentCom rn.
-            Offset = new Vector2(500f + ent.Comp2.ShuttleIndex, 0f),
+            Offset = new Vector2(500f + _centcommSystem.ShuttleIndex, 0f),
             // fun fact: if you just fucking yeet centcomm into nullspace anytime you try to spawn the shuttle, then any distance is far enough. so lets not do that
             LoadMap = false,
         });
@@ -563,8 +571,8 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             return;
         }
 
-        centcomm.ShuttleIndex = _centcommSystem.ShuttleIndex;
-        _centcommSystem.ShuttleIndex += _mapManager.GetGrid(shuttle.Value).LocalAABB.Width + ShuttleSpawnBuffer;
+        _centcommSystem.ShuttleIndex += Comp<MapGridComponent>(shuttle.Value).LocalAABB.Width + ShuttleSpawnBuffer;
+        ent.Comp2.ShuttleIndex = _centcommSystem.ShuttleIndex;
 
         ent.Comp1.EmergencyShuttle = shuttle;
         EnsureComp<ProtectedGridComponent>(shuttle.Value);
