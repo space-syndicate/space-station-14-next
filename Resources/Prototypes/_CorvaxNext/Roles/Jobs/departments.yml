@@ -1,0 +1,8 @@
+﻿- type: department
+  id: CentralCommandCorvax
+  name: Центральное Командование
+  description: Только по вайтлисту.
+  color: "#13db0f"
+  roles:
+    - CCSecurity
+    - CCOperator
