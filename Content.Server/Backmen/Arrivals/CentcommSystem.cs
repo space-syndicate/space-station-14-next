@@ -16,8 +16,6 @@ using Content.Shared.Backmen.Abilities;
 using Content.Shared.Backmen.CentComm;
 using Content.Shared.Cargo.Components;
 using Content.Shared.CCVar;
-using Content.Shared.Emag.Components;
-using Content.Shared.Emag.Systems;
 using Content.Shared.GameTicking;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
@@ -74,7 +72,6 @@ public sealed class CentcommSystem : EntitySystem
         SubscribeLocalEvent<RoundStartingEvent>(OnCentComInit, before: new[] { typeof(EmergencyShuttleSystem) });
         SubscribeLocalEvent<RoundEndedEvent>(OnCentComEndRound);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnCleanup);
-        SubscribeLocalEvent<ShuttleConsoleComponent, GotEmaggedEvent>(OnShuttleConsoleEmaged);
         SubscribeLocalEvent<FTLCompletedEvent>(OnFTLCompleted);
         SubscribeLocalEvent<FtlCentComAnnounce>(OnFtlAnnounce);
         SubscribeLocalEvent<LoadingMapsEvent>(OnLoadingMaps);
@@ -165,30 +162,6 @@ public sealed class CentcommSystem : EntitySystem
 
     [ValidatePrototypeId<EntityPrototype>]
     private const string StationShuttleConsole = "ComputerShuttle";
-
-    private void OnShuttleConsoleEmaged(Entity<ShuttleConsoleComponent> ent, ref GotEmaggedEvent args)
-    {
-        if (Prototype(ent)?.ID != StationShuttleConsole)
-        {
-            return;
-        }
-
-        if (!this.IsPowered(ent, EntityManager))
-            return;
-
-        var shuttle = Transform(ent).GridUid;
-        if (!HasComp<ShuttleComponent>(shuttle))
-            return;
-
-        if (!(HasComp<CargoShuttleComponent>(shuttle) || HasComp<SalvageShuttleComponent>(shuttle)))
-            return;
-
-        _audio.PlayPvs(SparkSound, ent);
-        _popupSystem.PopupEntity(Loc.GetString("shuttle-console-component-upgrade-emag-requirement"), ent);
-        args.Handled = true;
-        EnsureComp<AllowFtlToCentComComponent>(shuttle.Value); // для обновления консоли нужно чтобы компонент был до вызыва RefreshShuttleConsoles
-        _console.RefreshShuttleConsoles();
-    }
 
     private void OnGridFillChange(bool obj)
     {

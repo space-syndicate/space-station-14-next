@@ -388,6 +388,7 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+    - type: AllowFtlToCentCom
 - proto: AirAlarm
   entities:
   - uid: 7657
