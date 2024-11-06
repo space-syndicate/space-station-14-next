@@ -4,7 +4,7 @@
   mapPath: /Maps/corvax_delta.yml
   maxRandomOffset: 0
   randomRotation: false
-  minPlayers: 55
+  minPlayers: 10
   stations:
     Delta:
       stationProto: StandardNanotrasenStation
