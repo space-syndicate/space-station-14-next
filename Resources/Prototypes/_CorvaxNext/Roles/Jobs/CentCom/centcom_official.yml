@@ -4,30 +4,7 @@
   description: Оператор Центрального Командования. Истинный бюрократ.
   playTimeTracker: JobCentralCommandOperator
   setPreference: true
-  startingGear: CCOperator
-  icon: "JobIconNanotrasen"
-  supervisors: job-supervisors-centcom2 # Corvax-JobSupervisors
-  whitelisted: true
-  canBeAntag: false
-  weight: 1
-  requireAdminNotify: true
-  joinNotifyCrew: true
-  setHideFromConsole: true
-  accessGroups:
-    - AllAccess
-  access:
-    - CentralCommand
-  special:
-  - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, TrackingImplant ]
-
-- type: job
-  id: CCSecurity
-  name: Служба Безопасности ЦентКом
-  description: Не звонит вам и не просит последние три цифры с карты.
-  playTimeTracker: JobCentralCommandSecurity
-  setPreference: true
-  startingGear: OfficerCentCom
+  startingGear: OperatorGear
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom2 # Corvax-JobSupervisors
   whitelisted: true
@@ -45,10 +22,9 @@
     implants: [ MindShieldImplant, TrackingImplant ]
 
 - type: startingGear
-  id: Operator
+  id: OperatorGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitCentcomOfficer
-    back: ClothingBackpackFilled
     shoes: ClothingShoesBootsJack
     eyes: ClothingEyesGlassesSunglasses
     head: ClothingHeadHatBeretCentcomNaval
@@ -57,22 +33,6 @@
     pocket1: PenCentcom
     pocket2: BoxFolderCentComClipboard
     gloves: ClothingHandsGlovesCombat
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled
-
-- type: startingGear
-  id: OfficerCentCom
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitHoSAlt
-    back: ClothingBackpackFilled
-    mask: ClothingMaskGasSecurity
-    shoes: ClothingShoesBootsJack
-    eyes: ClothingEyesGlassesSecurity
-    gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterArmorBasic
-    suitstorage: WeaponPistolMk58
-    head: ClothingHeadHatBeretHoS
-    id: CentcomPDA
-    ears: ClothingHeadsetCentCom
-    belt: ClothingBeltSecurity
-    pocket2: MagazinePistol
+  storage:
+    back:
+    - Flash

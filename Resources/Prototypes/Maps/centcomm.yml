@@ -1,5 +1,5 @@
 - type: gameMap
-  id: centcommcorvax
+  id: CorvaxCentcomm
   mapName: 'Central Command'
   mapPath: /Maps/corvax_centcomm.yml
   minPlayers: 0
@@ -15,4 +15,3 @@
         - type: StationJobs
           availableJobs:
             CCOperator: [ 2, 2]
-            CCSecurity: [ 3, 3]

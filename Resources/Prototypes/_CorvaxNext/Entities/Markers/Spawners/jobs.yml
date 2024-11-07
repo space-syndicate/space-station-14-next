@@ -9,15 +9,3 @@
       layers:
         - state: green
         - state: captain
-
-- type: entity
-  id: SpawnPointCCSecurity
-  parent: SpawnPointJobBase
-  name: ЦК Охрана
-  components:
-    - type: SpawnPoint
-      job_id: CCSecurity
-    - type: Sprite
-      layers:
-        - state: green
-        - state: captain

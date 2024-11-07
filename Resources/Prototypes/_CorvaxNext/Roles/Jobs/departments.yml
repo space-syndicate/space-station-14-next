@@ -4,5 +4,4 @@
   description: Только по вайтлисту.
   color: "#13db0f"
   roles:
-    - CCSecurity
     - CCOperator

@@ -1,5 +1,2 @@
 ﻿- type: playTimeTracker
   id: JobCentralCommandOperator
-
-- type: playTimeTracker
-  id: JobCentralCommandSecurity

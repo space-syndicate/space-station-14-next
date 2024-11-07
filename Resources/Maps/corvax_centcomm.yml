@@ -5800,6 +5800,8 @@ entities:
           - 0
           - 0
         chunkSize: 4
+    - type: BecomesStation
+      id: centcommcorvax
   - uid: 5
     components:
     - type: MetaData
@@ -8423,25 +8425,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 28.5,32.5
-      parent: 2
-- proto: BaseAdvancedPen
-  entities:
-  - uid: 394
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 74.00797,12.565628
-      parent: 2
-  - uid: 395
-    components:
-    - type: Transform
-      pos: 57.72277,46.028847
-      parent: 2
-  - uid: 396
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 37.62642,48.595196
       parent: 2
 - proto: BaseComputer
   entities:
@@ -40251,13 +40234,6 @@ entities:
     - type: Transform
       pos: 62.5473,33.443535
       parent: 2
-- proto: MaterialReclaimer
-  entities:
-  - uid: 4942
-    components:
-    - type: Transform
-      pos: 37.5,56.5
-      parent: 2
 - proto: Mattress
   entities:
   - uid: 4943
@@ -41441,6 +41417,25 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: Pen
+  entities:
+  - uid: 394
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 74.00797,12.565628
+      parent: 2
+  - uid: 395
+    components:
+    - type: Transform
+      pos: 57.72277,46.028847
+      parent: 2
+  - uid: 396
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 37.62642,48.595196
+      parent: 2
 - proto: PenCap
   entities:
   - uid: 5033
@@ -46244,6 +46239,18 @@ entities:
     components:
     - type: Transform
       pos: 62.5,31.5
+      parent: 2
+- proto: SpawnPointCCOperator
+  entities:
+  - uid: 4942
+    components:
+    - type: Transform
+      pos: 61.5,26.5
+      parent: 2
+  - uid: 7129
+    components:
+    - type: Transform
+      pos: 65.5,26.5
       parent: 2
 - proto: SpeedLoaderMagnumAP
   entities:
