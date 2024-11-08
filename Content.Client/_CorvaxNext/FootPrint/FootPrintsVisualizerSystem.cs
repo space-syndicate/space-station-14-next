@@ -1,4 +1,4 @@
-﻿using Content.Shared._White.FootPrint;
+﻿using Content.Shared._CorvaxNext.FootPrint;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Random;
