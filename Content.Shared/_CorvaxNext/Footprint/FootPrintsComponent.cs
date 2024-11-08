@@ -2,13 +2,13 @@ using System.Numerics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._White.FootPrint;
+namespace Content.Shared._CorvaxNext.FootPrint;
 
 [RegisterComponent]
 public sealed partial class FootPrintsComponent : Component
 {
     [ViewVariables(VVAccess.ReadOnly), DataField]
-    public ResPath RsiPath = new("/Textures/_White/Effects/footprints.rsi");
+    public ResPath RsiPath = new("/Textures/_CorvaxNext/Effects/footprints.rsi");
 
     // all of those are set as a layer
     [ViewVariables(VVAccess.ReadOnly), DataField]

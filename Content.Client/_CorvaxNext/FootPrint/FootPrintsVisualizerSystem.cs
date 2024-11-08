@@ -3,7 +3,7 @@ using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Random;
 
-namespace Content.Client._White.FootPrint;
+namespace Content.Client._CorvaxNext.FootPrint;
 
 public sealed class FootPrintsVisualizerSystem : VisualizerSystem<FootPrintComponent>
 {

@@ -2,14 +2,14 @@ using Content.Server.Atmos.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
-using Content.Shared._White.FootPrint;
+using Content.Shared._CorvaxNext.FootPrint;
 using Content.Shared.Standing;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 
-namespace Content.Server._White.FootPrint;
+namespace Content.Server._CorvaxNext.FootPrint;
 
 public sealed class FootPrintsSystem : EntitySystem
 {
@@ -24,7 +24,6 @@ public sealed class FootPrintsSystem : EntitySystem
     private EntityQuery<TransformComponent> _transformQuery;
     private EntityQuery<MobThresholdsComponent> _mobThresholdQuery;
     private EntityQuery<AppearanceComponent> _appearanceQuery;
-    private EntityQuery<LayingDownComponent> _layingQuery;
 
    public override void Initialize()
    {
@@ -33,7 +32,6 @@ public sealed class FootPrintsSystem : EntitySystem
        _transformQuery = GetEntityQuery<TransformComponent>();
        _mobThresholdQuery = GetEntityQuery<MobThresholdsComponent>();
        _appearanceQuery = GetEntityQuery<AppearanceComponent>();
-       _layingQuery = GetEntityQuery<LayingDownComponent>();
 
        SubscribeLocalEvent<FootPrintsComponent, ComponentStartup>(OnStartupComponent);
        SubscribeLocalEvent<FootPrintsComponent, MoveEvent>(OnMove);
@@ -52,8 +50,7 @@ public sealed class FootPrintsSystem : EntitySystem
             || !_map.TryFindGridAt(_transform.GetMapCoordinates((uid, transform)), out var gridUid, out _))
             return;
 
-        var dragging = mobThreshHolds.CurrentThresholdState is MobState.Critical or MobState.Dead
-                       || _layingQuery.TryComp(uid, out var laying) && laying.IsCrawlingUnder;
+        var dragging = mobThreshHolds.CurrentThresholdState is MobState.Critical or MobState.Dead;
         var distance = (transform.LocalPosition - component.StepPos).Length();
         var stepSize = dragging ? component.DragSize : component.StepSize;
 
