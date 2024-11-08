@@ -21,6 +21,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Random;
 using InventoryComponent = Content.Shared.Inventory.InventoryComponent;
+using Content.Shared._CorvaxNext.Flash.Components; //CorvaxNext
 
 namespace Content.Server.Flash
 {
