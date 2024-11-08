@@ -9,4 +9,5 @@ species-name-arachnid = Арахнид
 species-name-moth = Ниан
 species-name-skeleton = Скелет
 species-name-vox = Вокс
+species-name-resomi = Резоми #CorvaxNext
 snail-hurt-by-salt-popup = Солевой раствор жжёт как кислота!
