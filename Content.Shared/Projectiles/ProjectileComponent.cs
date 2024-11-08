@@ -74,6 +74,7 @@ public sealed partial class ProjectileComponent : Component
     [DataField]
     public bool DamagedEntity;
 
+    // Corvax-Next-Penetration
     [DataField]
     public int PenetrationScore;
 }

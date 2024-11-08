@@ -1,8 +1,8 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Effects;
 using Content.Server.Weapons.Ranged.Systems;
+using Content.Shared._CorvaxNext.Penetration;
 using Content.Shared.Camera;
-using Content.Shared.Corvax.Penetration;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.Projectiles;
@@ -73,6 +73,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             _sharedCameraRecoil.KickCamera(target, direction);
         }
 
+        // Corvax-Next-Penetration
         if (component.PenetrationScore > 0
             && _penetratableQuery.TryGetComponent(target, out var penetratable)
             && _random.Next(component.PenetrationScore + penetratable.StoppingPower) >= penetratable.StoppingPower)
