@@ -21,6 +21,8 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
     private EntityQuery<PenetratableComponent> _penetratableQuery;
 
+    private Random _random = new();
+
     public override void Initialize()
     {
         base.Initialize();
@@ -71,7 +73,9 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             _sharedCameraRecoil.KickCamera(target, direction);
         }
 
-        if (component.PenetrationScore > 0 && _penetratableQuery.TryGetComponent(target, out var penetratable))
+        if (component.PenetrationScore > 0
+            && _penetratableQuery.TryGetComponent(target, out var penetratable)
+            && _random.Next(component.PenetrationScore + penetratable.StoppingPower) >= penetratable.StoppingPower)
         {
             component.DamagedEntity = component.PenetrationScore < penetratable.StoppingPower;
 
