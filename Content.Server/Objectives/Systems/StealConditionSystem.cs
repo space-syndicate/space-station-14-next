@@ -13,6 +13,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Stacks;
+using Content.Shared.Silicons.StationAi;
 
 namespace Content.Server.Objectives.Systems;
 
@@ -195,6 +196,12 @@ public sealed class StealConditionSystem : EntitySystem
                     return 0;
             }
         }
+
+        // Corvax-Next-Api
+        if (condition.CheckHasAi)
+            if (TryComp<StationAiHolderComponent>(entity, out var holder))
+                if (holder.Slot.Item is null)
+                    return 0;
 
         return TryComp<StackComponent>(entity, out var stack) ? stack.Count : 1;
     }

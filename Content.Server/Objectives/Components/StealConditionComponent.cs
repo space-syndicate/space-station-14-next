@@ -34,6 +34,10 @@ public sealed partial class StealConditionComponent : Component
     [DataField]
     public bool CheckAlive = false;
 
+    // Corvax-Next-Api
+    [DataField]
+    public bool CheckHasAi = false;
+
     /// <summary>
     /// The minimum number of items you need to steal to fulfill a objective
     /// </summary>

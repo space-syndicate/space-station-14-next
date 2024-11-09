@@ -1,0 +1,9 @@
+- type: weightedRandom
+  id: ApiObjectiveGroups
+  weights:
+    ApiObjectiveGroupAi: 1
+
+- type: weightedRandom
+  id: ApiObjectiveGroupAi
+  weights:
+    AiStealObjective: 1
