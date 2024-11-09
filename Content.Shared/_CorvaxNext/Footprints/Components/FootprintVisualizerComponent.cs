@@ -2,7 +2,7 @@ using System.Numerics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._CorvaxNext.Footprint;
+namespace Content.Shared._CorvaxNext.Footprints.Components;
 
 [RegisterComponent]
 public sealed partial class FootprintVisualizerComponent : Component

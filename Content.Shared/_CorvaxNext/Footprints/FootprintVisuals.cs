@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._CorvaxNext.Footprint;
+namespace Content.Shared._CorvaxNext.Footprints;
 
 [Serializable, NetSerializable]
 public enum FootprintVisuals : byte

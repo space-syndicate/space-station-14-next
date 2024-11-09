@@ -1,4 +1,4 @@
-namespace Content.Shared._CorvaxNext.Footprint;
+namespace Content.Shared._CorvaxNext.Footprints.Components;
 
 [RegisterComponent]
 public sealed partial class PuddleFootprintsComponent : Component

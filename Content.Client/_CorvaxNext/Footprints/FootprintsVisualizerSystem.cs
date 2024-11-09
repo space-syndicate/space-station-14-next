@@ -1,9 +1,9 @@
-﻿using Content.Shared._CorvaxNext.Footprint;
+﻿using Content.Shared._CorvaxNext.Footprints;
+using Content.Shared._CorvaxNext.Footprints.Components;
 using Robust.Client.GameObjects;
-using Robust.Client.Graphics;
 using Robust.Shared.Random;
 
-namespace Content.Client._CorvaxNext.Footprint;
+namespace Content.Client._CorvaxNext.Footprints;
 
 public sealed class FootprintsVisualizerSystem : VisualizerSystem<FootprintComponent>
 {
@@ -29,24 +29,30 @@ public sealed class FootprintsVisualizerSystem : VisualizerSystem<FootprintCompo
 
     private void OnShutdown(EntityUid uid, FootprintComponent comp, ComponentShutdown args)
     {
-        if (TryComp<SpriteComponent>(uid, out var sprite) &&
-            sprite.LayerMapTryGet(FootprintVisualLayers.Print, out var layer))
-        {
-            sprite.RemoveLayer(layer);
-        }
+        if (!TryComp<SpriteComponent>(uid, out var sprite))
+            return;
+
+        if (!sprite.LayerMapTryGet(FootprintVisualLayers.Print, out var layer))
+            return;
+
+        sprite.RemoveLayer(layer);
     }
 
     private void UpdateAppearance(EntityUid uid, FootprintComponent component, SpriteComponent sprite)
     {
-        if (!sprite.LayerMapTryGet(FootprintVisualLayers.Print, out var layer)
-            || !TryComp<FootprintVisualizerComponent>(component.FootprintsVisualizer, out var printsComponent)
-            || !TryComp<AppearanceComponent>(uid, out var appearance))
+        if (!sprite.LayerMapTryGet(FootprintVisualLayers.Print, out var layer))
+            return;
+
+        if (!TryComp<FootprintVisualizerComponent>(component.FootprintsVisualizer, out var printsComponent))
+            return;
+
+        if (!TryComp<AppearanceComponent>(uid, out var appearance))
             return;
 
         if (!_appearance.TryGetData<FootprintVisuals>(uid, FootprintVisualState.State, out var printVisuals, appearance))
             return;
 
-        sprite.LayerSetState(layer, new RSI.StateId(printVisuals switch
+        sprite.LayerSetState(layer, new(printVisuals switch
         {
             FootprintVisuals.BareFootprint => printsComponent.RightStep ? printsComponent.RightBarePrint : printsComponent.LeftBarePrint,
             FootprintVisuals.ShoesPrint => printsComponent.ShoesPrint,
@@ -59,11 +65,11 @@ public sealed class FootprintsVisualizerSystem : VisualizerSystem<FootprintCompo
             sprite.LayerSetColor(layer, printColor);
     }
 
-    protected override void OnAppearanceChange (EntityUid uid, FootprintComponent component, ref AppearanceChangeEvent args)
+    protected override void OnAppearanceChange(EntityUid uid, FootprintComponent component, ref AppearanceChangeEvent args)
     {
-        if (args.Sprite is not { } sprite)
+        if (args.Sprite is null)
             return;
 
-        UpdateAppearance(uid, component, sprite);
+        UpdateAppearance(uid, component, args.Sprite);
     }
 }

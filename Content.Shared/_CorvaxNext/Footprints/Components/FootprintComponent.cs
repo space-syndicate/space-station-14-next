@@ -1,7 +1,7 @@
 using Content.Shared.Chemistry.Components;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._CorvaxNext.Footprint;
+namespace Content.Shared._CorvaxNext.Footprints.Components;
 
 /// <summary>
 /// This is used for marking footsteps, handling footprint drawing.
