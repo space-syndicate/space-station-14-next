@@ -115,7 +115,7 @@
         visible: false
   - type: Inventory
     templateId: arachnid
-  - type: Footprints # Corvax-Next-Footprints
+  - type: FootprintVisualizer # Corvax-Next-Footprints
     leftBarePrint: "footprint-left-bare-spider"
     rightBarePrint: "footprint-right-bare-spider"
 
