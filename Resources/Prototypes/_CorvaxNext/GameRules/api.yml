@@ -6,11 +6,7 @@
   - type: AntagObjectives
     objectives:
     - EscapeThiefShuttleObjective
-  - type: AntagRandomObjectives
-    sets:
-    - groups: ApiObjectiveGroups
-      maxPicks: 1
-    maxDifficulty: 1
+    - AiStealObjective
   - type: AntagSelection
     agentName: api-round-end-agent-name
     definitions:

@@ -2,7 +2,7 @@
   id: Api
   name: roles-antag-thief-name
   antagonist: true
-  setPreference: true
+  setPreference: false
   objective: roles-antag-api-objective
   guides: [ Thieves ]
   requirements:
