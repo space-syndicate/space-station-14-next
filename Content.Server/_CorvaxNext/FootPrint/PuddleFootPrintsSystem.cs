@@ -23,7 +23,7 @@ public sealed class PuddleFootPrintsSystem : EntitySystem
     {
         if (!TryComp<AppearanceComponent>(uid, out var appearance)
             || !TryComp<PuddleComponent>(uid, out var puddle)
-            || !TryComp<FootPrintsComponent>(args.OtherEntity, out var tripper)
+            || !TryComp<FootPrintVisualiserComponent>(args.OtherEntity, out var tripper)
             || !TryComp<SolutionContainerManagerComponent>(uid, out var solutionManager)
             ||!_solutionContainer.ResolveSolution((uid, solutionManager), puddle.SolutionName, ref puddle.Solution, out var solutions))
             return;
@@ -45,7 +45,7 @@ public sealed class PuddleFootPrintsSystem : EntitySystem
         _solutionContainer.RemoveEachReagent(puddle.Solution.Value, 1);
     }
 
-    private void AddColor(Color col, float quantity, FootPrintsComponent component)
+    private void AddColor(Color col, float quantity, FootPrintVisualiserComponent component)
     {
         component.PrintsColor = component.ColorQuantity == 0f ? col : Color.InterpolateBetween(component.PrintsColor, col, component.ColorInterpolationFactor);
         component.ColorQuantity += quantity;

@@ -33,16 +33,16 @@ public sealed class FootPrintsSystem : EntitySystem
        _mobThresholdQuery = GetEntityQuery<MobThresholdsComponent>();
        _appearanceQuery = GetEntityQuery<AppearanceComponent>();
 
-       SubscribeLocalEvent<FootPrintsComponent, ComponentStartup>(OnStartupComponent);
-       SubscribeLocalEvent<FootPrintsComponent, MoveEvent>(OnMove);
+       SubscribeLocalEvent<FootPrintVisualiserComponent, ComponentStartup>(OnStartupComponent);
+       SubscribeLocalEvent<FootPrintVisualiserComponent, MoveEvent>(OnMove);
    }
 
-    private void OnStartupComponent(EntityUid uid, FootPrintsComponent component, ComponentStartup args)
+    private void OnStartupComponent(EntityUid uid, FootPrintVisualiserComponent component, ComponentStartup args)
     {
         component.StepSize = Math.Max(0f, component.StepSize + _random.NextFloat(-0.05f, 0.05f));
     }
 
-    private void OnMove(EntityUid uid, FootPrintsComponent component, ref MoveEvent args)
+    private void OnMove(EntityUid uid, FootPrintVisualiserComponent component, ref MoveEvent args)
     {
         if (component.PrintsColor.A <= 0f
             || !_transformQuery.TryComp(uid, out var transform)
@@ -89,7 +89,7 @@ public sealed class FootPrintsSystem : EntitySystem
         _solution.TryAddReagent(footPrintComponent.Solution.Value, component.ReagentToTransfer, 1, out _);
     }
 
-    private EntityCoordinates CalcCoords(EntityUid uid, FootPrintsComponent component, TransformComponent transform, bool state)
+    private EntityCoordinates CalcCoords(EntityUid uid, FootPrintVisualiserComponent component, TransformComponent transform, bool state)
     {
         if (state)
             return new EntityCoordinates(uid, transform.LocalPosition);

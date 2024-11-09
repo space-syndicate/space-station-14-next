@@ -39,7 +39,7 @@ public sealed class FootPrintsVisualizerSystem : VisualizerSystem<FootPrintCompo
     private void UpdateAppearance(EntityUid uid, FootPrintComponent component, SpriteComponent sprite)
     {
         if (!sprite.LayerMapTryGet(FootPrintVisualLayers.Print, out var layer)
-            || !TryComp<FootPrintsComponent>(component.PrintOwner, out var printsComponent)
+            || !TryComp<FootPrintVisualiserComponent>(component.PrintOwner, out var printsComponent)
             || !TryComp<AppearanceComponent>(uid, out var appearance))
             return;
 
