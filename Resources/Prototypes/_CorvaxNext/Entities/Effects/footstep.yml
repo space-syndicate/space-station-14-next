@@ -31,7 +31,7 @@
     - type: SolutionContainerManager
       solutions:
         step: { maxVol: 2 }
-    - type: FootPrint
+    - type: Footprint
     - type: Puddle
       solution: step
     - type: Appearance

@@ -2,10 +2,10 @@ using System.Numerics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._CorvaxNext.FootPrint;
+namespace Content.Shared._CorvaxNext.Footprint;
 
 [RegisterComponent]
-public sealed partial class FootPrintVisualiserComponent : Component
+public sealed partial class FootprintVisualizerComponent : Component
 {
     [ViewVariables(VVAccess.ReadOnly), DataField]
     public ResPath RsiPath = new("/Textures/_CorvaxNext/Effects/footprints.rsi");
@@ -35,7 +35,7 @@ public sealed partial class FootPrintVisualiserComponent : Component
     // yea, those
 
     [ViewVariables(VVAccess.ReadOnly), DataField]
-    public EntProtoId<FootPrintComponent> StepProtoId = "Footstep";
+    public EntProtoId<FootprintComponent> StepProtoId = "Footstep";
 
     [ViewVariables(VVAccess.ReadOnly), DataField]
     public Color PrintsColor = Color.FromHex("#00000000");

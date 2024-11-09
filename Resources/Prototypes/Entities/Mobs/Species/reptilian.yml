@@ -76,7 +76,7 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-  - type: FootPrints # Corvax-Next-Footprints
+  - type: Footprints # Corvax-Next-Footprints
     leftBarePrint: "footprint-left-bare-lizard"
     rightBarePrint: "footprint-right-bare-lizard"
 

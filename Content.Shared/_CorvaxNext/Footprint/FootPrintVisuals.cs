@@ -1,25 +1,25 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._CorvaxNext.FootPrint;
+namespace Content.Shared._CorvaxNext.Footprint;
 
 [Serializable, NetSerializable]
-public enum FootPrintVisuals : byte
+public enum FootprintVisuals : byte
 {
-    BareFootPrint,
+    BareFootprint,
     ShoesPrint,
     SuitPrint,
     Dragging
 }
 
 [Serializable, NetSerializable]
-public enum FootPrintVisualState : byte
+public enum FootprintVisualState : byte
 {
     State,
     Color
 }
 
 [Serializable, NetSerializable]
-public enum FootPrintVisualLayers : byte
+public enum FootprintVisualLayers : byte
 {
     Print
 }

@@ -1,14 +1,14 @@
 using System.Linq;
-using Content.Shared._CorvaxNext.FootPrint;
+using Content.Shared._CorvaxNext.Footprint;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Fluids;
 using Content.Shared.Fluids.Components;
 using Robust.Shared.Physics.Events;
 
-namespace Content.Server._CorvaxNext.FootPrint;
+namespace Content.Server._CorvaxNext.Footprint;
 
-public sealed class PuddleFootPrintsSystem : EntitySystem
+public sealed class PuddleFootprintsSystem : EntitySystem
 {
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
@@ -16,14 +16,14 @@ public sealed class PuddleFootPrintsSystem : EntitySystem
    public override void Initialize()
    {
        base.Initialize();
-       SubscribeLocalEvent<PuddleFootPrintsComponent, EndCollideEvent>(OnStepTrigger);
+       SubscribeLocalEvent<PuddleFootprintsComponent, EndCollideEvent>(OnStepTrigger);
    }
 
-    private void OnStepTrigger(EntityUid uid, PuddleFootPrintsComponent component, ref EndCollideEvent args)
+    private void OnStepTrigger(EntityUid uid, PuddleFootprintsComponent component, ref EndCollideEvent args)
     {
         if (!TryComp<AppearanceComponent>(uid, out var appearance)
             || !TryComp<PuddleComponent>(uid, out var puddle)
-            || !TryComp<FootPrintVisualiserComponent>(args.OtherEntity, out var tripper)
+            || !TryComp<FootprintVisualizerComponent>(args.OtherEntity, out var tripper)
             || !TryComp<SolutionContainerManagerComponent>(uid, out var solutionManager)
             ||!_solutionContainer.ResolveSolution((uid, solutionManager), puddle.SolutionName, ref puddle.Solution, out var solutions))
             return;
@@ -45,7 +45,7 @@ public sealed class PuddleFootPrintsSystem : EntitySystem
         _solutionContainer.RemoveEachReagent(puddle.Solution.Value, 1);
     }
 
-    private void AddColor(Color col, float quantity, FootPrintVisualiserComponent component)
+    private void AddColor(Color col, float quantity, FootprintVisualizerComponent component)
     {
         component.PrintsColor = component.ColorQuantity == 0f ? col : Color.InterpolateBetween(component.PrintsColor, col, component.ColorInterpolationFactor);
         component.ColorQuantity += quantity;
