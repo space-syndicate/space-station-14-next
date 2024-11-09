@@ -59,8 +59,8 @@ public sealed class CCCVars
     /// Tts rate limit values are accounted in periods of this size (seconds).
     /// After the period has passed, the count resets.
     /// </summary>
-    public static readonly CVarDef<int> TTSRateLimitPeriod =
-        CVarDef.Create("tts.rate_limit_period", 2, CVar.SERVERONLY);
+    public static readonly CVarDef<float> TTSRateLimitPeriod =
+        CVarDef.Create("tts.rate_limit_period", 2f, CVar.SERVERONLY);
 
     /// <summary>
     /// How many tts preview messages are allowed in a single rate limit period.
@@ -99,5 +99,13 @@ public sealed class CCCVars
     /// </summary>
     public static readonly CVarDef<string> ChatHighlightsColor =
         CVarDef.Create("chat.highlights_color", "#17FFC1FF", CVar.CLIENTONLY | CVar.ARCHIVE, "The color in which the highlights will be displayed.");
+    /*
+     * Station Goal
+     */
 
+    /// <summary>
+    /// Send station goal on round start or not.
+    /// </summary>
+    public static readonly CVarDef<bool> StationGoal =
+        CVarDef.Create("game.station_goal", true, CVar.SERVERONLY);
 }
