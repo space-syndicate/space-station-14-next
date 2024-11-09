@@ -5,7 +5,7 @@ using Robust.Shared.Utility;
 namespace Content.Shared._CorvaxNext.FootPrint;
 
 [RegisterComponent]
-public sealed partial class FootPrintsComponent : Component
+public sealed partial class FootPrintVisualiserComponent : Component
 {
     [ViewVariables(VVAccess.ReadOnly), DataField]
     public ResPath RsiPath = new("/Textures/_CorvaxNext/Effects/footprints.rsi");
