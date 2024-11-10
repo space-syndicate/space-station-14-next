@@ -1,4 +1,4 @@
-using Content.Shared.Backmen.OfferItem;
+using Content.Shared._CorvaxNext.OfferItem;
 using Content.Shared._CorvaxNext.NextVars;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
