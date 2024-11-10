@@ -1,6 +1,6 @@
-offer-item-empty-hand = У тебя в руках нет ничего, что ты мог бы отдать!
+offer-item-empty-hand = У вас в руках ничего нет!
 
-offer-item-full-hand = Ваша рука не свободна для получения предмета.
+offer-item-full-hand = Ваши руки заняты!
 
 offer-item-try-give = Вы предлагаете {THE($item)}  {$target}
 offer-item-try-give-target = {$user} предлагает вам {THE($item)}
