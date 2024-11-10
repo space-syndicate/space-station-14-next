@@ -6,7 +6,7 @@
   solids:
       FoodDoughSlice: 1 # one third of a standard bread dough recipe
 
-#Shaverma 
+# Corvax-Next-Shaverma-Start
 - type: microwaveMealRecipe
   id: RecipeShaverma-unbaked
   name: The best food ever
