@@ -52,7 +52,8 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
     private void OnRoundEndText(RoundEndTextAppendEvent ev)
     {
         // go through each gamerule getting data for the roundend summary.
-        var summaries = new Dictionary<string, Dictionary<string, Dictionary<string, List<(EntityUid, string)>>>>();
+        var summaries = new Dictionary<string, Dictionary<string, Dictionary<string, List<(EntityUid, string)>>>>(); // Corvax-Next-Traitors
+
         var query = EntityQueryEnumerator<GameRuleComponent>();
         while (query.MoveNext(out var uid, out var gameRule))
         {
@@ -65,6 +66,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
                 continue;
 
             // first group the gamerules by their factions, for example 2 different dragons
+            // Corvax-Next-Traitors-Start
             var agent = info.Faction ?? info.AgentName;
             if (!summaries.ContainsKey(agent))
                 summaries[agent] = new Dictionary<string, Dictionary<string, List<(EntityUid, string)>>>();
@@ -124,6 +126,8 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
 
                 ev.AddLine(result.AppendLine().ToString());
             }
+            // Corvax-Next-Traitors-End
+
         }
     }
 
@@ -259,7 +263,8 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
     /// Get the title for a player's mind used in round end.
     /// Pass in the original entity name which is shown alongside username.
     /// </summary>
-    public string GetTitle(Entity<MindComponent?> mind, string name = "")
+    public string GetTitle(Entity<MindComponent?> mind, string name = "") // Corvax-Next-Traitors
+
     {
         if (Resolve(mind, ref mind.Comp) &&
             mind.Comp.OriginalOwnerUserId != null &&
@@ -313,7 +318,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
 /// The objectives system already checks if the game rule is added so you don't need to check that in this event's handler.
 /// </remarks>
 [ByRefEvent]
-public record struct ObjectivesTextGetInfoEvent(List<(EntityUid, string)> Minds, string AgentName, string? Faction = null);
+public record struct ObjectivesTextGetInfoEvent(List<(EntityUid, string)> Minds, string AgentName, string? Faction = null); // Corvax-Next-Traitors
 
 /// <summary>
 /// Raised on the game rule before text for each agent's objectives is added, letting you prepend something.

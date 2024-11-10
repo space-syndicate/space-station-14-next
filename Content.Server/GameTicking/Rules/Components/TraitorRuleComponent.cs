@@ -29,11 +29,11 @@ public sealed partial class TraitorRuleComponent : Component
     public ProtoId<DatasetPrototype> CodewordVerbs = "verbs";
 
     [DataField]
-    public ProtoId<DatasetPrototype> ObjectiveIssuers = "TraitorFlavor";
+    public ProtoId<DatasetPrototype> ObjectiveIssuers = "TraitorFlavor"; // Corvax-Next-Traitors
 
     public int TotalTraitors => TraitorMinds.Count;
     public string[] Codewords = new string[3];
-    public string ObjectiveIssuer = string.Empty;
+    public string ObjectiveIssuer = string.Empty; // Corvax-Next-Traitors
 
     public enum SelectionState
     {

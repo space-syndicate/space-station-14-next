@@ -41,7 +41,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 
         SubscribeLocalEvent<TraitorRuleComponent, AfterAntagEntitySelectedEvent>(AfterEntitySelected);
 
-        SubscribeLocalEvent<TraitorRuleComponent, ObjectivesTextGetInfoEvent>(OnObjectivesTextGetInfo, after: new[] { typeof(AntagSelectionSystem) });
+        SubscribeLocalEvent<TraitorRuleComponent, ObjectivesTextGetInfoEvent>(OnObjectivesTextGetInfo, after: new[] { typeof(AntagSelectionSystem) }); // Corvax-Next-Traitors
         SubscribeLocalEvent<TraitorRuleComponent, ObjectivesTextPrependEvent>(OnObjectivesTextPrepend);
     }
 
@@ -83,7 +83,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 
         var briefing = Loc.GetString("traitor-role-codewords-short", ("codewords", string.Join(", ", component.Codewords)));
         var issuer = _random.Pick(_prototypeManager.Index(component.ObjectiveIssuers).Values);
-        component.ObjectiveIssuer = issuer;
+        component.ObjectiveIssuer = issuer; // Corvax-Next-Traitors
 
         Note[]? code = null;
         if (giveUplink)
@@ -103,7 +103,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
             code = EnsureComp<RingerUplinkComponent>(pda.Value).Code;
         }
 
-        _antag.SendBriefing(traitor, GenerateBriefing(component.Codewords, code, issuer), Color.Crimson, component.GreetSoundNotification);
+        _antag.SendBriefing(traitor, GenerateBriefing(component.Codewords, code, issuer), Color.Crimson, component.GreetSoundNotification); // Corvax-Next-Traitors
 
 
         component.TraitorMinds.Add(mindId);
@@ -111,7 +111,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         // Assign briefing
         _roleSystem.MindAddRole(mindId, new RoleBriefingComponent
         {
-            Briefing = GenerateBriefingCharacter(component.Codewords, code, issuer)
+            Briefing = GenerateBriefingCharacter(component.Codewords, code, issuer) // Corvax-Next-Traitors
         }, mind, true);
 
         // Send codewords to only the traitor client
@@ -127,10 +127,12 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         return true;
     }
 
+// Corvax-Next-Traitors-Start
     private void OnObjectivesTextGetInfo(EntityUid uid, TraitorRuleComponent comp, ref ObjectivesTextGetInfoEvent args)
     {
         args.Faction = Loc.GetString($"traitor-round-end-agent-name");
     }
+// Corvax-Next-Traitors-End
 
     // TODO: AntagCodewordsComponent
     private void OnObjectivesTextPrepend(EntityUid uid, TraitorRuleComponent comp, ref ObjectivesTextPrependEvent args)
@@ -139,6 +141,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
     }
 
     // TODO: figure out how to handle this? add priority to briefing event?
+// Corvax-Next-Traitors-Start
     private string GenerateBriefing(string[] codewords, Note[]? uplinkCode, string objectiveIssuer)
     {
         var sb = new StringBuilder();
@@ -175,6 +178,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         sb.AppendLine(Loc.GetString($"traitor-{objectiveIssuer}-goal"));
 
         sb.AppendLine("\n" + Loc.GetString($"traitor-role-clarity"));
+        // Corvax-Next-Traitors-End
 
         return sb.ToString();
     }
