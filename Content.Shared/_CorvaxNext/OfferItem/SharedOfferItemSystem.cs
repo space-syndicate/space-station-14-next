@@ -1,5 +1,5 @@
 using Content.Shared.Alert;
-using Content.Shared.Backmen.Alert.Click;
+using Content.Shared._CorvaxNext.Alert.Click;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
@@ -8,7 +8,7 @@ using Content.Shared.Popups;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
-namespace Content.Shared.Backmen.OfferItem;
+namespace Content.Shared._CorvaxNext.OfferItem;
 
 public abstract partial class SharedOfferItemSystem : EntitySystem
 {

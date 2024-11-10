@@ -1,6 +1,6 @@
 using Content.Shared.Alert;
 
-namespace Content.Shared.Backmen.Alert.Click;
+namespace Content.Shared._CorvaxNext.Alert.Click;
 
 /// <summary>
 /// Accepting the offer and receive item

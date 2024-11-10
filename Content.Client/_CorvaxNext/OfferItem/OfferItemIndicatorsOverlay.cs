@@ -6,7 +6,7 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Enums;
 using Robust.Shared.Utility;
 
-namespace Content.Client.Backmen.OfferItem;
+namespace Content.Client._CorvaxNext.OfferItem;
 
 public sealed class OfferItemIndicatorsOverlay : Overlay
 {

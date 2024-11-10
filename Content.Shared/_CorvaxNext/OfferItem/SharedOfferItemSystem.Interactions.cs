@@ -5,7 +5,7 @@ using Content.Shared.Popups;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 
-namespace Content.Shared.Backmen.OfferItem;
+namespace Content.Shared._CorvaxNext.OfferItem;
 
 public abstract partial class SharedOfferItemSystem
 {

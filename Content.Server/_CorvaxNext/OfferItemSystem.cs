@@ -1,8 +1,8 @@
 using Content.Shared.Alert;
-using Content.Shared.Backmen.OfferItem;
+using Content.Shared._CorvaxNext.OfferItem;
 using Content.Shared.Hands.Components;
 
-namespace Content.Server.Backmen.OfferItem;
+namespace Content.Server._CorvaxNext.OfferItem;
 
 public sealed class OfferItemSystem : SharedOfferItemSystem
 {

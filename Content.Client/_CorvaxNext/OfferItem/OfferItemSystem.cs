@@ -5,7 +5,7 @@ using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
 
-namespace Content.Client.Backmen.OfferItem;
+namespace Content.Client._CorvaxNext.OfferItem;
 
 public sealed class OfferItemSystem : SharedOfferItemSystem
 {
