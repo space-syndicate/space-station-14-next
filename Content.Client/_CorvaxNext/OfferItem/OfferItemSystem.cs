@@ -21,8 +21,6 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
         Subs.CVar(_cfg, NextVars.OfferModeIndicatorsPointShow, OnShowOfferIndicatorsChanged, true);
     }
 
-
-
     public override void Shutdown()
     {
         _overlayManager.RemoveOverlay<OfferItemIndicatorsOverlay>();
@@ -33,21 +31,13 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
     {
         var entity = _playerManager.LocalEntity;
 
-        if (entity == null)
-            return false;
-
-        return IsInOfferMode(entity.Value);
+        return entity is not null && IsInOfferMode(entity.Value);
     }
+
     private void OnShowOfferIndicatorsChanged(bool isShow)
     {
         if (isShow)
-        {
-            _overlayManager.AddOverlay(new OfferItemIndicatorsOverlay(
-                _inputManager,
-                EntityManager,
-                _eye,
-                this));
-        }
+            _overlayManager.AddOverlay(new OfferItemIndicatorsOverlay(_inputManager, EntityManager, _eye, this));
         else
             _overlayManager.RemoveOverlay<OfferItemIndicatorsOverlay>();
     }
