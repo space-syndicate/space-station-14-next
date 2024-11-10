@@ -10,13 +10,18 @@ api-backpack-category-utilities-description =
 ent-ToolboxApi = ящик воровских инструментов неопределённости
     .desc = Здесь лежат ваши излюбленные воровские штучки. Осталось вспомнить, какие именно.
 
-api-round-end-agent-name = агент похищения искусственного интеллекта
+api-round-end-agent-name = АПИИ
 
 roles-antag-api-objective = Украдите станционный ИИ, действуя скрытно.
 
-objective-condition-api-description = То, зачем я сюда прилетел. Осталось найти интелкарту и пробраться к нему.
+objective-issuer-api = [color=#2ed2fd]Агенство[/color]
+
+objective-condition-api-description = То, зачем вы сюда прилетели. Осталось найти интелкарту и пробраться к нему.
 
 steal-target-groups-ai = станционный ИИ, помещённый на интелкарту
+
+ent-EscapeApiShuttleObjective = Улететь на Центком живым и свободным.
+    .desc = Вы ещё нужны агенству. Не дайте себя арестовать.
 
 api-role-greeting =
     Вы агент похищения искусственного интеллекта, также известный как АПИИ.

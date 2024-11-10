@@ -5,7 +5,7 @@
   - type: ApiRule
   - type: AntagObjectives
     objectives:
-    - EscapeThiefShuttleObjective
+    - EscapeApiShuttleObjective
     - AiStealObjective
   - type: AntagSelection
     agentName: api-round-end-agent-name
