@@ -1,0 +1,24 @@
+# When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_single.yml
+
+- type: entity
+  name: shaverma
+  parent: FoodMealBase
+  id: Shaverma-baked
+  description: Пища богов
+  components:
+    - type: Item
+      storedRotation: -90
+    - type: Food
+      transferAmount: 3
+    - type: Sprite
+      sprite: Objects/Consumable/Food/shavuha.rsi
+      layers:
+        - state: baked
+    - type: SolutionContainerManager
+      solutions:
+          food:
+              canReact: false # Dont want cause reactions inside tacos after merging ingredients
+              maxVol: 10
+              reagents:
+                - ReagentId: Nutriment
+                  Quantity: 7.4
