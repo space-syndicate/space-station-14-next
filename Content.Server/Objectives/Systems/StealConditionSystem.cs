@@ -197,11 +197,12 @@ public sealed class StealConditionSystem : EntitySystem
             }
         }
 
-        // Corvax-Next-Api
+        // Corvax-Next-Api-Start
         if (condition.CheckHasAi)
             if (TryComp<StationAiHolderComponent>(entity, out var holder))
                 if (holder.Slot.Item is null)
                     return 0;
+        // Corvax-Next-Api-End
 
         return TryComp<StackComponent>(entity, out var stack) ? stack.Count : 1;
     }

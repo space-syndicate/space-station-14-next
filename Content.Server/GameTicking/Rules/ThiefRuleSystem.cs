@@ -34,7 +34,7 @@ public sealed class ThiefRuleSystem : GameRuleSystem<ThiefRuleComponent>
         if (ent is null)
             return;
 
-        // Corvax-Next-Api
+        // Corvax-Next-Api-Start
         var api = false;
 
         foreach (var id in args.Mind.Comp.MindRoles)
@@ -43,13 +43,15 @@ public sealed class ThiefRuleSystem : GameRuleSystem<ThiefRuleComponent>
                     api = true;
 
         args.Append(MakeBriefing(ent.Value, api));
+        // Corvax-Next-Api-End
     }
 
-    // Corvax-Next-Api
-    private string MakeBriefing(EntityUid ent, bool api)
+    private string MakeBriefing(EntityUid ent, bool api) // Corvax-Next-Api
     {
+        // Corvax-Next-Api-Start
         if (api)
             return Loc.GetString("api-role-greeting");
+        // Corvax-Next-Api-End
 
         var isHuman = HasComp<HumanoidAppearanceComponent>(ent);
         var briefing = isHuman

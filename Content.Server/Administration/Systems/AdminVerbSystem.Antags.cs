@@ -33,9 +33,10 @@ public sealed partial class AdminVerbSystem
     [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultThiefRule = "Thief";
 
-    // Corvax-Next-Api
+    // Corvax-Next-Api-Start
     [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultApiRule = "Api";
+    // Corvax-Next-Api-End
 
     [ValidatePrototypeId<StartingGearPrototype>]
     private const string PirateGearId = "PirateGear";
@@ -156,7 +157,7 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(thief);
 
-        // Corvax-Next-Api
+        // Corvax-Next-Api-Start
         Verb api = new()
         {
             Text = Loc.GetString("admin-verb-text-make-api"),
@@ -170,5 +171,6 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-api"),
         };
         args.Verbs.Add(api);
+        // Corvax-Next-Api-End
     }
 }
