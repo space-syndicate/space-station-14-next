@@ -10,8 +10,8 @@
   - type: ThiefUndeterminedBackpack
     maxSelectedSets: 3
     possibleSets:
+    - CommunicatorSet
     - ChameleonSet
-    - SyndieSet
     - UtilitiesSet
   - type: ActivatableUI
     key: enum.ThiefBackpackUIKey.Key
