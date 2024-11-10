@@ -75,4 +75,4 @@ alerts-revenant-essence-desc = Сила душ. Поддерживает вас 
 alerts-revenant-corporeal-name = Материальность
 alerts-revenant-corporeal-desc = Вы физически воплотились. Окружающие могут видеть и наносить вам вред.
 alerts-offer-name = получить
-alerts-offer-desc = кто-то передаёт вам предмет
+alerts-offer-desc = Кто-то передаёт вам предмет.
