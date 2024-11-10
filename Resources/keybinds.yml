@@ -584,6 +584,6 @@ binds:
   type: State
   key: MouseRight
   canFocus: true
-- function: OfferItem # Ataraxia
+- function: OfferItem # Corvax-Next-Offer
   type: State
   key: F
