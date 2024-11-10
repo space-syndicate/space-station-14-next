@@ -24,6 +24,7 @@
   time: 15
   solids:
       Shaverma-unbaked: 1
+# Corvax-Next-Shaverma-End
 #Bagels
 - type: microwaveMealRecipe
   id: RecipeBagel
