@@ -1,7 +1,6 @@
 using Content.Shared.ActionBlocker;
 using Content.Shared.Hands.Components;
 using Content.Shared.Input;
-using Content.Shared.Popups;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 
@@ -30,30 +29,29 @@ public abstract partial class SharedOfferItemSystem
         if (!_timing.IsFirstTimePredicted)
             return;
 
-        if (session is not { } playerSession)
+        if (session is null)
             return;
 
-        if ((playerSession.AttachedEntity is not { Valid: true } uid || !Exists(uid)) ||
-            !_actionBlocker.CanInteract(uid, null))
+        if (session.AttachedEntity is not { Valid: true } uid || !Exists(uid) || !_actionBlocker.CanInteract(uid, null))
             return;
 
         if (!TryComp<OfferItemComponent>(uid, out var offerItem))
             return;
 
-        if (!TryComp<HandsComponent>(uid, out var hands) || hands.ActiveHand == null)
+        if (!TryComp<HandsComponent>(uid, out var hands) || hands.ActiveHand is null)
             return;
 
         offerItem.Item = hands.ActiveHand.HeldEntity;
 
-        if (offerItem.IsInOfferMode == false)
+        if (!offerItem.IsInOfferMode)
         {
-            if (offerItem.Item == null)
+            if (offerItem.Item is null)
             {
                 _popup.PopupEntity(Loc.GetString("offer-item-empty-hand"), uid, uid);
                 return;
             }
 
-            if (offerItem.Hand == null || offerItem.Target == null)
+            if (offerItem.Hand is null || offerItem.Target is null)
             {
                 offerItem.IsInOfferMode = true;
                 offerItem.Hand = hands.ActiveHand.Name;
@@ -63,7 +61,7 @@ public abstract partial class SharedOfferItemSystem
             }
         }
 
-        if (offerItem.Target != null)
+        if (offerItem.Target is not null)
         {
             UnReceive(offerItem.Target.Value, offerItem: offerItem);
             offerItem.IsInOfferMode = false;

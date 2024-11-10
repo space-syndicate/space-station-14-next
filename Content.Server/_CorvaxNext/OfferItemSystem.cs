@@ -13,28 +13,21 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
 
     public override void Update(float frameTime)
     {
-        base.Update(frameTime);
-
         _offerAcc += frameTime;
-        if (_offerAcc >= OfferAccMax)
-        {
-            _offerAcc -= OfferAccMax;
-        }
-        else
-        {
-            return;
-        }
 
-        var query = EntityQueryEnumerator<OfferItemComponent,HandsComponent>();
+        if (_offerAcc >= OfferAccMax)
+            _offerAcc -= OfferAccMax;
+        else
+            return;
+
+        var query = EntityQueryEnumerator<OfferItemComponent, HandsComponent>();
         while (query.MoveNext(out var uid, out var offerItem, out var hands))
         {
-            if (hands.ActiveHand == null)
+            if (hands.ActiveHand is null)
                 continue;
 
-            if (offerItem.Hand != null &&
-                hands.Hands[offerItem.Hand].HeldEntity == null)
-            {
-                if (offerItem.Target != null)
+            if (offerItem.Hand is not null && hands.Hands[offerItem.Hand].HeldEntity is null)
+                if (offerItem.Target is not null)
                 {
                     UnReceive(offerItem.Target.Value, offerItem: offerItem);
                     offerItem.IsInOfferMode = false;
@@ -42,7 +35,6 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
                 }
                 else
                     UnOffer(uid, offerItem);
-            }
 
             if (!offerItem.IsInReceiveMode)
             {
@@ -53,6 +45,4 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
             _alertsSystem.ShowAlert(uid, OfferAlert);
         }
     }
-
-
 }
