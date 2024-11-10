@@ -21,6 +21,7 @@ using Content.Shared._CorvaxNext.Surgery.Effects.Step;
 using Content.Shared._CorvaxNext.Surgery.Steps;
 using Content.Shared._CorvaxNext.Surgery.Steps.Parts;
 using Content.Shared._CorvaxNext.Surgery.Tools;
+using Content.Shared._CorvaxNext.Mood;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Medical.Surgery;
 using AmputateAttemptEvent = Content.Shared.Body.Events.AmputateAttemptEvent;
@@ -121,6 +122,9 @@ public abstract partial class SharedSurgerySystem
                 RemComp(args.Body, reg.Component.GetType());
             }
         }
+
+        if (!HasComp<ForcedSleepingComponent>(args.Body))
+            RaiseLocalEvent(args.Body, new MoodEffectEvent("SurgeryPain"));
 
         if (!_inventory.TryGetSlotEntity(args.User, "gloves", out var gloves)
         || !_inventory.TryGetSlotEntity(args.User, "mask", out var mask))
