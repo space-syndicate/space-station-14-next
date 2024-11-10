@@ -5,18 +5,12 @@
   description: Personal syndicate teleporter.
   components:
   - type: Sprite
-    sprite: Objects/Devices/syndicate_teleporter.rsi
+    sprite: _CorvaxNext/Objects/Devices/syndicate_teleporter.rsi
     state: icon
   - type: Item
-    sprite: Objects/Devices/syndicate_teleporter.rsi
   - type: SyndicateTeleporter
   - type: UseDelay
-    delay: 0.5
-  - type: LimitedCharges
-    charges: 4
-    maxCharges: 4
-  - type: AutoRecharge
-    rechargeDuration: 10
+    delay: 60
   - type: EmitSoundOnUse
     sound:
       collection: BrokenDevice
