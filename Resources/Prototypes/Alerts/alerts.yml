@@ -24,7 +24,7 @@
     - category: Thirst
     - alertType: Magboots
     - alertType: Pacified
-    - alertType: Offer #Ataraxia
+    - alertType: Offer # Corvax-Next-Offer
 
 - type: entity
   id: AlertSpriteView
@@ -92,7 +92,7 @@
   name: alerts-on-fire-name
   description: alerts-on-fire-desc
 
-- type: alert #Ataraxia
+- type: alert # Corvax-Next-Offer
   id: Offer
   clickEvent: !type:AcceptOfferAlertEvent
   icons:
