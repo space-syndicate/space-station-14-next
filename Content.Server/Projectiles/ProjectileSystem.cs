@@ -8,6 +8,7 @@ using Content.Shared.Database;
 using Content.Shared.Projectiles;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
+using Robust.Shared.Random;
 
 namespace Content.Server.Projectiles;
 
@@ -18,10 +19,9 @@ public sealed class ProjectileSystem : SharedProjectileSystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly GunSystem _guns = default!;
     [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     private EntityQuery<PenetratableComponent> _penetratableQuery;
-
-    private Random _random = new();
 
     public override void Initialize()
     {
@@ -73,7 +73,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             _sharedCameraRecoil.KickCamera(target, direction);
         }
 
-        // Corvax-Next-Penetration
+        // Corvax-Next-Penetration-Start
         if (component.PenetrationScore > 0
             && _penetratableQuery.TryGetComponent(target, out var penetratable)
             && _random.Next(component.PenetrationScore + penetratable.StoppingPower) >= penetratable.StoppingPower)
@@ -87,6 +87,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
         if (component.DeleteOnCollide && component.DamagedEntity)
             QueueDel(uid);
+        // Corvax-Next-Penetration-End
 
         if (component.ImpactEffect != null && TryComp(uid, out TransformComponent? xform))
         {
