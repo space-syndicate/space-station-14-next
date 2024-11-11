@@ -1,5 +1,5 @@
 ent-FoodShavermaUnbaked = Заготовка шавермы
     .desc = Пища богов, осталось только подогреть.
 
-ent-FoodShavermaBaked = Шаверма
+ent-FoodShavermaBaked = шаверма
     .desc = Пища богов.
