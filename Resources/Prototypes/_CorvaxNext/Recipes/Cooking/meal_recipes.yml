@@ -1,6 +1,6 @@
 # Corvax-Next-Shaverma-Start
 - type: microwaveMealRecipe
-  id: RecipeShaverma-unbaked
+  id: RecipeFoodShavermaUnbaked
   name: The best food ever
   result: Shaverma-unbaked
   time: 1
@@ -10,7 +10,7 @@
     FoodTomato: 1
 
 - type: microwaveMealRecipe
-  id: RecipeShaverma-baked
+  id: RecipeFoodShavermaBaked
   name: The best food ever
   result: Shaverma-baked
   time: 15
