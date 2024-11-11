@@ -1,8 +1,6 @@
 - type: entity
-  name: шаверма
   parent: FoodMealBase
   id: Shaverma-baked
-  description: Пища богов
   components:
     - type: Item
       storedRotation: -90
