@@ -18,15 +18,14 @@ public sealed class SyndicateTeleporterSystem : EntitySystem
     [Dependency] private readonly SharedBodySystem _body = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 
-    [ValidatePrototypeId<EntityPrototype>]
-    private const string TeleportEffectPrototype = "TeleportEffect";
+    private static readonly EntProtoId TeleportEffectPrototype = "TeleportEffect";
 
     public override void Initialize()
     {
         SubscribeLocalEvent<SyndicateTeleporterComponent, UseInHandEvent>(OnUseInHand);
     }
 
-    private void OnUseInHand(EntityUid entity, SyndicateTeleporterComponent teleproter, UseInHandEvent e)
+    private void OnUseInHand(Entity<SyndicateTeleporterComponent> teleproter, ref UseInHandEvent e)
     {
         if (e.Handled)
             return;
@@ -37,15 +36,15 @@ public sealed class SyndicateTeleporterSystem : EntitySystem
 
         List<EntityCoordinates> safeCoordinates = [];
 
-        for (var i = 0; i <= teleproter.TeleportationRangeLength; i++)
+        for (var i = 0; i <= teleproter.Comp.TeleportationRangeLength; i++)
         {
-            var offset = (teleproter.TeleportationRangeStart + i) * direction;
+            var offset = (teleproter.Comp.TeleportationRangeStart + i) * direction;
 
             var coordinates = transform.Coordinates.Offset(offset).SnapToGrid(EntityManager, _map);
 
             var tile = coordinates.GetTileRef(EntityManager, _map);
 
-            if (tile is not null && _turf.IsTileBlocked(tile.Value, CollisionGroup.MobMask))
+            if (tile is not null && _turf.IsTileBlocked(tile.Value, teleproter.Comp.CollisionGroup))
                 continue;
 
             safeCoordinates.Add(coordinates);
@@ -55,7 +54,7 @@ public sealed class SyndicateTeleporterSystem : EntitySystem
 
         if (safeCoordinates.Count < 1)
         {
-            var offset = (teleproter.TeleportationRangeStart + _random.NextFloat(teleproter.TeleportationRangeLength)) * direction;
+            var offset = (teleproter.Comp.TeleportationRangeStart + _random.NextFloat(teleproter.Comp.TeleportationRangeLength)) * direction;
 
             resultCoordinates = transform.Coordinates.Offset(offset);
         }
