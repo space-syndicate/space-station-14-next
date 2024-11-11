@@ -1,4 +1,3 @@
-# Corvax-Next-Shaverma-Start
 - type: microwaveMealRecipe
   id: RecipeFoodShavermaUnbaked
   name: The best food ever
@@ -16,4 +15,3 @@
   time: 15
   solids:
     Shaverma-unbaked: 1
-# Corvax-Next-Shaverma-End
