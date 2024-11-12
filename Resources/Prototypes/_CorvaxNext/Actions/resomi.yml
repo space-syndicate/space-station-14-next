@@ -1,0 +1,8 @@
+- type: entity
+  id: SwitchAgilityAction
+  name: Switch Agility
+  description: Switch agility
+  components:
+  - type: InstantAction
+    icon: Interface/Actions/shop.png
+    event: !type:ResomiSwitchAgillityActionEvent

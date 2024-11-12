@@ -9,21 +9,16 @@
   - type: Fixtures
     fixtures:
       fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 185
+        restitution: 0.0
+        mask:
+        - MobMask
         layer:
-        - FlyingMobLayer
+        - MobLayer
   - type: DamageVisuals
-    thresholds: [ 10, 30, 50, 70]
-    targetLayers:
-    - "enum.HumanoidVisualLayers.Chest"
-    - "enum.HumanoidVisualLayers.Head"
-    - "enum.HumanoidVisualLayers.LArm"
-    - "enum.HumanoidVisualLayers.LLeg"
-    - "enum.HumanoidVisualLayers.RArm"
-    - "enum.HumanoidVisualLayers.RLeg"
-    - "enum.HumanoidVisualLayers.RHand"
-    - "enum.HumanoidVisualLayers.LHand"
-    - "enum.HumanoidVisualLayers.RFoot"
-    - "enum.HumanoidVisualLayers.LFoot"
     damageOverlayGroups:
       Brute:
         sprite: _CorvaxNext/Mobs/Effects/Resomi/brute_damage.rsi
@@ -43,20 +38,14 @@
   - type: Icon
     sprite: _CorvaxNext/Mobs/Species/Resomi/parts.rsi
     state: full
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Resomi
   - type: Body
     prototype: Resomi
     requiredLegs: 2
   - type: Bloodstream
     bloodReagent: ResomiBlood
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      70: Critical
-      140: Dead
-  - type: SlowOnDamage
-    speedModifierThresholds:
-      40: 0.7 
-      55: 0.5
   - type: MeleeWeapon
     soundHit:
       collection: AlienClaw
@@ -76,8 +65,6 @@
     heatDamage:
       types:
         Heat : 1.5 #per second, scales with temperature & other constants
-  - type: Inventory
-    speciesId: resomi
   - type: Vocal
     sounds:
       Male: MaleResomi
@@ -85,6 +72,70 @@
       Unsexed: MaleResomi
   - type: FlashModifier
     modifier: 2
+  - type: Hands
+    handDisplacement:
+      sizeMaps:
+        32:
+          sprite: _CorvaxNext/Mobs/Species/Resomi/displacement.rsi
+          state: inHand
+  - type: Inventory
+    speciesId: Resomi
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _CorvaxNext/Mobs/Species/Resomi/displacement.rsi
+            state: jumpsuit
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _CorvaxNext/Mobs/Species/Resomi/displacement.rsi
+            state: eyes
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _CorvaxNext/Mobs/Species/Resomi/displacement.rsi
+            state: hands
+      head:
+        sizeMaps:
+          32:
+            sprite: _CorvaxNext/Mobs/Species/Resomi/displacement.rsi
+            state: head
+      back:
+        sizeMaps:
+          32:
+            sprite: _CorvaxNext/Mobs/Species/Resomi/displacement.rsi
+            state: back
+      ears:
+        sizeMaps:
+          32:
+            sprite: _CorvaxNext/Mobs/Species/Resomi/displacement.rsi
+            state: ears
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _CorvaxNext/Mobs/Species/Resomi/displacement.rsi
+            state: feet
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CorvaxNext/Mobs/Species/Resomi/displacement.rsi
+            state: neck
+      mask:
+        sizeMaps:
+          32:
+            sprite: _CorvaxNext/Mobs/Species/Resomi/displacement.rsi
+            state: mask
+      suitstorage:
+        sizeMaps:
+          32:
+            sprite: _CorvaxNext/Mobs/Species/Resomi/displacement.rsi
+            state: suitStorage
+      belt:
+        sizeMaps:
+          32:
+            sprite: _CorvaxNext/Mobs/Species/Resomi/displacement.rsi
+            state: belt
 - type: entity
   parent: BaseSpeciesDummy
   id: MobResomiDummy
@@ -93,3 +144,11 @@
   components:
   - type: HumanoidAppearance
     species: Resomi
+  - type: Inventory
+    speciesId: Resomi
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _CorvaxNext/Mobs/Species/Resomi/displacement.rsi
+            state: jumpsuit

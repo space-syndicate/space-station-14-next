@@ -117,13 +117,11 @@ namespace Content.Server.Flash
             bool melee = false,
             TimeSpan? stunDuration = null)
         {
-            #region CorvaxNext
             //CorvaxNext duration modifier for resomi
             if (TryComp<FlashModifierComponent>(target, out var CompUser))
             {
                 flashDuration *= CompUser.Modifier;
             }
-            #endregion
 
             var attempt = new FlashAttemptEvent(target, user, used);
             RaiseLocalEvent(target, attempt, true);
