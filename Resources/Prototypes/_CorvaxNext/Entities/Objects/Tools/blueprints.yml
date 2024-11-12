@@ -1,0 +1,9 @@
+- type: entity
+  parent: BaseBlueprint
+  id: SyndicateBlueprint
+  name: syndicate blueprint
+  description: Blueprints of evil genius.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - EnergySword

@@ -1,0 +1,12 @@
+- type: latheRecipe
+  abstract: true
+  id: BaseSyndicateRecipe
+  category: Syndicate
+
+- type: latheRecipe
+  parent: BaseSyndicateRecipe
+  id: EnergySword
+  result: EnergySword
+  materials:
+    Steel: 400
+    Plasma: 1000
