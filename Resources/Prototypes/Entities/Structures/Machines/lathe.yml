@@ -391,6 +391,20 @@
       - WeaponLaserCannon
       - WeaponLaserCarbine
       - WeaponXrayCannon
+  # Corvax-Next-SyndicateBlueprint-Start
+  - type: BlueprintReceiver
+    whitelist:
+      tags:
+      - BlueprintProtolathe
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      blueprint: !type:Container
+  - type: EmptyOnMachineDeconstruct
+    containers:
+    - blueprint
+  # Corvax-Next-SyndicateBlueprint-End
 
 - type: entity
   id: ProtolatheHyperConvection

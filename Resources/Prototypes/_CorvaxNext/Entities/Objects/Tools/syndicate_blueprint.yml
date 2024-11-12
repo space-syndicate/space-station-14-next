@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseItem
+  id: SyndicateBlueprint
+  name: syndicate blueprint
+  description: Blueprints of evil genius.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/blueprint.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Tools/blueprint.rsi
+    size: Normal
+  - type: Tag
+    tags:
+    - BlueprintProtolathe
+  - type: Blueprint
+    providedRecipes:
+    - EnergySword
