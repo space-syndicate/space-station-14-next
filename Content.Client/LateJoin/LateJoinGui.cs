@@ -85,7 +85,7 @@ namespace Content.Client.LateJoin
                 Logger.Warning("No stations exist, nothing to display in late-join GUI");
 
             foreach (var (id, name) in _gameTicker.StationNames
-                         .OrderBy(x=> x.Value.Contains("Central Command") ? 1 : -1) //backmen: centcom
+                         .OrderBy(x=> x.Value.Contains("Central Command") ? 1 : -1) // Corvax-Next-Centcomm
                      )
             {
                 var jobList = new BoxContainer

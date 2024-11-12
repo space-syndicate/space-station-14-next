@@ -1,7 +1,7 @@
 ﻿- type: department
   id: CentralCommandCorvax
-  name: Центральное Командование
-  description: Только по вайтлисту.
+  name: department-CentCom-name
+  description: department-CentCom-desc
   color: "#13db0f"
   roles:
     - CCOperator

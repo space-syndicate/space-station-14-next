@@ -12,8 +12,8 @@ using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
-using Content.Shared.Backmen.Abilities;
-using Content.Shared.Backmen.CentComm;
+using Content.Shared._CorvaxNext.Abilities;
+using Content.Shared._CorvaxNext.CentComm;
 using Content.Shared.Cargo.Components;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
@@ -32,7 +32,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
-namespace Content.Server.Backmen.Arrivals;
+namespace Content.Server._CorvaxNext.Arrivals;
 
 public sealed class FtlCentComAnnounce : EntityEventArgs
 {
@@ -189,7 +189,7 @@ public sealed class CentcommSystem : EntitySystem
     private const string StationCentComMapPool = "DefaultCentcomPool";
 
     [ValidatePrototypeId<GameMapPrototype>]
-    private const string StationCentComMapDefault = "CentComm";
+    private const string StationCentComMapDefault = "CorvaxCentcomm";
 
 
     public void EnsureCentcom(bool force = false)

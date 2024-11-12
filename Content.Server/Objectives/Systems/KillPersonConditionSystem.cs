@@ -1,15 +1,15 @@
-using System.Linq;
+using System.Linq; // Corvax-Next-Centcomm
 using Content.Server.Objectives.Components;
 using Content.Server.Revolutionary.Components;
 using Content.Server.Shuttles.Systems;
-using Content.Server.Station.Components;
+using Content.Server.Station.Components; // Corvax-Next-Centcomm
 using Content.Shared.CCVar;
 using Content.Shared.Mind;
 using Content.Shared.Objectives.Components;
-using Content.Shared.Roles;
-using Content.Shared.Roles.Jobs;
+using Content.Shared.Roles; // Corvax-Next-Centcomm
+using Content.Shared.Roles.Jobs; // Corvax-Next-Centcomm
 using Robust.Shared.Configuration;
-using Robust.Shared.Prototypes;
+using Robust.Shared.Prototypes; // Corvax-Next-Centcomm
 using Robust.Shared.Random;
 
 namespace Content.Server.Objectives.Systems;
@@ -24,10 +24,10 @@ public sealed class KillPersonConditionSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly TargetObjectiveSystem _target = default!;
-    [Dependency] private readonly SharedRoleSystem _roleSystem = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly SharedRoleSystem _roleSystem = default!; // Corvax-Next-Centcomm
+    [Dependency] private readonly IPrototypeManager _prototype = default!; // Corvax-Next-Centcomm
 
-    private static readonly ProtoId<DepartmentPrototype> _ccDep = "CentCom";
+    private static readonly ProtoId<DepartmentPrototype> _ccDep = "CentralCommandCorvax"; // Corvax-Next-Centcomm
 
     public override void Initialize()
     {
@@ -69,7 +69,7 @@ public sealed class KillPersonConditionSystem : EntitySystem
             return;
         }
 
-        // start-backmen: centcom
+        // Corvax-Next-Centcomm-Start
         FilterCentCom(allHumans);
 
         if (allHumans.Count == 0)
@@ -77,13 +77,13 @@ public sealed class KillPersonConditionSystem : EntitySystem
             args.Cancelled = true;
             return;
         }
-        // end-backmen: centcom
+        // Corvax-Next-Centcomm-End
 
         _target.SetTarget(uid, _random.Pick(allHumans), target);
 
     }
 
-    // start-backmen: centcom
+        // Corvax-Next-Centcomm-Start
     private void FilterCentCom(List<EntityUid> minds)
     {
         var centcom = _prototype.Index(_ccDep);
@@ -102,7 +102,7 @@ public sealed class KillPersonConditionSystem : EntitySystem
             minds.Remove(mindId);
         }
     }
-    // end-backmen: centcom
+        // Corvax-Next-Centcomm-End
 
     private void OnHeadAssigned(EntityUid uid, PickRandomHeadComponent comp, ref ObjectiveAssignedEvent args)
     {
@@ -125,7 +125,7 @@ public sealed class KillPersonConditionSystem : EntitySystem
             return;
         }
 
-        // start-backmen: centcom
+        // Corvax-Next-Centcomm-Start
         FilterCentCom(allHumans);
 
         if (allHumans.Count == 0)
@@ -133,7 +133,7 @@ public sealed class KillPersonConditionSystem : EntitySystem
             args.Cancelled = true;
             return;
         }
-        // end-backmen: centcom
+        // Corvax-Next-Centcomm-End
 
         var allHeads = new List<EntityUid>();
         foreach (var person in allHumans)

@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.GameStates;
 
-namespace Content.Shared.Backmen.CentComm;
+namespace Content.Shared._CorvaxNext.CentComm;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class AllowFtlToCentComComponent : Component

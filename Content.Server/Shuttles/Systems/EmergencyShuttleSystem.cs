@@ -35,7 +35,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
+using Robust.Shared.Prototypes; // Corvax-Next-Centcomm
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -70,7 +70,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly Content.Server.Backmen.Arrivals.CentcommSystem _centcommSystem = default!;
+    [Dependency] private readonly Content.Server._CorvaxNext.Arrivals.CentcommSystem _centcommSystem = default!; // Corvax-Next-Centcomm
 
 
     private const float ShuttleSpawnBuffer = 1f;
@@ -89,7 +89,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundCleanup);
         SubscribeLocalEvent<StationEmergencyShuttleComponent, StationPostInitEvent>(OnStationStartup);
-        //SubscribeLocalEvent<StationCentcommComponent, ComponentShutdown>(OnCentcommShutdown);
+        //SubscribeLocalEvent<StationCentcommComponent, ComponentShutdown>(OnCentcommShutdown);// Corvax-Next-Centcomm
         SubscribeLocalEvent<StationCentcommComponent, MapInitEvent>(OnStationInit);
 
         SubscribeLocalEvent<EmergencyShuttleComponent, FTLStartedEvent>(OnEmergencyFTL);
@@ -400,7 +400,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         // TODO: Need filter extensions or something don't blame me.
         _audio.PlayGlobal(audioFile, Filter.Broadcast(), true);
 
-        _centcommSystem.EnableFtl(_centcommSystem.CentComMapUid); // backmen: centcom
+        _centcommSystem.EnableFtl(_centcommSystem.CentComMapUid); // // Corvax-Next-Centcomm
     }
 
     private void OnStationInit(EntityUid uid, StationCentcommComponent component, MapInitEvent args)
@@ -500,10 +500,10 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         }
     }
 
-// start-backmen: centcom
+// Corvax-Next-Centcomm-Start
     private void AddCentcomm(EntityUid station, StationCentcommComponent component)
     {
-        var centcom = EntityManager.System<Content.Server.Backmen.Arrivals.CentcommSystem>();
+        var centcom = EntityManager.System<Content.Server._CorvaxNext.Arrivals.CentcommSystem>();
         DebugTools.Assert(LifeStage(station)>= EntityLifeStage.MapInitialized);
         if (component.MapEntity != null || component.Entity != null)
         {
@@ -527,7 +527,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
 
         return maps;
     }
-// end-backmen: centcom
+// Corvax-Next-Centcomm-End
 
     private void AddEmergencyShuttle(Entity<StationEmergencyShuttleComponent?, StationCentcommComponent?> ent)
     {
@@ -560,7 +560,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         var shuttle = _map.LoadGrid(map.MapId, shuttlePath.ToString(), new MapLoadOptions()
         {
             // Should be far enough... right? I'm too lazy to bounds check CentCom rn.
-            Offset = new Vector2(500f + _centcommSystem.ShuttleIndex, 0f),
+            Offset = new Vector2(500f + _centcommSystem.ShuttleIndex, 0f), // Corvax-Next-Centcomm
             // fun fact: if you just fucking yeet centcomm into nullspace anytime you try to spawn the shuttle, then any distance is far enough. so lets not do that
             LoadMap = false,
         });
@@ -571,8 +571,8 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             return;
         }
 
-        _centcommSystem.ShuttleIndex += Comp<MapGridComponent>(shuttle.Value).LocalAABB.Width + ShuttleSpawnBuffer;
-        ent.Comp2.ShuttleIndex = _centcommSystem.ShuttleIndex;
+        _centcommSystem.ShuttleIndex += Comp<MapGridComponent>(shuttle.Value).LocalAABB.Width + ShuttleSpawnBuffer; // Corvax-Next-Centcomm
+        ent.Comp2.ShuttleIndex = _centcommSystem.ShuttleIndex; // Corvax-Next-Centcomm
 
         ent.Comp1.EmergencyShuttle = shuttle;
         EnsureComp<ProtectedGridComponent>(shuttle.Value);
