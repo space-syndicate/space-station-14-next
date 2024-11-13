@@ -42,12 +42,7 @@ public sealed class BlueprintSystem : EntitySystem
         var recipes = GetBlueprintRecipes(ent);
         foreach (var recipe in recipes)
         {
-            // Corvax-Next-SyndicateBlueprint-Start
-            var tag = _proto.Index(recipe).BlueprintTag;
-
-            if (tag is null || ent.Comp.Whitelist.Tags is not null && ent.Comp.Whitelist.Tags.Contains(tag.Value))
-                args.Recipes.Add(recipe);
-            // Corvax-Next-SyndicateBlueprint-End
+            args.Recipes.Add(recipe);
         }
     }
 

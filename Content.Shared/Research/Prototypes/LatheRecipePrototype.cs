@@ -47,11 +47,6 @@ namespace Content.Shared.Research.Prototypes
         [DataField]
         public Dictionary<ProtoId<ReagentPrototype>, FixedPoint2>? ResultReagents;
 
-        // Corvax-Next-SyndicateBlueprint-Start
-        [DataField, NonSerialized]
-        public ProtoId<TagPrototype>? BlueprintTag;
-        // Corvax-Next-SyndicateBlueprint-End
-
         /// <summary>
         ///     An entity whose sprite is displayed in the ui in place of the actual recipe result.
         /// </summary>
