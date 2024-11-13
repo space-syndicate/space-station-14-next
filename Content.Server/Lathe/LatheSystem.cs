@@ -18,7 +18,7 @@ using Content.Shared.Database;
 using Content.Shared.Emag.Components;
 using Content.Shared.Examine;
 using Content.Shared.Lathe;
-using Content.Shared.Research.Systems;
+using Content.Shared.Research.Systems; // Corvax-Next-BlueprintEject
 using Content.Shared.Materials;
 using Content.Shared.Power;
 using Content.Shared.ReagentSpeed;

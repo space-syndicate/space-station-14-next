@@ -12,14 +12,14 @@ public sealed class LatheUpdateState : BoundUserInterfaceState
     public List<LatheRecipePrototype> Queue;
 
     public LatheRecipePrototype? CurrentlyProducing;
-    public bool HasAnyBlueprints;
+    public bool HasAnyBlueprints; // Corvax-Next-BlueprintEject
 
-    public LatheUpdateState(List<ProtoId<LatheRecipePrototype>> recipes, List<LatheRecipePrototype> queue, LatheRecipePrototype? currentlyProducing = null, bool hasAnyBlueprints = false)
+    public LatheUpdateState(List<ProtoId<LatheRecipePrototype>> recipes, List<LatheRecipePrototype> queue, LatheRecipePrototype? currentlyProducing = null, bool hasAnyBlueprints = false) // Corvax-Next-BlueprintEject
     {
         Recipes = recipes;
         Queue = queue;
         CurrentlyProducing = currentlyProducing;
-        HasAnyBlueprints = hasAnyBlueprints;
+        HasAnyBlueprints = hasAnyBlueprints; // Corvax-Next-BlueprintEject
     }
 }
 

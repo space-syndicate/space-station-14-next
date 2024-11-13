@@ -49,7 +49,7 @@ namespace Content.Client.Lathe.UI
                 case LatheUpdateState msg:
                     if (_menu != null)
                         _menu.Recipes = msg.Recipes;
-                    _menu?.UpdateBlueprintEjectButton(msg.HasAnyBlueprints);
+                    _menu?.UpdateBlueprintEjectButton(msg.HasAnyBlueprints); // Corvax-Next-BlueprintEject
                     _menu?.PopulateRecipes();
                     _menu?.UpdateCategories();
                     _menu?.PopulateQueueList(msg.Queue);
