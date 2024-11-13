@@ -14,8 +14,3 @@ robotics-console-locked-message = Управление заблокирован�
 robotics-console-disable = Отключить
 robotics-console-destroy = Уничтожить
 robotics-console-cyborg-destroying = Запущен процесс дистанционного уничтожения { $name }!
-
-# Corvax-Next-MutableLaws-Start
-robotics-console-change-laws = Изменить законы
-robotics-console-cyborg-change-laws = Законы { $name } изменены!
-# Corvax-Next-MutableLaws-End
