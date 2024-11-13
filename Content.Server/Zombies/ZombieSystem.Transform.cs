@@ -193,10 +193,10 @@ public sealed partial class ZombieSystem
 
             Dirty(target, staminDamage);
 
-            var staminaHp = EnsureComp<StaminaComponent>(target)
-            staminaHp.CritThreshold = 200f
+            var staminaHp = EnsureComp<StaminaComponent>(target);
+            staminaHp.CritThreshold = 200f;
 
-            Dirty(target, staminaHp)
+            Dirty(target, staminaHp);
         }
 
         Dirty(target, melee);
