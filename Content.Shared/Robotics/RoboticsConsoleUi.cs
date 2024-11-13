@@ -27,14 +27,9 @@ public sealed class RoboticsConsoleState : BoundUserInterfaceState
 
 // Corvax-Next-MutableLaws-Start
 [Serializable, NetSerializable]
-public sealed class RoboticsConsoleChangeLawsMessage : BoundUserInterfaceMessage
+public sealed class RoboticsConsoleChangeLawsMessage(string address) : BoundUserInterfaceMessage
 {
-    public readonly string Address;
-
-    public RoboticsConsoleChangeLawsMessage(string address)
-    {
-        Address = address;
-    }
+    public readonly string Address = address;
 }
 // Corvax-Next-MutableLaws-End
 
