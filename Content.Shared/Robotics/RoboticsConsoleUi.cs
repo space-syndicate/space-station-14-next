@@ -25,6 +25,19 @@ public sealed class RoboticsConsoleState : BoundUserInterfaceState
     }
 }
 
+// Corvax-Next-MutableLaws-Start
+[Serializable, NetSerializable]
+public sealed class RoboticsConsoleChangeLawsMessage : BoundUserInterfaceMessage
+{
+    public readonly string Address;
+
+    public RoboticsConsoleChangeLawsMessage(string address)
+    {
+        Address = address;
+    }
+}
+// Corvax-Next-MutableLaws-End
+
 /// <summary>
 /// Message to disable the selected cyborg.
 /// </summary>
@@ -129,6 +142,9 @@ public static class RoboticsConsoleConstants
     public const string NET_CYBORG_DATA = "cyborg-data";
 
     // sent by robotics console to cyborgs on Cyborg Control frequency
+    public const string NET_CHANGE_LAWS_COMMAND = "cyborg-change-laws"; // Corvax-Next-MutableLaws
     public const string NET_DISABLE_COMMAND = "cyborg-disable";
     public const string NET_DESTROY_COMMAND = "cyborg-destroy";
+
+    public const string NET_LAWS = "cyborg-laws"; // Corvax-Next-MutableLaws
 }

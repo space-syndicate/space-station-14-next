@@ -11,6 +11,9 @@ using Content.Shared.Robotics.Systems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Silicons.Laws.Components;
+using Content.Server.Silicons.Laws;
 
 namespace Content.Server.Research.Systems;
 
@@ -26,6 +29,8 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
     [Dependency] private readonly LockSystem _lock = default!;
     [Dependency] private readonly RadioSystem _radio = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private readonly ItemSlotsSystem _slots = default!;
+    [Dependency] private readonly SiliconLawSystem _law = default!;
 
     // almost never timing out more than 1 per tick so initialize with that capacity
     private List<string> _removing = new(1);
@@ -38,6 +43,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
         Subs.BuiEvents<RoboticsConsoleComponent>(RoboticsConsoleUiKey.Key, subs =>
         {
             subs.Event<BoundUIOpenedEvent>(OnOpened);
+            subs.Event<RoboticsConsoleChangeLawsMessage>(OnChangeLaws); // Corvax-Next-MutableLaws
             subs.Event<RoboticsConsoleDisableMessage>(OnDisable);
             subs.Event<RoboticsConsoleDestroyMessage>(OnDestroy);
             // TODO: camera stuff
@@ -93,6 +99,35 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
     {
         UpdateUserInterface(ent);
     }
+
+    // Corvax-Next-MutableLaws-Start
+    private void OnChangeLaws(Entity<RoboticsConsoleComponent> ent, ref RoboticsConsoleChangeLawsMessage args)
+    {
+        if (_lock.IsLocked(ent.Owner))
+            return;
+
+        if (!ent.Comp.Cyborgs.TryGetValue(args.Address, out var data))
+            return;
+
+        if (!_slots.TryGetSlot(ent, "circuit_holder", out var slot) || !slot.HasItem)
+            return;
+
+        if (!TryComp<SiliconLawProviderComponent>(slot.Item, out var law))
+            return;
+
+        var payload = new NetworkPayload()
+        {
+            [DeviceNetworkConstants.Command] = RoboticsConsoleConstants.NET_CHANGE_LAWS_COMMAND,
+            [RoboticsConsoleConstants.NET_LAWS] = _law.GetLawset(law.Laws).Laws,
+        };
+
+        _deviceNetwork.QueuePacket(ent, args.Address, payload);
+
+        var message = Loc.GetString(ent.Comp.ChangeLawsMessage, ("name", data.Name));
+        _radio.SendRadioMessage(ent, message, ent.Comp.RadioChannel, ent);
+        _adminLogger.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(args.Actor):user} changed laws of borg {data.Name} with address {args.Address}");
+    }
+    // Corvax-Next-MutableLaws-End
 
     private void OnDisable(Entity<RoboticsConsoleComponent> ent, ref RoboticsConsoleDisableMessage args)
     {

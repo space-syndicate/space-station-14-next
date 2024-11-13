@@ -32,6 +32,11 @@ public sealed partial class RoboticsConsoleComponent : Component
     [DataField]
     public ProtoId<RadioChannelPrototype> RadioChannel = "Science";
 
+    // Corvax-Next-MutableLaws-Start
+    [DataField]
+    public LocId ChangeLawsMessage = "robotics-console-cyborg-change-laws";
+    // Corvax-Next-MutableLaws-End
+
     /// <summary>
     /// Radio message sent when destroying a borg.
     /// </summary>

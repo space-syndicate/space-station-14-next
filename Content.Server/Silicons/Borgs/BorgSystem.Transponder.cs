@@ -8,12 +8,17 @@ using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Explosion.Components;
+using Content.Shared.Silicons.Laws;
+using Content.Server.Silicons.Laws;
+using Robust.Shared.Audio;
 
 namespace Content.Server.Silicons.Borgs;
 
 /// <inheritdoc/>
 public sealed partial class BorgSystem
 {
+    [Dependency] private readonly SiliconLawSystem _law = default!;
+
     private void InitializeTransponder()
     {
         SubscribeLocalEvent<BorgTransponderComponent, DeviceNetworkPacketEvent>(OnPacketReceived);
@@ -83,11 +88,28 @@ public sealed partial class BorgSystem
         if (!payload.TryGetValue(DeviceNetworkConstants.Command, out string? command))
             return;
 
-        if (command == RoboticsConsoleConstants.NET_DISABLE_COMMAND)
+        // Corvax-Next-MutableLaws-Start
+        if (command == RoboticsConsoleConstants.NET_CHANGE_LAWS_COMMAND)
+        {
+            if (payload.TryGetValue(RoboticsConsoleConstants.NET_LAWS, out List<SiliconLaw>? laws))
+                ChangeLaws(ent, laws);
+        }
+        // Corvax-Next-MutableLaws-End
+        else if (command == RoboticsConsoleConstants.NET_DISABLE_COMMAND)
             Disable(ent);
         else if (command == RoboticsConsoleConstants.NET_DESTROY_COMMAND)
             Destroy(ent);
     }
+
+    // Corvax-Next-MutableLaws-Start
+    private void ChangeLaws(EntityUid ent, List<SiliconLaw> laws)
+    {
+        if (CheckEmagged(ent, "destroyed"))
+            return;
+
+        _law.SetLaws(laws, ent, new SoundPathSpecifier("/Audio/Misc/cryo_warning.ogg"));
+    }
+    // Corvax-Next-MutableLaws-End
 
     private void Disable(Entity<BorgTransponderComponent, BorgChassisComponent?> ent)
     {
