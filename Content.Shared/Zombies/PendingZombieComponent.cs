@@ -17,8 +17,8 @@ public sealed partial class PendingZombieComponent : Component
     {
         DamageDict = new ()
         {
-            { "Poison", 0.3 },
-            { "Cellular", 0.1 },
+            { "Poison", 0.5 },
+            { "Cellular", 0.2 },
         }
     };
 
@@ -26,7 +26,7 @@ public sealed partial class PendingZombieComponent : Component
     /// A multiplier for <see cref="Damage"/> applied when the entity is in critical condition.
     /// </summary>
     [DataField("critDamageMultiplier")]
-    public float CritDamageMultiplier = 10f;
+    public float CritDamageMultiplier = 15f;
 
     [DataField("nextTick", customTypeSerializer:typeof(TimeOffsetSerializer))]
     public TimeSpan NextTick;

@@ -172,8 +172,8 @@ public sealed partial class ZombieSystem
                 DamageDict = new()
                 {
                     { "Slash", 13 },
-                    { "Piercing", 7 },
-                    { "Structural", 10 }
+                    { "Piercing", 8 },
+                    { "Structural", 20 }
                 }
             };
             melee.Damage = dspec;
@@ -189,7 +189,7 @@ public sealed partial class ZombieSystem
             // Humanoid zombie now deals stamina damage! ye.
             AddComp<StaminaDamageOnHitComponent>(target);
             var staminDamage = EnsureComp<StaminaDamageOnHitComponent>(target);
-            staminDamage.Damage = 20f;
+            staminDamage.Damage = 25f;
 
             Dirty(target, staminDamage);
 
