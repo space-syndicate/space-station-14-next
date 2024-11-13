@@ -1,0 +1,12 @@
+- type: listing
+  id: UplinkSyndicateBlueprint
+  name: uplink-syndicate-blueprint-name
+  description: uplink-syndicate-blueprint-desc
+  productEntity: SyndicateBlueprint
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  cost:
+    Telecrystal: 8
+  categories:
+  - UplinkDisruption
