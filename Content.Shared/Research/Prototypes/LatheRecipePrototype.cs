@@ -2,6 +2,7 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Content.Shared.Lathe.Prototypes;
 using Content.Shared.Materials;
+using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
@@ -45,6 +46,11 @@ namespace Content.Shared.Research.Prototypes
 
         [DataField]
         public Dictionary<ProtoId<ReagentPrototype>, FixedPoint2>? ResultReagents;
+
+        // Corvax-Next-SyndicateBlueprint-Start
+        [DataField, NonSerialized]
+        public ProtoId<TagPrototype>? BlueprintTag;
+        // Corvax-Next-SyndicateBlueprint-End
 
         /// <summary>
         ///     An entity whose sprite is displayed in the ui in place of the actual recipe result.

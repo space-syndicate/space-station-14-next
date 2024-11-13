@@ -15,6 +15,7 @@ public sealed class BlueprintSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -41,7 +42,12 @@ public sealed class BlueprintSystem : EntitySystem
         var recipes = GetBlueprintRecipes(ent);
         foreach (var recipe in recipes)
         {
-            args.Recipes.Add(recipe);
+            // Corvax-Next-SyndicateBlueprint-Start
+            var tag = _proto.Index(recipe).BlueprintTag;
+
+            if (tag is null || ent.Comp.Whitelist.Tags is not null && ent.Comp.Whitelist.Tags.Contains(tag.Value))
+                args.Recipes.Add(recipe);
+            // Corvax-Next-SyndicateBlueprint-End
         }
     }
 

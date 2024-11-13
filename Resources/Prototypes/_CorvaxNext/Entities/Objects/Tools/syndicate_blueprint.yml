@@ -12,7 +12,9 @@
     size: Normal
   - type: Tag
     tags:
+    - BlueprintAutolathe
     - BlueprintProtolathe
   - type: Blueprint
     providedRecipes:
     - EnergySword
+    - EnergyDagger

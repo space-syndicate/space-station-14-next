@@ -7,6 +7,16 @@
   parent: BaseSyndicateRecipe
   id: EnergySword
   result: EnergySword
+  blueprintTag: BlueprintProtolathe
+  materials:
+    Steel: 400
+    Plasma: 1000
+
+- type: latheRecipe
+  parent: BaseSyndicateRecipe
+  id: EnergyDagger
+  result: EnergyDagger
+  blueprintTag: BlueprintAutolathe
   materials:
     Steel: 400
     Plasma: 1000
