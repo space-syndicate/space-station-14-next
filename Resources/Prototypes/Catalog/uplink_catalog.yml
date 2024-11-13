@@ -2064,6 +2064,7 @@
     whitelist:
     - Zookeeper
     - Scientist
+    - SeniorResearcher # Corvax-Next-MentorRoles
     - ResearchDirector
     - Chef
 

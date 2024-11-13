@@ -67,22 +67,22 @@
 
 - type: loadout
   id: TrooperUniform
-  equipment: 
+  equipment:
     jumpsuit: ClothingUniformSecurityTrooper
 
 - type: loadout
   id: SeniorOfficerJumpsuit
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorOfficer
+  #effects: Corvax-Next-MentorRoles
+  #- !type:GroupLoadoutEffect
+  #  proto: SeniorOfficer
   equipment:
     jumpsuit: ClothingUniformJumpsuitSeniorOfficer
 
 - type: loadout
   id: SeniorOfficerJumpskirt
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorOfficer
+  #effects: Corvax-Next-MentorRoles
+  #- !type:GroupLoadoutEffect
+  #  proto: SeniorOfficer
   equipment:
     jumpsuit: ClothingUniformJumpskirtSeniorOfficer
 
