@@ -17,7 +17,8 @@ public sealed partial class PendingZombieComponent : Component
     {
         DamageDict = new ()
         {
-            { "Poison", 0.2 },
+            { "Poison", 0.3 },
+            { "Cellular", 0.1 },
         }
     };
 
@@ -40,7 +41,7 @@ public sealed partial class PendingZombieComponent : Component
     /// The minimum amount of time initial infected have before they start taking infection damage.
     /// </summary>
     [DataField]
-    public TimeSpan MinInitialInfectedGrace = TimeSpan.FromMinutes(12.5f);
+    public TimeSpan MinInitialInfectedGrace = TimeSpan.FromMinutes(6f);
 
     /// <summary>
     /// The maximum amount of time initial infected have before they start taking damage.
