@@ -5,6 +5,7 @@
   - type: Item
     storedRotation: -90
   - type: Food
+    eatMessage: food-saverma-eat
     transferAmount: 3
   - type: Sprite
     sprite: _CorvaxNext/Objects/Consumable/Food/shavuha.rsi
@@ -26,6 +27,7 @@
   - type: Item
     storedRotation: -90
   - type: Food
+    eatMessage: food-unbaked-saverma-eat
     transferAmount: 3
   - type: Sprite
     sprite: _CorvaxNext/Objects/Consumable/Food/shavuha.rsi
