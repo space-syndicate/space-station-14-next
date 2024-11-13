@@ -2,7 +2,7 @@
   parent: BaseItem
   id: SyndicateBlueprint
   name: syndicate blueprint
-  description: Blueprints of evil genius.
+  description: Blueprint of evil genius.
   components:
   - type: Sprite
     sprite: Objects/Tools/blueprint.rsi
