@@ -1,26 +1,4 @@
 - type: latheRecipe
-  parent: BaseToolRecipe
-  id: SyndicateJawsOfLife
-  result: SyndicateJawsOfLife
-  blueprintTag: BlueprintProtolathe
-  completetime: 6
-  materials:
-    Steel: 1000
-    Glass: 500
-    Plasma: 300
-    Gold: 50
-
-- type: latheRecipe
-  parent: BaseToolRecipe
-  id: PinpointerNuclear
-  result: PinpointerNuclear
-  blueprintTag: BlueprintProtolathe
-  materials:
-    Steel: 500
-    Glass: 300
-    Plasma: 100
-
-- type: latheRecipe
   parent: BaseCircuitboardRecipe
   id: AntimovCircuitBoard
   result: AntimovCircuitBoard

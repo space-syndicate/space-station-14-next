@@ -5,18 +5,14 @@
   description: Blueprint of evil genius.
   components:
   - type: Sprite
-    sprite: Objects/Tools/blueprint.rsi
+    sprite: _CorvaxNext/Objects/Tools/syndicate_blueprint.rsi
     state: icon
   - type: Item
-    sprite: Objects/Tools/blueprint.rsi
+    sprite: _CorvaxNext/Objects/Tools/syndicate_blueprint.rsi
     size: Normal
   - type: Tag
     tags:
-    #- BlueprintAutolathe
-    - BlueprintProtolathe
     - BlueprintCircuitImprinter
   - type: Blueprint
     providedRecipes:
-    - SyndicateJawsOfLife
-    - PinpointerNuclear
     - AntimovCircuitBoard
