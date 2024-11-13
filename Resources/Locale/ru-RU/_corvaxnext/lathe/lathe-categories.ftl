@@ -1,1 +1,0 @@
-lathe-category-syndicate = Синдикат

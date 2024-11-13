@@ -1,22 +1,27 @@
 - type: latheRecipe
-  abstract: true
-  id: BaseSyndicateRecipe
-  category: Syndicate
+  parent: BaseToolRecipe
+  id: SyndicateJawsOfLife
+  result: SyndicateJawsOfLife
+  blueprintTag: BlueprintProtolathe
+  completetime: 6
+  materials:
+    Steel: 1000
+    Glass: 500
+    Plasma: 300
+    Gold: 50
 
 - type: latheRecipe
-  parent: BaseSyndicateRecipe
-  id: EnergySword
-  result: EnergySword
+  parent: BaseToolRecipe
+  id: PinpointerNuclear
+  result: PinpointerNuclear
   blueprintTag: BlueprintProtolathe
   materials:
-    Steel: 400
-    Plasma: 1000
+    Steel: 500
+    Glass: 300
+    Plasma: 100
 
 - type: latheRecipe
-  parent: BaseSyndicateRecipe
-  id: EnergyDagger
-  result: EnergyDagger
-  blueprintTag: BlueprintAutolathe
-  materials:
-    Steel: 400
-    Plasma: 1000
+  parent: BaseCircuitboardRecipe
+  id: AntimovCircuitBoard
+  result: AntimovCircuitBoard
+  blueprintTag: BlueprintCircuitImprinter

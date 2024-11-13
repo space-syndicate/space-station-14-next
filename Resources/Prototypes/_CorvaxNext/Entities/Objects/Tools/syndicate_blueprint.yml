@@ -12,9 +12,11 @@
     size: Normal
   - type: Tag
     tags:
-    - BlueprintAutolathe
+    #- BlueprintAutolathe
     - BlueprintProtolathe
+    - BlueprintCircuitImprinter
   - type: Blueprint
     providedRecipes:
-    - EnergySword
-    - EnergyDagger
+    - SyndicateJawsOfLife
+    - PinpointerNuclear
+    - AntimovCircuitBoard
