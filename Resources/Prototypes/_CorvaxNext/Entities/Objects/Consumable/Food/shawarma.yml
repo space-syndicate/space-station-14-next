@@ -1,0 +1,57 @@
+#base
+- type: entity
+  parent: FoodMealBase
+  id: FoodShawarmaBase
+  abstract: true
+  components:
+  - type: Item
+    storedRotation: -90
+  - type: Food
+    eatMessage: food-chicken-shawarma-eat
+    transferAmount: 5
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Consumable/Food/shawarma.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 22
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 9
+        - ReagentId: Vitamin
+          Quantity: 4
+
+- type: entity
+  name: Лаваш
+  parent: FoodBakingBase
+  id: FoodDoughPita
+  description: Тонкая воздушная лепешка. Йа твой лавашъ кетчуп мазаль
+  components:
+  - type: FlavorProfile
+    flavors:
+    - chalky
+    - dough
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Consumable/Food/shawarma.rsi
+    state: pita
+
+#SHAWARMA!! Net, zaverton!
+
+- type: entity
+  name: Куриный завертон
+  parent: FoodMealBase
+  id: FoodChickenShawarma
+  description: Это шаурма! Или шаверма?.. Настолько сочная, что лаваш снизу подтекает.
+  components:
+  - type: Item
+    storedRotation: -90
+  - type: Food
+    eatMessage: food-chicken-shawarma-eat
+    transferAmount: 5
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Consumable/Food/shawarma.rsi
+    layers:
+    - state: shawarma-base
+

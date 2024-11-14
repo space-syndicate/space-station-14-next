@@ -1,0 +1,23 @@
+- type: microwaveMealRecipe
+  id: RecipeFoodChickenShawarma
+  name: Zaverton
+  result: FoodChickenShawarma
+  time: 10
+  reagents:
+    Ketchunaise: 5
+  solids:
+    FoodDoughPita: 1
+    FoodMeatChickenCutletCooked: 2
+    FoodTomato: 1
+    FoodOnionSlice: 2
+    FoodCarrot: 1
+
+- type: microwaveMealRecipe
+  id: RecipedoughPita
+  name: lavash
+  result: FoodDoughPita
+  time: 5
+  reagents:
+    TableSalt: 5
+  solids:
+    FoodDoughFlat: 1
