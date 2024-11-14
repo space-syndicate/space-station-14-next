@@ -29,4 +29,9 @@
     tags:
     - Fruit
     - Vegetable
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 1
 
