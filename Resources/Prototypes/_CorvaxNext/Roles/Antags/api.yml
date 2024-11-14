@@ -8,11 +8,3 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 108000 # 30h # Corvax-RoleTime
-
-- type: startingGear
-  id: ApiGear
-  storage:
-    back:
-    - ToolboxApi
-    - ClothingHandsChameleonThief
-    - ThiefBeacon
