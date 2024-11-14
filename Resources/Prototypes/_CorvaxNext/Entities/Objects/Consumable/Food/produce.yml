@@ -1,0 +1,32 @@
+# When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_produce.yml
+# For produce that can't be immediately eaten
+
+- type: entity
+  name: cucumber
+  parent: [FoodProduceBase]
+  id: FoodCucumber
+  description: PHAHAHHAHA cu-cu-cu-cu-mbe-er
+  components:
+  - type: FlavorProfile
+    flavors:
+      - water
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 7
+        - ReagentId: Vitamin
+          Quantity: 3
+        - ReagentId: Water
+          Quantity: 4
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Specific/Hydroponics/cucumber.rsi
+  - type: Produce
+    seedId: cucumber
+  - type: Tag
+    tags:
+    - Fruit
+    - Vegetable
+

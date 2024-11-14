@@ -1,0 +1,10 @@
+
+- type: entity
+  parent: SeedBase
+  name: packet of cucumber seeds
+  id: CucumbertSeeds
+  components:
+    - type: Seed
+      seedId: cucumber
+    - type: Sprite
+      sprite: _CorvaxNext/Objects/Specific/Hydroponics/cucumber.rsi
