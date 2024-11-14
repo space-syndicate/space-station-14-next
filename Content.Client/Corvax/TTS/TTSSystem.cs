@@ -25,7 +25,7 @@ public sealed class TTSSystem : EntitySystem
     private static MemoryContentRoot _contentRoot = new();
     private static readonly ResPath Prefix = ResPath.Root / "TTS";
 
-    private bool _contentRootAdded;
+    private static bool _contentRootAdded;
 
     /// <summary>
     /// Reducing the volume of the TTS when whispering. Will be converted to logarithm.
