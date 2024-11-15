@@ -13,7 +13,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using Content.Shared._CorvaxNext.Footprints.Components;
+using Content.Shared._CorvaxNext.Footprints.Components; // Corvax-Next-Footprints
 
 namespace Content.Server.Fluids.EntitySystems;
 
@@ -29,7 +29,7 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!; // Corvax-Next-Footprints
 
     public override void Initialize()
     {
@@ -117,7 +117,6 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
         // Footsteps cleaning logic, try to grab from
         if (TryFootStepInteract(user, used, target, component, useDelay, absorberSoln.Value))
             return;
-        // BACKMEN EDIT END
 
         // If it's a puddle try to grab from
         if (TryPuddleInteract(user, used, target, component, useDelay, absorberSoln.Value))
