@@ -42,16 +42,10 @@ public sealed class FootprintsSystem : EntitySystem
 
     private void OnMove(EntityUid uid, FootprintVisualizerComponent component, ref MoveEvent args)
     {
-        if (component.PrintsColor.A <= 0f)
-            return;
-
-        if (!_transformQuery.TryComp(uid, out var transform))
-            return;
-
-        if (!_mobThresholdQuery.TryComp(uid, out var mobThreshHolds))
-            return;
-
-        if (!_map.TryFindGridAt(_transform.GetMapCoordinates((uid, transform)), out var gridUid, out _))
+        if (component.PrintsColor.A <= 0f ||
+            !_transformQuery.TryComp(uid, out var transform) ||
+            !_mobThresholdQuery.TryComp(uid, out var mobThreshHolds) ||
+            !_map.TryFindGridAt(_transform.GetMapCoordinates((uid, transform)), out var gridUid, out _))
             return;
 
         var dragging = mobThreshHolds.CurrentThresholdState is MobState.Critical or MobState.Dead;
@@ -85,13 +79,9 @@ public sealed class FootprintsSystem : EntitySystem
         component.PrintsColor = component.PrintsColor.WithAlpha(Math.Max(0f, component.PrintsColor.A - component.ColorReduceAlpha));
         component.StepPos = transform.LocalPosition;
 
-        if (!TryComp<SolutionContainerManagerComponent>(entity, out var solutionContainer))
-            return;
-
-        if (!_solution.ResolveSolution((entity, solutionContainer), footPrintComponent.SolutionName, ref footPrintComponent.Solution, out var solution))
-            return;
-
-        if (string.IsNullOrWhiteSpace(component.ReagentToTransfer) || solution.Volume >= 1)
+        if (!TryComp<SolutionContainerManagerComponent>(entity, out var solutionContainer) ||
+            !_solution.ResolveSolution((entity, solutionContainer), footPrintComponent.SolutionName, ref footPrintComponent.Solution, out var solution) ||
+            string.IsNullOrWhiteSpace(component.ReagentToTransfer) || solution.Volume >= 1)
             return;
 
         _solution.TryAddReagent(footPrintComponent.Solution.Value, component.ReagentToTransfer, 1, out _);
