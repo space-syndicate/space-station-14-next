@@ -82,6 +82,19 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         _ghostRole.UnregisterGhostRole((ent, Comp<GhostRoleComponent>(ent)));
     }
 
+    // goob edit
+    public List<ICommonSession> GetAliveConnectedPlayers(IList<ICommonSession> pool)
+    {
+        var l = new List<ICommonSession>();
+        foreach (var session in pool)
+        {
+            if (session.Status is SessionStatus.Disconnected or SessionStatus.Zombie)
+                continue;
+            l.Add(session);
+        }
+        return l;
+    }
+    // goob edit end
     private void OnPlayerSpawning(RulePlayerSpawningEvent args)
     {
         var pool = args.PlayerPool;
