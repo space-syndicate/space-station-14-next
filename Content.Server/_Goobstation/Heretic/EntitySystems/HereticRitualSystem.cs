@@ -27,7 +27,7 @@ public sealed partial class HereticRitualSystem : EntitySystem
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
 
-    public SoundSpecifier RitualSuccessSound = new SoundPathSpecifier("/Audio/Goobstation/Heretic/castsummon.ogg");
+    public SoundSpecifier RitualSuccessSound = new SoundPathSpecifier("/Audio/_Goobstation/Heretic/castsummon.ogg");
 
     public HereticRitualPrototype GetRitual(ProtoId<HereticRitualPrototype>? id)
     {

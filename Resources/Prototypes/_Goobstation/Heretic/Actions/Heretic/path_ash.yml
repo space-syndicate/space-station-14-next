@@ -8,7 +8,7 @@
     useDelay: 15
     itemIconStyle: NoItem
     icon:
-      sprite: Goobstation/Heretic/abilities_heretic.rsi
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
       state: ashen_shift
     event: !type:EventHereticAshenShift
   - type: HereticAction
@@ -25,7 +25,7 @@
     useDelay: 10
     itemIconStyle: NoItem
     icon:
-      sprite: Goobstation/Heretic/abilities_heretic.rsi
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
       state: volcano_blast
     event: !type:EventHereticVolcanoBlast
   - type: HereticAction
@@ -42,7 +42,7 @@
     useDelay: 15
     itemIconStyle: NoItem
     icon:
-      sprite: Goobstation/Heretic/abilities_heretic.rsi
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
       state: nightwatcher_rebirth
     event: !type:EventHereticNightwatcherRebirth
   - type: HereticAction
@@ -59,7 +59,7 @@
     useDelay: 90
     itemIconStyle: NoItem
     icon:
-      sprite: Goobstation/Heretic/abilities_heretic.rsi
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
       state: ashlord_rite1
     event: !type:EventHereticFlames
   - type: HereticAction
@@ -76,7 +76,7 @@
     useDelay: 30
     itemIconStyle: NoItem
     icon:
-      sprite: Goobstation/Heretic/abilities_heretic.rsi
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
       state: ashlord_rite2
     event: !type:EventHereticCascade
   - type: HereticAction

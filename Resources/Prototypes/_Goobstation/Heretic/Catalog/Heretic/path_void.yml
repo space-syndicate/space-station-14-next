@@ -2,7 +2,7 @@
   id: HereticVoidPath1
   name: knowledge-path-void-s1-name
   description: knowledge-path-void-s1-desc
-  icon: { sprite: Goobstation/Heretic/Blades/blade_void.rsi, state: icon }
+  icon: { sprite: _Goobstation/Heretic/Blades/blade_void.rsi, state: icon }
   productHereticKnowledge: GlimmerOfWinter
   cost:
     KnowledgePoint: 1
@@ -60,7 +60,7 @@
   id: HereticVoidPath4
   name: knowledge-path-void-s4-name
   description: knowledge-path-void-s4-desc
-  icon: { sprite: Goobstation/Heretic/Blades/blade_void.rsi, state: icon }
+  icon: { sprite: _Goobstation/Heretic/Blades/blade_void.rsi, state: icon }
   productHereticKnowledge: MarkOfVoid
   cost:
     KnowledgePoint: 1
@@ -112,7 +112,7 @@
   id: HereticVoidPath7
   name: knowledge-path-void-s7-name
   description: knowledge-path-void-s7-desc
-  icon: { sprite: Goobstation/Heretic/Blades/blade_void.rsi, state: icon }
+  icon: { sprite: _Goobstation/Heretic/Blades/blade_void.rsi, state: icon }
   productHereticKnowledge: SeekingBlade
   cost:
     KnowledgePoint: 1

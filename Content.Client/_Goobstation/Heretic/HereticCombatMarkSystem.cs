@@ -42,7 +42,7 @@ public sealed partial class HereticCombatMarkSystem : EntitySystem
             return;
         }
 
-        var rsi = new SpriteSpecifier.Rsi(new ResPath("Goobstation/Heretic/combat_marks.rsi"), ent.Comp.Path.ToLower());
+        var rsi = new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/combat_marks.rsi"), ent.Comp.Path.ToLower());
         var layer = sprite.AddLayer(rsi);
 
         sprite.LayerMapSet(0, layer);

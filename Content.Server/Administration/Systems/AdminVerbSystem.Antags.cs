@@ -179,7 +179,7 @@ public sealed partial class AdminVerbSystem
         {
             Text = Loc.GetString("admin-verb-make-heretic"),
             Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Goobstation/Heretic/Blades/blade_blade.rsi"), "icon"),
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_Goobstation/Heretic/Blades/blade_blade.rsi"), "icon"),
             Act = () =>
             {
                 _antag.ForceMakeAntag<HereticRuleComponent>(targetPlayer, "Heretic");

@@ -8,7 +8,7 @@
   - type: HereticRitualRune
   - type: Sprite
     drawdepth: WallMountedItems
-    sprite: Goobstation/Heretic/ritual_rune.rsi
+    sprite: _Goobstation/Heretic/ritual_rune.rsi
     state: icon
   - type: Clickable
   - type: UserInterface
@@ -26,7 +26,7 @@
   components:
   - type: Sprite
     drawdepth: WallMountedItems
-    sprite: Goobstation/Heretic/ritual_rune.rsi
+    sprite: _Goobstation/Heretic/ritual_rune.rsi
     state: icon_drawanim
 
 - type: entity
@@ -41,5 +41,5 @@
     lifetime: 1
   - type: Sprite
     drawdepth: WallMountedItems
-    sprite: Goobstation/Heretic/ritual_rune.rsi
+    sprite: _Goobstation/Heretic/ritual_rune.rsi
     state: icon_ritualanim

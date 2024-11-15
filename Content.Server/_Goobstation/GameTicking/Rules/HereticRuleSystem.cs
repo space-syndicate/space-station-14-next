@@ -29,7 +29,7 @@ public sealed partial class HereticRuleSystem : GameRuleSystem<HereticRuleCompon
     [Dependency] private readonly ObjectivesSystem _objective = default!;
     [Dependency] private readonly IRobustRandom _rand = default!;
 
-    public readonly SoundSpecifier BriefingSound = new SoundPathSpecifier("/Audio/Goobstation/Heretic/Ambience/Antag/Heretic/heretic_gain.ogg");
+    public readonly SoundSpecifier BriefingSound = new SoundPathSpecifier("/Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/heretic_gain.ogg");
 
     [ValidatePrototypeId<NpcFactionPrototype>] public readonly ProtoId<NpcFactionPrototype> HereticFactionId = "Heretic";
 
