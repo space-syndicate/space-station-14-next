@@ -5,20 +5,17 @@
   id: BaseMobResomi
   abstract: true
   components:
-  - type: ResomiSkill
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.35
-        density: 185
-        restitution: 0.0
-        mask:
-        - MobMask
-        layer:
-        - MobLayer
+  - type: AgillitySkill
+  - type: ResomiAccent
   - type: DamageVisuals
+    thresholds: [ 10, 30, 50, 70]
+    targetLayers:
+    - "enum.HumanoidVisualLayers.Chest"
+    - "enum.HumanoidVisualLayers.Head"
+    - "enum.HumanoidVisualLayers.LArm"
+    - "enum.HumanoidVisualLayers.LLeg"
+    - "enum.HumanoidVisualLayers.RArm"
+    - "enum.HumanoidVisualLayers.RLeg"
     damageOverlayGroups:
       Brute:
         sprite: _CorvaxNext/Mobs/Effects/Resomi/brute_damage.rsi
@@ -79,7 +76,7 @@
           sprite: _CorvaxNext/Mobs/Species/Resomi/displacement.rsi
           state: inHand
   - type: Inventory
-    speciesId: Resomi
+    speciesId: resomi
     displacements:
       jumpsuit:
         sizeMaps:

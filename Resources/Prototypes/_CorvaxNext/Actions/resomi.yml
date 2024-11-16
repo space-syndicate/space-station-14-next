@@ -4,5 +4,6 @@
   description: Switch agility
   components:
   - type: InstantAction
-    icon: Interface/Actions/shop.png
-    event: !type:ResomiSwitchAgillityActionEvent
+    icon: _CorvaxNext/Mobs/Species/Resomi/Abilities/AgilityOff.png
+    iconOn: _CorvaxNext/Mobs/Species/Resomi/Abilities/AgilityOn.png
+    event: !type:SwitchAgillityActionEvent
