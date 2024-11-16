@@ -39,7 +39,7 @@ public sealed class ThiefBeaconSystem : EntitySystem
             return;
 
         var mind = _mind.GetMind(args.User);
-        if (mind == null || !_roles.MindHasRole<ThiefRoleComponent>(mind.Value) && !_roles.MindHasRole<ApiRoleComponent>(mind.Value)) // Corvax-Next-Api
+        if (mind == null || !_roles.MindHasRole<ThiefBeaconAccessComponent>(mind.Value)) // Corvax-Next-Api
             return;
 
         var user = args.User;

@@ -7,3 +7,4 @@
   - type: MindRole
     antagPrototype: Api
   - type: ApiRole
+  - type: ThiefBeaconAccess
