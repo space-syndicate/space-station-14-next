@@ -31,6 +31,8 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
     [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
+    public const float FootprintAbsorptionRange = 0.25f;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -341,7 +343,7 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
         var soundPlayed = false;
 
         var footPrints = new HashSet<Entity<FootprintComponent>>();
-        _lookup.GetEntitiesInRange(Transform(target).Coordinates, 0.25f, footPrints, LookupFlags.Dynamic | LookupFlags.Uncontained);
+        _lookup.GetEntitiesInRange(Transform(target).Coordinates, FootprintAbsorptionRange, footPrints, LookupFlags.Dynamic | LookupFlags.Uncontained);
 
         foreach (var (footstepUid, comp) in footPrints)
         {
