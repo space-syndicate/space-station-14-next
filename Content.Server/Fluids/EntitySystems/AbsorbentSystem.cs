@@ -113,9 +113,9 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
             && _useDelay.IsDelayed((used, useDelay)))
             return;
 
-        // Corvax-Footsteps-Start
+        // Corvax-Next-Footprints-Start
         // Footsteps cleaning logic, try to grab from
-        if (TryFootStepInteract(user, used, target, component, useDelay, absorberSoln.Value))
+        if (TryFootprintInteract(user, used, target, component, useDelay, absorberSoln.Value))
             return;
 
         // If it's a puddle try to grab from
@@ -124,7 +124,7 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
 
         // If it's refillable try to transfer
         TryRefillableInteract(user, used, target, component, useDelay, absorberSoln.Value);
-        // Corvax-Footsteps-End
+        // Corvax-Next-Footprints-End
     }
 
     /// <summary>
@@ -332,8 +332,8 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
         return true;
     }
 
-    // Corvax-Footsteps-Start
-    private bool TryFootStepInteract(EntityUid user, EntityUid used, EntityUid target, AbsorbentComponent absorber, UseDelayComponent? useDelay, Entity<SolutionComponent> absorberSoln)
+    // Corvax-Next-Footprints-Start
+    private bool TryFootprintInteract(EntityUid user, EntityUid used, EntityUid target, AbsorbentComponent absorber, UseDelayComponent? useDelay, Entity<SolutionComponent> absorberSoln)
     {
         if (!HasComp<FootprintComponent>(target)) // Perform a check if it was a footprint that was clicked on
             return false;
@@ -395,5 +395,5 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
         _melee.DoLunge(user, used, Angle.Zero, localPos, null, false);
         return true;
     }
-    // Corvax-Footsteps-End
+    // Corvax-Next-Footprints-End
 }
