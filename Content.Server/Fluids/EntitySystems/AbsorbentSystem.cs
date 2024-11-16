@@ -352,7 +352,7 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
                 continue; // no spam
 
             var absorberSolution = absorberSoln.Comp.Solution;
-            var available = absorberSolution.GetTotalPrototypeQuantity(PuddleSystem.EvaporationReagents);
+            var available = absorberSolution.GetTotalPrototypeQuantity(SharedPuddleSystem.EvaporationReagents);
 
             // No material
             if (available == FixedPoint2.Zero)
@@ -362,14 +362,14 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
             }
 
             var transferMax = absorber.PickupAmount;
-            var transferAmount = available > transferMax ? transferMax : available;
+            var transferAmount = FixedPoint2.Min(transferMax, available);
 
-            var puddleSplit = targetStepSolution.SplitSolutionWithout(transferAmount, PuddleSystem.EvaporationReagents);
-            var absorberSplit = absorberSolution.SplitSolutionWithOnly(puddleSplit.Volume, PuddleSystem.EvaporationReagents);
+            var puddleSplit = targetStepSolution.SplitSolutionWithout(transferAmount, SharedPuddleSystem.EvaporationReagents);
+            var absorberSplit = absorberSolution.SplitSolutionWithOnly(puddleSplit.Volume, SharedPuddleSystem.EvaporationReagents);
 
             var transform = Transform(target);
             var gridUid = transform.GridUid;
-            if (TryComp(gridUid, out MapGridComponent? mapGrid))
+            if (TryComp<MapGridComponent>(gridUid, out var mapGrid))
             {
                 var tileRef = _mapSystem.GetTileRef(gridUid.Value, mapGrid, transform.Coordinates);
                 _puddleSystem.DoTileReactions(tileRef, absorberSplit);
@@ -384,15 +384,17 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
                 _audio.PlayPvs(absorber.PickupSound, target);
             }
 
-            if (useDelay != null)
+            if (useDelay is not null)
                 _useDelay.TryResetDelay((used, useDelay));
         }
+
         var userXform = Transform(user);
         var targetPos = _transform.GetWorldPosition(target);
         var localPos = Vector2.Transform(targetPos, _transform.GetInvWorldMatrix(userXform));
         localPos = userXform.LocalRotation.RotateVec(localPos);
 
         _melee.DoLunge(user, used, Angle.Zero, localPos, null, false);
+
         return true;
     }
     // Corvax-Next-Footprints-End
