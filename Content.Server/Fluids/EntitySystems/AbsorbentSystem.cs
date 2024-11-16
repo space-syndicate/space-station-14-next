@@ -13,7 +13,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using Content.Shared._CorvaxNext.Footprints.Components; // Corvax-Next-Footprints
+using Content.Shared._CorvaxNext.Footprints.Components;
 
 namespace Content.Server.Fluids.EntitySystems;
 
@@ -29,7 +29,7 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!; // Corvax-Next-Footprints
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
     public override void Initialize()
     {
