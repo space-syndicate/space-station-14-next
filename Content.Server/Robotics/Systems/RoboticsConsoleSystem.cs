@@ -12,8 +12,6 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.Silicons.Laws.Components;
-using Content.Server.Silicons.Laws;
 
 namespace Content.Server.Research.Systems;
 
@@ -30,7 +28,6 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
     [Dependency] private readonly RadioSystem _radio = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly ItemSlotsSystem _slots = default!;
-    [Dependency] private readonly SiliconLawSystem _law = default!;
 
     // almost never timing out more than 1 per tick so initialize with that capacity
     private List<string> _removing = new(1);
@@ -109,16 +106,13 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
         if (!ent.Comp.Cyborgs.TryGetValue(args.Address, out var data))
             return;
 
-        if (!_slots.TryGetSlot(ent, "circuit_holder", out var slot) || !slot.HasItem)
-            return;
-
-        if (!TryComp<SiliconLawProviderComponent>(slot.Item, out var law))
+        if (!_slots.TryGetSlot(ent, ent.Comp.CircuitBoardItemSlot, out var slot) || slot.Item is null)
             return;
 
         var payload = new NetworkPayload()
         {
             [DeviceNetworkConstants.Command] = RoboticsConsoleConstants.NET_CHANGE_LAWS_COMMAND,
-            [RoboticsConsoleConstants.NET_LAWS] = _law.GetLawset(law.Laws).Laws,
+            [RoboticsConsoleConstants.NET_CIRCUIT_BOARD] = slot.Item.Value,
         };
 
         _deviceNetwork.QueuePacket(ent, args.Address, payload);

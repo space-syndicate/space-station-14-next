@@ -8,9 +8,9 @@ using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Explosion.Components;
-using Content.Shared.Silicons.Laws;
 using Content.Server.Silicons.Laws;
 using Robust.Shared.Audio;
+using Content.Shared.Silicons.Laws.Components;
 
 namespace Content.Server.Silicons.Borgs;
 
@@ -91,8 +91,8 @@ public sealed partial class BorgSystem
         // Corvax-Next-MutableLaws-Start
         if (command == RoboticsConsoleConstants.NET_CHANGE_LAWS_COMMAND)
         {
-            if (payload.TryGetValue(RoboticsConsoleConstants.NET_LAWS, out List<SiliconLaw>? laws))
-                ChangeLaws(ent, laws);
+            if (payload.TryGetValue(RoboticsConsoleConstants.NET_CIRCUIT_BOARD, out EntityUid circuitBoard))
+                ChangeLaws(ent, circuitBoard);
         }
         // Corvax-Next-MutableLaws-End
         else if (command == RoboticsConsoleConstants.NET_DISABLE_COMMAND)
@@ -102,12 +102,15 @@ public sealed partial class BorgSystem
     }
 
     // Corvax-Next-MutableLaws-Start
-    private void ChangeLaws(EntityUid ent, List<SiliconLaw> laws)
+    private void ChangeLaws(EntityUid ent, EntityUid circuitBoard)
     {
         if (CheckEmagged(ent, "destroyed"))
             return;
 
-        _law.SetLaws(laws, ent, new SoundPathSpecifier("/Audio/Misc/cryo_warning.ogg"));
+        if (!TryComp<SiliconLawProviderComponent>(circuitBoard, out var law))
+            return;
+
+        _law.SetLaws(_law.GetLawset(law.Laws).Laws, ent, law.LawUploadSound);
     }
     // Corvax-Next-MutableLaws-End
 

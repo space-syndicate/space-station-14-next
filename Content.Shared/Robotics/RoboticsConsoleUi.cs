@@ -141,5 +141,5 @@ public static class RoboticsConsoleConstants
     public const string NET_DISABLE_COMMAND = "cyborg-disable";
     public const string NET_DESTROY_COMMAND = "cyborg-destroy";
 
-    public const string NET_LAWS = "cyborg-laws"; // Corvax-Next-MutableLaws
+    public const string NET_CIRCUIT_BOARD = "cyborg-circuit-board"; // Corvax-Next-MutableLaws
 }

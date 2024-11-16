@@ -34,6 +34,9 @@ public sealed partial class RoboticsConsoleComponent : Component
 
     // Corvax-Next-MutableLaws-Start
     [DataField]
+    public string CircuitBoardItemSlot = "circuit_holder";
+
+    [DataField]
     public LocId ChangeLawsMessage = "robotics-console-cyborg-change-laws";
     // Corvax-Next-MutableLaws-End
 
