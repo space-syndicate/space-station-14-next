@@ -35,3 +35,30 @@
       types:
         Blunt: 1
 
+- type: entity
+  name: shashamber
+  parent: [FoodProduceBase]
+  id: FoodShashamber
+  description: what?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - water
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 7
+        - ReagentId: Cryptobiolin
+          Quantity: 12
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Specific/Hydroponics/shashamber.rsi
+  - type: Produce
+    seedId: shashamber
+  - type: Tag
+    tags:
+    - Fruit
+    - Vegetable
+

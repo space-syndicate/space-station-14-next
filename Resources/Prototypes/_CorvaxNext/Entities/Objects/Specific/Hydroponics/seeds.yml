@@ -8,3 +8,13 @@
       seedId: cucumber
     - type: Sprite
       sprite: _CorvaxNext/Objects/Specific/Hydroponics/cucumber.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of shashamber seeds
+  id: ShashambertSeeds
+  components:
+    - type: Seed
+      seedId: shashamber
+    - type: Sprite
+      sprite: _CorvaxNext/Objects/Specific/Hydroponics/shashamber.rsi
