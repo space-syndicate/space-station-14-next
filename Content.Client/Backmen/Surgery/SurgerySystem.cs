@@ -1,21 +1,13 @@
 using Content.Shared.Backmen.Surgery;
-using Content.Shared.Medical.Surgery;
 
 namespace Content.Client.Backmen.Surgery;
 
 public sealed class SurgerySystem : SharedSurgerySystem
 {
-    public event Action? OnStep;
+    public event Action? OnRefresh;
 
-    public override void Initialize()
+    public override void Update(float frameTime)
     {
-        base.Initialize();
-
-        SubscribeNetworkEvent<SurgeryUiRefreshEvent>(OnRefresh);
-    }
-
-    private void OnRefresh(SurgeryUiRefreshEvent ev)
-    {
-        OnStep?.Invoke();
+        OnRefresh?.Invoke();
     }
 }
