@@ -31,7 +31,7 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
     [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
-    public const float FootprintAbsorptionRange = 0.25f;
+    public const float FootprintAbsorptionRange = 0.25f; // Corvax-Next-Footprints
 
     public override void Initialize()
     {
