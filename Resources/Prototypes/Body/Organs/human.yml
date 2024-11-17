@@ -121,8 +121,9 @@
   name: ears
   description: "There are three parts to the ear. Inner, middle and outer. Only one of these parts should normally be visible."
   components:
-    - type: Sprite
-      state: ears
+  - type: Sprite
+    state: ears
+  - type: Ears # backmen: surgery
 
 - type: entity
   id: OrganHumanLungs

@@ -1,0 +1,5 @@
+﻿- type: damageContainer
+  id: OrganicPart # backmen: surgery
+  supportedGroups:
+    - Brute
+    - Burn

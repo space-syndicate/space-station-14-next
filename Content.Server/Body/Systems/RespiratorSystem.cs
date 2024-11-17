@@ -11,10 +11,12 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Prototypes;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Body.Organ;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.EntityEffects;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Backmen.Surgery.Body;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -74,9 +76,9 @@ public sealed class RespiratorSystem : EntitySystem
             if (_mobState.IsDead(uid))
                 continue;
 
-            UpdateSaturation(uid, -(float) respirator.UpdateInterval.TotalSeconds, respirator);
+            UpdateSaturation(uid, -(float)respirator.UpdateInterval.TotalSeconds, respirator);
 
-            if (!_mobState.IsIncapacitated(uid)) // cannot breathe in crit.
+            if (!_mobState.IsIncapacitated(uid) || HasComp<DebrainedComponent>(uid)) // Shitmed: cannot breathe in crit or when no brain.
             {
                 switch (respirator.Status)
                 {
@@ -207,7 +209,7 @@ public sealed class RespiratorSystem : EntitySystem
 
         gas = new GasMixture(gas);
         var lungRatio = 1.0f / organs.Count;
-        gas.Multiply(MathF.Min(lungRatio * gas.Volume/Atmospherics.BreathVolume, lungRatio));
+        gas.Multiply(MathF.Min(lungRatio * gas.Volume / Atmospherics.BreathVolume, lungRatio));
         var solution = _lungSystem.GasToReagent(gas);
 
         float saturation = 0;
