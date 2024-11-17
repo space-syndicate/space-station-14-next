@@ -59,7 +59,7 @@ public sealed partial class MansusGraspSystem : EntitySystem
                     _door.SetBoltsDown((target, doorBolt), false);
 
                 _door.StartOpening(target, door);
-                _audio.PlayPvs(new SoundPathSpecifier("/Audio/Goobstation/Heretic/hereticknock.ogg"), target);
+                _audio.PlayPvs(new SoundPathSpecifier("/Audio/_Goobstation/Heretic/hereticknock.ogg"), target);
                 break;
 
             case "Flesh":
@@ -123,7 +123,7 @@ public sealed partial class MansusGraspSystem : EntitySystem
             _chat.TrySendInGameICMessage(args.User, Loc.GetString("heretic-speech-mansusgrasp"), InGameICChatType.Speak, false);
             _audio.PlayPvs(new SoundPathSpecifier("/Audio/Items/welder.ogg"), target);
             _stun.TryKnockdown(target, TimeSpan.FromSeconds(3f), true);
-            _stamina.TakeStaminaDamage(target, 65f);
+            _stamina.TakeStaminaDamage(target, 80f);
             _language.DoRatvarian(target, TimeSpan.FromSeconds(10f), true);
         }
 
