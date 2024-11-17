@@ -228,6 +228,7 @@
   abstract: true
   components:
   - type: Targeting # backmen: surgery
+  - type: OfferItem # Corvax-Next-Offer
   - type: Barotrauma
     damage:
       types:

@@ -90,6 +90,7 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.TargetRightArm);
             human.AddFunction(ContentKeyFunctions.TargetLeftLeg);
             human.AddFunction(ContentKeyFunctions.TargetRightLeg);
+            human.AddFunction(ContentKeyFunctions.OfferItem); // Corvax-Next-Offer
 
             // actions should be common (for ghosts, mobs, etc)
             common.AddFunction(ContentKeyFunctions.OpenActionsMenu);

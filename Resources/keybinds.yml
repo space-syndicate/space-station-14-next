@@ -609,3 +609,6 @@ binds:
 - function: TargetRightLeg
   type: State
   key: NumpadNum1
+- function: OfferItem # Corvax-Next-Offer
+  type: State
+  key: F
