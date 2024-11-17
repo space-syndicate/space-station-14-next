@@ -8,6 +8,7 @@ api-backpack-category-utilities-description =
 
 api-round-end-agent-name = АПИИ
 
+roles-antag-api-name = АПИИ
 roles-antag-api-objective = Украдите станционный ИИ, действуя скрытно.
 
 objective-issuer-api = [color=#2ed2fd]Агенство[/color]
