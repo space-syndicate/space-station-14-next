@@ -58,7 +58,6 @@
       Min: 1
       Max: 7
       PotencyDivisor: 14
-  chemicals:
     Cryptobiolin:
       Min: 5
       Max: 12

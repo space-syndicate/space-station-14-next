@@ -49,11 +49,11 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 4
         - ReagentId: Vitamin
-          Quantity: 6
+          Quantity: 4
         - ReagentId: Water
-          Quantity: 8
+          Quantity: 7
   - type: Tag
     tags:
     - Soup
