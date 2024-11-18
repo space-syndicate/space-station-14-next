@@ -29,7 +29,7 @@ ent-FoodOlivielsoup = оливье
     .desc = у меня столько майонеза, сколько и не снилось моему отцу!
 ent-FoodSolankasoup = солянка
     .desc = мээээ.....
-ent-FoodPlowsoup = плов
+ent-FoodPlow = плов
     .desc = ой васа, пловъ просто пушка, отвечаю!
 
 ent-BookUSSPCook = Копатыч. Кухонные хроники

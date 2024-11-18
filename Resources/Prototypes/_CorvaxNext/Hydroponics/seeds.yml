@@ -1,6 +1,6 @@
 
 - type: seed
-  id: cucumber
+  id: cucumberSeed
   name: seeds-cucumber-name
   noun: seeds-noun-seeds
   displayName: seeds-cucumber-display-name
@@ -35,7 +35,7 @@
       PotencyDivisor: 25
 
 - type: seed
-  id: shashamber
+  id: shashamberSeed
   name: seeds-shashamber-name
   noun: seeds-noun-seeds
   displayName: seeds-shashamber-display-name

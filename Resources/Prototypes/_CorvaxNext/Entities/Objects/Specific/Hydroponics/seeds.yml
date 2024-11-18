@@ -5,7 +5,7 @@
   id: CucumbertSeeds
   components:
     - type: Seed
-      seedId: cucumber
+      seedId: cucumberSeed
     - type: Sprite
       sprite: _CorvaxNext/Objects/Specific/Hydroponics/cucumber.rsi
 
@@ -15,6 +15,6 @@
   id: ShashambertSeeds
   components:
     - type: Seed
-      seedId: shashamber
+      seedId: shashamberSeed
     - type: Sprite
       sprite: _CorvaxNext/Objects/Specific/Hydroponics/shashamber.rsi

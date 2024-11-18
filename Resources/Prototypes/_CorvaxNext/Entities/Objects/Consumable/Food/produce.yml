@@ -23,7 +23,7 @@
   - type: Sprite
     sprite: _CorvaxNext/Objects/Specific/Hydroponics/cucumber.rsi
   - type: Produce
-    seedId: cucumber
+    seedId: cucumberSeed
   - type: Tag
     tags:
     - Fruit
@@ -55,7 +55,7 @@
   - type: Sprite
     sprite: _CorvaxNext/Objects/Specific/Hydroponics/shashamber.rsi
   - type: Produce
-    seedId: shashamber
+    seedId: shashamberSeed
   - type: Tag
     tags:
     - Fruit
