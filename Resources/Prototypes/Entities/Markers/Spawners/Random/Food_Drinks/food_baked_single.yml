@@ -76,6 +76,12 @@
       - FoodBakedBrownie
       - FoodPieBananaCreamSlice
       - FoodTartMimeSlice
+      - FoodBakedPotatosCutlets
+      - FoodGOOOOLsoup
+      - FoodOkroshkasoup
+      - FoodOlivielsoup
+      - FoodSolankasoup
+      - FoodPlowsoup
     chance: 0.8
     offset: 0.0
     #rare
