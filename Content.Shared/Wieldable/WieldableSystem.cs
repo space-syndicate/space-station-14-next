@@ -19,6 +19,7 @@ using Content.Shared.Wieldable.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
+using Content.Shared._CorvaxNext.Resomi.Abilities; //Corvax-Next
 
 namespace Content.Shared.Wieldable;
 
@@ -108,7 +109,7 @@ public sealed class WieldableSystem : EntitySystem
     private void OnGunRefreshModifiers(Entity<GunWieldBonusComponent> bonus, ref GunRefreshModifiersEvent args)
     {
         if (TryComp(bonus, out WieldableComponent? wield) &&
-            wield.Wielded)
+            wield.Wielded && !HasComp<WeaponsUseInabilityComponent>(wield.User)) //Corvax-Next
         {
             args.MinAngle += bonus.Comp.MinAngle;
             args.MaxAngle += bonus.Comp.MaxAngle;
@@ -255,6 +256,8 @@ public sealed class WieldableSystem : EntitySystem
         var selfMessage = Loc.GetString("wieldable-component-successful-wield", ("item", used));
         var othersMessage = Loc.GetString("wieldable-component-successful-wield-other", ("user", user), ("item", used));
         _popupSystem.PopupPredicted(selfMessage, othersMessage, user, user);
+
+        component.User = user; //Corvax-Next
 
         var targEv = new ItemWieldedEvent();
         RaiseLocalEvent(used, ref targEv);

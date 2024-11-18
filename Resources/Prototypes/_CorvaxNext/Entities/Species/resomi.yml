@@ -5,6 +5,7 @@
   id: BaseMobResomi
   abstract: true
   components:
+  - type: WeaponsUseInability
   - type: AgillitySkill
   - type: ResomiAccent
   - type: DamageVisuals
