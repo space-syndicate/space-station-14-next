@@ -1,7 +1,7 @@
 ent-Window = окно
     .desc = Смотри не заляпай.
+# Corvax-Next-Togglable-Tinted-Window changed desc below
 ent-TintedWindow = матовое окно
-# Corvax-Next-Togglable-Tinted-Window Changed desc
     .desc = Умное тонированое окно с функцией переключения состояния.
 ent-WindowRCDResistant = { ent-Window }
     .desc = { ent-Window.desc }
