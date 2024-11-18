@@ -48,3 +48,6 @@
     transferAmount: 0.5
     solution: step
     examinable: false
+  - type: Tag
+    tags:
+    - DNASolutionScannable
