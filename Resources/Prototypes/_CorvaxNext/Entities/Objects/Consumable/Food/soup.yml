@@ -118,9 +118,9 @@
     - Meat
 
 - type: entity
-  name: plow soup
+  name: plow 
   parent: FoodBowlBase
-  id: FoodPlowsoup
+  id: FoodPlow
   description: Oh, Vasya, rice is fire
   components:
   - type: FlavorProfile
