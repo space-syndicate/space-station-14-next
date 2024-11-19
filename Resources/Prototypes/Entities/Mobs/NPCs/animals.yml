@@ -563,6 +563,8 @@
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui # backmen: surgery
   - type: InventorySlots
   - type: Inventory
     speciesId: hamster
@@ -593,7 +595,7 @@
           32:
             sprite: Mobs/Animals/mothroach/displacement.rsi
             state: neck
-
+  - type: SurgeryTarget # backmen: surgery
 
 # Note that the mallard duck is actually a male drake mallard, with the brown duck being the female variant of the same species, however ss14 lacks sex specific textures
 # The white duck is more akin to a pekin or call duck.
@@ -669,6 +671,13 @@
   - type: NpcFactionMember
     factions:
     - Passive
+  # start-backmen: surgery
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
+  # end-backmen: surgery
 
 - type: entity
   name: white duck #Quack
@@ -924,6 +933,13 @@
       task: RuminantCompound
   - type: Body
     prototype: AnimalHemocyanin
+  # start-backmen: surgery
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
+  # end-backmen: surgery
 
 - type: entity
   name: goat
@@ -1017,6 +1033,11 @@
   - type: HTN
     rootTask:
       task: RuminantHostileCompound
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
 
 # Note that we gotta make this bitch vomit someday when you feed it anthrax or sumthin. Needs to be a small item thief too and aggressive if attacked.
 - type: entity
@@ -1228,9 +1249,8 @@
   abstract: true
   components:
   - type: CombatMode
-  #- type: SurgeryTarget
-  #  canOperate: false
-  #- type: Targeting
+  - type: SurgeryTarget
+  - type: Targeting
   - type: Inventory
     templateId: monkey
     speciesId: monkey
@@ -1257,8 +1277,8 @@
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-      #enum.SurgeryUIKey.Key:
-      #  type: SurgeryBui
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -1768,6 +1788,13 @@
       Taco: RatTaco
       Burger: RatBurger
       Skewer: RatSkewer
+  # start-backmen: surgery
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
+  # end-backmen: surgery
 
 - type: entity
   parent: MobMouse
@@ -2412,6 +2439,13 @@
       groups:
         Brute: -0.07
         Burn: -0.07
+  # start-backmen: surgery
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
+  # end-backmen: surgery
 
 - type: entity
   name: tarantula
