@@ -1,1 +1,1 @@
-chat-radio-mansus = Связь Мансуса
+chat-radio-mansus = Связь Обители

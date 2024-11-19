@@ -1,8 +1,8 @@
-heretic-ability-fail = Failed to cast
-heretic-ability-fail-magicitem = You cannot cast it without a focus!
+heretic-ability-fail = Не удалось выполнить
+heretic-ability-fail-magicitem = Этот ритуал требует сосредоточения!
 heretic-ability-fail-notarget = Нет подходящей цели!
 
-heretic-magicitem-examine = [color=yellow]Allows you to use advanced spells while held or equipped.[/color]
+heretic-magicitem-examine = [color=yellow]Позволяет использовать продвинутые заклинания, находясь в руке или снаряжении.[/color]
 
 ## blade
 heretic-blade-examine = [color=yellow]Using it while it's in your hand will break the blade and teleport you away from danger.[/color]
@@ -13,15 +13,15 @@ heretic-rust-mark-itembreak = {$name} обращается в пыль!
 heretic-blade-void-examine = [color=cyan]While there is at least a single marked heathen in a large proximity, teleport behind its back without breaking the blade.[/color]
 
 ## mansus link
-heretic-manselink-fail-exists = This creature is already connected!
+heretic-manselink-fail-exists = Это существо уже соединено!
 heretic-manselink-fail-nomind = У данного существа нет разума!
-heretic-manselink-start = You begin to connect this creature's mind to yours.
-heretic-manselink-start-target = You feel your mind being pulled somewhere...
+heretic-manselink-start = Вы начинаете связывать свой разум с целью.
+heretic-manselink-start-target = Вы чувствуете как ваш разум куда-то тянут...
 
 ## living heart
 heretic-livingheart-notargets = Нет доступных целей, посетите руну.
-heretic-livingheart-offstation = It's {$state}, off station, {$direction}!
-heretic-livingheart-onstation = It's {$state}, {$direction}!
+heretic-livingheart-offstation = Они {$state}, вне станции, {$direction}!
+heretic-livingheart-onstation = Они {$state}, {$direction}!
 heretic-livingheart-unknown = Цель... за гранью данной реальности.
 
 ## speech

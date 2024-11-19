@@ -9,9 +9,9 @@ heretic-gamemode-description =
     В пределах станции обнаружена пространственная аномалия. Дополнительные данные отсутствуют.
 
 heretic-role-greeting-fluff =
-    Еще один день на бессмысленной работе. Вы ощущаете мерцание вокруг себя, когда осознаете, что в воздухе витает нечто странное. Вы смотрите внутрь себя и обнаруживаете нечто, что изменит вашу жизнь.
+    Еще один день на бессмысленной работе. Вы чувствуете мерцание вокруг себя, и осознаёте что в воздухе витает нечто странное. Вы заглядываете внутрь себя и обнаруживаете нечто, что изменит вашу жизнь.
 
-    Врата Мансуса открыты вашему разуму.
+    Врата Обители открыты вашему разуму.
 
 heretic-role-greeting =
     Вы Еретик!
@@ -31,10 +31,10 @@ heretic-ghoul-greeting-noname =
     Вы были призваны в этот мир древними силами.
     Подчиняйтесь приказам своих хозяев несмотря ни на что.
 
-ghostrole-ghoul-name = Ghoul
-ghostrole-prophet-name = Raw Prophet
-ghostrole-stalker-name = Flesh Stalker
+ghostrole-ghoul-name = Гуль
+ghostrole-prophet-name = Бескожий Пророк
+ghostrole-stalker-name = Сталкер Плоти
 ghostrole-ghoul-desc = Помогите своему призывателю вознестись.
-ghostrole-prophet-desc = Помогите своему призывателю вознестись. Connect other believers to the Mansus Link.
-ghostrole-stalker-desc = Помогите своему призывателю вознестись. Jaunt and sabotage crew's lighting.
+ghostrole-prophet-desc = Помогите своему призывателю вознестись. Свяжите других верующих в Связь Обители.
+ghostrole-stalker-desc = Помогите своему призывателю вознестись. Ступайте и лишите станцию света.
 ghostrole-ghoul-rules = Вы [color=red][bold]Командный Антагонист[/bold][/color] вместе с призвавшим вас и другими Древними.
