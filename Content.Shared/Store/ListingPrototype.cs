@@ -87,7 +87,7 @@ public partial class ListingData : IEquatable<ListingData>
         OriginalCost = originalCost;
         RestockTime = restockTime;
         DiscountDownTo = new Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2>(dataDiscountDownTo);
-        ProductHereticKnowledge = ProductHereticKnowledge; // goob edit
+        ProductHereticKnowledge = productHereticKnowledge; // goob edit
     }
 
     [ViewVariables]
