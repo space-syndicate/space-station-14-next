@@ -1,6 +1,6 @@
 - type: entity
   id: OrganMothStomach
-  parent: OrganAnimalStomach
+  parent: [OrganAnimalStomach, OrganHumanStomach]
   categories: [ HideSpawnMenu ]
   components:
   - type: Stomach
