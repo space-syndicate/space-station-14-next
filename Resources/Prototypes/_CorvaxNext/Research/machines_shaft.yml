@@ -4,7 +4,7 @@
   icon:
     sprite: Objects/Weapons/Guns/Shuttles/kinetic.rsi
     state: ptk-800
-  discipline: SalvageWeaponsMachines
+  discipline: SalvageWeapons
   tier: 1
   cost: 7000
   recipeUnlocks:
@@ -18,7 +18,7 @@
   icon:
     sprite: Structures/Machines/ore_processor_industrial.rsi
     state: inserting
-  discipline: SalvageEquipmentMachines
+  discipline: SalvageEquipment
   tier: 1
   cost: 5200
   recipeUnlocks:
@@ -33,7 +33,7 @@
   icon:
     sprite: Objects/Tools/handheld_mass_scanner.rsi
     state: icon
-  discipline: SpaceScanningMachines
+  discipline: SpaceScanning
   tier: 1
   cost: 3500
   recipeUnlocks:

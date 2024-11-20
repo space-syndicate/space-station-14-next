@@ -37,33 +37,3 @@
     state: shaft
   tierPrerequisites:
     1: 0
-
-- type: techDiscipline
-  id: SalvageWeaponsMachines
-  name: next-research-discipline-shaft
-  color: "#ffe2b7"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: shaft
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
-  id: SalvageEquipmentMachines
-  name: next-research-discipline-shaft
-  color: "#ffe2b7"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: shaft
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
-  id: SpaceScanningMachines
-  name: next-research-discipline-shaft
-  color: "#ffe2b7"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: shaft
-  tierPrerequisites:
-    1: 0

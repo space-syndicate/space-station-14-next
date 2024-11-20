@@ -70,19 +70,18 @@
     - EngineeringAdvancedTools
     - AtmosphericTools
     - PowerGeneration
-    - EngineeringMachines
-    - MechanicalCompressionMachines
-    - AtmosphericMachines
+    - Engineering
+    - MechanicalCompression
+    - Atmospheric
 # <-- SCIENTIFIC -->
     - GravityManipulation
     - AnomalyCoreHarnessing
     - QuantumLeaping
     - BluespaceStorage
     - AnomalousResearch
-    - AnomalousResearchMachines
-    - XenoArcheologyMachines
-    - AlternativeResearchMachines
-    - AbnormalArtifactManipulationMachines
+    - XenoArcheology
+    - AlternativeResearch
+    - AbnormalArtifactManipulation
 # <-- ROBOTICS -->
     - Robotics
     - CritterMech
@@ -97,7 +96,6 @@
     - SalvageEquipmentModules
     - RoboticCleanlinessModules
     - XenoArcheologyModules
-    - RoboticsMachines
 # <-- SECURITY -->
     - RiotControl
     - WarCrimes
@@ -114,25 +112,19 @@
     - EntertainmentAdvanced
     - CleaningAdvanced
     - SprayAdvanced
-    - HydroponicsMachines
-    - MeatManipulationMachine
-    - EntertainmentAdvancedMachines
+    - MeatManipulation
 # <-- SHAFT -->
     - SalvageWeapons
     - SalvageEquipment
     - Grappling
     - SpaceScanning
-    - SalvageWeaponsMachines
-    - SalvageEquipmentMachines
-    - SpaceScanningMachines
 # <-- CARGO -->
-    - BluespaceCargoTransportMachines
+    - BluespaceCargoTransport
 # <-- MEDICAL -->
     - Chemistry
     - CrewMonitoring
     - BodyBags
     - BiochemicalStasis
-    - BiochemicalStasisMachines
 # <-- EQUIPMENT -->
     - MagneticBoots
     - QuantumMagneticBoots
@@ -140,7 +132,7 @@
     - ShuttleWeapon
     - Shuttlecraft
 # <-- TELECOMMUNICATIONS -->
-    - AudioVisualCommunicationMachines
+    - AudioVisualCommunication
 
 - type: entity
   id: BaseResearchAndDevelopmentPointSource

@@ -59,7 +59,7 @@
     1: 0
 
 - type: techDiscipline
-  id: EngineeringMachines
+  id: Engineering
   name: next-research-discipline-engineering
   color: "#eeac34"
   icon:
@@ -69,7 +69,7 @@
     1: 0
 
 - type: techDiscipline
-  id: MechanicalCompressionMachines
+  id: MechanicalCompression
   name: next-research-discipline-engineering
   color: "#eeac34"
   icon:
@@ -79,7 +79,7 @@
     1: 0
 
 - type: techDiscipline
-  id: AtmosphericMachines
+  id: Atmospheric
   name: next-research-discipline-engineering
   color: "#eeac34"
   icon:

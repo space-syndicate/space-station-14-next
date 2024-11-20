@@ -127,13 +127,3 @@
     state: robotics
   tierPrerequisites:
     1: 0
-
-- type: techDiscipline
-  id: RoboticsMachines
-  name: next-research-discipline-robotics
-  color: "#4B0082"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: robotics
-  tierPrerequisites:
-    1: 0

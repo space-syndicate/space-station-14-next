@@ -4,7 +4,7 @@
   icon:
     sprite: Objects/Specific/Research/anomalyscanner.rsi
     state: icon
-  discipline: AnomalousResearchMachines
+  discipline: AnomalousResearch
   tier: 1
   cost: 5000
   recipeUnlocks:
@@ -19,7 +19,7 @@
   icon:
     sprite: Structures/Machines/anomaly_sync.rsi
     state: base
-  discipline: AnomalousResearchMachines
+  discipline: AnomalousResearch
   tier: 1
   cost: 10000
   recipeUnlocks:
@@ -36,7 +36,7 @@
   icon:
     sprite: Structures/Machines/artifact_analyzer.rsi
     state: display
-  discipline: XenoArcheologyMachines
+  discipline: XenoArcheology
   tier: 1
   cost: 5000
   recipeUnlocks:
@@ -49,7 +49,7 @@
   icon:
     sprite: Structures/Machines/tech_disk_printer.rsi
     state: display
-  discipline: AlternativeResearchMachines
+  discipline: AlternativeResearch
   tier: 1
   cost: 5000
   recipeUnlocks:
@@ -61,7 +61,7 @@
   icon:
     sprite: Structures/Machines/traversal_distorter.rsi
     state: display
-  discipline: AbnormalArtifactManipulationMachines
+  discipline: AbnormalArtifactManipulation
   tier: 1
   cost: 5000
   recipeUnlocks:

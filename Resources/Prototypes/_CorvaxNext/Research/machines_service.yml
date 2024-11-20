@@ -4,7 +4,7 @@
   icon:
     sprite: Structures/Machines/seed_extractor.rsi
     state: seedextractor
-  discipline: HydroponicsMachines
+  discipline: Hydroponics
   tier: 1
   cost: 5000
   recipeUnlocks:
@@ -18,7 +18,7 @@
   icon:
     sprite: Structures/Machines/computers.rsi
     state: television
-  discipline: EntertainmentAdvancedMachines
+  discipline: EntertainmentAdvanced
   tier: 1
   cost: 7500
   recipeUnlocks:
@@ -33,7 +33,7 @@
   icon:
     sprite: Structures/Machines/fat_sucker.rsi
     state: display
-  discipline: MeatManipulationMachine
+  discipline: MeatManipulation
   tier: 1
   cost: 7500
   recipeUnlocks:

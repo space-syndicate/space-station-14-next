@@ -49,7 +49,7 @@
     1: 0
 
 - type: techDiscipline
-  id: AnomalousResearchMachines
+  id: XenoArcheology
   name: next-research-discipline-scientific
   color: "#9932CC"
   icon:
@@ -59,7 +59,7 @@
     1: 0
 
 - type: techDiscipline
-  id: XenoArcheologyMachines
+  id: AlternativeResearch
   name: next-research-discipline-scientific
   color: "#9932CC"
   icon:
@@ -69,17 +69,7 @@
     1: 0
 
 - type: techDiscipline
-  id: AlternativeResearchMachines
-  name: next-research-discipline-scientific
-  color: "#9932CC"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: scientific
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
-  id: AbnormalArtifactManipulationMachines
+  id: AbnormalArtifactManipulation
   name: next-research-discipline-scientific
   color: "#9932CC"
   icon:
