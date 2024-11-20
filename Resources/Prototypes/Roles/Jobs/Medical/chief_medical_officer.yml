@@ -34,8 +34,8 @@
   special:
     #start-backmen: surgery
     #- type: CPRTraining
-    - type: SurgerySpeedModifier
-      SpeedModifier: 2.5
+  - type: SurgerySpeedModifier
+    SpeedModifier: 2.5
     #end-backmen: surgery
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
