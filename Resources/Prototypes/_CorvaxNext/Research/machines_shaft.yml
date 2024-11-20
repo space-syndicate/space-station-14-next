@@ -23,7 +23,7 @@
   cost: 5200
   recipeUnlocks:
   - OreProcessorIndustrialMachineCircuitboard
-  - SalvageExpeditionsComputerCircuitBoard # Corvax-Cringe
+#  - SalvageExpeditionsComputerCircuitBoard # Corvax-Cringe | Its broken?
   technologyPrerequisites:
   - SalvageEquipment
 
