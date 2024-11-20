@@ -32,15 +32,16 @@
   - Brig
   - Cryogenics
   special:
-    #start-backmen: surgery
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
+    - type: CommandStaff
+    #start-backmen: surgery
     #- type: CPRTraining
     - type: SurgerySpeedModifier
       SpeedModifier: 2.5
     #end-backmen: surgery
-  - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
 
 - type: startingGear
   id: CMOGear
