@@ -1,14 +1,18 @@
 - type: technology
-  id: AnomalyCoreHarnessing
-  name: next-research-technology-anomaly-harnessing
+  id: NonlethalAmmunition
+  name: next-research-technology-nonlethal-ammunition
   icon:
-    sprite: Objects/Weapons/Melee/gorilla.rsi
-    state: icon
-  discipline: AnomalyCoreHarnessing
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+    state: beanbag
+  discipline: Ammunition
   tier: 1
-  cost: 10000
+  cost: 7500
   recipeUnlocks:
-  - WeaponGauntletGorilla
+   - MagazineShotgunBeanbag
+   - BoxShellTranquilizer
+   - BoxBeanbag
+  technologyPrerequisites:
+  - RiotControl
 
 - type: technology
   id: DraconicAmmunition
@@ -16,22 +20,23 @@
   icon:
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/pistol.rsi
     state: incendiarydisplay
-  discipline: DraconicAmmunition
+  discipline: Ammunition
   tier: 1
   cost: 10000
   recipeUnlocks:
-  - BoxShotgunIncendiary
-  - MagazineRifleIncendiary
-  - MagazinePistolIncendiary
-  - MagazineLightRifleIncendiary
-  - SpeedLoaderMagnumIncendiary
-  - MagazineShotgunIncendiary
-  - MagazineBoxPistolIncendiary
-  - MagazineBoxMagnumIncendiary
-  - MagazineBoxLightRifleIncendiary
-  - MagazineBoxRifleIncendiary
+   - BoxShotgunIncendiary
+   - MagazineRifleIncendiary
+   - MagazinePistolIncendiary
+   - MagazineLightRifleIncendiary
+   - SpeedLoaderMagnumIncendiary
+   - MagazineShotgunIncendiary
+   - MagazineBoxPistolIncendiary
+   - MagazineBoxMagnumIncendiary
+   - MagazineBoxLightRifleIncendiary
+   - MagazineBoxRifleIncendiary
   technologyPrerequisites:
-  - RiotControl # TODO: NonlethalAmmunition
+  - RiotControl
+  - NonlethalAmmunition
 
 - type: technology
   id: UraniumAmmunition
@@ -39,21 +44,22 @@
   icon:
     sprite: Objects/Materials/Sheets/other.rsi
     state: uranium
-  discipline: UraniumAmmunition
+  discipline: Ammunition
   tier: 1
-  cost: 7500
+  cost: 9000
   recipeUnlocks:
-  - MagazineRifleUranium
-  - MagazinePistolUranium
-  - MagazineLightRifleUranium
-  - SpeedLoaderMagnumUranium
-  - MagazineBoxPistolUranium
-  - MagazineBoxMagnumUranium
-  - MagazineBoxLightRifleUranium
-  - MagazineBoxRifleUranium
-  - BoxShotgunUranium
+   - MagazineRifleUranium
+   - MagazinePistolUranium
+   - MagazineLightRifleUranium
+   - SpeedLoaderMagnumUranium
+   - MagazineBoxPistolUranium
+   - MagazineBoxMagnumUranium
+   - MagazineBoxLightRifleUranium
+   - MagazineBoxRifleUranium
+   - BoxShotgunUranium
   technologyPrerequisites:
-  - RiotControl # TODO: NonlethalAmmunition
+  - RiotControl
+  - NonlethalAmmunition
 
 - type: technology
   id: Explosive
@@ -63,15 +69,15 @@
     state: payload-explosive-armed
   discipline: Explosive
   tier: 1
-  cost: 10000
+  cost: 8000
   recipeUnlocks:
-  - SignallerAdvanced
-  - SignalTrigger
-  - VoiceTrigger
-  - TimerTrigger
-  - FlashPayload
-  - ExplosivePayload
-  - ChemicalPayload
+   - SignallerAdvanced
+   - SignalTrigger
+   - VoiceTrigger
+   - TimerTrigger
+   - FlashPayload
+   - ExplosivePayload
+   - ChemicalPayload
 
 - type: technology
   id: CombatLaser
@@ -83,7 +89,9 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - WeaponLaserCarbine
+   - WeaponLaserCarbine
+  technologyPrerequisites:
+  - NonlethalAmmunition
 
 - type: technology
   id: CombatLaserAdvanced
@@ -95,8 +103,8 @@
   tier: 1
   cost: 15000
   recipeUnlocks:
-  - WeaponAdvancedLaser
-  - PortableRecharger
+   - WeaponAdvancedLaser
+   - PortableRecharger
   technologyPrerequisites:
   - CombatLaser
   - CombatLaserConcentrated
@@ -111,7 +119,7 @@
   tier: 1
   cost: 10000
   recipeUnlocks:
-  - WeaponLaserCannon
+   - WeaponLaserCannon
   technologyPrerequisites:
   - CombatLaser
 
@@ -123,9 +131,9 @@
     state: icon
   discipline: CombatLaserWaveHarnessing
   tier: 1
-  cost: 10000
+  cost: 12000
   recipeUnlocks:
-  - WeaponXrayCannon
+   - WeaponXrayCannon
   technologyPrerequisites:
   - CombatLaser
 
@@ -139,6 +147,6 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - WeaponLaserSvalinn
+   - WeaponLaserSvalinn
   technologyPrerequisites:
   - CombatLaser

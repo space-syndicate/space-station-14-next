@@ -8,7 +8,7 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - PowerCellHigh
+   - PowerCellHigh
 
 - type: technology
   id: PortableFission
@@ -20,7 +20,7 @@
   tier: 1
   cost: 10000
   recipeUnlocks:
-  - PowerCellMicroreactor
+   - PowerCellMicroreactor
   technologyPrerequisites:
   - AdvancedPowercells
 
@@ -34,7 +34,7 @@
 #  tier: 1
 #  cost: 10000
 #  recipeUnlocks:
-#  - RCDRecipe
+#   - RCDRecipe
 
 #- type: technology # Because need port
 #  id: AtmosphericDevices
@@ -46,7 +46,7 @@
 #  tier: 1
 #  cost: 7500
 #  recipeUnlocks:
-#  - RapidPipeDispenserRecipe
+#   - RapidPipeDispenserRecipe
 
 - type: technology
   id: EngineeringAdvancedTools
@@ -56,11 +56,13 @@
     state: icon
   discipline: EngineeringAdvancedTools
   tier: 1
-  cost: 10000
+  cost: 12000
   recipeUnlocks:
-    - WelderExperimental
-    - PowerDrill
-    - JawsOfLife
+   - WelderExperimental
+   - PowerDrill
+   - JawsOfLife
+  technologyPrerequisites:
+  - EngineeringAdvancedMachines # Because dont have basic tools
 
 - type: technology
   id: AtmosphericTools
@@ -72,4 +74,4 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - HolofanProjector
+   - HolofanProjector

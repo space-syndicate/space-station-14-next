@@ -8,7 +8,8 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - ProximitySensor
+   - ProximitySensor
+#   - PersonalAI # TODO: Add
 
 - type: technology
   id: CritterMech
@@ -20,15 +21,15 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - HamtrHarness
-  - HamtrLArm
-  - HamtrRArm
-  - HamtrLLeg
-  - HamtrRLeg
-  - HamtrCentralElectronics
-  - HamtrPeripheralsElectronics
-  - MechEquipmentGrabberSmall
-  - VimHarness
+   - HamtrHarness
+   - HamtrLArm
+   - HamtrRArm
+   - HamtrLLeg
+   - HamtrRLeg
+   - HamtrCentralElectronics
+   - HamtrPeripheralsElectronics
+   - MechEquipmentGrabberSmall
+   - VimHarness
   technologyPrerequisites:
   - Robotics
 
@@ -42,15 +43,15 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - HonkerHarness
-  - HonkerLArm
-  - HonkerRArm
-  - HonkerLLeg
-  - HonkerRLeg
-  - HonkerCentralElectronics
-  - HonkerPeripheralsElectronics
-  - HonkerTargetingElectronics
-  - MechEquipmentHorn
+   - HonkerHarness
+   - HonkerLArm
+   - HonkerRArm
+   - HonkerLLeg
+   - HonkerRLeg
+   - HonkerCentralElectronics
+   - HonkerPeripheralsElectronics
+   - HonkerTargetingElectronics
+   - MechEquipmentHorn
   technologyPrerequisites:
   - Robotics
 
@@ -64,14 +65,14 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - RipleyHarness
-  - RipleyLArm
-  - RipleyRArm
-  - RipleyLLeg
-  - RipleyRLeg
-  - RipleyCentralElectronics
-  - RipleyPeripheralsElectronics
-  - MechEquipmentGrabber
+   - RipleyHarness
+   - RipleyLArm
+   - RipleyRArm
+   - RipleyLLeg
+   - RipleyRLeg
+   - RipleyCentralElectronics
+   - RipleyPeripheralsElectronics
+   - MechEquipmentGrabber
   technologyPrerequisites:
   - Robotics
 
@@ -85,8 +86,8 @@
   tier: 1
   cost: 8000
   recipeUnlocks:
-  - BorgModuleAdvancedTreatment
-  - BorgModuleDefibrillator
+   - BorgModuleAdvancedTreatment
+   - BorgModuleDefibrillator
   technologyPrerequisites:
   - Robotics
 
@@ -100,7 +101,7 @@
   tier: 1
   cost: 8000
   recipeUnlocks:
-  - BorgModuleGrapplingGun
+   - BorgModuleGrapplingGun
   technologyPrerequisites:
   - Robotics
   - Grappling
@@ -115,7 +116,7 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - BorgModuleGPS
+   - BorgModuleGPS
   technologyPrerequisites:
   - Robotics
   - SpaceScanning
@@ -130,8 +131,8 @@
   tier: 1
   cost: 10000
   recipeUnlocks:
-    - BorgModuleAdvancedTool
-    - BorgModuleRCD
+   - BorgModuleAdvancedTool
+   - BorgModuleRCD
   technologyPrerequisites:
   - Robotics
   - EngineeringAdvancedTools
@@ -146,8 +147,8 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - BorgModuleGardening
-  - BorgModuleHarvesting
+   - BorgModuleGardening
+   - BorgModuleHarvesting
   technologyPrerequisites:
   - Robotics
 
@@ -161,8 +162,8 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-    - BorgModuleMusique
-    - BorgModuleClowning
+   - BorgModuleMusique
+   - BorgModuleClowning
   technologyPrerequisites:
   - Robotics
   - EntertainmentAdvanced
@@ -177,8 +178,8 @@
   tier: 1
   cost: 10000
   recipeUnlocks:
-  - BorgModuleMining
-  - MechEquipmentDrill
+   - BorgModuleMining
+   - MechEquipmentDrill
   technologyPrerequisites:
   - Robotics
   - SalvageEquipment
@@ -193,8 +194,8 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - BorgModuleLightReplacer
-  - BorgModuleAdvancedCleaning
+   - BorgModuleLightReplacer
+   - BorgModuleAdvancedCleaning
   technologyPrerequisites:
   - Robotics
 
@@ -208,8 +209,8 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - BorgModuleArtifact
-  - BorgModuleAnomaly
+   - BorgModuleArtifact
+   - BorgModuleAnomaly
   technologyPrerequisites:
   - Robotics
   - XenoArcheologyMachines

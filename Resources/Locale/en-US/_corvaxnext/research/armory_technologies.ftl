@@ -1,4 +1,3 @@
-next-research-technology-anomaly-harnessing = Militarized anomalies
 next-research-technology-draconic-ammunition = Incendiary ammunition
 next-research-technology-nonlethal-ammunition = Non-lethal ammunition
 next-research-technology-uranium-ammunition = Uranium ammunition

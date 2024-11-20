@@ -8,25 +8,25 @@
   tierPrerequisites:
     1: 0
 
-- type: techDiscipline
-  id: EngineeringDevices
-  name: next-research-discipline-engineering
-  color: "#eeac34"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: engineering
-  tierPrerequisites:
-    1: 0
+#- type: techDiscipline
+#  id: EngineeringDevices
+#  name: next-research-discipline-engineering
+#  color: "#eeac34"
+#  icon:
+#    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+#    state: engineering
+#  tierPrerequisites:
+#    1: 0
 
-- type: techDiscipline
-  id: AtmosphericDevices
-  name: next-research-discipline-engineering
-  color: "#eeac34"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: engineering
-  tierPrerequisites:
-    1: 0
+#- type: techDiscipline
+#  id: AtmosphericDevices
+#  name: next-research-discipline-engineering
+#  color: "#eeac34"
+#  icon:
+#    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+#    state: engineering
+#  tierPrerequisites:
+#    1: 0
 
 - type: techDiscipline
   id: EngineeringAdvancedTools

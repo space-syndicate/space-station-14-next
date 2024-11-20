@@ -9,16 +9,6 @@
     1: 0
 
 - type: techDiscipline
-  id: GripsGloves
-  name: next-research-discipline-security
-  color: "#dc373b"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: security
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
   id: WarCrimes
   name: next-research-discipline-security
   color: "#dc373b"

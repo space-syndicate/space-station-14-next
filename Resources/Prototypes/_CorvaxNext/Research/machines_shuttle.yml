@@ -1,44 +1,39 @@
 - type: technology
-  id: ShuttleWeapon
-  name: next-research-technology-shuttle-weapon
+  id: ShuttleWeaponMachines
+  name: next-research-technology-shuttle-weapon-machines
   icon:
-    sprite: Structures/Power/cage_recharger.rsi
-    state: full
+    sprite: Objects/Weapons/Guns/Shuttles/launcher.rsi
+    state: exp-320g
   discipline: ShuttleWeapon
   tier: 1
-  cost: 10500
+  cost: 7500
   recipeUnlocks:
-  - PowerCageRechargerCircuitboard
-  - PowerCageSmall
-  - PowerCageMedium
-  - MagazineGrenadeEmpty
-  - GrenadeFlash
-  - GrenadeBlast
-  - ShuttleGunSvalinnMachineGunCircuitboard
-  - ShuttleGunPerforatorCircuitboard
-  - ShuttleGunFriendshipCircuitboard
+   - PowerCageRechargerCircuitboard
+   - ShuttleGunSvalinnMachineGunCircuitboard
+   - ShuttleGunPerforatorCircuitboard
+   - ShuttleGunFriendshipCircuitboard
   technologyPrerequisites:
   - SalvageWeapons
-
-- type: technology
-  id: ShuttleWeaponAdvanced
-  name: next-research-technology-shuttle-weapon-advanced
-  icon:
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Grenade/grenade_cartridge.rsi
-    state: icon
-  discipline: ShuttleWeapon
-  tier: 1
-  cost: 15000
-  recipeUnlocks:
-  - GrenadeEMP
-  - PowerCageHigh
-  - ShuttleGunDusterCircuitboard
-  technologyPrerequisites:
   - ShuttleWeapon
 
 - type: technology
-  id: Shuttlecraft
-  name: next-research-technology-shuttlecraft
+  id: ShuttleWeaponAdvancedMachines
+  name: next-research-technology-shuttle-weapon-advanced-machines
+  icon:
+    sprite: Objects/Weapons/Guns/Shuttles/launcher.rsi
+    state: exp-2100g
+  discipline: ShuttleWeapon
+  tier: 1
+  cost: 9500
+  recipeUnlocks:
+   - ShuttleGunDusterCircuitboard
+  technologyPrerequisites:
+  - ShuttleWeaponMachines
+  - ShuttleWeaponAdvanced
+
+- type: technology
+  id: ShuttlecraftMachines
+  name: next-research-technology-shuttlecraft-machines
   icon:
     sprite: Structures/Shuttles/gyroscope.rsi
     state: base
@@ -46,7 +41,10 @@
   tier: 1
   cost: 10000
   recipeUnlocks:
-  - ShuttleConsoleCircuitboard
-  - ThrusterMachineCircuitboard
-  - GyroscopeMachineCircuitboard
-  - MiniGravityGeneratorCircuitboard
+   - ShuttleConsoleCircuitboard
+   - ThrusterMachineCircuitboard
+   - GyroscopeMachineCircuitboard
+   - MiniGravityGeneratorCircuitboard
+  technologyPrerequisites:
+  - PowerGenerationMachines
+  - PowerGenerationMachines

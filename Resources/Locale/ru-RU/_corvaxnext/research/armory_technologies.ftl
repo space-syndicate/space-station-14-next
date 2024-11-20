@@ -1,4 +1,3 @@
-next-research-technology-anomaly-harnessing = Военизированные аномалии
 next-research-technology-draconic-ammunition = Поджигающие боеприпасы
 next-research-technology-nonlethal-ammunition = Нелетальные боеприпасы
 next-research-technology-uranium-ammunition = Урановые боеприпасы

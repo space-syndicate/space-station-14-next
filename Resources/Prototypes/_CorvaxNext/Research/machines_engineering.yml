@@ -24,7 +24,7 @@
     state: portgen0
   discipline: PowerGeneration
   tier: 1
-  cost: 7500
+  cost: 8500
   recipeUnlocks:
   - TurboItemRechargerCircuitboard
   - PortableGeneratorSuperPacmanMachineCircuitboard
@@ -39,9 +39,11 @@
     state: base
   discipline: MechanicalCompressionMachines
   tier: 1
-  cost: 10000
+  cost: 8500
   recipeUnlocks:
   - FlatpackerMachineCircuitboard
+  technologyPrerequisites:
+  - EngineeringAdvancedMachines
 
 - type: technology
   id: EngineeringAdvancedMachines
@@ -51,12 +53,14 @@
     state: building
   discipline: EngineeringMachines
   tier: 1
-  cost: 10000
+  cost: 12000
   recipeUnlocks:
   - AutolatheHyperConvectionMachineCircuitboard
   - ProtolatheHyperConvectionMachineCircuitboard
   - CircuitImprinterHyperConvectionMachineCircuitboard
   - SheetifierMachineCircuitboard
+  technologyPrerequisites:
+  - PowerGenerationMachines
 
 - type: technology
   id: AtmosphericMachines

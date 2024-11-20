@@ -1,0 +1,32 @@
+⁪- type: technology
+  id: ShuttleWeapon
+  name: next-research-technology-shuttle-weapon
+  icon:
+    sprite: Objects/Power/power_cages.rsi
+    state: medium
+  discipline: ShuttleWeapon
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+   - PowerCageSmall
+   - PowerCageMedium
+   - MagazineGrenadeEmpty
+   - GrenadeFlash
+   - GrenadeBlast
+  technologyPrerequisites:
+  - SalvageWeapons
+
+- type: technology
+  id: ShuttleWeaponAdvanced
+  name: next-research-technology-shuttle-weapon-advanced
+  icon:
+    sprite: Objects/Power/power_cages.rsi
+    state: small
+  discipline: ShuttleWeapon
+  tier: 1
+  cost: 6000
+  recipeUnlocks:
+   - GrenadeEMP
+   - PowerCageHigh
+  technologyPrerequisites:
+  - ShuttleWeapon

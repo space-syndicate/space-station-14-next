@@ -13,7 +13,7 @@
       - state: server_o
         map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: ResearchServer
-  - type: TechnologyDatabase # Corvax-Next-RNDResearch
+  - type: TechnologyDatabase # Corvax-Next-EDIT-RNDResearch
 #    supportedDisciplines:
 #    - Industrial
 #    - Arsenal
@@ -75,6 +75,7 @@
     - AtmosphericMachines
 # <-- SCIENTIFIC -->
     - GravityManipulation
+    - AnomalyCoreHarnessing
     - QuantumLeaping
     - BluespaceStorage
     - AnomalousResearch
@@ -101,22 +102,21 @@
     - RiotControl
     - WarCrimes
 # <-- ARMORY -->
-    - AnomalyCoreHarnessing
-    - DraconicAmmunition
-    - UraniumAmmunition
+    - Ammunition
     - Explosive
     - CombatLaser
     - CombatLaserConcentrated
     - CombatLaserWaveHarnessing
     - CombatLaserExperimental
 # <-- SERVICE -->
-    - EntertainmentAdvanced
-    - EntertainmentAdvancedMachines
+    - Hydroponics
     - FauxAstroTiles
+    - EntertainmentAdvanced
     - CleaningAdvanced
     - SprayAdvanced
     - HydroponicsMachines
     - MeatManipulationMachine
+    - EntertainmentAdvancedMachines
 # <-- SHAFT -->
     - SalvageWeapons
     - SalvageEquipment
@@ -128,10 +128,11 @@
 # <-- CARGO -->
     - BluespaceCargoTransportMachines
 # <-- MEDICAL -->
+    - Chemistry
     - CrewMonitoring
+    - BodyBags
     - BiochemicalStasis
     - BiochemicalStasisMachines
-    - Chemistry
 # <-- EQUIPMENT -->
     - MagneticBoots
     - QuantumMagneticBoots

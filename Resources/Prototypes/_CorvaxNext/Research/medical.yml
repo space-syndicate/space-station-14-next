@@ -6,9 +6,9 @@
     state: scanner
   discipline: CrewMonitoring
   tier: 1
-  cost: 10000
+  cost: 18000
   recipeUnlocks:
-  - HandheldCrewMonitor
+   - HandheldCrewMonitor
 
 - type: technology
   id: BiochemicalStasis
@@ -20,8 +20,8 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - CryostasisBeaker
-  - SyringeCryostasis
+   - CryostasisBeaker
+   - SyringeCryostasis
 
 - type: technology
   id: BodyBags
@@ -33,9 +33,9 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - NTBodyBag
-  - PrisonerBodyBag
-  - RadiationBodyBag
+   - NTBodyBag
+   - PrisonerBodyBag
+   - RadiationBodyBag
 
 - type: technology
   id: BodyBagsBluespace
@@ -45,9 +45,9 @@
     state: bluespacebag_folded
   discipline: BodyBags
   tier: 1
-  cost: 8000
+  cost: 9500
   recipeUnlocks:
-  - BluespaceBodyBag
+   - BluespaceBodyBag
   technologyPrerequisites:
   - BodyBags
 
@@ -59,7 +59,7 @@
     state: beakerbluespace
   discipline: Chemistry
   tier: 1 # CORVAX NEXT TODO: BASE CHEMISTRY
-  cost: 10000
+  cost: 12000
   recipeUnlocks:
-  - BluespaceBeaker
-  - SyringeBluespace
+   - BluespaceBeaker
+   - SyringeBluespace

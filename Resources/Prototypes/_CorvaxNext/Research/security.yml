@@ -6,12 +6,10 @@
     state: base
   discipline: RiotControl
   tier: 1
-  cost: 7500
+  cost: 5500
   recipeUnlocks:
-  - WeaponDisabler
-  - HoloprojectorField
-  - MagazineShotgunBeanbag
-  - BoxBeanbag
+   - WeaponDisabler
+   - HoloprojectorField
 
 - type: technology
   id: RiotControlAdvanced
@@ -23,11 +21,11 @@
   tier: 1
   cost: 8000
   recipeUnlocks:
-  - Truncheon
-  - TelescopicShield
-  - HoloprojectorSecurity
-  - BoxShellTranquilizer
-  - WeaponDisablerSMG
+   - Truncheon
+   - TelescopicShield
+   - HoloprojectorSecurity
+   - WeaponDisablerSMG
+   - PortableRecharger
   technologyPrerequisites:
   - RiotControl
 
@@ -39,9 +37,9 @@
     state: icon
   discipline: WarCrimes
   tier: 1
-  cost: 5000
+  cost: 7000
   recipeUnlocks:
-  - ClothingBackpackElectropack
-  - WeaponParticleDecelerator
+   - ClothingBackpackElectropack
+   - WeaponParticleDecelerator
   technologyPrerequisites:
   - RiotControlAdvanced

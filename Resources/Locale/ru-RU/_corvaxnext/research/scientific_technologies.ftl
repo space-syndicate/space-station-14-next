@@ -1,4 +1,5 @@
 next-research-technology-gravity-manipulation = Гравитационные манипуляции
+next-research-technology-anomaly-harnessing = Аномальное воздействие
 next-research-technology-quantum-leaping = Квантовое плетение
 next-research-technology-bluespace-storage = Блюспейс хранилище
 next-research-technology-anomalous-research = Исследование аномалий

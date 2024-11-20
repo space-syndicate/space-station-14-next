@@ -8,7 +8,7 @@
   tier: 1
   cost: 3500
   recipeUnlocks:
-  - WeaponProtoKineticAccelerator
+   - WeaponProtoKineticAccelerator
 
 - type: technology
   id: SalvageEquipment
@@ -20,10 +20,10 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-#  - WeaponPlasmaCutter
-  - MiningDrill
-  - MineralScannerEmpty
-  - ClothingMaskWeldingGas
+#   - WeaponPlasmaCutter
+   - MiningDrill
+   - MineralScannerEmpty
+   - ClothingMaskWeldingGas
 
 - type: technology
   id: SalvageEquipmentAdvanced
@@ -35,10 +35,10 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-#  - WeaponPlasmaCutterAdvanced
-  - OreBagOfHolding
-  - AdvancedMineralScannerEmpty
-  - MiningDrillDiamond
+#   - WeaponPlasmaCutterAdvanced
+   - OreBagOfHolding
+   - AdvancedMineralScannerEmpty
+   - MiningDrillDiamond
   technologyPrerequisites:
   - SalvageEquipment
 
@@ -52,7 +52,7 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - WeaponGrapplingGun
+   - WeaponGrapplingGun
   technologyPrerequisites:
   - SalvageEquipment
 
@@ -66,4 +66,4 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - HandHeldMassScanner
+   - HandHeldMassScanner

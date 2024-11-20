@@ -1,4 +1,5 @@
 next-research-technology-gravity-manipulation = Gravity manipulation
+next-research-technology-anomaly-harnessing = Anomaly harnessing
 next-research-technology-quantum-leaping = Quantum weaving
 next-research-technology-bluespace-storage = Bluespace storage
 next-research-technology-anomalous-research = Anomalous research

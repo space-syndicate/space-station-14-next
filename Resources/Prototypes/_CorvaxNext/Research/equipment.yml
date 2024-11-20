@@ -8,8 +8,8 @@
   tier: 1
   cost: 5500
   recipeUnlocks:
-  - ClothingShoesBootsMagSci
-  - ClothingShoesBootsMoon
+   - ClothingShoesBootsMagSci
+   - ClothingShoesBootsMoon
 
 - type: technology
   id: QuantumMagneticBoots
@@ -19,9 +19,9 @@
     state: icon
   discipline: QuantumMagneticBoots
   tier: 1
-  cost: 10000
+  cost: 12000
   recipeUnlocks:
-  - ClothingShoesBootsSpeed
+   - ClothingShoesBootsSpeed
   technologyPrerequisites:
   - MagneticBoots
   - GravityManipulation

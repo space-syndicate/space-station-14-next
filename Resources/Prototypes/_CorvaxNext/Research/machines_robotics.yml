@@ -6,8 +6,8 @@
     state: fab-idle
   discipline: RoboticsMachines
   tier: 1
-  cost: 5000
+  cost: 5500
   recipeUnlocks:
-  - ExosuitFabricatorMachineCircuitboard
+   - ExosuitFabricatorMachineCircuitboard
   technologyPrerequisites:
   - Robotics

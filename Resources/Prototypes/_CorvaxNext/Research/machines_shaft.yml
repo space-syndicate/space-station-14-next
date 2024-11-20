@@ -6,7 +6,7 @@
     state: ptk-800
   discipline: SalvageWeaponsMachines
   tier: 1
-  cost: 5000
+  cost: 7000
   recipeUnlocks:
   - ShuttleGunKineticCircuitboard
   technologyPrerequisites:
@@ -20,9 +20,10 @@
     state: inserting
   discipline: SalvageEquipmentMachines
   tier: 1
-  cost: 5000
+  cost: 5200
   recipeUnlocks:
   - OreProcessorIndustrialMachineCircuitboard
+  - SalvageExpeditionsComputerCircuitBoard # Corvax-Cringe
   technologyPrerequisites:
   - SalvageEquipment
 
@@ -34,7 +35,7 @@
     state: icon
   discipline: SpaceScanningMachines
   tier: 1
-  cost: 5000
+  cost: 3500
   recipeUnlocks:
   - RadarConsoleCircuitboard
   technologyPrerequisites:
