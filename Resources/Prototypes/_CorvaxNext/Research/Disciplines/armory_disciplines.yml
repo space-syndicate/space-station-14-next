@@ -1,0 +1,89 @@
+- type: techDiscipline
+  id: AnomalyCoreHarnessing
+  name: next-research-discipline-armory
+  color: "#dc373b"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: weapon
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: DraconicAmmunition
+  name: next-research-discipline-armory
+  color: "#dc373b"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: weapon
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: NonlethalAmmunition
+  name: next-research-discipline-armory
+  color: "#dc373b"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: weapon
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: UraniumAmmunition
+  name: next-research-discipline-armory
+  color: "#dc373b"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: weapon
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: Explosive
+  name: next-research-discipline-armory
+  color: "#dc373b"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: weapon
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: CombatLaser
+  name: next-research-discipline-armory
+  color: "#dc373b"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: weapon
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: CombatLaserConcentrated
+  name: next-research-discipline-armory
+  color: "#dc373b"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: weapon
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: CombatLaserWaveHarnessing
+  name: next-research-discipline-armory
+  color: "#dc373b"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: weapon
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: CombatLaserExperimental
+  name: next-research-discipline-armory
+  color: "#dc373b"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: weapon
+  tierPrerequisites:
+    1: 0

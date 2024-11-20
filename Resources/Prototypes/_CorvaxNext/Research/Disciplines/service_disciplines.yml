@@ -1,0 +1,99 @@
+- type: techDiscipline
+  id: Hydroponics
+  name: next-research-discipline-service
+  color: "#7ecd48"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: service
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: HydroponicsMachines
+  name: next-research-discipline-service
+  color: "#7ecd48"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: service
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: EntertainmentAdvanced
+  name: next-research-discipline-service
+  color: "#7ecd48"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: service
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: EntertainmentAdvancedMachines
+  name: next-research-discipline-service
+  color: "#7ecd48"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: service
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: MeatManipulationMachine
+  name: next-research-discipline-service
+  color: "#7ecd48"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: service
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: FauxAstroTiles
+  name: next-research-discipline-service
+  color: "#7ecd48"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: service
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: CleaningAdvanced
+  name: next-research-discipline-service
+  color: "#7ecd48"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: service
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: SprayAdvanced
+  name: next-research-discipline-service
+  color: "#7ecd48"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: service
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: TranslationDevice
+  name: next-research-discipline-service
+  color: "#7ecd48"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: service
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: TranslationImplanter
+  name: next-research-discipline-service
+  color: "#7ecd48"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: service
+  tierPrerequisites:
+    1: 0

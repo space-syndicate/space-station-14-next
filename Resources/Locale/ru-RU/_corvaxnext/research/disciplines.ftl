@@ -1,0 +1,12 @@
+next-research-discipline-cargo = Снабжение
+next-research-discipline-engineering = Инженерия
+next-research-discipline-equipment = Снаряжение
+next-research-discipline-medical = Медицина
+next-research-discipline-robotics = Робототехника
+next-research-discipline-scientific = Научное
+next-research-discipline-security = Безопасность
+next-research-discipline-service = Сервис
+next-research-discipline-shaft = Шахта
+next-research-discipline-shuttle = Шаттл
+next-research-discipline-telecommunications = Телекоммуникация
+next-research-discipline-armory = Вооружение

@@ -1,0 +1,49 @@
+- type: techDiscipline
+  id: BiochemicalStasis
+  name: next-research-discipline-medical
+  color: "#00BFFF"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: medical
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: BiochemicalStasisMachines
+  name: next-research-discipline-medical
+  color: "#00BFFF"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: medical
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: CrewMonitoring
+  name: next-research-discipline-medical
+  color: "#00BFFF"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: medical
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: BodyBags
+  name: next-research-discipline-medical
+  color: "#00BFFF"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: medical
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: Chemistry
+  name: next-research-discipline-medical
+  color: "#00BFFF"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: medical
+  tierPrerequisites:
+    1: 0

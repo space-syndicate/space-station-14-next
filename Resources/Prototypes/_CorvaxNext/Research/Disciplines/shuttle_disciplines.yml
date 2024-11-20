@@ -1,0 +1,19 @@
+- type: techDiscipline
+  id: ShuttleWeapon
+  name: next-research-discipline-shuttle
+  color: "#eeac34"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: shuttle
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: Shuttlecraft
+  name: next-research-discipline-shuttle
+  color: "#eeac34"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: shuttle
+  tierPrerequisites:
+    1: 0

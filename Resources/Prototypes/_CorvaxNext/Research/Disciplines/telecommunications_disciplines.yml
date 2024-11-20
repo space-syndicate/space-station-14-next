@@ -1,0 +1,9 @@
+- type: techDiscipline
+  id: AudioVisualCommunicationMachines
+  name: next-research-discipline-telecommunications
+  color: "#7ecd48"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: engineering
+  tierPrerequisites:
+    1: 0
