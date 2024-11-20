@@ -15,9 +15,9 @@
   - Chemistry
   - Maintenance
   special:
+    #start-backmen: surgery
   - !type:AddComponentSpecial
     components:
-    #start-backmen: surgery
     #- type: CPRTraining
     - type: SurgerySpeedModifier
       SpeedModifier: 1.75
