@@ -20,6 +20,7 @@ public abstract class SharedAgillitSkillSystem : EntitySystem
     [Dependency] protected readonly SharedActionsSystem _actions = default!;
 
     protected const int BaseCollisionGroup = (int)(CollisionGroup.MobMask);
+
     public override void Initialize()
     {
         SubscribeLocalEvent<AgillitySkillComponent, StartCollideEvent>(DoJump);

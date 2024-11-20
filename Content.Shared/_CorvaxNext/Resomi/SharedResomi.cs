@@ -4,9 +4,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._CorvaxNext.Resomi;
 
-public sealed partial class SwitchAgillityActionEvent : InstantActionEvent
-{
-}
+public sealed partial class SwitchAgillityActionEvent : InstantActionEvent;
 
 /// <summary>
 /// Rises when the action state changes

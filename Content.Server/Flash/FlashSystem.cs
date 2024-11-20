@@ -21,7 +21,6 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Random;
 using InventoryComponent = Content.Shared.Inventory.InventoryComponent;
-using Content.Shared._CorvaxNext.Flash.Components; //CorvaxNext
 
 namespace Content.Server.Flash
 {
@@ -118,9 +117,9 @@ namespace Content.Server.Flash
             TimeSpan? stunDuration = null)
         {
             //CorvaxNext duration modifier for resomi
-            if (TryComp<FlashModifierComponent>(target, out var CompUser))
+            if (TryComp<FlashModifierComponent>(target, out var flashModifier))
             {
-                flashDuration *= CompUser.Modifier;
+                flashDuration *= flashModifier.Modifier;
             }
 
             var attempt = new FlashAttemptEvent(target, user, used);

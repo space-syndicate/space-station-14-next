@@ -1,20 +1,14 @@
 using System.Text.RegularExpressions;
 using Content.Server._CorvaxNext.Speech.Components;
 using Content.Server.Speech;
-using Content.Server.Speech.EntitySystems;
 using Robust.Shared.Random;
 
 namespace Content.Server._CorvaxNext.Speech.EntitySystems;
 
 public sealed class ResomiAccentSystem : EntitySystem
 {
-    private static readonly Regex RegexLowerS = new("s+");
-    private static readonly Regex RegexUpperS = new("S+");
-    private static readonly Regex RegexInternalX = new(@"(\w)x");
-    private static readonly Regex RegexLowerEndX = new(@"\bx([\-|r|R]|\b)");
-    private static readonly Regex RegexUpperEndX = new(@"\bX([\-|r|R]|\b)");
 
-    [Dependency] private readonly IRobustRandom _random = default!; // Corvax-Localization
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -26,7 +20,6 @@ public sealed class ResomiAccentSystem : EntitySystem
     {
         var message = args.Message;
 
-        // Corvax-Next-Localization-Start
         // ш => шшш
         message = Regex.Replace(
             message,
@@ -63,7 +56,6 @@ public sealed class ResomiAccentSystem : EntitySystem
             "Р+",
             _random.Pick(new List<string>() { "РР", "РРР" })
         );
-        // Corvax-Next-Localization-End
         args.Message = message;
     }
 }
