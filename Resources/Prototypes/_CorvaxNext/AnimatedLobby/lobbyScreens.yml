@@ -1,0 +1,27 @@
+- type: animatedLobbyScreen
+  id: CentcommLobbyScreen
+  path: /Textures/_CorvaxNext/LobbyScreens/centcomm.rsi
+
+- type: animatedLobbyScreen
+  id: CubeLobbyScreen
+  path: /Textures/_CorvaxNext/LobbyScreens/cube.rsi
+
+- type: animatedLobbyScreen
+  id: MilkywayLobbyScreen
+  path: /Textures/_CorvaxNext/LobbyScreens/milkyway.rsi
+
+#- type: animatedLobbyScreen
+#  id: NativeLobbyScreen
+#  path: /Textures/_CorvaxNext/LobbyScreens/native.rsi
+
+- type: animatedLobbyScreen
+  id: RocketLobbyScreen
+  path: /Textures/_CorvaxNext/LobbyScreens/rocket.rsi
+
+- type: animatedLobbyScreen
+  id: SyndicateLobbyScreen
+  path: /Textures/_CorvaxNext/LobbyScreens/syndicate.rsi
+
+- type: animatedLobbyScreen
+  id: VangoghLobbyScreen
+  path: /Textures/_CorvaxNext/LobbyScreens/vangogh.rsi

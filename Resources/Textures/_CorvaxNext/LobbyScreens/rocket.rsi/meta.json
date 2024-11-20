@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "WD team, taken from commit bc6e4d3ef008c0d1a9df2f9e466cb3b31b5228fe",
+  "size": {
+    "x": 960,
+    "y": 540
+  },
+  "states": [
+    {
+      "name": "1",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    }
+  ]
+}

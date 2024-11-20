@@ -1,7 +1,6 @@
-using Content.Server.GameTicking.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Utility;
 using System.Linq;
+using Content.Shared._CorvaxNext;
 
 namespace Content.Server.GameTicking;
 
@@ -11,21 +10,19 @@ public sealed partial class GameTicker
     public string? LobbyBackground { get; private set; }
 
     [ViewVariables]
-    private List<ResPath>? _lobbyBackgrounds;
-
-    private static readonly string[] WhitelistedBackgroundExtensions = new string[] {"png", "jpg", "jpeg", "webp"};
+    private List<string>? _lobbyBackgrounds; // Corvax-Next-Lobby
 
     private void InitializeLobbyBackground()
     {
-        _lobbyBackgrounds = _prototypeManager.EnumeratePrototypes<LobbyBackgroundPrototype>()
-            .Select(x => x.Background)
-            .Where(x => WhitelistedBackgroundExtensions.Contains(x.Extension))
+        _lobbyBackgrounds = _prototypeManager.EnumeratePrototypes<AnimatedLobbyScreenPrototype>() // Corvax-Next-Lobby
+            .Select(x => x.Path) // Corvax-Next-Lobby
             .ToList();
 
         RandomizeLobbyBackground();
     }
 
-    private void RandomizeLobbyBackground() {
-        LobbyBackground = _lobbyBackgrounds!.Any() ? _robustRandom.Pick(_lobbyBackgrounds!).ToString() : null;
+    private void RandomizeLobbyBackground()
+    {
+        LobbyBackground = _lobbyBackgrounds!.Any() ? _robustRandom.Pick(_lobbyBackgrounds!) : null; // Corvax-Next-Lobby
     }
 }
