@@ -9,7 +9,7 @@
   productPrototypes:
     - FoodCucumber
   mutationPrototypes:
-    - shashamber
+    - shashamberSeed
   harvestRepeat: Repeat
   lifespan: 25
   maturation: 8
