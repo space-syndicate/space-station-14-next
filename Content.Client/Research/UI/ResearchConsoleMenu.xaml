@@ -29,11 +29,12 @@
             <BoxContainer Orientation="Vertical"
                           VerticalExpand="True"
                           HorizontalExpand="True"
-                          SizeFlagsStretchRatio="2"
-                          Margin="10 0 10 10"
-                          MinWidth="80">
+                          SizeFlagsStretchRatio="1"
+                          Margin="5 0 5 5"
+                          MinWidth="80"
+                          MaxWidth="200">
                 <Label Text="{Loc 'research-console-available-text'}" HorizontalAlignment="Center"/>
-                <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 10"/>
+                <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 5"/>
                 <PanelContainer VerticalExpand="True">
                     <PanelContainer.PanelOverride>
                         <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
@@ -50,9 +51,9 @@
                         </BoxContainer>
                     </ScrollContainer>
                 </PanelContainer>
-                <Control MinHeight="10"/>
+                <Control MinHeight="5"/>
                 <Label Text="{Loc 'research-console-unlocked-text'}" HorizontalAlignment="Center"/>
-                <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 10"/>
+                <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 5"/>
                 <PanelContainer VerticalExpand="True">
                     <PanelContainer.PanelOverride>
                         <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
@@ -61,6 +62,7 @@
                         HScrollEnabled="False"
                         HorizontalExpand="False"
                         MinWidth="80"
+                        MaxWidth="200"
                         VerticalExpand="True">
                         <BoxContainer
                             Name="UnlockedCardsContainer"
@@ -74,7 +76,7 @@
                           VerticalExpand="True"
                           HorizontalExpand="True"
                           SizeFlagsStretchRatio="3"
-                          Margin="0 0 10 10">
+                          Margin="0 0 5 5">
                 <PanelContainer VerticalExpand="True" MinSize="0 200">
                     <PanelContainer.PanelOverride>
                         <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
@@ -84,13 +86,13 @@
                         HorizontalExpand="True"
                         SizeFlagsStretchRatio="2"
                         VerticalExpand="True">
-                        <BoxContainer
+                        <GridContainer
                             Name="TechnologyCardsContainer"
-                            MinSize="100 256"
-                            Orientation="Vertical"
+                            MinSize="0 0"
+                            Columns="2"
                             SizeFlagsStretchRatio="2"
                             VerticalExpand="True">
-                        </BoxContainer>
+                        </GridContainer>
                     </ScrollContainer>
                 </PanelContainer>
             </BoxContainer>
