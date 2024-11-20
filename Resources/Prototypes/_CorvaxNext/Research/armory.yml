@@ -84,7 +84,6 @@
   cost: 7500
   recipeUnlocks:
   - WeaponLaserCarbine
-  - WeaponLaserPistol
 
 - type: technology
   id: CombatLaserAdvanced

@@ -25,7 +25,6 @@
     - ComputerTelevisionCircuitboard
     - DawInstrumentMachineCircuitboard
     - MassMediaCircuitboard
-    - ShipyardCircuitboard
     - JukeboxCircuitBoard
 
 - type: technology

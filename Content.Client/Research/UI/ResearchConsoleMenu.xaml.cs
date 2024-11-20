@@ -101,9 +101,9 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         var msg = new FormattedMessage();
         msg.AddMarkupOrThrow(Loc.GetString("research-console-menu-main-discipline",
             ("name", disciplineText), ("color", disciplineColor)));
-        MainDisciplineLabel.SetMessage(msg);
+//        MainDisciplineLabel.SetMessage(msg); // Corvax-Next-REMOVE-RNDResearch
 
-        TierDisplayContainer.Children.Clear();
+//        TierDisplayContainer.Children.Clear(); // Corvax-Next-REMOVE-RNDResearch
         foreach (var disciplineId in database.SupportedDisciplines)
         {
             var discipline = _prototype.Index<TechDisciplinePrototype>(disciplineId);
@@ -135,7 +135,7 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
                     }
                 }
             };
-            TierDisplayContainer.AddChild(control);
+//            TierDisplayContainer.AddChild(control); // Corvax-Next-REMOVE-RNDResearch
         }
     }
 

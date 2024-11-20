@@ -10,6 +10,8 @@
   recipeUnlocks:
     - WeaponForceGun
     - WeaponTetherGun
+  technologyPrerequisites:
+  - AnomalousResearchAdvanced
 
 - type: technology
   id: QuantumLeaping
@@ -22,6 +24,8 @@
   cost: 10000
   recipeUnlocks:
   - DeviceQuantumSpinInverter
+  technologyPrerequisites:
+  - GravityManipulation
 
 - type: technology
   id: BluespaceStorage
@@ -40,6 +44,7 @@
   - QuantumLeaping
   - PortableFission
   - SalvageEquipmentAdvanced
+  - AnomalousResearchAdvanced
 
 - type: technology
   id: AnomalousResearch
@@ -63,7 +68,7 @@
     state: icon
   discipline: AnomalousResearch
   tier: 1
-  cost: 5000
+  cost: 8000
   recipeUnlocks:
   - AnomalyLocatorWide
   - WeaponPistolCHIMP

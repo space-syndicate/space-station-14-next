@@ -14,7 +14,7 @@
   id: SalvageEquipment
   name: next-research-technology-salvage-equipment
   icon:
-    sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi # Filler
+    sprite: Objects/Specific/Mining/mineral_scanner.rsi
     state: icon
   discipline: SalvageEquipment
   tier: 1
@@ -53,6 +53,8 @@
   cost: 5000
   recipeUnlocks:
   - WeaponGrapplingGun
+  technologyPrerequisites:
+  - SalvageEquipment
 
 - type: technology
   id: SpaceScanning
