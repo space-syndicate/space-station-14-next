@@ -1,4 +1,75 @@
 - type: technology
+  id: Medicine
+  name: next-research-technology-medicine
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: firstaid
+  discipline: Medicine
+  tier: 1
+  cost: 3500
+  recipeUnlocks:
+   - Brutepack
+   - Ointment
+   - Gauze
+   - Defibrillator
+   - HandheldHealthAnalyzer
+   - ClothingHandsGlovesLatex
+   - ClothingHandsGlovesNitrile
+   - ClothingMaskSterile
+   - DiseaseSwab
+   - RollerBedSpawnFolded
+   - CheapRollerBedSpawnFolded
+   - EmergencyRollerBedSpawnFolded
+   - Medkit
+   - MedkitBurn
+   - MedkitToxin
+   - MedkitO2
+   - MedkitBrute
+   - MedkitAdvanced
+   - MedkitRadiation
+   - MedkitCombat
+
+- type: technology
+  id: Surgery
+  name: next-research-technology-surgery
+  icon:
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    state: scalpel
+  discipline: Surgery
+  tier: 1
+  cost: 4000
+  recipeUnlocks:
+   - Scalpel
+   - Retractor
+   - Cautery
+   - Drill
+   - Saw
+   - Hemostat
+   - Implanter
+  technologyPrerequisites:
+  - Medicine
+
+- type: technology
+  id: Chemistry
+  name: next-research-technology-chemistry
+  icon:
+    sprite: Objects/Specific/Chemistry/beaker_large.rsi
+    state: beakerlarge
+  discipline: Chemistry
+  tier: 1
+  cost: 3500
+  recipeUnlocks:
+   - HandLabeler
+   - Beaker
+   - LargeBeaker
+   - Dropper
+   - Jug
+   - PillCanister
+   - ChemistryEmptyBottle01
+   - ClothingEyesGlassesChemical
+   - Syringe
+
+- type: technology
   id: CrewMonitoring
   name: next-research-technology-crew-monitoring
   icon:
@@ -6,9 +77,11 @@
     state: scanner
   discipline: CrewMonitoring
   tier: 1
-  cost: 18000
+  cost: 14000
   recipeUnlocks:
    - HandheldCrewMonitor
+  technologyPrerequisites:
+  - Medicine
 
 - type: technology
   id: BiochemicalStasis
@@ -18,30 +91,35 @@
     state: beakernoreact
   discipline: BiochemicalStasis
   tier: 1
-  cost: 7500
+  cost: 7200
   recipeUnlocks:
    - CryostasisBeaker
    - SyringeCryostasis
+  technologyPrerequisites:
+  - Medicine
 
 - type: technology
   id: BodyBags
   name: next-research-technology-bodybags
   icon:
-    sprite: _CorvaxNext/Objects/Specific/Medical/nanotrasen.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/BodyBags/nanotrasen.rsi
     state: ntbag_folded
   discipline: BodyBags
   tier: 1
   cost: 5000
   recipeUnlocks:
+   - BodyBag
    - NTBodyBag
    - PrisonerBodyBag
    - RadiationBodyBag
+  technologyPrerequisites:
+  - Medicine
 
 - type: technology
   id: BodyBagsBluespace
   name: next-research-technology-bodybags-bluespace
   icon:
-    sprite: _CorvaxNext/Objects/Specific/Medical/bluespace.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/BodyBags/bluespace.rsi
     state: bluespacebag_folded
   discipline: BodyBags
   tier: 1
@@ -49,6 +127,7 @@
   recipeUnlocks:
    - BluespaceBodyBag
   technologyPrerequisites:
+  - Medicine
   - BodyBags
 
 - type: technology
@@ -58,8 +137,10 @@
     sprite: Objects/Specific/Chemistry/beaker_bluespace.rsi
     state: beakerbluespace
   discipline: Chemistry
-  tier: 1 # CORVAX NEXT TODO: BASE CHEMISTRY
+  tier: 1
   cost: 12000
   recipeUnlocks:
    - BluespaceBeaker
    - SyringeBluespace
+  technologyPrerequisites:
+  - Chemistry

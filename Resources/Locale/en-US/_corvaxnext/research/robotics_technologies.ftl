@@ -1,4 +1,4 @@
-next-research-technology-robotics = Robotics
+next-research-technology-robotics = Basic robotics
 next-research-technology-critter-mech = Critter mech
 next-research-technology-honk-mech = Honk mech
 next-research-technology-ripley-aplu-mech = Ripley mech

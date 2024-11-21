@@ -7,4 +7,3 @@ next-research-technology-combat-laser-advanced = Продвинутые боев
 next-research-technology-combat-laser-concentrated = Концентрированные боевые лазеры
 next-research-technology-combat-laser-wave-harnessing = Волновые боевые лазеры
 next-research-technology-combat-laser-experimental = Экспериментальные боевые лазеры
-next-research-technology-war-crimes = Военные приступления

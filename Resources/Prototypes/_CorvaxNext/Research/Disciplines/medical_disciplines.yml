@@ -1,4 +1,34 @@
 - type: techDiscipline
+  id: Medicine
+  name: next-research-discipline-medical
+  color: "#00BFFF"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: medical
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: Surgery
+  name: next-research-discipline-medical
+  color: "#00BFFF"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: medical
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: Chemistry
+  name: next-research-discipline-medical
+  color: "#00BFFF"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: chemistry
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
   id: BiochemicalStasis
   name: next-research-discipline-medical
   color: "#00BFFF"
@@ -20,16 +50,6 @@
 
 - type: techDiscipline
   id: BodyBags
-  name: next-research-discipline-medical
-  color: "#00BFFF"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: medical
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
-  id: Chemistry
   name: next-research-discipline-medical
   color: "#00BFFF"
   icon:

@@ -3,4 +3,4 @@ next-research-technology-shuttle-weapon-advanced = Продвинутые бое
 
 next-research-technology-shuttle-weapon-machines = Оборудование боевых шаттлов
 next-research-technology-shuttle-weapon-advanced-machines = Продвинутое оборудование боевых шаттлов
-next-research-technology-shuttlecraft-machines = Базовое конструкции шаттлостроения
+next-research-technology-shuttlecraft-machines = Базовые конструкции шаттлостроения

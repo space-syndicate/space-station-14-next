@@ -1,3 +1,6 @@
+next-research-technology-medicine = Basic medicine
+next-research-technology-surgery = Basic surgery
+next-research-technology-chemistry = Basic chemistry
 next-research-technology-crew-monitoring = Crew monitoring
 next-research-technology-biochemical-stasis = Biochemical stasis
 next-research-technology-bodybags = Body bags

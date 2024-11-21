@@ -121,6 +121,8 @@
 # <-- CARGO -->
     - BluespaceCargoTransport
 # <-- MEDICAL -->
+    - Medicine
+    - Surgery
     - Chemistry
     - CrewMonitoring
     - BodyBags

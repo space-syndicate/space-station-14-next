@@ -904,7 +904,9 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    staticRecipes:
+    staticRecipes: # Corvax-Next-EDIT-RNDResearch
+      - WhiteCane
+    dynamicRecipes:
       - Brutepack
       - Ointment
       - Gauze
@@ -915,10 +917,6 @@
       - ClothingHandsGlovesNitrile
       - ClothingMaskSterile
       - DiseaseSwab
-      - Beaker
-      - LargeBeaker
-      - Dropper
-      - Jug
       - Syringe
       - Implanter
       - PillCanister
@@ -942,8 +940,6 @@
       - Saw
       - Hemostat
       - ClothingEyesGlassesChemical
-      - WhiteCane
-    dynamicRecipes:
       - ChemicalPayload
       - CryostasisBeaker
       - BluespaceBeaker
@@ -953,10 +949,10 @@
       - NTBodyBag # Corvax-Next-AdvancedBodyBags
       - PrisonerBodyBag # Corvax-Next-AdvancedBodyBags
       - RadiationBodyBag # Corvax-Next-AdvancedBodyBags
+      - HandheldCrewMonitor # Corvax-Next-RNDResearch
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - SyndicateBodyBag # Corvax-Next-AdvancedBodyBags
-      - HandheldCrewMonitor # Corvax-Next-RNDResearch
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget
