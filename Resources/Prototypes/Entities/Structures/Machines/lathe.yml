@@ -118,6 +118,8 @@
     unlitIdleState: unlit
     unlitRunningState: unlit-building
     staticRecipes:
+      - SheetRGlass
+    dynamicRecipes: # Corvax-Next-EDIT-RNDResearch
       - Wirecutter
       - Igniter
       - Signaller
@@ -140,7 +142,6 @@
       - Pickaxe
       - ModularReceiver
       - AppraisalTool
-      - SheetRGlass
       - Beaker
       - Syringe
       - HandLabeler
@@ -281,11 +282,10 @@
     runningState: building
     unlitIdleState: unlit
     unlitRunningState: unlit-building
-    staticRecipes:
-    - LargeBeaker
-    - Dropper
-    - ClothingEyesGlassesChemical
-    dynamicRecipes:
+    dynamicRecipes: # Corvax-Next-EDIT-RNDResearch
+      - LargeBeaker
+      - Dropper
+      - ClothingEyesGlassesChemical
       - PowerDrill
       - MiningDrill
       - MiningDrillDiamond

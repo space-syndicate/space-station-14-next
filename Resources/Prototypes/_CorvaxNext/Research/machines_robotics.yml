@@ -9,5 +9,6 @@
   cost: 5500
   recipeUnlocks:
    - ExosuitFabricatorMachineCircuitboard
+   - BorgChargerCircuitboard
   technologyPrerequisites:
   - Robotics

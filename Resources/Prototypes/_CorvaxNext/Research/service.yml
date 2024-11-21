@@ -1,14 +1,93 @@
 - type: technology
-  id: EntertainmentAdvanced
-  name: next-research-technology-entertainment-advanced
+  id: Lightning
+  name: next-research-technology-lightning
+  icon:
+    sprite: Objects/Power/light_bulb.rsi
+    state: normal
+  discipline: Lightning
+  tier: 1
+  cost: 500
+  recipeUnlocks:
+      - LightTube
+      - LightBulb
+
+- type: technology
+  id: LightningAdvanced
+  name: next-research-technology-lightning-advanced
+  icon:
+    sprite: Objects/Power/light_tube.rsi
+    state: normal
+  discipline: Lightning
+  tier: 1
+  cost: 1000
+  recipeUnlocks:
+      - LedLightTube
+      - SodiumLightTube
+      - ExteriorLightTube
+      - LedLightBulb
+  technologyPrerequisites:
+   - Lightning
+
+- type: technology
+  id: Bootlegging
+  name: next-research-technology-bootlegging
+  icon:
+    sprite: Objects/Power/light_tube.rsi
+    state: normal
+  discipline: Service
+  tier: 1
+  cost: 500
+  recipeUnlocks:
+      - DrinkMug
+      - DrinkMugMetal
+      - DrinkGlass
+      - DrinkShotGlass
+      - DrinkGlassCoupeShaped
+      - CustomDrinkJug
+
+- type: technology
+  id: Kitchen
+  name: next-research-technology-kitchen
+  icon:
+    sprite: Objects/Power/light_tube.rsi
+    state: normal
+  discipline: Service
+  tier: 1
+  cost: 500
+  recipeUnlocks:
+      - FoodPlate
+      - FoodPlateSmall
+      - FoodPlatePlastic
+      - FoodPlateSmallPlastic
+      - FoodBowlBig
+      - FoodPlateTin
+      - FoodPlateMuffinTin
+      - FoodKebabSkewer
+
+- type: technology
+  id: Hydroponics
+  name: next-research-technology-hydroponics
+  icon:
+    sprite: Objects/Power/light_tube.rsi
+    state: normal
+  discipline: Lightning
+  tier: 1
+  cost: 500
+  recipeUnlocks:
+      - Bucket
+
+- type: technology
+  id: Entertainment
+  name: next-research-technology-entertainment
   icon:
     sprite: Objects/Fun/Instruments/h_synthesizer.rsi
     state: icon
-  discipline: EntertainmentAdvanced
+  discipline: Entertainment
   tier: 1
   cost: 3500
   recipeUnlocks:
    - SynthesizerInstrument
+   - HandheldStationMap
 
 - type: technology
   id: FauxAstroTiles
@@ -27,17 +106,49 @@
    - FauxTileAstroSnow
 
 - type: technology
+  id: Cleaning
+  name: next-research-technology-cleaning
+  icon:
+    sprite: Objects/Specific/Janitorial/mop.rsi
+    state: mop
+  discipline: Cleaning
+  tier: 1
+  cost: 500
+  recipeUnlocks:
+   - MopItem
+   - TrashBag
+   - LightReplacer
+   - Holoprojector
+   - WetFloorSign
+   - ClothingHeadHatCone
+
+- type: technology
   id: CleaningAdvanced
   name: next-research-technology-cleaning-advanced
   icon:
     sprite: Objects/Specific/Janitorial/advmop.rsi
     state: advmop
-  discipline: CleaningAdvanced
+  discipline: Cleaning
   tier: 1
   cost: 10000
   recipeUnlocks:
    - AdvMopItem
-   - MegaSprayBottle
+  technologyPrerequisites:
+  - Cleaning
+
+- type: technology
+  id: Spray
+  name: next-research-technology-spray
+  icon:
+    sprite: Objects/Specific/Janitorial/janitorial.rsi
+    state: cleaner
+  discipline: Spray
+  tier: 1
+  cost: 500
+  recipeUnlocks:
+   - SprayBottle
+  technologyPrerequisites:
+  - CleaningAdvanced
 
 - type: technology
   id: SprayAdvanced
@@ -45,14 +156,15 @@
   icon:
     sprite: Objects/Weapons/Guns/Basic/spraynozzle.rsi
     state: icon
-  discipline: SprayAdvanced
+  discipline: Spray
   tier: 1
   cost: 10000
   recipeUnlocks:
    - WeaponSprayNozzle
    - ClothingBackpackWaterTank
+   - MegaSprayBottle
   technologyPrerequisites:
-  - CleaningAdvanced
+  - Spray
 
 #- type: technology
 #  id: TranslationDevice

@@ -20,7 +20,7 @@
 
 - type: techDiscipline
   id: Chemistry
-  name: next-research-discipline-medical
+  name: next-research-discipline-chemistry
   color: "#00BFFF"
   icon:
     sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi

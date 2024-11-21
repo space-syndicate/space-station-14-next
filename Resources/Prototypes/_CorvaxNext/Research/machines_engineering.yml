@@ -37,7 +37,7 @@
   icon:
     sprite: Structures/Machines/flatpacker.rsi
     state: base
-  discipline: MechanicalCompressionMachines
+  discipline: MechanicalCompression
   tier: 1
   cost: 8500
   recipeUnlocks:
@@ -46,12 +46,37 @@
   - EngineeringAdvancedMachines
 
 - type: technology
+  id: EngineeringMachines
+  name: next-research-technology-engineering-machines
+  icon:
+    sprite: Structures/Machines/protolathe_hypercon.rsi
+    state: building
+  discipline: Engineering
+  tier: 1
+  cost: 800
+  recipeUnlocks:
+      - IntercomElectronics
+      - FirelockElectronics
+      - DoorElectronics
+      - AirAlarmElectronics
+      - StationMapElectronics
+      - FireAlarmElectronics
+      - MailingUnitElectronics
+      - SignalTimerElectronics
+      - APCElectronics
+      - SMESMachineCircuitboard
+      - SubstationMachineCircuitboard
+      - WallmountSubstationElectronics
+      - CellRechargerCircuitboard
+      - WeaponCapacitorRechargerCircuitboard
+
+- type: technology
   id: EngineeringAdvancedMachines
   name: next-research-technology-engineering-advanced-machines
   icon:
     sprite: Structures/Machines/protolathe_hypercon.rsi
     state: building
-  discipline: EngineeringMachines
+  discipline: Engineering
   tier: 1
   cost: 12000
   recipeUnlocks:
@@ -60,7 +85,8 @@
   - CircuitImprinterHyperConvectionMachineCircuitboard
   - SheetifierMachineCircuitboard
   technologyPrerequisites:
-  - PowerGenerationMachines
+  - EngineeringMachines
+  - PowerGenerationAdvancedMachines
 
 - type: technology
   id: AtmosphericMachines
@@ -68,9 +94,9 @@
   icon:
     sprite: Structures/Piping/Atmospherics/thermomachine.rsi
     state: freezerOn
-  discipline: AtmosphericMachines
+  discipline: Atmospheric
   tier: 1
-  cost: 7500
+  cost: 5500
   recipeUnlocks:
   - ThermomachineFreezerMachineCircuitBoard
   - GasRecyclerMachineCircuitboard
@@ -81,9 +107,9 @@
   icon:
     sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
     state: freezerOn
-  discipline: AtmosphericMachines
+  discipline: Atmospheric
   tier: 1
-  cost: 7500
+  cost: 8500
   recipeUnlocks:
   - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard

@@ -17,6 +17,7 @@
    - WeaponDisablerPractice
    - WeaponLaserCarbinePractice
    - Zipties
+   - ModularReceiver
 
 - type: technology
   id: Targets

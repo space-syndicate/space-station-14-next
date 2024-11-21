@@ -66,8 +66,9 @@
   - type: TechnologyDatabase
     supportedDisciplines:
 # <-- ENGINEERING -->
+    - Engineering
+    - EngineeringTools
     - Powercells
-    - EngineeringAdvancedTools
     - AtmosphericTools
     - PowerGeneration
     - Engineering
@@ -108,18 +109,19 @@
     - CombatLaserWaveHarnessing
     - CombatLaserExperimental
 # <-- SERVICE -->
+    - Service
     - Hydroponics
     - FauxAstroTiles
-    - EntertainmentAdvanced
-    - CleaningAdvanced
-    - SprayAdvanced
-    - MeatManipulation
+    - Entertainment
+    - Cleaning
+    - Spray
 # <-- SHAFT -->
     - SalvageWeapons
     - SalvageEquipment
     - Grappling
     - SpaceScanning
 # <-- CARGO -->
+    - Cargo
     - BluespaceCargoTransport
 # <-- MEDICAL -->
     - Medicine

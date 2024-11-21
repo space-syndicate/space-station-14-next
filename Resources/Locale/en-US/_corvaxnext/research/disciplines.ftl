@@ -1,12 +1,14 @@
 next-research-discipline-cargo = Cargo
-next-research-discipline-engineering = Engineer
+next-research-discipline-engineering = Engineering
+next-research-discipline-atmospheric = Atmospheric
 next-research-discipline-equipment = Equipment
 next-research-discipline-medical = Medical
-next-research-discipline-robotics = Robotics
+next-research-discipline-chemistry = Chemistry
 next-research-discipline-scientific = Science
+next-research-discipline-robotics = Robotics
 next-research-discipline-security = Security
+next-research-discipline-armory = Armory
 next-research-discipline-service = Service
 next-research-discipline-shaft = Shaft
 next-research-discipline-shuttle = Shuttle
 next-research-discipline-telecommunications = Telecommunications
-next-research-discipline-armory = Armory

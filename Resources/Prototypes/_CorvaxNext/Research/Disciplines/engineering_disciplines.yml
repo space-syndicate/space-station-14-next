@@ -1,4 +1,24 @@
 - type: techDiscipline
+  id: Engineering
+  name: next-research-discipline-engineering
+  color: "#eeac34"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: engineering
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
+  id: EngineeringTools
+  name: next-research-discipline-engineering
+  color: "#eeac34"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: engineering
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
   id: Powercells
   name: next-research-discipline-engineering
   color: "#eeac34"
@@ -20,46 +40,26 @@
 
 #- type: techDiscipline
 #  id: AtmosphericDevices
-#  name: next-research-discipline-engineering
-#  color: "#eeac34"
+#  name: next-research-discipline-atmospheric
+#  color: "#00FA9A"
 #  icon:
 #    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-#    state: engineering
+#    state: atmospher
 #  tierPrerequisites:
 #    1: 0
 
 - type: techDiscipline
-  id: EngineeringAdvancedTools
-  name: next-research-discipline-engineering
-  color: "#eeac34"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: engineering
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
   id: AtmosphericTools
-  name: next-research-discipline-engineering
-  color: "#eeac34"
+  name: next-research-discipline-atmospheric
+  color: "#00FA9A"
   icon:
     sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: engineering
+    state: atmospher
   tierPrerequisites:
     1: 0
 
 - type: techDiscipline
   id: PowerGeneration
-  name: next-research-discipline-engineering
-  color: "#eeac34"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: engineering
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
-  id: Engineering
   name: next-research-discipline-engineering
   color: "#eeac34"
   icon:
@@ -80,10 +80,10 @@
 
 - type: techDiscipline
   id: Atmospheric
-  name: next-research-discipline-engineering
-  color: "#eeac34"
+  name: next-research-discipline-atmospheric
+  color: "#00FA9A"
   icon:
     sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: engineering
+    state: atmospher
   tierPrerequisites:
     1: 0

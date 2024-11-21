@@ -24,6 +24,7 @@
    - MiningDrill
    - MineralScannerEmpty
    - ClothingMaskWeldingGas
+      - Pickaxe
 
 - type: technology
   id: SalvageEquipmentAdvanced
@@ -64,6 +65,9 @@
     state: icon
   discipline: SpaceScanning
   tier: 1
-  cost: 7500
+  cost: 5500
   recipeUnlocks:
    - HandHeldMassScanner
+   - HandheldGPSBasic
+  technologyPrerequisites:
+  - SalvageEquipment

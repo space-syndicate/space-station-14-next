@@ -1,1 +1,11 @@
-# No content :<
+- type: technology
+  id: Factorio
+  name: next-research-technology-factorio
+  icon:
+    sprite: Structures/conveyor.rsi
+    state: conveyor_started_cw
+  discipline: Cargo
+  tier: 1
+  cost: 500
+  recipeUnlocks:
+      - ConveyorBeltAssembly

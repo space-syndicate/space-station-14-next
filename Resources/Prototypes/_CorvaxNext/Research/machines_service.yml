@@ -11,32 +11,39 @@
   - SeedExtractorMachineCircuitboard
   - HydroponicsTrayMachineCircuitboard
   - ReagentGrinderIndustrialMachineCircuitboard
+  technologyPrerequisites:
+   - Hydroponics
 
 - type: technology
-  id: EntertainmentAdvancedMachines
-  name: next-research-technology-entertainment-advanced-machines
+  id: EntertainmentMachines
+  name: next-research-technology-entertainment-machines
   icon:
     sprite: Structures/Machines/computers.rsi
     state: television
-  discipline: EntertainmentAdvanced
+  discipline: Service
   tier: 1
-  cost: 7500
+  cost: 5500
   recipeUnlocks:
     - ComputerTelevisionCircuitboard
     - DawInstrumentMachineCircuitboard
     - MassMediaCircuitboard
     - JukeboxCircuitBoard
+  technologyPrerequisites:
+   - Entertainment
 
 - type: technology
-  id: MeatManipulationMachine
-  name: next-research-technology-meat-manipulation-machine
+  id: KitchenMachines
+  name: next-research-technology-kitchen-machines
   icon:
     sprite: Structures/Machines/fat_sucker.rsi
     state: display
-  discipline: MeatManipulation
+  discipline: Service
   tier: 1
   cost: 7500
   recipeUnlocks:
   - FatExtractorMachineCircuitboard
+  - FreezerElectronics
   - BiofabricatorMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
+  technologyPrerequisites:
+   - Kitchen
