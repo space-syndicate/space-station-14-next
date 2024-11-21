@@ -734,7 +734,7 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    staticRecipes:
+    dynamicRecipes: # Corvax-Next-EDIT-RNDResearch
       - BoxLethalshot
       - BoxShotgunPractice
       - BoxShotgunSlug
@@ -774,7 +774,6 @@
       - WeaponDisablerPractice
       - WeaponLaserCarbinePractice
       - Zipties
-    dynamicRecipes:
       - BoxBeanbag
       - BoxShotgunIncendiary
       - BoxShotgunUranium
@@ -856,7 +855,7 @@
     - type: Lathe
       idleState: icon
       runningState: icon
-      staticRecipes:
+      dynamicRecipes: # Corvax-Next-EDIT-RNDResearch
         - BoxLethalshot
         - BoxShotgunSlug
         - BoxShellTranquilizer

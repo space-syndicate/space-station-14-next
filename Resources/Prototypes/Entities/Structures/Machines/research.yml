@@ -97,6 +97,7 @@
     - RoboticCleanlinessModules
     - XenoArcheologyModules
 # <-- SECURITY -->
+    - Security
     - RiotControl
     - WarCrimes
 # <-- ARMORY -->

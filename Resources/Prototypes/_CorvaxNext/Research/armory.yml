@@ -6,13 +6,53 @@
     state: beanbag
   discipline: Ammunition
   tier: 1
-  cost: 7500
+  cost: 3500
   recipeUnlocks:
    - MagazineShotgunBeanbag
    - BoxShellTranquilizer
    - BoxBeanbag
+   - BoxShotgunPractice
+   - MagazineBoxLightRiflePractice
+   - MagazineBoxMagnumPractice
+   - MagazineBoxPistolPractice
+   - MagazineBoxRiflePractice
   technologyPrerequisites:
   - RiotControl
+
+- type: technology
+  id: LethalAmmunition
+  name: next-research-technology-lethal-ammunition
+  icon:
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+    state: slug
+  discipline: Ammunition
+  tier: 1
+  cost: 5500
+  recipeUnlocks:
+   - BoxLethalshot
+   - BoxShotgunSlug
+   - MagazineBoxLightRifle
+   - MagazineBoxMagnum
+   - MagazineBoxPistol
+   - MagazineBoxRifle
+   - MagazineLightRifle
+   - MagazineLightRifleEmpty
+   - MagazinePistol
+   - MagazinePistolEmpty
+   - MagazineRifle
+   - MagazineRifleEmpty
+   - MagazinePistolSubMachineGun
+   - MagazinePistolSubMachineGunEmpty
+   - MagazinePistolSubMachineGunTopMounted
+   - MagazinePistolSubMachineGunTopMountedEmpty
+   - MagazineShotgun
+   - MagazineShotgunEmpty
+   - MagazineShotgunSlug
+   - SpeedLoaderMagnum
+   - SpeedLoaderMagnumEmpty
+  technologyPrerequisites:
+  - RiotControl
+  - NonlethalAmmunition
 
 - type: technology
   id: DraconicAmmunition
@@ -36,7 +76,7 @@
    - MagazineBoxRifleIncendiary
   technologyPrerequisites:
   - RiotControl
-  - NonlethalAmmunition
+  - LethalAmmunition
 
 - type: technology
   id: UraniumAmmunition
@@ -59,7 +99,7 @@
    - BoxShotgunUranium
   technologyPrerequisites:
   - RiotControl
-  - NonlethalAmmunition
+  - LethalAmmunition
 
 - type: technology
   id: Explosive
@@ -91,7 +131,7 @@
   recipeUnlocks:
    - WeaponLaserCarbine
   technologyPrerequisites:
-  - NonlethalAmmunition
+  - LethalAmmunition
 
 - type: technology
   id: CombatLaserAdvanced

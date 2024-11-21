@@ -1,5 +1,6 @@
-next-research-technology-draconic-ammunition = Поджигающие боеприпасы
 next-research-technology-nonlethal-ammunition = Нелетальные боеприпасы
+next-research-technology-lethal-ammunition = Летальные боеприпасы
+next-research-technology-draconic-ammunition = Поджигающие боеприпасы
 next-research-technology-uranium-ammunition = Урановые боеприпасы
 next-research-technology-explosive = Взрывные средства
 next-research-technology-combat-laser = Боевые лазеры
