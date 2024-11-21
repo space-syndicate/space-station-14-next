@@ -71,7 +71,6 @@
     - Powercells
     - AtmosphericTools
     - PowerGeneration
-    - Engineering
     - MechanicalCompression
     - Atmospheric
 # <-- SCIENTIFIC -->
@@ -85,18 +84,8 @@
     - AbnormalArtifactManipulation
 # <-- ROBOTICS -->
     - Robotics
-    - CritterMech
-    - HONKMech
-    - RipleyAPLUMech
-    - MechanizedTreatmentModules
-    - GrapplingModules
-    - SpaceScanningModules
-    - AdvancedToolsModules
-    - HydroponicsModules
-    - EntertainmentAdvancedModules
-    - SalvageEquipmentModules
-    - RoboticCleanlinessModules
-    - XenoArcheologyModules
+    - Exosuits
+    - CyborgModules
 # <-- SECURITY -->
     - Security
     - RiotControl

@@ -9,7 +9,7 @@
     1: 0
 
 - type: techDiscipline
-  id: CritterMech
+  id: Exosuits
   name: next-research-discipline-robotics
   color: "#4B0082"
   icon:
@@ -19,107 +19,7 @@
     1: 0
 
 - type: techDiscipline
-  id: HONKMech
-  name: next-research-discipline-robotics
-  color: "#4B0082"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: robotics
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
-  id: RipleyAPLUMech
-  name: next-research-discipline-robotics
-  color: "#4B0082"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: robotics
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
-  id: MechanizedTreatmentModules
-  name: next-research-discipline-robotics
-  color: "#4B0082"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: robotics
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
-  id: GrapplingModules
-  name: next-research-discipline-robotics
-  color: "#4B0082"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: robotics
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
-  id: SpaceScanningModules
-  name: next-research-discipline-robotics
-  color: "#4B0082"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: robotics
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
-  id: AdvancedToolsModules
-  name: next-research-discipline-robotics
-  color: "#4B0082"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: robotics
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
-  id: HydroponicsModules
-  name: next-research-discipline-robotics
-  color: "#4B0082"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: robotics
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
-  id: EntertainmentAdvancedModules
-  name: next-research-discipline-robotics
-  color: "#4B0082"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: robotics
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
-  id: SalvageEquipmentModules
-  name: next-research-discipline-robotics
-  color: "#4B0082"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: robotics
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
-  id: RoboticCleanlinessModules
-  name: next-research-discipline-robotics
-  color: "#4B0082"
-  icon:
-    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
-    state: robotics
-  tierPrerequisites:
-    1: 0
-
-- type: techDiscipline
-  id: XenoArcheologyModules
+  id: CyborgModules
   name: next-research-discipline-robotics
   color: "#4B0082"
   icon:

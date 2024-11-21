@@ -133,7 +133,7 @@
   icon:
    sprite: Objects/Specific/Mech/mecha.rsi
    state: hamtr
-  discipline: CritterMech
+  discipline: Exosuits
   tier: 1
   cost: 7500
   recipeUnlocks:
@@ -155,7 +155,7 @@
   icon:
    sprite: Objects/Specific/Mech/mecha.rsi
    state: honker
-  discipline: HONKMech
+  discipline: Exosuits
   tier: 1
   cost: 7500
   recipeUnlocks:
@@ -177,7 +177,7 @@
   icon:
    sprite: Objects/Specific/Mech/mecha.rsi
    state: ripley
-  discipline: RipleyAPLUMech
+  discipline: Exosuits
   tier: 1
   cost: 7500
   recipeUnlocks:
@@ -198,7 +198,7 @@
   icon:
    sprite: Objects/Specific/Robotics/borgmodule.rsi
    state: generic
-  discipline: Robotics
+  discipline: CyborgModules
   tier: 1
   cost: 2000
   recipeUnlocks:
@@ -220,7 +220,7 @@
   icon:
    sprite: Mobs/Silicon/chassis.rsi
    state: medical
-  discipline: MechanizedTreatmentModules
+  discipline: CyborgModules
   tier: 1
   cost: 8000
   recipeUnlocks:
@@ -237,7 +237,7 @@
   icon:
    sprite: Objects/Weapons/Guns/Launchers/grappling_gun.rsi
    state: base
-  discipline: GrapplingModules
+  discipline: CyborgModules
   tier: 1
   cost: 7000
   recipeUnlocks:
@@ -253,7 +253,7 @@
   icon:
    sprite: Objects/Tools/handheld_mass_scanner.rsi
    state: icon
-  discipline: SpaceScanningModules
+  discipline: CyborgModules
   tier: 1
   cost: 6500
   recipeUnlocks:
@@ -269,7 +269,7 @@
   icon:
    sprite: Objects/Tools/welder_experimental.rsi
    state: icon
-  discipline: AdvancedToolsModules
+  discipline: CyborgModules
   tier: 1
   cost: 9000
   recipeUnlocks:
@@ -287,7 +287,7 @@
   icon:
    sprite: Structures/Machines/seed_extractor.rsi
    state: seedextractor
-  discipline: HydroponicsModules
+  discipline: CyborgModules
   tier: 1
   cost: 5000
   recipeUnlocks:
@@ -304,7 +304,7 @@
   icon:
    sprite: Structures/Machines/computers.rsi
    state: television
-  discipline: EntertainmentAdvancedModules
+  discipline: CyborgModules
   tier: 1
   cost: 6500
   recipeUnlocks:
@@ -322,7 +322,7 @@
   icon:
    sprite: Objects/Specific/Mech/mecha_equipment.rsi
    state: mecha_drill
-  discipline: SalvageEquipmentModules
+  discipline: CyborgModules
   tier: 1
   cost: 7500
   recipeUnlocks:
@@ -340,7 +340,7 @@
   icon:
    sprite: Mobs/Silicon/chassis.rsi
    state: janitor
-  discipline: RoboticCleanlinessModules
+  discipline: CyborgModules
   tier: 1
   cost: 5000
   recipeUnlocks:
@@ -358,7 +358,7 @@
   icon:
    sprite: Objects/Specific/Xenoarchaeology/xeno_artifacts.rsi
    state: ano30
-  discipline: XenoArcheologyModules
+  discipline: CyborgModules
   tier: 1
   cost: 5000
   recipeUnlocks:
