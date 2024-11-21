@@ -12,6 +12,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Containers.ItemSlots;
+using Robust.Shared.Containers;
 
 namespace Content.Server.Research.Systems;
 
@@ -37,6 +38,10 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
         base.Initialize();
 
         SubscribeLocalEvent<RoboticsConsoleComponent, DeviceNetworkPacketEvent>(OnPacketReceived);
+        // Corvax-Next-MutableLaws-Start
+        SubscribeLocalEvent<RoboticsConsoleComponent, EntInsertedIntoContainerMessage>(OnInserted);
+        SubscribeLocalEvent<RoboticsConsoleComponent, EntRemovedFromContainerMessage>(OnRemoved);
+        // Corvax-Next-MutableLaws-End
         Subs.BuiEvents<RoboticsConsoleComponent>(RoboticsConsoleUiKey.Key, subs =>
         {
             subs.Event<BoundUIOpenedEvent>(OnOpened);
@@ -91,6 +96,18 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
 
         UpdateUserInterface(ent);
     }
+
+    // Corvax-Next-MutableLaws-Start
+    private void OnInserted(Entity<RoboticsConsoleComponent> ent, ref EntInsertedIntoContainerMessage args)
+    {
+        UpdateUserInterface(ent);
+    }
+
+    private void OnRemoved(Entity<RoboticsConsoleComponent> ent, ref EntRemovedFromContainerMessage args)
+    {
+        UpdateUserInterface(ent);
+    }
+    // Corvax-Next-MutableLaws-End
 
     private void OnOpened(Entity<RoboticsConsoleComponent> ent, ref BoundUIOpenedEvent args)
     {
@@ -169,7 +186,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
 
     private void UpdateUserInterface(Entity<RoboticsConsoleComponent> ent)
     {
-        var state = new RoboticsConsoleState(ent.Comp.Cyborgs);
+        var state = new RoboticsConsoleState(ent.Comp.Cyborgs, _slots.TryGetSlot(ent, ent.Comp.CircuitBoardItemSlot, out var slot) && slot.HasItem); // Corvax-Next-MutableLaws
         _ui.SetUiState(ent.Owner, RoboticsConsoleUiKey.Key, state);
     }
 }

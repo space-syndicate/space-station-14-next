@@ -31,7 +31,7 @@
             <controls:StripeBack>
                 <BoxContainer Name="DangerZone" Margin="5" Orientation="Horizontal" HorizontalExpand="True" HorizontalAlignment="Center" Visible="False">
                     <!-- Corvax-Next-MutableLaws-Start -->
-                    <Button Name="ChangeLawsButton" Text="{Loc 'robotics-console-change-laws'}" StyleClasses="OpenRight"/>
+                    <Button Name="ChangeLawsButton" Text="{Loc 'robotics-console-change-laws'}" StyleClasses="OpenRight" Disabled="True"/>
                     <Button Name="DisableButton" Text="{Loc 'robotics-console-disable'}" StyleClasses="OpenBoth"/>
                     <!-- Corvax-Next-MutableLaws-End -->
                     <Button Name="DestroyButton" Text="{Loc 'robotics-console-destroy'}" StyleClasses="OpenLeft"/>

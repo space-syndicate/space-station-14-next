@@ -19,9 +19,12 @@ public sealed class RoboticsConsoleState : BoundUserInterfaceState
     /// </summary>
     public Dictionary<string, CyborgControlData> Cyborgs;
 
-    public RoboticsConsoleState(Dictionary<string, CyborgControlData> cyborgs)
+    public bool HasCircuitBoard; // Corvax-Next-MutableLaws
+
+    public RoboticsConsoleState(Dictionary<string, CyborgControlData> cyborgs, bool hasCircuitBoard) // Corvax-Next-MutableLaws
     {
         Cyborgs = cyborgs;
+        HasCircuitBoard = hasCircuitBoard; // Corvax-Next-MutableLaws
     }
 }
 
