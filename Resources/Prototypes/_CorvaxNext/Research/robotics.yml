@@ -2,21 +2,137 @@
   id: Robotics
   name: next-research-technology-robotics
   icon:
-    sprite: Mobs/Silicon/drone.rsi
-    state: drone
+   sprite: Mobs/Silicon/drone.rsi
+   state: drone
   discipline: Robotics
   tier: 1
-  cost: 5000
+  cost: 2000
   recipeUnlocks:
    - ProximitySensor
 #   - PersonalAI # TODO: Add
 
 - type: technology
+  id: RoboticsAdvanced
+  name: next-research-technology-robotics-advanced
+  icon:
+   sprite: Objects/Specific/Robotics/mmi.rsi
+   state: posibrain
+  discipline: Robotics
+  tier: 1
+  cost: 2000
+  recipeUnlocks:
+   - CyborgEndoskeleton
+   - LeftArmBorg
+   - RightArmBorg
+   - LeftLegBorg
+   - RightLegBorg
+   - LightHeadBorg
+   - TorsoBorg
+   - MMI
+   - PositronicBrain
+   - SciFlash
+  technologyPrerequisites:
+  - Robotics
+
+- type: technology
+  id: CyborgEngineer
+  name: next-research-technology-cyborg-engineer
+  icon:
+   sprite: Objects/Specific/Robotics/mmi.rsi
+   state: posibrain
+  discipline: Robotics
+  tier: 1
+  cost: 3000
+  recipeUnlocks:
+   - LeftArmBorgEngineer
+   - RightArmBorgEngineer
+   - LeftLegBorgEngineer
+   - RightLegBorgEngineer
+   - HeadBorgEngineer
+   - TorsoBorgEngineer
+  technologyPrerequisites:
+  - RoboticsAdvanced
+
+- type: technology
+  id: CyborgJanitor
+  name: next-research-technology-cyborg-janitor
+  icon:
+   sprite: Objects/Specific/Robotics/mmi.rsi
+   state: posibrain
+  discipline: Robotics
+  tier: 1
+  cost: 3000
+  recipeUnlocks:
+   - LeftLegBorgJanitor
+   - RightLegBorgJanitor
+   - HeadBorgJanitor
+   - TorsoBorgJanitor
+  technologyPrerequisites:
+  - RoboticsAdvanced
+
+- type: technology
+  id: CyborgMedical
+  name: next-research-technology-cyborg-medical
+  icon:
+   sprite: Objects/Specific/Robotics/mmi.rsi
+   state: posibrain
+  discipline: Robotics
+  tier: 1
+  cost: 3000
+  recipeUnlocks:
+   - LeftArmBorgMedical
+   - RightArmBorgMedical
+   - LeftLegBorgMedical
+   - RightLegBorgMedical
+   - HeadBorgMedical
+   - TorsoBorgMedical
+  technologyPrerequisites:
+  - RoboticsAdvanced
+
+- type: technology
+  id: CyborgMining
+  name: next-research-technology-cyborg-mining
+  icon:
+   sprite: Objects/Specific/Robotics/mmi.rsi
+   state: posibrain
+  discipline: Robotics
+  tier: 1
+  cost: 3000
+  recipeUnlocks:
+   - LeftArmBorgMining
+   - RightArmBorgMining
+   - LeftLegBorgMining
+   - RightLegBorgMining
+   - HeadBorgMining
+   - TorsoBorgMining
+  technologyPrerequisites:
+  - RoboticsAdvanced
+
+- type: technology
+  id: CyborgService
+  name: next-research-technology-cyborg-service
+  icon:
+   sprite: Objects/Specific/Robotics/mmi.rsi
+   state: posibrain
+  discipline: Robotics
+  tier: 1
+  cost: 3000
+  recipeUnlocks:
+   - LeftArmBorgService
+   - RightArmBorgService
+   - LeftLegBorgService
+   - RightLegBorgService
+   - HeadBorgService
+   - TorsoBorgService
+  technologyPrerequisites:
+  - RoboticsAdvanced
+
+- type: technology
   id: CritterMech
   name: next-research-technology-critter-mech
   icon:
-    sprite: Objects/Specific/Mech/mecha.rsi
-    state: hamtr
+   sprite: Objects/Specific/Mech/mecha.rsi
+   state: hamtr
   discipline: CritterMech
   tier: 1
   cost: 7500
@@ -37,8 +153,8 @@
   id: HONKMech
   name: next-research-technology-honk-mech
   icon:
-    sprite: Objects/Specific/Mech/mecha.rsi
-    state: honker
+   sprite: Objects/Specific/Mech/mecha.rsi
+   state: honker
   discipline: HONKMech
   tier: 1
   cost: 7500
@@ -59,8 +175,8 @@
   id: RipleyAPLUMech
   name: next-research-technology-ripley-aplu-mech
   icon:
-    sprite: Objects/Specific/Mech/mecha.rsi
-    state: ripley
+   sprite: Objects/Specific/Mech/mecha.rsi
+   state: ripley
   discipline: RipleyAPLUMech
   tier: 1
   cost: 7500
@@ -77,11 +193,33 @@
   - Robotics
 
 - type: technology
+  id: CyborgModules
+  name: next-research-technology-cyborg-modules
+  icon:
+   sprite: Objects/Specific/Robotics/borgmodule.rsi
+   state: generic
+  discipline: Robotics
+  tier: 1
+  cost: 2000
+  recipeUnlocks:
+   - BorgModuleCable
+   - BorgModuleFireExtinguisher
+   - BorgModuleRadiationDetection
+   - BorgModuleTool
+   - BorgModuleAppraisal
+   - BorgModuleConstruction
+   - BorgModuleService
+   - BorgModuleTreatment
+   - BorgModuleCleaning
+  technologyPrerequisites:
+  - RoboticsAdvanced
+
+- type: technology
   id: MechanizedTreatmentModules
   name: next-research-technology-mechanized-treatment-modules
   icon:
-    sprite: Mobs/Silicon/chassis.rsi
-    state: medical
+   sprite: Mobs/Silicon/chassis.rsi
+   state: medical
   discipline: MechanizedTreatmentModules
   tier: 1
   cost: 8000
@@ -89,60 +227,66 @@
    - BorgModuleAdvancedTreatment
    - BorgModuleDefibrillator
   technologyPrerequisites:
-  - Robotics
+  - RoboticsAdvanced
+  - CyborgModules
+  - CyborgMedical
 
 - type: technology
   id: GrapplingModules
   name: next-research-technology-grappling-modules
   icon:
-    sprite: Objects/Weapons/Guns/Launchers/grappling_gun.rsi
-    state: base
+   sprite: Objects/Weapons/Guns/Launchers/grappling_gun.rsi
+   state: base
   discipline: GrapplingModules
   tier: 1
-  cost: 8000
+  cost: 7000
   recipeUnlocks:
    - BorgModuleGrapplingGun
   technologyPrerequisites:
-  - Robotics
+  - RoboticsAdvanced
+  - CyborgModules
   - Grappling
 
 - type: technology
   id: SpaceScanningModules
   name: next-research-technology-space-scanning-modules
   icon:
-    sprite: Objects/Tools/handheld_mass_scanner.rsi
-    state: icon
+   sprite: Objects/Tools/handheld_mass_scanner.rsi
+   state: icon
   discipline: SpaceScanningModules
   tier: 1
-  cost: 7500
+  cost: 6500
   recipeUnlocks:
    - BorgModuleGPS
   technologyPrerequisites:
-  - Robotics
+  - RoboticsAdvanced
+  - CyborgModules
   - SpaceScanning
 
 - type: technology
   id: AdvancedToolsModules
   name: next-research-technology-advanced-tools-modules
   icon:
-    sprite: Objects/Tools/welder_experimental.rsi
-    state: icon
+   sprite: Objects/Tools/welder_experimental.rsi
+   state: icon
   discipline: AdvancedToolsModules
   tier: 1
-  cost: 10000
+  cost: 9000
   recipeUnlocks:
    - BorgModuleAdvancedTool
    - BorgModuleRCD
   technologyPrerequisites:
-  - Robotics
+  - RoboticsAdvanced
+  - CyborgModules
   - EngineeringAdvancedTools
+  - CyborgEngineer
 
 - type: technology
   id: HydroponicsModules
   name: next-research-technology-hydroponics-modules
   icon:
-    sprite: Structures/Machines/seed_extractor.rsi
-    state: seedextractor
+   sprite: Structures/Machines/seed_extractor.rsi
+   state: seedextractor
   discipline: HydroponicsModules
   tier: 1
   cost: 5000
@@ -150,46 +294,52 @@
    - BorgModuleGardening
    - BorgModuleHarvesting
   technologyPrerequisites:
-  - Robotics
+  - RoboticsAdvanced
+  - CyborgModules
+  - CyborgService
 
 - type: technology
   id: EntertainmentAdvancedModules
   name: next-research-technology-entertainment-advanced-modules
   icon:
-    sprite: Structures/Machines/computers.rsi
-    state: television
+   sprite: Structures/Machines/computers.rsi
+   state: television
   discipline: EntertainmentAdvancedModules
   tier: 1
-  cost: 7500
+  cost: 6500
   recipeUnlocks:
    - BorgModuleMusique
    - BorgModuleClowning
   technologyPrerequisites:
-  - Robotics
-  - EntertainmentAdvanced
+  - RoboticsAdvanced
+  - CyborgModules
+  - Entertainment
+  - CyborgService
 
 - type: technology
   id: SalvageEquipmentModules
   name: next-research-technology-salvage-equipment-modules
   icon:
-    sprite: Objects/Specific/Mech/mecha_equipment.rsi
-    state: mecha_drill
+   sprite: Objects/Specific/Mech/mecha_equipment.rsi
+   state: mecha_drill
   discipline: SalvageEquipmentModules
   tier: 1
-  cost: 10000
+  cost: 7500
   recipeUnlocks:
    - BorgModuleMining
    - MechEquipmentDrill
   technologyPrerequisites:
-  - Robotics
+  - RoboticsAdvanced
+  - CyborgModules
   - SalvageEquipment
+  - CyborgMining
 
 - type: technology
   id: RoboticCleanlinessModules
   name: next-research-technology-robotic-cleanliness-modules
   icon:
-    sprite: Mobs/Silicon/chassis.rsi
-    state: janitor
+   sprite: Mobs/Silicon/chassis.rsi
+   state: janitor
   discipline: RoboticCleanlinessModules
   tier: 1
   cost: 5000
@@ -197,14 +347,17 @@
    - BorgModuleLightReplacer
    - BorgModuleAdvancedCleaning
   technologyPrerequisites:
-  - Robotics
+  - RoboticsAdvanced
+  - CyborgModules
+  - CleaningAdvanced
+  - CyborgJanitor
 
 - type: technology
   id: XenoArcheologyModules
   name: next-research-technology-xeno-archeology-modules
   icon:
-    sprite: Objects/Specific/Xenoarchaeology/xeno_artifacts.rsi
-    state: ano30
+   sprite: Objects/Specific/Xenoarchaeology/xeno_artifacts.rsi
+   state: ano30
   discipline: XenoArcheologyModules
   tier: 1
   cost: 5000
@@ -212,5 +365,6 @@
    - BorgModuleArtifact
    - BorgModuleAnomaly
   technologyPrerequisites:
-  - Robotics
+  - RoboticsAdvanced
+  - CyborgModules
   - XenoArcheologyMachines

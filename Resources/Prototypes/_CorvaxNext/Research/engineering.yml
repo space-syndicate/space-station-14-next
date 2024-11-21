@@ -8,9 +8,9 @@
   tier: 1
   cost: 500
   recipeUnlocks:
-      - MicroManipulatorStockPart
-      - MatterBinStockPart
-      - CapacitorStockPart
+   - MicroManipulatorStockPart
+   - MatterBinStockPart
+   - CapacitorStockPart
 
 - type: technology
   id: Powercells
@@ -22,8 +22,8 @@
   tier: 1
   cost: 500
   recipeUnlocks:
-      - PowerCellSmall
-      - PowerCellMedium
+   - PowerCellSmall
+   - PowerCellMedium
 
 - type: technology
   id: PowercellsAdvanced
@@ -87,26 +87,26 @@
   tier: 1
   cost: 500
   recipeUnlocks:
-      - Wirecutter
-      - Igniter
-      - Signaller
-      - Screwdriver
-      - Welder
-      - Wrench
-      - CrowbarGreen
-      - Multitool
-      - NetworkConfigurator
-      - SprayPainter
-      - FlashlightLantern
-      - CableStack
-      - CableMVStack
-      - CableHVStack
-      - TRayScanner
-      - GasAnalyzer
-      - UtilityBelt
-      - AppraisalTool
-      - AirTank
-      - ClothingHeadHatWelding
+   - Wirecutter
+   - Igniter
+   - Signaller
+   - Screwdriver
+   - Welder
+   - Wrench
+   - CrowbarGreen
+   - Multitool
+   - NetworkConfigurator
+   - SprayPainter
+   - FlashlightLantern
+   - CableStack
+   - CableMVStack
+   - CableHVStack
+   - TRayScanner
+   - GasAnalyzer
+   - UtilityBelt
+   - AppraisalTool
+   - AirTank
+   - ClothingHeadHatWelding
 
 - type: technology
   id: EngineeringAdvancedTools

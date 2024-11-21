@@ -8,8 +8,8 @@
   tier: 1
   cost: 500
   recipeUnlocks:
-      - LightTube
-      - LightBulb
+   - LightTube
+   - LightBulb
 
 - type: technology
   id: LightningAdvanced
@@ -21,10 +21,10 @@
   tier: 1
   cost: 1000
   recipeUnlocks:
-      - LedLightTube
-      - SodiumLightTube
-      - ExteriorLightTube
-      - LedLightBulb
+   - LedLightTube
+   - SodiumLightTube
+   - ExteriorLightTube
+   - LedLightBulb
   technologyPrerequisites:
    - Lightning
 
@@ -38,12 +38,12 @@
   tier: 1
   cost: 500
   recipeUnlocks:
-      - DrinkMug
-      - DrinkMugMetal
-      - DrinkGlass
-      - DrinkShotGlass
-      - DrinkGlassCoupeShaped
-      - CustomDrinkJug
+   - DrinkMug
+   - DrinkMugMetal
+   - DrinkGlass
+   - DrinkShotGlass
+   - DrinkGlassCoupeShaped
+   - CustomDrinkJug
 
 - type: technology
   id: Kitchen
@@ -55,14 +55,14 @@
   tier: 1
   cost: 500
   recipeUnlocks:
-      - FoodPlate
-      - FoodPlateSmall
-      - FoodPlatePlastic
-      - FoodPlateSmallPlastic
-      - FoodBowlBig
-      - FoodPlateTin
-      - FoodPlateMuffinTin
-      - FoodKebabSkewer
+   - FoodPlate
+   - FoodPlateSmall
+   - FoodPlatePlastic
+   - FoodPlateSmallPlastic
+   - FoodBowlBig
+   - FoodPlateTin
+   - FoodPlateMuffinTin
+   - FoodKebabSkewer
 
 - type: technology
   id: Hydroponics
@@ -74,7 +74,7 @@
   tier: 1
   cost: 500
   recipeUnlocks:
-      - Bucket
+   - Bucket
 
 - type: technology
   id: Entertainment

@@ -1,7 +1,14 @@
 next-research-technology-robotics = Базовая робототехника
+next-research-technology-robotics-advanced = Продвинутая робототехника
+next-research-technology-cyborg-engineer = Кибор инженерный
+next-research-technology-cyborg-janitor = Кибор уборочный
+next-research-technology-cyborg-medical = Кибор медицинский
+next-research-technology-cyborg-mining = Киборг шахтёрский
+next-research-technology-cyborg-service = Кибор сервисный
 next-research-technology-critter-mech = ЭКЗОКОСТЮМ: Животные
 next-research-technology-honk-mech = ЭКЗОКОСТЮМ: ХОНК
 next-research-technology-ripley-aplu-mech = ЭКЗОКОСТЮМ: Рипли
+next-research-technology-cyborg-modules = Базовые модули киборга
 next-research-technology-mechanized-treatment-modules = Модули медицины
 next-research-technology-grappling-modules = Модули захвата
 next-research-technology-space-scanning-modules = Модули сканирования

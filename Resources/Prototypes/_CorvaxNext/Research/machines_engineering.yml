@@ -8,13 +8,13 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - PortableGeneratorPacmanMachineCircuitboard
-  - PortableGeneratorSuperPacmanMachineCircuitboard
-  - PortableGeneratorJrPacmanMachineCircuitboard
-  - PowerComputerCircuitboard #the actual solar panel itself should be in here
-  - SolarControlComputerCircuitboard
-  - SolarTrackerElectronics
-  - EmitterCircuitboard
+   - PortableGeneratorPacmanMachineCircuitboard
+   - PortableGeneratorSuperPacmanMachineCircuitboard
+   - PortableGeneratorJrPacmanMachineCircuitboard
+   - PowerComputerCircuitboard #the actual solar panel itself should be in here
+   - SolarControlComputerCircuitboard
+   - SolarTrackerElectronics
+   - EmitterCircuitboard
 
 - type: technology
   id: PowerGenerationAdvancedMachines
@@ -26,8 +26,8 @@
   tier: 1
   cost: 8500
   recipeUnlocks:
-  - TurboItemRechargerCircuitboard
-  - PortableGeneratorSuperPacmanMachineCircuitboard
+   - TurboItemRechargerCircuitboard
+   - PortableGeneratorSuperPacmanMachineCircuitboard
   technologyPrerequisites:
   - PowerGenerationMachines
 
@@ -41,7 +41,7 @@
   tier: 1
   cost: 8500
   recipeUnlocks:
-  - FlatpackerMachineCircuitboard
+   - FlatpackerMachineCircuitboard
   technologyPrerequisites:
   - EngineeringAdvancedMachines
 
@@ -55,20 +55,20 @@
   tier: 1
   cost: 800
   recipeUnlocks:
-      - IntercomElectronics
-      - FirelockElectronics
-      - DoorElectronics
-      - AirAlarmElectronics
-      - StationMapElectronics
-      - FireAlarmElectronics
-      - MailingUnitElectronics
-      - SignalTimerElectronics
-      - APCElectronics
-      - SMESMachineCircuitboard
-      - SubstationMachineCircuitboard
-      - WallmountSubstationElectronics
-      - CellRechargerCircuitboard
-      - WeaponCapacitorRechargerCircuitboard
+   - IntercomElectronics
+   - FirelockElectronics
+   - DoorElectronics
+   - AirAlarmElectronics
+   - StationMapElectronics
+   - FireAlarmElectronics
+   - MailingUnitElectronics
+   - SignalTimerElectronics
+   - APCElectronics
+   - SMESMachineCircuitboard
+   - SubstationMachineCircuitboard
+   - WallmountSubstationElectronics
+   - CellRechargerCircuitboard
+   - WeaponCapacitorRechargerCircuitboard
 
 - type: technology
   id: EngineeringAdvancedMachines
@@ -80,10 +80,10 @@
   tier: 1
   cost: 12000
   recipeUnlocks:
-  - AutolatheHyperConvectionMachineCircuitboard
-  - ProtolatheHyperConvectionMachineCircuitboard
-  - CircuitImprinterHyperConvectionMachineCircuitboard
-  - SheetifierMachineCircuitboard
+   - AutolatheHyperConvectionMachineCircuitboard
+   - ProtolatheHyperConvectionMachineCircuitboard
+   - CircuitImprinterHyperConvectionMachineCircuitboard
+   - SheetifierMachineCircuitboard
   technologyPrerequisites:
   - EngineeringMachines
   - PowerGenerationAdvancedMachines
@@ -98,8 +98,8 @@
   tier: 1
   cost: 5500
   recipeUnlocks:
-  - ThermomachineFreezerMachineCircuitBoard
-  - GasRecyclerMachineCircuitboard
+   - ThermomachineFreezerMachineCircuitBoard
+   - GasRecyclerMachineCircuitboard
 
 - type: technology
   id: AtmosphericAdvancedMachines
@@ -111,7 +111,7 @@
   tier: 1
   cost: 8500
   recipeUnlocks:
-  - HellfireFreezerMachineCircuitBoard
-  - PortableScrubberMachineCircuitBoard
+   - HellfireFreezerMachineCircuitBoard
+   - PortableScrubberMachineCircuitBoard
   technologyPrerequisites:
   - AtmosphericMachines

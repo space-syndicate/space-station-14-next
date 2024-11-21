@@ -1,7 +1,14 @@
 next-research-technology-robotics = Basic robotics
+next-research-technology-robotics-advanced = Advanced robotics
+next-research-technology-cyborg-engineer = Cyborg engineer
+next-research-technology-cyborg-janitor = Cyborg janitor
+next-research-technology-cyborg-medical = Cyborg medical
+next-research-technology-cyborg-mining = Cyborg mining
+next-research-technology-cyborg-service = Cyborg service
 next-research-technology-critter-mech = EXOSUIT: Critter
-next-research-technology-honk-mech = EXOSUIT: Honk
+next-research-technology-honk-mech = EXOSUIT: HONK
 next-research-technology-ripley-aplu-mech = EXOSUIT: Ripley
+next-research-technology-cyborg-modules = Basic cyborg modules
 next-research-technology-mechanized-treatment-modules = Medical modules
 next-research-technology-grappling-modules = Grappling modules
 next-research-technology-space-scanning-modules = Scanning modules

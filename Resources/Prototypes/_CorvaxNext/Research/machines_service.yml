@@ -8,9 +8,9 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - SeedExtractorMachineCircuitboard
-  - HydroponicsTrayMachineCircuitboard
-  - ReagentGrinderIndustrialMachineCircuitboard
+   - SeedExtractorMachineCircuitboard
+   - HydroponicsTrayMachineCircuitboard
+   - ReagentGrinderIndustrialMachineCircuitboard
   technologyPrerequisites:
    - Hydroponics
 
@@ -24,10 +24,10 @@
   tier: 1
   cost: 5500
   recipeUnlocks:
-    - ComputerTelevisionCircuitboard
-    - DawInstrumentMachineCircuitboard
-    - MassMediaCircuitboard
-    - JukeboxCircuitBoard
+   - ComputerTelevisionCircuitboard
+   - DawInstrumentMachineCircuitboard
+   - MassMediaCircuitboard
+   - JukeboxCircuitBoard
   technologyPrerequisites:
    - Entertainment
 
@@ -41,9 +41,9 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - FatExtractorMachineCircuitboard
-  - FreezerElectronics
-  - BiofabricatorMachineCircuitboard
-  - BiomassReclaimerMachineCircuitboard
+   - FatExtractorMachineCircuitboard
+   - FreezerElectronics
+   - BiofabricatorMachineCircuitboard
+   - BiomassReclaimerMachineCircuitboard
   technologyPrerequisites:
    - Kitchen

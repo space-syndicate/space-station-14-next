@@ -8,4 +8,4 @@
   tier: 1
   cost: 500
   recipeUnlocks:
-      - ConveyorBeltAssembly
+   - ConveyorBeltAssembly

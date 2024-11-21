@@ -568,7 +568,7 @@
   - type: Lathe
     idleState: fab-idle
     runningState: fab-active
-    staticRecipes:
+    dynamicRecipes: # Corvax-Next-EDIT-RNDResearch
     - MMI
     - PositronicBrain
     - SciFlash
@@ -616,7 +616,6 @@
     - RightLegBorgService
     - HeadBorgService
     - TorsoBorgService
-    dynamicRecipes:
     - ProximitySensor
     - BorgModuleLightReplacer
     - BorgModuleAdvancedCleaning

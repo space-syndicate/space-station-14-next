@@ -8,8 +8,8 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - APECircuitboard
-  - AnomalyVesselCircuitboard
+   - APECircuitboard
+   - AnomalyVesselCircuitboard
   technologyPrerequisites:
   - AnomalousResearch
 
@@ -23,8 +23,8 @@
   tier: 1
   cost: 10000
   recipeUnlocks:
-  - AnomalySynchronizerCircuitboard
-  - AnomalyVesselExperimentalCircuitboard
+   - AnomalySynchronizerCircuitboard
+   - AnomalyVesselExperimentalCircuitboard
   technologyPrerequisites:
   - AnomalousResearch
   - AnomalousResearchAdvanced
@@ -40,8 +40,8 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - AnalysisComputerCircuitboard
-  - ArtifactAnalyzerMachineCircuitboard
+   - AnalysisComputerCircuitboard
+   - ArtifactAnalyzerMachineCircuitboard
 
 - type: technology
   id: AlternativeResearchMachines
@@ -53,7 +53,7 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - TechDiskComputerCircuitboard
+   - TechDiskComputerCircuitboard
 
 - type: technology
   id: AbnormalArtifactManipulationMachines
@@ -65,6 +65,6 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - ArtifactCrusherMachineCircuitboard
+   - ArtifactCrusherMachineCircuitboard
   technologyPrerequisites:
   - AnomalyResearchAdvancedMachines
