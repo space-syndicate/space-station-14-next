@@ -1,7 +1,7 @@
 next-research-technology-robotics = Базовая робототехника
-next-research-technology-critter-mech = Механоид для животных
-next-research-technology-honk-mech = Механоид ХОНК
-next-research-technology-ripley-aplu-mech = Механоид Рипли
+next-research-technology-critter-mech = ЭКЗОКОСТЮМ: Животные
+next-research-technology-honk-mech = ЭКЗОКОСТЮМ: ХОНК
+next-research-technology-ripley-aplu-mech = ЭКЗОКОСТЮМ: Рипли
 next-research-technology-mechanized-treatment-modules = Модули медицины
 next-research-technology-grappling-modules = Модули захвата
 next-research-technology-space-scanning-modules = Модули сканирования
