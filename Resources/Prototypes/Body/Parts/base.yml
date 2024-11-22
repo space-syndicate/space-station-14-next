@@ -5,15 +5,15 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: OrganicPart # backmen: surgery
+    damageContainer: OrganicPart # _CorvaxNext: surgery
   - type: BodyPart
-  # start-backmen: surgery
+  # start-_CorvaxNext: surgery
   - type: SurgeryTool
     startSound:
       path: /Audio/Medical/Surgery/organ1.ogg
     endSound:
       path: /Audio/Medical/Surgery/organ2.ogg
-  # end-backmen: surgery
+  # end-_CorvaxNext: surgery
   - type: ContainerContainer
     containers:
       bodypart: !type:Container
@@ -22,25 +22,22 @@
     price: 100
   - type: Tag
     tags:
-      - Trash
-  # start-backmen: surgery
-  - type: Gibbable # backmen: surgery
+    - Trash
+  # start-_CorvaxNext: surgery
+  - type: Gibbable # _CorvaxNext: surgery
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
+    - trigger: !type:DamageTypeTrigger
         damageType: Blunt
         damage: 75
       behaviors:
-      - !type:GibPartBehavior { }
-    - trigger:
-        !type:DamageTypeTrigger
+      - !type:GibPartBehavior {}
+    - trigger: !type:DamageTypeTrigger
         damageType: Slash
         damage: 100
       behaviors:
-      - !type:GibPartBehavior { }
-    - trigger:
-        !type:DamageTypeTrigger
+      - !type:GibPartBehavior {}
+    - trigger: !type:DamageTypeTrigger
         damageType: Heat
         damage: 200
       behaviors:
@@ -50,11 +47,11 @@
           Ash:
             min: 1
             max: 1
-      - !type:BurnBodyBehavior { }
+      - !type:BurnBodyBehavior {}
       - !type:PlaySoundBehavior
         sound:
           collection: MeatLaserImpact
-  # end-backmen: surgery
+  # end-_CorvaxNext: surgery
 
 - type: entity
   id: BaseTorso
@@ -64,13 +61,13 @@
   components:
   - type: BodyPart
     partType: Torso
-  # start-backmen: surgery
+    # start-_CorvaxNext: surgery
     toolName: "a torso"
     containerName: "torso_slot"
   - type: ContainerContainer
     containers:
       torso_slot: !type:ContainerSlot {}
-  # end-backmen: surgery
+  # end-_CorvaxNext: surgery
 
 - type: entity
   id: BaseHead
@@ -80,13 +77,13 @@
   components:
   - type: BodyPart
     partType: Head
-    toolName: "a head" # backmen: surgery
+    toolName: "a head" # _CorvaxNext: surgery
     vital: true
   - type: Input
     context: "ghost"
   - type: Tag
     tags:
-      - Head
+    - Head
 
 - type: entity
   id: BaseLeftArm
@@ -97,7 +94,7 @@
   - type: BodyPart
     partType: Arm
     symmetry: Left
-    toolName: "a left arm" # backmen: surgery
+    toolName: "a left arm" # _CorvaxNext: surgery
 
 - type: entity
   id: BaseRightArm
@@ -108,7 +105,7 @@
   - type: BodyPart
     partType: Arm
     symmetry: Right
-    toolName: "a right arm" # backmen: surgery
+    toolName: "a right arm" # _CorvaxNext: surgery
 
 - type: entity
   id: BaseLeftHand
@@ -119,7 +116,7 @@
   - type: BodyPart
     partType: Hand
     symmetry: Left
-    toolName: "a left hand" # backmen: surgery
+    toolName: "a left hand" # _CorvaxNext: surgery
 
 - type: entity
   id: BaseRightHand
@@ -130,7 +127,7 @@
   - type: BodyPart
     partType: Hand
     symmetry: Right
-    toolName: "a right hand" # backmen: surgery
+    toolName: "a right hand" # _CorvaxNext: surgery
 
 - type: entity
   id: BaseLeftLeg
@@ -141,7 +138,7 @@
   - type: BodyPart
     partType: Leg
     symmetry: Left
-    toolName: "a left leg" # backmen: surgery
+    toolName: "a left leg" # _CorvaxNext: surgery
   - type: MovementBodyPart
 
 - type: entity
@@ -153,7 +150,7 @@
   - type: BodyPart
     partType: Leg
     symmetry: Right
-    toolName: "a right leg" # backmen: surgery
+    toolName: "a right leg" # _CorvaxNext: surgery
   - type: MovementBodyPart
 
 - type: entity
@@ -165,7 +162,7 @@
   - type: BodyPart
     partType: Foot
     symmetry: Left
-    toolName: "a left foot" # backmen: surgery
+    toolName: "a left foot" # _CorvaxNext: surgery
 
 - type: entity
   id: BaseRightFoot
@@ -176,4 +173,4 @@
   - type: BodyPart
     partType: Foot
     symmetry: Right
-    toolName: "a right foot" # backmen: surgery
+    toolName: "a right foot" # _CorvaxNext: surgery

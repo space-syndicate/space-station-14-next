@@ -4,12 +4,12 @@ using Content.Server.Medical.Components;
 using Content.Server.PowerCell;
 using Content.Server.Temperature.Components;
 using Content.Server.Traits.Assorted;
-using Content.Shared.Backmen.Targeting;
+using Content.Shared._CorvaxNext.Targeting;
 using Content.Shared.Chemistry.EntitySystems;
-// backmen: surgery Start
+// _CorvaxNext: surgery Start
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems;
-// backmen: surgery End
+// _CorvaxNext: surgery End
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
@@ -49,12 +49,12 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         SubscribeLocalEvent<HealthAnalyzerComponent, EntGotInsertedIntoContainerMessage>(OnInsertedIntoContainer);
         SubscribeLocalEvent<HealthAnalyzerComponent, ItemToggledEvent>(OnToggled);
         SubscribeLocalEvent<HealthAnalyzerComponent, DroppedEvent>(OnDropped);
-        // Start-backmen: surgery
+        // Start-_CorvaxNext: surgery
         Subs.BuiEvents<HealthAnalyzerComponent>(HealthAnalyzerUiKey.Key, subs =>
         {
             subs.Event<HealthAnalyzerPartMessage>(OnHealthAnalyzerPartSelected);
         });
-        // End-backmen: surgery
+        // End-_CorvaxNext: surgery
     }
 
     public override void Update(float frameTime)
@@ -75,7 +75,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
                 continue;
             }
 
-            // backmen: surgery Change Start
+            // _CorvaxNext: surgery Change Start
             if (component.CurrentBodyPart != null
                 && (Deleted(component.CurrentBodyPart)
                 || TryComp(component.CurrentBodyPart, out BodyPartComponent? bodyPartComponent)
@@ -84,7 +84,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
                 BeginAnalyzingEntity((uid, component), patient, null);
                 continue;
             }
-            // backmen: surgery Change End
+            // _CorvaxNext: surgery Change End
 
             component.NextUpdate = _timing.CurTime + component.UpdateInterval;
 
@@ -203,7 +203,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         UpdateScannedUser(healthAnalyzer, target, false);
     }
 
-    // Start-backmen: surgery
+    // Start-_CorvaxNext: surgery
     /// <summary>
     /// Handle the selection of a body part on the health analyzer
     /// </summary>
@@ -225,7 +225,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
                 BeginAnalyzingEntity(healthAnalyzer, owner.Value, part.FirstOrDefault().Id);
         }
     }
-// End-backmen: surgery
+// End-_CorvaxNext: surgery
 
     /// <summary>
     /// Send an update for the target to the healthAnalyzer
@@ -261,11 +261,11 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             unrevivable = true;
         */
 
-        // Start-backmen: surgery
+        // Start-_CorvaxNext: surgery
         Dictionary<TargetBodyPart, TargetIntegrity>? body = null;
         if (HasComp<TargetingComponent>(target))
             body = _bodySystem.GetBodyPartStatus(target);
-        // End-backmen: surgery
+        // End-_CorvaxNext: surgery
 
         _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(
             GetNetEntity(target),
@@ -274,8 +274,8 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             scanMode,
             bleeding,
             unrevivable,
-            body, // backmen: surgery
-            part != null ? GetNetEntity(part) : null // backmen: surgery
+            body, // _CorvaxNext: surgery
+            part != null ? GetNetEntity(part) : null // _CorvaxNext: surgery
         ));
     }
 }

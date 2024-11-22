@@ -8,7 +8,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Body.Systems;
 using Content.Shared.Radiation.Events;
 using Content.Shared.Rejuvenate;
-using Content.Shared.Backmen.Targeting;
+using Content.Shared._CorvaxNext.Targeting;
 using Robust.Shared.GameStates;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;

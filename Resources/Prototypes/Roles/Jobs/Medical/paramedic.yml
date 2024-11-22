@@ -4,11 +4,11 @@
   description: job-description-paramedic
   playTimeTracker: JobParamedic
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobMedicalDoctor
-      time: 14400 #4 hrs
-    - !type:OverallPlaytimeRequirement
-      time: 54000 # 15 hrs
+  - !type:RoleTimeRequirement
+    role: JobMedicalDoctor
+    time: 14400 #4 hrs
+  - !type:OverallPlaytimeRequirement
+    time: 54000 # 15 hrs
   startingGear: ParamedicGear
   icon: "JobIconParamedic"
   supervisors: job-supervisors-cmo
@@ -20,11 +20,11 @@
   special:
   - !type:AddComponentSpecial
     components:
-    #start-backmen: surgery
+    #start-_CorvaxNext: surgery
     #- type: CPRTraining
     - type: SurgerySpeedModifier
       SpeedModifier: 1.75
-    #end-backmen: surgery
+    #end-_CorvaxNext: surgery
 
 - type: startingGear
   id: ParamedicGear

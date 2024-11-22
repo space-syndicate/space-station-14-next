@@ -1,5 +1,5 @@
-using Content.Shared.Backmen.Surgery.Tools;
-using Content.Shared.Backmen.Targeting;
+using Content.Shared._CorvaxNext.Surgery.Tools;
+using Content.Shared._CorvaxNext.Targeting;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Containers.ItemSlots;

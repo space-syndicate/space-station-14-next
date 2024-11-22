@@ -26,7 +26,7 @@ using Content.Shared.Stacks;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using System.Linq;
-using Content.Shared.Backmen.Targeting;
+using Content.Shared._CorvaxNext.Targeting;
 
 namespace Content.Server.Medical;
 

@@ -1,5 +1,5 @@
 using Content.Shared.Administration.Logs;
-using Content.Shared.Backmen.Targeting;
+using Content.Shared._CorvaxNext.Targeting;
 using Content.Shared.Damage.Components;
 using Content.Shared.Database;
 using Content.Shared.Hands.Components;
@@ -60,7 +60,7 @@ public sealed class DamageOnInteractSystem : EntitySystem
                 totalDamage = DamageSpecifier.ApplyModifierSet(totalDamage, protectiveEntity.Comp.DamageProtection);
             }
         }
-        // start-backmen: surgery
+        // start-_CorvaxNext: surgery
 
         TargetBodyPart? targetPart = null;
         var hands = CompOrNull<HandsComponent>(args.User);
@@ -74,7 +74,7 @@ public sealed class DamageOnInteractSystem : EntitySystem
             };
         }
 
-        // end-backmen: surgery
+        // end-_CorvaxNext: surgery
 
         totalDamage = _damageableSystem.TryChangeDamage(args.User, totalDamage,  origin: args.Target, targetPart: targetPart);
 

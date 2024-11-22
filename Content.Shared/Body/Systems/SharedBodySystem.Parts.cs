@@ -9,7 +9,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Movement.Components;
 using Content.Shared.Random;
-using Content.Shared.Backmen.Targeting;
+using Content.Shared._CorvaxNext.Targeting;
 using Robust.Shared.Containers;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
@@ -610,7 +610,7 @@ public partial class SharedBodySystem
 
         part.ParentSlot = slot;
 
-        // start-backmen: surgery
+        // start-_CorvaxNext: surgery
         if (TryComp(part.Body, out HumanoidAppearanceComponent? bodyAppearance)
             && !HasComp<BodyPartAppearanceComponent>(partId)
             && !TerminatingOrDeleted(parentPartId)

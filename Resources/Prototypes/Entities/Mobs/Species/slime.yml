@@ -32,7 +32,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-      enum.SurgeryUIKey.Key: # backmen: surgery
+      enum.SurgeryUIKey.Key:
+        # _CorvaxNext: surgery
         type: SurgeryBui
   # to prevent bag open/honk spam
   - type: UseDelay
@@ -42,7 +43,7 @@
   - type: Speech
     speechVerb: Slime
     speechSounds: Slime
-    allowedEmotes: ['Squish']
+    allowedEmotes: [ 'Squish' ]
   - type: TypingIndicator
     proto: slime
   - type: Vocal
@@ -84,7 +85,7 @@
     - reagents: [ Water, SpaceCleaner ]
       methods: [ Touch ]
       effects:
-      - !type:WashCreamPieReaction
+      - !type:WashCreamPieReaction ""
     - reagents: [ Water ]
       methods: [ Touch ]
       effects:
@@ -109,7 +110,7 @@
         Asphyxiation: 0.2
     damageRecovery:
       types:
-        Asphyxiation: -1.0
+        Asphyxiation: -1
     maxSaturation: 15
   - type: Inventory
     femaleDisplacements:

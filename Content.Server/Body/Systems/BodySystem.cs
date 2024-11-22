@@ -33,10 +33,10 @@ public sealed class BodySystem : SharedBodySystem
 
         SubscribeLocalEvent<BodyComponent, MoveInputEvent>(OnRelayMoveInput);
         SubscribeLocalEvent<BodyComponent, ApplyMetabolicMultiplierEvent>(OnApplyMetabolicMultiplier);
-        SubscribeLocalEvent<BodyPartComponent, AttemptEntityGibEvent>(OnGibTorsoAttempt); // backmen: surgery
+        SubscribeLocalEvent<BodyPartComponent, AttemptEntityGibEvent>(OnGibTorsoAttempt); // _CorvaxNext: surgery
     }
 
-    // start-backmen: surgery
+    // start-_CorvaxNext: surgery
     private void OnGibTorsoAttempt(Entity<BodyPartComponent> ent, ref AttemptEntityGibEvent args)
     {
         if (ent.Comp.PartType == BodyPartType.Torso)
@@ -44,7 +44,7 @@ public sealed class BodySystem : SharedBodySystem
             args.GibType = GibType.Skip;
         }
     }
-    // end-backmen: surgery
+    // end-_CorvaxNext: surgery
 
     private void OnRelayMoveInput(Entity<BodyComponent> ent, ref MoveInputEvent args)
     {
@@ -190,5 +190,5 @@ public sealed class BodySystem : SharedBodySystem
 
         Dirty(target, bodyAppearance);
     }
-    // end-backmen: surgery
+    // end-_CorvaxNext: surgery
 }

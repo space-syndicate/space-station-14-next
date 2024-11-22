@@ -1,6 +1,6 @@
 using System.Linq;
 using System.Numerics;
-using Content.Shared.Backmen.Targeting;
+using Content.Shared._CorvaxNext.Targeting;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
@@ -196,7 +196,7 @@ public partial class SharedBodySystem
                     continue;
                 }
 
-                // // start-backmen: surgery
+                // // start-_CorvaxNext: surgery
                 // if (TryComp(parentPartComponent.Body, out HumanoidAppearanceComponent? bodyAppearance))
                 // {
                 //     var appearance = AddComp<BodyPartAppearanceComponent>(childPart);
@@ -210,7 +210,7 @@ public partial class SharedBodySystem
                 //
                 //     Dirty(childPart, appearance);
                 // }
-                // // end-backmen: surgery
+                // // end-_CorvaxNext: surgery
 
                 // Add organs
                 SetupOrgans((childPart, childPartComponent), connectionSlot.Organs);
