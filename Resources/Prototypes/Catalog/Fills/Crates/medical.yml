@@ -6,15 +6,15 @@
   components:
   - type: StorageFill
     contents:
-    - id: MedkitFilled
-      amount: 2
-    - id: Gauze
-      amount: 2
-    - id: Bloodpack
-      amount: 2
-    - id: BoxLatexGloves
-    - id: BoxSterileMask
-    - id: BoxMouthSwab
+      - id: MedkitFilled
+        amount: 2
+      - id: Gauze
+        amount: 2
+      - id: Bloodpack
+        amount: 2
+      - id: BoxLatexGloves
+      - id: BoxSterileMask
+      - id: BoxMouthSwab
 
 - type: entity
   id: CrateChemistrySupplies
@@ -24,13 +24,13 @@
   components:
   - type: StorageFill
     contents:
-    - id: BoxSyringe
-    - id: BoxBeaker
-    - id: BoxPillCanister
-    - id: Dropper
-      amount: 2
-    - id: BoxBottle
-      amount: 2
+      - id: BoxSyringe
+      - id: BoxBeaker
+      - id: BoxPillCanister
+      - id: Dropper
+        amount: 2
+      - id: BoxBottle
+        amount: 2
 
 - type: entity
   id: CrateChemistryVials
@@ -40,7 +40,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: BoxVial
+      - id: BoxVial
 
 - type: entity
   id: CrateMindShieldImplants
@@ -50,8 +50,8 @@
   components:
   - type: StorageFill
     contents:
-    - id: MindShieldImplanter
-      amount: 3
+      - id: MindShieldImplanter
+        amount: 3
 
 - type: entity
   id: CrateMedicalSurgery
@@ -61,17 +61,17 @@
   components:
   - type: StorageFill
     contents:
-    - id: Scalpel
-    - id: Retractor
-    - id: Cautery
-    - id: Drill
-    - id: Saw
-    - id: Hemostat
-    # start-_CorvaxNext: surgery
-    - id: BoneGel
-    - id: BoxLatexGloves
-    - id: BoxSterileMask
-    # end-_CorvaxNext: surgery
+      - id: Scalpel
+      - id: Retractor
+      - id: Cautery
+      - id: Drill
+      - id: Saw
+      - id: Hemostat
+      # start-_CorvaxNext: surgery
+      - id: BoneGel
+      - id: BoxLatexGloves
+      - id: BoxSterileMask
+      # end-_CorvaxNext: surgery
 
 - type: entity
   id: CrateMedicalScrubs
@@ -81,14 +81,14 @@
   components:
   - type: StorageFill
     contents:
-    - id: UniformScrubsColorGreen
-    - id: UniformScrubsColorPurple
-    - id: UniformScrubsColorBlue
-    - id: ClothingHeadHatSurgcapBlue
-    - id: ClothingHeadHatSurgcapPurple
-    - id: ClothingHeadHatSurgcapGreen
-    - id: ClothingMaskSterile
-      amount: 3
+      - id: UniformScrubsColorGreen
+      - id: UniformScrubsColorPurple
+      - id: UniformScrubsColorBlue
+      - id: ClothingHeadHatSurgcapBlue
+      - id: ClothingHeadHatSurgcapPurple
+      - id: ClothingHeadHatSurgcapGreen
+      - id: ClothingMaskSterile
+        amount: 3
 
 - type: entity
   id: CrateEmergencyBurnKit
@@ -158,8 +158,8 @@
   components:
   - type: StorageFill
     contents:
-    - id: BoxBodyBag
-      amount: 2
+      - id: BoxBodyBag
+        amount: 2
 
 - type: entity
   id: CrateVirologyBiosuit
@@ -169,9 +169,9 @@
   components:
   - type: StorageFill
     contents:
-    - id: ClothingOuterBioVirology
-      amount: 2
-    - id: ClothingHeadHatHoodBioVirology
-      amount: 2
-    - id: ClothingMaskSterile
-      amount: 2
+      - id: ClothingOuterBioVirology
+        amount: 2
+      - id: ClothingHeadHatHoodBioVirology
+        amount: 2
+      - id: ClothingMaskSterile
+        amount: 2

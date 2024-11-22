@@ -22,22 +22,25 @@
     price: 100
   - type: Tag
     tags:
-    - Trash
+      - Trash
   # start-_CorvaxNext: surgery
   - type: Gibbable # _CorvaxNext: surgery
   - type: Destructible
     thresholds:
-    - trigger: !type:DamageTypeTrigger
+    - trigger:
+        !type:DamageTypeTrigger
         damageType: Blunt
         damage: 75
       behaviors:
-      - !type:GibPartBehavior {}
-    - trigger: !type:DamageTypeTrigger
+      - !type:GibPartBehavior { }
+    - trigger:
+        !type:DamageTypeTrigger
         damageType: Slash
         damage: 100
       behaviors:
-      - !type:GibPartBehavior {}
-    - trigger: !type:DamageTypeTrigger
+      - !type:GibPartBehavior { }
+    - trigger:
+        !type:DamageTypeTrigger
         damageType: Heat
         damage: 200
       behaviors:
@@ -47,7 +50,7 @@
           Ash:
             min: 1
             max: 1
-      - !type:BurnBodyBehavior {}
+      - !type:BurnBodyBehavior { }
       - !type:PlaySoundBehavior
         sound:
           collection: MeatLaserImpact
@@ -61,7 +64,7 @@
   components:
   - type: BodyPart
     partType: Torso
-    # start-_CorvaxNext: surgery
+  # start-_CorvaxNext: surgery
     toolName: "a torso"
     containerName: "torso_slot"
   - type: ContainerContainer
@@ -83,7 +86,7 @@
     context: "ghost"
   - type: Tag
     tags:
-    - Head
+      - Head
 
 - type: entity
   id: BaseLeftArm

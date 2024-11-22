@@ -6,8 +6,8 @@
   components:
   - type: CombatMode
   - type: MovementSpeedModifier
-    baseWalkSpeed: 3.00
-    baseSprintSpeed: 5.00
+    baseWalkSpeed : 3.00
+    baseSprintSpeed : 5.00
   - type: InputMover
   - type: MobMover
   - type: HTN
@@ -15,8 +15,8 @@
       task: SimpleHostileCompound
   - type: Reactive
     groups:
-      Flammable: [ Touch ]
-      Extinguish: [ Touch ]
+      Flammable: [Touch]
+      Extinguish: [Touch]
   - type: NpcFactionMember
     factions:
     - SimpleHostile
@@ -24,7 +24,7 @@
     drawdepth: SmallMobs
     sprite: Mobs/Animals/regalrat.rsi
     layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
+    - map: ["enum.DamageStateVisualLayers.Base"]
       state: regalrat
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
       state: eyes
@@ -34,7 +34,8 @@
   - type: Fixtures
     fixtures:
       fix1:
-        shape: !type:PhysShapeCircle
+        shape:
+          !type:PhysShapeCircle
           radius: 0.3
         density: 230
         mask:
@@ -49,7 +50,7 @@
   - type: MeleeWeapon
     altDisarm: false
     soundHit:
-      path: /Audio/Weapons/Xeno/alien_claw_flesh1.ogg
+        path: /Audio/Weapons/Xeno/alien_claw_flesh1.ogg
     angle: 0
     animation: WeaponArcClaw
     damage:
@@ -95,8 +96,8 @@
   - type: GhostTakeoverAvailable
   - type: Tag
     tags:
-    - CannotSuicide
-    - FootstepSound
+      - CannotSuicide
+      - FootstepSound
   - type: NoSlip
   - type: RatKing
     hungerPerArmyUse: 25
@@ -140,9 +141,9 @@
     sprite: Mobs/Animals/buffrat.rsi
     scale: 1.2, 1.2
     layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
+    - map: ["enum.DamageStateVisualLayers.Base"]
       state: regalrat
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded"]
       state: eyes
       shader: unshaded
   - type: MobState
@@ -153,7 +154,7 @@
   - type: MeleeWeapon
     altDisarm: false
     soundHit:
-      path: /Audio/Weapons/Xeno/alien_claw_flesh2.ogg
+        path: /Audio/Weapons/Xeno/alien_claw_flesh2.ogg
     angle: 0
     attackRate: 0.75
     animation: WeaponArcFist
@@ -177,21 +178,24 @@
   components:
   - type: CombatMode
   - type: MovementSpeedModifier
-    baseWalkSpeed: 3.5
-    baseSprintSpeed: 3.5
+    baseWalkSpeed : 3.5
+    baseSprintSpeed : 3.5
   - type: InputMover
   - type: MobMover
   - type: HTN
     rootTask:
       task: RatServantCompound
     blackboard:
-      IdleRange: !type:Single "3.5"
-      FollowCloseRange: !type:Single "2.0"
-      FollowRange: !type:Single "3.0"
+      IdleRange: !type:Single
+        3.5
+      FollowCloseRange: !type:Single
+        2.0
+      FollowRange: !type:Single
+        3.0
   - type: Reactive
     groups:
-      Flammable: [ Touch ]
-      Extinguish: [ Touch ]
+      Flammable: [Touch]
+      Extinguish: [Touch]
   - type: NpcFactionMember
     factions:
     - SimpleHostile
@@ -199,9 +203,9 @@
     drawdepth: SmallMobs
     sprite: Mobs/Animals/rat.rsi
     layers:
-    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: rat
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded"]
       state: eyes
       shader: unshaded
   - type: SurgeryTarget
@@ -221,7 +225,8 @@
   - type: Fixtures
     fixtures:
       fix1:
-        shape: !type:PhysShapeCircle
+        shape:
+          !type:PhysShapeCircle
           radius: 0.2
         density: 30 #Bulky by mouse standards...
         mask:
@@ -238,7 +243,7 @@
     critThreshold: 60
   - type: MeleeWeapon
     soundHit:
-      path: /Audio/Weapons/bladeslice.ogg
+        path: /Audio/Weapons/bladeslice.ogg
     angle: 0
     animation: WeaponArcClaw
     damage:
@@ -285,8 +290,8 @@
     wilhelmProbability: 0.001
   - type: Tag
     tags:
-    - CannotSuicide
-    - FootstepSound
+      - CannotSuicide
+      - FootstepSound
   - type: NoSlip
   - type: MobPrice
     price: 500 # rat wealth
@@ -318,9 +323,8 @@
     icon:
       sprite: Interface/Actions/actions_rat_king.rsi
       state: ratKingArmy
-    event:
+    event: !type:RatKingRaiseArmyActionEvent
 
-      !type:RatKingRaiseArmyActionEvent ""
 - type: entity
   id: ActionRatKingDomain
   name: Rat King's Domain
@@ -331,9 +335,8 @@
     icon:
       sprite: Interface/Actions/actions_rat_king.rsi
       state: ratKingDomain
-    event:
+    event: !type:RatKingDomainActionEvent
 
-      !type:RatKingDomainActionEvent ""
 - type: entity
   id: ActionRatKingOrderStay
   name: Stay
@@ -347,8 +350,9 @@
     iconOn:
       sprite: Interface/Actions/actions_rat_king.rsi
       state: stay
-    event: !type:RatKingOrderActionEvent
-      type: Stay
+    event:
+      !type:RatKingOrderActionEvent
+        type: Stay
     priority: 5
 
 - type: entity
@@ -364,7 +368,8 @@
     iconOn:
       sprite: Interface/Actions/actions_rat_king.rsi
       state: follow
-    event: !type:RatKingOrderActionEvent
+    event:
+      !type:RatKingOrderActionEvent
       type: Follow
     priority: 6
 
@@ -381,7 +386,8 @@
     iconOn:
       sprite: Interface/Actions/actions_rat_king.rsi
       state: attack
-    event: !type:RatKingOrderActionEvent
+    event:
+      !type:RatKingOrderActionEvent
       type: CheeseEm
     priority: 7
 
@@ -398,6 +404,7 @@
     iconOn:
       sprite: Interface/Actions/actions_rat_king.rsi
       state: loose
-    event: !type:RatKingOrderActionEvent
+    event:
+      !type:RatKingOrderActionEvent
       type: Loose
     priority: 8

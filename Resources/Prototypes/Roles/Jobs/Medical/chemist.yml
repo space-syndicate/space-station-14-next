@@ -4,9 +4,9 @@
   description: job-description-chemist
   playTimeTracker: JobChemist
   requirements:
-  - !type:DepartmentTimeRequirement
-    department: Medical
-    time: 18000 #5 hrs # Corvax-RoleTime
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 18000 #5 hrs # Corvax-RoleTime
   startingGear: ChemistGear
   icon: "JobIconChemist"
   supervisors: job-supervisors-cmo
@@ -15,7 +15,7 @@
   - Chemistry
   - Maintenance
   special:
-  #start-_CorvaxNext: surgery
+    #start-_CorvaxNext: surgery
   - !type:AddComponentSpecial
     components:
     #- type: CPRTraining
@@ -31,6 +31,6 @@
     belt: ChemBag
     pocket1: HandLabeler
     eyes: ClothingEyesGlassesChemical
-    #storage:
+  #storage:
     #back:
     #- Stuff

@@ -19,11 +19,11 @@
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-    - map: [ "jumpsuit" ]
-    - map: [ "enum.HumanoidVisualLayers.LFoot" ]
-    - map: [ "enum.HumanoidVisualLayers.RFoot" ]
-    - map: [ "enum.HumanoidVisualLayers.LHand" ]
-    - map: [ "enum.HumanoidVisualLayers.RHand" ]
+    - map: ["jumpsuit"]
+    - map: ["enum.HumanoidVisualLayers.LFoot"]
+    - map: ["enum.HumanoidVisualLayers.RFoot"]
+    - map: ["enum.HumanoidVisualLayers.LHand"]
+    - map: ["enum.HumanoidVisualLayers.RHand"]
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
@@ -42,7 +42,7 @@
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
-    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
       color: "#ffffff"
       sprite: Objects/Misc/handcuffs.rsi
       state: body-overlay-2
@@ -69,10 +69,9 @@
   - type: GenericVisualizer
     visuals:
       enum.CreamPiedVisuals.Creamed:
-        clownedon:
-          # Not 'creampied' bc I can already see Skyrat complaining about conflicts.
-          True: { visible: true }
-          False: { visible: false }
+        clownedon: # Not 'creampied' bc I can already see Skyrat complaining about conflicts.
+          True: {visible: true}
+          False: {visible: false}
   - type: StatusIcon
     bounds: -0.5,-0.5,0.5,0.5
   - type: RotationVisuals
@@ -85,10 +84,10 @@
       60: 0.7
       80: 0.5
   - type: Fixtures
-    fixtures:
-      # TODO: This needs a second fixture just for mob collisions.
+    fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:
-        shape: !type:PhysShapeCircle
+        shape:
+          !type:PhysShapeCircle
           radius: 0.35
         density: 185
         restitution: 0.0
@@ -100,20 +99,22 @@
   - type: RangedDamageSound
     soundGroups:
       Brute:
-        collection: MeatBulletImpact
+        collection:
+          MeatBulletImpact
     soundTypes:
       Heat:
-        collection: MeatLaserImpact
+        collection:
+          MeatLaserImpact
   - type: Reactive
     groups:
       Flammable: [ Touch ]
       Extinguish: [ Touch ]
-      Acidic: [ Touch, Ingestion ]
+      Acidic: [Touch, Ingestion]
     reactions:
-    - reagents: [ Water, SpaceCleaner ]
-      methods: [ Touch ]
+    - reagents: [Water, SpaceCleaner]
+      methods: [Touch]
       effects:
-      - !type:WashCreamPieReaction ""
+      - !type:WashCreamPieReaction
   - type: StatusEffects
     allowed:
     - Stun
@@ -186,8 +187,7 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-      enum.SurgeryUIKey.Key:
-        # _CorvaxNext: surgery
+      enum.SurgeryUIKey.Key: # _CorvaxNext: surgery
         type: SurgeryBui
   - type: Puller
   - type: Speech
@@ -274,15 +274,15 @@
   - type: Butcherable
     butcheringType: Spike # TODO human.
     spawned:
-    - id: FoodMeat
-      amount: 5
+      - id: FoodMeat
+        amount: 5
   - type: Respirator
     damage:
       types:
         Asphyxiation: 1.0
     damageRecovery:
       types:
-        Asphyxiation: -1
+        Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing
 
@@ -311,12 +311,12 @@
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-    - map: [ "jumpsuit" ]
-    - map: [ "enum.HumanoidVisualLayers.LFoot" ]
-    - map: [ "enum.HumanoidVisualLayers.RFoot" ]
-    - map: [ "enum.HumanoidVisualLayers.LHand" ]
-    - map: [ "enum.HumanoidVisualLayers.RHand" ]
-    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+    - map: ["jumpsuit"]
+    - map: ["enum.HumanoidVisualLayers.LFoot"]
+    - map: ["enum.HumanoidVisualLayers.RFoot"]
+    - map: ["enum.HumanoidVisualLayers.LHand"]
+    - map: ["enum.HumanoidVisualLayers.RHand"]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
       color: "#ffffff"
       sprite: Objects/Misc/handcuffs.rsi
       state: body-overlay-2
@@ -347,6 +347,5 @@
     requiredLegs: 2
   - type: UserInterface
     interfaces:
-      enum.HumanoidMarkingModifierKey.Key:
-        # sure, this can go here too
+      enum.HumanoidMarkingModifierKey.Key: # sure, this can go here too
         type: HumanoidMarkingModifierBoundUserInterface
