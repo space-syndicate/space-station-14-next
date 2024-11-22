@@ -1,6 +1,6 @@
 using Content.Shared.Body.Part;
 
-namespace Content.Shared._CorvaxNext.Surgery.Conditions;
+namespace Content.Shared.Medical.Surgery.Conditions;
 
 /// <summary>
 ///     Raised on the entity that is receiving surgery.

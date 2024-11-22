@@ -1,4 +1,4 @@
-namespace Content.Shared._CorvaxNext.Surgery.Body.Events;
+namespace Content.Shared.Body.Events;
 
 /// <summary>
 /// Raised on an entity when attempting to remove a body part.

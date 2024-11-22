@@ -1,17 +1,13 @@
 using System.Diagnostics;
 using System.Linq;
-using Content.Shared._CorvaxNext.Surgery.Body.Part;
 using Content.Shared.Body.Components;
-using Content.Shared.Body.Systems;
 using Content.Shared.Body.Part;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using Robust.Shared.GameObjects;
 
-// You can't have different namespaces when using partial keyword and instantiating
 namespace Content.Shared.Body.Systems;
 
 public partial class SharedBodySystem

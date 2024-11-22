@@ -1,4 +1,4 @@
-namespace Content.Shared._CorvaxNext.Surgery.Effects.Complete;
+namespace Content.Shared.Medical.Surgery.Effects.Complete;
 
 /// <summary>
 ///     Raised on the entity that received the surgery.

@@ -10,8 +10,6 @@ using Content.Shared.Inventory;
 using Content.Shared.Movement.Components;
 using Content.Shared.Random;
 using Content.Shared._CorvaxNext.Targeting;
-using Content.Shared._CorvaxNext.Surgery.Body.Part;
-using Content.Shared._CorvaxNext.Surgery.Body.Events;
 using Robust.Shared.Containers;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
