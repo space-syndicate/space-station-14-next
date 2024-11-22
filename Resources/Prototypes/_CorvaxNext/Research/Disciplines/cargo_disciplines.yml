@@ -1,4 +1,14 @@
 - type: techDiscipline
+  id: Cargo
+  name: next-research-discipline-cargo
+  color: "#ffe2b7"
+  icon:
+    sprite: _CorvaxNext/Interface/Misc/research_disciplines.rsi
+    state: cargo
+  tierPrerequisites:
+    1: 0
+
+- type: techDiscipline
   id: BluespaceCargoTransport
   name: next-research-discipline-cargo
   color: "#ffe2b7"

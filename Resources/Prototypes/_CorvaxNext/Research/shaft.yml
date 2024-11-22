@@ -23,8 +23,8 @@
 #   - WeaponPlasmaCutter
    - MiningDrill
    - MineralScannerEmpty
-   - ClothingMaskWeldingGas
-      - Pickaxe
+#   - ClothingMaskWeldingGas # Its broken?
+#   - Pickaxe # Its broken?
 
 - type: technology
   id: SalvageEquipmentAdvanced
