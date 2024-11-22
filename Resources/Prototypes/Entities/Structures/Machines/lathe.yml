@@ -286,6 +286,7 @@
       - LargeBeaker
       - Dropper
       - ClothingEyesGlassesChemical
+      - ClothingEyesHudDiagnostic # Corvax-Next-RNDResearch
       - PowerDrill
       - MiningDrill
       - MiningDrillDiamond
@@ -572,6 +573,7 @@
     - MMI
     - PositronicBrain
     - SciFlash
+    - PersonalAI # Corvax-Next-RNDResearch
     - BorgModuleCable
     - BorgModuleFireExtinguisher
     - BorgModuleRadiationDetection
