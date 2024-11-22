@@ -2,8 +2,8 @@
   id: AnomalousResearchMachines
   name: next-research-technology-anomalous-research-machines
   icon:
-    sprite: Objects/Specific/Research/anomalyscanner.rsi
-    state: icon
+    sprite: Structures/Machines/Anomaly/anomaly_vessel.rsi
+    state: base
   discipline: AnomalousResearch
   tier: 1
   cost: 5000
@@ -59,8 +59,8 @@
   id: AbnormalArtifactManipulationMachines
   name: next-research-technology-abnormal-artifact-manipulation-machines
   icon:
-    sprite: Structures/Machines/traversal_distorter.rsi
-    state: display
+    sprite: Structures/Machines/artifact_crusher.rsi
+    state: base
   discipline: AbnormalArtifactManipulation
   tier: 1
   cost: 5000

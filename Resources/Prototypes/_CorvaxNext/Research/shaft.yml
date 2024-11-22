@@ -30,7 +30,7 @@
   id: SalvageEquipmentAdvanced
   name: next-research-technology-salvage-equipment-advanced
   icon:
-    sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi # Filler
+    sprite: Objects/Specific/Mining/ore_bag_holding.rsi
     state: icon
   discipline: SalvageEquipment
   tier: 1

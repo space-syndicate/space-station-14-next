@@ -21,7 +21,7 @@
   name: next-research-technology-power-generation-advanced-machines
   icon:
     sprite: Structures/Power/Generation/portable_generator.rsi
-    state: portgen0
+    state: portgen1
   discipline: PowerGeneration
   tier: 1
   cost: 8500
@@ -49,8 +49,8 @@
   id: EngineeringMachines
   name: next-research-technology-engineering-machines
   icon:
-    sprite: Structures/Machines/protolathe_hypercon.rsi
-    state: building
+    sprite: Objects/Misc/module.rsi
+    state: charger_APC
   discipline: Engineering
   tier: 1
   cost: 800

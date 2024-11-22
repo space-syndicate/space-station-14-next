@@ -2,8 +2,8 @@
   id: Robotics
   name: next-research-technology-robotics
   icon:
-   sprite: Mobs/Silicon/drone.rsi
-   state: drone
+   sprite: Objects/Fun/pai.rsi
+   state: pai-base
   discipline: Robotics
   tier: 1
   cost: 1500
@@ -38,8 +38,8 @@
   id: CyborgEngineer
   name: next-research-technology-cyborg-engineer
   icon:
-   sprite: Objects/Specific/Robotics/mmi.rsi
-   state: posibrain
+   sprite: Mobs/Silicon/chassis.rsi
+   state: engineer
   discipline: Robotics
   tier: 1
   cost: 3000
@@ -57,8 +57,8 @@
   id: CyborgJanitor
   name: next-research-technology-cyborg-janitor
   icon:
-   sprite: Objects/Specific/Robotics/mmi.rsi
-   state: posibrain
+   sprite: Mobs/Silicon/chassis.rsi
+   state: janitor
   discipline: Robotics
   tier: 1
   cost: 3000
@@ -74,8 +74,8 @@
   id: CyborgMedical
   name: next-research-technology-cyborg-medical
   icon:
-   sprite: Objects/Specific/Robotics/mmi.rsi
-   state: posibrain
+   sprite: Mobs/Silicon/chassis.rsi
+   state: medical
   discipline: Robotics
   tier: 1
   cost: 3000
@@ -93,8 +93,8 @@
   id: CyborgMining
   name: next-research-technology-cyborg-mining
   icon:
-   sprite: Objects/Specific/Robotics/mmi.rsi
-   state: posibrain
+   sprite: Mobs/Silicon/chassis.rsi
+   state: miner
   discipline: Robotics
   tier: 1
   cost: 3000
@@ -112,8 +112,8 @@
   id: CyborgService
   name: next-research-technology-cyborg-service
   icon:
-   sprite: Objects/Specific/Robotics/mmi.rsi
-   state: posibrain
+   sprite: Mobs/Silicon/chassis.rsi
+   state: service
   discipline: Robotics
   tier: 1
   cost: 3000
@@ -218,7 +218,7 @@
   id: MechanizedTreatmentModules
   name: next-research-technology-mechanized-treatment-modules
   icon:
-   sprite: Mobs/Silicon/chassis.rsi
+   sprite: Objects/Specific/Robotics/borgmodule.rsi
    state: medical
   discipline: CyborgModules
   tier: 1
@@ -338,7 +338,7 @@
   id: RoboticCleanlinessModules
   name: next-research-technology-robotic-cleanliness-modules
   icon:
-   sprite: Mobs/Silicon/chassis.rsi
+   sprite: Objects/Specific/Robotics/borgmodule.rsi
    state: janitor
   discipline: CyborgModules
   tier: 1

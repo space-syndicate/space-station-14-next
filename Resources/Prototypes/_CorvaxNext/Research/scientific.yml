@@ -78,7 +78,7 @@
   id: AnomalousResearchAdvanced
   name: next-research-technology-anomalous-research-advanced
   icon:
-    sprite: Objects/Specific/Research/anomalyscanner.rsi
+    sprite: Objects/Specific/Research/anomalylocatorwide.rsi
     state: icon
   discipline: AnomalousResearch
   tier: 1

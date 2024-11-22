@@ -32,8 +32,8 @@
   id: Bootlegging
   name: next-research-technology-bootlegging
   icon:
-    sprite: Objects/Power/light_tube.rsi
-    state: normal
+    sprite: Objects/Consumable/Drinks/generic_jug.rsi
+    state: icon
   discipline: Service
   tier: 1
   cost: 500
@@ -49,8 +49,8 @@
   id: Kitchen
   name: next-research-technology-kitchen
   icon:
-    sprite: Objects/Power/light_tube.rsi
-    state: normal
+    sprite: Objects/Consumable/Food/bowl.rsi
+    state: bowl
   discipline: Service
   tier: 1
   cost: 500
@@ -68,8 +68,8 @@
   id: Hydroponics
   name: next-research-technology-hydroponics
   icon:
-    sprite: Objects/Power/light_tube.rsi
-    state: normal
+    sprite: Objects/Tools/bucket.rsi
+    state: icon
   discipline: Lightning
   tier: 1
   cost: 500

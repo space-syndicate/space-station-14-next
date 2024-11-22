@@ -53,7 +53,7 @@
   technologyPrerequisites:
   - PowercellsAdvanced
 
-#- type: technology # Because need port
+#- type: technology
 #  id: EngineeringDevices
 #  name: next-research-technology-engineering-devices
 #  icon:
@@ -65,11 +65,11 @@
 #  recipeUnlocks:
 #   - RCDRecipe
 
-#- type: technology # Because need port
+#- type: technology
 #  id: AtmosphericDevices
 #  name: next-research-technology-atmospheric-devices
 #  icon:
-#    sprite: White/Items/Tools/rpd.rsi
+#    sprite: Objects/Tools/rpd.rsi
 #    state: icon
 #  discipline: AtmosphericDevices
 #  tier: 1
@@ -81,7 +81,7 @@
   id: EngineeringTools
   name: next-research-engineering-tools
   icon:
-    sprite: Objects/Tools/welder_experimental.rsi
+    sprite: Objects/Tools/multitool.rsi
     state: icon
   discipline: EngineeringTools
   tier: 1
