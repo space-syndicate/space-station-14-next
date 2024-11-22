@@ -211,6 +211,11 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
+  - type: SizeAttributeWhitelist # Corvax-Next
+    tall: true
+    tallscale: 1.1
+    short: true
+    shortscale: 0.90
 
 - type: entity
   save: false
