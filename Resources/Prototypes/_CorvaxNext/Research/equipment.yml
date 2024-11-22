@@ -1,4 +1,22 @@
 - type: technology
+  id: IntegratedHUDs
+  name: next-research-technology-integrated-huds
+  icon:
+    sprite: Clothing/Eyes/Hud/diag.rsi
+    state: icon
+  discipline: IntegratedHUDs
+  tier: 1
+  cost: 1500
+  recipeUnlocks:
+   - ClothingEyesHudSecurity
+   - ClothingEyesGlassesChemical
+   - ClothingEyesHudDiagnostic
+  technologyPrerequisites:
+  - Security
+  - Chemistry
+  - Robotics
+
+- type: technology
   id: MagneticBoots
   name: next-research-technology-magnetic-boots
   icon:
