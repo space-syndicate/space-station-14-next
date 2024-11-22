@@ -410,6 +410,7 @@ public partial class SharedBodySystem
                 launchCone: splatCone);
         }
 
+// Corvax-Next-Surgery
         _gibbingSystem.TryGibEntityWithRef(partId, partId, GibType.Gib, GibContentsOption.Drop, ref gibs,
                 playAudio: true, launchGibs: true, launchDirection: splatDirection, launchImpulse: GibletLaunchImpulse * splatModifier,
                 launchImpulseVariance: GibletLaunchImpulseVariance, launchCone: splatCone);
