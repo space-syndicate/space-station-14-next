@@ -15,6 +15,7 @@ using Content.Shared.Movement.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 using System.Numerics;
+using Content.Shared._CorvaxNext.Surgery.Body.Part;
 
 namespace Content.Server.Body.Systems;
 

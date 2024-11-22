@@ -19,6 +19,7 @@ using Content.Shared._CorvaxNext.Surgery.Steps.Parts;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
 
+// You can't have different namespaces when using partial keyword and instantiating
 // ReSharper disable once CheckNamespace
 namespace Content.Shared.Body.Systems;
 

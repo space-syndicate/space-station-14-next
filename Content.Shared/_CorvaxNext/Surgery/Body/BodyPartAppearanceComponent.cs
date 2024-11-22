@@ -4,7 +4,7 @@ using Content.Shared.Humanoid.Markings;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Body.Part;
+namespace Content.Shared._CorvaxNext.Surgery.Body.Part;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
 public sealed partial class BodyPartAppearanceComponent : Component

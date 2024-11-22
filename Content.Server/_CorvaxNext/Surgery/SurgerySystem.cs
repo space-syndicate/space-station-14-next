@@ -6,8 +6,6 @@ using Content.Shared.Body.Part;
 using Content.Server.Popups;
 using Content.Shared.Damage;
 using Content.Shared.Interaction;
-using Content.Shared.Medical.Surgery.Conditions;
-using Content.Shared.Medical.Surgery.Effects.Step;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Prototypes;
@@ -19,8 +17,9 @@ using System.Linq;
 using Content.Shared._CorvaxNext.Surgery;
 using Content.Shared._CorvaxNext.Surgery.Effects.Step;
 using Content.Shared._CorvaxNext.Surgery.Tools;
+using Content.Shared._CorvaxNext.Surgery.Conditions;
+using Content.Shared._CorvaxNext.Surgery.Effects.Step;
 using Content.Shared.Bed.Sleep;
-using Content.Shared.Medical.Surgery;
 
 namespace Content.Server._CorvaxNext.Surgery;
 

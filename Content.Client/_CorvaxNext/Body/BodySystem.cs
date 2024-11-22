@@ -1,12 +1,13 @@
-﻿using Content.Shared.Body.Systems;
+using Content.Shared.Body.Systems;
 using Content.Shared.Body.Part;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Robust.Client.GameObjects;
 using Robust.Shared.Utility;
 using Content.Shared.Body.Components;
+using Content.Shared._CorvaxNext.Surgery.Body.Part;
 
-namespace Content.Client.Body.Systems;
+namespace Content.Client._CorvaxNext.Body.Systems;
 
 public sealed class BodySystem : SharedBodySystem
 {

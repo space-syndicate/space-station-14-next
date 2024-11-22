@@ -1,8 +1,8 @@
 using System.Linq;
 using Content.Shared._CorvaxNext.Surgery.Steps.Parts;
-using Content.Shared.Medical.Surgery.Conditions;
+using Content.Shared._CorvaxNext.Surgery.Conditions;
+using Content.Shared._CorvaxNext.Surgery.Steps;
 using Content.Shared.Body.Systems;
-using Content.Shared.Medical.Surgery.Steps;
 using Content.Shared.Body.Part;
 using Content.Shared.Damage;
 using Content.Shared.Containers.ItemSlots;

@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Medical.Surgery.Steps;
+namespace Content.Shared._CorvaxNext.Surgery.Steps;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class SurgeryAffixOrganStepComponent : Component;

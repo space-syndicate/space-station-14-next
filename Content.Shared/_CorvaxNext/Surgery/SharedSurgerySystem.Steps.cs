@@ -1,5 +1,3 @@
-using Content.Shared.Medical.Surgery.Conditions;
-using Content.Shared.Medical.Surgery.Steps;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Bed.Sleep;
@@ -16,13 +14,15 @@ using Content.Shared.Item;
 using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using System.Linq;
+using Content.Shared._CorvaxNext.Surgery.Body.Part;
 using Content.Shared._CorvaxNext.Surgery.Body.Organs;
+using Content.Shared._CorvaxNext.Surgery.Body.Events;
 using Content.Shared._CorvaxNext.Surgery.Effects.Step;
 using Content.Shared._CorvaxNext.Surgery.Steps;
 using Content.Shared._CorvaxNext.Surgery.Steps.Parts;
+using Content.Shared._CorvaxNext.Surgery.Conditions;
 using Content.Shared._CorvaxNext.Surgery.Tools;
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.Medical.Surgery;
 
 namespace Content.Shared._CorvaxNext.Surgery;
 
