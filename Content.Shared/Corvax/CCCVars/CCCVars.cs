@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Configuration;
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.Corvax.CCCVars;
 
@@ -59,8 +59,8 @@ public sealed class CCCVars
     /// Tts rate limit values are accounted in periods of this size (seconds).
     /// After the period has passed, the count resets.
     /// </summary>
-    public static readonly CVarDef<int> TTSRateLimitPeriod =
-        CVarDef.Create("tts.rate_limit_period", 2, CVar.SERVERONLY);
+    public static readonly CVarDef<float> TTSRateLimitPeriod =
+        CVarDef.Create("tts.rate_limit_period", 2f, CVar.SERVERONLY);
 
     /// <summary>
     /// How many tts preview messages are allowed in a single rate limit period.
@@ -77,4 +77,35 @@ public sealed class CCCVars
     /// </summary>
     public static readonly CVarDef<bool> PeacefulRoundEnd =
         CVarDef.Create("game.peaceful_end", true, CVar.SERVERONLY);
+
+    /*
+     * CHAT
+     */
+
+    /// <summary>
+    /// A string containing a list of newline-separated words to be highlighted in the chat.
+    /// </summary>
+    public static readonly CVarDef<string> ChatHighlights =
+        CVarDef.Create("chat.highlights", "", CVar.CLIENTONLY | CVar.ARCHIVE, "A list of newline-separated words to be highlighted in the chat.");
+
+    /// <summary>
+    /// An option to toggle the automatic filling of the highlights with the character's info, if available.
+    /// </summary>
+    public static readonly CVarDef<bool> ChatAutoFillHighlights =
+        CVarDef.Create("chat.auto_fill_highlights", false, CVar.CLIENTONLY | CVar.ARCHIVE, "Toggles automatically filling the highlights with the character's information.");
+
+    /// <summary>
+    /// The color in which the highlights will be displayed.
+    /// </summary>
+    public static readonly CVarDef<string> ChatHighlightsColor =
+        CVarDef.Create("chat.highlights_color", "#17FFC1FF", CVar.CLIENTONLY | CVar.ARCHIVE, "The color in which the highlights will be displayed.");
+    /*
+     * Station Goal
+     */
+
+    /// <summary>
+    /// Send station goal on round start or not.
+    /// </summary>
+    public static readonly CVarDef<bool> StationGoal =
+        CVarDef.Create("game.station_goal", true, CVar.SERVERONLY);
 }

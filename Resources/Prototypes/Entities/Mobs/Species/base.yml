@@ -135,6 +135,7 @@
     - Flashed
     - RadiationProtection
     - Drowsiness
+    - Adrenaline
   - type: Body
     prototype: Human
     requiredLegs: 2
@@ -182,8 +183,6 @@
   - type: Stripping
   - type: UserInterface
     interfaces:
-      enum.VoiceMaskUIKey.Key:
-        type: VoiceMaskBoundUserInterface
       enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
@@ -211,11 +210,12 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
+    - AnomalyHost
   - type: SizeAttributeWhitelist # Corvax-Next
-    tall: true
-    tallscale: 1.1
-    short: true
-    shortscale: 0.90
+      tall: true
+      tallscale: 1.1
+      short: true
+      shortscale: 0.90
 
 - type: entity
   save: false
@@ -228,6 +228,7 @@
   id: BaseMobSpeciesOrganic
   abstract: true
   components:
+  - type: OfferItem # Corvax-Next-Offer
   - type: Barotrauma
     damage:
       types:
