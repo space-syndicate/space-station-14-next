@@ -230,6 +230,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.EscapeMenu);
             AddButton(ContentKeyFunctions.EscapeContext);
 
+            // start-_CorvaxNext: surgery
             AddHeader("ui-options-header-targeting");
             AddButton(ContentKeyFunctions.TargetHead);
             AddButton(ContentKeyFunctions.TargetTorso);
@@ -237,6 +238,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.TargetRightArm);
             AddButton(ContentKeyFunctions.TargetLeftLeg);
             AddButton(ContentKeyFunctions.TargetRightLeg);
+            // end-_CorvaxNext: surgery
 
             AddHeader("ui-options-header-misc");
             AddButton(ContentKeyFunctions.TakeScreenshot);

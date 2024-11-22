@@ -115,7 +115,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
             return;
         }
 
-        if (user == args.Target && !_config.GetCVar(Shared.Corvax.CCCVars.CCCVars.CanOperateOnSelf))
+        if (user == args.Target && !_config.GetCVar(Shared._CorvaxNext.NextVars.NextVars.CanOperateOnSelf))
         {
             _popup.PopupEntity(Loc.GetString("surgery-error-self-surgery"), user, user);
             return;

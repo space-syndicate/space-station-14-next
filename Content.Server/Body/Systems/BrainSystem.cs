@@ -27,6 +27,7 @@ namespace Content.Server.Body.Systems
             SubscribeLocalEvent<BrainComponent, PointAttemptEvent>(OnPointAttempt);
         }
 
+        // start-_CorvaxNext: surgery
         private void HandleRemoval(EntityUid uid, BrainComponent _, ref OrganRemovedFromBodyEvent args)
         {
             if (TerminatingOrDeleted(uid) || TerminatingOrDeleted(args.OldBody))
@@ -48,6 +49,7 @@ namespace Content.Server.Body.Systems
                 RemComp<DelayedDeathComponent>(args.Body);
             HandleMind(args.Body, uid);
         }
+        // end-_CorvaxNext: surgery
 
         private void HandleMind(EntityUid newEntity, EntityUid oldEntity)
         {

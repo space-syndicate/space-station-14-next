@@ -104,8 +104,10 @@ public partial class MobStateSystem
         if (oldState == newState || !component.AllowedStates.Contains(newState))
             return;
 
+        // start-_CorvaxNext: surgery
         if (oldState == MobState.Dead && HasComp<DebrainedComponent>(target))
             return;
+        // end-_CorvaxNext: surgery
 
         OnExitState(target, component, oldState);
         component.CurrentState = newState;

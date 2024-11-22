@@ -78,13 +78,6 @@ public sealed class CCCVars
     public static readonly CVarDef<bool> PeacefulRoundEnd =
         CVarDef.Create("game.peaceful_end", true, CVar.SERVERONLY);
 
-    #region Surgery
-
-    public static readonly CVarDef<bool> CanOperateOnSelf =
-        CVarDef.Create("surgery.can_operate_on_self", false, CVar.SERVERONLY);
-
-    #endregion
-
     /*
      * CHAT
      */

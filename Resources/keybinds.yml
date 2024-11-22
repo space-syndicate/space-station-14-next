@@ -590,7 +590,7 @@ binds:
   type: State
   key: MouseRight
   canFocus: true
-# Targeting
+# _CorvaxNext: surgery Targeting
 - function: TargetHead
   type: State
   key: NumpadNum8

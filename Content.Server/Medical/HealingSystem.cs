@@ -143,6 +143,7 @@ public sealed class HealingSystem : EntitySystem
         return false;
     }
 
+    // start-_CorvaxNext: surgery
     private bool IsPartDamaged(EntityUid user, EntityUid target)
     {
         if (!TryComp(user, out TargetingComponent? targeting))
@@ -156,6 +157,7 @@ public sealed class HealingSystem : EntitySystem
 
         return false;
     }
+    // end-_CorvaxNext: surgery
 
     private void OnHealingUse(Entity<HealingComponent> entity, ref UseInHandEvent args)
     {

@@ -56,8 +56,10 @@ public sealed partial class SlotDefinition
     /// </summary>
     [DataField("blacklist")] public EntityWhitelist? Blacklist = null;
 
+    // start-_CorvaxNext: surgery
     /// <summary>
     ///     Is this slot disabled? Could be due to severing or other reasons.
     /// </summary>
     [DataField] public bool Disabled;
+    // end-_CorvaxNext: surgery
 }

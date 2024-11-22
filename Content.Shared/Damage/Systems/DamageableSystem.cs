@@ -263,11 +263,11 @@ namespace Content.Shared.Damage
             TryComp<MobThresholdsComponent>(uid, out var thresholds);
             _mobThreshold.SetAllowRevives(uid, true, thresholds); // do this so that the state changes when we set the damage
             SetAllDamage(uid, component, 0);
-            // Shitmed Start
+            // start-_CorvaxNext: surgery Shitmed Start
             if (HasComp<TargetingComponent>(uid))
                 foreach (var part in _body.GetBodyChildren(uid))
                     RaiseLocalEvent(part.Id, new RejuvenateEvent());
-            // Shitmed End
+            // start-_CorvaxNext: surgery Shitmed End
             _mobThreshold.SetAllowRevives(uid, false, thresholds);
         }
 

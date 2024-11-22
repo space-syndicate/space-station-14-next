@@ -148,6 +148,7 @@ public sealed class BodySystem : SharedBodySystem
         return gibs;
     }
 
+    // start-_CorvaxNext: surgery
     public override HashSet<EntityUid> GibPart(
         EntityUid partId,
         BodyPartComponent? part = null,

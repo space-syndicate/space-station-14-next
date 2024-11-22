@@ -14,6 +14,7 @@ public sealed partial class OrganComponent : Component, ISurgeryToolComponent
     [DataField, AutoNetworkedField]
     public EntityUid? Body;
 
+    // start-_CorvaxNext: surgery
     /// <summary>
     ///     Relevant body this organ originally belonged to.
     ///     ///     FOR WHATEVER FUCKING REASON AUTONETWORKING THIS CRASHES GIBTEST AAAAAAAAAAAAAAA
@@ -37,4 +38,5 @@ public sealed partial class OrganComponent : Component, ISurgeryToolComponent
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool? Used { get; set; }
+    // end-_CorvaxNext: surgery
 }

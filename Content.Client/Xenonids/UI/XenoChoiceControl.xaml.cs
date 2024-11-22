@@ -6,6 +6,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Xenonids.UI;
 
+// start-_CorvaxNext: surgery
 [GenerateTypedNameReferences]
 [Virtual]
 public partial class XenoChoiceControl : Control
@@ -24,3 +25,4 @@ public partial class XenoChoiceControl : Control
         Texture.Texture = texture;
     }
 }
+// end-_CorvaxNext: surgery

@@ -12,8 +12,8 @@ public partial class InventorySystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IViewVariablesManager _vvm = default!;
-    [Dependency] private readonly RandomHelperSystem _randomHelper = default!;
-    [Dependency] private readonly ISerializationManager _serializationManager = default!;
+    [Dependency] private readonly RandomHelperSystem _randomHelper = default!; // _CorvaxNext: surgery
+    [Dependency] private readonly ISerializationManager _serializationManager = default!; // _CorvaxNext: surgery
     private void InitializeSlots()
     {
         SubscribeLocalEvent<InventoryComponent, ComponentInit>(OnInit);
@@ -59,7 +59,7 @@ public partial class InventorySystem : EntitySystem
         if (!_prototypeManager.TryIndex(component.TemplateId, out InventoryTemplatePrototype? invTemplate))
             return;
 
-        _serializationManager.CopyTo(invTemplate.Slots, ref component.Slots, notNullableOverride: true);
+        _serializationManager.CopyTo(invTemplate.Slots, ref component.Slots, notNullableOverride: true);  // _CorvaxNext: surgery
 
         component.Containers = new ContainerSlot[component.Slots.Length];
         for (var i = 0; i < component.Containers.Length; i++)
@@ -118,7 +118,7 @@ public partial class InventorySystem : EntitySystem
 
         foreach (var slotDef in inventory.Slots)
         {
-            if (!slotDef.Name.Equals(slot) || slotDef.Disabled)
+            if (!slotDef.Name.Equals(slot) || slotDef.Disabled) // _CorvaxNext: surgery
                 continue;
             slotDefinition = slotDef;
             return true;
@@ -173,6 +173,7 @@ public partial class InventorySystem : EntitySystem
         }
     }
 
+    // start-_CorvaxNext: surgery
     public void SetSlotStatus(EntityUid uid, string slotName, bool isDisabled, InventoryComponent? inventory = null)
     {
         if (!Resolve(uid, ref inventory))
@@ -201,6 +202,7 @@ public partial class InventorySystem : EntitySystem
 
         Dirty(uid, inventory);
     }
+    // end-_CorvaxNext: surgery
 
     /// <summary>
     /// Enumerator for iterating over an inventory's slot containers. Also has methods that skip empty containers.
@@ -235,7 +237,7 @@ public partial class InventorySystem : EntitySystem
                 var i = _nextIdx++;
                 var slot = _slots[i];
 
-                if ((slot.SlotFlags & _flags) == 0 || slot.Disabled)
+                if ((slot.SlotFlags & _flags) == 0 || slot.Disabled) // _CorvaxNext: surgery
                     continue;
 
                 container = _containers[i];
@@ -253,7 +255,7 @@ public partial class InventorySystem : EntitySystem
                 var i = _nextIdx++;
                 var slot = _slots[i];
 
-                if ((slot.SlotFlags & _flags) == 0 || slot.Disabled)
+                if ((slot.SlotFlags & _flags) == 0 || slot.Disabled) // _CorvaxNext: surgery
                     continue;
 
                 var container = _containers[i];

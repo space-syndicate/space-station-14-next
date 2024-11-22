@@ -32,6 +32,7 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
     }
 }
 
+// start-_CorvaxNext: surgery
 [Serializable, NetSerializable]
 public sealed class HealthAnalyzerPartMessage(NetEntity? owner, TargetBodyPart? bodyPart) : BoundUserInterfaceMessage
 {
@@ -39,4 +40,4 @@ public sealed class HealthAnalyzerPartMessage(NetEntity? owner, TargetBodyPart? 
     public readonly TargetBodyPart? BodyPart = bodyPart;
 
 }
-
+// end-_CorvaxNext: surgery

@@ -1,4 +1,4 @@
-using Content.Shared._CorvaxNext.Surgery.Tools;
+﻿using Content.Shared._CorvaxNext.Surgery.Tools;
 using Content.Shared._CorvaxNext.Targeting;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
@@ -21,11 +21,13 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     [DataField, AutoNetworkedField]
     public EntityUid? Body;
 
+    // start-_CorvaxNext: surgery
     [DataField, AutoNetworkedField]
     public EntityUid? OriginalBody;
 
     [DataField, AutoNetworkedField]
     public BodyPartSlot? ParentSlot;
+    // end-_CorvaxNext: surgery
 
     [DataField, AutoNetworkedField]
     public BodyPartType PartType = BodyPartType.Other;
@@ -38,21 +40,25 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     [DataField("vital"), AutoNetworkedField]
     public bool IsVital;
 
+    // start-_CorvaxNext: surgery
     /// <summary>
     /// Amount of damage to deal when the part gets removed.
     /// Only works if IsVital is true.
     /// </summary>
     [DataField, AutoNetworkedField]
     public FixedPoint2 VitalDamage = 100;
+    // end-_CorvaxNext: surgery
 
     [DataField, AutoNetworkedField]
     public BodyPartSymmetry Symmetry = BodyPartSymmetry.None;
 
+    // start-_CorvaxNext: surgery
     [DataField]
     public string ToolName { get; set; } = "A body part";
 
     [DataField, AutoNetworkedField]
     public bool? Used { get; set; } = null;
+    // end-_CorvaxNext: surgery
 
     /// <summary>
     /// Child body parts attached to this body part.
@@ -66,6 +72,7 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     [DataField, AutoNetworkedField]
     public Dictionary<string, OrganSlot> Organs = new();
 
+    // start-_CorvaxNext: surgery
     /// <summary>
     /// What's the max health this body part can have?
     /// </summary>
@@ -131,6 +138,7 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
         { TargetIntegrity.LightlyWounded, 20 },
         { TargetIntegrity.Healthy, 10 },
     };
+    // end-_CorvaxNext: surgery
 
     /// <summary>
     /// These are only for VV/Debug do not use these for gameplay/systems

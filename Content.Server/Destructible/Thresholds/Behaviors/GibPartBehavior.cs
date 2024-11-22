@@ -4,6 +4,7 @@ using JetBrains.Annotations;
 
 namespace Content.Server.Destructible.Thresholds.Behaviors;
 
+// start-_CorvaxNext: surgery
 [UsedImplicitly]
 [DataDefinition]
 public sealed partial class GibPartBehavior : IThresholdBehavior
@@ -16,4 +17,4 @@ public sealed partial class GibPartBehavior : IThresholdBehavior
         system.BodySystem.GibPart(owner, part);
     }
 }
-
+// end-_CorvaxNext: surgery

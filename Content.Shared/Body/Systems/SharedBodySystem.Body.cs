@@ -50,8 +50,8 @@ public partial class SharedBodySystem
         SubscribeLocalEvent<BodyComponent, ComponentInit>(OnBodyInit);
         SubscribeLocalEvent<BodyComponent, MapInitEvent>(OnBodyMapInit);
         SubscribeLocalEvent<BodyComponent, CanDragEvent>(OnBodyCanDrag);
-        SubscribeLocalEvent<BodyComponent, StandAttemptEvent>(OnStandAttempt);
-        SubscribeLocalEvent<BodyComponent, ProfileLoadFinishedEvent>(OnProfileLoadFinished);
+        SubscribeLocalEvent<BodyComponent, StandAttemptEvent>(OnStandAttempt); // _CorvaxNext: surgery
+        SubscribeLocalEvent<BodyComponent, ProfileLoadFinishedEvent>(OnProfileLoadFinished); // _CorvaxNext: surgery
     }
 
     private void OnBodyInserted(Entity<BodyComponent> ent, ref EntInsertedIntoContainerMessage args)
@@ -137,11 +137,13 @@ public partial class SharedBodySystem
         args.Handled = true;
     }
 
+    // start-_CorvaxNext: surgery
     private void OnStandAttempt(Entity<BodyComponent> ent, ref StandAttemptEvent args)
     {
         if (ent.Comp.LegEntities.Count == 0)
             args.Cancel();
     }
+    // end-_CorvaxNext: surgery
 
     /// <summary>
     /// Sets up all of the relevant body parts for a particular body entity and root part.
@@ -373,6 +375,7 @@ public partial class SharedBodySystem
         return gibs;
     }
 
+    // start-_CorvaxNext: surgery
     public virtual HashSet<EntityUid> GibPart(
         EntityUid partId,
         BodyPartComponent? part = null,
@@ -431,4 +434,5 @@ public partial class SharedBodySystem
             EnsureComp<BodyPartAppearanceComponent>(part.Id);
         }
     }
+    // end-_CorvaxNext: surgery
 }

@@ -1627,7 +1627,7 @@ namespace Content.Client.Stylesheets
                         BackgroundColor = FancyTreeSelectedRowColor,
                     }),
 
-                // Shitmed Edit Start
+                // end-_CorvaxNext: surgery Shitmed Edit Start
                 Element<TextureButton>().Class("TargetDollButtonHead")
                     .Pseudo(TextureButton.StylePseudoClassHover)
                     .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/head_hover.png")),
@@ -1679,7 +1679,7 @@ namespace Content.Client.Stylesheets
                 Element<TextureButton>().Class("TargetDollButtonMouth")
                     .Pseudo(TextureButton.StylePseudoClassHover)
                     .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/mouth_hover.png")),
-                // Shitmed Edit End
+                // end-_CorvaxNext: surgery Shitmed Edit End
 
                 // Silicon law edit ui
                 Element<Label>().Class(SiliconLawContainer.StyleClassSiliconLawPositionLabel)
@@ -1699,7 +1699,7 @@ namespace Content.Client.Stylesheets
                     {
                         new StyleProperty(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Bwoink/un_pinned.png"))
                     })
-                    
+
             }).ToList());
         }
     }

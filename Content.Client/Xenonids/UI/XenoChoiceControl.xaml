@@ -1,3 +1,4 @@
+<!-- start-_CorvaxNext: surgery -->
 <ui:XenoChoiceControl
     xmlns="https://spacestation14.io"
     xmlns:ui="clr-namespace:Content.Client.Xenonids.UI">
@@ -15,3 +16,4 @@
         </Button>
     </BoxContainer>
 </ui:XenoChoiceControl>
+<!-- end-_CorvaxNext: surgery -->

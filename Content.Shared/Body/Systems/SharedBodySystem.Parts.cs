@@ -29,14 +29,15 @@ public partial class SharedBodySystem
         // TODO: This doesn't handle comp removal on child ents.
 
         // If you modify this also see the Body partial for root parts.
-        SubscribeLocalEvent<BodyPartComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<BodyPartComponent, ComponentRemove>(OnBodyPartRemove);
+        SubscribeLocalEvent<BodyPartComponent, MapInitEvent>(OnMapInit); // _CorvaxNext: surgery
+        SubscribeLocalEvent<BodyPartComponent, ComponentRemove>(OnBodyPartRemove); // _CorvaxNext: surgery
         SubscribeLocalEvent<BodyPartComponent, EntInsertedIntoContainerMessage>(OnBodyPartInserted);
         SubscribeLocalEvent<BodyPartComponent, EntRemovedFromContainerMessage>(OnBodyPartRemoved);
-        SubscribeLocalEvent<BodyPartComponent, AmputateAttemptEvent>(OnAmputateAttempt);
-        SubscribeLocalEvent<BodyPartComponent, BodyPartEnableChangedEvent>(OnPartEnableChanged);
+        SubscribeLocalEvent<BodyPartComponent, AmputateAttemptEvent>(OnAmputateAttempt); // _CorvaxNext: surgery
+        SubscribeLocalEvent<BodyPartComponent, BodyPartEnableChangedEvent>(OnPartEnableChanged); // _CorvaxNext: surgery
     }
 
+    // start-_CorvaxNext: surgery
     private void OnMapInit(Entity<BodyPartComponent> ent, ref MapInitEvent args)
     {
         if (ent.Comp.PartType == BodyPartType.Torso)
@@ -51,6 +52,7 @@ public partial class SharedBodySystem
         if (ent.Comp.PartType == BodyPartType.Torso)
             _slots.RemoveItemSlot(ent, ent.Comp.ItemInsertionSlot);
     }
+    // end-_CorvaxNext: surgery
     private void OnBodyPartInserted(Entity<BodyPartComponent> ent, ref EntInsertedIntoContainerMessage args)
     {
         // Body part inserted into another body part.
@@ -80,7 +82,7 @@ public partial class SharedBodySystem
 
         if (TryComp(removedUid, out BodyPartComponent? part) && part.Body is not null)
         {
-            CheckBodyPart((removedUid, part), GetTargetBodyPart(part), true);
+            CheckBodyPart((removedUid, part), GetTargetBodyPart(part), true); // _CorvaxNext: surgery
             RemovePart(part.Body.Value, (removedUid, part), slotId);
             RecursiveBodyUpdate((removedUid, part), null);
         }
@@ -167,6 +169,7 @@ public partial class SharedBodySystem
         PartRemoveDamage(bodyEnt, partEnt);
     }
 
+    // start-_CorvaxNext: surgery
     protected virtual void DropPart(Entity<BodyPartComponent> partEnt)
     {
         // I don't know if this can cause issues, since any part that's being detached HAS to have a Body.
@@ -193,7 +196,7 @@ public partial class SharedBodySystem
 
     private void OnAmputateAttempt(Entity<BodyPartComponent> partEnt, ref AmputateAttemptEvent args) =>
         DropPart(partEnt);
-
+    // end-_CorvaxNext: surgery
     private void AddLeg(Entity<BodyPartComponent> legEnt, Entity<BodyComponent?> bodyEnt)
     {
         if (!Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
@@ -217,10 +220,11 @@ public partial class SharedBodySystem
             bodyEnt.Comp.LegEntities.Remove(legEnt);
             UpdateMovementSpeed(bodyEnt);
             Dirty(bodyEnt, bodyEnt.Comp);
-            Standing.Down(bodyEnt);
+            Standing.Down(bodyEnt); // _CorvaxNext: surgery
         }
     }
 
+    // start-_CorvaxNext: surgery
     // TODO: Refactor this crap.
     private void RemovePartEffect(Entity<BodyPartComponent> partEnt, Entity<BodyComponent?> bodyEnt)
     {
@@ -253,6 +257,7 @@ public partial class SharedBodySystem
             Dirty(bodyEnt, body);
         }
     }
+    // end-_CorvaxNext: surgery
 
     private void PartRemoveDamage(Entity<BodyComponent?> bodyEnt, Entity<BodyPartComponent> partEnt)
     {
@@ -264,11 +269,14 @@ public partial class SharedBodySystem
             && !GetBodyChildrenOfType(bodyEnt, partEnt.Comp.PartType, bodyEnt.Comp).Any()
         )
         {
+            // start-_CorvaxNext: surgery
             var damage = new DamageSpecifier(Prototypes.Index<DamageTypePrototype>("Bloodloss"), partEnt.Comp.VitalDamage);
             Damageable.TryChangeDamage(bodyEnt, damage, partMultiplier: 0f);
+            // end-_CorvaxNext: surgery
         }
     }
 
+    // start-_CorvaxNext: surgery
     private void OnPartEnableChanged(Entity<BodyPartComponent> partEnt, ref BodyPartEnableChangedEvent args)
     {
         partEnt.Comp.Enabled = args.Enabled;
@@ -333,6 +341,7 @@ public partial class SharedBodySystem
             RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
         }
     }
+    // end-_CorvaxNext: surgery
 
     /// <summary>
     /// Tries to get the parent body part to this if applicable.
@@ -552,6 +561,7 @@ public partial class SharedBodySystem
             && Containers.Insert(partId, body.RootContainer);
     }
 
+    // start-_CorvaxNext: surgery
     /// <summary>
     ///     Returns true if this parentId supports attaching a new part to the specified slot.
     /// </summary>
@@ -563,6 +573,7 @@ public partial class SharedBodySystem
         return Resolve(parentId, ref parentPart, logMissing: false)
                && parentPart.Children.ContainsKey(slotId);
     }
+    // end-_CorvaxNext: surgery
 
     #endregion
 
@@ -608,15 +619,15 @@ public partial class SharedBodySystem
             return false;
         }
 
+        // start-_CorvaxNext: surgery
         part.ParentSlot = slot;
 
-        // start-_CorvaxNext: surgery
         if (TryComp(part.Body, out HumanoidAppearanceComponent? bodyAppearance)
             && !HasComp<BodyPartAppearanceComponent>(partId)
             && !TerminatingOrDeleted(parentPartId)
             && !TerminatingOrDeleted(partId)) // Saw some exceptions involving these due to the spawn menu.
             EnsureComp<BodyPartAppearanceComponent>(partId);
-
+        // end-_CorvaxNext: surgery
         return Containers.Insert(partId, container);
     }
 
@@ -834,7 +845,7 @@ public partial class SharedBodySystem
     {
         foreach (var part in GetBodyChildren(bodyId, body))
         {
-            if (part.Component.PartType == type && (symmetry == null || part.Component.Symmetry == symmetry))
+            if (part.Component.PartType == type && (symmetry == null || part.Component.Symmetry == symmetry)) // _CorvaxNext: surgery
                 yield return part;
         }
     }
@@ -896,6 +907,7 @@ public partial class SharedBodySystem
         return false;
     }
 
+    // start-_CorvaxNext: surgery
     /// <summary>
     ///     Tries to get a list of ValueTuples of EntityUid and OrganComponent on each organ
     ///     in the given part.
@@ -937,6 +949,7 @@ public partial class SharedBodySystem
         organs = null;
         return false;
     }
+    // end-_CorvaxNext: surgery
 
     /// <summary>
     /// Gets the parent body part and all immediate child body parts for the partId.
@@ -1006,6 +1019,7 @@ public partial class SharedBodySystem
         return false;
     }
 
+    // start-_CorvaxNext: surgery
     private bool TryGetPartSlotContainerName(BodyPartType partType, out HashSet<string> containerNames)
     {
         containerNames = partType switch
@@ -1031,6 +1045,7 @@ public partial class SharedBodySystem
         }
         return count;
     }
+    // end-_CorvaxNext: surgery
 
     #endregion
 }
