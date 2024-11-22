@@ -38,4 +38,14 @@ public sealed class NextVars
         /// <summary>
         public static readonly CVarDef<bool> PresetAutoVoteEnabled =
             CVarDef.Create("vote.preset_autovote_enabled", true, CVar.SERVERONLY);
+
+        /// <summary>
+        /// _CorvaxNext Surgery cvars
+        /// </summary>
+        #region Surgery
+
+        public static readonly CVarDef<bool> CanOperateOnSelf =
+            CVarDef.Create("surgery.can_operate_on_self", false, CVar.SERVERONLY);
+
+        #endregion
 }
