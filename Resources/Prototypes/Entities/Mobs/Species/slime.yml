@@ -32,6 +32,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.SurgeryUIKey.Key: # _CorvaxNext: surgery
+        type: SurgeryBui
   # to prevent bag open/honk spam
   - type: UseDelay
     delay: 0.5
@@ -116,6 +118,9 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+  - type: FootprintVisualizer # Corvax-Next-Footprints
+    leftBarePrint: "footprint-left-bare-slime"
+    rightBarePrint: "footprint-right-bare-slime"
 
 - type: entity
   parent: MobHumanDummy

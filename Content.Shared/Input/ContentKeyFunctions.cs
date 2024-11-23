@@ -56,9 +56,16 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction TakeScreenshotNoUI = "TakeScreenshotNoUI";
         public static readonly BoundKeyFunction ToggleFullscreen = "ToggleFullscreen";
         public static readonly BoundKeyFunction Point = "Point";
+        public static readonly BoundKeyFunction OfferItem = "OfferItem"; // Corvax-Next-Offer
         public static readonly BoundKeyFunction ZoomOut = "ZoomOut";
         public static readonly BoundKeyFunction ZoomIn = "ZoomIn";
         public static readonly BoundKeyFunction ResetZoom = "ResetZoom";
+        public static readonly BoundKeyFunction TargetHead = "TargetHead"; // _CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetTorso = "TargetTorso"; // _CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetLeftArm = "TargetLeftArm"; // _CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetRightArm = "TargetRightArm"; // _CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetLeftLeg = "TargetLeftLeg"; // _CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetRightLeg = "TargetRightLeg"; // _CorvaxNext: surgery
 
         public static readonly BoundKeyFunction ArcadeUp = "ArcadeUp";
         public static readonly BoundKeyFunction ArcadeDown = "ArcadeDown";
