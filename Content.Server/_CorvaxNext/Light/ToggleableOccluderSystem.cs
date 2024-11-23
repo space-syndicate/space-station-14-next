@@ -19,8 +19,7 @@ public sealed class ToggleableOccluderSystem : EntitySystem
         SubscribeLocalEvent<ToggleableOccluderComponent, ComponentInit>(OnInit);
     }
 
-    private void OnInit(Entity<ToggleableOccluderComponent> uid, ref ComponentInit args)
-
+    private void OnInit(EntityUid uid, ToggleableOccluderComponent comp, ComponentInit args)
     {
         _signalSystem.EnsureSinkPorts(uid, comp.OnPort, comp.OffPort, comp.TogglePort);
     }
