@@ -19,7 +19,8 @@ public sealed class ToggleableOccluderSystem : EntitySystem
         SubscribeLocalEvent<ToggleableOccluderComponent, ComponentInit>(OnInit);
     }
 
-    private void OnInit(EntityUid uid, ToggleableOccluderComponent comp, ComponentInit args)
+    private void OnInit(Entity<ToggleableOccluderComponent> uid, ref ComponentInit args)
+
     {
         _signalSystem.EnsureSinkPorts(uid, comp.OnPort, comp.OffPort, comp.TogglePort);
     }
@@ -29,12 +30,20 @@ public sealed class ToggleableOccluderSystem : EntitySystem
         if (!TryComp<OccluderComponent>(uid, out var occluder))
             return;
 
-        if (args.Port == comp.OffPort)
-            SetState(uid, false, occluder);
-        else if (args.Port == comp.OnPort)
-            SetState(uid, true, occluder);
-        else if (args.Port == comp.TogglePort)
-            ToggleState(uid, occluder);
+        switch (args.Port)
+        {
+            case comp.OffPort:
+                SetState(uid, false, occluder);
+                break;
+
+            case comp.OnPort:
+                SetState(uid, true, occluder);
+                break;
+
+            case comp.TogglePort:
+                ToggleState(uid, occluder);
+                break;
+        }
     }
 
     public void ToggleState(EntityUid uid, OccluderComponent? occluder = null)
@@ -42,7 +51,7 @@ public sealed class ToggleableOccluderSystem : EntitySystem
         if (!Resolve(uid, ref occluder))
             return;
 
-        _occluder.SetEnabled(uid, !occluder.Enabled);
+        SetState(uid, !occluder.Enabled, occluder);
     }
 
     public void SetState(EntityUid uid, bool state, OccluderComponent? occluder = null)
