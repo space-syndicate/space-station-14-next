@@ -120,7 +120,7 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     /// to make possible severing it.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float SeverIntegrity = 90;
+    public float SeverIntegrity = 80; // Corvax-Next-Surgery flavor damage
 
     /// <summary>
     /// On what TargetIntegrity we should re-enable the part.
