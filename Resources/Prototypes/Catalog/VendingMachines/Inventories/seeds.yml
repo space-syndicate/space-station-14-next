@@ -14,7 +14,6 @@
     CocoaSeeds: 3
     CornSeeds: 5
     CottonSeeds: 5
-    CucumbertSeeds: 5 # Corvax NEXT
     EggplantSeeds: 5
     EggySeeds: 5
     GalaxythistleSeeds: 3
@@ -40,5 +39,6 @@
     TowercapSeeds: 5
     WheatSeeds: 5
     WatermelonSeeds: 5
+    CucumbertSeeds: 5 # Corvax NEXT
   emaggedInventory:
     FlyAmanitaSeeds: 1
