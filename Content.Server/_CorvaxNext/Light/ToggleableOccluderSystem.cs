@@ -28,21 +28,13 @@ public sealed class ToggleableOccluderSystem : EntitySystem
     {
         if (!TryComp<OccluderComponent>(uid, out var occluder))
             return;
-
-        switch (args.Port)
-        {
-            case comp.OffPort:
-                SetState(uid, false, occluder);
-                break;
-
-            case comp.OnPort:
-                SetState(uid, true, occluder);
-                break;
-
-            case comp.TogglePort:
-                ToggleState(uid, occluder);
-                break;
-        }
+        
+        if (args.Port == comp.OffPort)
+            SetState(uid, false, occluder);
+        else if (args.Port == comp.OnPort)
+            SetState(uid, true, occluder);
+        else if (args.Port == comp.TogglePort)
+            ToggleState(uid, occluder);
     }
 
     public void ToggleState(EntityUid uid, OccluderComponent? occluder = null)
