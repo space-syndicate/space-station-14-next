@@ -11,7 +11,7 @@ using Content.Shared.Actions;
 
 namespace Content.Shared._CorvaxNext.Resomi.Abilities;
 
-public abstract class SharedAgillitSkillSystem : EntitySystem
+public abstract class SharedAgillitySkillSystem : EntitySystem
 {
     [Dependency] protected readonly IGameTiming Timing = default!;
     [Dependency] protected readonly SharedPopupSystem _popup = default!;
@@ -30,7 +30,8 @@ public abstract class SharedAgillitSkillSystem : EntitySystem
     private void DoJump(Entity<AgillitySkillComponent> ent, ref StartCollideEvent args)
     {
         if (!ent.Comp.Active || !ent.Comp.JumpEnabled
-            || args.OurFixture.CollisionMask != BaseCollisionGroup) //fix it.... maybe.... -_-.... or idk
+            || args.OurFixture.CollisionMask != BaseCollisionGroup
+            || args.OtherFixture.CollisionMask != (int)CollisionGroup.TableMask) //fix it.... maybe.... -_-.... or idk
             return;
 
         _stamina.TryTakeStamina(ent.Owner, ent.Comp.StaminaDamageOnJump);

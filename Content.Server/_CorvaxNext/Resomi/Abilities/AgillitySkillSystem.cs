@@ -13,7 +13,7 @@ using Robust.Shared.Physics;
 
 namespace Content.Server._CorvaxNext.Resomi.Abilities;
 
-public sealed class AgillitySkillSystem : SharedAgillitSkillSystem
+public sealed class AgillitySkillSystem : SharedAgillitySkillSystem
 {
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
