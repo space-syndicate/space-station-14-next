@@ -35,99 +35,6 @@
   - Robotics
 
 - type: technology
-  id: CyborgEngineer
-  name: next-research-technology-cyborg-engineer
-  icon:
-   sprite: Mobs/Silicon/chassis.rsi
-   state: engineer
-  discipline: Robotics
-  tier: 1
-  cost: 3000
-  recipeUnlocks:
-   - LeftArmBorgEngineer
-   - RightArmBorgEngineer
-   - LeftLegBorgEngineer
-   - RightLegBorgEngineer
-   - HeadBorgEngineer
-   - TorsoBorgEngineer
-  technologyPrerequisites:
-  - RoboticsAdvanced
-
-- type: technology
-  id: CyborgJanitor
-  name: next-research-technology-cyborg-janitor
-  icon:
-   sprite: Mobs/Silicon/chassis.rsi
-   state: janitor
-  discipline: Robotics
-  tier: 1
-  cost: 3000
-  recipeUnlocks:
-   - LeftLegBorgJanitor
-   - RightLegBorgJanitor
-   - HeadBorgJanitor
-   - TorsoBorgJanitor
-  technologyPrerequisites:
-  - RoboticsAdvanced
-
-- type: technology
-  id: CyborgMedical
-  name: next-research-technology-cyborg-medical
-  icon:
-   sprite: Mobs/Silicon/chassis.rsi
-   state: medical
-  discipline: Robotics
-  tier: 1
-  cost: 3000
-  recipeUnlocks:
-   - LeftArmBorgMedical
-   - RightArmBorgMedical
-   - LeftLegBorgMedical
-   - RightLegBorgMedical
-   - HeadBorgMedical
-   - TorsoBorgMedical
-  technologyPrerequisites:
-  - RoboticsAdvanced
-
-- type: technology
-  id: CyborgMining
-  name: next-research-technology-cyborg-mining
-  icon:
-   sprite: Mobs/Silicon/chassis.rsi
-   state: miner
-  discipline: Robotics
-  tier: 1
-  cost: 3000
-  recipeUnlocks:
-   - LeftArmBorgMining
-   - RightArmBorgMining
-   - LeftLegBorgMining
-   - RightLegBorgMining
-   - HeadBorgMining
-   - TorsoBorgMining
-  technologyPrerequisites:
-  - RoboticsAdvanced
-
-- type: technology
-  id: CyborgService
-  name: next-research-technology-cyborg-service
-  icon:
-   sprite: Mobs/Silicon/chassis.rsi
-   state: service
-  discipline: Robotics
-  tier: 1
-  cost: 3000
-  recipeUnlocks:
-   - LeftArmBorgService
-   - RightArmBorgService
-   - LeftLegBorgService
-   - RightLegBorgService
-   - HeadBorgService
-   - TorsoBorgService
-  technologyPrerequisites:
-  - RoboticsAdvanced
-
-- type: technology
   id: CritterMech
   name: next-research-technology-critter-mech
   icon:
@@ -206,11 +113,6 @@
    - BorgModuleFireExtinguisher
    - BorgModuleRadiationDetection
    - BorgModuleTool
-   - BorgModuleAppraisal
-   - BorgModuleConstruction
-   - BorgModuleService
-   - BorgModuleTreatment
-   - BorgModuleCleaning
   technologyPrerequisites:
   - RoboticsAdvanced
 
@@ -229,23 +131,6 @@
   technologyPrerequisites:
   - RoboticsAdvanced
   - CyborgModules
-  - CyborgMedical
-
-- type: technology
-  id: GrapplingModules
-  name: next-research-technology-grappling-modules
-  icon:
-   sprite: Objects/Weapons/Guns/Launchers/grappling_gun.rsi
-   state: base
-  discipline: CyborgModules
-  tier: 1
-  cost: 7000
-  recipeUnlocks:
-   - BorgModuleGrapplingGun
-  technologyPrerequisites:
-  - RoboticsAdvanced
-  - CyborgModules
-  - Grappling
 
 - type: technology
   id: SpaceScanningModules
@@ -274,12 +159,10 @@
   cost: 9000
   recipeUnlocks:
    - BorgModuleAdvancedTool
-   - BorgModuleRCD
   technologyPrerequisites:
   - RoboticsAdvanced
   - CyborgModules
   - EngineeringAdvancedTools
-  - CyborgEngineer
 
 - type: technology
   id: HydroponicsModules
@@ -296,25 +179,6 @@
   technologyPrerequisites:
   - RoboticsAdvanced
   - CyborgModules
-  - CyborgService
-
-- type: technology
-  id: EntertainmentAdvancedModules
-  name: next-research-technology-entertainment-advanced-modules
-  icon:
-   sprite: Structures/Machines/computers.rsi
-   state: television
-  discipline: CyborgModules
-  tier: 1
-  cost: 6500
-  recipeUnlocks:
-   - BorgModuleMusique
-   - BorgModuleClowning
-  technologyPrerequisites:
-  - RoboticsAdvanced
-  - CyborgModules
-  - Entertainment
-  - CyborgService
 
 - type: technology
   id: SalvageEquipmentModules
@@ -326,13 +190,11 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-   - BorgModuleMining
    - MechEquipmentDrill
   technologyPrerequisites:
   - RoboticsAdvanced
   - CyborgModules
   - SalvageEquipment
-  - CyborgMining
 
 - type: technology
   id: RoboticCleanlinessModules
@@ -344,13 +206,11 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-   - BorgModuleLightReplacer
    - BorgModuleAdvancedCleaning
   technologyPrerequisites:
   - RoboticsAdvanced
   - CyborgModules
   - CleaningAdvanced
-  - CyborgJanitor
 
 - type: technology
   id: XenoArcheologyModules

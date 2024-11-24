@@ -25,6 +25,7 @@
    - SodiumLightTube
    - ExteriorLightTube
    - LedLightBulb
+   - DimLightBulb
   technologyPrerequisites:
    - Lightning
 
