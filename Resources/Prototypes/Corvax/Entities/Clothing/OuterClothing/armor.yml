@@ -17,3 +17,110 @@
           Heat: 0.5
     - type: ExplosionResistance
       damageCoefficient: 0.65
+
+# UIC
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: ClothingOuterArmorUICLight
+  name: uic armor vest
+  suffix: UIC, Volcanic
+  description: Worn by military police, auxiliary units, and non-combat forces.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Armor/uic_armor_light_vest.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Armor/uic_armor_light_vest.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7 
+        Heat: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: ClothingOuterArmorUICLightVolcanic
+  name: uic armor vest
+  suffix: UIC, Volcanic
+  description: Worn by military police, auxiliary units, and non-combat forces on volcanic planets.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Armor/uic_armor_light_vest_volcanic.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Armor/uic_armor_light_vest_volcanic.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7 
+        Heat: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
+
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: ClothingOuterArmorUICLightForest
+  name: uic armor vest
+  suffix: UIC, Forest
+  description: Worn by auxiliary units and non-combat forces in forested regions.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Armor/uic_armor_light_vest_forest.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Armor/uic_armor_light_vest_forest.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.6
+        Piercing: 0.7 
+        Heat: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: ClothingOuterArmorUICLightSnow
+  name: uic armor vest
+  suffix: UIC, Snow
+  description: Worn by military police, auxiliary units, and non-combat forces in winter and on snow-covered planets.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Armor/uic_armor_light_vest_snow.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Armor/uic_armor_light_vest_snow.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7 
+        Heat: 0.6
+        Cold: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: ClothingOuterArmorUICLightSand
+  name: uic armor vest
+  suffix: UIC, Sand
+  description: Worn by military police, auxiliary units, and non-combat forces on sand-covered planets.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Armor/uic_armor_light_vest_sand.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Armor/uic_armor_light_vest_sand.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7 
+        Heat: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
