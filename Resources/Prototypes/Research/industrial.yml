@@ -1,21 +1,19 @@
 # Tier 1
 
-# - type: technology
-#   id: SalvageEquipment
-#   name: research-technology-salvage-equipment
-#   icon:
-#     sprite: Objects/Tools/handdrill.rsi
-#     state: handdrill
-#   discipline: Industrial
-#   tier: 1
-#   cost: 7500
-#   recipeUnlocks:
-#   - MiningDrill
-#   - MineralScannerEmpty
-#   - BorgModuleMining
-#   - BorgModuleGrapplingGun
-#   - OreProcessorIndustrialMachineCircuitboard
-#   - ClothingMaskWeldingGas
+#- type: technology
+#  id: SalvageEquipment
+#  name: research-technology-salvage-equipment
+#  icon:
+#    sprite: Objects/Tools/handdrill.rsi
+#    state: handdrill
+#  discipline: Industrial
+#  tier: 1
+#  cost: 7500
+#  recipeUnlocks:
+#  - MiningDrill
+#  - MineralScannerEmpty
+#  - OreProcessorIndustrialMachineCircuitboard
+#  - ClothingMaskWeldingGas
 
 # - type: technology
 #   id: SpaceScanning
@@ -154,21 +152,20 @@
 #   technologyPrerequisites:
 #   - AtmosphericTech
 
-# - type: technology
-#   id: AdvancedToolsTechnology
-#   name: research-technology-advanced-tools
-#   icon:
-#     sprite: Objects/Tools/welder_experimental.rsi
-#     state: icon
-#   discipline: Industrial
-#   tier: 2
-#   cost: 10000
-#   recipeUnlocks:
-#     - WelderExperimental
-#     - PowerDrill
-#     - JawsOfLife
-#     - BorgModuleAdvancedTool
-#     - BorgModuleRCD
+#- type: technology
+#  id: AdvancedToolsTechnology
+#  name: research-technology-advanced-tools
+#  icon:
+#    sprite: Objects/Tools/welder_experimental.rsi
+#    state: icon
+#  discipline: Industrial
+#  tier: 2
+#  cost: 10000
+#  recipeUnlocks:
+#    - WelderExperimental
+#    - PowerDrill
+#    - JawsOfLife
+#    - BorgModuleAdvancedTool
 
 # - type: technology
 #   id: MassExcavation
