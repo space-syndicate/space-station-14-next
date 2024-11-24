@@ -1,4 +1,4 @@
-namespace Content.Shared.TimeCycle;
+namespace Content.Shared.CorvaxNext.TimeCycle;
 
 [RegisterComponent]
 public sealed partial class TimeCycleComponent : Component

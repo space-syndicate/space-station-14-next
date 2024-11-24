@@ -1,6 +1,6 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.TimeCycle;
+namespace Content.Shared.CorvaxNext.TimeCycle;
 
 /// <summary>
 ///
