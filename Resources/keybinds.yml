@@ -259,10 +259,10 @@ binds:
   mod1: Shift
 - function: OpenBackpack
   type: State
-  key: V
+  key: U # Corvax-Next-KeyBinds
 - function: OpenBelt
   type: State
-  key: V
+  key: U # Corvax-Next-KeyBinds
   mod1: Shift
 - function: ShowDebugConsole
   type: State
@@ -614,5 +614,4 @@ binds:
   key: F
 - function: ToggleStanding # _CorvaxNext-edit Laying System
   type: State
-  key: C
-  mod1: Shift
+  key: V
