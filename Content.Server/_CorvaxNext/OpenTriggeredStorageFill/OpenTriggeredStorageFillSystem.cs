@@ -14,7 +14,6 @@ namespace Content.Server._CorvaxNext.OpenTriggeredStorageFill;
 /// </summary>
 public sealed class OpenTriggeredStorageFillSystem : EntitySystem
 {
-
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
@@ -27,7 +26,6 @@ public sealed class OpenTriggeredStorageFillSystem : EntitySystem
     //Yes, that's a copy of StorageSystem StorageFill method
     private void OnOpenEvent(EntityUid uid, OpenTriggeredStorageFillComponent comp, ActivateInWorldEvent args)
     {
-        Log.Debug("aaa");
         var coordinates = Transform(uid).Coordinates;
 
         var spawnItems = EntitySpawnCollection.GetSpawns(comp.Contents);
@@ -49,5 +47,4 @@ public sealed class OpenTriggeredStorageFillSystem : EntitySystem
 
         RemComp(uid, comp);
     }
-
 }
