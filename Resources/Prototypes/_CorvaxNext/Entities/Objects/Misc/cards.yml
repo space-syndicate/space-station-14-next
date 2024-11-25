@@ -48,6 +48,7 @@
   id: CardHandBase
   categories: [ HideSpawnMenu ]
   name: hand of cards
+  noSpawn: true
   components:
   - type: CardHand
   - type: Sprite
