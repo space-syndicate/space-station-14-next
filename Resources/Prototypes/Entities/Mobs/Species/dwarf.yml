@@ -70,7 +70,6 @@
     leftBarePrint: "footprint-left-bare-dwarf"
     rightBarePrint: "footprint-right-bare-dwarf"
 
-
 - type: entity
   parent: BaseSpeciesDummy
   id: MobDwarfDummy
