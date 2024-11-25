@@ -1,11 +1,11 @@
 using Content.Shared._CorvaxNext.NextVars;
-using Content.Shared.Backmen.Standing;
+using Content.Shared._CorvaxNext.Standing;
 using Content.Shared.Rotation;
 using Content.Shared.Standing;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 
-namespace Content.Server.Backmen.Standing;
+namespace Content.Server._CorvaxNext.Standing;
 
 public sealed class LayingDownSystem : SharedLayingDownSystem // WD EDIT
 {

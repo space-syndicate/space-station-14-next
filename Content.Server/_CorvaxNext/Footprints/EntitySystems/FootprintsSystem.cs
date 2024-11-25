@@ -8,7 +8,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Content.Shared._CorvaxNext.Footprints;
 using Content.Shared._CorvaxNext.Footprints.Components;
-using Content.Shared.Backmen.Standing;
+using Content.Shared._CorvaxNext.Standing;
 
 namespace Content.Server._CorvaxNext.Footprints.EntitySystems;
 

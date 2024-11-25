@@ -10,10 +10,10 @@ public sealed partial class StandingStateComponent : Component
     [DataField]
     public SoundSpecifier DownSound { get; private set; } = new SoundCollectionSpecifier("BodyFall");
 
-    // BACKMEN EDIT START
+    // _CorvaxNext EDIT START
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public StandingState CurrentState { get; set; } = StandingState.Standing;
-    // BACKMEN EDIT END
+    // _CorvaxNext EDIT END
 
     public bool Standing
     {
@@ -28,11 +28,11 @@ public sealed partial class StandingStateComponent : Component
     [DataField, AutoNetworkedField]
     public List<string> ChangedFixtures = new();
 }
-// BACKMEN EDIT START
+// _CorvaxNext EDIT START
 public enum StandingState
 {
     Lying,
     GettingUp,
     Standing,
 }
-// BACKMEN EDIT END
+// _CorvaxNext EDIT END

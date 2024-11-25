@@ -19,7 +19,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
-using Content.Shared.Backmen.Standing;
+using Content.Shared._CorvaxNext.Standing;
 using Content.Shared.Movement.Components;
 
 namespace Content.Shared.Stunnable;
@@ -140,20 +140,20 @@ public abstract class SharedStunSystem : EntitySystem
     private void OnKnockInit(EntityUid uid, KnockedDownComponent component, ComponentInit args)
     {
         _standingState.Down(uid);
-        // start-backmen: Laying System
+        // start-_CorvaxNext: Laying System
         if (TryComp<LayingDownComponent>(uid, out var layingDownComponent))
         {
             _layingDown.TryProcessAutoGetUp((uid, layingDownComponent));
             _layingDown.TryLieDown(uid, layingDownComponent, null, DropHeldItemsBehavior.DropIfStanding); // Ataraxia EDIT
         }
-        // end-backmen: Laying System
+        // end-_CorvaxNext: Laying System
 
     }
 
 
     private void OnKnockShutdown(EntityUid uid, KnockedDownComponent component, ComponentShutdown args)
     {
-        // start-backmen: Laying System
+        // start-_CorvaxNext: Laying System
         if (!TryComp(uid, out StandingStateComponent? standing))
             return;
 
@@ -164,7 +164,7 @@ public abstract class SharedStunSystem : EntitySystem
         }
 
         _standingState.Stand(uid, standing);
-        // end-backmen: Laying System
+        // end-_CorvaxNext: Laying System
     }
 
     private void OnStandAttempt(EntityUid uid, KnockedDownComponent component, StandAttemptEvent args)

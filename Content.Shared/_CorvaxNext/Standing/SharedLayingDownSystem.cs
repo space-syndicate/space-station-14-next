@@ -35,7 +35,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 
-namespace Content.Shared.Backmen.Standing;
+namespace Content.Shared._CorvaxNext.Standing;
 
 public abstract class SharedLayingDownSystem : EntitySystem
 {
@@ -83,7 +83,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
 
     private void OnCheckLegs(Entity<LayingDownComponent> ent, ref StandAttemptEvent args)
     {
-        if(!TryComp<BodyComponent>(ent, out var body))
+        if (!TryComp<BodyComponent>(ent, out var body))
             return;
 
         if (!HasComp<BorgChassisComponent>(ent) && (body.LegEntities.Count < body.RequiredLegs || body.LegEntities.Count == 0))
@@ -92,20 +92,20 @@ public abstract class SharedLayingDownSystem : EntitySystem
 
     private void OnBoundUserInterface(BoundUserInterfaceMessageAttempt args)
     {
-        if(
+        if (
             args.Cancelled ||
             !TryComp<ActivatableUIComponent>(args.Target, out var uiComp) ||
             !TryComp<StandingStateComponent>(args.Actor, out var standingStateComponent) ||
             standingStateComponent.CurrentState != StandingState.Lying)
             return;
 
-        if(uiComp.RequiresComplex)
+        if (uiComp.RequiresComplex)
             args.Cancel();
     }
 
     private void OnChangeMobState(Entity<LayingDownComponent> ent, ref MobStateChangedEvent args)
     {
-        if(
+        if (
             !TryComp<StandingStateComponent>(ent, out var standingStateComponent) ||
             standingStateComponent.CurrentState != StandingState.Lying)
             return;
@@ -120,7 +120,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
         if (CrawlUnderTables)
         {
             ent.Comp.DrawDowned = false;
-            Dirty(ent,ent.Comp);
+            Dirty(ent, ent.Comp);
         }
     }
 
@@ -128,7 +128,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
 
     private void OnUnBuckled(Entity<LayingDownComponent> ent, ref UnbuckledEvent args)
     {
-        if(!TryComp<StandingStateComponent>(ent, out var standingStateComponent))
+        if (!TryComp<StandingStateComponent>(ent, out var standingStateComponent))
             return;
 
         if (TryComp<BodyComponent>(ent, out var body) &&
@@ -144,13 +144,13 @@ public abstract class SharedLayingDownSystem : EntitySystem
         if (CrawlUnderTables && standingStateComponent.CurrentState == StandingState.Lying)
         {
             ent.Comp.DrawDowned = true;
-            Dirty(ent,ent.Comp);
+            Dirty(ent, ent.Comp);
         }
     }
 
     private void OnBuckled(Entity<LayingDownComponent> ent, ref BuckledEvent args)
     {
-        if(
+        if (
             !TryComp<StandingStateComponent>(ent, out var standingStateComponent) ||
             standingStateComponent.CurrentState != StandingState.Lying)
             return;
@@ -166,13 +166,13 @@ public abstract class SharedLayingDownSystem : EntitySystem
 
     public void TryProcessAutoGetUp(Entity<LayingDownComponent> ent)
     {
-        if(_buckle.IsBuckled(ent))
+        if (_buckle.IsBuckled(ent))
             return;
 
-        if(_pulling.IsPulled(ent))
+        if (_pulling.IsPulled(ent))
             return;
 
-        if(!IsSafeStanUp(ent, out _))
+        if (!IsSafeStanUp(ent, out _))
             return;
 
         var autoUp = !_playerManager.TryGetSessionByEntity(ent, out var player) ||
@@ -233,7 +233,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
             return;
 
         //RaiseNetworkEvent(new CheckAutoGetUpEvent(GetNetEntity(uid)));
-        TryProcessAutoGetUp((uid,layingDown));
+        TryProcessAutoGetUp((uid, layingDown));
 
         if (_standing.IsDown(uid, standing))
             TryStandUp(uid, layingDown, standing);
@@ -247,12 +247,12 @@ public abstract class SharedLayingDownSystem : EntitySystem
             _mobState.IsIncapacitated(uid) || !IsSafeStanUp(uid, out _) || !_standing.Stand(uid))
         {
             component.CurrentState = StandingState.Lying;
-            Dirty(uid,component);
+            Dirty(uid, component);
             return;
         }
 
         component.CurrentState = StandingState.Standing;
-        Dirty(uid,component);
+        Dirty(uid, component);
     }
 
     private void OnRefreshMovementSpeed(EntityUid uid, LayingDownComponent component, RefreshMovementSpeedModifiersEvent args)
@@ -260,7 +260,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
         if (_standing.IsDown(uid))
             args.ModifySpeed(component.SpeedModify, component.SpeedModify);
         //else
-          //  args.ModifySpeed(1f, 1f);
+        //  args.ModifySpeed(1f, 1f);
     }
 
     private void OnParentChanged(EntityUid uid, LayingDownComponent component, EntParentChangedMessage args)
@@ -286,7 +286,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
                 if (!_tag.HasTag(ent, "Structure") || !TryComp<Robust.Shared.Physics.Components.PhysicsComponent>(ent, out var phys))
                     continue;
 
-                if(!phys.CanCollide|| (phys.CollisionMask & (int) CollisionGroup.MidImpassable) == 0x0)
+                if (!phys.CanCollide || (phys.CollisionMask & (int)CollisionGroup.MidImpassable) == 0x0)
                     continue;
 
                 obj = ent;
@@ -315,12 +315,12 @@ public abstract class SharedLayingDownSystem : EntitySystem
         if (!IsSafeStanUp(uid, out var obj))
         {
             _popup.PopupPredicted(
-                Loc.GetString("bonkable-success-message-user",("bonkable", obj.Value)),
-                Loc.GetString("bonkable-success-message-others",("bonkable", obj.Value), ("user", uid)),
+                Loc.GetString("bonkable-success-message-user", ("bonkable", obj.Value)),
+                Loc.GetString("bonkable-success-message-others", ("bonkable", obj.Value), ("user", uid)),
                 obj.Value,
                 uid,
                 PopupType.MediumCaution);
-            _damageable.TryChangeDamage(uid, new DamageSpecifier(){DamageDict = {{"Blunt", 5}}}, ignoreResistances: true, canEvade: true, targetPart: TargetBodyPart.Head);
+            _damageable.TryChangeDamage(uid, new DamageSpecifier() { DamageDict = { { "Blunt", 5 } } }, ignoreResistances: true, canEvade: true, targetPart: TargetBodyPart.Head);
             _stun.TryStun(uid, TimeSpan.FromSeconds(2), true);
             _audioSystem.PlayPredicted(_bonkSound, uid, obj.Value);
             return false;

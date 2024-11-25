@@ -2,7 +2,7 @@ using System.Numerics;
 using Content.Server.Body.Systems;
 using Content.Shared.Buckle;
 using Content.Shared.ActionBlocker;
-using Content.Shared.Backmen.Standing;
+using Content.Shared._CorvaxNext.Standing;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Buckle.Components;
@@ -35,7 +35,7 @@ namespace Content.IntegrationTests.Tests.Buckle
   - type: Body
     prototype: Human
   - type: StandingState
-  - type: LayingDown # backmen
+  - type: LayingDown # _CorvaxNext
 
 - type: entity
   name: {StrapDummyId}
@@ -311,7 +311,7 @@ namespace Content.IntegrationTests.Tests.Buckle
 
             await server.WaitRunTicks(10);
 
-            // start-backmen: Laying System
+            // start-_CorvaxNext: Laying System
             await server.WaitAssertion(() =>
             {
                 // Unbuckled and laydown
@@ -333,7 +333,7 @@ namespace Content.IntegrationTests.Tests.Buckle
                 entityManager.System<StandingStateSystem>().Stand(human);
                 Assert.That(comp.CurrentState, Is.EqualTo(StandingState.Lying));
             });
-            // end-backmen: Laying System
+            // end-_CorvaxNext: Laying System
 
             await pair.CleanReturnAsync();
         }
