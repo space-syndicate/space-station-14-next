@@ -78,7 +78,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
         SubscribeLocalEvent<LayingDownComponent, StandAttemptEvent>(OnCheckLegs);
         SubscribeLocalEvent<BoundUserInterfaceMessageAttempt>(OnBoundUserInterface, after: [typeof(SharedInteractionSystem)]);
 
-        Subs.CVar(_config, NextVars.CrawlUnderTables, b => CrawlUnderTables = b, true);
+        Subs.CVar(_config, NextVars.NextVars.CrawlUnderTables, b => CrawlUnderTables = b, true);
     }
 
     private void OnCheckLegs(Entity<LayingDownComponent> ent, ref StandAttemptEvent args)
