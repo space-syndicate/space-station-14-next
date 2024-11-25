@@ -5,7 +5,8 @@ using Robust.Shared.Utility;
 namespace Content.Shared._CorvaxNext.Cards.Card;
 
 /// <summary>
-/// This is used for...
+/// Represents a card entity that has both a front and back sprite, and can be flipped. 
+/// This component is networked and supports updating the state of the card's visuals and name across the network.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class CardComponent : Component

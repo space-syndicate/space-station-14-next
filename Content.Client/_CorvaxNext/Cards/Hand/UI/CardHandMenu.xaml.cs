@@ -14,7 +14,7 @@ namespace Content.Client._CorvaxNext.Cards.Hand.UI;
 [GenerateTypedNameReferences]
 public sealed partial class CardHandMenu : RadialMenu
 {
-    [Dependency] private readonly EntityManager _entManager = default!;
+    [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     private readonly SpriteSystem _spriteSystem;
@@ -24,6 +24,10 @@ public sealed partial class CardHandMenu : RadialMenu
 
     private EntityUid _owner;
 
+    /// <summary>
+    /// Represents the radial menu UI for displaying the player's hand of cards,
+    /// allowing the player to select a card to draw.
+    /// </summary>
     public CardHandMenu(EntityUid owner, CardHandMenuBoundUserInterface bui)
     {
         IoCManager.InjectDependencies(this);
@@ -40,12 +44,14 @@ public sealed partial class CardHandMenu : RadialMenu
         if (!_entManager.TryGetComponent<CardStackComponent>(owner, out var stack))
             return;
 
+        if (_playerManager.LocalSession == null)
+            return;
+
         foreach (var card in stack.Cards)
         {
-            if (_playerManager.LocalSession == null)
-                return;
             if (!_entManager.TryGetComponent<CardComponent>(card, out var cardComp))
-                return;
+                continue;
+
             string cardName;
             if (cardComp.Flipped && _entManager.TryGetComponent<MetaDataComponent>(card, out var metadata))
             {
@@ -72,7 +78,7 @@ public sealed partial class CardHandMenu : RadialMenu
                 {
                     VerticalAlignment = VAlignment.Center,
                     HorizontalAlignment = HAlignment.Center,
-                    Texture = sprite.Icon?.Default,
+                    Texture = sprite.Icon.Default,
                     TextureScale = new Vector2(2f, 2f),
                 };
 
@@ -96,6 +102,5 @@ public sealed class CardMenuButton : RadialMenuTextureButton
 {
     public CardMenuButton()
     {
-
     }
 }

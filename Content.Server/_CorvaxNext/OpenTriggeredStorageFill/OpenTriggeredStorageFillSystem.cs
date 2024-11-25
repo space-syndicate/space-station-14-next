@@ -10,7 +10,7 @@ using Robust.Shared.Utility;
 namespace Content.Server._CorvaxNext.OpenTriggeredStorageFill;
 
 /// <summary>
-/// This handles...
+/// Handles spawning and inserting items into a storage entity when it is activated for the first time.
 /// </summary>
 public sealed class OpenTriggeredStorageFillSystem : EntitySystem
 {

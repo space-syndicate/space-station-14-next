@@ -3,7 +3,8 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._CorvaxNext.Cards.Hand;
 
 /// <summary>
-/// This is used for...
+/// Represents a hand of cards with configurable properties such as the arrangement angle,
+/// offsets, scaling, card limit, and whether the cards are flipped.
 /// </summary>
 [RegisterComponent]
 public sealed partial class CardHandComponent : Component

@@ -15,7 +15,9 @@ using Robust.Shared.Utility;
 namespace Content.Shared._CorvaxNext.Cards.Hand;
 
 /// <summary>
-/// This handles...
+/// Manages interactions with hands of cards, including drawing, shuffling, flipping, 
+/// converting to decks, and providing contextual actions for users.
+/// Handles state synchronization and animation effects across the network.
 /// </summary>
 public sealed class CardHandSystem : EntitySystem
 {

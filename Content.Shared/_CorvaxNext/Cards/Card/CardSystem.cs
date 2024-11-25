@@ -15,7 +15,9 @@ using Robust.Shared.Utility;
 namespace Content.Shared._CorvaxNext.Cards.Card;
 
 /// <summary>
-/// This handles...
+/// Handles the core functionality and interactions of card entities, including flipping cards, 
+/// combining them into stacks, hands, or decks, and providing contextual actions such as drawing and joining.
+/// This system manages both server-side and client-side behavior, ensuring synchronized state across the network.
 /// </summary>
 public sealed class CardSystem : EntitySystem
 {

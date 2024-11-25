@@ -15,6 +15,10 @@ public sealed class CardHandMenuBoundUserInterface : BoundUserInterface
 
     private CardHandMenu? _menu;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="CardHandMenuBoundUserInterface"/> class,
+    /// which manages the interaction between the card hand UI and the game logic.
+    /// </summary>
     public CardHandMenuBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
         IoCManager.InjectDependencies(this);
@@ -24,7 +28,7 @@ public sealed class CardHandMenuBoundUserInterface : BoundUserInterface
     {
         base.Open();
 
-        _menu = new(Owner, this);
+        _menu = new CardHandMenu(Owner, this);
         _menu.OnClose += Close;
 
         // Open the menu, centered on the mouse
@@ -42,6 +46,6 @@ public sealed class CardHandMenuBoundUserInterface : BoundUserInterface
         base.Dispose(disposing);
         if (!disposing) return;
 
-        _menu?.Dispose();
+        _menu?.Close();
     }
 }

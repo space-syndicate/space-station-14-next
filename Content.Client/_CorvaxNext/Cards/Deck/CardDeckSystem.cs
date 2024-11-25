@@ -1,4 +1,4 @@
-using System.Linq;
+using System.Collections.Generic;
 using System.Numerics;
 using Content.Shared._CorvaxNext.Cards.Deck;
 using Content.Shared._CorvaxNext.Cards.Stack;
@@ -7,13 +7,13 @@ using Robust.Client.GameObjects;
 namespace Content.Client._CorvaxNext.Cards.Deck;
 
 /// <summary>
-/// This handles...
+/// Handles the visual representation and sprite updates for card decks on the client side,
+/// responding to events such as card stack changes, flips, and reordering.
 /// </summary>
 public sealed class CardDeckSystem : EntitySystem
 {
-    private readonly Dictionary<Entity<CardDeckComponent>, int> _notInitialized = [];
+    private readonly Dictionary<EntityUid, int> _notInitialized = new();
     [Dependency] private readonly CardSpriteSystem _cardSpriteSystem = default!;
-
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -31,34 +31,45 @@ public sealed class CardDeckSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        // Lazy way to make sure the sprite starts correctly
-        foreach (var kv in _notInitialized)
-        {
-            var ent = kv.Key;
+        // Lazy initialization of card deck sprites
+        var entitiesToRemove = new List<EntityUid>();
 
-            if (kv.Value >= 5)
+        foreach (var kvp in _notInitialized)
+        {
+            var uid = kvp.Key;
+            var attempts = kvp.Value;
+
+            if (attempts >= 5)
             {
-                _notInitialized.Remove(ent);
+                // Maximum attempts reached, remove from tracking
+                entitiesToRemove.Add(uid);
                 continue;
             }
 
-            _notInitialized[ent] = kv.Value + 1;
+            _notInitialized[uid] = attempts + 1;
 
-            if (!TryComp(ent.Owner, out CardStackComponent? stack) || stack.Cards.Count <= 0)
+            if (!TryComp(uid, out CardStackComponent? stack) || stack.Cards.Count <= 0)
                 continue;
 
-
-            // If the card was STILL not initialized, we skip it
-            if (!TryGetCardLayer(stack.Cards.Last(), out var _))
+            // Check if the card's sprite layer is initialized
+            if (!TryGetCardLayer(stack.Cards[^1], out _))
                 continue;
 
-            // If cards were correctly initialized, we update the sprite
-            UpdateSprite(ent.Owner, ent.Comp);
-            _notInitialized.Remove(ent);
+            // Update the sprite now that the card is initialized
+            if (TryComp(uid, out CardDeckComponent? comp))
+            {
+                UpdateSprite(uid, comp);
+            }
+
+            entitiesToRemove.Add(uid);
         }
 
+        // Remove entities outside the loop to avoid modifying the collection during iteration
+        foreach (var uid in entitiesToRemove)
+        {
+            _notInitialized.Remove(uid);
+        }
     }
-
 
     private bool TryGetCardLayer(EntityUid card, out SpriteComponent.Layer? layer)
     {
@@ -81,12 +92,10 @@ public sealed class CardDeckSystem : EntitySystem
         if (!TryComp(uid, out CardStackComponent? cardStack))
             return;
 
-
-        // Prevents error appearing at spawnMenu
-        if (cardStack.Cards.Count <= 0 || !TryGetCardLayer(cardStack.Cards.Last(), out var cardlayer) ||
-            cardlayer == null)
+        // Prevent errors when the card stack is empty or not initialized
+        if (cardStack.Cards.Count <= 0 || !TryGetCardLayer(cardStack.Cards[^1], out _))
         {
-            _notInitialized[(uid, comp)] = 0;
+            _notInitialized[uid] = 0;
             return;
         }
 
@@ -95,10 +104,10 @@ public sealed class CardDeckSystem : EntitySystem
         _cardSpriteSystem.TryHandleLayerConfiguration(
             (uid, sprite, cardStack),
             comp.CardLimit,
-            (_, cardIndex, layerIndex) =>
+            (sprt, cardIndex, layerIndex) =>
             {
                 sprite.LayerSetRotation(layerIndex, Angle.FromDegrees(90));
-                sprite.LayerSetOffset(layerIndex, new Vector2(0, (comp.YOffset * cardIndex)));
+                sprite.LayerSetOffset(layerIndex, new Vector2(0, comp.YOffset * cardIndex));
                 sprite.LayerSetScale(layerIndex, new Vector2(comp.Scale, comp.Scale));
                 return true;
             }
@@ -107,35 +116,40 @@ public sealed class CardDeckSystem : EntitySystem
 
     private void OnStackUpdate(CardStackQuantityChangeEvent args)
     {
-        if (!TryComp(GetEntity(args.Stack), out CardDeckComponent? comp))
+        var entity = GetEntity(args.Stack);
+        if (!TryComp(entity, out CardDeckComponent? comp))
             return;
-        UpdateSprite(GetEntity(args.Stack), comp);
+
+        UpdateSprite(entity, comp);
     }
 
     private void OnStackFlip(CardStackFlippedEvent args)
     {
-        if (!TryComp(GetEntity(args.CardStack), out CardDeckComponent? comp))
+        var entity = GetEntity(args.CardStack);
+        if (!TryComp(entity, out CardDeckComponent? comp))
             return;
-        UpdateSprite(GetEntity(args.CardStack), comp);
+
+        UpdateSprite(entity, comp);
     }
 
     private void OnReorder(CardStackReorderedEvent args)
     {
-        if (!TryComp(GetEntity(args.Stack), out CardDeckComponent? comp))
+        var entity = GetEntity(args.Stack);
+        if (!TryComp(entity, out CardDeckComponent? comp))
             return;
-        UpdateSprite(GetEntity(args.Stack), comp);
+
+        UpdateSprite(entity, comp);
     }
 
     private void OnAppearanceChanged(EntityUid uid, CardDeckComponent comp, AppearanceChangeEvent args)
     {
         UpdateSprite(uid, comp);
     }
+
     private void OnComponentStartupEvent(EntityUid uid, CardDeckComponent comp, ComponentStartup args)
     {
-
         UpdateSprite(uid, comp);
     }
-
 
     private void OnStackStart(CardStackInitiatedEvent args)
     {
@@ -145,5 +159,4 @@ public sealed class CardDeckSystem : EntitySystem
 
         UpdateSprite(entity, comp);
     }
-
 }

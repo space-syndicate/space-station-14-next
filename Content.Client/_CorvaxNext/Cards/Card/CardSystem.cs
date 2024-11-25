@@ -6,11 +6,11 @@ using Robust.Shared.Utility;
 namespace Content.Client._CorvaxNext.Cards.Card;
 
 /// <summary>
-/// This handles...
+/// Handles the initialization and updating of card sprites on the client side,
+/// particularly when a card is flipped or when the component starts up.
 /// </summary>
 public sealed class CardSystem : EntitySystem
 {
-    [Dependency] private readonly SpriteSystem _spriteSystem = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -23,30 +23,32 @@ public sealed class CardSystem : EntitySystem
         if (!TryComp(uid, out SpriteComponent? spriteComponent))
             return;
 
-        for (var i = 0; i < spriteComponent.AllLayers.Count(); i++)
+        var layerCount = spriteComponent.AllLayers.Count();
+        for (var i = 0; i < layerCount; i++)
         {
-            //Log.Debug($"Layer {i}");
-            if (!spriteComponent.TryGetLayer(i, out var layer) || layer.State.Name == null)
+            if (!spriteComponent.TryGetLayer(i, out var layer) || layer.State == null || layer.State.Name == null)
                 continue;
 
             var rsi = layer.RSI ?? spriteComponent.BaseRSI;
             if (rsi == null)
                 continue;
 
-            //Log.Debug("FOI");
             comp.FrontSprite.Add(new SpriteSpecifier.Rsi(rsi.Path, layer.State.Name));
         }
 
         comp.BackSprite ??= comp.FrontSprite;
-        Dirty(uid, comp);
+
+        // Removed Dirty(uid, comp); as calling Dirty on the client is inappropriate.
         UpdateSprite(uid, comp);
     }
 
     private void OnFlip(CardFlipUpdatedEvent args)
     {
-        if (!TryComp(GetEntity(args.Card), out CardComponent? comp))
+        var entity = GetEntity(args.Card);
+        if (!TryComp(entity, out CardComponent? comp))
             return;
-        UpdateSprite(GetEntity(args.Card), comp);
+
+        UpdateSprite(entity, comp);
     }
 
     private void UpdateSprite(EntityUid uid, CardComponent comp)
@@ -58,26 +60,27 @@ public sealed class CardSystem : EntitySystem
         if (!TryComp(uid, out SpriteComponent? spriteComponent))
             return;
 
-        var layerCount = newSprite.Count();
+        var layerCount = newSprite.Count;
+        var spriteLayerCount = spriteComponent.AllLayers.Count();
 
-        //inserts Missing Layers
-        if (spriteComponent.AllLayers.Count() < layerCount)
+        // Inserts missing layers
+        if (spriteLayerCount < layerCount)
         {
-            for (var i = spriteComponent.AllLayers.Count(); i < layerCount; i++)
+            for (var i = spriteLayerCount; i < layerCount; i++)
             {
                 spriteComponent.AddBlankLayer(i);
             }
         }
-        //Removes extra layers
-        else if (spriteComponent.AllLayers.Count() > layerCount)
+        // Removes extra layers
+        else if (spriteLayerCount > layerCount)
         {
-            for (var i = spriteComponent.AllLayers.Count() - 1; i >= layerCount; i--)
+            for (var i = spriteLayerCount - 1; i >= layerCount; i--)
             {
                 spriteComponent.RemoveLayer(i);
             }
         }
 
-        for (var i = 0; i < newSprite.Count(); i++)
+        for (var i = 0; i < layerCount; i++)
         {
             var layer = newSprite[i];
             spriteComponent.LayerSetSprite(i, layer);

@@ -3,7 +3,8 @@ using Robust.Shared.Audio;
 namespace Content.Shared._CorvaxNext.Cards.Deck;
 
 /// <summary>
-/// This is used for...
+/// Represents a deck of cards with configurable properties such as sound effects for interactions,
+/// visual scaling, and a limit on the number of cards it can hold.
 /// </summary>
 [RegisterComponent]
 public sealed partial class CardDeckComponent : Component

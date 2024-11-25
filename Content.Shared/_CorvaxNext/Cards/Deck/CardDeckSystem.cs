@@ -16,8 +16,8 @@ using Robust.Shared.Utility;
 namespace Content.Shared._CorvaxNext.Cards.Deck;
 
 /// <summary>
-/// This handles card decks
-///
+/// Handles the interactions and management of card decks, including shuffling, splitting, and organizing cards. 
+/// Provides contextual actions for users and ensures proper state synchronization across the network.
 /// </summary>
 public sealed class CardDeckSystem : EntitySystem
 {
