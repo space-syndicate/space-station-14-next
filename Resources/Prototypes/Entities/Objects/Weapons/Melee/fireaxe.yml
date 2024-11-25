@@ -41,7 +41,7 @@
   - type: Tool
     qualities:
       - Prying
-      - AdvancedPrying # White Dream
+      - AdvancedPrying # Corvax-Next-AdvancedPrying
   - type: ToolTileCompatible
   - type: Prying
   - type: UseDelay

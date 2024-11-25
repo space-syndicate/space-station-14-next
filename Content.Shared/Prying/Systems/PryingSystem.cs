@@ -135,13 +135,13 @@ public sealed class PryingSystem : EntitySystem
 
         RaiseLocalEvent(target, ref modEv);
 
-        // WD EDIT START
+        // CORVAX-NEXT START
         var time = modEv.BaseTime * modEv.PryTimeModifier / toolModifier;
 
         if (time <= modEv.Neglect)
             time = 0;
 
-        var doAfterArgs = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(time), new DoorPryDoAfterEvent(), target, target, tool) // WD EDIT END
+        var doAfterArgs = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(time), new DoorPryDoAfterEvent(), target, target, tool) // CORVAX-NEXT END
         {
             BreakOnDamage = true,
             BreakOnMove = true,
@@ -175,7 +175,7 @@ public sealed class PryingSystem : EntitySystem
             return;
         }
 
-        if (args.Used != null && comp != null && door.State is not DoorState.Closing and not DoorState.Opening) // WD EDIT
+        if (args.Used != null && comp != null && door.State is not DoorState.Closing and not DoorState.Opening) // CORVAX-NEXT-EDIT
         {
             _audioSystem.PlayPredicted(comp.UseSound, args.Used.Value, args.User);
         }
