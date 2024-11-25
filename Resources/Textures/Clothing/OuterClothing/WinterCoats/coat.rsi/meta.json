@@ -42,6 +42,10 @@
       "directions": 4
     },
     {
+      "name": "ATMOS-equipped-OUTERCLOTHING-resomi",
+      "directions": 4
+    },
+    {
       "name": "ATMOS-inhand-left",
       "directions": 4
     },
@@ -126,6 +130,10 @@
       "directions": 4
     },
     {
+      "name": "BAR-equipped-OUTERCLOTHING-resomi",
+      "directions": 4
+    },
+    {
       "name": "BAR-inhand-left",
       "directions": 4
     },
@@ -188,6 +196,10 @@
     },
     {
       "name": "CARGO-equipped-OUTERCLOTHING-vox",
+      "directions": 4
+    },
+    {
+      "name": "CARGO-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {
@@ -291,6 +303,10 @@
     },
     {
       "name": "CAP-equipped-OUTERCLOTHING-vox",
+      "directions": 4
+    },
+    {
+      "name": "CAP-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {
@@ -672,6 +688,10 @@
     },
 	{
       "name": "ARMOR-equipped-OUTERCLOTHING",
+      "directions": 4
+    },
+	{
+      "name": "ARMOR-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
 	{
