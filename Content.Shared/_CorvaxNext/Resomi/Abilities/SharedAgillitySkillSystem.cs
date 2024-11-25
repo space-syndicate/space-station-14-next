@@ -29,9 +29,11 @@ public abstract class SharedAgillitySkillSystem : EntitySystem
 
     private void DoJump(Entity<AgillitySkillComponent> ent, ref StartCollideEvent args)
     {
-        if (!ent.Comp.Active || !ent.Comp.JumpEnabled
-            || args.OurFixture.CollisionMask != BaseCollisionGroup
-            || args.OtherFixture.CollisionMask != (int)CollisionGroup.TableMask) //fix it.... maybe.... -_-.... or idk
+        if (!ent.Comp.Active || !ent.Comp.JumpEnabled)
+            return;
+        if (args.OurFixture.CollisionMask != BaseCollisionGroup)
+            return;
+        if (args.OtherFixture.CollisionMask != (int)CollisionGroup.TableMask)
             return;
 
         _stamina.TryTakeStamina(ent.Owner, ent.Comp.StaminaDamageOnJump);

@@ -7,8 +7,8 @@
   components:
   - type: WeaponsUseInability
   - type: AgillitySkill
-  - type: Chat
-    whisperPersonalRange: 4
+  - type: ChatModifier
+    whisperListeningRange: 4
   - type: ResomiAccent
   - type: FootprintVisualizer
   - type: DamageVisuals

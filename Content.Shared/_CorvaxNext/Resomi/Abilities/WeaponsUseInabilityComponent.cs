@@ -3,9 +3,7 @@ namespace Content.Shared._CorvaxNext.Resomi.Abilities;
 
 /// <summary>
 /// It does not allow you to fire a weapon that requires two hands.
-/// increases the spread, as if shooting was conducted from one hand
+/// Increases the spread, as if shooting was conducted from one hand.
 /// </summary>
 [RegisterComponent]
-public sealed partial class WeaponsUseInabilityComponent : Component
-{
-}
+public sealed partial class WeaponsUseInabilityComponent : Component;
