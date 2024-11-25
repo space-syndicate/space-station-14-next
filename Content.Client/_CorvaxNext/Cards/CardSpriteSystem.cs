@@ -5,7 +5,8 @@ using Robust.Client.GameObjects;
 namespace Content.Client._CorvaxNext.Cards;
 
 /// <summary>
-/// This handles...
+/// Manages the visual representation of card stacks by dynamically adjusting and configuring sprite layers
+/// based on the number of cards in the stack and their properties.
 /// </summary>
 public sealed class CardSpriteSystem : EntitySystem
 {
