@@ -187,6 +187,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.SurgeryUIKey.Key: # _CorvaxNext: surgery
+        type: SurgeryBui
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -211,6 +213,8 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+  - type: Targeting # _CorvaxNext: surgery
+  - type: SurgeryTarget # _CorvaxNext: surgery
   - type: SizeAttributeWhitelist # Corvax-Next
       tall: true
       tallscale: 1.1
@@ -228,6 +232,7 @@
   id: BaseMobSpeciesOrganic
   abstract: true
   components:
+  - type: Targeting # _CorvaxNext: surgery
   - type: OfferItem # Corvax-Next-Offer
   - type: Barotrauma
     damage:
