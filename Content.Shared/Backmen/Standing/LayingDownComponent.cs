@@ -3,14 +3,20 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.Backmen.Standing;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
 public sealed partial class LayingDownComponent : Component
 {
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public float StandingUpTime { get; set; } = 1f;
 
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
-    public float SpeedModify { get; set; } = 0.4f;
+    public float SpeedModify { get; set; } = 0.25f;
+
+    [ViewVariables, AutoNetworkedField]
+    public bool DrawDowned { get; set; } = false;
+
+    [ViewVariables]
+    public int? OriginalDrawDepth { get; set; } = (int)DrawDepth.DrawDepth.Mobs;
 }
 [Serializable, NetSerializable]
 public sealed class ChangeLayingDownEvent : CancellableEntityEventArgs;

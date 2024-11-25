@@ -20,6 +20,8 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Content.Shared.Backmen.Standing;
+using Content.Shared.Movement.Components;
+
 namespace Content.Shared.Stunnable;
 
 public abstract class SharedStunSystem : EntitySystem
@@ -141,7 +143,7 @@ public abstract class SharedStunSystem : EntitySystem
         // start-backmen: Laying System
         if (TryComp<LayingDownComponent>(uid, out var layingDownComponent))
         {
-            _layingDown.AutoGetUp((uid, layingDownComponent));
+            _layingDown.TryProcessAutoGetUp((uid, layingDownComponent));
             _layingDown.TryLieDown(uid, layingDownComponent, null, DropHeldItemsBehavior.DropIfStanding); // Ataraxia EDIT
         }
         // end-backmen: Laying System
@@ -157,7 +159,7 @@ public abstract class SharedStunSystem : EntitySystem
 
         if (TryComp(uid, out LayingDownComponent? layingDown))
         {
-            _layingDown.TryProcessAutoGetUp((uid,layingDown));
+            _layingDown.TryProcessAutoGetUp((uid, layingDown));
             return;
         }
 
