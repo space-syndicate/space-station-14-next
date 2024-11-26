@@ -144,7 +144,7 @@ namespace Content.Server.Cloning
                 return false;
 
             var mind = mindEnt.Comp;
-            // _CorvaxNext: surgery Remove this logic entirely, infinite clone army
+            // CorvaxNext: surgery Remove this logic entirely, infinite clone army
             /*if (ClonesWaitingForMind.TryGetValue(mind, out var clone))
             {
                 if (EntityManager.EntityExists(clone) &&
@@ -156,7 +156,7 @@ namespace Content.Server.Cloning
                 ClonesWaitingForMind.Remove(mind);
             }*/
 
-            // _CorvaxNext: surgery Lets you clone living people
+            // CorvaxNext: surgery Lets you clone living people
             //if (mind.OwnedEntity != null && !_mobStateSystem.IsDead(mind.OwnedEntity.Value))
             //    return false; // Body controlled by mind is not dead
 
@@ -225,7 +225,7 @@ namespace Content.Server.Cloning
             cloneMindReturn.Mind = mind;
             cloneMindReturn.Parent = uid;
             _containerSystem.Insert(mob, clonePod.BodyContainer);
-            //ClonesWaitingForMind.Add(mind, mob); // _CorvaxNext: surgery
+            //ClonesWaitingForMind.Add(mind, mob); // CorvaxNext: surgery
             UpdateStatus(uid, CloningPodStatus.NoMind, clonePod);
             _euiManager.OpenEui(new AcceptCloningEui(mindEnt, mind, this), client);
 

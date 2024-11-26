@@ -29,12 +29,12 @@ public partial class SharedBodySystem
         // TODO: This doesn't handle comp removal on child ents.
 
         // If you modify this also see the Body partial for root parts.
-        SubscribeLocalEvent<BodyPartComponent, MapInitEvent>(OnMapInit); // _CorvaxNext: surgery
-        SubscribeLocalEvent<BodyPartComponent, ComponentRemove>(OnBodyPartRemove); // _CorvaxNext: surgery
+        SubscribeLocalEvent<BodyPartComponent, MapInitEvent>(OnMapInit); // CorvaxNext: surgery
+        SubscribeLocalEvent<BodyPartComponent, ComponentRemove>(OnBodyPartRemove); // CorvaxNext: surgery
         SubscribeLocalEvent<BodyPartComponent, EntInsertedIntoContainerMessage>(OnBodyPartInserted);
         SubscribeLocalEvent<BodyPartComponent, EntRemovedFromContainerMessage>(OnBodyPartRemoved);
-        SubscribeLocalEvent<BodyPartComponent, AmputateAttemptEvent>(OnAmputateAttempt); // _CorvaxNext: surgery
-        SubscribeLocalEvent<BodyPartComponent, BodyPartEnableChangedEvent>(OnPartEnableChanged); // _CorvaxNext: surgery
+        SubscribeLocalEvent<BodyPartComponent, AmputateAttemptEvent>(OnAmputateAttempt); // CorvaxNext: surgery
+        SubscribeLocalEvent<BodyPartComponent, BodyPartEnableChangedEvent>(OnPartEnableChanged); // CorvaxNext: surgery
     }
 
     // start-_CorvaxNext: surgery
@@ -190,7 +190,7 @@ public partial class SharedBodySystem
 
         if (TryComp(removedUid, out BodyPartComponent? part) && part.Body is not null)
         {
-            CheckBodyPart((removedUid, part), GetTargetBodyPart(part), true); // _CorvaxNext: surgery
+            CheckBodyPart((removedUid, part), GetTargetBodyPart(part), true); // CorvaxNext: surgery
             RemovePart(part.Body.Value, (removedUid, part), slotId);
             RecursiveBodyUpdate((removedUid, part), null);
         }
@@ -254,7 +254,7 @@ public partial class SharedBodySystem
         Dirty(partEnt, partEnt.Comp);
         partEnt.Comp.Body = bodyEnt;
 
-        if (partEnt.Comp.Enabled && partEnt.Comp.Body is { Valid: true } body) // _CorvaxNext: surgery Change
+        if (partEnt.Comp.Enabled && partEnt.Comp.Body is { Valid: true } body) // CorvaxNext: surgery Change
             RaiseLocalEvent(partEnt, new BodyPartComponentsModifyEvent(body, true));
 
         var ev = new BodyPartAddedEvent(slotId, partEnt);
@@ -308,7 +308,7 @@ public partial class SharedBodySystem
             bodyEnt.Comp.LegEntities.Remove(legEnt);
             UpdateMovementSpeed(bodyEnt);
             Dirty(bodyEnt, bodyEnt.Comp);
-            Standing.Down(bodyEnt); // _CorvaxNext: surgery
+            Standing.Down(bodyEnt); // CorvaxNext: surgery
         }
     }
 
@@ -887,7 +887,7 @@ public partial class SharedBodySystem
     {
         foreach (var part in GetBodyChildren(bodyId, body))
         {
-            if (part.Component.PartType == type && (symmetry == null || part.Component.Symmetry == symmetry)) // _CorvaxNext: surgery
+            if (part.Component.PartType == type && (symmetry == null || part.Component.Symmetry == symmetry)) // CorvaxNext: surgery
                 yield return part;
         }
     }

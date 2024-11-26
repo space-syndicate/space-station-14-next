@@ -1,4 +1,4 @@
-// _CorvaxNext Change Start
+// CorvaxNext Change Start
 
 using Content.Shared.Smoking.Systems;
 using Robust.Shared.Audio;
@@ -29,4 +29,4 @@ public sealed partial class MatchstickComponent : Component
     public SoundSpecifier IgniteSound = default!;
 }
 
-// _CorvaxNext Change End
+// CorvaxNext Change End

@@ -33,7 +33,7 @@ public sealed class BodySystem : SharedBodySystem
 
         SubscribeLocalEvent<BodyComponent, MoveInputEvent>(OnRelayMoveInput);
         SubscribeLocalEvent<BodyComponent, ApplyMetabolicMultiplierEvent>(OnApplyMetabolicMultiplier);
-        SubscribeLocalEvent<BodyPartComponent, AttemptEntityGibEvent>(OnGibTorsoAttempt); // _CorvaxNext: surgery
+        SubscribeLocalEvent<BodyPartComponent, AttemptEntityGibEvent>(OnGibTorsoAttempt); // CorvaxNext: surgery
     }
 
     // start-_CorvaxNext: surgery

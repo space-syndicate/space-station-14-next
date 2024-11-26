@@ -88,7 +88,7 @@ public sealed class BlindableSystem : EntitySystem
         UpdateEyeDamage(blindable, false);
     }
 
-    // _CorvaxNext Change Start
+    // CorvaxNext Change Start
     public void TransferBlindness(BlindableComponent newSight, BlindableComponent oldSight, EntityUid newEntity)
     {
         newSight.IsBlind = oldSight.IsBlind;
@@ -99,7 +99,7 @@ public sealed class BlindableSystem : EntitySystem
         newSight.MaxDamage = oldSight.MaxDamage;
         UpdateEyeDamage((newEntity, newSight), true);
     }
-    // _CorvaxNext Change End
+    // CorvaxNext Change End
 }
 
 /// <summary>

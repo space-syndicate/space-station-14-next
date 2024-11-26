@@ -57,7 +57,7 @@ namespace Content.Server.Body.Systems
         }
         // end-_CorvaxNext: surgery
 
-        // _CorvaxNext: surgery
+        // CorvaxNext: surgery
         private void HandleMind(EntityUid newEntity, EntityUid oldEntity, BrainComponent? brain = null)
         {
             if (TerminatingOrDeleted(newEntity) || TerminatingOrDeleted(oldEntity))
@@ -74,8 +74,8 @@ namespace Content.Server.Body.Systems
                 return;
 
             _mindSystem.TransferTo(mindId, newEntity, mind: mind);
-            if (brain != null) // _CorvaxNext: surgery
-                brain.Active = true; // _CorvaxNext: surgery
+            if (brain != null) // CorvaxNext: surgery
+                brain.Active = true; // CorvaxNext: surgery
         }
 
         // start-_CorvaxNext: surgery

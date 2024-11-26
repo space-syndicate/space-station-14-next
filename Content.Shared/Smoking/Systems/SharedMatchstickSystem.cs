@@ -1,4 +1,4 @@
-// _CorvaxNext Change Start
+// CorvaxNext Change Start
 using Content.Shared.Smoking.Components;
 
 namespace Content.Shared.Smoking.Systems;
@@ -15,4 +15,4 @@ public abstract class SharedMatchstickSystem : EntitySystem
         return true;
     }
 }
-// _CorvaxNext Change End
+// CorvaxNext Change End

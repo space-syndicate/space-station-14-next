@@ -143,7 +143,7 @@ namespace Content.Shared.Damage
                 return damage;
             }
 
-            var before = new BeforeDamageChangedEvent(damage, origin, targetPart); // _CorvaxNext: surgery Change
+            var before = new BeforeDamageChangedEvent(damage, origin, targetPart); // CorvaxNext: surgery Change
             RaiseLocalEvent(uid.Value, ref before);
 
             if (before.Cancelled)
@@ -317,11 +317,11 @@ namespace Content.Shared.Damage
     public record struct BeforeDamageChangedEvent(
         DamageSpecifier Damage,
         EntityUid? Origin = null,
-        TargetBodyPart? TargetPart = null, // _CorvaxNext: surgery Change
+        TargetBodyPart? TargetPart = null, // CorvaxNext: surgery Change
         bool Cancelled = false);
 
     /// <summary>
-    ///     _CorvaxNext: surgery _CorvaxNext Change: Raised on parts before damage is done so we can cancel the damage if they evade.
+    ///     CorvaxNext: surgery _CorvaxNext Change: Raised on parts before damage is done so we can cancel the damage if they evade.
     /// </summary>
     [ByRefEvent]
     public record struct TryChangePartDamageEvent(

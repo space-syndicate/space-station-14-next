@@ -213,7 +213,7 @@ namespace Content.Server.Cloning
                 {
                     scanBodyInfo = MetaData(scanBody.Value).EntityName;
 
-                    if (false) // _CorvaxNext: surgery Lets you clone living people
+                    if (false) // CorvaxNext: surgery Lets you clone living people
                     {
                         clonerStatus = ClonerStatus.ScannerOccupantAlive;
                     }

@@ -7,7 +7,7 @@ using Content.Shared.Body.Part;
 using Content.Shared.Damage;
 using Robust.Shared.Containers;
 
-// _CorvaxNext: surgery
+// CorvaxNext: surgery
 
 namespace Content.Shared.Body.Systems;
 
@@ -40,12 +40,12 @@ public partial class SharedBodySystem
 
         if (organEnt.Comp.Body is not null)
         {
-            organEnt.Comp.OriginalBody = organEnt.Comp.Body; // _CorvaxNext: surgery
-            organEnt.Comp.OriginalBody = organEnt.Comp.Body; // _CorvaxNext: surgery Change
+            organEnt.Comp.OriginalBody = organEnt.Comp.Body; // CorvaxNext: surgery
+            organEnt.Comp.OriginalBody = organEnt.Comp.Body; // CorvaxNext: surgery Change
             var addedInBodyEv = new OrganAddedToBodyEvent(bodyUid, parentPartUid);
             RaiseLocalEvent(organEnt, ref addedInBodyEv);
             var organEnabledEv = new OrganEnableChangedEvent(true);
-            RaiseLocalEvent(organEnt, ref organEnabledEv); // _CorvaxNext: surgery
+            RaiseLocalEvent(organEnt, ref organEnabledEv); // CorvaxNext: surgery
         }
 
         // start-_CorvaxNext: surgery Change Start
@@ -73,7 +73,7 @@ public partial class SharedBodySystem
             RaiseLocalEvent(organEnt, ref removedInBodyEv);
         }
 
-        if (TryComp(parentPartUid, out DamageableComponent? damageable) // _CorvaxNext: surgery
+        if (TryComp(parentPartUid, out DamageableComponent? damageable) // CorvaxNext: surgery
             && damageable.TotalDamage > 200)
             TrySetOrganUsed(organEnt, true, organEnt.Comp);
 

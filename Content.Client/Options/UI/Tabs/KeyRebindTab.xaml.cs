@@ -169,7 +169,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.MoveRight);
             AddButton(EngineKeyFunctions.Walk);
             AddCheckBox("ui-options-hotkey-toggle-walk", _cfg.GetCVar(CCVars.ToggleWalk), HandleToggleWalk);
-            AddCheckBox("ui-options-hotkey-auto-up", _cfg.GetCVar(Shared._CorvaxNext.NextVars.NextVars.AutoGetUp), HandleToggleAutoGetUp); // _CorvaxNext: Laying System
+            AddCheckBox("ui-options-hotkey-auto-up", _cfg.GetCVar(Shared._CorvaxNext.NextVars.NextVars.AutoGetUp), HandleToggleAutoGetUp); // CorvaxNext: Laying System
             InitToggleWalk();
 
             AddHeader("ui-options-header-camera");
@@ -194,7 +194,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.RotateStoredItem);
             AddButton(ContentKeyFunctions.SaveItemLocation);
             AddButton(ContentKeyFunctions.OfferItem); // Corvax-Next-Offer
-            AddButton(ContentKeyFunctions.ToggleStanding); // _CorvaxNext: Laying System
+            AddButton(ContentKeyFunctions.ToggleStanding); // CorvaxNext: Laying System
             AddHeader("ui-options-header-interaction-adv");
             AddButton(ContentKeyFunctions.SmartEquipBackpack);
             AddButton(ContentKeyFunctions.SmartEquipBelt);

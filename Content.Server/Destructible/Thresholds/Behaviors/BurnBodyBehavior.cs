@@ -1,5 +1,5 @@
 ﻿using Content.Shared.Body.Components;
-using Content.Shared.Body.Part; // _CorvaxNext: surgery
+using Content.Shared.Body.Part; // CorvaxNext: surgery
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using JetBrains.Annotations;
