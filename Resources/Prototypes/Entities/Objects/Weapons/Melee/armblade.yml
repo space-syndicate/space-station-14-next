@@ -27,4 +27,4 @@
     speed: 0.75
   - type: SurgeryTool # _CorvaxNext: surgery
     startSound:
-      path: /Audio/_CorvaxNext:/Medical/Surgery/saw.ogg
+      path: /Audio/_CorvaxNext/Medical/Surgery/saw.ogg
