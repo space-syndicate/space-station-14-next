@@ -105,9 +105,9 @@
     price: 40
   - type: IgnitionSource
     temperature: 700
-  - type: Cautery # Shitmed
+  - type: Cautery # _CorvaxNext
     speed: 0.7
-  - type: SurgeryTool # Shitmed
+  - type: SurgeryTool # _CorvaxNext
     startSound:
       collection: Welder
     endSound:

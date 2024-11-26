@@ -130,7 +130,7 @@
       types:
         Blunt: 200
 
-# Shitmed Change Start
+# _CorvaxNext Change Start
 
 - type: entity
   name: bang severer
@@ -180,4 +180,4 @@
       types:
         Slash: 200
 
-# Shitmed Change End
+# _CorvaxNext Change End

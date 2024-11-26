@@ -1,4 +1,4 @@
-# Im not even gonna bother marking this file with Shitmed Change(s), I'm fucking with almost everything.
+# Im not even gonna bother marking this file with _CorvaxNext Change(s), I'm fucking with almost everything.
 
 # Base
 
@@ -24,10 +24,10 @@
   description: A surgical tool used to cauterize open wounds.
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/cautery.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/cautery.rsi
     state: cautery
   - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/cautery.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/cautery.rsi
     storedRotation: 90
   - type: MeleeWeapon
     damage:
@@ -53,10 +53,10 @@
   description: A surgical drill for making holes into hard material.
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/drill.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/drill.rsi
     state: drill
   - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/drill.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/drill.rsi
     shape:
     - 0,0,1,0
     - 1,1,1,1
@@ -71,7 +71,7 @@
   # start-_CorvaxNext: surgery
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
+      path: /Audio/_CorvaxNext/Medical/Surgery/saw.ogg
   - type: Drill
   # end-_CorvaxNext: surgery
 
@@ -93,10 +93,10 @@
     types:
       - Knife
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/scalpel.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/scalpel.rsi
     state: scalpel
   - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/scalpel.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/scalpel.rsi
     storedRotation: 90
   - type: MeleeWeapon
     wideAnimationRotation: 90
@@ -148,7 +148,7 @@
     damage:
       types:
         Slash: 12
-  - type: Scalpel # Shitmed
+  - type: Scalpel # _CorvaxNext
     speed: 1.25
 
 - type: entity
@@ -164,7 +164,7 @@
     sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
     storedRotation: 90
     heldPrefix: laser
-  - type: Scalpel # Shitmed
+  - type: Scalpel # _CorvaxNext
     speed: 1.5
   # TODO: prevent bleeding from incisions
 
@@ -177,10 +177,10 @@
   description: A surgical tool used to hold open incisions.
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/retractor.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/retractor.rsi
     state: retractor
   - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/retractor.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/retractor.rsi
     storedRotation: 90
   # start-_CorvaxNext: surgery
   - type: SurgeryTool
@@ -200,11 +200,11 @@
   description: A surgical tool used to compress blood vessels to prevent bleeding.
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi # Shitmed Change
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/hemostat.rsi # _CorvaxNext Change
     state: hemostat
   - type: Item
     heldPrefix: hemostat
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi # Shitmed Change
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/hemostat.rsi # _CorvaxNext Change
     storedRotation: 90
   # start-_CorvaxNext: surgery
   - type: SurgeryTool
@@ -239,7 +239,7 @@
   description: A container for bone gel that often needs to be refilled from a specialized machine.
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/bone-gel.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/bone-gel.rsi
     state: bone-gel
   - type: BoneGel
 
@@ -313,11 +313,11 @@
   description: For heavy duty cutting.
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/circular-saw.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/circular-saw.rsi
     state: circular-saw
   - type: Item
     size: Normal
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/circular-saw.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/circular-saw.rsi
   - type: MeleeWeapon
     damage:
       groups:
@@ -354,10 +354,10 @@
     qualities:
       - Sawing
     speedModifier: 2.0
-  - type: BoneSaw # Shitmed
+  - type: BoneSaw # _CorvaxNext
     speed: 2
 
-# Shitmed Tools
+# _CorvaxNext Tools
 
 - type: entity
   name: searing tool
@@ -366,10 +366,10 @@
   description: A cautery with an energy tip, also serves as a drill in its powered state.
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-cautery.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/e-cautery.rsi
     state: e-cautery-on
   - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-cautery.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/e-cautery.rsi
     inhandVisuals:
       left:
       - state: inhand-left-on
@@ -377,9 +377,9 @@
       - state: inhand-right-on
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/cautery1.ogg
+      path: /Audio/_CorvaxNext/Medical/Surgery/cautery1.ogg
     endSound:
-      path: /Audio/_Shitmed/Medical/Surgery/cautery2.ogg
+      path: /Audio/_CorvaxNext/Medical/Surgery/cautery2.ogg
   - type: MeleeWeapon
     damage:
       types:
@@ -397,10 +397,10 @@
   description: A scalpel which uses an energy blade, also serves as a saw in its powered state.
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-scalpel.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/e-scalpel.rsi
     state: e-scalpel-on
   - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-scalpel.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/e-scalpel.rsi
     inhandVisuals:
       left:
       - state: inhand-left-on
@@ -408,9 +408,9 @@
       - state: inhand-right-on
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/scalpel1.ogg
+      path: /Audio/_CorvaxNext/Medical/Surgery/scalpel1.ogg
     endSound:
-      path: /Audio/_Shitmed/Medical/Surgery/scalpel2.ogg
+      path: /Audio/_CorvaxNext/Medical/Surgery/scalpel2.ogg
   - type: MeleeWeapon
     damage:
       types:
@@ -428,10 +428,10 @@
   description: A retractor with mechanical pinches, also serves as a hemostat in its powered state.
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/adv-retractor.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/adv-retractor.rsi
     state: adv-retractor-on
   - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/adv-retractor.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/adv-retractor.rsi
     inhandVisuals:
       left:
       - state: inhand-left-on
@@ -439,9 +439,9 @@
       - state: inhand-right-on
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
+      path: /Audio/_CorvaxNext/Medical/Surgery/retractor1.ogg
     endSound:
-      path: /Audio/_Shitmed/Medical/Surgery/retractor2.ogg
+      path: /Audio/_CorvaxNext/Medical/Surgery/retractor2.ogg
   - type: MeleeWeapon
     damage:
       types:
@@ -462,13 +462,13 @@
   parent: BaseToolSurgery
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/omnimed.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/omnimed.rsi
     state: omnimed
   - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/omnimed.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/omnimed.rsi
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
+      path: /Audio/_CorvaxNext/Medical/Surgery/saw.ogg
   - type: Hemostat
     speed: 2
   - type: Scalpel

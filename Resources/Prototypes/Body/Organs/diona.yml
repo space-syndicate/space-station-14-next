@@ -36,9 +36,9 @@
     heldPrefix: brain
   - type: Sprite
     state: brain
-  - type: Organ # Shitmed
+  - type: Organ # _CorvaxNext
     slotId: Brain
-  - type: Brain # Shitmed
+  - type: Brain # _CorvaxNext
   - type: SolutionContainerManager
     solutions:
       organ:
@@ -65,7 +65,7 @@
     layers:
       - state: eyeball-l
       - state: eyeball-r
-  - type: Organ # Shitmed
+  - type: Organ # _CorvaxNext
     slotId: eyes
   - type: Tag # goob edit
     tags:

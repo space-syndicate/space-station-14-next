@@ -7,7 +7,7 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: OrganicPart # Shitmed Change
+    damageContainer: OrganicPart # _CorvaxNext Change
   - type: BodyPart
   - type: ContainerContainer
     containers:
@@ -18,13 +18,13 @@
   - type: Tag
     tags:
       - Trash
-  # Shitmed Change Start
+  # _CorvaxNext Change Start
   - type: Gibbable
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/organ1.ogg
+      path: /Audio/_CorvaxNext/Medical/Surgery/organ1.ogg
     endSound:
-      path: /Audio/_Shitmed/Medical/Surgery/organ2.ogg
+      path: /Audio/_CorvaxNext/Medical/Surgery/organ2.ogg
   - type: Destructible
     thresholds:
     - trigger:
@@ -54,7 +54,7 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MeatLaserImpact
-    # Shitmed Change End
+    # _CorvaxNext Change End
 
 - type: entity
   id: TorsoVulpkanin
@@ -68,7 +68,7 @@
   - type: Icon
     sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "torso_m"
-  # Shitmed Change Start
+  # _CorvaxNext Change Start
   - type: BodyPart
     partType: Torso
     toolName: "a torso"
@@ -105,7 +105,7 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MeatLaserImpact
-  # Shitmed Change End
+  # _CorvaxNext Change End
 
 - type: entity
   id: HeadVulpkanin
@@ -122,7 +122,7 @@
   - type: BodyPart
     partType: Head
     vital: true
-    toolName: "a head" # Shitmed Change
+    toolName: "a head" # _CorvaxNext Change
   - type: Input
     context: "ghost"
   - type: InputMover
@@ -146,7 +146,7 @@
   - type: BodyPart
     partType: Arm
     symmetry: Left
-    toolName: "a left arm" # Shitmed Change
+    toolName: "a left arm" # _CorvaxNext Change
 
 - type: entity
   id: RightArmVulpkanin
@@ -163,7 +163,7 @@
   - type: BodyPart
     partType: Arm
     symmetry: Right
-    toolName: "a right arm" # Shitmed Change
+    toolName: "a right arm" # _CorvaxNext Change
 
 - type: entity
   id: LeftHandVulpkanin
@@ -180,7 +180,7 @@
   - type: BodyPart
     partType: Hand
     symmetry: Left
-    toolName: "a left hand" # Shitmed Change
+    toolName: "a left hand" # _CorvaxNext Change
 
 - type: entity
   id: RightHandVulpkanin
@@ -197,7 +197,7 @@
   - type: BodyPart
     partType: Hand
     symmetry: Right
-    toolName: "a right hand" # Shitmed Change
+    toolName: "a right hand" # _CorvaxNext Change
 
 - type: entity
   id: LeftLegVulpkanin
@@ -214,7 +214,7 @@
   - type: BodyPart
     partType: Leg
     symmetry: Left
-    toolName: "a left leg" # Shitmed Change
+    toolName: "a left leg" # _CorvaxNext Change
   - type: MovementBodyPart
 
 - type: entity
@@ -232,7 +232,7 @@
   - type: BodyPart
     partType: Leg
     symmetry: Right
-    toolName: "a right leg" # Shitmed Change
+    toolName: "a right leg" # _CorvaxNext Change
   - type: MovementBodyPart
 
 - type: entity
@@ -250,7 +250,7 @@
   - type: BodyPart
     partType: Foot
     symmetry: Left
-    toolName: "a left foot" # Shitmed Change
+    toolName: "a left foot" # _CorvaxNext Change
 
 - type: entity
   id: RightFootVulpkanin
@@ -267,4 +267,4 @@
   - type: BodyPart
     partType: Foot
     symmetry: Right
-    toolName: "a right foot" # Shitmed Change
+    toolName: "a right foot" # _CorvaxNext Change

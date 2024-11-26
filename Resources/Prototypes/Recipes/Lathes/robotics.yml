@@ -196,7 +196,7 @@
   id: BorgModuleHarvesting
   result: BorgModuleHarvesting
 
-# Shitmed Recipes
+# _CorvaxNext: surgery Recipes
 
 - type: latheRecipe
   id: BorgModuleSurgery

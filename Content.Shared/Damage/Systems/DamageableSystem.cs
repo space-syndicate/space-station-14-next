@@ -321,7 +321,7 @@ namespace Content.Shared.Damage
         bool Cancelled = false);
 
     /// <summary>
-    ///     _CorvaxNext: surgery Shitmed Change: Raised on parts before damage is done so we can cancel the damage if they evade.
+    ///     _CorvaxNext: surgery _CorvaxNext Change: Raised on parts before damage is done so we can cancel the damage if they evade.
     /// </summary>
     [ByRefEvent]
     public record struct TryChangePartDamageEvent(

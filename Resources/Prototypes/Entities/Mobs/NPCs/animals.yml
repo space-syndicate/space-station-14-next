@@ -858,8 +858,8 @@
     - Passive
   - type: Body
     prototype: AnimalRuminant
-  - type: SurgeryTarget # Shitmed
-  - type: UserInterface # Shitmed
+  - type: SurgeryTarget # _CorvaxNext
+  - type: UserInterface # _CorvaxNext
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui

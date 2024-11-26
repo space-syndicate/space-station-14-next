@@ -88,9 +88,9 @@
     radius: 1.1 #smallest possible
     color: orange
   - type: ItemTogglePointLight
-  - type: Cautery # Shitmed
+  - type: Cautery # _CorvaxNext
     speed: 0.45
-  - type: SurgeryTool # Shitmed
+  - type: SurgeryTool # _CorvaxNext
     startSound:
       collection: lighterOnSounds
     endSound:

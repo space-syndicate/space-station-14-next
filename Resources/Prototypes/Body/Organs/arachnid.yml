@@ -174,9 +174,9 @@
     layers:
       - state: eyeball-l
       - state: eyeball-r
-  - type: Organ # Shitmed
+  - type: Organ # _CorvaxNext
     slotId: eyes
-  - type: Eyes # Shitmed
+  - type: Eyes # _CorvaxNext
   - type: Tag # goob edit
     tags:
     - Meat

@@ -216,7 +216,7 @@
     Steel: 100
     Plastic: 100
 
-# Shitmed Recipes
+# _CorvaxNext: surgery Recipes
 
 - type: latheRecipe
   id: MedicalCyberneticEyes

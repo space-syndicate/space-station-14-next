@@ -30,9 +30,9 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
-  - type: Cautery # Shitmed
+  - type: Cautery # _CorvaxNext
     speed: 0.9
-  - type: SurgeryTool # Shitmed
+  - type: SurgeryTool # _CorvaxNext
     endSound:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
 
@@ -70,9 +70,9 @@
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
-  - type: Cautery # Shitmed
+  - type: Cautery # _CorvaxNext
     speed: 0.9
-  - type: SurgeryTool # Shitmed
+  - type: SurgeryTool # _CorvaxNext
     endSound:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
 

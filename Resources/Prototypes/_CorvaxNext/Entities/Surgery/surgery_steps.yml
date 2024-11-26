@@ -17,7 +17,7 @@
     - type: IncisionOpen
     duration: 2
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/scalpel.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/scalpel.rsi
     state: scalpel
   - type: SurgeryDamageChangeEffect
     damage:
@@ -39,7 +39,7 @@
     - type: BleedersClamped
     duration: 2
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/hemostat.rsi
     state: hemostat
   - type: SurgeryDamageChangeEffect
     damage:
@@ -60,7 +60,7 @@
     - type: SkinRetracted
     duration: 2
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/retractor.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/retractor.rsi
     state: retractor
 
 - type: entity
@@ -76,7 +76,7 @@
     - type: RibcageSawed
     duration: 4
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/circular-saw.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/circular-saw.rsi
     state: circular-saw
   - type: SurgeryStepEmoteEffect
 
@@ -93,7 +93,7 @@
     - type: RibcageOpen
     duration: 2
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/retractor.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/retractor.rsi
     state: retractor
 
 #- type: entity
@@ -144,7 +144,7 @@
     - type: RibcageOpen
     duration: 2
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/retractor.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/retractor.rsi
     state: retractor
 
 - type: entity
@@ -182,7 +182,7 @@
     - type: InternalBleedersClamped
     duration: 2
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/cautery.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/cautery.rsi
     state: cautery
   - type: SurgeryDamageChangeEffect
     damage:
@@ -225,7 +225,7 @@
     duration: 2
   - type: SurgeryAffixPartStep
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/cautery.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/cautery.rsi
     state: cautery
   - type: SurgeryStepEmoteEffect
   - type: SurgeryDamageChangeEffect
@@ -249,7 +249,7 @@
     - type: BodyPartSawed
     duration: 4
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/circular-saw.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/circular-saw.rsi
     state: circular-saw
   - type: SurgeryStepEmoteEffect
 
@@ -266,7 +266,7 @@
     - type: InternalBleedersClamped
     duration: 2
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/hemostat.rsi
     state: hemostat
   - type: SurgeryDamageChangeEffect
     damage:
@@ -291,7 +291,7 @@
     - type: IncisionOpen
     duration: 8
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/circular-saw.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/circular-saw.rsi
     state: circular-saw
   - type: SurgeryRemovePartStep
   - type: SurgeryStepEmoteEffect
@@ -311,7 +311,7 @@
     - type: IncisionOpen
     duration: 3
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/scalpel.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/scalpel.rsi
     state: scalpel
   - type: SurgeryStepEmoteEffect
 
@@ -326,7 +326,7 @@
     - type: Tending
     duration: 1
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/hemostat.rsi
     state: hemostat
   - type: SurgeryTendWoundsEffect
     damage:
@@ -345,7 +345,7 @@
     - type: Tending
     duration: 1
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/hemostat.rsi
     state: hemostat
   - type: SurgeryTendWoundsEffect
     mainGroup: Burn
@@ -367,7 +367,7 @@
     - type: IncisionOpen
     duration: 2
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/cautery.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/cautery.rsi
     state: cautery
   - type: SurgeryDamageChangeEffect
     damage:
@@ -421,7 +421,7 @@
     - type: Tweezers
     duration: 8
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/hemostat.rsi
     state: hemostat
   - type: SurgeryRemoveOrganStep
   - type: SurgeryStepEmoteEffect
@@ -503,7 +503,7 @@
     duration: 2
   - type: SurgeryAffixOrganStep
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/cautery.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/cautery.rsi
     state: cautery
   - type: SurgeryStepEmoteEffect
   - type: SurgeryDamageChangeEffect
@@ -527,7 +527,7 @@
     - type: SlurredAccent
     duration: 5
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/drill.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/drill.rsi
     state: drill
   - type: SurgeryStepEmoteEffect
   - type: SurgeryDamageChangeEffect
@@ -550,7 +550,7 @@
     - type: RatvarianLanguage
     - type: SlurredAccent
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/drill.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/drill.rsi
     state: drill
   - type: SurgeryStepEmoteEffect
 

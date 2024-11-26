@@ -1,4 +1,4 @@
-// Shitmed Change Start
+// _CorvaxNext Change Start
 using Content.Shared.Smoking.Components;
 
 namespace Content.Shared.Smoking.Systems;
@@ -14,5 +14,5 @@ public abstract class SharedMatchstickSystem : EntitySystem
         Dirty(ent);
         return true;
     }
-} 
-// Shitmed Change End
+}
+// _CorvaxNext Change End

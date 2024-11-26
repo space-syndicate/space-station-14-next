@@ -1,4 +1,4 @@
-using Content.Shared.Body.Part; // Shitmed Change
+using Content.Shared.Body.Part; // _CorvaxNext Change
 using Content.Shared.Damage;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Standing;

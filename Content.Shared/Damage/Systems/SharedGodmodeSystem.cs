@@ -2,7 +2,7 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Slippery;
 using Content.Shared.StatusEffect;
-using Content.Shared.Body.Systems; // Shitmed Change
+using Content.Shared.Body.Systems; // _CorvaxNext Change
 
 namespace Content.Shared.Damage.Systems;
 
@@ -10,7 +10,7 @@ public abstract class SharedGodmodeSystem : EntitySystem
 {
     [Dependency] private readonly DamageableSystem _damageable = default!;
 
-    [Dependency] private readonly SharedBodySystem _bodySystem = default!; // Shitmed Change
+    [Dependency] private readonly SharedBodySystem _bodySystem = default!; // _CorvaxNext Change
 
     public override void Initialize()
     {
@@ -54,7 +54,7 @@ public abstract class SharedGodmodeSystem : EntitySystem
         // Rejuv to cover other stuff
         RaiseLocalEvent(uid, new RejuvenateEvent());
 
-        foreach (var (id, _) in _bodySystem.GetBodyChildren(uid)) // Shitmed Change
+        foreach (var (id, _) in _bodySystem.GetBodyChildren(uid)) // _CorvaxNext Change
             EnableGodmode(id);
     }
 
@@ -70,7 +70,7 @@ public abstract class SharedGodmodeSystem : EntitySystem
 
         RemComp<GodmodeComponent>(uid);
 
-        foreach (var (id, _) in _bodySystem.GetBodyChildren(uid)) // Shitmed Change
+        foreach (var (id, _) in _bodySystem.GetBodyChildren(uid)) // _CorvaxNext Change
             DisableGodmode(id);
     }
 

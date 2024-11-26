@@ -132,12 +132,12 @@
   - PrisonerBodyBag # Corvax-Next-AdvancedBodyBags
   - RadiationBodyBag # Corvax-Next-AdvancedBodyBags
 
-# Shitmed Change Start
+# _CorvaxNext: surgery Change Start
 - type: technology
   id: AdvancedTreatment
   name: research-technology-advanced-treatment
   icon:
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-scalpel.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/e-scalpel.rsi
     state: e-scalpel-on
   discipline: CivilianServices
   tier: 2
@@ -154,7 +154,7 @@
   id: CyberneticEnhancements
   name: research-technology-cybernetic-enhancements
   icon:
-    sprite: _Shitmed/Mobs/Species/IPC/organs.rsi
+    sprite: _CorvaxNext/Mobs/Species/IPC/organs.rsi
     state: eyes
   discipline: CivilianServices
   tier: 2
@@ -167,7 +167,7 @@
   - BasicCyberneticEyes
   - SecurityCyberneticEyes
   - MedicalCyberneticEyes
-# Shitmed Change End
+# _CorvaxNext: surgery Change End
 
 - type: technology
   id: AdvancedCleaning
