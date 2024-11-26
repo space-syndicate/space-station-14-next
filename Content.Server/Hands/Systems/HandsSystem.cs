@@ -5,6 +5,7 @@ using Content.Server.Stunnable;
 using Content.Shared.Body.Systems;
 using Content.Shared.Body.Events;
 using Content.Shared.ActionBlocker;
+using Content.Shared._CorvaxNext.Surgery.Body.Events;
 using Content.Shared.Body.Part;
 using Content.Shared.CombatMode;
 using Content.Shared.Damage.Systems;

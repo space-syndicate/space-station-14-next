@@ -858,6 +858,11 @@
     - Passive
   - type: Body
     prototype: AnimalRuminant
+  - type: SurgeryTarget # Shitmed
+  - type: UserInterface # Shitmed
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
   - type: HTN
     rootTask:
       task: RuminantCompound

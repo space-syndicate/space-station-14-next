@@ -351,6 +351,9 @@
       - FauxTileAstroSnow
       - OreBagOfHolding
       - DeviceQuantumSpinInverter
+      - EnergyScalpel # Shitmed Change
+      - EnergyCautery # Shitmed Change
+      - AdvancedRetractor # Shitmed Change
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
@@ -606,6 +609,7 @@
     - BorgModuleHarvesting
     - BorgModuleDefibrillator
     - BorgModuleAdvancedTreatment
+    - BorgModuleSurgery # Shitmed Change
     - RipleyHarness
     - RipleyLArm
     - RipleyRArm
@@ -625,6 +629,13 @@
     - HamtrLLeg
     - HamtrRLeg
     - VimHarness
+    # Shitmed Change
+    - BorgModuleAdvancedSurgery
+    - JawsOfLifeLeftArm
+    - JawsOfLifeRightArm
+    - SpeedLeftLeg
+    - SpeedRightLeg
+    - BasicCyberneticEyes
   - type: MaterialStorage
     whitelist:
       tags:
@@ -798,6 +809,8 @@
       - WeaponLaserCannon
       - WeaponLaserCarbine
       - WeaponXrayCannon
+      - SecurityCyberneticEyes # Shitmed Change
+      - MedicalCyberneticEyes # Shitmed Change
   - type: MaterialStorage
     whitelist:
       tags:
@@ -927,6 +940,12 @@
       - NTBodyBag # Corvax-Next-AdvancedBodyBags
       - PrisonerBodyBag # Corvax-Next-AdvancedBodyBags
       - RadiationBodyBag # Corvax-Next-AdvancedBodyBags
+      # Shitmed Change
+      - EnergyScalpel
+      - EnergyCautery
+      - AdvancedRetractor
+      - OmnimedTool
+      - MedicalCyberneticEyes
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - SyndicateBodyBag # Corvax-Next-AdvancedBodyBags

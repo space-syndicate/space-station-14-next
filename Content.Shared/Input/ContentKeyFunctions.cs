@@ -64,9 +64,13 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction TargetHead = "TargetHead"; // _CorvaxNext: surgery
         public static readonly BoundKeyFunction TargetTorso = "TargetTorso"; // _CorvaxNext: surgery
         public static readonly BoundKeyFunction TargetLeftArm = "TargetLeftArm"; // _CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetLeftHand = "TargetLeftHand"; // _CorvaxNext: surgery
         public static readonly BoundKeyFunction TargetRightArm = "TargetRightArm"; // _CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetRightHand = "TargetRightHand"; // _CorvaxNext: surgery
         public static readonly BoundKeyFunction TargetLeftLeg = "TargetLeftLeg"; // _CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetLeftFoot = "TargetLeftFoot"; // _CorvaxNext: surgery
         public static readonly BoundKeyFunction TargetRightLeg = "TargetRightLeg"; // _CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetRightFoot = "TargetRightFoot"; // _CorvaxNext: surgery
 
         public static readonly BoundKeyFunction ArcadeUp = "ArcadeUp";
         public static readonly BoundKeyFunction ArcadeDown = "ArcadeDown";
