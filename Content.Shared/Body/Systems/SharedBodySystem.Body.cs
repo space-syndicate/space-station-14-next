@@ -398,9 +398,8 @@ public partial class SharedBodySystem
                 return gibs;
 
             ChangeSlotState((partId, part), true);
-            RemovePartChildren((partId, part), bodyEnt);
 
-            // We have to iterate though every organ to drop it when part is being destroyed
+            RemovePartChildren((partId, part), bodyEnt);
             foreach (var organ in GetPartOrgans(partId, part))
             {
                 _gibbingSystem.TryGibEntityWithRef(bodyEnt, organ.Id, GibType.Drop, GibContentsOption.Skip,
@@ -414,15 +413,15 @@ public partial class SharedBodySystem
                 playAudio: true, launchGibs: true, launchDirection: splatDirection, launchImpulse: GibletLaunchImpulse * splatModifier,
                 launchImpulseVariance: GibletLaunchImpulseVariance, launchCone: splatCone);
 
+
         if (HasComp<InventoryComponent>(partId))
         {
-            foreach (var item in _inventory.GetHandOrInventoryEntities((partId)))
+            foreach (var item in _inventory.GetHandOrInventoryEntities(partId))
             {
                 SharedTransform.AttachToGridOrMap(item);
                 gibs.Add(item);
             }
         }
-
         _audioSystem.PlayPredicted(gibSoundOverride, Transform(partId).Coordinates, null);
         return gibs;
     }
@@ -454,9 +453,7 @@ public partial class SharedBodySystem
             return;
 
         foreach (var part in GetBodyChildren(uid, component))
-        {
             EnsureComp<BodyPartAppearanceComponent>(part.Id);
-        }
     }
     // end-_CorvaxNext: surgery
 }
