@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseItem
+  id: SyndicateBlueprint
+  name: syndicate blueprint
+  description: Blueprint of evil genius.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Tools/syndicate_blueprint.rsi
+    state: icon
+  - type: Item
+    sprite: _CorvaxNext/Objects/Tools/syndicate_blueprint.rsi
+    size: Normal
+  - type: Tag
+    tags:
+    - BlueprintCircuitImprinter
+  - type: Blueprint
+    providedRecipes:
+    - AntimovCircuitBoard

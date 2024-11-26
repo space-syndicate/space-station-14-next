@@ -1,0 +1,5 @@
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: AntimovCircuitBoard
+  result: AntimovCircuitBoard
+  blueprintTag: BlueprintCircuitImprinter
