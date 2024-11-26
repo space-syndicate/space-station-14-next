@@ -71,14 +71,14 @@
       - FoodSoupBungo
       - FoodMealCornInButter
       - FoodSoupStew
-      # Corvax NEXT USSP food start
+      # Corvax-Next-Food-End
       - FoodBakedPotatoesCutlets
       - FoodBearSoup
       - FoodOkroshkaSoup
-      - FoodOlivierSoup
+      - FoodOlivier
       - FoodSolankaSoup
       - FoodPlow
-      # Corvax NEXT USSP food end
+      # Corvax-Next-Food-End
     chance: 0.8
     offset: 0.0
     #rare

@@ -42,7 +42,7 @@
   plantRsi: _CorvaxNext/Objects/Specific/Hydroponics/shashamber.rsi
   packetPrototype: ShashambertSeeds
   productPrototypes:
-    - FoodShashamber
+    - FoodWhatumber
   harvestRepeat: Repeat
   lifespan: 25
   maturation: 8
