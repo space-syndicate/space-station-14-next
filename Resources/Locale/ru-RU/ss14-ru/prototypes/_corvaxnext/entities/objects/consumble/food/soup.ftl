@@ -1,4 +1,4 @@
-ent-FoodBakedPotatoesCutlets = котлетки с пюрешкой.
+ent-FoodBakedPotatoesCutlets = котлетки с пюрешкой
     .desc = Ты поторопись... у нас сейчас котлетки...
 ent-FoodPickles = солёный огурец
     .desc = Влажный... Самое то с водкой!
