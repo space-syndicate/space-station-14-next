@@ -201,11 +201,6 @@
   - type: Item
     size: Small
     heldPrefix: eyeballs
-  - type: Tag # goob edit
-    tags:
-    - Meat
-    - Organ
-    - Eyes
 
 - type: entity
   id: OrganArachnidTongue
