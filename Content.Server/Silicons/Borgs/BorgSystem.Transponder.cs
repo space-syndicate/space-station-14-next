@@ -8,12 +8,18 @@ using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Explosion.Components;
+using Content.Server.Silicons.Laws;
+using Robust.Shared.Audio;
+using Content.Shared.Silicons.Laws.Components;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Silicons.Borgs;
 
 /// <inheritdoc/>
 public sealed partial class BorgSystem
 {
+    [Dependency] private readonly SiliconLawSystem _law = default!;
+
     private void InitializeTransponder()
     {
         SubscribeLocalEvent<BorgTransponderComponent, DeviceNetworkPacketEvent>(OnPacketReceived);
@@ -83,11 +89,31 @@ public sealed partial class BorgSystem
         if (!payload.TryGetValue(DeviceNetworkConstants.Command, out string? command))
             return;
 
-        if (command == RoboticsConsoleConstants.NET_DISABLE_COMMAND)
+        // Corvax-Next-MutableLaws-Start
+        if (command == RoboticsConsoleConstants.NET_CHANGE_LAWS_COMMAND)
+        {
+            if (payload.TryGetValue(RoboticsConsoleConstants.NET_CIRCUIT_BOARD, out EntityUid circuitBoard))
+                ChangeLaws(ent, circuitBoard);
+        }
+        // Corvax-Next-MutableLaws-End
+        else if (command == RoboticsConsoleConstants.NET_DISABLE_COMMAND)
             Disable(ent);
         else if (command == RoboticsConsoleConstants.NET_DESTROY_COMMAND)
             Destroy(ent);
     }
+
+    // Corvax-Next-MutableLaws-Start
+    private void ChangeLaws(EntityUid ent, EntityUid circuitBoard)
+    {
+        if (CheckEmagged(ent, "destroyed"))
+            return;
+
+        if (!TryComp<SiliconLawProviderComponent>(circuitBoard, out var law))
+            return;
+
+        _law.SetLaws(_law.GetLawset(law.Laws).Laws, ent, law.LawUploadSound);
+    }
+    // Corvax-Next-MutableLaws-End
 
     private void Disable(Entity<BorgTransponderComponent, BorgChassisComponent?> ent)
     {
@@ -133,5 +159,21 @@ public sealed partial class BorgSystem
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Sets <see cref="BorgTransponderComponent.Sprite"/>.
+    /// </summary>
+    public void SetTransponderSprite(Entity<BorgTransponderComponent> ent, SpriteSpecifier sprite)
+    {
+        ent.Comp.Sprite = sprite;
+    }
+
+    /// <summary>
+    /// Sets <see cref="BorgTransponderComponent.Name"/>.
+    /// </summary>
+    public void SetTransponderName(Entity<BorgTransponderComponent> ent, string name)
+    {
+        ent.Comp.Name = name;
     }
 }

@@ -66,8 +66,6 @@
   recipeUnlocks:
     - ComputerTelevisionCircuitboard
     - SynthesizerInstrument
-    - BorgModuleMusique
-    - BorgModuleClowning
     - DawInstrumentMachineCircuitboard
     - MassMediaCircuitboard
     - JukeboxCircuitBoard
@@ -82,7 +80,6 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - BorgModuleLightReplacer
   - BorgModuleAdvancedCleaning
 
 - type: technology
@@ -131,19 +128,46 @@
   - CryoPodMachineCircuitboard
   - CryostasisBeaker
   - SyringeCryostasis
+  - NTBodyBag # Corvax-Next-AdvancedBodyBags
+  - PrisonerBodyBag # Corvax-Next-AdvancedBodyBags
+  - RadiationBodyBag # Corvax-Next-AdvancedBodyBags
 
+# _CorvaxNext: surgery Change Start
 - type: technology
-  id: MechanizedTreatment
-  name: research-technology-mechanized-treatment
+  id: AdvancedTreatment
+  name: research-technology-advanced-treatment
   icon:
-    sprite: Mobs/Silicon/chassis.rsi
-    state: medical
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/e-scalpel.rsi
+    state: e-scalpel-on
   discipline: CivilianServices
   tier: 2
   cost: 5000
   recipeUnlocks:
   - BorgModuleAdvancedTreatment
   - BorgModuleDefibrillator
+  - EnergyScalpel
+  - EnergyCautery
+  - AdvancedRetractor
+  - BorgModuleAdvancedSurgery
+
+- type: technology
+  id: CyberneticEnhancements
+  name: research-technology-cybernetic-enhancements
+  icon:
+    sprite: _CorvaxNext/Mobs/Species/IPC/organs.rsi
+    state: eyes
+  discipline: CivilianServices
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+  - JawsOfLifeLeftArm
+  - JawsOfLifeRightArm
+  - SpeedLeftLeg
+  - SpeedRightLeg
+  - BasicCyberneticEyes
+  - SecurityCyberneticEyes
+  - MedicalCyberneticEyes
+# _CorvaxNext: surgery Change End
 
 - type: technology
   id: AdvancedCleaning
@@ -229,3 +253,4 @@
   recipeUnlocks:
   - BluespaceBeaker
   - SyringeBluespace
+  - BluespaceBodyBag # Corvax-Next-AdvancedBodyBags

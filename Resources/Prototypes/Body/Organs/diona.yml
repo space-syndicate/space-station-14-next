@@ -40,6 +40,9 @@
     heldPrefix: brain
   - type: Sprite
     state: brain
+  - type: Organ # _CorvaxNext
+    slotId: Brain
+  - type: Brain # _CorvaxNext
   - type: SolutionContainerManager
     solutions:
       organ:
@@ -71,6 +74,8 @@
     layers:
       - state: eyeball-l
       - state: eyeball-r
+  - type: Organ # _CorvaxNext
+    slotId: eyes
   - type: Tag # goob edit
     tags:
     - Meat
@@ -85,6 +90,8 @@
   components:
   - type: Sprite
     state: stomach
+  - type: Organ
+    slotId: stomach
   - type: SolutionContainerManager
     solutions:
       stomach:
@@ -128,6 +135,8 @@
     size: Small
     heldPrefix: lungs
   - type: Lung
+  - type: Organ
+    slotId: lungs
   - type: Metabolizer
     removeEmpty: true
     solutionOnBody: false

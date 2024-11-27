@@ -17,7 +17,8 @@ public sealed partial class PendingZombieComponent : Component
     {
         DamageDict = new ()
         {
-            { "Poison", 0.2 },
+            { "Poison", 0.4 },
+            { "Cellular", 0.2 },
         }
     };
 
@@ -25,7 +26,7 @@ public sealed partial class PendingZombieComponent : Component
     /// A multiplier for <see cref="Damage"/> applied when the entity is in critical condition.
     /// </summary>
     [DataField("critDamageMultiplier")]
-    public float CritDamageMultiplier = 10f;
+    public float CritDamageMultiplier = 15f;
 
     [DataField("nextTick", customTypeSerializer:typeof(TimeOffsetSerializer))]
     public TimeSpan NextTick;
@@ -40,13 +41,13 @@ public sealed partial class PendingZombieComponent : Component
     /// The minimum amount of time initial infected have before they start taking infection damage.
     /// </summary>
     [DataField]
-    public TimeSpan MinInitialInfectedGrace = TimeSpan.FromMinutes(12.5f);
+    public TimeSpan MinInitialInfectedGrace = TimeSpan.FromMinutes(12f);
 
     /// <summary>
     /// The maximum amount of time initial infected have before they start taking damage.
     /// </summary>
     [DataField]
-    public TimeSpan MaxInitialInfectedGrace = TimeSpan.FromMinutes(15f);
+    public TimeSpan MaxInitialInfectedGrace = TimeSpan.FromMinutes(20f);
 
     /// <summary>
     /// The chance each second that a warning will be shown.

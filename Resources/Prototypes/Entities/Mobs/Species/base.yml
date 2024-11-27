@@ -187,6 +187,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.SurgeryUIKey.Key: # _CorvaxNext: surgery
+        type: SurgeryBui
       enum.StoreUiKey.Key: # goob edit - heretics
         type: StoreBoundUserInterface
       enum.HereticLivingHeartKey.Key: # goob edit - heretics
@@ -215,6 +217,9 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+  - type: Targeting # _CorvaxNext: surgery
+  - type: SurgeryTarget # _CorvaxNext: surgery
+  - type: LayingDown # _CorvaxNext: LayingDown Laying Down
 
 - type: entity
   save: false
@@ -227,6 +232,7 @@
   id: BaseMobSpeciesOrganic
   abstract: true
   components:
+  - type: Targeting # _CorvaxNext: surgery
   - type: OfferItem # Corvax-Next-Offer
   - type: Barotrauma
     damage:
