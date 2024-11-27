@@ -2,14 +2,14 @@ knowledge-path-flesh-s1-name = Принцип Голода
 knowledge-path-flesh-s1-desc =
     Сотни умерли от голода, но не Я... Я нашел силу в своей жадности..
 
-    Opens up the Path of Flesh to you.
+    Открывает вам Путь Плоти.
     Allows you to transmute a knife and a pool of blood into a Bloody Blade.
 
 knowledge-path-flesh-s2-name = Хватка Плоти
 knowledge-path-flesh-s2-desc =
     Мои новообретённые желания побуждали меня достигать все больших и больших высот..
 
-    Your Mansus Grasp gains the ability to create a ghoul out of corpse with a soul.
+    Ваша Хватка Обители получает способность создать Гуля из трупа с душой.
     Ghouls have only 50 health and look like husks to the heathens' eyes, but can use Bloody Blades effectively.
 
 knowledge-path-flesh-s3-name = Несовершенный Ритуал
@@ -32,8 +32,8 @@ knowledge-path-flesh-s5-desc =
     Но они недолго оставались вне моей воли. С каждым шагом крики усиливались, пока наконец
     Я не узнал что их можно лишить голоса.
 
-    Grants you the spell Knit Flesh. This spell allows you to remove organs from victims
-    without requiring a lengthy surgery. This process is much longer if the target is not dead.
+    Дайт вам заклинание Плетение Плоти. Оно позволяет вам удалять органы жертв
+    без нужды в операции. Данный процесс гораздо дольше если цель жива.
     This spell also allows you to heal your minions and summons, or restore failing organs to acceptable status.
 
 knowledge-path-flesh-s6-name = Ритуал Плоти
@@ -49,7 +49,7 @@ knowledge-path-flesh-s7-desc =
     Человек-Неведимка был не один. Он привёл меня к Маршалу.
     Наконец Я начал понимать. Затем с небес хлынул кровавый дождь..
 
-    Your Bloody Blade now causes enemies to bleed heavily on attack.
+    Ваш Кровавый Клинок теперь вызывает обильное кровотечение у жертв.
 
 knowledge-path-flesh-s8-name = Одинокий Ритуал
 knowledge-path-flesh-s8-desc =
