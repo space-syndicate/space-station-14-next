@@ -145,11 +145,6 @@
   - type: Item
     size: Small
     heldPrefix: liver
-  - type: Tag # goob edit
-    tags:
-    - Meat
-    - Organ
-    - Liver
 
 - type: entity
   id: OrganAnimalHeart
@@ -177,11 +172,6 @@
   - type: Item
     size: Small
     heldPrefix: heart
-  - type: Tag # goob edit
-    tags:
-    - Meat
-    - Organ
-    - Heart
 
 - type: entity
   id: OrganAnimalKidneys

@@ -9,3 +9,30 @@
 
 - type: Tag
   id: Eyes
+
+- type: Tag # heretics edit
+  id: GasMask
+
+- type: Tag # heretics edit
+  id: Kidneys
+
+- type: Tag # heretics edit
+  id: Lungs
+
+- type: Tag # heretics edit
+  id: Mask
+
+- type: Tag # heretics edit
+  id: Poppy
+
+- type: Tag # heretics edit
+  id: Stomach
+
+- type: Tag # heretics edit
+  id: Table
+
+- type: Tag # heretics edit
+  id: Tongue
+
+- type: Tag # heretics edit
+  id: WaterTank
