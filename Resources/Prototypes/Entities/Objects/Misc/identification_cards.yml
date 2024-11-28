@@ -457,6 +457,8 @@
     layers:
     - state: default
     - state: idbrigmedic
+  - type: PresetIdCard # Corvax-Next-Brigmedic
+    job: Brigmedic # Corvax-Next-Brigmedic
 
 - type: entity
   parent: IDCardStandard
@@ -610,9 +612,9 @@
     entries:
     - label: corvax-hidden-desc-AgentIDCard-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
     - label: corvax-hidden-desc-AgentIDCard-research
       jobRequired:
         - ResearchAssistant

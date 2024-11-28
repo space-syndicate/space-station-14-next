@@ -151,6 +151,14 @@ namespace Content.Client.Options.UI.Tabs
                 KeybindsContainer.AddChild(newCheckBox);
             }
 
+            // start-_CorvaxNext: Laying System
+            void HandleToggleAutoGetUp(BaseButton.ButtonToggledEventArgs args) // WD EDIT
+            {
+                _cfg.SetCVar(Shared._CorvaxNext.NextVars.NextVars.AutoGetUp, args.Pressed);
+                _cfg.SaveToFile();
+            }
+            // end-_CorvaxNext: Laying System
+
             AddHeader("ui-options-header-general");
             AddCheckBox("ui-options-hotkey-keymap", _cfg.GetCVar(CVars.DisplayUSQWERTYHotkeys), HandleToggleUSQWERTYCheckbox);
 
@@ -161,6 +169,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.MoveRight);
             AddButton(EngineKeyFunctions.Walk);
             AddCheckBox("ui-options-hotkey-toggle-walk", _cfg.GetCVar(CCVars.ToggleWalk), HandleToggleWalk);
+            AddCheckBox("ui-options-hotkey-auto-up", _cfg.GetCVar(Shared._CorvaxNext.NextVars.NextVars.AutoGetUp), HandleToggleAutoGetUp); // CorvaxNext: Laying System
             InitToggleWalk();
 
             AddHeader("ui-options-header-camera");
@@ -184,7 +193,8 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.MoveStoredItem);
             AddButton(ContentKeyFunctions.RotateStoredItem);
             AddButton(ContentKeyFunctions.SaveItemLocation);
-
+            AddButton(ContentKeyFunctions.OfferItem); // Corvax-Next-Offer
+            AddButton(ContentKeyFunctions.ToggleStanding); // CorvaxNext: Laying System
             AddHeader("ui-options-header-interaction-adv");
             AddButton(ContentKeyFunctions.SmartEquipBackpack);
             AddButton(ContentKeyFunctions.SmartEquipBelt);
@@ -229,6 +239,20 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.WindowCloseRecent);
             AddButton(EngineKeyFunctions.EscapeMenu);
             AddButton(ContentKeyFunctions.EscapeContext);
+
+            // start-_CorvaxNext: surgery
+            AddHeader("ui-options-header-targeting");
+            AddButton(ContentKeyFunctions.TargetHead);
+            AddButton(ContentKeyFunctions.TargetTorso);
+            AddButton(ContentKeyFunctions.TargetLeftArm);
+            AddButton(ContentKeyFunctions.TargetLeftHand);
+            AddButton(ContentKeyFunctions.TargetRightArm);
+            AddButton(ContentKeyFunctions.TargetRightHand);
+            AddButton(ContentKeyFunctions.TargetLeftLeg);
+            AddButton(ContentKeyFunctions.TargetLeftFoot);
+            AddButton(ContentKeyFunctions.TargetRightLeg);
+            AddButton(ContentKeyFunctions.TargetRightFoot);
+            // end-_CorvaxNext: surgery
 
             AddHeader("ui-options-header-misc");
             AddButton(ContentKeyFunctions.TakeScreenshot);

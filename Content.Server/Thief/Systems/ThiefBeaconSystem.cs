@@ -8,6 +8,7 @@ using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Content.Shared.Roles;
 using Robust.Shared.Audio.Systems;
+using Content.Server._CorvaxNext.Api.Components;
 
 namespace Content.Server.Thief.Systems;
 
@@ -20,7 +21,6 @@ public sealed class ThiefBeaconSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly SharedRoleSystem _roles = default!;
-
     public override void Initialize()
     {
         base.Initialize();
@@ -39,7 +39,7 @@ public sealed class ThiefBeaconSystem : EntitySystem
             return;
 
         var mind = _mind.GetMind(args.User);
-        if (mind == null || !_roles.MindHasRole<ThiefRoleComponent>(mind.Value))
+        if (mind == null || !_roles.MindHasRole<ThiefBeaconAccessComponent>(mind.Value)) // Corvax-Next-Api
             return;
 
         var user = args.User;

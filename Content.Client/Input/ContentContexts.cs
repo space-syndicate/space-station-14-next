@@ -84,6 +84,14 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.Arcade1);
             human.AddFunction(ContentKeyFunctions.Arcade2);
             human.AddFunction(ContentKeyFunctions.Arcade3);
+            human.AddFunction(ContentKeyFunctions.TargetHead); // CorvaxNext: surgery
+            human.AddFunction(ContentKeyFunctions.TargetTorso); // CorvaxNext: surgery
+            human.AddFunction(ContentKeyFunctions.TargetLeftArm); // CorvaxNext: surgery
+            human.AddFunction(ContentKeyFunctions.TargetRightArm); // CorvaxNext: surgery
+            human.AddFunction(ContentKeyFunctions.TargetLeftLeg); // CorvaxNext: surgery
+            human.AddFunction(ContentKeyFunctions.TargetRightLeg); // CorvaxNext: surgery
+            human.AddFunction(ContentKeyFunctions.OfferItem); // Corvax-Next-Offer
+            human.AddFunction(ContentKeyFunctions.ToggleStanding); // CorvaxNext: laying system toggle standing
 
             // actions should be common (for ghosts, mobs, etc)
             common.AddFunction(ContentKeyFunctions.OpenActionsMenu);

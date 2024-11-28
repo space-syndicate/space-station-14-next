@@ -1,0 +1,25 @@
+- type: entity
+  parent: BaseGameRule
+  id: Api
+  components:
+  - type: ApiRule
+  - type: AntagObjectives
+    objectives:
+    - EscapeApiShuttleObjective
+    - AiStealObjective
+  - type: AntagSelection
+    agentName: api-round-end-agent-name
+    definitions:
+    - prefRoles: [ Api ]
+      max: 1
+      playerRatio: 15
+      lateJoinAdditional: true
+      allowNonHumans: true
+      multiAntagSetting: NotExclusive
+      components:
+      - type: AutoImplant
+        implants: [ ApiStorageImplant ]
+      mindRoles:
+      - MindRoleApi
+      briefing:
+        sound: "/Audio/_CorvaxNext/Misc/api_greeting.ogg"
