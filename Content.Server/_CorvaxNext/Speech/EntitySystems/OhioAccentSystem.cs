@@ -21,11 +21,6 @@ public sealed class OhioAccentSystem : EntitySystem
         args.Message = Accentuate("ohio", "accent-ohio-prefix-", "accent-ohio-suffix-", args);
     }
 
-    //private void OnAccentBrainrot(EntityUid uid, OhioBrainrotAccentComponent component, ref AccentGetEvent args)
-    //{
-    //    args.Message = Accentuate("ohioBrainrot", "accent-ohio-brainrot-prefix-", "accent-ohio-brainrot-suffix-", args);
-    //}
-
     private string Accentuate(string accentName, string prefix, string suffix, AccentGetEvent args) {
         var message = args.Message;
 
