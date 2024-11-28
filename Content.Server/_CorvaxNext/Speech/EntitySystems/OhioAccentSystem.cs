@@ -14,7 +14,6 @@ public sealed class OhioAccentSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<OhioAccentComponent, AccentGetEvent>(OnAccent);
-        SubscribeLocalEvent<OhioBrainrotAccentComponent, AccentGetEvent>(OnAccentBrainrot);
     }
 
     private void OnAccent(EntityUid uid, OhioAccentComponent component, ref AccentGetEvent args)
