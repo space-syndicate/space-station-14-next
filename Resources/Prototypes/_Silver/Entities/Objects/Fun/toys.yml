@@ -1,0 +1,39 @@
+- type: entity
+  parent: BasePlushie
+  id: guusToyNiko
+  name: Странный котик
+  description: "вы не уверены, но вам кажется что вы его где-то видели"
+  components:
+    - type: Sprite
+      sprite: _Silver/Objects/Fun/toys.rsi
+      state: niko
+
+- type: entity
+  parent: BasePlushie
+  id: guusToyNikolamp
+  name: Лампочка
+  description: "какая знакомая лампочка..."
+  components:
+    - type: Sprite
+      sprite: _Silver/Objects/Fun/toys.rsi
+      state: lamp
+
+- type: entity
+  parent: BasePlushie
+  id: guusToyGoose
+  name: Плюшевый гусь
+  description: "Кусь!"
+  components:
+    - type: Sprite
+      sprite: _Silver/Objects/Fun/toys.rsi
+      state: goose
+
+- type: entity
+  parent: BasePlushie
+  id: guusToyDestroyer
+  name: Плюшевая Валерия Лапкина
+  description: "Она одним своим видом бесит."
+  components:
+    - type: Sprite
+      sprite: _Silver/Objects/Fun/toys.rsi
+      state: destroyer
