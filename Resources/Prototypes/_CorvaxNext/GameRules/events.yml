@@ -1,7 +1,7 @@
 - type: entity
   id: SpaceLawChange
   parent: BaseGameRule
-  noSpawn: true
+  abstract: true
   components:
   - type: StationEvent
     weight: 5
