@@ -1,0 +1,125 @@
+- type: jukebox
+  id: guusHoshuesos
+  name: Gasper Horned(YT) - Хос-Хуесос
+  path:
+    path: /Audio/_Silver/Jukebox/HOS_HUESOS.ogg
+
+- type: jukebox
+  id:  guusAndimgone
+  name: Femtanyl - AND IM GONE
+  path:
+    path: /Audio/_Silver/Jukebox/femtanyl-AND-I_M-GONE.ogg
+
+- type: jukebox
+  id:  guusImightbesick
+  name: Femtanyl - I MIGHT B3 SICK
+  path:
+    path: /Audio/_Silver/Jukebox/femtanyl-I-MIGHT-B3-SICK.ogg
+
+- type: jukebox
+  id:  guusLovesickcannibal
+  name: Femtanyl - LOVESICK CANNIBAL
+  path:
+    path: /Audio/_Silver/Jukebox/femtanyl-LOVESICK_-CANNIBAL.ogg
+
+- type: jukebox
+  id:  guusPushurtempr
+  name: Femtanyl - PUSH UR T3MPR
+  path:
+    path: /Audio/_Silver/Jukebox/Femtanyl-PUSH-UR-T3MPR.ogg
+
+- type: jukebox
+  id:  guusPet
+  name: Femtanyl - P3T
+  path:
+    path: /Audio/_Silver/Jukebox/femtanyl-P3T.ogg
+
+- type: jukebox
+  id:  guusMurderevery1uknow
+  name: Femtanyl - MURDER EVERY 1 U KNOW (feat. takihasdied)
+  path:
+    path: /Audio/_Silver/Jukebox/femtanyl-MURDER-EVERY-1-U-KNOW_-_feat.-takihasdied_.ogg
+
+- type: jukebox
+  id:  guusActright
+  name: Femtanyl - ACT RIGHT
+  path:
+    path: /Audio/_Silver/Jukebox/femtanyl-ACT-RIGHT_.ogg
+
+- type: jukebox
+  id:  guusWorldwide
+  name: Femtanyl - WORLDWID3 (feat. zombAe)
+  path:
+    path: /Audio/_Silver/Jukebox/femtanyl — WORLDWID3 feat. zombAe.ogg
+
+- type: jukebox
+  id:  guusGirlhell1999
+  name: Femtanyl - GIRL HELL 1999
+  path:
+    path: /Audio/_Silver/Jukebox/femtanyl — GIRL HELL 1999.ogg
+
+- type: jukebox
+  id:  guusWeightless
+  name: Femtanyl - WEIGHTLESS
+  path:
+    path: /Audio/_Silver/Jukebox/femtanyl - Weightless.ogg
+
+- type: jukebox
+  id:  guusDinner
+  name: Femtanyl - DINNER
+  path:
+    path: /Audio/_Silver/Jukebox/femtanyl - DINNER.ogg
+
+- type: jukebox
+  id:  guusDogmatica
+  name: Femtanyl - DOGMATICA
+  path:
+    path: /Audio/_Silver/Jukebox/femtanyl - DOGMATICA.ogg
+
+- type: jukebox
+  id:  guusSeekhelp
+  name: Femtanyl - S33K H3LP
+  path:
+    path: /Audio/_Silver/Jukebox/femtanyl — S33K H3LP.ogg
+
+- type: jukebox
+  id:  guusKatamari
+  name: Femtanyl - KATAMARI
+  path:
+    path: /Audio/_Silver/Jukebox/femtanyl — KATAMARI.ogg
+
+- type: jukebox
+  id:  guusNatoinstructor
+  name: Neverlove - Инструктор из НАТО
+  path:
+    path: /Audio/_Silver/Jukebox/Neverlove - NATO_instructor.ogg
+
+- type: jukebox
+  id:  guusItsjustaburningmemory
+  name: The Caretaker - Its just a burning memory
+  path:
+    path: /Audio/_Silver/Jukebox/The_Caretaker_-_Its_just_a_burning_memory.ogg
+
+- type: jukebox
+  id:  guusItsbeensolong
+  name: The Living Tombstone - It's Been So Long
+  path:
+    path: /Audio/_Silver/Jukebox/The Living Tombstone - It's Been So Long.ogg
+
+- type: jukebox
+  id:  guusMyordinarylife
+  name: The Living Tombstone - My Ordinary Life
+  path:
+    path: /Audio/_Silver/Jukebox/The Living Tombstone - My Ordinary Life.ogg
+
+- type: jukebox
+  id:  guusIgotnotime
+  name: The Living Tombstone - I Got No Time
+  path:
+    path: /Audio/_Silver/Jukebox/The Living Tombstone - I Got No Time.ogg
+
+- type: jukebox
+  id:  guusClairdelune
+  name: claude debussy - Clair De Lune
+  path:
+    path: /Audio/_Silver/Jukebox/Klod_Debyussi_-_Clair_De_Lune.ogg
