@@ -8,7 +8,7 @@
     maxOccurrences: 1 # can only happen 1 time per round
     duration: null # the rule has to last the whole round
   - type: GameRule
-    minPlayers: 20
+    minPlayers: 50
   - type: SpaceLawChangeRule
     lawLocalizedDataset: spaceLawChangeLaws
     adaptationTime: 10
