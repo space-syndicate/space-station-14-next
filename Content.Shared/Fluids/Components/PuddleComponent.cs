@@ -22,9 +22,9 @@ namespace Content.Shared.Fluids.Components
         [DataField("solutionRef")]
         public Entity<SolutionComponent>? Solution;
 
-        // Corvax-Next-Footsteps-Start
+        // Corvax-Next-Footprints-Start
         [DataField]
         public bool ViscosityAffectsMovement = true;
-        // Corvax-Next-Footsteps-End
+        // Corvax-Next-Footprints-End
     }
 }
