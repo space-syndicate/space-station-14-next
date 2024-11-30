@@ -50,6 +50,14 @@
     selectedBorgType: mining
 
 - type: entity
+  id: BorgChassisSec
+  parent: BorgChassisSelectable
+  name: киборг-службы безопасности
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: security
+
+- type: entity
   id: BorgChassisEngineer
   parent: BorgChassisSelectable
   name: engineer cyborg

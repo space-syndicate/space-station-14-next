@@ -132,6 +132,18 @@
     },
     {
       "name": "syndicate"
+    },
+    {
+      "name": "icon-lecter"
+    },
+    {
+      "name": "icon-neutralization"
+    },
+    {
+      "name": "icon-security-supportive"
+    },
+    {
+      "name": "icon-neutralization-adv"
     }
   ]
 }

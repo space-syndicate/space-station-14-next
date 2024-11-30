@@ -759,6 +759,7 @@
       - WeaponFlareGunSecurity
       - WeaponLaserCarbinePractice
       - Zipties
+      - BorgModuleNeutralization # _CorvaxNext: Security Borg
     dynamicRecipes:
       - BoxBeanbag
       - BoxShotgunIncendiary
@@ -812,6 +813,9 @@
       - WeaponXrayCannon
       - SecurityCyberneticEyes # _CorvaxNext: surgery Change
       - MedicalCyberneticEyes # _CorvaxNext: surgery Change
+      - BorgModuleLecter # _CorvaxNext: Security Borg
+      - BorgModuleSecurityControlling # _CorvaxNext: Security Borg
+      - BorgModuleNeutralizationAdvanced # _CorvaxNext: Security Borg
   - type: MaterialStorage
     whitelist:
       tags:

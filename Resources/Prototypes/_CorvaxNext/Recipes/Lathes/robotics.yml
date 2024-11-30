@@ -1,0 +1,38 @@
+# Security Modules
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleNeutralization
+  result: BorgModuleNeutralization
+  materials:
+    Steel: 500
+    Glass: 800
+    Plastic: 250
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleNeutralizationAdvanced
+  result: BorgModuleNeutralizationAdvanced
+  materials:
+    Steel: 500
+    Glass: 800
+    Plastic: 250
+    Gold: 50
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleSecurityControlling
+  result: BorgModuleSecurityControlling
+  materials:
+    Steel: 500
+    Glass: 500
+    Plastic: 500
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleLecter
+  result: BorgModuleLecter
+  materials:
+    Steel: 2000
+    Glass: 1500
+    Plastic: 1000
+    Gold: 50

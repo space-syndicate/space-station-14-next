@@ -96,6 +96,8 @@
   - TelescopicShield
   - HoloprojectorSecurity
   - WeaponDisablerSMG
+  - BorgModuleSecurityControlling
+  - BorgModuleLecter
 
 - type: technology
   id: ExplosiveTechnology
@@ -140,6 +142,7 @@
   cost: 10000
   recipeUnlocks:
   - WeaponLaserCannon
+  - BorgModuleNeutralizationAdvanced
 
 - type: technology
   id: WaveParticleHarnessing

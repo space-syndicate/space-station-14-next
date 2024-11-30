@@ -90,6 +90,19 @@
     - Antagonists
 
 - type: entity
+  name: stun baton+
+  parent: Stunbaton
+  id: StunbatonROW
+  description: A stun baton for incapacitating people with. It is charged by cyborg power
+  noSpawn: true
+  components:
+  - type: Stunbaton
+    energyPerUse: 200
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 5
+
+- type: entity
   name: truncheon
   parent: [BaseItem, BaseRestrictedContraband]
   id: Truncheon
@@ -171,6 +184,26 @@
       guides:
       - Security
       - Antagonists
+
+- type: entity
+  name: flash
+  noSpawn: true
+  parent: [BaseItem, Flash]
+  id: FlashBorg
+  suffix: Borg
+  description: An ultra bright flashbulb with a trigger, which causes the victim to be dazed and lose their eyesight for a moment. It has a burnout auto-stop system
+  components:
+  - type: AutoRecharge
+  - type: GenericVisualizer
+    visuals:
+      enum.FlashVisuals.Burnt:
+        enum.FlashVisuals.BaseLayer:
+          False: {state: burnt}
+      enum.FlashVisuals.Flashing:
+        enum.FlashVisuals.LightLayer:
+          True: {visible: true}
+          False: {visible: false}
+
 
 - type: entity
   name: flash

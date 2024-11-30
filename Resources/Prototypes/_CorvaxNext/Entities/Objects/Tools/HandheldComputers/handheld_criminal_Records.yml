@@ -1,0 +1,47 @@
+- type: entity
+  name: handheld criminal records
+  parent: BaseHandheldComputer
+  id: HandHeldCriminalRecords
+  description: A device for remote access to the station's criminal records.
+  components:
+  - type: Item
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Tools/hand_held_criminal_records.rsi
+    state: icon
+    layers:
+      - state: icon
+      - state: scanner
+        shader: unshaded
+        visible: true
+        map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  - type: CriminalRecordsConsole
+  - type: Appearance
+  - type: PowerCellDraw
+    drawRate: 1.5
+  - type: ToggleCellDraw
+  - type: ActivatableUI
+    key: enum.CriminalRecordsConsoleKey.Key
+    inHandsOnly: true
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.CriminalRecordsConsoleKey.Key:
+        type: CriminalRecordsConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: StaticPrice
+    price: 150
+    
+- type: entity
+  id: HandHeldCriminalRecordsBorg
+  parent: HandHeldCriminalRecords
+  suffix: Borg
+  noSpawn: true
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMicroreactor
+        disableEject: true
+        swap: false

@@ -483,6 +483,20 @@
     - Antagonists
 
 - type: entity
+  name: disabler-MK3
+  parent: WeaponDisabler
+  id: WeaponDisablerROW
+  description: A self-defense weapon that exhausts organic targets, weakening them until they collapse.
+  noSpawn: true
+  components:
+  - type: Battery
+    maxCharge: 500
+    startingCharge: 500
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 15
+
+- type: entity
   name: disabler SMG
   parent: [ BaseWeaponBattery, BaseRestrictedContraband ]
   id: WeaponDisablerSMG
@@ -518,6 +532,31 @@
     zeroVisible: true
   - type: StaticPrice
     price: 260
+
+- type: entity
+  name: disabler-SMG+
+  parent: WeaponDisablerSMG
+  id: WeaponDisablerSMGROW
+  description: Advanced weapon that exhausts organic targets, weakening them until they collapse.
+  noSpawn: true
+  components:
+  - type: Gun
+    minAngle: 2
+    maxAngle: 8
+    selectedMode: FullAuto
+    fireRate: 4
+    availableModes:
+      - SemiAuto
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+  - type: Battery
+    maxCharge: 330
+    startingCharge: 330
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 8
+
 
 - type: entity
   name: taser

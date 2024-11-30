@@ -1,0 +1,84 @@
+- type: entity
+  id: BaseBorgModuleSecurity
+  parent: [BaseBorgModule, BaseSecurityScienceCommandContraband]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - BorgModuleSec
+
+# security modules
+- type: entity
+  id: BorgModuleNeutralization
+  parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
+  name: neutralization cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - state: icon-neutralization
+  - type: ItemBorgModule
+    items:
+    - StunbatonROW
+    - WeaponDisablerROW
+    - FlashBorg
+  - type: BorgModuleIcon
+    icon: { sprite: _CorvaxNext/Interface/Actions/actions_borg.rsi, state: security-neutralization-module }
+
+- type: entity
+  id: BorgModuleNeutralizationAdvanced
+  parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
+  name: advanced neutralization cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - state: icon-neutralization-adv
+  - type: ItemBorgModule
+    items:
+    - StunbatonDouble
+    - WeaponDisablerSMGROW
+    - FlashBorg
+  - type: BorgModuleIcon
+    icon: { sprite: _CorvaxNext/Interface/Actions/actions_borg.rsi, state: security-neutralization-adv-module }
+
+- type: entity
+  id: BorgModuleLecter
+  parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
+  name: lecter cyborg module
+  description: A piece of tech that gives cyborgs new abilities. Installation is allowed only in  red code and above.
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - state: icon-lecter
+  - type: ItemBorgModule
+    items:
+    - WeaponRifleLecterROW
+    - CombatKnife
+  - type: Tag
+    tags:
+    - BorgModuleSec
+  - type: BorgModuleIcon
+    icon: { sprite: _CorvaxNext/Interface/Actions/actions_borg.rsi, state: security-lecter-module }
+
+- type: entity
+  id: BorgModuleSecurityControlling
+  parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
+  name: controlling cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - state: icon-security-supportive
+  - type: ItemBorgModule
+    items:
+    - HandHeldCriminalRecordsBorg
+    - HoloprojectorSecurityBorg
+    - DoorRemoteSecurity
+    - Syringe
+  - type: Tag
+    tags:
+    - BorgModuleSec
+  - type: BorgModuleIcon
+    icon: { sprite: _CorvaxNext/Interface/Actions/actions_borg.rsi, state: security-support-module }
