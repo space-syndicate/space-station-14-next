@@ -117,9 +117,3 @@
   name: The Living Tombstone - I Got No Time
   path:
     path: /Audio/_Silver/Jukebox/The Living Tombstone - I Got No Time.ogg
-
-- type: jukebox
-  id:  guusClairdelune
-  name: claude debussy - Clair De Lune
-  path:
-    path: /Audio/_Silver/Jukebox/Klod_Debyussi_-_Clair_De_Lune.ogg
