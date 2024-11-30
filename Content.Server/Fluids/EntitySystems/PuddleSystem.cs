@@ -340,7 +340,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
         _deletionQueue.Remove(entity);
         UpdateSlip(entity, entity.Comp, args.Solution);
-        UpdateSlow(entity, args.Solution, entity.Comp);
+        UpdateSlow(entity, args.Solution, entity.Comp); // Corvax-Next-Footsteps
         UpdateEvaporation(entity, args.Solution);
         UpdateAppearance(entity, entity.Comp);
     }
