@@ -269,9 +269,11 @@
         color: Plum
         sound: "/Audio/Ambience/Antag/zombie_start.ogg"
       components:
+      # Corvax-Next-Zombie: Replaced in DelayedRule Component.
       # - type: PendingZombie
       # - type: ZombifyOnDeath
       # - type: IncurableZombie
+      # Corvax-Next-Zombie end
       - type: InitialInfected
       # Corvax-MRP
       - type: NpcFactionMember
