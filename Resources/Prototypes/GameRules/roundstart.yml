@@ -273,7 +273,7 @@
       # - type: PendingZombie
       # - type: ZombifyOnDeath
       # - type: IncurableZombie
-      # Corvax-Next-Zombie end
+      # Corvax-Next-ZombieRework-End
       - type: InitialInfected
       # Corvax-MRP
       - type: NpcFactionMember
