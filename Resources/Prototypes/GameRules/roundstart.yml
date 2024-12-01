@@ -269,7 +269,7 @@
         color: Plum
         sound: "/Audio/Ambience/Antag/zombie_start.ogg"
       components:
-      # Corvax-Next-Zombie: Replaced in DelayedRule Component.
+      # Corvax-Next-ZombieRework-Start: Replaced in DelayedRule Component.
       # - type: PendingZombie
       # - type: ZombifyOnDeath
       # - type: IncurableZombie
