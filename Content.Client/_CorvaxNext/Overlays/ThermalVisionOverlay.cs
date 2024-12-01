@@ -42,7 +42,7 @@ public sealed class ThermalVisionOverlay : Overlay
     protected override void Draw(in OverlayDrawArgs args)
     {
         if (ScreenTexture is null
-            || _players.LocalEntity == null
+            || _players.LocalEntity is null
             || !_entity.TryGetComponent<ThermalVisionComponent>(_players.LocalEntity.Value, out var component)
             || !component.IsActive)
             return;
@@ -50,7 +50,7 @@ public sealed class ThermalVisionOverlay : Overlay
         var worldHandle = args.WorldHandle;
         var eye = args.Viewport.Eye;
 
-        if (eye == null)
+        if (eye is null)
             return;
 
         var mapId = eye.Position.MapId;

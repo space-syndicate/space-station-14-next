@@ -27,7 +27,7 @@ public class BaseSwitchableOverlay<TComp> : Overlay
     protected override void Draw(in OverlayDrawArgs args)
     {
         if (ScreenTexture is null
-            || _player.LocalEntity == null
+            || _player.LocalEntity is null
             || !_entity.TryGetComponent<TComp>(_player.LocalEntity.Value, out var component)
             || !component.IsActive)
             return;
