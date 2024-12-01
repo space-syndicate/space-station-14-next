@@ -395,6 +395,10 @@
       - WeaponLaserCannon
       - WeaponLaserCarbine
       - WeaponXrayCannon
+      # Corvax-Next Start
+      - ClothingEyesNightVisionGoggles
+      - ClothingEyesThermalVisionGoggles
+      # Corvax-Next End
 
 - type: entity
   id: ProtolatheHyperConvection

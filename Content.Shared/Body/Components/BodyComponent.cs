@@ -41,4 +41,9 @@ public sealed partial class BodyComponent : Component
     [ViewVariables]
     [DataField, AutoNetworkedField]
     public HashSet<EntityUid> LegEntities = new();
+
+    // Corvax-Next-NightVision-Start
+    [DataField, AutoNetworkedField]
+    public bool ThermalVisibility = true;
+    // Corvax-Next-NightVision-End
 }

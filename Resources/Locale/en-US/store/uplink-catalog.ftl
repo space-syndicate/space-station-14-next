@@ -451,3 +451,11 @@ uplink-combat-bakery-desc = A kit of clandestine baked weapons. Contains a bague
 
 uplink-business-card-name = Syndicate Business Card
 uplink-business-card-desc = A business card that you can give to someone to demonstrate your involvement in the syndicate or leave at the crime scene in order to make fun of the detective. You can buy no more than three of them.
+
+#Corvax-Next Change start
+
+uplink-night-vision-name = Night vision goggles
+uplink-night-vision-desc = They allow you to see in the dark, all while looking like normal sunglasses!
+
+uplink-thermal-vision-name = Thermal vision goggles
+uplink-thermal-vision-desc = They allow you to see living creatures regardless of obstacles, all while looking like normal sunglasses!
