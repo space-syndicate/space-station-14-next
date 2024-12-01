@@ -1,8 +1,7 @@
 - type: entity
   id: ToggleNightVision
   name: Switch night vision
-  description: Switches night vision.
-  noSpawn: true
+  description: Switches night vision
   components:
   - type: InstantAction
     itemIconStyle: BigAction
@@ -15,8 +14,7 @@
 - type: entity
   id: ToggleThermalVision
   name: Switch Thermal vision
-  description: Switches Thermal vision.
-  noSpawn: true
+  description: Switches Thermal vision
   components:
   - type: InstantAction
     itemIconStyle: BigAction
