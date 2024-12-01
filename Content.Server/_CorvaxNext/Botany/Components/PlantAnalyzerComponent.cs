@@ -10,7 +10,7 @@ namespace Content.Server.Botany.Components; // This is how it supposed to be
 public sealed partial class PlantAnalyzerComponent : Component
 {
     [DataDefinition]
-    public partial struct PlantAnalyzerSetting
+    public partial struct PlantAnalyzerSettings
     {
         [DataField]
         public bool AdvancedScan;
@@ -23,7 +23,7 @@ public sealed partial class PlantAnalyzerComponent : Component
     }
 
     [DataField, ViewVariables]
-    public PlantAnalyzerSetting Settings = new();
+    public PlantAnalyzerSettings Settings = new();
 
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public DoAfterId? DoAfter;

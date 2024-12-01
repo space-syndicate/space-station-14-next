@@ -40,7 +40,7 @@ public sealed partial class PlantAnalyzerWindow : FancyWindow
         var target = _entityManager.GetEntity(msg.TargetEntity);
         Title = Loc.GetString("plant-analyzer-interface-title");
 
-        if (target == null)
+        if (target is null)
         {
             NoData.Visible = true;
             return;
@@ -58,7 +58,7 @@ public sealed partial class PlantAnalyzerWindow : FancyWindow
 
         // Process message fields into strings.
         StringBuilder chemString = new();
-        if (msg.SeedChem != null)
+        if (msg.SeedChem is not null)
         {
             foreach (var chem in msg.SeedChem)
             {
@@ -101,7 +101,7 @@ public sealed partial class PlantAnalyzerWindow : FancyWindow
         WeedTolerance.Text = Loc.GetString("plant-analyzer-tolerance-weed-tolerance", ("weedTolerance", adv is null ? "-" : $"{adv.Value.WeedTolerance:F1}"));
         // Misc
 
-        if (adv != null)
+        if (adv is not null)
         {
             var advInst = adv.Value;
             StringBuilder mutations = new();
