@@ -9,8 +9,8 @@ ent-WeaponDisablerROW = disabler-MK3
 ent-WeaponDisablerSMGROW = disabler-SMG+
     .desc = An advanced weapon that exhausts organic targets until they fall off their feet. Powered by cyborg energy.
 
-ent-WeaponRifleLecterROW = Lecter ROW
-    .desc = A high end military grade assault rifle. Synthesizes ammo by powering a cyborg.
+ent-WeaponPistolMk58ROW = mk 59
+    .desc = A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. This version automatically synthesizes ammunition using cyborg energy.
 
 ent-HandHeldCriminalRecords = handheld criminal records
     .desc = A device for remote access to the station's criminal records.

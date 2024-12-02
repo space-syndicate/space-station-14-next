@@ -43,24 +43,23 @@
     icon: { sprite: _CorvaxNext/Interface/Actions/actions_borg.rsi, state: security-neutralization-adv-module }
 
 - type: entity
-  id: BorgModuleLecter
+  id: BorgModuleCombat
   parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
-  name: lecter cyborg module
-  description: A piece of tech that gives cyborgs new abilities. Installation is allowed only in  red code and above.
+  name: combat cyborg module
   components:
   - type: Sprite
     layers:
     - state: security
-    - state: icon-lecter
+    - state: icon-combat
   - type: ItemBorgModule
     items:
-    - WeaponRifleLecterROW
+    - WeaponPistolMk58ROW
     - CombatKnife
   - type: Tag
     tags:
     - BorgModuleSec
   - type: BorgModuleIcon
-    icon: { sprite: _CorvaxNext/Interface/Actions/actions_borg.rsi, state: security-lecter-module }
+    icon: { sprite: _CorvaxNext/Interface/Actions/actions_borg.rsi, state: security-combat-module }
 
 - type: entity
   id: BorgModuleSecurityControlling

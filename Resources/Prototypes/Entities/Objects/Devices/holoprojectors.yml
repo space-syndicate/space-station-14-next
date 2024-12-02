@@ -140,6 +140,7 @@
   id: HoloprojectorSecurityBorg
   name: holobarrier projector
   suffix: Borg
+  categories: [ HideSpawnMenu ]
   description: Creates a solid but fragile holographic barrier. Self-rechargable
   components:
   - type: HolosignProjector

@@ -36,7 +36,7 @@
   id: HandHeldCriminalRecordsBorg
   parent: HandHeldCriminalRecords
   suffix: Borg
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: ItemSlots
     slots:

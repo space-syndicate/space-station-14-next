@@ -487,7 +487,7 @@
   parent: WeaponDisabler
   id: WeaponDisablerROW
   description: A self-defense weapon that exhausts organic targets, weakening them until they collapse.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Battery
     maxCharge: 500
@@ -538,7 +538,7 @@
   parent: WeaponDisablerSMG
   id: WeaponDisablerSMGROW
   description: Advanced weapon that exhausts organic targets, weakening them until they collapse.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Gun
     minAngle: 2

@@ -813,7 +813,7 @@
       - WeaponXrayCannon
       - SecurityCyberneticEyes # _CorvaxNext: surgery Change
       - MedicalCyberneticEyes # _CorvaxNext: surgery Change
-      - BorgModuleLecter # _CorvaxNext: Security Borg
+      - BorgModuleCombat # _CorvaxNext: Security Borg
       - BorgModuleSecurityControlling # _CorvaxNext: Security Borg
       - BorgModuleNeutralizationAdvanced # _CorvaxNext: Security Borg
   - type: MaterialStorage

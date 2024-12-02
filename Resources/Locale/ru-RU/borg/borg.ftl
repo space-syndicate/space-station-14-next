@@ -56,6 +56,6 @@ borg-type-service-name = Сервисный
 borg-type-service-desc = Помогайте членам экипажа в самых разных ситуациях - от подачи закусок и напитков до занятий ботаникой и развлечений.
 borg-type-service-transponder = киборг-официант
 
-borg-type-security-name = Служебный
+borg-type-security-name = Охранный
 borg-type-security-desc = Помогайте отделу Службы безопасности в контроле соблюдения космического закона и устранении угроз станции.
 borg-type-security-transponder = киборг-службы-безопасности

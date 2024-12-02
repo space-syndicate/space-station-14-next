@@ -94,7 +94,7 @@
   parent: Stunbaton
   id: StunbatonROW
   description: A stun baton for incapacitating people with. It is charged by cyborg power
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Stunbaton
     energyPerUse: 200
@@ -187,7 +187,7 @@
 
 - type: entity
   name: flash
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: [BaseItem, Flash]
   id: FlashBorg
   suffix: Borg
