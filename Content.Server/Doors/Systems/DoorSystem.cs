@@ -53,7 +53,7 @@ public sealed class DoorSystem : SharedDoorSystem
         UpdateBoltLightStatus(ent);
     }
 	
-	// Corvax-Next-DoorForensics start
+	// Corvax-Next-DoorForensics-Start
     public override void StartOpening(EntityUid uid, DoorComponent? door = null, EntityUid? user = null, bool predicted = false)
     {
         base.StartOpening(uid, door, user, predicted);
@@ -69,5 +69,5 @@ public sealed class DoorSystem : SharedDoorSystem
         if (user.HasValue)
             _forensicsSystem.ApplyEvidence(user.Value, uid);
     }
-	// Corvax-Next-DoorForensics end
+	// Corvax-Next-DoorForensics-End
 }
