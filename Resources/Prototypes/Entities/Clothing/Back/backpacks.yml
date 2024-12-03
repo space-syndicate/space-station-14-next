@@ -30,7 +30,7 @@
     delay: 0.5
   - type: ExplosionResistance
     damageCoefficient: 0.9
-    # Corvax-Next-Stashes Start
+    # Corvax-Next-Stashes-Start
   - type: Appearance
   - type: SubFloorHide
   - type: Anchorable
