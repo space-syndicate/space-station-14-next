@@ -3,7 +3,6 @@ using Content.Server.Popups;
 using Content.Shared.Construction.Components;
 using Content.Shared.Mind.Components;
 using Content.Shared.Storage;
-using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Map.Components;
@@ -34,24 +33,21 @@ public sealed class AnchorableStorageSystem : EntitySystem
         if (!args.Anchored)
             return;
 
-        if (CheckOverlap((ent, ent.Comp, Transform(ent))))
+        var transform = Transform(ent);
+
+        if (CheckOverlap(ent, transform))
         {
             _popup.PopupEntity(Loc.GetString("anchored-storage-already-present"), ent);
-            _xform.Unanchor(ent, Transform(ent));
+            _xform.Unanchor(ent, transform);
             return;
         }
 
-        // Eject any sapient creatures inside the storage.
-        // Does not recurse down into bags in bags - player characters are the largest concern, and they'll only fit in duffelbags.
-        if (!TryComp(ent.Owner, out StorageComponent? storage))
+        if (!TryComp<StorageComponent>(ent.Owner, out var storage))
             return;
 
-        var entsToRemove = storage.StoredItems.Keys.Where(storedItem =>
-                HasComp<MindContainerComponent>(storedItem)
-            ).ToList();
-
-        foreach (var removeUid in entsToRemove)
-            _container.RemoveEntity(ent.Owner, removeUid);
+        foreach (var item in storage.StoredItems.Keys.ToArray())
+            if (HasComp<MindContainerComponent>(item))
+                _container.RemoveEntity(ent, item);
     }
 
     private void OnAnchorAttempt(Entity<AnchorableStorageComponent> ent, ref AnchorAttemptEvent args)
@@ -59,8 +55,7 @@ public sealed class AnchorableStorageSystem : EntitySystem
         if (args.Cancelled)
             return;
 
-        // Nothing around? We can anchor without issue.
-        if (!CheckOverlap((ent, ent.Comp, Transform(ent))))
+        if (!CheckOverlap(ent))
             return;
 
         _popup.PopupEntity(Loc.GetString("anchored-storage-already-present"), ent, args.User);
@@ -72,38 +67,29 @@ public sealed class AnchorableStorageSystem : EntitySystem
         if (args.Cancelled)
             return;
 
-        // Check for living things, they should not insert when anchored.
         if (!HasComp<MindContainerComponent>(args.EntityUid))
             return;
 
-        if (Transform(ent.Owner).Anchored)
+        if (Transform(ent).Anchored)
             args.Cancel();
     }
 
-    [PublicAPI]
-    public bool CheckOverlap(EntityUid uid)
+    public bool CheckOverlap(EntityUid entity, TransformComponent? transform = null)
     {
-        if (!TryComp(uid, out AnchorableStorageComponent? comp))
+        if (!Resolve(entity, ref transform))
             return false;
 
-        return CheckOverlap((uid, comp, Transform(uid)));
-    }
-
-    public bool CheckOverlap(Entity<AnchorableStorageComponent, TransformComponent> ent)
-    {
-        if (ent.Comp2.GridUid is not { } grid || !TryComp<MapGridComponent>(grid, out var gridComp))
+        if (transform.GridUid is not { } grid || !TryComp<MapGridComponent>(grid, out var gridComp))
             return false;
 
-        var indices = _map.TileIndicesFor(grid, gridComp, ent.Comp2.Coordinates);
+        var indices = _map.TileIndicesFor(grid, gridComp, transform.Coordinates);
         var enumerator = _map.GetAnchoredEntitiesEnumerator(grid, gridComp, indices);
 
         while (enumerator.MoveNext(out var otherEnt))
         {
-            // Don't match yourself.
-            if (otherEnt == ent.Owner)
+            if (otherEnt == entity)
                 continue;
 
-            // Is another storage entity is already anchored here?
             if (HasComp<AnchorableStorageComponent>(otherEnt))
                 return true;
         }
