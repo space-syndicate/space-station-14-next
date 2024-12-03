@@ -1,0 +1,12 @@
+- type: entity
+  parent: IDCardStandard
+  id: MagistratIDCard
+  name: ID card magistrat
+  components:
+    - type: Sprite
+      sprite: /Uploaded/magistr/id.rsi
+      layers:
+        - state: silver
+        - state: idjudge
+    - type: PresetIdCard
+      job: Magistrat

@@ -1,0 +1,8 @@
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconMagistrat
+  icon:
+    sprite: /Uploaded/magistr/hud.rsi
+    state: hudmagistrate
+  jobName: job-name-magistrat

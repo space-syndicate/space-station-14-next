@@ -30,3 +30,30 @@
   - BrigmedicOuterClothingCoat
   - BrigmedicOuterClothingLab
   - BrigmedicOuterClothingVest
+
+- type: roleLoadout
+  id: JobMagistrat
+  groups:
+  - Inventory # Corvax-Loadouts
+  - LawyerNeck
+  - MagistratJumpsuit
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+  - MagistratHat
+
+- type: loadoutGroup
+  id: MagistratJumpsuit
+  name: loadout-group-magistrat-jumpsuit
+  loadouts:
+  - MagistratJumpsuit
+  - MagistratJumpsuit2
+  - MagistratJumpsuit3
+  - MagistratJumpsuit4
+
+- type: loadoutGroup
+  id: loadout-group-magistrat-hat
+  name: Парик
+  loadouts:
+  - MagistratPwig
+  - MagistratPwig2

@@ -1,0 +1,10 @@
+
+- type: department
+  id: LegalDepartment
+  name: department-LegalDepartment
+  description: department-LegalDepartment-description
+  color: "#0c344d"
+  roles:
+  - IAA # Corvax-IAA
+  - Magistrat
+  weight: 120
