@@ -40,7 +40,6 @@
     id: MagistratPDA
     eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetMagistrat
-    pocket1: BookMagistrat
   inhand:
     - BriefcaseMagistratFilled
   storage:

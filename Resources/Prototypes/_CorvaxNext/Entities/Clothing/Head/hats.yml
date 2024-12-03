@@ -47,3 +47,14 @@
   - type: Tag
     tags:
     - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatPwig2
+  name: pwig magistrat
+  description: To be honest, those look ridiculous.
+  components:
+  - type: Sprite
+    sprite: /Uploaded/magistr/true_wig.rsi
+  - type: Clothing
+    sprite: /Uploaded/magistr/true_wig.rsi

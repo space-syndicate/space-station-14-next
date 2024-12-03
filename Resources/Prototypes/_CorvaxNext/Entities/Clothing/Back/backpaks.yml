@@ -1,0 +1,17 @@
+- type: entity
+  id: BriefcaseMagistratFilled
+  name: briefcase brown
+  parent: BriefcaseBrown
+  suffix: Magistrat
+  components:
+    - type: StorageFill
+      contents:
+        - id: RubberStampMagistrat
+        - id: MagistrHammer
+        - id: ComputerCriminalRecordsMagistrat
+        - id: BoxSurvival
+        - id: GavelBlock
+        - id: ScreenTimerMagistr
+        - id: RubberStampApproved
+        - id: RubberStampDenied
+        - id: BoxFolderCentCom

@@ -8,3 +8,38 @@
     sprite: _CorvaxNext/Clothing/Uniforms/Jumpskirt/white_captain.rsi
   - type: Clothing
     sprite: _CorvaxNext/Clothing/Uniforms/Jumpskirt/white_captain.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingOuterRobesJudgeMagistrat
+  name: judge magistrat
+  description: This robe commands authority.
+  components:
+  - type: Sprite
+    sprite: /Uploaded/magistr/judge.rsi
+  - type: Clothing
+    sprite: /Uploaded/magistr/judge.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingOuterRobesMantleMagistrat
+  name: judge magistrat
+  description: This robe commands authority.
+  components:
+  - type: Sprite
+    sprite: /Uploaded/magistr/mantle.rsi
+  - type: Clothing
+    sprite: /Uploaded/magistr/mantle.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingOuterRobesMantleMagistrat2
+  name: judge magistrat
+  description: This robe commands authority.
+  components:
+  - type: Sprite
+    sprite: /Uploaded/magistr/magistrat_mantle.rsi
+  - type: Clothing
+    sprite: /Uploaded/magistr/magistrat_mantle.rsi
+
+

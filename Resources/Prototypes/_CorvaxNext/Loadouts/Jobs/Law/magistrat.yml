@@ -32,9 +32,3 @@
   equipment:
     jumpsuit: ClothingOuterRobesMantleMagistrat2
 
-
-# Neck
-- type: loadout
-  id: LawyerNeck
-  equipment:
-    neck: ClothingNeckLawyerbadge
