@@ -11,8 +11,8 @@ using Robust.Shared.Map.Components;
 namespace Content.Server._CorvaxNext.Storage;
 
 /// <summary>
-/// Используется для ограничения операций якорения хранилищ (не более одной сумки на тайл)
-/// и выброса живых содержимых при якорении.
+/// This is used for restricting anchor operations on storage (one bag max per tile)
+/// and ejecting living contents on anchor.
 /// </summary>
 public sealed class AnchorableStorageSystem : EntitySystem
 {
@@ -44,7 +44,8 @@ public sealed class AnchorableStorageSystem : EntitySystem
             return;
         }
 
-        // Выбрасываем любые разумные существа внутри хранилища.
+        // Eject any sapient creatures inside the storage.
+        // Does not recurse down into bags in bags - player characters are the largest concern, and they'll only fit in duffelbags.
         if (!TryComp<StorageComponent>(uid, out var storage))
             return;
 
@@ -64,7 +65,7 @@ public sealed class AnchorableStorageSystem : EntitySystem
         if (!TryComp<TransformComponent>(uid, out var xform))
             return;
 
-        // Если вокруг ничего нет, можем якориться без проблем.
+        // Nothing around? We can anchor without issue.
         if (!CheckOverlap(uid))
             return;
 
@@ -77,7 +78,7 @@ public sealed class AnchorableStorageSystem : EntitySystem
         if (args.Cancelled)
             return;
 
-        // Проверяем на наличие живых существ, они не должны вставляться при якорении.
+        // Check for living things, they should not insert when anchored.
         if (!HasComp<MindContainerComponent>(args.EntityUid))
             return;
 
@@ -102,11 +103,11 @@ public sealed class AnchorableStorageSystem : EntitySystem
 
         while (enumerator.MoveNext(out var otherEnt))
         {
-            // Не сравниваем с самим собой.
+            // Don't match yourself.
             if (otherEnt == uid)
                 continue;
 
-            // Если другое хранилище уже закреплено здесь.
+            // Is another storage entity is already anchored here?
             if (HasComp<AnchorableStorageComponent>(otherEnt))
                 return true;
         }
