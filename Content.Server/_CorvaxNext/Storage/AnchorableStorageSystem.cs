@@ -29,51 +29,45 @@ public sealed class AnchorableStorageSystem : EntitySystem
         SubscribeLocalEvent<AnchorableStorageComponent, ContainerIsInsertingAttemptEvent>(OnInsertAttempt);
     }
 
-    private void OnAnchorStateChanged(EntityUid uid, AnchorableStorageComponent comp, ref AnchorStateChangedEvent args)
+    private void OnAnchorStateChanged(Entity<AnchorableStorageComponent> ent, ref AnchorStateChangedEvent args)
     {
         if (!args.Anchored)
             return;
 
-        if (!TryComp<TransformComponent>(uid, out var xform))
-            return;
-
-        if (CheckOverlap(uid))
+        if (CheckOverlap((ent, ent.Comp, Transform(ent))))
         {
-            _popup.PopupEntity(Loc.GetString("anchored-storage-already-present"), uid);
-            _xform.Unanchor(uid, xform);
+            _popup.PopupEntity(Loc.GetString("anchored-storage-already-present"), ent);
+            _xform.Unanchor(ent, Transform(ent));
             return;
         }
 
         // Eject any sapient creatures inside the storage.
         // Does not recurse down into bags in bags - player characters are the largest concern, and they'll only fit in duffelbags.
-        if (!TryComp<StorageComponent>(uid, out var storage))
+        if (!TryComp(ent.Owner, out StorageComponent? storage))
             return;
 
         var entsToRemove = storage.StoredItems.Keys.Where(storedItem =>
                 HasComp<MindContainerComponent>(storedItem)
-            ).ToArray();
+            ).ToList();
 
         foreach (var removeUid in entsToRemove)
-            _container.RemoveEntity(uid, removeUid);
+            _container.RemoveEntity(ent.Owner, removeUid);
     }
 
-    private void OnAnchorAttempt(EntityUid uid, AnchorableStorageComponent comp, ref AnchorAttemptEvent args)
+    private void OnAnchorAttempt(Entity<AnchorableStorageComponent> ent, ref AnchorAttemptEvent args)
     {
         if (args.Cancelled)
             return;
 
-        if (!TryComp<TransformComponent>(uid, out var xform))
-            return;
-
         // Nothing around? We can anchor without issue.
-        if (!CheckOverlap(uid))
+        if (!CheckOverlap((ent, ent.Comp, Transform(ent))))
             return;
 
-        _popup.PopupEntity(Loc.GetString("anchored-storage-already-present"), uid, args.User);
+        _popup.PopupEntity(Loc.GetString("anchored-storage-already-present"), ent, args.User);
         args.Cancel();
     }
 
-    private void OnInsertAttempt(EntityUid uid, AnchorableStorageComponent comp, ref ContainerIsInsertingAttemptEvent args)
+    private void OnInsertAttempt(Entity<AnchorableStorageComponent> ent, ref ContainerIsInsertingAttemptEvent args)
     {
         if (args.Cancelled)
             return;
@@ -82,29 +76,31 @@ public sealed class AnchorableStorageSystem : EntitySystem
         if (!HasComp<MindContainerComponent>(args.EntityUid))
             return;
 
-        if (!TryComp<TransformComponent>(uid, out var xform))
-            return;
-
-        if (xform.Anchored)
+        if (Transform(ent.Owner).Anchored)
             args.Cancel();
     }
 
     [PublicAPI]
     public bool CheckOverlap(EntityUid uid)
     {
-        if (!TryComp<TransformComponent>(uid, out var xform))
+        if (!TryComp(uid, out AnchorableStorageComponent? comp))
             return false;
 
-        if (xform.GridUid is not { } grid || !TryComp<MapGridComponent>(grid, out var gridComp))
+        return CheckOverlap((uid, comp, Transform(uid)));
+    }
+
+    public bool CheckOverlap(Entity<AnchorableStorageComponent, TransformComponent> ent)
+    {
+        if (ent.Comp2.GridUid is not { } grid || !TryComp<MapGridComponent>(grid, out var gridComp))
             return false;
 
-        var indices = _map.TileIndicesFor(grid, gridComp, xform.Coordinates);
+        var indices = _map.TileIndicesFor(grid, gridComp, ent.Comp2.Coordinates);
         var enumerator = _map.GetAnchoredEntitiesEnumerator(grid, gridComp, indices);
 
         while (enumerator.MoveNext(out var otherEnt))
         {
             // Don't match yourself.
-            if (otherEnt == uid)
+            if (otherEnt == ent.Owner)
                 continue;
 
             // Is another storage entity is already anchored here?
