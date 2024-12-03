@@ -39,7 +39,7 @@
   - type: Transform
     anchored: false
   - type: AnchorableStorage
-    # Corvax-Next-Stashes End
+    # Corvax-Next-Stashes-End
 
 - type: entity
   parent: ClothingBackpack
