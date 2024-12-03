@@ -3,6 +3,7 @@ using Content.Server.Chat.Systems;
 using Content.Server.Fax;
 using Content.Shared.GameTicking.Components;
 using Content.Server.GameTicking;
+using Content.Shared._CorvaxNext.NextVars;
 using Content.Shared.Paper;
 using Content.Shared.Dataset;
 using Robust.Shared.Random;
@@ -10,6 +11,7 @@ using Content.Shared.Fax.Components;
 using Content.Server.StationEvents.Events;
 using Robust.Shared.Timing;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Configuration;
 using Content.Server._CorvaxNext.StationEvents.Components;
 
 namespace Content.Server._CorvaxNext.StationEvents.Events
@@ -23,6 +25,7 @@ namespace Content.Server._CorvaxNext.StationEvents.Events
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly GameTicker _gameTicker = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
+        [Dependency] private readonly IConfigurationManager _cfg = default!;
 
         /// <summary>
         /// Sequence of laws to be used for the current event
@@ -33,6 +36,9 @@ namespace Content.Server._CorvaxNext.StationEvents.Events
             GameRuleComponent gameRule, GameRuleStartedEvent args)
         {
             base.Started(uid, component, gameRule, args);
+
+            if (!_cfg.GetCVar(NextVars.LRPEnabled))
+            return;
 
             // Loading a prototype dataset
             if (!_prototypeManager.TryIndex<LocalizedDatasetPrototype>(component.LawLocalizedDataset, out var dataset))
