@@ -11,7 +11,7 @@ public sealed partial class SecWatchCartridgeComponent : Component
     [DataField]
     public List<SecurityStatus> Statuses = new()
     {
-        SecurityStatus.Suspected,
+        /// SecurityStatus.Suspected,
         SecurityStatus.Wanted
     };
 
