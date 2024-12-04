@@ -17,8 +17,8 @@
     # - /Audio/Corvax/Lobby/title2.ogg # Corvax-LobbyMusic # Corvax-Next-NewYearMusic
     # - /Audio/Lobby/atomicamnesiammx.ogg # Corvax-Next-NewYearMusic
     # - /Audio/Corvax/Lobby/service.ogg # Corvax-LobbyMusic # Corvax-Next-NewYearMusic
-    - \Audio\_CorvaxNext\Lobby\Christmas\carol-of-the-bells.ogg # Corvax-Next-NewYearMusic
-    - \Audio\_CorvaxNext\Lobby\Christmas\dance-of-sugar-plum-fairy.ogg # Corvax-Next-NewYearMusic
-    - \Audio\_CorvaxNext\Lobby\Christmas\deck-in-the-halls.ogg # Corvax-Next-NewYearMusic
-    - \Audio\_CorvaxNext\Lobby\Christmas\jingle-bells.ogg # Corvax-Next-NewYearMusic
-    - \Audio\_CorvaxNext\Lobby\Christmas\wish-you-merry-christmas.ogg # Corvax-Next-NewYearMusic
+    - /Audio/_CorvaxNext/Lobby/Christmas/carol-of-the-bells.ogg # Corvax-Next-NewYearMusic
+    - /Audio/_CorvaxNext/Lobby/Christmas/dance-of-sugar-plum-fairy.ogg # Corvax-Next-NewYearMusic
+    - /Audio/_CorvaxNext/Lobby/Christmas/deck-in-the-halls.ogg # Corvax-Next-NewYearMusic
+    - /Audio/_CorvaxNext/Lobby/Christmas/jingle-bells.ogg # Corvax-Next-NewYearMusic
+    - /Audio/_CorvaxNext/Lobby/Christmas/wish-you-merry-christmas.ogg # Corvax-Next-NewYearMusic
