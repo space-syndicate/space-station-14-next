@@ -94,7 +94,7 @@ public sealed partial class AdminAudioPanelEui : BaseEui
                 break;
             case AdminAudioPanelEuiMessage.AddTrack addTrack:
                 var filename = addTrack.Filename.Trim();
-                if (_resourceManager.ContentFileExists(filename))
+                if (_resourceManager.ContentFileExists(new ResPath(filename).ToRootedPath()))
                     _audioPanel.AddToQueue(filename);
                 break;
             case AdminAudioPanelEuiMessage.SetVolume setVolume:
