@@ -1,4 +1,2 @@
-ent-FoodCucumber = огурец
-    .desc = длинный и толстый...
-ent-FoodShashamber = что это?
-    .desc = у меня созрел вопрос...
+
+

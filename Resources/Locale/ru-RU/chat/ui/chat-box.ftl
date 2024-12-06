@@ -31,9 +31,3 @@ hud-chatbox-channel-Damage = Повреждения
 hud-chatbox-channel-Unspecified = Неопределённый
 hud-chatbox-highlights = Подсветка:
 hud-chatbox-highlights-button = Отправить
-hud-chatbox-highlights-tooltip = Слова должны быть разделены новой строкой,
-                                 если обернуты в " ", они будут подсвечены
-                                 только если отделены пробелами.
-hud-chatbox-highlights-placeholder = Урист
-                                     "Пара"
-                                     Мост

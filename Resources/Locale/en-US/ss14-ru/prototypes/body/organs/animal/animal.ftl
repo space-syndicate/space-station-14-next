@@ -14,3 +14,7 @@ ent-OrganAnimalHeart = heart
     .desc = { ent-BaseAnimalOrgan.desc }
 ent-OrganAnimalKidneys = kidneys
     .desc = { ent-BaseAnimalOrgan.desc }
+ent-OrganAnimalBrain = animal brain
+    .desc = Not so intelligence, not so honk.
+ent-OrganAnimalEyes = animal eyes
+    .desc = I see you!

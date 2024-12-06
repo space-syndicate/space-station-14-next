@@ -34,3 +34,5 @@ ent-MindRoleInitialInfected = Initial Infected Role
     .desc = { ent-BaseMindRoleAntag.desc }
 ent-MindRoleZombie = Zombie Role
     .desc = { ent-BaseMindRoleAntag.desc }
+ent-MindRoleHeretic = Heretic Role
+    .desc = { ent-BaseMindRoleAntag.desc }

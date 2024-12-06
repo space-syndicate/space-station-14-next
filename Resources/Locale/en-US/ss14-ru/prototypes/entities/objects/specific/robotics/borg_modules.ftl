@@ -78,3 +78,7 @@ ent-BorgModuleL6C = L6C ROW cyborg module
     .desc = A module that comes with a L6C.
 ent-BorgModuleMartyr = martyr cyborg module
     .desc = A module that comes with an explosive you probably don't want to handle yourself.
+ent-BorgModuleSurgery = surgery cyborg module
+    .desc = { ent-BaseBorgModuleMedical.desc }
+ent-BorgModuleAdvancedSurgery = advanced surgery cyborg module
+    .desc = { ent-BaseBorgModuleMedical.desc }
