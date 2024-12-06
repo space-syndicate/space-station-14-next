@@ -38,7 +38,7 @@ namespace Content.Server._CorvaxNext.StationEvents.Events
             base.Started(uid, component, gameRule, args);
 
             if (!_cfg.GetCVar(NextVars.LRPEnabled))
-            return;
+                return;
 
             // Loading a prototype dataset
             if (!_prototypeManager.TryIndex<LocalizedDatasetPrototype>(component.LawLocalizedDataset, out var dataset))
@@ -57,7 +57,7 @@ namespace Content.Server._CorvaxNext.StationEvents.Events
             var activeLaws = GetActiveSpaceLaws();
 
             // Excluding active laws from selection
-            var availableLaws = _sequenceLaws.Except(activeLaws).ToList();
+            var availableLaws = _sequenceLaws.Except(activeLaws).ToArray();
             if (availableLaws.Count == 0)
             {
                 availableLaws = _sequenceLaws;
