@@ -11,7 +11,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared._CorvaxNext.Mood;
 using Robust.Shared.Configuration;
-using Content.Shared._CorvaxNext.CCVar;
+using Content.Shared._CorvaxNext.NextVars;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Shared.Nutrition.EntitySystems;
@@ -67,7 +67,7 @@ public sealed class ThirstSystem : EntitySystem
     private void OnRefreshMovespeed(EntityUid uid, ThirstComponent component, RefreshMovementSpeedModifiersEvent args)
     {
         // TODO: This should really be taken care of somewhere else
-        if (_config.GetCVar(CCVars.MoodEnabled)
+        if (_config.GetCVar(NextVars.MoodEnabled)
             || _jetpack.IsUserFlying(uid))
             return;
 
@@ -152,7 +152,7 @@ public sealed class ThirstSystem : EntitySystem
 
     private void UpdateEffects(EntityUid uid, ThirstComponent component)
     {
-        if (!_config.GetCVar(CCVars.MoodEnabled)
+        if (!_config.GetCVar(NextVars.MoodEnabled)
             && IsMovementThreshold(component.LastThirstThreshold) != IsMovementThreshold(component.CurrentThirstThreshold)
             && TryComp(uid, out MovementSpeedModifierComponent? movementSlowdownComponent))
         {

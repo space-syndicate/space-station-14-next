@@ -17,7 +17,7 @@ using Robust.Shared.Prototypes;
 using Timer = Robust.Shared.Timing.Timer;
 using Robust.Shared.Player;
 using Robust.Shared.Configuration;
-using Content.Shared._CorvaxNext.CCVar;
+using Content.Shared._CorvaxNext.NextVars;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid;
 
@@ -141,10 +141,10 @@ public sealed class MoodSystem : EntitySystem
         var modifier =
             Math.Clamp(
                 (component.CurrentMoodLevel >= component.MoodThresholds[MoodThreshold.Neutral])
-                    ? _config.GetCVar(CCVars.MoodIncreasesSpeed)
+                    ? _config.GetCVar(NextVars.MoodIncreasesSpeed)
                         ? MathF.Pow(1.003f, component.CurrentMoodLevel - component.MoodThresholds[MoodThreshold.Neutral])
                         : 1
-                    : _config.GetCVar(CCVars.MoodDecreasesSpeed)
+                    : _config.GetCVar(NextVars.MoodDecreasesSpeed)
                         ? 2 - component.MoodThresholds[MoodThreshold.Neutral] / component.CurrentMoodLevel
                         : 1,
                 component.MinimumSpeedModifier,
@@ -165,7 +165,7 @@ public sealed class MoodSystem : EntitySystem
 
     private void OnMoodEffect(EntityUid uid, MoodComponent component, MoodEffectEvent args)
     {
-        if (!_config.GetCVar(CCVars.MoodEnabled)
+        if (!_config.GetCVar(NextVars.MoodEnabled)
             || !_prototypeManager.TryIndex<MoodEffectPrototype>(args.EffectId, out var prototype))
             return;
 
@@ -312,7 +312,7 @@ public sealed class MoodSystem : EntitySystem
 
     private void OnInit(EntityUid uid, MoodComponent component, ComponentStartup args)
     {
-        if (_config.GetCVar(CCVars.MoodModifiesThresholds)
+        if (_config.GetCVar(NextVars.MoodModifiesThresholds)
             && TryComp<MobThresholdsComponent>(uid, out var mobThresholdsComponent)
             && _mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var critThreshold, mobThresholdsComponent))
             component.CritThresholdBeforeModify = critThreshold.Value;
@@ -322,7 +322,7 @@ public sealed class MoodSystem : EntitySystem
 
     private void SetMood(EntityUid uid, float amount, MoodComponent? component = null, bool force = false, bool refresh = false)
     {
-        if (!_config.GetCVar(CCVars.MoodEnabled)
+        if (!_config.GetCVar(NextVars.MoodEnabled)
             || !Resolve(uid, ref component)
             || component.CurrentMoodThreshold == MoodThreshold.Dead && !refresh)
             return;
@@ -403,7 +403,7 @@ public sealed class MoodSystem : EntitySystem
 
     private void SetCritThreshold(EntityUid uid, MoodComponent component, int modifier)
     {
-        if (!_config.GetCVar(CCVars.MoodModifiesThresholds)
+        if (!_config.GetCVar(NextVars.MoodModifiesThresholds)
             || !TryComp<MobThresholdsComponent>(uid, out var mobThresholds)
             || !_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var key))
             return;

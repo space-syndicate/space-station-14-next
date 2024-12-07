@@ -13,7 +13,7 @@ using Robust.Shared.Utility;
 using Content.Shared._CorvaxNext.Mood;
 using Robust.Shared.Network;
 using Robust.Shared.Configuration;
-using Content.Shared._CorvaxNext.CCVar;
+using Content.Shared._CorvaxNext.NextVars;
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
@@ -64,7 +64,7 @@ public sealed class HungerSystem : EntitySystem
 
     private void OnRefreshMovespeed(EntityUid uid, HungerComponent component, RefreshMovementSpeedModifiersEvent args)
     {
-        if (_config.GetCVar(CCVars.MoodEnabled)
+        if (_config.GetCVar(NextVars.MoodEnabled)
             || component.CurrentThreshold > HungerThreshold.Starving
             || _jetpack.IsUserFlying(uid))
             return;
@@ -130,7 +130,7 @@ public sealed class HungerSystem : EntitySystem
 
         if (GetMovementThreshold(component.CurrentThreshold) != GetMovementThreshold(component.LastThreshold))
         {
-            if (!_config.GetCVar(CCVars.MoodEnabled))
+            if (!_config.GetCVar(NextVars.MoodEnabled))
                 _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
             else if (_net.IsServer)
             {

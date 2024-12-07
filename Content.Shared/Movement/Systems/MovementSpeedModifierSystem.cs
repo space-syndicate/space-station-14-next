@@ -1,4 +1,4 @@
-using Content.Shared.Backmen.Standing;
+using Content.Shared._CorvaxNext.Standing;
 using Content.Shared.Inventory;
 using Content.Shared.Movement.Components;
 using Content.Shared.Standing;
@@ -10,7 +10,7 @@ namespace Content.Shared.Movement.Systems
     {
         [Dependency] private readonly IGameTiming _timing = default!;
 
-        // start-backmen: layingdown
+        // start-_CorvaxNext: layingdown
         private EntityQuery<LayingDownComponent> _layerQuery;
         private EntityQuery<StandingStateComponent> _standingStateQuery;
 
@@ -21,7 +21,7 @@ namespace Content.Shared.Movement.Systems
             _layerQuery = GetEntityQuery<LayingDownComponent>();
             _standingStateQuery = GetEntityQuery<StandingStateComponent>();
         }
-        // end-backmen: layingdows
+        // end-_CorvaxNext: layingdows
 
         public void RefreshMovementSpeedModifiers(EntityUid uid, MovementSpeedModifierComponent? move = null)
         {
@@ -34,7 +34,7 @@ namespace Content.Shared.Movement.Systems
             var ev = new RefreshMovementSpeedModifiersEvent();
             RaiseLocalEvent(uid, ev);
 
-            // start-backmen: layingdown
+            // start-_CorvaxNext: layingdown
             var walkSpeedModifier = ev.WalkSpeedModifier;
             var sprintSpeedModifier = ev.SprintSpeedModifier;
             // cap moving speed while laying
@@ -45,7 +45,7 @@ namespace Content.Shared.Movement.Systems
                 walkSpeedModifier = Math.Min(walkSpeedModifier, layingDown.SpeedModify);
                 sprintSpeedModifier = Math.Min(sprintSpeedModifier, layingDown.SpeedModify);
             }
-            // end-backmen: layingdows
+            // end-_CorvaxNext: layingdows
 
             if (MathHelper.CloseTo(walkSpeedModifier, move.WalkSpeedModifier) &&
                 MathHelper.CloseTo(sprintSpeedModifier, move.SprintSpeedModifier))
