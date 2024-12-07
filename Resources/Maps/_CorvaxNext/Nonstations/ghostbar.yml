@@ -1090,6 +1090,7 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+    - type: ProtectedGrid
   - uid: 2019
     components:
     - type: MetaData
@@ -1313,7 +1314,7 @@ entities:
       pos: 4.5,9.5
       parent: 4
     - type: Door
-      secondsUntilStateChange: -7033.555
+      secondsUntilStateChange: -7168.22
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
