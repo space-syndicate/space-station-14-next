@@ -1,10 +1,14 @@
-ent-ActionHereticJaunt = Ashen Passage
-    .desc = A short range spell that allows you to pass unimpeded through walls.
-ent-ActionHereticVolcanoBlast = Volcanic Blast
-    .desc = Charge up a blast of fire that chains between nearby targets, setting them ablaze.
-ent-ActionHereticNightwatcherRebirth = Nightwatcher's Rebirth
-    .desc = A spell that extinguishes you and drains nearby heathens engulfed in flames of their life force.
-ent-ActionHereticAscension1 = Oath of Flame
-    .desc = For a minute, you will passively create a ring of fire around you.
-ent-ActionHereticAscension2 = Fire Cascade
-    .desc = Heats the air around you.
+action-heretic-ash-passage-name = Пепельный Сдвиг
+action-heretic-ash-passage-desc = Заклинание малой дальности, позволяющее беспрепятственно проходить сквозь стены.
+
+action-heretic-ash-blast-name = Вулканический Взрыв
+action-heretic-ash-blast-desc = Зарядите огненную вспышку, которая проносится между ближайшими целями, поджигая их.
+
+action-heretic-ash-rebirth-name = Пламенное Перерождение
+action-heretic-ash-rebirth-desc = Заклинание, которое гасит вас и лишает жизненных сил ближайших язычников, охваченных пламенем.
+
+action-heretic-ash-oath-name = Клятва пламени
+action-heretic-ash-oath-desc = В течение минуты вы будете пассивно создавать вокруг себя огненное кольцо.
+
+action-heretic-ash-cascade-name = Огненный каскад
+action-heretic-ash-cascade-desc = Поджигает воздух вокруг вас.

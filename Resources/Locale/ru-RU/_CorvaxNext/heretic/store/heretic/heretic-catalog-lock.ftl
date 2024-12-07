@@ -1,32 +1,42 @@
-knowledge-path-lock-s1-name = A Steward's Secret
-knowledge-path-lock-s1-desc = Follow the path of lock. Transmute a knife and a crowbar into a key blade.
-knowledge-path-lock-s2-name = Grasp of Lock
-knowledge-path-lock-s2-desc = Your Mansus Grasp now allows you to access anything, from airlocks to consoles.
-knowledge-path-lock-s3-name = Key Keeper's Burden
+knowledge-path-lock-s1-name = Секрет Дворецкого
+knowledge-path-lock-s1-desc = Следуйте Пути Замка. Трансмутируйте нож и монтировку в ключ-клинок.
+
+knowledge-path-lock-s2-name = Замочная Хватка
+knowledge-path-lock-s2-desc = Позволяет вам получить доступ к любым устройствам, будь то шлюзы или консоли.
+
+knowledge-path-lock-s3-name = Бремя Ключника
 knowledge-path-lock-s3-desc =
-    Transmute an iron rod and an ID card into an Eldritch Card.
-    Can fuse IDs into itself and take their appearance.
-    May link two airlocks to create portals. Heathens will be teleported randomly. The effect can be inverted at will.
-knowledge-path-lock-s4-name = Mark of Lock
+    Трансмутируйте лист стали и ID-карту в Загадочную Карту
+    Может поглощать ID-карты и принимать их внешний вид.
+    Может соединять два шлюза для создания порталов. Жертвы будут телепортироваться случайным образом. Эффект может быть изменен по желанию.
+
+knowledge-path-lock-s4-name = Замочная Метка
 knowledge-path-lock-s4-desc =
-    Your Grasp applies a lock mark on hit.
-    Attack a marked victim with your blade to bolt all nearby airlocks.
-knowledge-path-lock-s6-name = Concierge's Rite
+    Ваша Замочная Хватка применяет метку с замком при попадании.
+    Атакуйте помеченную жертву своим клинком, чтобы заболтировать ближайшие шлюзы.
+
+knowledge-path-lock-s6-name = Ритуал Портье
 knowledge-path-lock-s6-desc =
-    Transmute a crayon, a wooden plank, and a multitool to create a Labyrinth Handbook.
-    You may use it on a distant tile to materialize a barricade for eight seconds that only you and anti-magic people can pass.
-    It has three uses.
-knowledge-path-lock-s7-name = Burglar's Finesse
-knowledge-path-lock-s7-desc = Grants Burglar's Finesse, a single-target spell that allows you to access your victim's backpack without them knowing.
-knowledge-path-lock-s8-name = Opening Blade
-knowledge-path-lock-s8-desc = Your blade now has a chance to cause a weeping avulsion on attack.
-knowledge-path-lock-s9-name = Caretaker's Last Refuge
+    Трансмутируйте мелок, деревянную доску и мультитул, чтобы создать
+    Transmute a crayon, a wooden plank, and a multitool to create a Рукопись Лабиринта.
+    Вы можете использовать его на дальнем спрайте, чтобы материлизовать баррикаду на восемь секунд. Проходить через неё можете только вы и антимагические сущности.
+    Имеет три использования.
+
+knowledge-path-lock-s7-name = Ловкость Взломщика
+knowledge-path-lock-s7-desc =
+    Дарует "Ловкость Взломщика", заклинание, позволяющее получить доступ к содержимому рюкзака жертвы без её ведома.
+
+knowledge-path-lock-s8-name = Открывающий Клинок
+knowledge-path-lock-s8-desc = Теперь у вашего клинка есть шанс вызвать при атаке эффект отталкивания.
+
+knowledge-path-lock-s9-name = Последнее Прибежище Сторожа
 knowledge-path-lock-s9-desc =
-    Grants Caretaker's Last Refuge, a self-cast spell that turns you transparent and pass-through.
-    While under this spell, you may not be harmed, but cannot interact with your hands or spells.
-    This spell can be cancelled by being hit by an anti-magic item, and cannot be cast nearby other living sentient beings.
-knowledge-path-lock-s10-name = Unlock the Labyrinth
+    Дарует "Последнее Прибежище Сторожа", заклинание, позволяющее сделать самого себя прозрачным и проходимым.
+    Находясь под действием этого заклинания, вы не можете получать урон, но и не сможете пользоваться руками или заклинаниями.
+    Это заклинание может быть отменено после удара антимагическим предметом, и не может быть применено вблизи других живых существ.
+
+knowledge-path-lock-s10-name = Раскрой Лабиринт
 knowledge-path-lock-s10-desc =
-    Transmute 3 corpses to Ascend.
-    You gain the ability to turn into empowered eldritch creatures and will create a tear to the Labyrinth's Heart, located at the site of the ritual,
-    from which various eldritch creatures bound to your commands will endlessly pour.
+    Трансмутируйте три трупа на руне для Вознесения.
+    Вы получаете способность превращаться в могущественных сверхъестественных существ и создадите прореху в Сердце Лабиринта, расположенную на месте проведения ритуала,
+    из которой будут бесконечно выходить различные сверхъестественные существа, подчиняющиеся вашим командам.

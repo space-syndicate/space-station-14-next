@@ -1,2 +1,2 @@
-ent-FireballChain = twisted fireball
-    .desc = Uh oh.
+ent-FireballChain = огненный шар
+    .desc = Ой-ёй.

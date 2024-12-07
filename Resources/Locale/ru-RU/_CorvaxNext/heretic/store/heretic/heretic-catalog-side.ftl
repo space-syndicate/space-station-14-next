@@ -1,68 +1,66 @@
-knowledge-path-side-knowledge-name = Ritual of Knowledge
-knowledge-path-side-knowledge-desc =
-    You learn a special ritual that requires 4 different items, from various organs to candles and stun batons.
-    Performing this ritual grants you 4 knowledge points and resets the items needed.
-
 ## stage 3
 
-knowledge-path-side-s3-armor-name = Armorer’s Ritual
+knowledge-path-side-s3-armor-name = Ритуал Бронника
 knowledge-path-side-s3-armor-desc =
-    Ржавые Холмы приветствовали Кузнеца своей щедростью. А Кузнец ответил им щедростью в ответ.
-    
-    Allows you to transmute a table and a gas mask to create Eldritch Armor.
-    Eldritch Armor provides great protection while also acting as a focus when hooded.
-knowledge-path-side-s3-flask-name = Priest's Ritual
+    Ржавые Холмы приветствовали Кузнеца своей щедростью. И Кузнец ответил на их щедрость тем же.
+
+    Позволяет трансмутировать стол и противогаз в жуткую броню.
+    Жуткая броня обеспечивает отличную защиту, а также помогает с Концентрацией, когда надет капюшон.
+
+knowledge-path-side-s3-flask-name = Ритуал Жреца
 knowledge-path-side-s3-flask-desc =
-    Это старый рецепт. Сова шепнула мне его. Создан Жрецом - Жидость, которая и была, и нет.
-    
-    Allows you to transmute a tank of water and a glass shard into a Flask of Eldritch Essence.
-    Eldritch water can be consumed for potent healing.
+    Трансмутируйте резервуар с водой в колбу с жуткой водой.
+    При употреблении эта вода немного исцеляет еретиков и немного причиняет боль жертвам.
 
-## stage 7
+## stage 5
+knowledge-path-side-s5-name = Ритуал Знания
+knowledge-path-side-s5-desc =
+    Вы изучаете специальный одноразовый ритуал, для выполнения которого требуются 4 различных предмета,
+    от различных органов до свечей и электрошоковых дубинок.
+    Выполнение этого ритуала дает вам 4 очка знаний и восстанавливает количество необходимых предметов.
 
-knowledge-path-side-s7-uncuff-name = Wave of Desperation
+knowledge-path-side-s7-sphase-name = Пространственный Сдвиг
+knowledge-path-side-s7-sphase-desc =
+    Дарует "Пространственный Сдвиг", заклинание, позволяющее свободно перемещаться по космосу.
+    Вы входить и выходить из Сдвига только на тайле космоса или на тайлах, таких как решетки и мостики.
+
+knowledge-path-side-s7-uncuff-name = Волна отчаяния
 knowledge-path-side-s7-uncuff-desc =
-    В темной ярости я разрываю оковы, и их слабые узы рассыпаются перед моей силой.
-    
-    Grants you Wave Of Desperation, a spell which can only be cast while restrained.
-    It removes your restraints, repels and knocks down adjacent people, and applies the Mansus Grasp to everything nearby.
-    However, you will fall unconscious a short time after casting this spell.
-knowledge-path-side-s7-siphon-name = Blood Siphon
+    Дарует "Волна отчаяния", заклинание, которое может быть применено только в закованном состоянии.
+    Снимает ваши оковы и сбивает с ног окружающих вас людей, а также применяет к ним эффект "Хватки Мансуса".
+    Стресс, вызванный использованием этого заклинания, вызывает у вас сильную сонливость через 12 секунд после его произнесения.
+
+knowledge-path-side-s7-siphon-name = Перекачка Крови
 knowledge-path-side-s7-siphon-desc =
-    Независимо от человека, кровь у нас течет одинаково. Так мне сказал Маршал.
-    
-    Grants Blood Siphon, a ranged spell that steals a bit of life from your target, healing your bruises and restoring blood.
-    Additionally, you have a chance of transferring wounds you are experiencing to the target.
-knowledge-path-side-s7-knife-name = Carving Knife
+    Дарует "Перекачка Крови", заклинание, которое крадет частичку жизненной силы у вашей жертвы, восполняя уровень вашей крови и здоровья.
+    Кроме того, с небольшим шансом полученные вами раны будут перенесены на цель.
+
+knowledge-path-side-s7-knife-name = Ритуальный Нож
 knowledge-path-side-s7-knife-desc =
-    Высеченные, вырезанные... вечные. Во всем скрыта сила. Я могу раскрыть ее! Я могу высечь монолит, чтобы узреть цепи!
-    
-    Transmute a knife, a glass shard and a piece of paper to create a Carving Knife.
-    The knife allows you to create up to 3 carvings on the floor that have various effects on nonbelievers who walk over them.
-knowledge-path-side-s7-crucible-name = Mawed Crucible
+    Трансмутируйте нож, осколок стекла и лист бумаги в Ритуальный Нож.
+    С помощью него вы можете создавать на полу до 3 рисунков, которые оказывают различное воздействие на жертв, которые по ним ходят.
+
+knowledge-path-side-s7-crucible-name = Колдовской котёл
 knowledge-path-side-s7-crucible-desc =
-    Это чистая агония. Я не смог вызвать Аристократа,
-    но благодаря помощи Жреца я наткнулся на другой рецепт...
-    
-    Allows you to transmute a portable water tank and a table to create a Mawed Crucible.
-    The Mawed Crucible can brew powerful potions for combat and utility, but must be fed bodyparts and organs between uses.
+    Это была сущая мука. Я не смог вспомнить образ Аристократа,
+    но, с помощью Жреца, я нашел другой рецепт...
+
+    Позволяет трансмутировать резервуар для воды и стол в Колдовской котёл.
+    Колдовской котёл позволяет варить мощные боевые и полезные зелья, но в промежутках между его использованием необходимо использовать части тела и органы.
 
 ## stage 9
-
-knowledge-path-side-s9-coin-name = Eldritch Coin
+knowledge-path-side-s9-coin-name = Жуткая монета
 knowledge-path-side-s9-coin-desc =
-    Обитель — место всевозможных грехов. Но жадность играла особую роль.
-    
-    Transmute a sheet of plasma, a diamond and eyes into an Eldritch Coin.
-    The coin will open nearby airlocks if it lands on heads and bolt nearby airlocks if it lands on tails.
-    Using it on an airlock consumes the coin and permanently opens the airlock.
-    Attempting to flip or use the coin as a non-heretic will deal brute and/or burn damage, depending on the side it lands on.
-knowledge-path-side-s9-ashman-name = Ashen Ritual
+    Трансмутируйте одну часть твердой плазмы, алмаз и пару глаз в Жуткую Монету.
+    Монета откроет ближайшие воздушные шлюзы, если упадет на орел, и заблокирует их, если упадет на решку.
+    При ее использовании в воздушном шлюзе монета будет потрачена впустую, а воздушный шлюз будет открыт навсегда.
+    Попытка подбросить монету или использовать ее как не-еретик нанесет урон от тупой урон или ожоги, в зависимости от того, на какую сторону она упадет.
+
+knowledge-path-side-s9-ashman-name = Пепельный Ритуал
 knowledge-path-side-s9-ashman-desc =
-    Transmute a pile of ash, a brain and a book to summon an Ashman.
-    Ashmen can jaunt, cause bleeding wounds, and can release large waves of fire.
-knowledge-path-side-s9-cleave-name = Blood Cleave
+    Преобразуйте кучку пепла, мозг и книгу, чтобы вызвать Пепельника
+    Пепельники могут проходить сквозь стены, наносить кровоточащие раны и извергать большие волны огня.
+
+knowledge-path-side-s9-cleave-name = Рассечение
 knowledge-path-side-s9-cleave-desc =
-    Поначалу я не понимал этих орудий войны, но Жрец велел мне использовать их. Скоро, сказал он, я познаю их.
-    
-    Grants you Cleave, an area-of-effect targeted spell that causes heavy bleeding and blood loss to anyone afflicted.
+    Дарует "Рассечение", дальнобойное заклинание, которое наносит урон огнём и сильные кровоточащие раны цели и окружающим ее людям.
