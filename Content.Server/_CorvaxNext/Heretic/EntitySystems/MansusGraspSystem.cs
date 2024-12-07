@@ -6,7 +6,7 @@ using Content.Server.Heretic.Components;
 using Content.Server.Speech.EntitySystems;
 using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
-using Content.Shared._White.Standing;
+using Content.Shared._CorvaxNext.Standing;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;

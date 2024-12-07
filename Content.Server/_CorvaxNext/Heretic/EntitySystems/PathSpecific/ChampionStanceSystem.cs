@@ -1,5 +1,5 @@
 using Content.Server.Heretic.Components.PathSpecific;
-using Content.Shared._Shitmed.Body.Events;
+using Content.Shared._CorvaxNext.Surgery;
 using Content.Shared.Body.Part;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Events;
