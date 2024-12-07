@@ -12,6 +12,7 @@ using Content.Server.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
 using Content.Server.Antag.Components;
+using Content.Shared.Mind;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Players;
 
@@ -27,13 +28,9 @@ public sealed class GhostBarSystem : EntitySystem
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
 
-    private static readonly List<JobComponent> _jobComponents = new()
+    private static readonly List<ProtoId<JobPrototype>> _jobComponents = new()
     {
-        new JobComponent { Prototype = "Passenger" },
-        new JobComponent { Prototype = "Bartender" },
-        new JobComponent { Prototype = "Botanist" },
-        new JobComponent { Prototype = "Chef" },
-        new JobComponent { Prototype = "Janitor" }
+        "Passenger", "Bartender", "Botanist", "Chef", "Janitor"
     };
 
     public override void Initialize()
@@ -56,6 +53,12 @@ public sealed class GhostBarSystem : EntitySystem
     public void SpawnPlayer(GhostBarSpawnEvent msg, EntitySessionEventArgs args)
     {
         var player = args.SenderSession;
+
+        if (!_mindSystem.TryGetMind(player, out var mindId, out var mind))
+        {
+            Log.Warning($"Failed to find mind for player {player.Name}.");
+            return;
+        }
 
         if (!_entityManager.HasComponent<GhostComponent>(player.AttachedEntity))
         {
@@ -94,8 +97,10 @@ public sealed class GhostBarSystem : EntitySystem
         _entityManager.EnsureComponent<AntagImmuneComponent>(mobUid);
         _entityManager.EnsureComponent<IsDeadICComponent>(mobUid);
 
-        var newMind = _mindSystem.CreateMind(data.UserId, profile.Name);
-        _mindSystem.TransferTo(newMind, mobUid, true);
+        if (mind.Objectives.Count == 0)
+            _mindSystem.WipeMind(player);
+        mindId = _mindSystem.CreateMind(data.UserId, profile.Name).Owner;
+        _mindSystem.TransferTo(mindId, mobUid, true);
     }
 
     private void OnPlayerGhosted(EntityUid uid, GhostBarPlayerComponent component, MindRemovedMessage args)
@@ -103,4 +108,3 @@ public sealed class GhostBarSystem : EntitySystem
         _entityManager.DeleteEntity(uid);
     }
 }
-

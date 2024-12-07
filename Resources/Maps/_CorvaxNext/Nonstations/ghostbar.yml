@@ -1313,7 +1313,7 @@ entities:
       pos: 4.5,9.5
       parent: 4
     - type: Door
-      secondsUntilStateChange: -6626.271
+      secondsUntilStateChange: -7033.555
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9028,6 +9028,73 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 6.5,5.5
       parent: 4
+- proto: GhostBarSpawner
+  entities:
+  - uid: 2034
+    components:
+    - type: Transform
+      pos: 24.5,-1.5
+      parent: 4
+  - uid: 2035
+    components:
+    - type: Transform
+      pos: 26.5,-0.5
+      parent: 4
+  - uid: 2036
+    components:
+    - type: Transform
+      pos: 19.5,-0.5
+      parent: 4
+  - uid: 2037
+    components:
+    - type: Transform
+      pos: 14.5,-0.5
+      parent: 4
+  - uid: 2038
+    components:
+    - type: Transform
+      pos: 12.5,-1.5
+      parent: 4
+  - uid: 2039
+    components:
+    - type: Transform
+      pos: 8.5,4.5
+      parent: 4
+  - uid: 2040
+    components:
+    - type: Transform
+      pos: 9.5,4.5
+      parent: 4
+  - uid: 2041
+    components:
+    - type: Transform
+      pos: 10.5,1.5
+      parent: 4
+  - uid: 2042
+    components:
+    - type: Transform
+      pos: 11.5,-0.5
+      parent: 4
+  - uid: 2043
+    components:
+    - type: Transform
+      pos: 18.5,-0.5
+      parent: 4
+  - uid: 2044
+    components:
+    - type: Transform
+      pos: 20.5,-0.5
+      parent: 4
+  - uid: 2045
+    components:
+    - type: Transform
+      pos: 29.5,2.5
+      parent: 4
+  - uid: 2046
+    components:
+    - type: Transform
+      pos: 30.5,4.5
+      parent: 4
 - proto: GravityGeneratorMini
   entities:
   - uid: 1361
@@ -9555,23 +9622,22 @@ entities:
       - stampedColor: '#233D57FF'
         stampedName: Icepick
       content: >2-
-                        [head=2]Welcome to the Ghost Bar![/head]
+                       [head=2]Добро пожаловать в призрачный бар![/head]
         ———————————————————————————
 
-
-        You died! Either because you suck ass at the funny space game, or you ragequit after the Security Officer shot you (for no reason) after you slipped, stunned, and cuffed the Captain! How sad!
-
-
-        Either way, you chose to move on to the afterlife.
+        Вы умерли! Либо потому, что вы отстойно играете в забавную космическую игру, либо вы вышли из игры после того, как офицер СБ арестовал вас (без причины) после того, как вы поскользнули, оглушили и надели наручники на капитана! Как грустно!
 
 
-        Please treat this role, and station, as you would just being a regular Ghost. You may talk about all current round events without the need for LOOC, and you remember everything from your previous life.
+        В любом случае, вы решили отправиться в загробный мир.
 
 
-        DO NOT attack others, start fights, or attempt to break the station. If you see anyone doing this, please Ahelp and they will be promptly thrown into space.
+        Пожалуйста, относитесь к этой роли и станции, как к обычному Призраку. Вы можете говорить обо всех текущих событиях раунда без необходимости LOOC, и вы помните все из своей предыдущей жизни.
 
 
-        Also, if you decide to leave the bar, you DO NOT remember anything from being here, or your life before it.
+        НЕ нападайте на других, не затевайте драк и не пытайтесь сломать станцию. Если вы увидите, что кто-то делает это, пожалуйста, напишите АХелп, и он будет немедленно выброшен в космос.
+
+
+        Также, если вы решите покинуть бар, вы НЕ БУДЕТЕ помнить ничего из того, что было здесь, или из вашей предыдущей жизни.
     - type: Physics
       canCollide: False
       bodyType: Static
@@ -9594,23 +9660,22 @@ entities:
       - stampedColor: '#233D57FF'
         stampedName: Icepick
       content: >2-
-                        [head=2]Welcome to the Ghost Bar![/head]
+                    [head=2]Добро пожаловать в призрачный бар![/head]
         ———————————————————————————
 
-
-        You died! Either because you suck ass at the funny space game, or you ragequit after the Security Officer shot you (for no reason) after you slipped, stunned, and cuffed the Captain! How sad!
-
-
-        Either way, you chose to move on to the afterlife.
+        Вы умерли! Либо потому, что вы отстойно играете в забавную космическую игру, либо вы вышли из игры после того, как офицер СБ арестовал вас (без причины) после того, как вы поскользнули, оглушили и надели наручники на капитана! Как грустно!
 
 
-        Please treat this role, and station, as you would just being a regular Ghost. You may talk about all current round events without the need for LOOC, and you remember everything from your previous life.
+        В любом случае, вы решили отправиться в загробный мир.
 
 
-        DO NOT attack others, start fights, or attempt to break the station. If you see anyone doing this, please Ahelp and they will be promptly thrown into space.
+        Пожалуйста, относитесь к этой роли и станции, как к обычному Призраку. Вы можете говорить обо всех текущих событиях раунда без необходимости LOOC, и вы помните все из своей предыдущей жизни.
 
 
-        Also, if you decide to leave the bar, you DO NOT remember anything from being here, or your life before it.
+        НЕ нападайте на других, не затевайте драк и не пытайтесь сломать станцию. Если вы увидите, что кто-то делает это, пожалуйста, напишите АХелп, и он будет немедленно выброшен в космос.
+
+
+        Также, если вы решите покинуть бар, вы НЕ БУДЕТЕ помнить ничего из того, что было здесь, или из вашей предыдущей жизни.
     - type: Physics
       canCollide: False
       bodyType: Static
@@ -9632,24 +9697,24 @@ entities:
       stampedBy:
       - stampedColor: '#233D57FF'
         stampedName: Icepick
-      content: >2-
-                        [head=2]Welcome to the Ghost Bar![/head]
+      content: >-
+        [head=2]Добро пожаловать в призрачный бар![/head]
+
         ———————————————————————————
 
-
-        You died! Either because you suck ass at the funny space game, or you ragequit after the Security Officer shot you (for no reason) after you slipped, stunned, and cuffed the Captain! How sad!
-
-
-        Either way, you chose to move on to the afterlife.
+        Вы умерли! Либо потому, что вы отстойно играете в забавную космическую игру, либо вы вышли из игры после того, как офицер СБ арестовал вас (без причины) после того, как вы поскользнули, оглушили и надели наручники на капитана! Как грустно!
 
 
-        Please treat this role, and station, as you would just being a regular Ghost. You may talk about all current round events without the need for LOOC, and you remember everything from your previous life.
+        В любом случае, вы решили отправиться в загробный мир.
 
 
-        DO NOT attack others, start fights, or attempt to break the station. If you see anyone doing this, please Ahelp and they will be promptly thrown into space.
+        Пожалуйста, относитесь к этой роли и станции, как к обычному Призраку. Вы можете говорить обо всех текущих событиях раунда без необходимости LOOC, и вы помните все из своей предыдущей жизни.
 
 
-        Also, if you decide to leave the bar, you DO NOT remember anything from being here, or your life before it.
+        НЕ нападайте на других, не затевайте драк и не пытайтесь сломать станцию. Если вы увидите, что кто-то делает это, пожалуйста, напишите АХелп, и он будет немедленно выброшен в космос.
+
+
+        Также, если вы решите покинуть бар, вы НЕ БУДЕТЕ помнить ничего из того, что было здесь, или из вашей предыдущей жизни.
     - type: Physics
       canCollide: False
       bodyType: Static
@@ -9672,23 +9737,22 @@ entities:
       - stampedColor: '#233D57FF'
         stampedName: Icepick
       content: >2-
-                        [head=2]Welcome to the Ghost Bar![/head]
+         [head=2]Добро пожаловать в призрачный бар![/head]
         ———————————————————————————
 
-
-        You died! Either because you suck ass at the funny space game, or you ragequit after the Security Officer shot you (for no reason) after you slipped, stunned, and cuffed the Captain! How sad!
-
-
-        Either way, you chose to move on to the afterlife.
+        Вы умерли! Либо потому, что вы отстойно играете в забавную космическую игру, либо вы вышли из игры после того, как офицер СБ арестовал вас (без причины) после того, как вы поскользнули, оглушили и надели наручники на капитана! Как грустно!
 
 
-        Please treat this role, and station, as you would just being a regular Ghost. You may talk about all current round events without the need for LOOC, and you remember everything from your previous life.
+        В любом случае, вы решили отправиться в загробный мир.
 
 
-        DO NOT attack others, start fights, or attempt to break the station. If you see anyone doing this, please Ahelp and they will be promptly thrown into space.
+        Пожалуйста, относитесь к этой роли и станции, как к обычному Призраку. Вы можете говорить обо всех текущих событиях раунда без необходимости LOOC, и вы помните все из своей предыдущей жизни.
 
 
-        Also, if you decide to leave the bar, you DO NOT remember anything from being here, or your life before it.
+        НЕ нападайте на других, не затевайте драк и не пытайтесь сломать станцию. Если вы увидите, что кто-то делает это, пожалуйста, напишите АХелп, и он будет немедленно выброшен в космос.
+
+
+        Также, если вы решите покинуть бар, вы НЕ БУДЕТЕ помнить ничего из того, что было здесь, или из вашей предыдущей жизни.
     - type: Physics
       canCollide: False
       bodyType: Static
@@ -9711,23 +9775,22 @@ entities:
       - stampedColor: '#233D57FF'
         stampedName: Icepick
       content: >2-
-                        [head=2]Welcome to the Ghost Bar![/head]
+                   [head=2]Добро пожаловать в призрачный бар![/head]
         ———————————————————————————
 
-
-        You died! Either because you suck ass at the funny space game, or you ragequit after the Security Officer shot you (for no reason) after you slipped, stunned, and cuffed the Captain! How sad!
-
-
-        Either way, you chose to move on to the afterlife.
+        Вы умерли! Либо потому, что вы отстойно играете в забавную космическую игру, либо вы вышли из игры после того, как офицер СБ арестовал вас (без причины) после того, как вы поскользнули, оглушили и надели наручники на капитана! Как грустно!
 
 
-        Please treat this role, and station, as you would just being a regular Ghost. You may talk about all current round events without the need for LOOC, and you remember everything from your previous life.
+        В любом случае, вы решили отправиться в загробный мир.
 
 
-        DO NOT attack others, start fights, or attempt to break the station. If you see anyone doing this, please Ahelp and they will be promptly thrown into space.
+        Пожалуйста, относитесь к этой роли и станции, как к обычному Призраку. Вы можете говорить обо всех текущих событиях раунда без необходимости LOOC, и вы помните все из своей предыдущей жизни.
 
 
-        Also, if you decide to leave the bar, you DO NOT remember anything from being here, or your life before it.
+        НЕ нападайте на других, не затевайте драк и не пытайтесь сломать станцию. Если вы увидите, что кто-то делает это, пожалуйста, напишите АХелп, и он будет немедленно выброшен в космос.
+
+
+        Также, если вы решите покинуть бар, вы НЕ БУДЕТЕ помнить ничего из того, что было здесь, или из вашей предыдущей жизни.
     - type: Physics
       canCollide: False
       bodyType: Static
@@ -9749,24 +9812,24 @@ entities:
       stampedBy:
       - stampedColor: '#233D57FF'
         stampedName: Icepick
-      content: >2-
-                        [head=2]Welcome to the Ghost Bar![/head]
+      content: >-
+        [head=2]Добро пожаловать в призрачный бар![/head]
+
         ———————————————————————————
 
-
-        You died! Either because you suck ass at the funny space game, or you ragequit after the Security Officer shot you (for no reason) after you slipped, stunned, and cuffed the Captain! How sad!
-
-
-        Either way, you chose to move on to the afterlife.
+        Вы умерли! Либо потому, что вы отстойно играете в забавную космическую игру, либо вы вышли из игры после того, как офицер СБ арестовал вас (без причины) после того, как вы поскользнули, оглушили и надели наручники на капитана! Как грустно!
 
 
-        Please treat this role, and station, as you would just being a regular Ghost. You may talk about all current round events without the need for LOOC, and you remember everything from your previous life.
+        В любом случае, вы решили отправиться в загробный мир.
 
 
-        DO NOT attack others, start fights, or attempt to break the station. If you see anyone doing this, please Ahelp and they will be promptly thrown into space.
+        Пожалуйста, относитесь к этой роли и станции, как к обычному Призраку. Вы можете говорить обо всех текущих событиях раунда без необходимости LOOC, и вы помните все из своей предыдущей жизни.
 
 
-        Also, if you decide to leave the bar, you DO NOT remember anything from being here, or your life before it.
+        НЕ нападайте на других, не затевайте драк и не пытайтесь сломать станцию. Если вы увидите, что кто-то делает это, пожалуйста, напишите АХелп, и он будет немедленно выброшен в космос.
+
+
+        Также, если вы решите покинуть бар, вы НЕ БУДЕТЕ помнить ничего из того, что было здесь, или из вашей предыдущей жизни.
     - type: Physics
       canCollide: False
       bodyType: Static
@@ -9788,24 +9851,24 @@ entities:
       stampedBy:
       - stampedColor: '#233D57FF'
         stampedName: Icepick
-      content: >2-
-                        [head=2]Welcome to the Ghost Bar![/head]
+      content: >-
+        [head=2]Добро пожаловать в призрачный бар![/head]
+
         ———————————————————————————
 
-
-        You died! Either because you suck ass at the funny space game, or you ragequit after the Security Officer shot you (for no reason) after you slipped, stunned, and cuffed the Captain! How sad!
-
-
-        Either way, you chose to move on to the afterlife.
+        Вы умерли! Либо потому, что вы отстойно играете в забавную космическую игру, либо вы вышли из игры после того, как офицер СБ арестовал вас (без причины) после того, как вы поскользнули, оглушили и надели наручники на капитана! Как грустно!
 
 
-        Please treat this role, and station, as you would just being a regular Ghost. You may talk about all current round events without the need for LOOC, and you remember everything from your previous life.
+        В любом случае, вы решили отправиться в загробный мир.
 
 
-        DO NOT attack others, start fights, or attempt to break the station. If you see anyone doing this, please Ahelp and they will be promptly thrown into space.
+        Пожалуйста, относитесь к этой роли и станции, как к обычному Призраку. Вы можете говорить обо всех текущих событиях раунда без необходимости LOOC, и вы помните все из своей предыдущей жизни.
 
 
-        Also, if you decide to leave the bar, you DO NOT remember anything from being here, or your life before it.
+        НЕ нападайте на других, не затевайте драк и не пытайтесь сломать станцию. Если вы увидите, что кто-то делает это, пожалуйста, напишите АХелп, и он будет немедленно выброшен в космос.
+
+
+        Также, если вы решите покинуть бар, вы НЕ БУДЕТЕ помнить ничего из того, что было здесь, или из вашей предыдущей жизни.
     - type: Physics
       canCollide: False
       bodyType: Static
@@ -9827,24 +9890,24 @@ entities:
       stampedBy:
       - stampedColor: '#233D57FF'
         stampedName: Icepick
-      content: >2-
-                        [head=2]Welcome to the Ghost Bar![/head]
+      content: >-
+        [head=2]Добро пожаловать в призрачный бар![/head]
+
         ———————————————————————————
 
-
-        You died! Either because you suck ass at the funny space game, or you ragequit after the Security Officer shot you (for no reason) after you slipped, stunned, and cuffed the Captain! How sad!
-
-
-        Either way, you chose to move on to the afterlife.
+        Вы умерли! Либо потому, что вы отстойно играете в забавную космическую игру, либо вы вышли из игры после того, как офицер СБ арестовал вас (без причины) после того, как вы поскользнули, оглушили и надели наручники на капитана! Как грустно!
 
 
-        Please treat this role, and station, as you would just being a regular Ghost. You may talk about all current round events without the need for LOOC, and you remember everything from your previous life.
+        В любом случае, вы решили отправиться в загробный мир.
 
 
-        DO NOT attack others, start fights, or attempt to break the station. If you see anyone doing this, please Ahelp and they will be promptly thrown into space.
+        Пожалуйста, относитесь к этой роли и станции, как к обычному Призраку. Вы можете говорить обо всех текущих событиях раунда без необходимости LOOC, и вы помните все из своей предыдущей жизни.
 
 
-        Also, if you decide to leave the bar, you DO NOT remember anything from being here, or your life before it.
+        НЕ нападайте на других, не затевайте драк и не пытайтесь сломать станцию. Если вы увидите, что кто-то делает это, пожалуйста, напишите АХелп, и он будет немедленно выброшен в космос.
+
+
+        Также, если вы решите покинуть бар, вы НЕ БУДЕТЕ помнить ничего из того, что было здесь, или из вашей предыдущей жизни.
     - type: Physics
       canCollide: False
       bodyType: Static
@@ -9867,23 +9930,23 @@ entities:
       - stampedColor: '#233D57FF'
         stampedName: Icepick
       content: >2-
-                        [head=2]Welcome to the Ghost Bar![/head]
-        ———————————————————————————
+                        [head=2]Добро пожаловать в призрачный бар![/head]
+        ---------------------------
 
 
-        You died! Either because you suck ass at the funny space game, or you ragequit after the Security Officer shot you (for no reason) after you slipped, stunned, and cuffed the Captain! How sad!
+        Вы умерли! Либо потому, что вы отстойно играете в забавную космическую игру, либо вы вышли из игры после того, как офицер СБ арестовал вас (без причины) после того, как вы поскользнули, оглушили и надели наручники на капитана! Как грустно!
 
 
-        Either way, you chose to move on to the afterlife.
+        В любом случае, вы решили отправиться в загробный мир.
 
 
-        Please treat this role, and station, as you would just being a regular Ghost. You may talk about all current round events without the need for LOOC, and you remember everything from your previous life.
+        Пожалуйста, относитесь к этой роли и станции, как к обычному Призраку. Вы можете говорить обо всех текущих событиях раунда без необходимости LOOC, и вы помните все из своей предыдущей жизни.
 
 
-        DO NOT attack others, start fights, or attempt to break the station. If you see anyone doing this, please Ahelp and they will be promptly thrown into space.
+        НЕ нападайте на других, не затевайте драк и не пытайтесь сломать станцию. Если вы увидите, что кто-то делает это, пожалуйста, напишите АХелп, и он будет немедленно выброшен в космос.
 
 
-        Also, if you decide to leave the bar, you DO NOT remember anything from being here, or your life before it.
+        Также, если вы решите покинуть бар, вы НЕ БУДЕТЕ помнить ничего из того, что было здесь, или из вашей предыдущей жизни.
     - type: Physics
       canCollide: False
       bodyType: Static
@@ -9906,23 +9969,22 @@ entities:
       - stampedColor: '#233D57FF'
         stampedName: Icepick
       content: >2-
-                        [head=2]Welcome to the Ghost Bar![/head]
+                      [head=2]Добро пожаловать в призрачный бар![/head]
         ———————————————————————————
 
-
-        You died! Either because you suck ass at the funny space game, or you ragequit after the Security Officer shot you (for no reason) after you slipped, stunned, and cuffed the Captain! How sad!
-
-
-        Either way, you chose to move on to the afterlife.
+        Вы умерли! Либо потому, что вы отстойно играете в забавную космическую игру, либо вы вышли из игры после того, как офицер СБ арестовал вас (без причины) после того, как вы поскользнули, оглушили и надели наручники на капитана! Как грустно!
 
 
-        Please treat this role, and station, as you would just being a regular Ghost. You may talk about all current round events without the need for LOOC, and you remember everything from your previous life.
+        В любом случае, вы решили отправиться в загробный мир.
 
 
-        DO NOT attack others, start fights, or attempt to break the station. If you see anyone doing this, please Ahelp and they will be promptly thrown into space.
+        Пожалуйста, относитесь к этой роли и станции, как к обычному Призраку. Вы можете говорить обо всех текущих событиях раунда без необходимости LOOC, и вы помните все из своей предыдущей жизни.
 
 
-        Also, if you decide to leave the bar, you DO NOT remember anything from being here, or your life before it.
+        НЕ нападайте на других, не затевайте драк и не пытайтесь сломать станцию. Если вы увидите, что кто-то делает это, пожалуйста, напишите АХелп, и он будет немедленно выброшен в космос.
+
+
+        Также, если вы решите покинуть бар, вы НЕ БУДЕТЕ помнить ничего из того, что было здесь, или из вашей предыдущей жизни.
     - type: Physics
       canCollide: False
       bodyType: Static
@@ -9945,23 +10007,22 @@ entities:
       - stampedColor: '#233D57FF'
         stampedName: Icepick
       content: >2-
-                        [head=2]Welcome to the Ghost Bar![/head]
+                       [head=2]Добро пожаловать в призрачный бар![/head]
         ———————————————————————————
 
-
-        You died! Either because you suck ass at the funny space game, or you ragequit after the Security Officer shot you (for no reason) after you slipped, stunned, and cuffed the Captain! How sad!
-
-
-        Either way, you chose to move on to the afterlife.
+        Вы умерли! Либо потому, что вы отстойно играете в забавную космическую игру, либо вы вышли из игры после того, как офицер СБ арестовал вас (без причины) после того, как вы поскользнули, оглушили и надели наручники на капитана! Как грустно!
 
 
-        Please treat this role, and station, as you would just being a regular Ghost. You may talk about all current round events without the need for LOOC, and you remember everything from your previous life.
+        В любом случае, вы решили отправиться в загробный мир.
 
 
-        DO NOT attack others, start fights, or attempt to break the station. If you see anyone doing this, please Ahelp and they will be promptly thrown into space.
+        Пожалуйста, относитесь к этой роли и станции, как к обычному Призраку. Вы можете говорить обо всех текущих событиях раунда без необходимости LOOC, и вы помните все из своей предыдущей жизни.
 
 
-        Also, if you decide to leave the bar, you DO NOT remember anything from being here, or your life before it.
+        НЕ нападайте на других, не затевайте драк и не пытайтесь сломать станцию. Если вы увидите, что кто-то делает это, пожалуйста, напишите АХелп, и он будет немедленно выброшен в космос.
+
+
+        Также, если вы решите покинуть бар, вы НЕ БУДЕТЕ помнить ничего из того, что было здесь, или из вашей предыдущей жизни.
     - type: Physics
       canCollide: False
       bodyType: Static
