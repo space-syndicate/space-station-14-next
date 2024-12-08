@@ -24,13 +24,13 @@ namespace Content.Server.Announcements
 
             if (args.Length == 1)
             {
-                chat.DispatchGlobalAnnouncement(args[0], colorOverride: Color.Gold);
+                chat.DispatchGlobalAnnouncement(args[0], colorOverride: Color.DarkGreen);  // Corvax-Next-GreenCentComm
             }
             else
             {
                 // Explicit IEnumerable<string> due to overload ambiguity on .NET 9
                 var message = string.Join(' ', (IEnumerable<string>)new ArraySegment<string>(args, 1, args.Length-1));
-                chat.DispatchGlobalAnnouncement(message, args[0], colorOverride: Color.Gold);
+                chat.DispatchGlobalAnnouncement(message, args[0], colorOverride: Color.DarkGreen); // Corvax-Next-GreenCentComm
             }
             shell.WriteLine("Sent!");
         }
