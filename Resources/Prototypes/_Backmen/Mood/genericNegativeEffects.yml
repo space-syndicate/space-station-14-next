@@ -41,6 +41,10 @@
   moodChange: -20
 
 - type: moodEffect
+  id: TraitFortitude
+  moodChange: -10
+
+- type: moodEffect
   id: Dead
   moodChange: -1000
 
@@ -58,5 +62,5 @@
 
 - type: moodEffect
   id: SurgeryPain
-  moodChange: -15
-  timeout: 180
+  moodChange: -30
+  timeout: 90

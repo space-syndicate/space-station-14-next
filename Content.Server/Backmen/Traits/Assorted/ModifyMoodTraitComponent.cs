@@ -7,5 +7,11 @@ namespace Content.Server._CorvaxNext.Traits.Assorted;
 public sealed partial class MoodModifyTraitComponent : Component
 {
     [DataField]
-    public string? MoodId = null;
+    public string? MoodId;
+
+    [DataField]
+    public float GoodMoodMultiplier = 1.0f;
+
+    [DataField]
+    public float BadMoodMultiplier = 1.0f;
 }
