@@ -1,0 +1,7 @@
+﻿- type: department
+  id: CentralCommandCorvax
+  name: department-CentCom-name
+  description: department-CentCom-desc
+  color: "#13db0f"
+  roles:
+    - CCOperator

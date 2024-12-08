@@ -1,0 +1,11 @@
+﻿- type: entity
+  id: SpawnPointCCOperator
+  parent: SpawnPointJobBase
+  name: ЦК Оператор
+  components:
+    - type: SpawnPoint
+      job_id: CCOperator
+    - type: Sprite
+      layers:
+        - state: green
+        - state: captain
