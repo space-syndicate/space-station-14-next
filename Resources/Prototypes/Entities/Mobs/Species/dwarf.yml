@@ -63,6 +63,9 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+  - type: SizeAttributeWhitelist # Corvax-Next
+    tall: false
+    short: false
   - type: FootprintVisualizer # Corvax-Next-Footprints
     leftBarePrint: "footprint-left-bare-dwarf"
     rightBarePrint: "footprint-right-bare-dwarf"
