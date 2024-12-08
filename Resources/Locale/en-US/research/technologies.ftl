@@ -76,3 +76,5 @@ research-technology-bluespace-chemistry = Bluespace Chemistry
 research-technology-advanced-treatment = Advanced Treatment
 research-technology-high-end-surgery = High End Surgical Tools
 research-technology-cybernetic-enhancements = Cybernetic Enhancements
+research-technology-night-vision = Night vision
+research-technology-thermal-vision = Thermal vision

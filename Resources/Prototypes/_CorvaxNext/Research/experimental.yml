@@ -1,3 +1,5 @@
+# Tier 2
+
 - type: technology
   id: BluespaceMining
   name: research-technology-bluespace-mining
@@ -9,3 +11,27 @@
   cost: 10000
   recipeUnlocks:
   - MachineBluespaceHarvesterCircuitboard
+
+- type: technology
+  id: NightVisionTech
+  name: research-technology-night-vision
+  icon:
+    sprite: _CorvaxNext/Clothing/Eyes/Goggles/nightvision.rsi
+    state: icon
+  discipline: Experimental
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ClothingEyesNightVisionGoggles
+
+- type: technology
+  id: ThermalVisionTech
+  name: research-technology-thermal-vision
+  icon:
+    sprite: _CorvaxNext/Clothing/Eyes/Goggles/thermal.rsi
+    state: icon
+  discipline: Experimental
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ClothingEyesThermalVisionGoggles

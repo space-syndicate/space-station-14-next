@@ -27,6 +27,7 @@
     bodyType: Kinematic
   - type: Body
     prototype: Aghost
+    thermalVisibility: false #Corvax-Next
   - type: Access
     groups:
     - AllAccess
