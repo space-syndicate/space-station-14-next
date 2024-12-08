@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseItem
+  id: SyndicateTeleporter
+  name: syndicate teleporter
+  description: Personal syndicate teleporter.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Devices/syndicate_teleporter.rsi
+    state: icon
+  - type: Item
+  - type: SyndicateTeleporter
+  - type: UseDelay
+    delay: 60
+  - type: EmitSoundOnUse
+    sound:
+      collection: BrokenDevice
+      params:
+        variation: 0.125
