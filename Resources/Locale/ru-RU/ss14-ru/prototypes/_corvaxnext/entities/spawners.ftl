@@ -1,2 +1,2 @@
-ent-SpawnPointObserver = спавнер призрачный бар
+ent-GhostBarSpawner = спавнер призрачный бар
     .desc = { ent-MarkerBase.desc }
