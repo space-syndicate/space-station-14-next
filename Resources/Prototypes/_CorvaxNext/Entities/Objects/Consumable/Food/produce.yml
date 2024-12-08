@@ -35,7 +35,7 @@
 - type: entity
   name: shashamber
   parent: [FoodProduceBase]
-  id: FoodShashamber
+  id: FoodWhatumber
   description: what?
   components:
   - type: FlavorProfile

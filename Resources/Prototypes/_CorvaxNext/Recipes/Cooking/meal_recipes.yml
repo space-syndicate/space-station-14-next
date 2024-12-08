@@ -1,7 +1,7 @@
 - type: microwaveMealRecipe
   id: RecipeBakedPotatosCutlets
   name: mashed potatoes with cutlets
-  result: FoodBakedPotatosCutlets
+  result: FoodBakedPotatoesCutlets
   time: 15
   reagents:
     Milk: 5
@@ -22,7 +22,7 @@
 - type: microwaveMealRecipe
   id: RecipeGOOOOLsoup
   name: footbear soup
-  result: FoodGOOOOLsoup
+  result: FoodBearSoup
   time: 10
   reagents:
     Vodka: 10
@@ -35,7 +35,7 @@
 - type: microwaveMealRecipe
   id: RecipeOkroshkasoup
   name: okroshka soup
-  result: FoodOkroshkasoup
+  result: FoodOkroshkaSoup
   time: 10
   reagents:
     Kvass: 10
@@ -50,7 +50,7 @@
 - type: microwaveMealRecipe
   id: RecipeOlivielsoup
   name: oliviel soup
-  result: FoodOlivielsoup
+  result: FoodOlivier
   time: 15
   reagents:
     Mayo: 20
@@ -66,7 +66,7 @@
 - type: microwaveMealRecipe
   id: RecipeSolankasoup
   name: solanka soup
-  result: FoodSolankasoup
+  result: FoodSolankaSoup
   time: 10
   solids:
     FoodMeatSnake: 1

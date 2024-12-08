@@ -1,7 +1,7 @@
 - type: entity
   name: mashed potatoes with cutlets
   parent: FoodBakedBase
-  id: FoodBakedPotatosCutlets
+  id: FoodBakedPotatoesCutlets
   description: You hurry up, we have cutlets right now...
   components:
   - type: Sprite
