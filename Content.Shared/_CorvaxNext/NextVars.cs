@@ -41,4 +41,10 @@ public sealed class NextVars
 
     // public static readonly CVarDef<bool> OfferModeIndicatorsPointShow =
     //     CVarDef.Create("hud.offer_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    /// <summary>
+    /// LRP CVar
+    /// </summary>
+    public static readonly CVarDef<bool> LRPEnabled =
+        CVarDef.Create("lrp.enabled", false, CVar.SERVERONLY);
 }
