@@ -7,3 +7,12 @@
     icon: _CorvaxNext/Mobs/Species/Resomi/Abilities/AgilityOff.png
     iconOn: _CorvaxNext/Mobs/Species/Resomi/Abilities/AgilityOn.png
     event: !type:SwitchAgillityActionEvent
+
+- type: entity
+  id: ListenUpAction
+  name: Listen up
+  description: Listen up
+  components:
+  - type: InstantAction
+    icon: _CorvaxNext/Mobs/Species/Resomi/Abilities/AgilityOff.png
+    event: !type:ListenUpActionEvent
