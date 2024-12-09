@@ -1,6 +1,6 @@
 using Content.Shared._CorvaxNext.Footprints;
-using Content.Shared._CorvaxNext.Footprints.Components;
 using Robust.Client.GameObjects;
+using Robust.Shared.Utility;
 
 namespace Content.Client._CorvaxNext.Footprints;
 
@@ -14,34 +14,34 @@ public sealed class FootprintSystem : EntitySystem
 
     private void OnComponentStartup(Entity<FootprintComponent> entity, ref ComponentStartup e)
     {
-        if (!TryComp<SpriteComponent>(entity, out var sprite))
-            return;
-
-        foreach (var footprint in entity.Comp.Footprints)
-            sprite.AddLayer(new PrototypeLayerData()
-            {
-                RsiPath = "/Textures/Clothing/Shoes/color.rsi",
-                Color = footprint.Color
-            });
+        UpdateSprite(entity, entity);
     }
 
     private void OnFootprintChanged(FootprintChangedEvent e)
     {
-        var entity = GetEntity(e.Entity);
+        if (!TryGetEntity(e.Entity, out var entity))
+            return;
 
         if (!TryComp<FootprintComponent>(entity, out var footprint))
             return;
 
+        UpdateSprite(entity.Value, footprint);
+    }
+
+    private void UpdateSprite(EntityUid entity, FootprintComponent footprint)
+    {
         if (!TryComp<SpriteComponent>(entity, out var sprite))
             return;
 
-        if (footprint.Footprints.Count < 1)
-            return;
-
-        sprite.AddLayer(new PrototypeLayerData()
+        for (var i = 0; i < footprint.Footprints.Count; i++)
         {
-            RsiPath = "/Textures/Clothing/Shoes/color.rsi",
-            Color = footprint.Footprints[^1].Color
-        });
+            if (!sprite.LayerExists(i, false))
+                sprite.AddBlankLayer(i);
+
+            sprite.LayerSetOffset(i, footprint.Footprints[i].Offset);
+            sprite.LayerSetRotation(i, footprint.Footprints[i].Rotation);
+            sprite.LayerSetColor(i, footprint.Footprints[i].Color);
+            sprite.LayerSetSprite(i, new SpriteSpecifier.Rsi(new("/Textures/Clothing/Shoes/color.rsi"), "icon"));
+        }
     }
 }

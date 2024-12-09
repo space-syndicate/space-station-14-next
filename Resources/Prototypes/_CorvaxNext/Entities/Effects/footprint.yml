@@ -29,7 +29,6 @@
   - type: Footprint
   - type: Puddle
     solution: print
-  - type: Appearance
   - type: ExaminableSolution
     solution: print
   - type: MixableSolution

@@ -1,6 +1,6 @@
 using Content.Shared.FixedPoint;
 
-namespace Content.Shared._CorvaxNext.Footprints.Components;
+namespace Content.Server._CorvaxNext.Footprints;
 
 [RegisterComponent]
 public sealed partial class FootprintOwnerComponent : Component

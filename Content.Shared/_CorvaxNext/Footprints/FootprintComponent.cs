@@ -1,7 +1,8 @@
+using System.Numerics;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._CorvaxNext.Footprints.Components;
+namespace Content.Shared._CorvaxNext.Footprints;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class FootprintComponent : Component
@@ -11,4 +12,4 @@ public sealed partial class FootprintComponent : Component
 }
 
 [Serializable, NetSerializable]
-public readonly record struct Footprint(Color Color);
+public readonly record struct Footprint(Vector2 Offset, Angle Rotation, Color Color);

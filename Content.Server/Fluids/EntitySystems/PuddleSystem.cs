@@ -2,6 +2,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.DoAfter;
 using Content.Server.Fluids.Components;
 using Content.Server.Spreader;
+using Content.Shared._CorvaxNext.Footprints;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
@@ -674,6 +675,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
         var anchored = _map.GetAnchoredEntitiesEnumerator(gridId, mapGrid, tileRef.GridIndices);
         var puddleQuery = GetEntityQuery<PuddleComponent>();
         var sparklesQuery = GetEntityQuery<EvaporationSparkleComponent>();
+        var footprintQuery = GetEntityQuery<FootprintComponent>(); // Corvax-Next-Footprints
 
         while (anchored.MoveNext(out var ent))
         {
@@ -686,6 +688,11 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
             if (!puddleQuery.TryGetComponent(ent, out var puddle))
                 continue;
+
+            // Corvax-Next-Footprints-Start
+            if (footprintQuery.HasComp(ent))
+                continue;
+            // Corvax-Next-Footprints-End
 
             if (TryAddSolution(ent.Value, solution, sound, puddleComponent: puddle))
             {
