@@ -2,7 +2,6 @@
   id: CheekStorage
   name: cheek storage
   description: The cheeks capable of storing small objects.
-  noSpawn: true
   components:
   - type: Storage
     clickInsert: false
@@ -18,8 +17,7 @@
       - ResearchDisk
       - BalloonPopper
       - LightBulb
-      tags:
-      - GlassSharp
+      - NukeDisk
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
