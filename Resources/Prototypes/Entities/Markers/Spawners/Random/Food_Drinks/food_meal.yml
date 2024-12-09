@@ -71,6 +71,14 @@
       - FoodSoupBungo
       - FoodMealCornInButter
       - FoodSoupStew
+      # Corvax-Next-Food-Start
+      - FoodBakedPotatoesCutlets
+      - FoodBearSoup
+      - FoodOkroshkaSoup
+      - FoodOlivier
+      - FoodSolankaSoup
+      - FoodPlow
+      # Corvax-Next-Food-End
     chance: 0.8
     offset: 0.0
     #rare
