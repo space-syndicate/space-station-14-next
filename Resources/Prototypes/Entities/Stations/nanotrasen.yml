@@ -36,7 +36,11 @@
     - BaseStation
     - BaseStationAlertLevels
     - BaseStationNanotrasen
-  categories: [ HideSpawnMenu ]
+    - BaseStationCargo #Backmen
+    - BaseStationJobsSpawning #Backmen
+    - BaseStationRecords #Backmen
+    - BaseStationShuttles #Backmen
+  noSpawn: true
   components:
     - type: Transform
 

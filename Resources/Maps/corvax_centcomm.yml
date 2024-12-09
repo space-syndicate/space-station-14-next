@@ -5837,6 +5837,8 @@ entities:
           - 0
           - 0
         chunkSize: 4
+    - type: BecomesStation
+      id: centcommcorvax
   - uid: 5
     components:
     - type: MetaData
@@ -46293,6 +46295,18 @@ entities:
     components:
     - type: Transform
       pos: 62.5,31.5
+      parent: 2
+- proto: SpawnPointCCOperator
+  entities:
+  - uid: 4942
+    components:
+    - type: Transform
+      pos: 61.5,26.5
+      parent: 2
+  - uid: 7129
+    components:
+    - type: Transform
+      pos: 65.5,26.5
       parent: 2
 - proto: SpeedLoaderMagnumAP
   entities:
