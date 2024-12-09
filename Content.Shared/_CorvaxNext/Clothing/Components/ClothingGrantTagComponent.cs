@@ -3,9 +3,8 @@ namespace Content.Shared._CorvaxNext.Clothing;
 [RegisterComponent]
 public sealed partial class ClothingGrantTagComponent : Component
 {
-    [DataField("tag", required: true), ViewVariables(VVAccess.ReadWrite)]
+    [DataField("tag")]
     public string Tag = "";
 
-    [ViewVariables(VVAccess.ReadWrite)]
     public bool IsActive = false;
 }

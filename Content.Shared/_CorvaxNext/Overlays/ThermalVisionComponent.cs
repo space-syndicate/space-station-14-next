@@ -8,7 +8,7 @@ public sealed partial class ThermalVisionComponent : SwitchableOverlayComponent
 {
     public override string? ToggleAction { get; set; } = "ToggleThermalVision";
 
-    public override Color Color { get; set; } = Color.FromHex("#F84742");
+    public override Color Color { get; set; } = Color.FromHex("#C26E4A");
 }
 
 public sealed partial class ToggleThermalVisionEvent : InstantActionEvent;

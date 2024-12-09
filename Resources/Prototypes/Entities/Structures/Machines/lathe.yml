@@ -353,8 +353,6 @@
       - OreBagOfHolding
       - DeviceQuantumSpinInverter
       # Corvax-Next Start
-      - ClothingEyesNightVisionGoggles
-      - ClothingEyesThermalVisionGoggles
       - EnergyScalpel
       - EnergyCautery
       - AdvancedRetractor

@@ -109,7 +109,7 @@ public sealed class ThermalVisionOverlay : Overlay
     private bool CanSee(EntityUid uid, SpriteComponent sprite, BodyComponent body)
     {
         return sprite.Visible
-               && body.ThermalVisibility
+               && !_entity.HasComponent<ThermalInvisibilityComponent>(uid)
                && (!_entity.TryGetComponent(uid, out StealthComponent? stealth)
                    || _stealth.GetVisibility(uid, stealth) > 0.5f);
     }
