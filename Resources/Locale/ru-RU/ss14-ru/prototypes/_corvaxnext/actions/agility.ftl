@@ -1,3 +1,5 @@
+ent-SwitchAgilityAction = Переключить ловкость.
+    .desc = Переключает способность к активному перемещению.
 ent-ActionOpenRadioImplant = Открыть радио-имплант.
     .desc = Открывает контейнер ключа шифрования имплантированный в ваш череп.
 ent-ActionOpenMouthStorage = Открыть рот.
