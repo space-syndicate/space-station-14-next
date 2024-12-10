@@ -5,10 +5,6 @@
   description: Respect my authority!
   abstract: true
   components:
-  - type: Sprite
-    sprite: _CorvaxNext/Clothing/Neck/SecBadge/cadetbadge.rsi
-  - type: Clothing
-    sprite: _CorvaxNext/Clothing/Neck/SecBadge/cadetbadge.rsi
   - type: Reflect
     reflectProb: 0.01
     spread: 90
