@@ -42,7 +42,8 @@ namespace Content.Server._CorvaxNext.ExecutionChair
         private void OnSignalReceived(EntityUid uid, ExecutionChairComponent component, ref SignalReceivedEvent args)
         {
             // default case for switch below
-            bool DefaultCase(EntityUid uid, string port, ExecutionChairComponent component) {
+            bool DefaultCase(EntityUid uid, string port, ExecutionChairComponent component)
+            {
                 _sawmill.Debug($"Receieved unexpected port signal: {port} on chair {ToPrettyString(uid)}");
                 return component.Enabled;
             }
@@ -65,8 +66,8 @@ namespace Content.Server._CorvaxNext.ExecutionChair
 
             component.Enabled = activated;
             Dirty(uid, component);
-            var message = activated 
-                ? Loc.GetString("execution-chair-turn-on") 
+            var message = activated
+                ? Loc.GetString("execution-chair-turn-on")
                 : Loc.GetString("execution-chair-chair-turn-off");
 
             _popup.PopupEntity(message, uid, PopupType.Medium);
