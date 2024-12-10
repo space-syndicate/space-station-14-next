@@ -26,7 +26,7 @@
   parent: ClothingBeltStorageBase
   id: ClothingBeltSurgicalBoard
   name: surgical magnetic board
-  description: Able to magnetize special surgical instruments made on . Surgeon's assistant? I have my own little buddy!
+  description: Able to magnetize special surgical instruments made on Medical TechFab. Surgeon's assistant? I have my own little buddy!
   components:
   - type: Sprite
     sprite: _CorvaxNext/Clothing/Belt/surgical_board.rsi
@@ -89,3 +89,17 @@
             - SawElectric
     sprite: _CorvaxNext/Clothing/Belt/belt_overlay.rsi
   - type: Appearance
+
+- type: entity
+  parent: ClothingBeltSurgicalBoard
+  id: ClothingBeltSurgicalBoardFilled
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Hemostat
+      - id: Scalpel
+      - id: Retractor
+      - id: Cautery
+      - id: Drill
+      - id: SawElectric

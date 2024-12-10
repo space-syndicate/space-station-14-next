@@ -20,7 +20,7 @@
   id: SurgeonGear
   equipment:
     ears: ClothingHeadsetMedical
-    belt: ClothingBeltMedicalFilled
+    belt: ClothingBeltSurgicalBoardFilled
     shoes: ClothingShoesColorWhite
     mask: ClothingMaskSterile
     gloves: ClothingHandsGlovesNitrile
