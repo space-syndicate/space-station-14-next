@@ -68,7 +68,7 @@
     rightBarePrint: "footprint-right-bare-dwarf"
   - type: InnateMiningScannerViewer # Corvax-Next-Dwarfs
     pingSound: null
-    viewRange: 5
+    viewRange: 3
 
 - type: entity
   parent: BaseSpeciesDummy
