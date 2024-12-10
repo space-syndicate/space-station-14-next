@@ -28,6 +28,11 @@
   - type: ExtensionCableReceiver
   - type: Transform
     anchored: true
+  - type: DeviceLinkSink
+    ports:
+      - Toggle
+      - On
+      - Off
   - type: Damageable
     damageModifierSet: Metallic
   - type: Destructible
