@@ -6,6 +6,7 @@
   save: false
   abstract: true
   components:
+  - type: ThermalInvisibility #Corvax-Next-ThermalVision
   - type: Reactive
     groups:
       Acidic: [Touch]
@@ -281,6 +282,9 @@
   parent: [BaseBorgChassis, BaseBorgTransponder]
   abstract: true
   components:
+  - type: RandomMetadata
+    nameSegments:
+      - names_borg
   - type: NpcFactionMember
     factions:
     - NanoTrasen
