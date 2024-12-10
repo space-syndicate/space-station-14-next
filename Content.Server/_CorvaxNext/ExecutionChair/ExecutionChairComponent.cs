@@ -66,20 +66,20 @@ public sealed partial class ExecutionChairComponent : Component
     /// The name of the device link port used to toggle the chair's state. Receiving a signal on this port
     /// switches the enabled state from on to off or from off to on.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SourcePortPrototype>))]
+    [DataField]
     public string TogglePort = "Toggle";
 
     /// <summary>
     /// The name of the device link port used to force the chair's state to enabled (on).
     /// Receiving a signal here ensures the chair is active.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SourcePortPrototype>))]
+    [DataField]
     public string OnPort = "On";
 
     /// <summary>
     /// The name of the device link port used to force the chair's state to disabled (off).
     /// Receiving a signal here ensures the chair is inactive.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SourcePortPrototype>))]
+    [DataField]
     public string OffPort = "Off";
 }
