@@ -561,6 +561,7 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+    - type: AllowFtlToCentCom
     - type: IFF
       color: '#02BD58FF'
       flags: Hide
