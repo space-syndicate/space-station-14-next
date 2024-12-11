@@ -1,0 +1,15 @@
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: GenericRadioImplanter
+  suffix: generic radio
+  components:
+  - type: Implanter
+    implant: RadioImplant
+
+- type: entity
+  parent: BaseImplantOnlyImplanterSyndi
+  id: SyndicateRadioImplanter
+  suffix: syndicate radio
+  components:
+  - type: Implanter
+    implant: SyndicateRadioImplant
