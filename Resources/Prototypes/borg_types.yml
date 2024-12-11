@@ -65,6 +65,45 @@
   petFailureString: petting-failure-engineer-cyborg
 
 
+# Secutity borg
+- type: borgType
+  id: security
+
+  # Description
+  dummyPrototype: BorgChassisSec
+
+  # Functional
+  extraModuleCount: 2
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleSec
+
+  defaultModules:
+  - BorgModuleNeutralization
+
+  radioChannels:
+  - Security
+  - Science
+
+  addComponents:
+  - type: ShowJobIcons
+  - type: ShowMindShieldIcons
+  - type: ShowCriminalRecordIcons  
+  - type: FlashImmunity  
+
+  # Visual
+  inventoryTemplateId: borgTall
+  spriteBodyState: sec
+  spriteHasMindState: sec_e
+  spriteNoMindState: sec_e_r
+  spriteToggleLightState: sec_l
+
+  # Pet
+  petSuccessString: petting-success-security-cyborg
+  petFailureString: petting-failure-security-cyborg
+
+
 # Salvage borg
 - type: borgType
   id: mining

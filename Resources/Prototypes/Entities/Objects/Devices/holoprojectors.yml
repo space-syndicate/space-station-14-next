@@ -134,3 +134,22 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
+
+- type: entity
+  parent: HoloprojectorSecurity
+  id: HoloprojectorSecurityBorg
+  name: holobarrier projector
+  suffix: Borg
+  categories: [ HideSpawnMenu ]
+  description: Creates a solid but fragile holographic barrier. Self-rechargable
+  components:
+  - type: HolosignProjector
+    signProto: HolosignSecurity
+    chargeUse: 240
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMicroreactor
+        disableEject: true
+        swap: false
