@@ -742,11 +742,17 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
         var anc = _map.GetAnchoredEntitiesEnumerator(tile.GridUid, grid, tile.GridIndices);
         var puddleQuery = GetEntityQuery<PuddleComponent>();
+        var footprintQuery = GetEntityQuery<FootprintComponent>(); // Corvax-Next-Footprints
 
         while (anc.MoveNext(out var ent))
         {
             if (!puddleQuery.HasComponent(ent.Value))
                 continue;
+
+            // Corvax-Next-Footprints-Start
+            if (footprintQuery.HasComponent(ent.Value))
+                continue;
+            // Corvax-Next-Footprints-End
 
             puddleUid = ent.Value;
             return true;
