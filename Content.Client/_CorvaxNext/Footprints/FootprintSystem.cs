@@ -41,7 +41,7 @@ public sealed class FootprintSystem : EntitySystem
             sprite.LayerSetOffset(i, footprint.Footprints[i].Offset);
             sprite.LayerSetRotation(i, footprint.Footprints[i].Rotation);
             sprite.LayerSetColor(i, footprint.Footprints[i].Color);
-            sprite.LayerSetSprite(i, new SpriteSpecifier.Rsi(new("/Textures/Clothing/Shoes/color.rsi"), "icon"));
+            sprite.LayerSetSprite(i, new SpriteSpecifier.Rsi(new("/Textures/_CorvaxNext/Effects/footprint.rsi"), footprint.Footprints[i].State));
         }
     }
 }

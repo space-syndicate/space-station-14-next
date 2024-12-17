@@ -12,4 +12,4 @@ public sealed partial class FootprintComponent : Component
 }
 
 [Serializable, NetSerializable]
-public readonly record struct Footprint(Vector2 Offset, Angle Rotation, Color Color);
+public readonly record struct Footprint(Vector2 Offset, Angle Rotation, Color Color, string State);

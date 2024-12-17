@@ -71,7 +71,6 @@
       types:
         Asphyxiation: -2.0
   - type: Wagging
-  - type: FootprintOwner # Corvax-Next-Footprints
 
 - type: entity
   save: false
