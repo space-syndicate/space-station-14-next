@@ -61,5 +61,13 @@ namespace Content.Server.Chemistry.Components
 
         [ViewVariables(VVAccess.ReadWrite)]
         public ReagentDispenserDispenseAmount DispenseAmount = ReagentDispenserDispenseAmount.U10;
+
+        // Corvax-Next: whether or not this entity can auto-label items
+        [DataField]
+        public bool CanAutoLabel;
+
+        // Corvax-Next: whether or not this entity is currently auto-labeling items
+        [ViewVariables]
+        public bool AutoLabel;
     }
 }
