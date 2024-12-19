@@ -92,10 +92,7 @@ namespace Content.Server.Chemistry.EntitySystems
 
                     args.Verbs.Add(new AlternativeVerb()
                     {
-                        Act = () =>
-                        {
-                            SetAutoLabel(ent, !ent.Comp.AutoLabel);
-                        },
+                        Act = () => SetAutoLabel(ent, !ent.Comp.AutoLabel),
                         Text = ent.Comp.AutoLabel ?
                         Loc.GetString("reagent-dispenser-component-set-auto-label-off-verb")
                         : Loc.GetString("reagent-dispenser-component-set-auto-label-on-verb"),
