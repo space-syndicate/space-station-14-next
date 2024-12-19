@@ -185,7 +185,6 @@
   - type: NpcFactionMember
     factions:
     - NanoTrasen
-  - type: TurretControl # Corvax-Next-TurretControl
 
 - type: entity
   parent: BaseWeaponTurret
