@@ -48,8 +48,10 @@ namespace Content.Server.Chemistry.EntitySystems
             SubscribeLocalEvent<ReagentDispenserComponent, EntRemovedFromContainerMessage>(SubscribeUpdateUiState);
             SubscribeLocalEvent<ReagentDispenserComponent, BoundUIOpenedEvent>(SubscribeUpdateUiState);
 
-            SubscribeLocalEvent<ReagentDispenserComponent, GetVerbsEvent<AlternativeVerb>>(OnAlternateVerb); // Corvax-Next-ChemLabeler
-            SubscribeLocalEvent<ReagentDispenserComponent, ExaminedEvent>(OnExamined); // Corvax-Next-ChemLabeler
+            // Corvax-Next-Labeler-Start
+            SubscribeLocalEvent<ReagentDispenserComponent, GetVerbsEvent<AlternativeVerb>>(OnAlternateVerb);
+            SubscribeLocalEvent<ReagentDispenserComponent, ExaminedEvent>(OnExamined);
+            // Corvax-Next-Labeler-End
 
             SubscribeLocalEvent<ReagentDispenserComponent, ReagentDispenserSetDispenseAmountMessage>(OnSetDispenseAmountMessage);
             SubscribeLocalEvent<ReagentDispenserComponent, ReagentDispenserDispenseReagentMessage>(OnDispenseReagentMessage);
