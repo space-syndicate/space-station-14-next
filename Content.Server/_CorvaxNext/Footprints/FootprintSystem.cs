@@ -22,14 +22,6 @@ public sealed class FootprintSystem : EntitySystem
     [Dependency] private readonly SharedPuddleSystem _puddle = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
-    public static readonly FixedPoint2 MinFootprintVolume = 0.5;
-
-    public static readonly FixedPoint2 MaxFootprintVolume = 1;
-
-    public static readonly FixedPoint2 MinBodyprintVolume = 2;
-
-    public static readonly FixedPoint2 MaxBodyprintVolume = 5;
-
     public static readonly FixedPoint2 MaxFootprintVolumeOnTile = 50;
 
     public static readonly EntProtoId FootprintPrototypeId = "Footprint";
@@ -145,7 +137,7 @@ public sealed class FootprintSystem : EntitySystem
 
         var volume = standing ? GetFootprintVolume(entity, solution.Value) : GetBodyprintVolume(entity, solution.Value);
 
-        if (volume < MinFootprintVolume)
+        if (volume < entity.Comp.MinFootprintVolume)
             return;
 
         if (!TryGetAnchoredEntity<FootprintComponent>(grid, tile, out var footprint))
@@ -158,7 +150,7 @@ public sealed class FootprintSystem : EntitySystem
         if (!_solution.EnsureSolutionEntity(footprint.Value.Owner, FootprintSolution, out _, out var footprintSolution, MaxFootprintVolumeOnTile))
             return;
 
-        var color = solution.Value.Comp.Solution.GetColor(_prototype).WithAlpha((float)volume / (float)(standing ? MaxFootprintVolume : MaxBodyprintVolume) / 2f);
+        var color = solution.Value.Comp.Solution.GetColor(_prototype).WithAlpha((float)volume / (float)(standing ? entity.Comp.MaxFootprintVolume : entity.Comp.MaxBodyprintVolume) / 2f);
 
         _solution.TryTransferSolution(footprintSolution.Value, solution.Value.Comp.Solution, volume);
 
@@ -223,12 +215,12 @@ public sealed class FootprintSystem : EntitySystem
 
     private static FixedPoint2 GetFootprintVolume(Entity<FootprintOwnerComponent> entity, Entity<SolutionComponent> solution)
     {
-        return FixedPoint2.Min(solution.Comp.Solution.Volume, (MaxFootprintVolume - MinFootprintVolume) * (solution.Comp.Solution.Volume / entity.Comp.MaxFootVolume) + MinFootprintVolume);
+        return FixedPoint2.Min(solution.Comp.Solution.Volume, (entity.Comp.MaxFootprintVolume - entity.Comp.MinFootprintVolume) * (solution.Comp.Solution.Volume / entity.Comp.MaxFootVolume) + entity.Comp.MinFootprintVolume);
     }
 
     private static FixedPoint2 GetBodyprintVolume(Entity<FootprintOwnerComponent> entity, Entity<SolutionComponent> solution)
     {
-        return FixedPoint2.Min(solution.Comp.Solution.Volume, (MaxBodyprintVolume - MinBodyprintVolume) * (solution.Comp.Solution.Volume / entity.Comp.MaxBodyVolume) + MinBodyprintVolume);
+        return FixedPoint2.Min(solution.Comp.Solution.Volume, (entity.Comp.MaxBodyprintVolume - entity.Comp.MinBodyprintVolume) * (solution.Comp.Solution.Volume / entity.Comp.MaxBodyVolume) + entity.Comp.MinBodyprintVolume);
     }
 
     private bool TryGetAnchoredEntity<T>(Entity<MapGridComponent> grid, Vector2i pos, [NotNullWhen(true)] out Entity<T>? entity) where T : IComponent

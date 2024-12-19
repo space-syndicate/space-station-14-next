@@ -12,6 +12,18 @@ public sealed partial class FootprintOwnerComponent : Component
     public FixedPoint2 MaxBodyVolume = 20;
 
     [DataField]
+    public FixedPoint2 MinFootprintVolume = 0.5;
+
+    [DataField]
+    public FixedPoint2 MaxFootprintVolume = 1;
+
+    [DataField]
+    public FixedPoint2 MinBodyprintVolume = 2;
+
+    [DataField]
+    public FixedPoint2 MaxBodyprintVolume = 5;
+
+    [DataField]
     public float FootDistance = 0.5f;
 
     [DataField]
