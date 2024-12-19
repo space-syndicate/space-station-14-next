@@ -94,8 +94,8 @@ namespace Content.Server.Chemistry.EntitySystems
                     {
                         Act = () => SetAutoLabel(ent, !ent.Comp.AutoLabel),
                         Text = ent.Comp.AutoLabel ?
-                        Loc.GetString("reagent-dispenser-component-set-auto-label-off-verb")
-                        : Loc.GetString("reagent-dispenser-component-set-auto-label-on-verb"),
+                            Loc.GetString("reagent-dispenser-component-set-auto-label-off-verb")
+                            : Loc.GetString("reagent-dispenser-component-set-auto-label-on-verb"),
                         Priority = -1, //Not important, low priority.
                     });
                 }
