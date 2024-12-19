@@ -36,7 +36,7 @@ namespace Content.Server.Chemistry.EntitySystems
         [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly OpenableSystem _openable = default!;
-        [Dependency] private readonly LabelSystem _label = default!; // Corvax-Next-ChemLabeler
+        [Dependency] private readonly LabelSystem _label = default!; // Corvax-Next-Labeler
 
         public override void Initialize()
         {
