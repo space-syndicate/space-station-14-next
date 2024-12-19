@@ -1,0 +1,1 @@
+mouth-storage-examine-condition-occupied=[color=yellow]{CAPITALIZE(SUBJECT($entity))} явно что-то держит во рту.[/color]
