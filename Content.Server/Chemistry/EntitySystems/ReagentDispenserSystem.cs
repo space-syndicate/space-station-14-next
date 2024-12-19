@@ -65,7 +65,7 @@ namespace Content.Server.Chemistry.EntitySystems
             UpdateUiState(ent);
         }
 
-        // Corvax-Next-ChemLabeler-Start: auto-label on insert
+        // // Corvax-Next-Labeler-Start
                 private void OnEntInserted(Entity<ReagentDispenserComponent> ent, ref EntInsertedIntoContainerMessage ev)
                 {
                     if (ent.Comp.AutoLabel && _solutionContainerSystem.TryGetDrainableSolution(ev.Entity, out _, out var sol))
@@ -121,7 +121,7 @@ namespace Content.Server.Chemistry.EntitySystems
                     else
                         args.PushMarkup(Loc.GetString("reagent-dispenser-component-examine-auto-label-off"));
                 }
-                // End Corvax-Next-ChemLabeler-End
+                // Corvax-Next-Labeler-End
 
         private void UpdateUiState(Entity<ReagentDispenserComponent> reagentDispenser)
         {
