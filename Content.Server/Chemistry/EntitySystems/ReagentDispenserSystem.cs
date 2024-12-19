@@ -236,8 +236,7 @@ namespace Content.Server.Chemistry.EntitySystems
         /// </summary>
         private void OnMapInit(EntityUid uid, ReagentDispenserComponent component, MapInitEvent args)
         {
-            // Corvax-Next-ChemLabeler: set auto-labeller
-            component.AutoLabel = component.CanAutoLabel;
+            component.AutoLabel = component.CanAutoLabel; // Corvax-Next-Labeler
 
             // Get list of pre-loaded containers
             List<string> preLoad = new List<string>();
