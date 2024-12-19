@@ -69,7 +69,7 @@ namespace Content.Server.Chemistry.EntitySystems
                     if (ent.Comp.AutoLabel && _solutionContainerSystem.TryGetDrainableSolution(ev.Entity, out _, out var sol))
                     {
                         ReagentId? reagentId = sol.GetPrimaryReagentId();
-                        if (reagentId != null && _prototypeManager.TryIndex<ReagentPrototype>(reagentId.Value.Prototype, out var reagent))
+                        if (reagentId is not null && _prototypeManager.TryIndex<ReagentPrototype>(reagentId.Value.Prototype, out var reagent))
                         {
                             var reagentQuantity = sol.GetReagentQuantity(reagentId.Value);
                             var totalQuantity = sol.Volume;
