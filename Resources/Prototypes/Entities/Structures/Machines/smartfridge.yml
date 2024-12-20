@@ -4,6 +4,7 @@
   name: SmartFridge
   description: A refrigerated storage unit for keeping items cold and fresh.
   components:
+  # Corvax-Next-SmartFridge-Start
   - type: SmartFridge
     storageWhitelist:
       tags:
@@ -20,6 +21,7 @@
     interfaces:
       enum.SmartFridgeUiKey.Key:
         type: SmartFridgeBoundUserInterface
+  # Corvax-Next-SmartFridge-End
   - type: StationAiWhitelist
   - type: Advertise
     pack: SmartFridgeAds
@@ -34,11 +36,13 @@
     - state: smartfridge_door
       map: ["enum.StorageVisualLayers.Door"]
       shader: unshaded
+  # Corvax-Next-SmartFridge-Start
   - type: ApcPowerReceiver
     powerLoad: 100
   - type: ExtensionCableReceiver
   - type: LightningTarget
     priority: 1
+  # Corvax-Next-SmartFridge-End
   - type: EntityStorageVisuals
     stateBaseClosed: smartfridge
     stateDoorOpen: smartfridge_open
@@ -47,6 +51,25 @@
     radius: 1.5
     energy: 1.6
     color: "#9dc5c9"
+  # Corvax-Next-SmartFridge-Start
+  # - type: EntityStorage
+    # isCollidableWhenOpen: true
+    # closeSound:
+      # path: /Audio/Machines/windoor_open.ogg
+      # params:
+        # volume: -3
+    # openSound:
+      # path: /Audio/Machines/windoor_open.ogg
+      # params:
+        # volume: -3
+  # - type: ContainerContainer
+    # containers:
+      # entity_storage: !type:Container
+  # - type: UseDelay
+    # delay: 1
+  # - type: AntiRottingContainer
+  # - type: ResistLocker
+  # Corvax-Next-SmartFridge-End
   - type: Physics
     bodyType: Static
   - type: Transform
