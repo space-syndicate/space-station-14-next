@@ -42,12 +42,12 @@ public sealed class FromTileCrafterSystem : EntitySystem
         var tileRef = _maps.GetTileRef(gridUid, grid, args.GridTile);
         var coords = _maps.ToCoordinates(tileRef, grid);
 
-        var spread = grid.TileSize * 0.1f;
+        var spread = comp.Spread * grid.TileSize;
         var offset = new Vector2(
-            _robustRandom.NextFloat() * spread - 0.5f,
-            _robustRandom.NextFloat() * spread - 0.5f);
+            (_robustRandom.NextFloat() - 0.5f) * spread + grid.TileSize * 0.5f,
+            (_robustRandom.NextFloat() - 0.5f) * spread + grid.TileSize * 0.5f);
 
-        if (!_netManager.IsServer)
+        if (_netManager.IsServer)
             Spawn(ent.Comp.EntityToSpawn, coords.Offset(offset));
     }
 

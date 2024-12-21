@@ -26,6 +26,12 @@ public sealed partial class FromTileCrafterComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float Delay = 1f;
+
+    /// <summary>
+    /// How far spawned item can offset from tile center
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float Spread = 0.3f;
 }
 
 [Serializable, NetSerializable]
