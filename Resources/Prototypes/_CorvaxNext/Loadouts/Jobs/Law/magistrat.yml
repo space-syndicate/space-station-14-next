@@ -1,0 +1,33 @@
+
+# Hat
+- type: loadout
+  id: MagistratPwig
+  equipment:
+    head: ClothingHeadHatPwig
+
+- type: loadout
+  id: MagistratPwig2
+  equipment:
+    head: ClothingHeadHatPwig2
+
+# Jumpsuit
+- type: loadout
+  id: MagistratJumpsuit
+  equipment:
+    jumpsuit: ClothingOuterRobesMantleMagistrat
+
+
+- type: loadout
+  id: MagistratJumpsuit2
+  equipment:
+    jumpsuit: ClothingOuterRobesMantleMagistrat2
+- type: loadout
+  id: MagistratJumpsuit3
+  equipment:
+    jumpsuit: ClothingOuterRobesMantleMagistrat3
+
+- type: loadout
+  id: MagistratJumpsuit4
+  equipment:
+    jumpsuit: ClothingOuterRobesMantleMagistrat4
+
