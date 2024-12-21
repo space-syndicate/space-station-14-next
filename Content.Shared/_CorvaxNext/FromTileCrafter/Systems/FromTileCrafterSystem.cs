@@ -25,7 +25,6 @@ public sealed class FromTileCrafterSystem : EntitySystem
 
     public override void Initialize()
     {
-        base.Initialize();
         SubscribeLocalEvent<FromTileCrafterComponent, FromTileCraftDoAfterEvent>(OnFromTileCraftComplete);
         SubscribeLocalEvent<FromTileCrafterComponent, AfterInteractEvent>(OnAfterInteract);
     }
@@ -40,14 +39,13 @@ public sealed class FromTileCrafterSystem : EntitySystem
         if (!TryComp<MapGridComponent>(gridUid, out var grid))
             return;
 
-        var mapGrid = Comp<MapGridComponent>(gridUid);
         var tileRef = _maps.GetTileRef(gridUid, grid, args.GridTile);
         var coords = _maps.ToCoordinates(tileRef, grid);
 
-        var spread = mapGrid.TileSize * 0.1f;
+        var spread = grid.TileSize * 0.1f;
         var offset = new Vector2(
-            _robustRandom.NextFloat() - 0.5f * spread,
-            _robustRandom.NextFloat() - 0.5f * spread);
+            _robustRandom.NextFloat() * spread - 0.5f,
+            _robustRandom.NextFloat() * spread - 0.5f);
 
         if (!_netManager.IsServer)
             Spawn(ent.Comp.EntityToSpawn, coords.Offset(offset));
