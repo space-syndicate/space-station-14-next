@@ -5,6 +5,6 @@
   description: department-Legal-description
   color: "#0c344d"
   roles:
-  - IAA # Corvax-IAA
   - Magistrat
+  - IAA # Corvax-IAA
   weight: 90
