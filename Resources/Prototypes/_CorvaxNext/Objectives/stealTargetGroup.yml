@@ -1,7 +1,0 @@
-
-- type: stealTargetGroup
-  id: MagistrHammer
-  name: Hammer magistrat
-  sprite:
-    sprite: /Uploaded/magistr/hammer.rsi
-    state: icon

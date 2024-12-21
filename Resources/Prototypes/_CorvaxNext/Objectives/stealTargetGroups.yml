@@ -4,3 +4,10 @@
   sprite:
     sprite: _CorvaxNext/Clothing/Neck/SecBadge/hosbadge.rsi
     state: icon
+
+- type: stealTargetGroup
+  id: MagistrHammer
+  name: Hammer magistrat
+  sprite:
+    sprite: _CorvaxNext/Objects/Weapons/Melee/hammer.rsi
+    state: icon

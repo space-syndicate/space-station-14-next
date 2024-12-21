@@ -8,3 +8,14 @@
     maxCollectionSize: 4
   - type: Objective
     difficulty: 1.5
+
+- type: entity
+  parent: BaseThiefStealObjective
+  id: MagistrHammerStealObjective
+  components:
+  - type: NotJobRequirement
+    job: Magistrat
+  - type: StealCondition
+    stealGroup: MagistrHammer
+  - type: Objective
+    difficulty: 0.4
