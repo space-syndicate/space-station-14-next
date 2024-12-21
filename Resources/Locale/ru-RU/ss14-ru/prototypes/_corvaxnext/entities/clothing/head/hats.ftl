@@ -6,3 +6,5 @@ ent-ClothingHeadHatCapcapWhite = белая фуражка капитана
    .desc = Стильная белая фуражка капитана.
 ent-ClothingHeadHatCapcapSheriff = фуражка шерифа
    .desc = Стильная фуражка шерифа.
+ent-ClothingHeadHatPwig2 = парик
+    .desc = Пышный парик

@@ -2,11 +2,11 @@
 - type: entity
   parent: BaseItem
   id: MagistrHammer
-  name: молоток судьи
-  description: Вынеси приговор.
+  name: magistr hammer
+  description: Give a verdict
   components:
     - type: Sprite
-      sprite: /Uploaded/magistr/hammer.rsi
+      sprite: _CorvaxNext/Objects/Weapons/Melee/hammer.rsi
       state: icon
     - type: WeaponRandom
       damageBonus:
@@ -16,7 +16,7 @@
       damage: 8
     - type: Item
       size: Small
-      sprite: /Uploaded/magistr/hammer.rsi
+      sprite: _CorvaxNext/Objects/Weapons/Melee/hammer.rsi
     - type: Appearance
     - type: DisarmMalus
       malus: 0

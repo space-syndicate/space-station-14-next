@@ -3,9 +3,10 @@
   parent: JobIcon
   id: JobIconMagistrat
   icon:
-    sprite: /Uploaded/magistr/hud.rsi
+    sprite: /Textures/_CorvaxNext/Interface/Misc/job_icons.rsi
     state: hudmagistrate
   jobName: job-name-magistrat
+
 - type: jobIcon
   parent: JobIcon
   id: JobIconSurgeon

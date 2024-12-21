@@ -9,6 +9,7 @@
       - Common
       - Command
       - Security
+      - Legal #CorvaxNext-Magitrat
       defaultChannel: Command
     - type: Sprite
       layers:

@@ -55,6 +55,6 @@
   description: To be honest, those look ridiculous.
   components:
   - type: Sprite
-    sprite: /Uploaded/magistr/true_wig.rsi
+    sprite: _CorvaxNext/Clothing/Head/Hats/true_wig.rsi
   - type: Clothing
-    sprite: /Uploaded/magistr/true_wig.rsi
+    sprite: _CorvaxNext/Clothing/Head/Hats/true_wig.rsi

@@ -23,3 +23,17 @@
     layers:
     - state: green
     - state: surgeon # Corvax-Next-surgeon
+
+- type: entity
+  id: SpawnPointMagistrat
+  parent: SpawnPointJobBase
+  name: magistrat
+  components:
+  # Corvax-Next-surgeon-start
+  - type: SpawnPoint
+    job_id: Magistrat
+  # Corvax-Next-surgeon-end
+  - type: Sprite
+    layers:
+    - state: green
+    - state: magistrat # Corvax-Next-magistrat

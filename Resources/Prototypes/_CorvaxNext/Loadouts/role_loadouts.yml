@@ -20,6 +20,8 @@
   - Trinkets
   - GroupSpeciesBreathTool
   - MagistratHat
+
+- type: roleLoadout
   id: JobSurgeon
   groups:
   - Inventory # Corvax-Loadouts

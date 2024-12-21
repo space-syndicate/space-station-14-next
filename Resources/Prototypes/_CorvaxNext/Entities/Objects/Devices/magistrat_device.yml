@@ -65,7 +65,7 @@
     rows: 1
   - type: Sprite
     drawdepth: WallMountedItems
-    sprite: /Uploaded/magistr/magistr_timer.rsi
+    sprite: _CorvaxNext/Objects/Devices/magistr_timer.rsi
     state: signalscreen
   - type: ActivatableUI
     key: enum.SignalTimerUiKey.Key
