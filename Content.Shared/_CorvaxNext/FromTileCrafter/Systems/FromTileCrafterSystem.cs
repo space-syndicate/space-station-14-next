@@ -50,11 +50,7 @@ public sealed class FromTileCrafterSystem : EntitySystem
             _robustRandom.NextFloat() - 0.5f * spread);
 
         if (!_netManager.IsServer)
-            return;
-
-        var crafted = Spawn(ent.Comp.EntityToSpawn, coords.Offset(offset));
-        _handsSystem.TryPickup(args.User, crafted, checkActionBlocker: false, animate: false);
-
+            Spawn(ent.Comp.EntityToSpawn, coords.Offset(offset));
     }
 
     private void OnAfterInteract(Entity<FromTileCrafterComponent> ent, ref AfterInteractEvent args)
