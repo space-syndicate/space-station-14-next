@@ -9,4 +9,14 @@
         - state: silver
         - state: idjudge
     - type: PresetIdCard
-      job: Magistrat
+
+
+  id: SurgeonIDCard
+  name: surgeon ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idsurgeon
+  - type: PresetIdCard
+    job: Surgeon

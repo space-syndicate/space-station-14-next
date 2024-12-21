@@ -16,3 +16,21 @@
       borderColor: "#6f6192"
     - type: Icon
       state: pda-judge
+
+  parent: BaseMedicalPDA
+  id: SurgeonPDA
+  name: surgeon PDA
+  description: Shiny and sterile.
+  components:
+  - type: Pda
+    id: SurgeonIDCard
+    state: pda-surgeon
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentVColor: "#5db8be"
+  - type: Icon
+    state: pda-surgeon
+  - type: GuideHelp
+    guides:
+    - Medical Doctor
+
