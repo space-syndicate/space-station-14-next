@@ -31,9 +31,13 @@ public sealed class FromTileCrafterSystem : EntitySystem
 
     private void OnFromTileCraftComplete(Entity<FromTileCrafterComponent> ent, ref FromTileCraftDoAfterEvent args)
     {
-        var comp = ent.Comp;
+        if (_netManager.IsClient)
+            return;
+
         if (args.Handled || args.Cancelled)
             return;
+
+        var comp = ent.Comp;
 
         var gridUid = GetEntity(args.Grid);
         if (!TryComp<MapGridComponent>(gridUid, out var grid))
@@ -42,13 +46,11 @@ public sealed class FromTileCrafterSystem : EntitySystem
         var tileRef = _maps.GetTileRef(gridUid, grid, args.GridTile);
         var coords = _maps.ToCoordinates(tileRef, grid);
 
-        var spread = comp.Spread * grid.TileSize;
         var offset = new Vector2(
-            (_robustRandom.NextFloat() - 0.5f) * spread + grid.TileSize * 0.5f,
-            (_robustRandom.NextFloat() - 0.5f) * spread + grid.TileSize * 0.5f);
+            ((_robustRandom.NextFloat() - 0.5f) * comp.Spread + 0.5f) * grid.TileSize,
+            ((_robustRandom.NextFloat() - 0.5f) * comp.Spread + 0.5f) * grid.TileSize);
 
-        if (_netManager.IsServer)
-            Spawn(ent.Comp.EntityToSpawn, coords.Offset(offset));
+        Spawn(ent.Comp.EntityToSpawn, coords.Offset(offset));
     }
 
     private void OnAfterInteract(Entity<FromTileCrafterComponent> ent, ref AfterInteractEvent args)
