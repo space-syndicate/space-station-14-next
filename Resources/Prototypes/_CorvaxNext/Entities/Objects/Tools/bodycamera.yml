@@ -16,8 +16,6 @@
   - type: SurveillanceCamera
     setupAvailableNetworks:
       - SurveillanceCameraSecurity
-    isOffable: true
-    isOffableVisuals: true
     networkSet: true
     id: "Нагрудная камера"
   - type: SurveillanceCameraMicrophone
