@@ -3,7 +3,7 @@ using Content.Shared.Clothing;
 using Content.Shared.Clothing.Components;
 using Robust.Shared.GameObjects;
 
-namespace Content.Server.Camera
+namespace Content.Server._CorvaxNext.BodyCam
 {
     /// <summary>
     /// A system that automatically enables or disables a camera
@@ -15,8 +15,6 @@ namespace Content.Server.Camera
 
         public override void Initialize()
         {
-            base.Initialize();
-
             // When the BodyCameraComponent is added, ensure the camera starts off.
             SubscribeLocalEvent<BodyCameraComponent, ComponentStartup>(OnStartup);
 
