@@ -22,6 +22,8 @@
         temperature: 293.15
     - type: AccessReader
       access: [["Atmospherics"], ["Engineering"], ["Research"], ["Medical"]]
+    - type: Lock
+      locked: true
 
 - type: entity
   parent: GasCanisterBrokenBase
