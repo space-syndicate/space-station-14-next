@@ -53,7 +53,7 @@ namespace Content.Server.Atmos.Piping.Binary.EntitySystems
 
             SubscribeLocalEvent<GasVolumePumpComponent, DeviceNetworkPacketEvent>(OnPacketRecv);
 			
-			SubscribeLocalEvent<GasVolumePumpComponent, MapInitEvent>(OnMapInit); // Corvax-Next-AutoPipe
+			SubscribeLocalEvent<GasVolumePumpComponent, MapInitEvent>(OnMapInit); // Corvax-Next-AutoPipes
         }
 
         private void OnInit(EntityUid uid, GasVolumePumpComponent pump, ComponentInit args)
