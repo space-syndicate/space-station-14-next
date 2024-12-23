@@ -20,6 +20,8 @@
           - 0 # Ammonia
           - 561.513153 # N2O
         temperature: 293.15
+    - type: AccessReader
+      access: [["Atmospherics"], ["Engineering"], ["Research"], ["Medical"]]
 
 - type: entity
   parent: GasCanisterBrokenBase
