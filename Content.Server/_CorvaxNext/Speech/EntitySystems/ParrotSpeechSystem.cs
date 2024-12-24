@@ -37,7 +37,7 @@ public sealed class ParrotSpeechSystem : EntitySystem
             if (_timing.CurTime < component.NextUtterance)
                 continue;
 
-            if (component.NextUtterance != null)
+            if (component.NextUtterance is not null)
             {
                 _chat.TrySendInGameICMessage(
                     uid,
