@@ -42,7 +42,8 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
             SubscribeLocalEvent<GasFilterComponent, GasFilterChangeRateMessage>(OnTransferRateChangeMessage);
             SubscribeLocalEvent<GasFilterComponent, GasFilterSelectGasMessage>(OnSelectGasMessage);
             SubscribeLocalEvent<GasFilterComponent, GasFilterToggleStatusMessage>(OnToggleStatusMessage);
-
+			
+			SubscribeLocalEvent<GasFilterComponent, MapInitEvent>(OnMapInit); // Corvax-Next-AutoPipes
         }
 
         private void OnInit(EntityUid uid, GasFilterComponent filter, ComponentInit args)
@@ -209,6 +210,16 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
             }
 
             args.DeviceFlipped = inlet != null && filterNode != null && inlet.CurrentPipeDirection.ToDirection() == filterNode.CurrentPipeDirection.ToDirection().GetClockwise90Degrees();
+        }
+        private void OnMapInit(EntityUid uid, GasFilterComponent filter, MapInitEvent args) // Frontier - Init on map
+        {
+            if (filter.StartOnMapInit)
+            {
+                filter.Enabled = true;
+                DirtyUI(uid, filter);
+                UpdateAppearance(uid, filter);
+                _userInterfaceSystem.CloseUi(uid, GasFilterUiKey.Key);
+            }
         }
     }
 }
