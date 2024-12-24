@@ -211,6 +211,7 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
 
             args.DeviceFlipped = inlet != null && filterNode != null && inlet.CurrentPipeDirection.ToDirection() == filterNode.CurrentPipeDirection.ToDirection().GetClockwise90Degrees();
         }
+        
         /// Corvax-Next-AutoPipes-Start
         private void OnMapInit(EntityUid uid, GasFilterComponent filter, MapInitEvent args)
         {
