@@ -20,7 +20,7 @@
   parent: GasFilter
   id: GasFilterOn
   suffix: On
-  noSpawn: true
+  abstract: true
   placement:
     mode: SnapgridCenter
   components:
