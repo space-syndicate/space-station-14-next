@@ -8,8 +8,11 @@
         "y": 8
     },
     "states": [
-        {
-            "name": "Surgeon"
-        }
-    ]
+    {
+        "name": "Surgeon"
+    },
+    {
+      "name": "hudmagistrate"
+    }
+  ]
 }

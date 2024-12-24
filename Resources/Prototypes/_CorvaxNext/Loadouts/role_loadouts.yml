@@ -11,6 +11,17 @@
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
+  id: JobMagistrat
+  groups:
+  - Inventory # Corvax-Loadouts
+  - LawyerNeck
+  - MagistratJumpsuit
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+  - MagistratHat
+
+- type: roleLoadout
   id: JobSurgeon
   groups:
   - Inventory # Corvax-Loadouts

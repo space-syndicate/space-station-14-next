@@ -1,0 +1,13 @@
+- type: entity
+  name: rubber stamp magistrat
+  parent: RubberStampBase
+  id: RubberStampMagistrat
+  suffix: DO NOT MAP
+  components:
+    - type: Stamp
+      stampedName: Магистрат
+      stampedColor: "#817066"
+      stampState: "paper_stamp-centcom"
+    - type: Sprite
+      sprite: Objects/Misc/stamps.rsi
+      state: stamp-centcom
