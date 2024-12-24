@@ -78,6 +78,8 @@
     bloodMaxVolume: 50
   - type: ActiveListener
     range: 5
+  - type: TTS
+    voice: Livsy
   - type: ParrotSpeech
     blacklist:
       components:
