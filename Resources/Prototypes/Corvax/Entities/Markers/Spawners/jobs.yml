@@ -29,10 +29,10 @@
   parent: SpawnPointJobBase
   name: magistrat
   components:
-  # Corvax-Next-surgeon-start
+  # Corvax-Next-magistrat-start
   - type: SpawnPoint
     job_id: Magistrat
-  # Corvax-Next-surgeon-end
+  # Corvax-Next-magistrat-end
   - type: Sprite
     layers:
     - state: green
