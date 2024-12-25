@@ -7,10 +7,15 @@
   components:
   - type: WeaponsUseInability
   - type: AgillitySkill
+  - type: ListenUpSkill
   - type: ChatModifier
     whisperListeningRange: 4
+  - type: FlashModifier
+    modifier: 2
   - type: ResomiAccent
   - type: FootprintVisualizer
+    leftBarePrint: "footprint-left-bare-lizard"
+    rightBarePrint: "footprint-right-bare-lizard"
   - type: DamageVisuals
     thresholds: [ 10, 30, 50, 70]
     targetLayers:
@@ -91,8 +96,13 @@
       Male: MaleResomi
       Female: FemaleResomi
       Unsexed: MaleResomi
-  - type: FlashModifier
-    modifier: 2
+  #- type: Respirator
+  #  damage:
+  #    types:
+  #      Asphyxiation: 1.0
+    damageRecovery:
+      types:
+        Asphyxiation: -1.0
   - type: Hands
     handDisplacement:
       sizeMaps:
