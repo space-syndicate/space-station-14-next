@@ -1,5 +1,5 @@
 - type: entity
-  id: BaseWeatherAdmemeCN
+  id: BaseWeatherAdmeme
   suffix: Admeme, Weather
   abstract: true
   placement:
@@ -18,8 +18,8 @@
 - type: entity
   name: Ashfall
   description: Ashes fall from the sky
-  id: WeatherAshfallAdmemeCN
-  parent: BaseWeatherAdmemeCN
+  id: WeatherAshfallAdmeme
+  parent: BaseWeatherAdmeme
   components:
   - type: Sprite
     state: ashfall
@@ -27,8 +27,8 @@
 - type: entity
   name: Ashfall Light
   description: Light ashes fall from the sky
-  id: WeatherAshfallLightAdmemeCN
-  parent: BaseWeatherAdmemeCN
+  id: WeatherAshfallLightAdmeme
+  parent: BaseWeatherAdmeme
   components:
   - type: Sprite
     state: ashfall_light
@@ -36,8 +36,8 @@
 - type: entity
   name: Ashfall Heavy
   description: Heavy ashes fall from the sky
-  id: WeatherAshfallHeavyAdmemeCN
-  parent: BaseWeatherAdmemeCN
+  id: WeatherAshfallHeavyAdmeme
+  parent: BaseWeatherAdmeme
   components:
   - type: Sprite
     state: ashfall_heavy
@@ -45,8 +45,8 @@
 - type: entity
   name: Fallout
   description: Burning ashes fall from the sky
-  id: WeatherFalloutAdmemeCN
-  parent: BaseWeatherAdmemeCN
+  id: WeatherFalloutAdmeme
+  parent: BaseWeatherAdmeme
   components:
   - type: Sprite
     state: fallout
@@ -54,8 +54,8 @@
 - type: entity
   name: Hail
   description: Hail fall from the sky
-  id: WeatherHailAdmemeCN
-  parent: BaseWeatherAdmemeCN
+  id: WeatherHailAdmeme
+  parent: BaseWeatherAdmeme
   components:
   - type: Sprite
     state: hail
@@ -63,8 +63,8 @@
 - type: entity
   name: Rain
   description: Rain fall from the sky
-  id: WeatherRainAdmemeCN
-  parent: BaseWeatherAdmemeCN
+  id: WeatherRainAdmeme
+  parent: BaseWeatherAdmeme
   components:
   - type: Sprite
     state: rain
@@ -72,8 +72,8 @@
 - type: entity
   name: Sandstorm
   description: Sand fall from the sky
-  id: WeatherSandstormAdmemeCN
-  parent: BaseWeatherAdmemeCN
+  id: WeatherSandstormAdmeme
+  parent: BaseWeatherAdmeme
   components:
   - type: Sprite
     state: sandstorm
@@ -81,8 +81,8 @@
 - type: entity
   name: Sandstorm Heavy
   description: Heavy sand fall from the sky
-  id: WeatherSandstormHeavyAdmemeCN
-  parent: BaseWeatherAdmemeCN
+  id: WeatherSandstormHeavyAdmeme
+  parent: BaseWeatherAdmeme
   components:
   - type: Sprite
     state: sandstorm_heavy
@@ -90,8 +90,8 @@
 - type: entity
   name: Snowfall Light
   description: Light snow fall from the sky
-  id: WeatherSnowfallLightAdmemeCN
-  parent: BaseWeatherAdmemeCN
+  id: WeatherSnowfallLightAdmeme
+  parent: BaseWeatherAdmeme
   components:
   - type: Sprite
     state: snowfall_light
@@ -99,8 +99,8 @@
 - type: entity
   name: Snowfall Medium
   description: Medium snow fall from the sky
-  id: WeatherSnowfallMediumAdmemeCN
-  parent: BaseWeatherAdmemeCN
+  id: WeatherSnowfallMediumAdmeme
+  parent: BaseWeatherAdmeme
   components:
   - type: Sprite
     state: snowfall_med
@@ -108,8 +108,8 @@
 - type: entity
   name: Snowfall Heavy
   description: Heavy snow fall from the sky
-  id: WeatherSnowfallHeavyAdmemeCN
-  parent: BaseWeatherAdmemeCN
+  id: WeatherSnowfallHeavyAdmeme
+  parent: BaseWeatherAdmeme
   components:
   - type: Sprite
     state: snowfall_heavy
@@ -117,8 +117,8 @@
 - type: entity
   name: Storm
   description: Heavy rain fall from the sky
-  id: WeatherStormAdmemeCN
-  parent: BaseWeatherAdmemeCN
+  id: WeatherStormAdmeme
+  parent: BaseWeatherAdmeme
   components:
   - type: Sprite
     state: storm
