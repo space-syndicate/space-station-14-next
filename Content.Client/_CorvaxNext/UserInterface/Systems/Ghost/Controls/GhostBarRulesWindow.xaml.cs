@@ -49,5 +49,4 @@ namespace Content.Client._CorvaxNext.UserInterface.Systems.Ghost.Controls
             }
         }
     }
-
 }
