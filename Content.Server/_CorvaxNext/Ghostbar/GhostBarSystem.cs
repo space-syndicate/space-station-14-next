@@ -28,6 +28,8 @@ public sealed class GhostBarSystem : EntitySystem
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
 
+    private const string MapPath = "Maps/Nonstations/ghostbar.yml";
+
     private static readonly List<ProtoId<JobPrototype>> _jobComponents = ["Passenger", "Bartender", "Chef"];
 
     public override void Initialize()
@@ -37,7 +39,6 @@ public sealed class GhostBarSystem : EntitySystem
         SubscribeLocalEvent<GhostBarPlayerComponent, MindRemovedMessage>(OnPlayerGhosted);
     }
 
-    const string MapPath = "Maps/Nonstations/ghostbar.yml";
     private void OnRoundStart(RoundStartingEvent ev)
     {
         _mapSystem.CreateMap(out var mapId);
