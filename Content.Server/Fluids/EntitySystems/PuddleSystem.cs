@@ -425,7 +425,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     private void UpdateSlow(EntityUid uid, Solution solution, PuddleComponent component) // Corvax-Next-Footprints
     {
         // Corvax-Next-Footprints-Start
-        if (!component.ViscosityAffectsMovement)
+        if (!component.AffectsMovement)
             return;
         // Corvax-Next-Footprints-End
 

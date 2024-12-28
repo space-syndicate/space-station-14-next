@@ -29,7 +29,8 @@
   - type: Footprint
   - type: Puddle
     solution: print
-    viscosityAffectsMovement: false
+    affectsMovement: false
+    affectsSound: false
   - type: ExaminableSolution
     solution: print
   - type: MixableSolution
