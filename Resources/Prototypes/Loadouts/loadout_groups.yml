@@ -11,6 +11,7 @@
   - Headphones
   - PlushieLizard
   - PlushieSpaceLizard
+  - ThreeCandles
   - Lighter
   - CigPackGreen
   - CigPackRed
@@ -57,6 +58,12 @@
   - TowelColorSilver
   - TowelColorWhite
   - TowelColorYellow
+   # Corvax-Next-Start
+  - WristwatchBlack
+  - WristwatchPocket
+  - WristwatchLeather
+  - Wristwatch
+   # Corvax-Next-End
 
 - type: loadoutGroup
   id: Glasses
@@ -1099,7 +1106,6 @@
 - type: loadoutGroup
   id: DetectiveOuterClothing
   name: loadout-group-detective-outerclothing
-  minLimit: 0
   loadouts:
   - DetectiveArmorVest
   - DetectiveCoat

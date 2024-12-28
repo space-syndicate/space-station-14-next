@@ -201,7 +201,10 @@
       - WetFloorSign
       - ClothingHeadHatCone
       - FreezerElectronics
+      - CassetteTape
+      - TapeRecorder
       - PlantAnalyzer # Corvax-Next-PlantAnalyzer
+      - SnowballMaker # Corvax-Next-Snowballs
   - type: EmagLatheRecipes
     emagStaticRecipes:
       - BoxLethalshot
@@ -352,9 +355,14 @@
       - FauxTileAstroSnow
       - OreBagOfHolding
       - DeviceQuantumSpinInverter
-      - EnergyScalpel # _CorvaxNext: surgery Change
-      - EnergyCautery # _CorvaxNext: surgery Change
-      - AdvancedRetractor # _CorvaxNext: surgery Change
+      # Corvax-Next Start
+      - EnergyScalpel
+      - EnergyCautery
+      - AdvancedRetractor
+      # Corvax-Next End
+      # Corvax-Next-BluespaceHarvester-Start
+      - ArtificialBluespaceCrystal
+      # Corvax-Next-BluespaceHarvester-End
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
@@ -525,8 +533,12 @@
       - MassMediaCircuitboard
       - ReagentGrinderIndustrialMachineCircuitboard
       - JukeboxCircuitBoard
+      - SMESAdvancedMachineCircuitboard
       - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
-      - MachineBluespaceHarvesterCircuitboard # Corvax-Next-BluespaceHarvester
+      # Corvax-Next-BluespaceHarvester-Start
+      - MachineBluespaceHarvesterCircuitboard
+      - MachineBluespaceTransitorCircuitboard
+      # Corvax-Next-BluespaceHarvester-End
       # Corvax-Next-MutableLaws-Start
       - AsimovCircuitBoard
       - CorporateCircuitBoard
@@ -536,10 +548,11 @@
       - LiveLetLiveCircuitBoard
       - StationEfficiencyCircuitBoard
       - RobocopCircuitBoard
-      - DungeonMasterCircuitBoard
+      - GameMasterCircuitBoard
       - ArtistCircuitBoard
       - NutimovCircuitBoard
       # Corvax-Next-MutableLaws-End
+      - MedicalBiofabMachineBoard #Corvax-Next-Surgery
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
@@ -1264,7 +1277,7 @@
       staticRecipes:
         - SheetSteel
         - SheetGlass1
-        - SheetRGlass
+        - SheetRGlassRaw
         - SheetPlasma1
         - SheetPGlass1
         - SheetRPGlass1
@@ -1290,7 +1303,7 @@
     staticRecipes:
       - SheetSteel
       - SheetGlass1
-      - SheetRGlass
+      - SheetRGlassRaw
       - SheetPlasma1
       - SheetPGlass1
       - SheetRPGlass1

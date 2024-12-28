@@ -30,6 +30,16 @@
     delay: 0.5
   - type: ExplosionResistance
     damageCoefficient: 0.9
+    # Corvax-Next-Stashes-Start
+  - type: Appearance
+  - type: SubFloorHide
+  - type: Anchorable
+  - type: CollideOnAnchor
+    enable: false
+  - type: Transform
+    anchored: false
+  - type: AnchorableStorage
+    # Corvax-Next-Stashes-End
 
 - type: entity
   parent: ClothingBackpack
@@ -184,7 +194,7 @@
 - type: entity
   parent: ClothingBackpack
   id: ClothingBackpackMerc
-  name: merc bag
+  name: mercenary bag
   description: A backpack that has been in many dangerous places, a reliable combat backpack.
   components:
     - type: Sprite

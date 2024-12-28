@@ -19,6 +19,7 @@
     - id: RubberStampQm
     - id: AstroNavCartridge
     - id: PrinterDocFlatpack # Corvax-Printer
+    - id: StockTradingCartridge # Corvax-Next-StockTrading
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -224,6 +225,7 @@
     - id: HandheldCrewMonitor
     - id: Hypospray
     - id: MedicalTechFabCircuitboard
+    - id: MedicalBiofabMachineBoard #Corvax-Next-Surgery
     - id: MedkitFilled
     - id: RubberStampCMO
     - id: MedTekCartridge

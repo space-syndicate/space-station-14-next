@@ -4,6 +4,7 @@
   name: admin observer
   categories: [ HideSpawnMenu ]
   components:
+  - type: ThermalInvisibility #Corvax-Next-ThermalVision
   - type: ContentEye
     maxZoom: 8.916104, 8.916104
   - type: Tag
@@ -97,6 +98,7 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 30
   # Corvax-End
+  - type: TurretController # Corvax-Next-TurretControl
 
 - type: entity
   id: ActionAGhostShowSolar
