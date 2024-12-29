@@ -4,6 +4,7 @@
   id: EventHumanoid
   # start-backmen: species
   speciesBlacklist:
+  - Resomi
   - Monkey
   - Kobold
   # end-backmen: species
