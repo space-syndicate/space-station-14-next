@@ -54171,6 +54171,14 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 34.5,8.5
       parent: 2
+- proto: ComputerAtmosMonitoring
+  entities:
+  - uid: 20145
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -45.5,32.5
+      parent: 2
 - proto: computerBodyScanner
   entities:
   - uid: 19212
