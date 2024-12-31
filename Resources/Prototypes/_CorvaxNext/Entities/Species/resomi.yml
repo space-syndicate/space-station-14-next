@@ -65,6 +65,12 @@
     requiredLegs: 2
   - type: Bloodstream
     bloodReagent: ResomiBlood
+    bloodlossDamage:
+      types:
+        Bloodloss: 1 # They take more damage because they have low blood.
+    bloodlossHealDamage:
+      types:
+        Bloodloss: -2 # They also regenerate more because it doesn't take that much to recover. Yes, the system is terrible, but it's what we have.
   - type: MeleeWeapon
     soundHit:
       collection: AlienClaw
