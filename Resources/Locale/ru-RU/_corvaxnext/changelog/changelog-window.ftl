@@ -1,1 +1,1 @@
-changelog-tab-title-ChangelogNext= Обновления NEXT
+changelog-tab-title-ChangelogNext = Обновления Next
