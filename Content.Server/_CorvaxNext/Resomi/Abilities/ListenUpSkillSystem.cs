@@ -12,6 +12,5 @@ public sealed class ListenUpSkillSystem : SharedListenUpSkillSystem
     private void OnComponentInit(Entity<ListenUpSkillComponent> ent, ref ComponentInit args)
     {
         _actionsSystem.AddAction(ent.Owner, ref ent.Comp.SwitchListenUpActionEntity, ent.Comp.SwitchListenUpAction, ent.Owner);
-
     }
 }

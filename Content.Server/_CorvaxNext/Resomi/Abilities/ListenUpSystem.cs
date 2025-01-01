@@ -12,7 +12,6 @@ public sealed class ListenUpSystem : EntitySystem
     [Dependency] protected readonly SharedPopupSystem _popup = default!;
     public override void Initialize()
     {
-        base.Initialize();
         SubscribeLocalEvent<ListenUpComponent, ComponentStartup>(OnListenStartup);
     }
     private void OnListenStartup(Entity<ListenUpComponent> ent, ref ComponentStartup args)

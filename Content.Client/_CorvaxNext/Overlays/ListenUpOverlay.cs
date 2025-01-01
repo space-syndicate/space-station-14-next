@@ -30,7 +30,7 @@ public sealed class ListenUpOverlay : Overlay
     public override bool RequestScreenTexture => true;
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
-    public ListenUpOverlay(float radius, SpriteSpecifier.Rsi sprite)
+    public ListenUpOverlay(float radius, SpriteSpecifier sprite)
     {
         IoCManager.InjectDependencies(this);
 

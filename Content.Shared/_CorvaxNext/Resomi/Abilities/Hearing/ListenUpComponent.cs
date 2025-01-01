@@ -9,5 +9,5 @@ public sealed partial class ListenUpComponent : Component
     public float radius = 8f;
 
     [DataField]
-    public SpriteSpecifier.Rsi Sprite = new SpriteSpecifier.Rsi(new("/Textures/_CorvaxNext/Mobs/Species/Resomi/Abilities/noise_effect.rsi"), "noise");
+    public SpriteSpecifier Sprite = new SpriteSpecifier.Rsi(new("/Textures/_CorvaxNext/Mobs/Species/Resomi/Abilities/noise_effect.rsi"), "noise");
 }
