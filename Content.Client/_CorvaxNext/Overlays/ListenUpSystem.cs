@@ -70,6 +70,8 @@ public sealed class ListenUpSystem : SharedListenUpSkillSystem
 
     private Overlay ListenUp(float radius, SpriteSpecifier sprite)
     {
-        return _listenUpOverlay = new(radius, sprite);
+        _listenUpOverlay = new(radius, sprite);
+
+        return _listenUpOverlay;
     }
 }
