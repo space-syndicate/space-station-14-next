@@ -35,7 +35,7 @@ public abstract class SharedCombatModeSystem : EntitySystem
     {
         _actionsSystem.RemoveAction(uid, component.CombatToggleActionEntity);
 
-        SetMouseRotatorComponents(uid, false, component);
+        SetMouseRotatorComponents(uid, false, component); // Corvax-Next-NoScope-Fix
     }
 
     private void OnActionPerform(EntityUid uid, CombatModeComponent component, ToggleCombatActionEvent args)
@@ -87,10 +87,10 @@ public abstract class SharedCombatModeSystem : EntitySystem
         if (!component.ToggleMouseRotator || IsNpc(entity) && !_mind.TryGetMind(entity, out _, out _))
             return;
 
-        SetMouseRotatorComponents(entity, value, component);
+        SetMouseRotatorComponents(entity, value, component); // Corvax-Next-NoScope-Fix
     }
 
-    private void SetMouseRotatorComponents(EntityUid uid, bool value, CombatModeComponent? comp = null)
+    private void SetMouseRotatorComponents(EntityUid uid, bool value, CombatModeComponent? comp = null) // Corvax-Next-NoScope-Fix
     {
         if (value)
         {
