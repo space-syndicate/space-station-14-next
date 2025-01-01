@@ -17,7 +17,7 @@ public sealed class HushedSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<HushedComponent, ScreamActionEvent>(OnScreamAction, [typeof(VocalSystem)]);
+        SubscribeLocalEvent<HushedComponent, ScreamActionEvent>(OnScreamAction, before: [typeof(VocalSystem)]);
         SubscribeLocalEvent<HushedComponent, EmoteEvent>(OnEmote, before: [typeof(VocalSystem)]);
     }
 
