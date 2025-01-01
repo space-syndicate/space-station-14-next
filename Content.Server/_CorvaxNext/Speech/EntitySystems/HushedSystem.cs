@@ -9,44 +9,42 @@ using Content.Shared.Puppet;
 using Content.Shared.Actions;
 using Robust.Shared.Player;
 
-namespace Content.Server._CorvaxNext.Speech.EntitySystems
+namespace Content.Server._CorvaxNext.Speech.EntitySystems;
+
+public sealed class HushedSystem : EntitySystem
 {
-    public sealed class HushedSystem : EntitySystem
+    [Dependency] private readonly PopupSystem _popupSystem = default!;
+
+    public override void Initialize()
     {
-        [Dependency] private readonly PopupSystem _popupSystem = default!;
+        SubscribeLocalEvent<HushedComponent, ScreamActionEvent>(OnScreamAction, new[] { typeof(VocalSystem) });
+        SubscribeLocalEvent<HushedComponent, EmoteEvent>(OnEmote, before: new[] { typeof(VocalSystem) });
+    }
 
-        public override void Initialize()
-        {
-            SubscribeLocalEvent<HushedComponent, ScreamActionEvent>(OnScreamAction, [typeof(VocalSystem)]);
-            SubscribeLocalEvent<HushedComponent, EmoteEvent>(OnEmote, before: [typeof(VocalSystem)]);
-        }
+    private void OnScreamAction(EntityUid uid, HushedComponent component, ScreamActionEvent args)
+    {
+        if (args.Handled)
+            return;
 
-        private void OnScreamAction(EntityUid uid, HushedComponent component, ScreamActionEvent args)
-        {
-            if (args.Handled)
-                return;
+        if (HasComp<MutedComponent>(uid))
+            return;
 
-            if (HasComp<MutedComponent>(uid))
-                return;
+        _popupSystem.PopupEntity(Loc.GetString("speech-hushed-scream-blocked"), uid, uid);
+        args.Handled = true;
+    }
 
-            _popupSystem.PopupEntity(Loc.GetString("speech-hushed-scream-blocked"), uid, uid);
-            args.Handled = true;
-        }
+    private void OnEmote(EntityUid uid, HushedComponent component, ref EmoteEvent args)
+    {
+        if (args.Handled)
+            return;
 
-        private void OnEmote(EntityUid uid, HushedComponent component, ref EmoteEvent args)
-        {
-            if (args.Handled)
-                return;
+        if (HasComp<MutedComponent>(uid))
+            return;
 
-            if (HasComp<MutedComponent>(uid))
-                return;
+        if (!args.Emote.Category.HasFlag(EmoteCategory.Vocal))
+            return;
 
-            if (args.Emote.Category.HasFlag(EmoteCategory.Vocal))
-            {
-                _popupSystem.PopupEntity(Loc.GetString("speech-hushed-vocal-emote-blocked"), uid, uid);
-
-                args.Handled = true;
-            }
-        }
+        _popupSystem.PopupEntity(Loc.GetString("speech-hushed-vocal-emote-blocked"), uid, uid);
+        args.Handled = true;
     }
 }
