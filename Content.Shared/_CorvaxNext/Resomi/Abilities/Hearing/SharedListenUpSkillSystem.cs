@@ -30,7 +30,7 @@ public abstract class SharedListenUpSkillSystem : EntitySystem
     }
     private void OnDoAfter(Entity<ListenUpSkillComponent> ent, ref ListenUpDoAfterEvent args)
     {
-        if (ent.Comp.toggled)
+        if (args.Cancelled || args.Handled || ent.Comp.toggled)
             return;
 
         AddComp<ListenUpComponent>(ent.Owner);
