@@ -15,15 +15,10 @@ public enum CrewMedalUiKey : byte
 /// Message sent when the reason for the medal is changed via the user interface.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class CrewMedalReasonChangedMessage : BoundUserInterfaceMessage
+public sealed class CrewMedalReasonChangedMessage(string Reason) : BoundUserInterfaceMessage
 {
     /// <summary>
     /// The new reason for the medal.
     /// </summary>
-    public string Reason { get; }
-
-    public CrewMedalReasonChangedMessage(string reason)
-    {
-        Reason = reason;
-    }
+    public string Reason { get; } = Reason;
 }

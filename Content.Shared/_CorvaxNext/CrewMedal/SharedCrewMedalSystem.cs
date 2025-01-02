@@ -6,7 +6,6 @@ public abstract class SharedCrewMedalSystem : EntitySystem
 {
     public override void Initialize()
     {
-        base.Initialize();
         SubscribeLocalEvent<CrewMedalComponent, ExaminedEvent>(OnExamined);
     }
 

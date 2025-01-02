@@ -38,10 +38,12 @@ public sealed class CrewMedalBoundUserInterface : BoundUserInterface
     /// </summary>
     private void HandleReasonChanged(string newReason)
     {
-        if (_entityManager.TryGetComponent<CrewMedalComponent>(Owner, out var component))
+        if (!_entityManager.TryGetComponent<CrewMedalComponent>(Owner, out var component))
+            return;
+
+        if (!component.Reason.Equals(newReason))
         {
-            if (!component.Reason.Equals(newReason))
-                SendPredictedMessage(new CrewMedalReasonChangedMessage(newReason));
+            SendPredictedMessage(new CrewMedalReasonChangedMessage(newReason));
         }
     }
 
@@ -50,7 +52,7 @@ public sealed class CrewMedalBoundUserInterface : BoundUserInterface
     /// </summary>
     public void Reload()
     {
-        if (_window == null)
+        if (_window is null)
             return;
 
         if (!_entityManager.TryGetComponent<CrewMedalComponent>(Owner, out var component))

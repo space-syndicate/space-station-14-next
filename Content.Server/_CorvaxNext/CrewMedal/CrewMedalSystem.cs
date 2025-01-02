@@ -17,7 +17,7 @@ public sealed class CrewMedalSystem : SharedCrewMedalSystem
 
     public override void Initialize()
     {
-        base.Initialize();
+		base.Initialize();
         SubscribeLocalEvent<CrewMedalComponent, ClothingGotEquippedEvent>(OnMedalEquipped);
         SubscribeLocalEvent<CrewMedalComponent, CrewMedalReasonChangedMessage>(OnMedalReasonChanged);
         SubscribeLocalEvent<RoundEndTextAppendEvent>(OnRoundEndText);
@@ -96,17 +96,18 @@ public sealed class CrewMedalSystem : SharedCrewMedalSystem
         if (awardedMedals.Count == 0)
             return;
 
-        awardedMedals = awardedMedals.OrderBy(x => x.RecipientName).ToList();
+        // Sort and convert to array
+        var sortedMedals = awardedMedals.OrderBy(x => x.RecipientName).ToArray();
 
         var result = new StringBuilder();
         result.AppendLine(
             Loc.GetString(
                 "comp-crew-medal-round-end-result",
-                ("count", awardedMedals.Count)
+                ("count", sortedMedals.Length)
             )
         );
 
-        foreach (var medal in awardedMedals)
+        foreach (var medal in sortedMedals)
         {
             result.AppendLine(
                 Loc.GetString(
