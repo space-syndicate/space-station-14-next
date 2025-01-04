@@ -46,8 +46,10 @@
   components:
   - type: GameRule
     delay:
-      min:  10
-      max:  20
+# Corvax-Next-MRP-Start
+      min:  610 # 10 min
+      max:  900 # 15 min
+# Corvax-Next-MRP-End
 
 - type: entity
   id: BaseStationEventShortDelay
@@ -162,8 +164,10 @@
   id: DragonSpawn
   components:
   - type: StationEvent
-    weight: 6.5
-    earliestStart: 40
+  #Corvax-Next-MRP
+    weight: 4.5
+    earliestStart: 80
+  #Corvax-Next-MRP
     reoccurrenceDelay: 20
     minimumPlayers: 20
     duration: null
@@ -467,8 +471,10 @@
   id: LoneOpsSpawn
   components:
   - type: StationEvent
+  #Corvax-Next-MRP-Start
     earliestStart: 35
-    weight: 5.5
+    weight: 4.5
+  #Corvax-Next-MRP-End
     minimumPlayers: 20
     duration: 1
   - type: RuleGrids
@@ -502,7 +508,7 @@
   id: SleeperAgents
   components:
   - type: StationEvent
-    earliestStart: 30
+    earliestStart: 75 #Corvax-Next-MRP
     weight: 8
     minimumPlayers: 15
     maxOccurrences: 1 # can only happen once per round
