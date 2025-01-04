@@ -157,7 +157,7 @@ public sealed class HungerSystem : EntitySystem
                 _movementSpeedModifier.RefreshMovementSpeedModifiers(uid); // Corvax-Next-Surgery
             else if (_net.IsServer) // Corvax-Next-Surgery
             {
-                var ev = new MoodEffectEvent("Hunger" + component.CurrentThreshold);  // Corvax-Next-Surgery
+                var ev = new MoodEffectEvent("Hunger" + component.CurrentThreshold); // Corvax-Next-Surgery
                 RaiseLocalEvent(uid, ev); // Corvax-Next-Surgery
             }
         }
