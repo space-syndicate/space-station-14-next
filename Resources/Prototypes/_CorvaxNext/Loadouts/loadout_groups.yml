@@ -31,6 +31,22 @@
   - BrigmedicOuterClothingLab
   - BrigmedicOuterClothingVest
 
+
+- type: loadoutGroup
+  id: MagistratJumpsuit
+  name: loadout-group-magistrat-jumpsuit
+  loadouts:
+  - MagistratJumpsuit
+  - MagistratJumpsuit2
+  - MagistratJumpsuit3
+  - MagistratJumpsuit4
+
+- type: loadoutGroup
+  id: MagistratHat
+  name: loadout-group-magistrat-hat
+  loadouts:
+  - MagistratPwig
+  - MagistratPwig2
 # Medical
 - type: loadoutGroup
   id: SurgeonHead

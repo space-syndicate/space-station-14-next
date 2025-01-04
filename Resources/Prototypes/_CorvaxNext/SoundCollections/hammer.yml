@@ -1,0 +1,4 @@
+- type: soundCollection
+  id: HammerMagistrat
+  files:
+  - /Audio/_CorvaxNext/Weapons/knock.ogg

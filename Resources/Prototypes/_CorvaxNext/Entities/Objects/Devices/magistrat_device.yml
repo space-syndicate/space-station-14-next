@@ -1,0 +1,87 @@
+- type: entity
+  parent: [ BaseHandheldComputer, PowerCellSlotSmallItem ]
+  id: ComputerCriminalRecordsMagistrat
+  name: partable computer criminal records magistrat
+  description: This can be used to check criminal records. Only security can modify them.
+  components:
+  - type: CriminalRecordsConsole
+  - type: UserInterface
+    interfaces:
+      enum.CriminalRecordsConsoleKey.Key:
+        type: CriminalRecordsConsoleBoundUserInterface
+  - type: ActivatableUI
+    key: enum.CriminalRecordsConsoleKey.Key
+  - type: Sprite
+    sprite: Objects/Misc/qm_clipboard.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: qm_clipboard
+    - map: ["computerLayerKeyboard"]
+      state: qm_clipboard
+    - map: ["computerLayerScreen"]
+      state: qm_clipboard
+    - map: ["computerLayerKeys"]
+      state: qm_clipboard
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#1f8c28"
+  - type: Computer
+    board: CriminalRecordsComputerCircuitboard
+  - type: AccessReader
+    access: [["Lawyer"]]
+  - type: GuideHelp
+    guides:
+    - CriminalRecords
+  - type: ActivatableUIRequiresPowerCell
+  - type: Appearance
+
+- type: entity
+  id: ComputerCriminalRecordsMagistratEmpty
+  parent: ComputerCriminalRecordsMagistrat
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+
+
+
+- type: entity
+  id: ScreenTimerMagistr
+  parent: [BaseHandheldComputer, PowerCellSlotSmallItem ]
+  name: timer magistrat
+  description: It's a timer for sending timed signals to things, with a built-in screen.
+  components:
+  - type: SignalTimer
+    canEditLabel: true
+  - type: TextScreenVisuals
+    color: Gold
+    textOffset: 0,0
+    timerOffset: 0,0
+    rowOffset: 5
+    textLength: 5
+    rows: 1
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _CorvaxNext/Objects/Devices/magistr_timer.rsi
+    state: signalscreen
+  - type: ActivatableUI
+    key: enum.SignalTimerUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.SignalTimerUiKey.Key:
+        type: SignalTimerBoundUserInterface
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Appearance
+  - type: DeviceLinkSource
+    ports:
+      - Start
+      - Timer
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
+  - type: Item
+    size: Normal

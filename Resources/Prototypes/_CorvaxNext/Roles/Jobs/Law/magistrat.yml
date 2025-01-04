@@ -1,0 +1,47 @@
+- type: job
+  id: Magistrat
+  name: job-name-magistrat
+  description: job-description-magistrat
+  playTimeTracker: JobMagistrat
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 144000
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 144000
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+      - Vulpkanin
+      - Reptilian
+      - Dwarf
+  - !type:AgeRequirement
+    requiredAge: 30
+  canBeAntag: false
+  # whitelisted: true
+  icon: JobIconMagistrat
+  supervisors: job-supervisors-centcom
+  startingGear: MagistratGear
+  access:
+  - Brig
+  - Maintenance
+  - Command
+  - External
+  - Lawyer
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: MagistratGear
+  equipment:
+    shoes: ClothingShoesColorBlack
+    id: MagistratPDA
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetMagistrat
+  inhand:
+    - BriefcaseMagistratFilled
+  storage:
+    back:
+    - BoxSurvival

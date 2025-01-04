@@ -1,5 +1,16 @@
 - type: entity
   parent: IDCardStandard
+  id: MagistratIDCard
+  name: ID card magistrat
+  components:
+    - type: Sprite
+      sprite: _CorvaxNext/Objects/Misc/id_cards.rsi
+      layers:
+        - state: silver
+        - state: idjudge
+    - type: PresetIdCard
+
+- type: entity
   id: SurgeonIDCard
   name: surgeon ID card
   components:
