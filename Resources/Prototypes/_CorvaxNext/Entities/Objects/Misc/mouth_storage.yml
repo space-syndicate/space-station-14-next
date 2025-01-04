@@ -1,0 +1,29 @@
+- type: entity
+  id: CheekStorage
+  name: cheek storage
+  description: The cheeks capable of storing small objects.
+  components:
+  - type: Storage
+    clickInsert: false
+    grid:
+    - 0,1,1,1
+    maxItemSize: Small
+    blacklist: 
+      components:
+      - Sharp
+      - MindContainer
+      - Injector
+      - Spray
+      - ResearchDisk
+      - BalloonPopper
+      - LightBulb
+      - NukeDisk
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: [ ]
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: Dumpable

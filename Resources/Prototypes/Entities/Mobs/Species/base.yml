@@ -288,6 +288,10 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing
+  - type: MouthStorage # Corvax-Next-MouthStorage
+    mouthProto: CheekStorage
+    openStorageAction: ActionOpenMouthStorage
+    spitDamageThreshold: 3
 
 - type: entity
   save: false
