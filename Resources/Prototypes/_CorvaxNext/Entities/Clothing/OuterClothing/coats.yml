@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingOuterCoatCaptain
+  id: ClothingOuterCoatCaptainWhite
+  name: white captain's jacket
+  description: White captain formal jacket, inlaid with gold.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Clothing/OuterClothing/Coats/captain_white.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Clothing/OuterClothing/Coats/captain_white.rsi
+
+- type: entity
+  parent: ClothingOuterCoatCaptain
+  id: ClothingOuterCoatCaptainSheriff
+  name: sheriff jacket
+  description: Sheriff formal jacket, inlaid with gold.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Clothing/OuterClothing/Coats/captain_sheriff.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Clothing/OuterClothing/Coats/captain_sheriff.rsi
