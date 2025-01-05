@@ -96,6 +96,7 @@
         layer:
         - MobLayer
   - type: FloorOcclusion
+  - type: Mood
   - type: RangedDamageSound
     soundGroups:
       Brute:
@@ -221,6 +222,7 @@
     tallscale: 1.1
     short: true
     shortscale: 0.90
+  - type: AutoCryoSleepable # Corvax-Next-AutoCryo
 
 - type: entity
   save: false
