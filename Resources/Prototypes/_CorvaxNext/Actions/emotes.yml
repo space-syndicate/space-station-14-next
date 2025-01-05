@@ -40,6 +40,7 @@
     - кружится на месте
     - вертится
     - закручивается
+    - разворот
   event: !type:AnimationSpinEmoteEvent
 
 - type: emote
@@ -63,4 +64,5 @@
     - прыгает вверх
     - подскакивает
     - скачет
+    - прыжок
   event: !type:AnimationJumpEmoteEvent
