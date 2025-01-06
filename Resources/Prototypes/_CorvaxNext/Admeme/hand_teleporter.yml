@@ -47,6 +47,8 @@
   - type: Clickable
   - type: Physics
     bodyType: Static
+  - type: Visibility
+    layer: 2
   - type: Sprite
     layers:
       - sprite: _CorvaxNext/Markers/environment.rsi
@@ -68,12 +70,6 @@
         hard: false
   - type: Portal
     canTeleportToOtherMaps: true
-    arrivalSound: 
-      !type:SoundPathSpecifier
-      path: "" 
-    departureSound:
-      !type:SoundPathSpecifier
-      path: ""
 
 - type: entity
   parent: PortalRedAdmemeCNInvisible
