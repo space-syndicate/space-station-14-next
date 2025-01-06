@@ -15,15 +15,7 @@ public sealed class WarpPointSystem : EntitySystem
     }
 
     // Corvax-Next-Warper-Start
-	public EntityUid? FindWarpPoint(string id)
-    {
-        var entMan = IoCManager.Resolve<IEntityManager>();
-        var found = entMan.EntityQuery<WarpPointComponent>(true).Where(p => p.ID == id).FirstOrDefault();
-        if (found is not null)
-            return found.Owner;
-        else
-            return null;
-    }
+	public EntityUid? FindWarpPoint(string id) => IoCManager.Resolve<IEntityManager>().EntityQuery<WarpPointComponent>(true).FirstOrDefault(p => p.ID == id)?.Owner;
 	// Corvax-Next-Warper-End
 
     private void OnWarpPointExamine(EntityUid uid, WarpPointComponent component, ExaminedEvent args)
