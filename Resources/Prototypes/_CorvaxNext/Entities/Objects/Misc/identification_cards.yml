@@ -9,3 +9,12 @@
     - state: idsurgeon
   - type: PresetIdCard
     job: Surgeon
+
+- type: entity
+  parent: CentcomIDCard
+  id: OCCIDCard
+  name: Centcom ID Card
+  components:
+  - type: PresetIdCard
+    job: CentCommOperator
+

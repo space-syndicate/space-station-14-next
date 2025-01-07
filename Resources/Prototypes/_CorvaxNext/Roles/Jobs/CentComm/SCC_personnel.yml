@@ -1,0 +1,40 @@
+- type: job
+  id: CentCommOperator
+  name: CentComm Operator
+  description: 1 burocracy pls
+  weight: 20
+  playTimeTracker: JobOCC
+  startingGear: OCCGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobHeadOfPersonnel
+      time: 72000
+    - !type:OverallPlaytimeRequirement
+      time: 360000
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+
+- type: startingGear
+  id: OCCGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficial
+    eyes: ClothingEyesGlassesSunglasses
+    id: OCCPDA
+    gloves: ClothingHandsGlovesHop
+    ears: ClothingHeadsetAltCentCom
+    head: ClothingHeadHatCentcomcap
+    outerClothing: ClothingOuterArmorBasic
+    belt: WeaponPistolN1984
+    shoes: ClothingShoesLeather

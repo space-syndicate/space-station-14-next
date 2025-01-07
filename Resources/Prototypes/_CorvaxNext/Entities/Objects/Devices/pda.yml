@@ -15,3 +15,10 @@
   - type: GuideHelp
     guides:
     - Medical Doctor
+
+- type: entity
+  parent: CentcomPDA
+  id: OCCPDA
+  components:
+  - type: Pda
+    id: OCCIDCard

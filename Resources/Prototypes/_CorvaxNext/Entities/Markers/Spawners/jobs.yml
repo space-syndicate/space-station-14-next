@@ -1,0 +1,9 @@
+- type: entity
+  id: SpawnPointOCC
+  parent: SpawnPointJobBase
+  name: OCC
+  components:
+  - type: SpawnPoint
+    job_id: CentCommOperator
+  - type: Sprite
+    state: green

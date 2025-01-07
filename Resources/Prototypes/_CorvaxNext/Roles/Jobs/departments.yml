@@ -1,0 +1,7 @@
+- type: department
+  id: CentComm
+  name: department-CentComm
+  description: department-CentComm-description
+  color: "#213c55"
+  roles:
+  - CentCommOperator
