@@ -41509,6 +41509,13 @@ entities:
     - type: Transform
       pos: 62.638855,49.326077
       parent: 2
+- proto: CaptainDrobe
+  entities:
+  - uid: 7972
+    components:
+    - type: Transform
+      pos: 25.5,20.5
+      parent: 2
 - proto: CaptainIDCard
   entities:
   - uid: 5714
@@ -55517,13 +55524,6 @@ entities:
     - type: Transform
       pos: 3.5,38.5
       parent: 2
-- proto: DresserCaptainFilled
-  entities:
-  - uid: 7972
-    components:
-    - type: Transform
-      pos: 25.5,20.5
-      parent: 2
 - proto: DresserChiefEngineerFilled
   entities:
   - uid: 7973
@@ -55858,7 +55858,7 @@ entities:
     - type: Label
       currentLabel: кофейный ликёр
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.46758845
+      sprayFizzinessThresholdRoll: 0.5276796
     - type: NameModifier
       baseName: бутылка кофейного ликёра
     - type: ContainerContainer
@@ -56118,7 +56118,7 @@ entities:
     - type: Label
       currentLabel: ром
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.6627686
+      sprayFizzinessThresholdRoll: 0.24372073
     - type: NameModifier
       baseName: кубинский пряный ром капитана Пита
     - type: ContainerContainer
@@ -56160,7 +56160,7 @@ entities:
     - type: Label
       currentLabel: текила
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.81597775
+      sprayFizzinessThresholdRoll: 0.1823652
     - type: NameModifier
       baseName: бутылка текилы Каккаво гарантированного качества
     - type: ContainerContainer
@@ -56201,7 +56201,7 @@ entities:
     - type: Label
       currentLabel: вермут
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.050000224
+      sprayFizzinessThresholdRoll: 0.7904903
     - type: NameModifier
       baseName: бутылка вермута Золотой глаз
     - type: ContainerContainer
@@ -56224,7 +56224,7 @@ entities:
     - type: Label
       currentLabel: водка
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.18356583
+      sprayFizzinessThresholdRoll: 0.5186066
     - type: NameModifier
       baseName: бутылка водки
     - type: ContainerContainer
@@ -56274,7 +56274,7 @@ entities:
     - type: Label
       currentLabel: вино
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.18143766
+      sprayFizzinessThresholdRoll: 0.3586738
     - type: NameModifier
       baseName: особое двухбородое бородатое вино
     - type: ContainerContainer
@@ -59885,7 +59885,7 @@ entities:
       pos: 39.5,13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -9009.188
+      secondsUntilStateChange: -9376.055
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -88903,6 +88903,13 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: OxygenAndNitrousOxideCanister
+  entities:
+  - uid: 8785
+    components:
+    - type: Transform
+      pos: 47.5,-8.5
+      parent: 2
 - proto: OxygenCanister
   entities:
   - uid: 12640
@@ -120527,64 +120534,57 @@ entities:
     - type: Transform
       pos: 61.576393,31.55321
       parent: 2
-- proto: WeaponTurretHostile
+- proto: WeaponTurretControl
   entities:
-  - uid: 17898
+  - uid: 8775
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 20.5,-33.5
       parent: 2
-  - uid: 17899
+  - uid: 8776
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 18.5,-42.5
-      parent: 2
-  - uid: 17900
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 27.5,-37.5
-      parent: 2
-  - uid: 17901
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
       pos: 26.5,-42.5
       parent: 2
-  - uid: 17902
+  - uid: 8777
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 17.5,-37.5
       parent: 2
-- proto: WeaponTurretNanoTrasen
-  entities:
-  - uid: 17903
+  - uid: 8778
+    components:
+    - type: Transform
+      pos: 18.5,-42.5
+      parent: 2
+  - uid: 8779
+    components:
+    - type: Transform
+      pos: 27.5,-37.5
+      parent: 2
+  - uid: 8780
     components:
     - type: Transform
       pos: 24.5,-33.5
       parent: 2
-  - uid: 17904
-    components:
-    - type: Transform
-      pos: 17.5,-39.5
-      parent: 2
-  - uid: 17905
+  - uid: 8781
     components:
     - type: Transform
       pos: 27.5,-39.5
       parent: 2
-  - uid: 17906
+  - uid: 8782
     components:
     - type: Transform
-      pos: 24.5,-43.5
+      pos: 17.5,-39.5
       parent: 2
-  - uid: 17907
+  - uid: 8783
     components:
     - type: Transform
       pos: 20.5,-43.5
+      parent: 2
+  - uid: 8784
+    components:
+    - type: Transform
+      pos: 24.5,-43.5
       parent: 2
 - proto: WeaponTurretSyndicateBroken
   entities:
