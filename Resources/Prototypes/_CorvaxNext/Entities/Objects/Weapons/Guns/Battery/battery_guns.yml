@@ -1,0 +1,36 @@
+- type: entity
+  name: aspid
+  parent: [ BaseWeaponBatterySmall, BaseSyndicateContraband]
+  id: WeaponTaserAspid
+  description: A single-shot, self-recharging taser. Shock everyone with your presence.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Weapons/Guns/Battery/syndicate_taser.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-1
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - Belt
+    - suitStorage
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/taser.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletTaser
+    fireCost: 100
+  - type: Battery
+    maxCharge: 100
+    startingCharge: 100
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 20
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: true
+  - type: Appearance

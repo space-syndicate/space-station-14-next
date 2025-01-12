@@ -213,6 +213,25 @@
     Telecrystal: 30
   categories:
   - UplinkWeaponry
+  
+- type: listing
+  id: UplinkSyndicateTaser #corvax-next
+  name: uplink-syndicate-taser-name
+  description: uplink-syndicate-taser-desc
+  icon: { sprite: /Textures/_CorvaxNext/Objects/Weapons/Guns/Battery/syndicate_taser.rsi, state: icon }
+  productEntity: WeaponTaserAspid
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 6
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkWeaponry
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - NukeOpsUplink
 
 # Explosives
 
