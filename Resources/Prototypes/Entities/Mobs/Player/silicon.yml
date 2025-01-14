@@ -70,6 +70,8 @@
     canShuttle: false
     title: comms-console-announcement-title-station-ai
     color: "#5ed7aa"
+    global: true # Corvax-Announcements
+    sound: /Audio/Corvax/Announcements/aiannounce.ogg # Corvax-Announcements
   - type: HolographicAvatar
     layerData:
     - sprite: Mobs/Silicon/station_ai.rsi
@@ -439,6 +441,8 @@
     speechVerb: Robotic
     speechSounds: Borg
   - type: TurretController # Corvax-Next-TurretControl
+    requiredComponents:
+    - type: StationAiHeld
   - type: Tag
     tags:
     - HideContextMenu
