@@ -110083,11 +110083,6 @@ entities:
       parent: 16898
 - proto: VendingMachineCigs
   entities:
-  - uid: 14176
-    components:
-    - type: Transform
-      pos: 21.5,12.5
-      parent: 2
   - uid: 14177
     components:
     - type: Transform
@@ -110274,6 +110269,13 @@ entities:
     components:
     - type: Transform
       pos: 9.5,23.5
+      parent: 2
+- proto: VendingMachinePride
+  entities:
+  - uid: 7822
+    components:
+    - type: Transform
+      pos: 21.5,12.5
       parent: 2
 - proto: VendingMachineRoboDrobe
   entities:

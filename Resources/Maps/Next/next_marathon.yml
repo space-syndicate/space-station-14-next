@@ -1981,19 +1981,13 @@ entities:
             232: -49,40
             245: -34,57
             246: -31,59
-            697: 53,19
-            698: 53,20
-        - node:
-            cleanable: True
-            zIndex: 1
-            color: '#FFFFFFFF'
-            id: DirtHeavy
-          decals:
             401: -26,29
             402: -33,32
             403: -28,32
             404: -28,31
             405: -31,30
+            697: 53,19
+            698: 53,20
             828: -76,-57
             829: -76,-56
             830: -77,-55
@@ -2050,22 +2044,6 @@ entities:
             260: -40,42
             262: -48,42
             263: -37,40
-            641: -19,-44
-            642: -17,-42
-            643: -19,-42
-            644: -23,-43
-            645: -4,-41
-            646: 1,-40
-            647: 0,-39
-            648: 2,-39
-            649: 1,-34
-            650: 1,-31
-            693: 43,22
-            694: 45,22
-            695: 52,19
-            696: 51,20
-            699: 50,19
-            705: 45,23
             411: -32,30
             412: -27,30
             413: -26,31
@@ -2077,11 +2055,27 @@ entities:
             419: -32,27
             420: -26,28
             421: -33,27
+            641: -19,-44
+            642: -17,-42
+            643: -19,-42
+            644: -23,-43
+            645: -4,-41
+            646: 1,-40
+            647: 0,-39
+            648: 2,-39
+            649: 1,-34
+            650: 1,-31
             682: 20,-11
             683: 21,-10
             684: 17,-11
             685: 17,-12
             686: 19,-8
+            693: 43,22
+            694: 45,22
+            695: 52,19
+            696: 51,20
+            699: 50,19
+            705: 45,23
             838: -78,-53
             839: -76,-53
             840: -78,-56
@@ -2186,10 +2180,16 @@ entities:
             244: -35,58
             253: -36,54
             261: -48,41
+            406: -27,29
+            407: -26,30
+            408: -30,30
+            409: -32,29
+            410: -31,32
             637: 1,-39
             638: -23,-44
             639: -18,-42
             640: -16,-41
+            681: 21,-11
             691: 46,23
             692: 43,21
             700: 52,19
@@ -2197,12 +2197,6 @@ entities:
             702: 46,23
             703: 46,22
             704: 44,23
-            406: -27,29
-            407: -26,30
-            408: -30,30
-            409: -32,29
-            410: -31,32
-            681: 21,-11
             832: -78,-54
             833: -79,-55
             834: -79,-53
@@ -6433,18 +6427,18 @@ entities:
             2: 34952
           6,-6:
             2: 61440
-            6: 224
+            4: 224
           6,-5:
             0: 112
             2: 2184
           6,-8:
             3: 224
-            4: 57344
-          6,-7:
-            4: 224
             5: 57344
+          6,-7:
+            5: 224
+            6: 57344
           6,-9:
-            4: 57568
+            5: 57568
           7,-5:
             2: 4080
           7,-8:
@@ -6876,7 +6870,7 @@ entities:
           3,16:
             2: 242
           12,11:
-            4: 2
+            5: 2
           14,9:
             2: 39304
             0: 17476
@@ -7548,6 +7542,21 @@ entities:
           temperature: 293.15
           moles:
           - 0
+          - 6666.982
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 0
           - 0
           - 0
           - 0
@@ -7564,21 +7573,6 @@ entities:
           moles:
           - 6666.982
           - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 0
-          - 6666.982
           - 0
           - 0
           - 0
@@ -11565,7 +11559,7 @@ entities:
       pos: 34.5,45.5
       parent: 30
     - type: Door
-      secondsUntilStateChange: -3847.4316
+      secondsUntilStateChange: -3902.6897
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -44375,6 +44369,13 @@ entities:
     - type: Transform
       pos: 2.6220274,21.009964
       parent: 30
+- proto: CaptainDrobe
+  entities:
+  - uid: 4989
+    components:
+    - type: Transform
+      pos: -17.5,30.5
+      parent: 30
 - proto: CarbonDioxideCanister
   entities:
   - uid: 8772
@@ -61542,13 +61543,6 @@ entities:
     components:
     - type: Transform
       pos: -29.5,-45.5
-      parent: 30
-- proto: DresserCaptainFilled
-  entities:
-  - uid: 4989
-    components:
-    - type: Transform
-      pos: -17.5,30.5
       parent: 30
 - proto: DresserChiefEngineerFilled
   entities:
@@ -121012,6 +121006,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -27.5,5.5
       parent: 30
+- proto: SpawnMobGorillaLargo
+  entities:
+  - uid: 8383
+    components:
+    - type: Transform
+      pos: 26.5,1.5
+      parent: 30
 - proto: SpawnMobKangarooWillow
   entities:
   - uid: 10987
@@ -121069,13 +121070,6 @@ entities:
     components:
     - type: Transform
       pos: -22.5,-5.5
-      parent: 30
-- proto: SpawnMobRaccoonMorticia
-  entities:
-  - uid: 8383
-    components:
-    - type: Transform
-      pos: 26.5,1.5
       parent: 30
 - proto: SpawnMobShiva
   entities:
@@ -128273,6 +128267,13 @@ entities:
     components:
     - type: Transform
       pos: -28.5,13.5
+      parent: 30
+- proto: VendingMachinePride
+  entities:
+  - uid: 21387
+    components:
+    - type: Transform
+      pos: 2.5,6.5
       parent: 30
 - proto: VendingMachineRoboDrobe
   entities:

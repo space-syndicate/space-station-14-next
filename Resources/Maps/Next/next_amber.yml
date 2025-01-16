@@ -13061,7 +13061,8 @@ entities:
           4,-8:
             0: 47547
           4,-7:
-            0: 56792
+            7: 16
+            0: 56776
           4,-6:
             0: 61432
           4,-5:
@@ -14465,6 +14466,21 @@ entities:
           - 0
           - 0
           - 0
+        - volume: 2500
+          temperature: 293.14975
+          moles:
+          - 20.078888
+          - 75.53487
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
@@ -14529,8 +14545,8 @@ entities:
           id: docking287
           localAnchorB: 19,29.5
           localAnchorA: 20,29.5
-          damping: 33.95499
-          stiffness: 304.7793
+          damping: 33.954987
+          stiffness: 304.77927
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 10313
@@ -54124,6 +54140,13 @@ entities:
     - type: Transform
       pos: 22.549095,-30.46535
       parent: 2
+- proto: CaptainDrobe
+  entities:
+  - uid: 20236
+    components:
+    - type: Transform
+      pos: -26.5,-55.5
+      parent: 2
 - proto: CarbonDioxideCanister
   entities:
   - uid: 1457
@@ -71176,13 +71199,6 @@ entities:
     components:
     - type: Transform
       pos: 65.54841,-77.60572
-      parent: 2
-- proto: DresserCaptainFilled
-  entities:
-  - uid: 20236
-    components:
-    - type: Transform
-      pos: -26.5,-55.5
       parent: 2
 - proto: DresserChiefEngineerFilled
   entities:
@@ -126162,6 +126178,18 @@ entities:
     - type: Transform
       pos: -23.5,-53.5
       parent: 2
+- proto: SpawnMobGorillaLargo
+  entities:
+  - uid: 2142
+    components:
+    - type: Transform
+      pos: -45.5,-44.5
+      parent: 2
+  - uid: 23015
+    components:
+    - type: Transform
+      pos: -8.5,19.5
+      parent: 2
 - proto: SpawnMobKangarooWillow
   entities:
   - uid: 20136
@@ -126215,18 +126243,6 @@ entities:
     components:
     - type: Transform
       pos: -7.5,-25.5
-      parent: 2
-- proto: SpawnMobRaccoonMorticia
-  entities:
-  - uid: 2142
-    components:
-    - type: Transform
-      pos: -45.5,-44.5
-      parent: 2
-  - uid: 23015
-    components:
-    - type: Transform
-      pos: -8.5,19.5
       parent: 2
 - proto: SpawnMobReindeerBuck
   entities:
@@ -132487,6 +132503,13 @@ entities:
     components:
     - type: Transform
       pos: -15.5,-29.5
+      parent: 2
+- proto: VendingMachinePride
+  entities:
+  - uid: 10905
+    components:
+    - type: Transform
+      pos: 16.5,-26.5
       parent: 2
 - proto: VendingMachineRobotics
   entities:
@@ -147292,13 +147315,6 @@ entities:
     components:
     - type: Transform
       pos: -12.5,5.5
-      parent: 2
-- proto: WardrobeBlueFilled
-  entities:
-  - uid: 10905
-    components:
-    - type: Transform
-      pos: 16.5,-26.5
       parent: 2
 - proto: WardrobeBotanistFilled
   entities:

@@ -56538,6 +56538,13 @@ entities:
     - type: Transform
       pos: 47.417274,78.27045
       parent: 1
+- proto: CaptainDrobe
+  entities:
+  - uid: 13159
+    components:
+    - type: Transform
+      pos: 78.5,143.5
+      parent: 1
 - proto: CaptainIDCard
   entities:
   - uid: 1095
@@ -69977,13 +69984,6 @@ entities:
     components:
     - type: Transform
       pos: 89.5,21.5
-      parent: 1
-- proto: DresserCaptainFilled
-  entities:
-  - uid: 13159
-    components:
-    - type: Transform
-      pos: 78.5,143.5
       parent: 1
 - proto: DresserChiefEngineerFilled
   entities:
@@ -141601,6 +141601,13 @@ entities:
     components:
     - type: Transform
       pos: 110.5,87.5
+      parent: 1
+- proto: VendingMachinePride
+  entities:
+  - uid: 23824
+    components:
+    - type: Transform
+      pos: 117.5,103.5
       parent: 1
 - proto: VendingMachineRoboDrobe
   entities:

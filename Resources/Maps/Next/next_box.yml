@@ -13169,7 +13169,7 @@ entities:
       pos: 24.5,16.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -37852.17
+      secondsUntilStateChange: -37890.195
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -59033,6 +59033,13 @@ entities:
     - type: Transform
       pos: 74.72912,-20.240425
       parent: 8364
+- proto: CaptainDrobe
+  entities:
+  - uid: 5341
+    components:
+    - type: Transform
+      pos: 6.5,-20.5
+      parent: 8364
 - proto: CaptainIDCard
   entities:
   - uid: 5329
@@ -83025,13 +83032,6 @@ entities:
     - type: Transform
       pos: 20.5,4.5
       parent: 8364
-- proto: DresserCaptainFilled
-  entities:
-  - uid: 5341
-    components:
-    - type: Transform
-      pos: 6.5,-20.5
-      parent: 8364
 - proto: DresserChiefEngineerFilled
   entities:
   - uid: 5638
@@ -86367,7 +86367,7 @@ entities:
       pos: -34.5,-14.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -32040.709
+      secondsUntilStateChange: -32078.734
       state: Closing
   - uid: 15010
     components:
@@ -86860,7 +86860,7 @@ entities:
       pos: -4.5,-71.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -23788.44
+      secondsUntilStateChange: -23826.465
       state: Closing
 - proto: Fireplace
   entities:
@@ -145861,6 +145861,13 @@ entities:
     - type: Transform
       pos: 43.5,0.5
       parent: 8364
+- proto: SpawnMobGorillaLargo
+  entities:
+  - uid: 25879
+    components:
+    - type: Transform
+      pos: -30.5,-26.5
+      parent: 8364
 - proto: SpawnMobLizard
   entities:
   - uid: 20687
@@ -145932,13 +145939,6 @@ entities:
     components:
     - type: Transform
       pos: 44.5,-18.5
-      parent: 8364
-- proto: SpawnMobRaccoonMorticia
-  entities:
-  - uid: 25879
-    components:
-    - type: Transform
-      pos: -30.5,-26.5
       parent: 8364
 - proto: SpawnMobShiva
   entities:
@@ -154572,6 +154572,13 @@ entities:
     components:
     - type: Transform
       pos: 45.5,-6.5
+      parent: 8364
+- proto: VendingMachinePride
+  entities:
+  - uid: 16209
+    components:
+    - type: Transform
+      pos: 30.5,-10.5
       parent: 8364
 - proto: VendingMachineRoboDrobe
   entities:

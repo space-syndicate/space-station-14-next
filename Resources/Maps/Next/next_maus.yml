@@ -62078,15 +62078,6 @@ entities:
     - type: Transform
       pos: -61.4215,-26.052023
       parent: 2
-- proto: DungeonMasterCircuitBoard
-  entities:
-  - uid: 19007
-    components:
-    - type: Transform
-      parent: 19000
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: EmergencyLight
   entities:
   - uid: 771
@@ -66463,7 +66454,7 @@ entities:
       rot: -0.9599310885968813 rad
       pos: -6.925659,1.9904461
       parent: 17265
-- proto: FloraStalagmite4
+- proto: FloraStalagmite
   entities:
   - uid: 7216
     components:
@@ -66478,7 +66469,7 @@ entities:
     - type: Transform
       pos: -49.19194,-17.961992
       parent: 2
-- proto: FloraTreeConifer02
+- proto: FloraTreeConifer
   entities:
   - uid: 450
     components:
@@ -66490,31 +66481,27 @@ entities:
     - type: Transform
       pos: -32.562675,-77.786354
       parent: 2
-- proto: FloraTreeSnow01
-  entities:
-  - uid: 10267
-    components:
-    - type: Transform
-      pos: -70.04553,-26.336075
-      parent: 2
-- proto: FloraTreeSnow02
-  entities:
-  - uid: 14214
-    components:
-    - type: Transform
-      pos: -35.517467,4.708497
-      parent: 2
-- proto: FloraTreeSnow03
+- proto: FloraTreeSnow
   entities:
   - uid: 449
     components:
     - type: Transform
       pos: -32.149952,-42.162617
       parent: 2
+  - uid: 10267
+    components:
+    - type: Transform
+      pos: -70.04553,-26.336075
+      parent: 2
   - uid: 14213
     components:
     - type: Transform
       pos: -32.061207,3.883422
+      parent: 2
+  - uid: 14214
+    components:
+    - type: Transform
+      pos: -35.517467,4.708497
       parent: 2
 - proto: FoamBlade
   entities:
@@ -67368,6 +67355,15 @@ entities:
     - type: Transform
       pos: -49.5,-38.5
       parent: 2
+- proto: GameMasterCircuitBoard
+  entities:
+  - uid: 19007
+    components:
+    - type: Transform
+      parent: 19000
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: Garlands
   entities:
   - uid: 4788
@@ -92788,26 +92784,22 @@ entities:
       rot: -0.8726646259971648 rad
       pos: -37.862,-17.65678
       parent: 2
-- proto: LightTree03
+- proto: LightTree
   entities:
   - uid: 446
     components:
     - type: Transform
       pos: -31.997433,-42.791363
       parent: 2
-- proto: LightTree04
-  entities:
-  - uid: 14218
-    components:
-    - type: Transform
-      pos: -7.647705,-25.998001
-      parent: 2
-- proto: LightTree05
-  entities:
   - uid: 11560
     components:
     - type: Transform
       pos: -35.963203,-42.434574
+      parent: 2
+  - uid: 14218
+    components:
+    - type: Transform
+      pos: -7.647705,-25.998001
       parent: 2
 - proto: LightTubeCrystalBlue
   entities:
@@ -118873,6 +118865,13 @@ entities:
     components:
     - type: Transform
       pos: -39.5,-30.5
+      parent: 2
+- proto: VendingMachinePride
+  entities:
+  - uid: 3142
+    components:
+    - type: Transform
+      pos: -31.5,-39.5
       parent: 2
 - proto: VendingMachineRoboDrobe
   entities:

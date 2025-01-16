@@ -3065,20 +3065,24 @@ entities:
             color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
-            2895: 41,34
-            2901: 39,34
-            2906: 46,27
-            2922: 49,33
             426: 40,-41
             427: 40,-40
             484: 31,-36
             1485: 18,21
             1507: 23,23
             2260: 55,-15
+            2895: 41,34
+            2901: 39,34
+            2906: 46,27
+            2922: 49,33
             2995: 54,32
             2996: 53,37
             2997: 58,36
+            3007: 59,34
+            3008: 59,38
             3009: 58,32
+            3010: 59,32
+            3011: 59,40
             3029: 38,22
             3041: 54,47
             3132: 58,31
@@ -3162,10 +3166,6 @@ entities:
             5182: 5,-21
             5253: 30,-26
             5256: 30,-25
-            3010: 59,32
-            3011: 59,40
-            3007: 59,34
-            3008: 59,38
         - node:
             cleanable: True
             zIndex: 1
@@ -3177,6 +3177,9 @@ entities:
             2932: 37,19
             2933: 38,17
             3000: 55,34
+            3001: 54,35
+            3002: 56,38
+            3003: 54,39
             3024: 37,31
             3025: 40,30
             3033: 59,36
@@ -3201,6 +3204,7 @@ entities:
             3435: 6,31
             3437: 8,30
             3457: 6,23
+            3592: 4,40
             3608: 4,38
             3609: 6,37
             3865: 70,-2
@@ -3281,22 +3285,12 @@ entities:
             5184: 7,-19
             5238: 31,-24
             5254: 31,-26
-            3001: 54,35
-            3002: 56,38
-            3003: 54,39
-            3592: 4,40
         - node:
             cleanable: True
             zIndex: 1
             color: '#FFFFFFFF'
             id: DirtLight
           decals:
-            2896: 39,35
-            2897: 41,36
-            2900: 41,33
-            2902: 39,36
-            2903: 40,34
-            2908: 49,35
             429: 42,-41
             430: 42,-40
             431: 46,-41
@@ -3367,6 +3361,12 @@ entities:
             2267: 57,-16
             2268: 57,-15
             2269: 57,-14
+            2896: 39,35
+            2897: 41,36
+            2900: 41,33
+            2902: 39,36
+            2903: 40,34
+            2908: 49,35
             2935: 39,18
             2982: 54,34
             2983: 55,37
@@ -3382,6 +3382,8 @@ entities:
             2993: 53,34
             2994: 53,33
             2999: 55,35
+            3004: 57,39
+            3006: 55,32
             3012: 55,38
             3013: 46,33
             3015: 36,30
@@ -3489,18 +3491,12 @@ entities:
             5210: 19,-37
             5212: 19,-29
             5236: 31,-25
-            3004: 57,39
-            3006: 55,32
         - node:
             cleanable: True
             zIndex: 1
             color: '#FFFFFFFF'
             id: DirtMedium
           decals:
-            2891: 33,30
-            2898: 40,33
-            2899: 39,35
-            2918: 58,40
             421: 38,-41
             422: 39,-40
             423: 45,-41
@@ -3518,6 +3514,10 @@ entities:
             1506: 23,21
             2261: 56,-14
             2262: 55,-16
+            2891: 33,30
+            2898: 40,33
+            2899: 39,35
+            2918: 58,40
             2936: 37,18
             2975: 53,32
             2976: 56,34
@@ -3526,6 +3526,9 @@ entities:
             2979: 56,32
             2981: 55,31
             3019: 37,30
+            3020: 39,30
+            3021: 43,30
+            3022: 38,31
             3023: 42,31
             3043: 56,47
             3291: 8,25
@@ -3589,9 +3592,6 @@ entities:
             5211: 22,-36
             5237: 31,-25
             5257: 30,-24
-            3020: 39,30
-            3021: 43,30
-            3022: 38,31
         - node:
             color: '#FFFFFFFF'
             id: FlowersBRThree
@@ -33069,6 +33069,13 @@ entities:
     - type: Transform
       pos: 59.5,38.5
       parent: 2
+- proto: CaptainDrobe
+  entities:
+  - uid: 10279
+    components:
+    - type: Transform
+      pos: 37.5,40.5
+      parent: 2
 - proto: CaptainIDCard
   entities:
   - uid: 1255
@@ -43970,13 +43977,6 @@ entities:
         actions: !type:Container
           ents:
           - 5500
-- proto: DresserCaptainFilled
-  entities:
-  - uid: 10279
-    components:
-    - type: Transform
-      pos: 37.5,40.5
-      parent: 2
 - proto: DresserChiefEngineerFilled
   entities:
   - uid: 7376
@@ -70747,13 +70747,6 @@ entities:
     - type: Transform
       pos: 30.5,12.5
       parent: 2
-- proto: PottedPlant1
-  entities:
-  - uid: 6619
-    components:
-    - type: Transform
-      pos: 32.48526,-7.8502135
-      parent: 2
 - proto: PottedPlant19
   entities:
   - uid: 2615
@@ -79757,6 +79750,13 @@ entities:
     - type: Transform
       pos: 31.5,41.5
       parent: 2
+- proto: SpawnMobGorillaLargo
+  entities:
+  - uid: 14740
+    components:
+    - type: Transform
+      pos: 5.5,15.5
+      parent: 2
 - proto: SpawnMobMcGriff
   entities:
   - uid: 2493
@@ -79821,13 +79821,6 @@ entities:
     components:
     - type: Transform
       pos: 73.5,-1.5
-      parent: 2
-- proto: SpawnMobRaccoonMorticia
-  entities:
-  - uid: 14740
-    components:
-    - type: Transform
-      pos: 5.5,15.5
       parent: 2
 - proto: SpawnMobShiva
   entities:
@@ -84657,6 +84650,13 @@ entities:
     components:
     - type: Transform
       pos: 44.5,-4.5
+      parent: 2
+- proto: VendingMachinePride
+  entities:
+  - uid: 6619
+    components:
+    - type: Transform
+      pos: 32.5,-7.5
       parent: 2
 - proto: VendingMachineRoboDrobe
   entities:

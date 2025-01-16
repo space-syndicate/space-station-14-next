@@ -41509,6 +41509,13 @@ entities:
     - type: Transform
       pos: 62.638855,49.326077
       parent: 2
+- proto: CaptainDrobe
+  entities:
+  - uid: 7972
+    components:
+    - type: Transform
+      pos: 25.5,20.5
+      parent: 2
 - proto: CaptainIDCard
   entities:
   - uid: 5714
@@ -55517,13 +55524,6 @@ entities:
     - type: Transform
       pos: 3.5,38.5
       parent: 2
-- proto: DresserCaptainFilled
-  entities:
-  - uid: 7972
-    components:
-    - type: Transform
-      pos: 25.5,20.5
-      parent: 2
 - proto: DresserChiefEngineerFilled
   entities:
   - uid: 7973
@@ -55858,7 +55858,7 @@ entities:
     - type: Label
       currentLabel: кофейный ликёр
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.46758845
+      sprayFizzinessThresholdRoll: 0.6058455
     - type: NameModifier
       baseName: бутылка кофейного ликёра
     - type: ContainerContainer
@@ -56118,7 +56118,7 @@ entities:
     - type: Label
       currentLabel: ром
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.6627686
+      sprayFizzinessThresholdRoll: 0.0023886226
     - type: NameModifier
       baseName: кубинский пряный ром капитана Пита
     - type: ContainerContainer
@@ -56160,7 +56160,7 @@ entities:
     - type: Label
       currentLabel: текила
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.81597775
+      sprayFizzinessThresholdRoll: 0.7330376
     - type: NameModifier
       baseName: бутылка текилы Каккаво гарантированного качества
     - type: ContainerContainer
@@ -56201,7 +56201,7 @@ entities:
     - type: Label
       currentLabel: вермут
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.050000224
+      sprayFizzinessThresholdRoll: 0.7837714
     - type: NameModifier
       baseName: бутылка вермута Золотой глаз
     - type: ContainerContainer
@@ -56224,7 +56224,7 @@ entities:
     - type: Label
       currentLabel: водка
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.18356583
+      sprayFizzinessThresholdRoll: 0.6675811
     - type: NameModifier
       baseName: бутылка водки
     - type: ContainerContainer
@@ -56274,7 +56274,7 @@ entities:
     - type: Label
       currentLabel: вино
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.18143766
+      sprayFizzinessThresholdRoll: 0.6887679
     - type: NameModifier
       baseName: особое двухбородое бородатое вино
     - type: ContainerContainer
@@ -59885,7 +59885,7 @@ entities:
       pos: 39.5,13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -9009.188
+      secondsUntilStateChange: -9122.892
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -108304,6 +108304,13 @@ entities:
     components:
     - type: Transform
       pos: 40.5,51.5
+      parent: 2
+- proto: VendingMachinePride
+  entities:
+  - uid: 8775
+    components:
+    - type: Transform
+      pos: 14.5,42.5
       parent: 2
 - proto: VendingMachineRestockChemVend
   entities:
