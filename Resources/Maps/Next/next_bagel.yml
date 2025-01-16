@@ -98265,9 +98265,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -112.5,11.5
       parent: 60
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0000FFFF'
   - uid: 22893
@@ -99732,9 +99729,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -110.5,11.5
       parent: 60
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#FF1212FF'
   - uid: 23038
