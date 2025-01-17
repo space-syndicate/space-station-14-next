@@ -8825,7 +8825,7 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: BecomesStation
-      id: Outpost
+      id: NextOutpost
     - type: FTLDestination
     - type: Joint
       joints:
