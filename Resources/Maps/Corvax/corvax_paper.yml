@@ -102764,13 +102764,6 @@ entities:
     - type: Transform
       pos: 43.5,60.5
       parent: 2
-- proto: SpawnPointSurgeon
-  entities:
-  - uid: 14989
-    components:
-    - type: Transform
-      pos: 48.5,-10.5
-      parent: 2
 - proto: SpawnPointTechnicalAssistant
   entities:
   - uid: 14990

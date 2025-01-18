@@ -95099,18 +95099,7 @@ entities:
     - type: Transform
       pos: -23.5,20.5
       parent: 2
-- proto: SpawnPointSurgeon
-  entities:
-  - uid: 19716
-    components:
-    - type: Transform
-      pos: 21.5,-43.5
-      parent: 2
-  - uid: 19717
-    components:
-    - type: Transform
-      pos: -0.5,-37.5
-      parent: 2
+
 - proto: SpawnPointTechnicalAssistant
   entities:
   - uid: 13775

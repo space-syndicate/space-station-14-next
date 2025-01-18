@@ -113430,25 +113430,6 @@ entities:
     - type: Transform
       pos: -68.5,-16.5
       parent: 2
-- proto: SpawnPointSurgeon
-  entities:
-  - uid: 19727
-    components:
-    - type: Transform
-      pos: -64.5,-38.5
-      parent: 2
-- proto: SpawnPointTechnicalAssistant
-  entities:
-  - uid: 17300
-    components:
-    - type: Transform
-      pos: -68.5,-19.5
-      parent: 2
-  - uid: 17301
-    components:
-    - type: Transform
-      pos: -68.5,-17.5
-      parent: 2
 - proto: SpawnPointWarden
   entities:
   - uid: 5997
