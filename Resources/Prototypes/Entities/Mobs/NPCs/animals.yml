@@ -385,8 +385,7 @@
         damageType: Blunt
         damage: 10
       behaviors:
-      - !type:GibBehavior
-        gibContents: Skip
+      - !type:GibBehavior { }
   - type: NonSpreaderZombie
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
@@ -565,8 +564,6 @@
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui # _CorvaxNext: surgery
   - type: InventorySlots
   - type: Inventory
     speciesId: hamster
@@ -597,7 +594,7 @@
           32:
             sprite: Mobs/Animals/mothroach/displacement.rsi
             state: neck
-  - type: SurgeryTarget # _CorvaxNext: surgery
+
 
 # Note that the mallard duck is actually a male drake mallard, with the brown duck being the female variant of the same species, however ss14 lacks sex specific textures
 # The white duck is more akin to a pekin or call duck.
@@ -673,13 +670,6 @@
   - type: NpcFactionMember
     factions:
     - Passive
-  # start-_CorvaxNext: surgery
-  - type: SurgeryTarget
-  - type: UserInterface
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
-  # end-_CorvaxNext: surgery
 
 - type: entity
   name: white duck #Quack
@@ -935,13 +925,6 @@
       task: RuminantCompound
   - type: Body
     prototype: AnimalHemocyanin
-  # start-_CorvaxNext: surgery
-  - type: SurgeryTarget
-  - type: UserInterface
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
-  # end-_CorvaxNext: surgery
 
 - type: entity
   name: goat
@@ -1044,11 +1027,6 @@
   - type: HTN
     rootTask:
       task: RuminantHostileCompound
-  - type: SurgeryTarget
-  - type: UserInterface
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
 
 # Note that we gotta make this bitch vomit someday when you feed it anthrax or sumthin. Needs to be a small item thief too and aggressive if attacked.
 - type: entity
@@ -1260,8 +1238,6 @@
   abstract: true
   components:
   - type: CombatMode
-  - type: SurgeryTarget
-  - type: Targeting
   - type: Inventory
     templateId: monkey
     speciesId: monkey
@@ -1283,13 +1259,6 @@
         layer:
         - MobLayer
   - type: Stripping
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -1803,13 +1772,6 @@
       Taco: RatTaco
       Burger: RatBurger
       Skewer: RatSkewer
-  # start-_CorvaxNext: surgery
-  - type: SurgeryTarget
-  - type: UserInterface
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
-  # end-_CorvaxNext: surgery
 
 - type: entity
   parent: MobMouse
@@ -2423,13 +2385,6 @@
       groups:
         Brute: -0.07
         Burn: -0.07
-  # start-_CorvaxNext: surgery
-  - type: SurgeryTarget
-  - type: UserInterface
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
-  # end-_CorvaxNext: surgery
 
 - type: entity
   parent: MobSpiderBase

@@ -1,5 +1,0 @@
-﻿- type: damageContainer
-  id: OrganicPart # _CorvaxNext: surgery
-  supportedGroups:
-  - Brute
-  - Burn

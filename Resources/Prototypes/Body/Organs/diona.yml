@@ -36,9 +36,6 @@
     heldPrefix: brain
   - type: Sprite
     state: brain
-  - type: Brain
-  - type: Organ
-    slotId: brain
   - type: SolutionContainerManager
     solutions:
       organ:
@@ -65,8 +62,6 @@
     layers:
       - state: eyeball-l
       - state: eyeball-r
-  - type: Eyes
-  
 
 - type: entity
   id: OrganDionaStomach
@@ -76,8 +71,6 @@
   components:
   - type: Sprite
     state: stomach
-  - type: Organ
-    slotId: stomach
   - type: SolutionContainerManager
     solutions:
       stomach:
@@ -111,13 +104,11 @@
   description: "A spongy mess of slimy, leaf-like structures. Capable of breathing both carbon dioxide and oxygen."
   components:
   - type: Sprite
-    sprite: Mobs/Species/Human/organs.rsi
-    layers:
-      - state: lung-l
-      - state: lung-r
-  - type: Lung
-  - type: Organ
-    slotId: lungs
+    state: lungs
+  - type: Item
+    size: Small
+    heldPrefix: lungs
+  - type: Lung 
   - type: Metabolizer
     removeEmpty: true
     solutionOnBody: false

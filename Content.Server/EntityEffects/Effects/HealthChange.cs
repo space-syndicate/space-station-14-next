@@ -7,7 +7,6 @@ using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using System.Linq;
 using System.Text.Json.Serialization;
-using Content.Shared._CorvaxNext.Targeting;
 
 namespace Content.Server.EntityEffects.Effects
 {
@@ -125,12 +124,7 @@ namespace Content.Server.EntityEffects.Effects
                 args.TargetEntity,
                 Damage * scale,
                 IgnoreResistances,
-                interruptsDoAfters: false,
-                // start-_CorvaxNext: surgery
-                targetPart: TargetBodyPart.All,
-                partMultiplier: 0.5f,
-                canSever: false);
-                // end-_CorvaxNext: surgery
+                interruptsDoAfters: false);
         }
     }
 }
