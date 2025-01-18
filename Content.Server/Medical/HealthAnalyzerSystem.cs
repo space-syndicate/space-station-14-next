@@ -6,10 +6,10 @@ using Content.Server.Temperature.Components;
 using Content.Server.Traits.Assorted;
 using Content.Shared._CorvaxNext.Targeting;
 using Content.Shared.Chemistry.EntitySystems;
-// CorvaxNext: surgery Start
+// _CorvaxNext: surgery Start
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems;
-// CorvaxNext: surgery End
+// _CorvaxNext: surgery End
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
@@ -75,7 +75,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
                 continue;
             }
 
-            // CorvaxNext: surgery Change Start
+            // _CorvaxNext: surgery Change Start
             if (component.CurrentBodyPart != null
                 && (Deleted(component.CurrentBodyPart)
                 || TryComp(component.CurrentBodyPart, out BodyPartComponent? bodyPartComponent)
@@ -84,7 +84,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
                 BeginAnalyzingEntity((uid, component), patient, null);
                 continue;
             }
-            // CorvaxNext: surgery Change End
+            // _CorvaxNext: surgery Change End
 
             component.NextUpdate = _timing.CurTime + component.UpdateInterval;
 
@@ -274,8 +274,8 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             scanMode,
             bleeding,
             unrevivable,
-            body, // CorvaxNext: surgery
-            part != null ? GetNetEntity(part) : null // CorvaxNext: surgery
+            body, // _CorvaxNext: surgery
+            part != null ? GetNetEntity(part) : null // _CorvaxNext: surgery
         ));
     }
 }

@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Linq;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
@@ -5,9 +6,8 @@ using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Prototypes;
-using Content.Shared._CorvaxNext.Surgery.Body.Events;
+using Robust.Shared.Utility;
 
-// ReSharper disable once CheckNamespace
 namespace Content.Shared.Body.Systems;
 
 public partial class SharedBodySystem
@@ -21,22 +21,21 @@ public partial class SharedBodySystem
 
         SubscribeLocalEvent<BodyPartAppearanceComponent, ComponentStartup>(OnPartAppearanceStartup);
         SubscribeLocalEvent<BodyPartAppearanceComponent, AfterAutoHandleStateEvent>(HandleState);
-        SubscribeLocalEvent<BodyComponent, BodyPartAddedEvent>(OnPartAttachedToBody);
-        SubscribeLocalEvent<BodyComponent, BodyPartRemovedEvent>(OnPartDroppedFromBody);
+        SubscribeLocalEvent<BodyComponent, BodyPartAttachedEvent>(OnPartAttachedToBody);
+        SubscribeLocalEvent<BodyComponent, BodyPartDroppedEvent>(OnPartDroppedFromBody);
     }
 
     private void OnPartAppearanceStartup(EntityUid uid, BodyPartAppearanceComponent component, ComponentStartup args)
     {
         if (!TryComp(uid, out BodyPartComponent? part)
             || part.ToHumanoidLayers() is not { } relevantLayer)
-
             return;
 
         if (part.OriginalBody == null
             || TerminatingOrDeleted(part.OriginalBody.Value)
             || !TryComp(part.OriginalBody.Value, out HumanoidAppearanceComponent? bodyAppearance))
         {
-            component.ID = part.BaseLayerId;
+            //component.ID = part.BaseLayerId;
             component.Type = relevantLayer;
             return;
         }
@@ -74,7 +73,8 @@ public partial class SharedBodySystem
         {
             var category = MarkingCategoriesConversion.FromHumanoidVisualLayers(layer);
             if (bodyAppearance.MarkingSet.Markings.TryGetValue(category, out var markingList))
-                markingsByLayer[layer] = markingList.Select(m => new Marking(m.MarkingId, m.MarkingColors.ToList())).ToList();
+                markingsByLayer[layer] =
+                    markingList.Select(m => new Marking(m.MarkingId, m.MarkingColors.ToList())).ToList();
         }
 
         component.Markings = markingsByLayer;
@@ -125,13 +125,13 @@ public partial class SharedBodySystem
             partAppearance.Comp.Markings[targetLayer].Add(marking);
         }
         //else
-        //RemovePartMarkings(uid, component, bodyAppearance);
+            //RemovePartMarkings(uid, component, bodyAppearance);
     }
 
     private void HandleState(EntityUid uid, BodyPartAppearanceComponent component, ref AfterAutoHandleStateEvent args) =>
         ApplyPartMarkings(uid, component);
 
-    private void OnPartAttachedToBody(EntityUid uid, BodyComponent component, ref BodyPartAddedEvent args)
+    private void OnPartAttachedToBody(EntityUid uid, BodyComponent component, ref BodyPartAttachedEvent args)
     {
         if (!TryComp(args.Part, out BodyPartAppearanceComponent? partAppearance)
             || !TryComp(uid, out HumanoidAppearanceComponent? bodyAppearance))
@@ -143,20 +143,13 @@ public partial class SharedBodySystem
         UpdateAppearance(uid, partAppearance);
     }
 
-    private void OnPartDroppedFromBody(EntityUid uid, BodyComponent component, ref BodyPartRemovedEvent args)
+    private void OnPartDroppedFromBody(EntityUid uid, BodyComponent component, ref BodyPartDroppedEvent args)
     {
         if (TerminatingOrDeleted(uid)
-            || TerminatingOrDeleted(args.Part)
-            || !TryComp(uid, out HumanoidAppearanceComponent? bodyAppearance))
+            || !TryComp(args.Part, out BodyPartAppearanceComponent? appearance))
             return;
 
-        // We check for this conditional here since some entities may not have a profile... If they dont
-        // have one, and their part is gibbed, the markings will not be removed or applied properly.
-        if (!HasComp<BodyPartAppearanceComponent>(args.Part))
-            EnsureComp<BodyPartAppearanceComponent>(args.Part);
-
-        if (TryComp<BodyPartAppearanceComponent>(args.Part, out var partAppearance))
-            RemoveAppearance(uid, partAppearance, args.Part);
+        RemoveAppearance(uid, appearance, args.Part);
     }
 
     protected void UpdateAppearance(EntityUid target,

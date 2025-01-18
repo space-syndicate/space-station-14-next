@@ -15,7 +15,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Shared._CorvaxNext.Surgery.Body.Events;
 using Content.Shared._CorvaxNext.Surgery.Steps.Parts;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
@@ -63,7 +62,7 @@ public partial class SharedBodySystem
     private void InitializeBkm()
     {
         _queryTargeting = GetEntityQuery<TargetingComponent>();
-        SubscribeLocalEvent<BodyComponent, TryChangePartDamageEvent>(OnTryChangePartDamage);
+        SubscribeLocalEvent<BodyComponent, BeforeDamageChangedEvent>(OnBeforeDamageChanged);
         SubscribeLocalEvent<BodyComponent, DamageModifyEvent>(OnBodyDamageModify);
         SubscribeLocalEvent<BodyPartComponent, DamageModifyEvent>(OnPartDamageModify);
         SubscribeLocalEvent<BodyPartComponent, DamageChangedEvent>(OnDamageChanged);
@@ -124,7 +123,7 @@ public partial class SharedBodySystem
         }
     }
 
-    private void OnTryChangePartDamage(Entity<BodyComponent> ent, ref TryChangePartDamageEvent args)
+    private void OnBeforeDamageChanged(Entity<BodyComponent> ent, ref BeforeDamageChangedEvent args)
     {
         // If our target has a TargetingComponent, that means they will take limb damage
         // And if their attacker also has one, then we use that part.
@@ -239,7 +238,6 @@ public partial class SharedBodySystem
         var delta = args.DamageDelta;
 
         if (args.CanSever
-            && partEnt.Comp.CanSever
             && partIdSlot is not null
             && delta != null
             && !HasComp<BodyPartReattachedComponent>(partEnt)

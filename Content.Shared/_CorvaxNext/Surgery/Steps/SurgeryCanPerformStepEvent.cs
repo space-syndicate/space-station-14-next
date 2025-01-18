@@ -10,5 +10,5 @@ public record struct SurgeryCanPerformStepEvent(
     SlotFlags TargetSlots,
     string? Popup = null,
     StepInvalidReason Invalid = StepInvalidReason.None,
-    Dictionary<EntityUid, float>? ValidTools = null
+    HashSet<EntityUid>? ValidTools = null
 ) : IInventoryRelayEvent;
