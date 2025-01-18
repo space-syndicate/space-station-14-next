@@ -50,6 +50,8 @@ public sealed class GenerateChildPartSystem : EntitySystem
             component.Active = true;
             Dirty(childPart, childPartComp);
         }
+
+        _bodySystem.ChangeSlotState((uid, partComp), false);
     }
 
     // Still unusued, gotta figure out what I want to do with this function outside of fuckery with mantis blades.
@@ -58,7 +60,7 @@ public sealed class GenerateChildPartSystem : EntitySystem
         if (!TryComp(uid, out BodyPartComponent? partComp))
             return;
 
-        _bodySystem.DropSlotContents((uid, partComp));
+        _bodySystem.ChangeSlotState((uid, partComp), true);
         var ev = new BodyPartDroppedEvent((uid, partComp));
         RaiseLocalEvent(uid, ref ev);
         QueueDel(uid);
