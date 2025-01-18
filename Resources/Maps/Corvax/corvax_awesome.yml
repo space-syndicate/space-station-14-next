@@ -99890,18 +99890,6 @@ entities:
     - type: Transform
       pos: -25.5,-37.5
       parent: 2
-- proto: SpawnPointSurgeon
-  entities:
-  - uid: 13471
-    components:
-    - type: Transform
-      pos: -20.5,8.5
-      parent: 2
-  - uid: 13472
-    components:
-    - type: Transform
-      pos: -20.5,8.5
-      parent: 2
 - proto: SpawnPointTechnicalAssistant
   entities:
   - uid: 13473
