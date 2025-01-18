@@ -15,11 +15,6 @@
   - Maintenance
   extendedAccess:
   - Chemistry
-  special:
-  - !type:AddComponentSpecial
-    components:
-    - type: SurgerySpeedModifier
-      speedModifier: 2.5
 
 - type: startingGear
   id: SurgeonGear
