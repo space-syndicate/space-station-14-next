@@ -399,16 +399,20 @@ public partial class SharedBodySystem
 
             RemovePartChildren((partId, part), bodyEnt);
 
-            // We have to iterate though every organ to drop it when part is being destroyed
-            foreach (var organ in GetPartOrgans(partId, part))
-            {
-                _gibbingSystem.TryGibEntityWithRef(bodyEnt, organ.Id, GibType.Drop, GibContentsOption.Skip,
-                    ref gibs, playAudio: false, launchImpulse: GibletLaunchImpulse * splatModifier,
-                    launchImpulseVariance: GibletLaunchImpulseVariance, launchCone: splatCone);
-            }
+            _gibbingSystem.TryGibEntityWithRef(partId,
+                partId,
+                GibType.Gib,
+                GibContentsOption.Drop,
+                ref gibs,
+                playAudio: true,
+                launchGibs: true,
+                launchDirection: splatDirection,
+                launchImpulse: GibletLaunchImpulse * splatModifier,
+                launchImpulseVariance: GibletLaunchImpulseVariance,
+                launchCone: splatCone);
         }
 
-        // Corvax-Next-Surgery
+// Corvax-Next-Surgery
         _gibbingSystem.TryGibEntityWithRef(partId, partId, GibType.Gib, GibContentsOption.Drop, ref gibs,
                 playAudio: true, launchGibs: true, launchDirection: splatDirection, launchImpulse: GibletLaunchImpulse * splatModifier,
                 launchImpulseVariance: GibletLaunchImpulseVariance, launchCone: splatCone);
