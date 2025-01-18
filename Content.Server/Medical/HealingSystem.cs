@@ -1,18 +1,14 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
-using Content.Shared.Body.Part;
-using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Medical.Components;
 using Content.Server.Popups;
 using Content.Server.Stack;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Audio;
-using Content.Shared.Body.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
-using Content.Shared.Body.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
@@ -25,8 +21,6 @@ using Content.Shared.Popups;
 using Content.Shared.Stacks;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
-using System.Linq;
-using Content.Shared._CorvaxNext.Targeting;
 
 namespace Content.Server.Medical;
 
@@ -42,7 +36,6 @@ public sealed class HealingSystem : EntitySystem
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedBodySystem _bodySystem = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
 
     public override void Initialize()
@@ -90,7 +83,7 @@ public sealed class HealingSystem : EntitySystem
         if (healing.ModifyBloodLevel != 0)
             _bloodstreamSystem.TryModifyBloodLevel(entity.Owner, healing.ModifyBloodLevel);
 
-        var healed = _damageable.TryChangeDamage(entity.Owner, healing.Damage, true, origin: args.User, canSever: false);
+        var healed = _damageable.TryChangeDamage(entity.Owner, healing.Damage, true, origin: args.Args.User);
 
         if (healed == null && healing.BloodlossModifier != 0)
             return;
@@ -124,7 +117,8 @@ public sealed class HealingSystem : EntitySystem
 
         _audio.PlayPvs(healing.HealingEndSound, entity.Owner, AudioHelpers.WithVariation(0.125f, _random).WithVolume(1f));
 
-        args.Repeat = HasDamage(entity, healing) && !dontRepeat || IsPartDamaged(args.User, entity);
+        // Logic to determine the whether or not to repeat the healing action
+        args.Repeat = (HasDamage(entity, healing) && !dontRepeat);
         if (!args.Repeat && !dontRepeat)
             _popupSystem.PopupEntity(Loc.GetString("medical-item-finished-using", ("item", args.Used)), entity.Owner, args.User);
         args.Handled = true;
@@ -161,22 +155,6 @@ public sealed class HealingSystem : EntitySystem
 
         return false;
     }
-
-    // start-_CorvaxNext: surgery
-    private bool IsPartDamaged(EntityUid user, EntityUid target)
-    {
-        if (!TryComp(user, out TargetingComponent? targeting))
-            return false;
-
-        var (targetType, targetSymmetry) = _bodySystem.ConvertTargetBodyPart(targeting.Target);
-        foreach (var part in _bodySystem.GetBodyChildrenOfType(target, targetType, symmetry: targetSymmetry))
-            if (TryComp<DamageableComponent>(part.Id, out var damageable)
-                && damageable.TotalDamage > part.Component.MinIntegrity)
-                return true;
-
-        return false;
-    }
-    // end-_CorvaxNext: surgery
 
     private void OnHealingUse(Entity<HealingComponent> entity, ref UseInHandEvent args)
     {
@@ -215,8 +193,7 @@ public sealed class HealingSystem : EntitySystem
             return false;
 
         var anythingToDo =
-            HasDamage((target, targetDamage), component) ||
-            IsPartDamaged(user, target) ||
+            HasDamage(targetDamage, component) ||
             component.ModifyBloodLevel > 0 // Special case if healing item can restore lost blood...
                 && TryComp<BloodstreamComponent>(target, out var bloodstream)
                 && _solutionContainerSystem.ResolveSolution(target, bloodstream.BloodSolutionName, ref bloodstream.BloodSolution, out var bloodSolution)

@@ -12,7 +12,7 @@
   - type: Sprite
     sprite: Mobs/Species/Reptilian/parts.rsi
   - type: Damageable
-    damageContainer: OrganicPart # _CorvaxNext: surgery Shitmed
+    damageContainer: Biological
   - type: BodyPart
   - type: ContainerContainer
     containers:
@@ -94,13 +94,3 @@
       - ReagentId: Blood
         Quantity: 20
 
-# Monkey head for borging/transplanting pun pun
-- type: entity
-  parent: [PartAnimal, BaseHead]
-  id: HeadAnimal
-  name: animal head
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    layers:
-    - state: head_m

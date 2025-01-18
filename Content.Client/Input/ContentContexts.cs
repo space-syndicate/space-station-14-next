@@ -84,12 +84,6 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.Arcade1);
             human.AddFunction(ContentKeyFunctions.Arcade2);
             human.AddFunction(ContentKeyFunctions.Arcade3);
-            human.AddFunction(ContentKeyFunctions.TargetHead); // _CorvaxNext: surgery
-            human.AddFunction(ContentKeyFunctions.TargetTorso); // _CorvaxNext: surgery
-            human.AddFunction(ContentKeyFunctions.TargetLeftArm); // _CorvaxNext: surgery
-            human.AddFunction(ContentKeyFunctions.TargetRightArm); // _CorvaxNext: surgery
-            human.AddFunction(ContentKeyFunctions.TargetLeftLeg); // _CorvaxNext: surgery
-            human.AddFunction(ContentKeyFunctions.TargetRightLeg); // _CorvaxNext: surgery
             human.AddFunction(ContentKeyFunctions.OfferItem); // Corvax-Next-Offer
             human.AddFunction(ContentKeyFunctions.ToggleStanding); // CorvaxNext: laying system toggle standing
 
