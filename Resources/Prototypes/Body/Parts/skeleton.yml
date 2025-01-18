@@ -1,3 +1,4 @@
+# TODO BODY: Part damage
 - type: entity
   id: PartSkeleton
   parent: BaseItem
@@ -5,7 +6,7 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: OrganicPart # _CorvaxNext: surgery
+    damageContainer: Biological
   - type: BodyPart
   - type: ContainerContainer
     containers:
@@ -13,41 +14,10 @@
         ents: []
   - type: StaticPrice
     price: 20
+  - type: Gibbable
   - type: Tag
     tags:
       - Trash
-  # start-_CorvaxNext: surgery
-  - type: Gibbable
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
-        damage: 75
-      behaviors:
-      - !type:GibPartBehavior { }
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Slash
-        damage: 100
-      behaviors:
-      - !type:GibPartBehavior { }
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 200
-      behaviors:
-      - !type:SpawnEntitiesBehavior
-        spawnInContainer: true
-        spawn:
-          Ash:
-            min: 1
-            max: 1
-      - !type:BurnBodyBehavior { }
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MeatLaserImpact
-  # end-_CorvaxNext: surgery
 
 - type: entity
   id: TorsoSkeleton
