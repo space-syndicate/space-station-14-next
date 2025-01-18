@@ -552,7 +552,6 @@
       - ArtistCircuitBoard
       - NutimovCircuitBoard
       # Corvax-Next-MutableLaws-End
-      - MedicalBiofabMachineBoard #Corvax-Next-Surgery
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
