@@ -73,9 +73,7 @@ public partial class SharedBodySystem
             RaiseLocalEvent(organEnt, ref removedInBodyEv);
         }
 
-
-        if (parentPartUid is { Valid: true }
-            && TryComp(parentPartUid, out DamageableComponent? damageable)
+        if (TryComp(parentPartUid, out DamageableComponent? damageable) // CorvaxNext: surgery
             && damageable.TotalDamage > 200)
             TrySetOrganUsed(organEnt, true, organEnt.Comp);
 
