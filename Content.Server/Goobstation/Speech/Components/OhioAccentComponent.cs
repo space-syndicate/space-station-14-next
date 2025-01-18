@@ -1,6 +1,6 @@
-using Content.Server._CorvaxNext.Speech.EntitySystems;
+using Content.Server.Speech.EntitySystems;
 
-namespace Content.Server._CorvaxNext.Speech.Components;
+namespace Content.Server.Speech.Components;
 
 [RegisterComponent]
 [Access(typeof(OhioAccentSystem))]
