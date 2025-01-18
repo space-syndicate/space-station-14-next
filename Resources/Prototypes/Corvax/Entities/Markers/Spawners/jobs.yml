@@ -15,10 +15,6 @@
   parent: SpawnPointJobBase
   name: surgeon
   components:
-  # Corvax-Next-surgeon-start
-  - type: SpawnPoint
-    job_id: Surgeon
-  # Corvax-Next-surgeon-end
   - type: Sprite
     layers:
     - state: green
