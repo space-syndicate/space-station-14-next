@@ -23,8 +23,9 @@ namespace Content.Shared.Damage
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly INetManager _netMan = default!;
         [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
-        [Dependency] private readonly SharedBodySystem _body = default!;
 
+        [Dependency] private readonly SharedBodySystem _body = default!;
+        [Dependency] private readonly IRobustRandom _random = default!;
         private EntityQuery<AppearanceComponent> _appearanceQuery;
         private EntityQuery<DamageableComponent> _damageableQuery;
         private EntityQuery<MindContainerComponent> _mindContainerQuery;
@@ -143,20 +144,11 @@ namespace Content.Shared.Damage
                 return damage;
             }
 
-            var before = new BeforeDamageChangedEvent(damage, origin, targetPart); // CorvaxNext: surgery Change
+            var before = new BeforeDamageChangedEvent(damage, origin, targetPart, canSever ?? true, canEvade ?? false, partMultiplier ?? 1.00f);
             RaiseLocalEvent(uid.Value, ref before);
 
-            if (before.Cancelled)
+            if (before.Cancelled || before.Evaded)
                 return null;
-
-            // start-_CorvaxNext: surgery Change Start
-            var partDamage = new TryChangePartDamageEvent(damage, origin, targetPart, canSever ?? true, canEvade ?? false, partMultiplier ?? 1.00f);
-            RaiseLocalEvent(uid.Value, ref partDamage);
-
-            if (partDamage.Evaded || partDamage.Cancelled)
-                return null;
-
-            // end-_CorvaxNext: surgery Change End
 
             // Apply resistances
             if (!ignoreResistances)
@@ -228,19 +220,6 @@ namespace Content.Shared.Damage
             // Setting damage does not count as 'dealing' damage, even if it is set to a larger value, so we pass an
             // empty damage delta.
             DamageChanged(uid, component, new DamageSpecifier());
-
-            // start-_CorvaxNext: surgery Change Start
-            if (HasComp<TargetingComponent>(uid))
-            {
-                foreach (var (part, _) in _body.GetBodyChildren(uid))
-                {
-                    if (!TryComp(part, out DamageableComponent? damageComp))
-                        continue;
-
-                    SetAllDamage(part, damageComp, newValue);
-                }
-            }
-            // end-_CorvaxNext: surgery Change End
         }
 
         public void SetDamageModifierSetId(EntityUid uid, string damageModifierSetId, DamageableComponent? comp = null)
@@ -284,6 +263,11 @@ namespace Content.Shared.Damage
             TryComp<MobThresholdsComponent>(uid, out var thresholds);
             _mobThreshold.SetAllowRevives(uid, true, thresholds); // do this so that the state changes when we set the damage
             SetAllDamage(uid, component, 0);
+            // start-_CorvaxNext: surgery Shitmed Start
+            if (HasComp<TargetingComponent>(uid))
+                foreach (var part in _body.GetBodyChildren(uid))
+                    RaiseLocalEvent(part.Id, new RejuvenateEvent());
+            // start-_CorvaxNext: surgery Shitmed End
             _mobThreshold.SetAllowRevives(uid, false, thresholds);
         }
 
@@ -315,16 +299,6 @@ namespace Content.Shared.Damage
     /// </summary>
     [ByRefEvent]
     public record struct BeforeDamageChangedEvent(
-        DamageSpecifier Damage,
-        EntityUid? Origin = null,
-        TargetBodyPart? TargetPart = null, // CorvaxNext: surgery Change
-        bool Cancelled = false);
-
-    /// <summary>
-    ///     CorvaxNext: surgery _CorvaxNext Change: Raised on parts before damage is done so we can cancel the damage if they evade.
-    /// </summary>
-    [ByRefEvent]
-    public record struct TryChangePartDamageEvent(
         DamageSpecifier Damage,
         EntityUid? Origin = null,
         TargetBodyPart? TargetPart = null,

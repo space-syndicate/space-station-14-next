@@ -29,7 +29,7 @@ public sealed class NextVars
         CVarDef.Create("hud.offer_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
 
     /// <summary>
-    /// CorvaxNext Surgery cvars
+    /// _CorvaxNext Surgery cvars
     /// </summary>
     #region Surgery
 

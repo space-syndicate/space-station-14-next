@@ -12,7 +12,7 @@
   - type: Sprite
     sprite: Mobs/Species/Reptilian/parts.rsi
   - type: Damageable
-    damageContainer: OrganicPart # _CorvaxNext: surgery _CorvaxNext
+    damageContainer: OrganicPart # _CorvaxNext: surgery Shitmed
   - type: BodyPart
   - type: ContainerContainer
     containers:
