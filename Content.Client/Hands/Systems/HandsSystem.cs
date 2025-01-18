@@ -4,7 +4,6 @@ using Content.Client.DisplacementMap;
 using Content.Client.Examine;
 using Content.Client.Strip;
 using Content.Client.Verbs.UI;
-using Content.Shared._CorvaxNext.Surgery.Body.Events;
 using Content.Shared.Body.Part;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
@@ -52,8 +51,8 @@ namespace Content.Client.Hands.Systems
             SubscribeLocalEvent<HandsComponent, ComponentShutdown>(OnHandsShutdown);
             SubscribeLocalEvent<HandsComponent, ComponentHandleState>(HandleComponentState);
             SubscribeLocalEvent<HandsComponent, VisualsChangedEvent>(OnVisualsChanged);
-            SubscribeLocalEvent<HandsComponent, BodyPartRemovedEvent>(HandleBodyPartRemoved); // CorvaxNext: surgery
-            SubscribeLocalEvent<HandsComponent, BodyPartDisabledEvent>(HandleBodyPartDisabled); // CorvaxNext: surgery
+            SubscribeLocalEvent<HandsComponent, BodyPartRemovedEvent>(HandleBodyPartRemoved); // _CorvaxNext: surgery
+            SubscribeLocalEvent<HandsComponent, BodyPartDisabledEvent>(HandleBodyPartDisabled); // _CorvaxNext: surgery
 
             OnHandSetActive += OnHandActivated;
         }
