@@ -32,20 +32,19 @@ public partial class SharedBodySystem
 
             return;
 
-        if (part.BaseLayerId != null)
+        if (part.OriginalBody == null
+            || TerminatingOrDeleted(part.OriginalBody.Value)
+            || !TryComp(part.OriginalBody.Value, out HumanoidAppearanceComponent? bodyAppearance))
         {
             component.ID = part.BaseLayerId;
             component.Type = relevantLayer;
             return;
         }
 
-        if (part.Body is not { Valid: true } body
-            || !TryComp(body, out HumanoidAppearanceComponent? bodyAppearance))
-            return;
-
         var customLayers = bodyAppearance.CustomBaseLayers;
         var spriteLayers = bodyAppearance.BaseLayers;
         component.Type = relevantLayer;
+        component.OriginalBody = part.OriginalBody.Value;
 
         part.Species = bodyAppearance.Species;
 

@@ -24,7 +24,6 @@ using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using System.Linq;
-using Content.Shared._CorvaxNext.Mood;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Store.Components;
 
@@ -479,8 +478,6 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         var target = (ent.Comp.TargetStation is not null) ? Name(ent.Comp.TargetStation.Value) : "the target";
 
         RemComp<PacifiedComponent>(args.EntityUid); // Corvax-DionaPacifist: Allow dionas nukes to harm
-        RaiseLocalEvent(args.EntityUid, new MoodEffectEvent("NukeopsFocused")); // _CorvaxNext: mood
-
         _antag.SendBriefing(args.Session,
             Loc.GetString("nukeops-welcome",
                 ("station", target),

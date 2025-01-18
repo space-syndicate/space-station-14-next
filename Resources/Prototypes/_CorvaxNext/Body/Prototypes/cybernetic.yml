@@ -154,7 +154,6 @@
   - type: BodyPart
     onAdd:
     - type: NoSlip
-    - type: ProtectedFromStepTriggers
 
 - type: entity
   parent: RightLegCybernetic
@@ -168,4 +167,3 @@
   - type: BodyPart
     onAdd:
     - type: NoSlip
-    - type: ProtectedFromStepTriggers
