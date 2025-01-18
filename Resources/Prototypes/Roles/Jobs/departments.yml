@@ -100,7 +100,6 @@
   - MedicalIntern
   - Psychologist
   - Paramedic
-  - Surgeon # Corvax-Next-Surgeon
 
 - type: department
   id: Security
