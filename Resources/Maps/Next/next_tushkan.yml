@@ -9191,7 +9191,7 @@ entities:
     - type: RadiationGridResistance
     - type: NavMap
     - type: BecomesStation
-      id: Tushkan
+      id: NextTushkan
   - uid: 7863
     components:
     - type: MetaData
