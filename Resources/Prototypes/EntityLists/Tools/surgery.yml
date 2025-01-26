@@ -1,14 +1,10 @@
 ﻿- type: entityList
   id: surgerytools
   entities:
-  - Scalpel
   - Cautery
   - Drill
   - ScalpelLaser
   - Retractor
   - Hemostat
-  - SawElectric
-  - Bonesetter
-  - BoneGel
-  - Saw
+  - SawAdvanced
 # - Drapes

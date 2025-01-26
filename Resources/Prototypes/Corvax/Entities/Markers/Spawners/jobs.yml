@@ -10,16 +10,3 @@
     - state: green
     - state: seniorofficer
 
-- type: entity
-  id: SpawnPointSurgeon
-  parent: SpawnPointJobBase
-  name: surgeon
-  components:
-  # Corvax-Next-surgeon-start
-  - type: SpawnPoint
-    job_id: Surgeon
-  # Corvax-Next-surgeon-end
-  - type: Sprite
-    layers:
-    - state: green
-    - state: surgeon # Corvax-Next-surgeon

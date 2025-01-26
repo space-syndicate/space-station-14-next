@@ -202,10 +202,6 @@
       - WetFloorSign
       - ClothingHeadHatCone
       - FreezerElectronics
-      - CassetteTape
-      - TapeRecorder
-      - PlantAnalyzer # Corvax-Next-PlantAnalyzer
-      - SnowballMaker # Corvax-Next-Snowballs
   - type: EmagLatheRecipes
     emagStaticRecipes:
       - BoxLethalshot
@@ -356,14 +352,6 @@
       - FauxTileAstroSnow
       - OreBagOfHolding
       - DeviceQuantumSpinInverter
-      # Corvax-Next Start
-      - EnergyScalpel
-      - EnergyCautery
-      - AdvancedRetractor
-      # Corvax-Next End
-      # Corvax-Next-BluespaceHarvester-Start
-      - ArtificialBluespaceCrystal
-      # Corvax-Next-BluespaceHarvester-End
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
@@ -535,10 +523,6 @@
       - SMESAdvancedMachineCircuitboard
       - HolopadMachineCircuitboard
       - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
-      # Corvax-Next-BluespaceHarvester-Start
-      - MachineBluespaceHarvesterCircuitboard
-      - MachineBluespaceTransitorCircuitboard
-      # Corvax-Next-BluespaceHarvester-End
       # Corvax-Next-MutableLaws-Start
       - AsimovCircuitBoard
       - CorporateCircuitBoard
@@ -552,7 +536,6 @@
       - ArtistCircuitBoard
       - NutimovCircuitBoard
       # Corvax-Next-MutableLaws-End
-      - MedicalBiofabMachineBoard #Corvax-Next-Surgery
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
@@ -624,7 +607,6 @@
     - BorgModuleHarvesting
     - BorgModuleDefibrillator
     - BorgModuleAdvancedTreatment
-    - BorgModuleSurgery # _CorvaxNext: surgery Change
     - RipleyHarness
     - RipleyLArm
     - RipleyRArm
@@ -644,13 +626,6 @@
     - HamtrLLeg
     - HamtrRLeg
     - VimHarness
-    # _CorvaxNext: surgery Change
-    - BorgModuleAdvancedSurgery
-    - JawsOfLifeLeftArm
-    - JawsOfLifeRightArm
-    - SpeedLeftLeg
-    - SpeedRightLeg
-    - BasicCyberneticEyes
   - type: MaterialStorage
     whitelist:
       tags:
@@ -824,8 +799,6 @@
       - WeaponLaserCannon
       - WeaponLaserCarbine
       - WeaponXrayCannon
-      - SecurityCyberneticEyes # _CorvaxNext: surgery Change
-      - MedicalCyberneticEyes # _CorvaxNext: surgery Change
   - type: MaterialStorage
     whitelist:
       tags:
@@ -937,7 +910,6 @@
       - MedkitRadiation
       - MedkitCombat
       - Scalpel
-      - BoneGel # _CorvaxNext
       - Retractor
       - Cautery
       - Drill
@@ -955,12 +927,6 @@
       - NTBodyBag # Corvax-Next-AdvancedBodyBags
       - PrisonerBodyBag # Corvax-Next-AdvancedBodyBags
       - RadiationBodyBag # Corvax-Next-AdvancedBodyBags
-      # _CorvaxNext: surgery Change
-      - EnergyScalpel
-      - EnergyCautery
-      - AdvancedRetractor
-      - OmnimedTool
-      - MedicalCyberneticEyes
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - SyndicateBodyBag # Corvax-Next-AdvancedBodyBags
@@ -1299,7 +1265,7 @@
       staticRecipes:
         - SheetSteel
         - SheetGlass1
-        - SheetRGlassRaw
+        - SheetRGlass
         - SheetPlasma1
         - SheetPGlass1
         - SheetRPGlass1
@@ -1325,7 +1291,7 @@
     staticRecipes:
       - SheetSteel
       - SheetGlass1
-      - SheetRGlassRaw
+      - SheetRGlass
       - SheetPlasma1
       - SheetPGlass1
       - SheetRPGlass1

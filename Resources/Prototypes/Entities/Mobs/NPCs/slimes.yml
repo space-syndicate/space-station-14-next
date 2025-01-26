@@ -112,13 +112,6 @@
     speechSounds: Slime
   - type: TypingIndicator
     proto: slime
-  # start-_CorvaxNext: surgery
-  - type: SurgeryTarget
-  - type: UserInterface
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
-  # end-_CorvaxNext: surgery
 
 - type: entity
   name: basic slime

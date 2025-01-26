@@ -10,8 +10,8 @@ namespace Content.Shared._CorvaxNext.NextVars;
 public sealed class NextVars
 {
     /**
-     * Auto cryo sleep
-     */
+    * Auto cryo sleep
+    */
 
     public static readonly CVarDef<bool> AutoCryoSleepEnabled =
         CVarDef.Create("auto_cryo_sleep.enabled", true, CVar.SERVER);
@@ -27,16 +27,6 @@ public sealed class NextVars
     /// </summary>
     public static readonly CVarDef<bool> OfferModeIndicatorsPointShow =
         CVarDef.Create("hud.offer_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
-
-    /// <summary>
-    /// CorvaxNext Surgery cvars
-    /// </summary>
-    #region Surgery
-
-    public static readonly CVarDef<bool> CanOperateOnSelf =
-        CVarDef.Create("surgery.can_operate_on_self", false, CVar.SERVERONLY);
-
-    #endregion
 
     /*
      * _CorvaxNext Bind Standing and Laying System
@@ -54,17 +44,4 @@ public sealed class NextVars
 
     // public static readonly CVarDef<bool> OfferModeIndicatorsPointShow =
     //     CVarDef.Create("hud.offer_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
-
-    public static readonly CVarDef<bool> MoodEnabled =
-        CVarDef.Create("mood.enabled", true, CVar.SERVER);
-
-    public static readonly CVarDef<bool> MoodIncreasesSpeed =
-        CVarDef.Create("mood.increases_speed", true, CVar.SERVER);
-
-    public static readonly CVarDef<bool> MoodDecreasesSpeed =
-        CVarDef.Create("mood.decreases_speed", true, CVar.SERVER);
-
-    public static readonly CVarDef<bool> MoodModifiesThresholds =
-        CVarDef.Create("mood.modify_thresholds", false, CVar.SERVER);
-
 }
