@@ -1,0 +1,12 @@
+ent-ClothingHeadHatRedChef = красная шапка шефа
+    .desc = Красная шапка для шеф-поваров. Огузок, начинай отклеивать наклейки с бананов!
+ent-ClothingUniformJumpsuitRedChef = красный комбинезон шефа
+    .desc = Красный комбинезон для шеф-поваров.
+ent-ClothingHeadRainHood = капюшон дождевика
+    .desc = Спасёт от дождя в любую минуту.
+ent-ClothingHeadRainHat = дождевая шляпа
+    .desc = Спасёт от дождя в любую минуту.
+ent-ClothingOuterRaincoat = дождевик
+    .desc = Длинный, жёлтый, водонепроницаемый.
+ent-ClothingUniformJumpskirtYellowLawyer = жёлтая адвокатская юбка-комбинезон
+    .desc = Изысканный жёлтый костюм с юбкой, который носят адвокаты и изобретатели. Got it!

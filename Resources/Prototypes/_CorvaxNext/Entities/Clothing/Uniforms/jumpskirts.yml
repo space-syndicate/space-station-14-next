@@ -8,3 +8,14 @@
     sprite: _CorvaxNext/Clothing/Uniforms/Jumpskirt/white_captain.rsi
   - type: Clothing
     sprite: _CorvaxNext/Clothing/Uniforms/Jumpskirt/white_captain.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtYellowLawyer
+  name: yellow lawyer jumpskirt
+  description: yellow lawyer jumpskirt desc
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Clothing/Uniforms/Jumpskirt/yellow_lawyer.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Clothing/Uniforms/Jumpskirt/yellow_lawyer.rsi
