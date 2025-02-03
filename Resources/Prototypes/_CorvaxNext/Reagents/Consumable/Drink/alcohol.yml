@@ -7,7 +7,7 @@
   flavor: wallOfBricks
   color: "#f6e9a6"
   metamorphicSprite:
-    sprite: _CorvaxNext/Objects/Consumable/Drinks/bacchusblessing.rsi
+    sprite: _CorvaxNext/Objects/Consumable/Drinks/bacchusblessingglass.rsi
     state: icon
   metabolisms:
     Drink:
