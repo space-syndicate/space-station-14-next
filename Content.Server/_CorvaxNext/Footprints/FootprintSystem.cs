@@ -10,6 +10,7 @@ using Content.Shared.Standing;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CorvaxNext.Footprints;
@@ -34,32 +35,16 @@ public sealed class FootprintSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<FootprintComponent, FootprintCleanEvent>(OnAbsorbentPuddleInteract);
+        SubscribeLocalEvent<FootprintComponent, FootprintCleanEvent>(OnFootprintClean);
 
         SubscribeLocalEvent<FootprintOwnerComponent, MoveEvent>(OnMove);
 
         SubscribeLocalEvent<PuddleComponent, MapInitEvent>(OnMapInit);
     }
 
-    private void OnAbsorbentPuddleInteract(Entity<FootprintComponent> entity, ref FootprintCleanEvent e)
+    private void OnFootprintClean(Entity<FootprintComponent> entity, ref FootprintCleanEvent e)
     {
-        if (!_solution.TryGetSolution(entity.Owner, FootprintSolution, out _, out var puddleSolution))
-            return;
-
-        var color = puddleSolution.GetColor(_prototype);
-
-        for (var i = 0; i < entity.Comp.Footprints.Count; i++)
-            entity.Comp.Footprints[i] = entity.Comp.Footprints[i] with
-            {
-                Color = color
-            };
-
-        Dirty(entity);
-
-        if (!TryGetNetEntity(entity, out var netFootprint))
-            return;
-
-        RaiseNetworkEvent(new FootprintChangedEvent(netFootprint.Value));
+        ToPuddle(entity);
     }
 
     private void OnMove(Entity<FootprintOwnerComponent> entity, ref MoveEvent e)
@@ -182,7 +167,7 @@ public sealed class FootprintSystem : EntitySystem
         if (!TryGetNetEntity(footprint, out var netFootprint))
             return;
 
-        RaiseNetworkEvent(new FootprintChangedEvent(netFootprint.Value));
+        RaiseNetworkEvent(new FootprintChangedEvent(netFootprint.Value), Filter.Pvs(footprint.Value));
     }
 
     private void OnMapInit(Entity<PuddleComponent> entity, ref MapInitEvent e)
@@ -203,14 +188,21 @@ public sealed class FootprintSystem : EntitySystem
         if (!TryGetAnchoredEntity<FootprintComponent>((transform.GridUid.Value, gridComponent), tile, out var footprint))
             return;
 
-        if (!_solution.TryGetSolution(footprint.Value.Owner, FootprintSolution, out _, out var footprintSolution))
+        ToPuddle(footprint.Value, transform.Coordinates);
+    }
+
+    private void ToPuddle(EntityUid footprint, EntityCoordinates? coordinates = null)
+    {
+        coordinates ??= Transform(footprint).Coordinates;
+
+        if (!_solution.TryGetSolution(footprint, FootprintSolution, out _, out var footprintSolution))
             return;
 
         footprintSolution = footprintSolution.Clone();
 
         Del(footprint);
 
-        _puddle.TrySpillAt(transform.Coordinates, footprintSolution, out _, false);
+        _puddle.TrySpillAt(coordinates.Value, footprintSolution, out _, false);
     }
 
     private static FixedPoint2 GetFootprintVolume(Entity<FootprintOwnerComponent> entity, Entity<SolutionComponent> solution)
