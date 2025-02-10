@@ -1,4 +1,9 @@
 - type: traitCategory
+  id: SizeTraits
+  name: trait-category-sizetraits
+  maxTraitPoints: 1
+
+- type: traitCategory
   id: MoodTraits
   name: trait-category-mood
   maxTraitPoints: 1
