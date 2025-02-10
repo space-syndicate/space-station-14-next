@@ -35,7 +35,7 @@ public abstract class SharedCombatModeSystem : EntitySystem
     {
         _actionsSystem.RemoveAction(uid, component.CombatToggleActionEntity);
 
-        SetMouseRotatorComponents(uid, false);
+        SetMouseRotatorComponents(uid, false, component); // Corvax-Next-NoScope-Fix
     }
 
     private void OnActionPerform(EntityUid uid, CombatModeComponent component, ToggleCombatActionEvent args)
@@ -87,16 +87,16 @@ public abstract class SharedCombatModeSystem : EntitySystem
         if (!component.ToggleMouseRotator || IsNpc(entity) && !_mind.TryGetMind(entity, out _, out _))
             return;
 
-        SetMouseRotatorComponents(entity, value);
+        SetMouseRotatorComponents(entity, value, component); // Corvax-Next-NoScope-Fix
     }
 
-    private void SetMouseRotatorComponents(EntityUid uid, bool value)
+    private void SetMouseRotatorComponents(EntityUid uid, bool value, CombatModeComponent? comp = null) // Corvax-Next-NoScope-Fix
     {
         if (value)
         {
             // Corvax-Next-NoScope-Start
             var rot = EnsureComp<MouseRotatorComponent>(uid);
-            if (TryComp<CombatModeComponent>(uid, out var comp) && comp.SmoothRotation) // no idea under which (intended) circumstances this can fail (if any), so i'll avoid Comp<>().
+            if (TryComp<CombatModeComponent>(uid, out var combatComp) && combatComp.SmoothRotation) // no idea under which (intended) circumstances this can fail (if any), so i'll avoid Comp<>().
             {
                 rot.AngleTolerance = Angle.FromDegrees(1); // arbitrary
                 rot.Simple4DirMode = false;
