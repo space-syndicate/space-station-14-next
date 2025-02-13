@@ -6,11 +6,6 @@
   components:
     - type: Pda
       id: IAAIDCard
-    - type: Appearance
-      appearanceDataInit:
-        enum.PdaVisuals.PdaType:
-          !type:String
-          pda-lawyer
     - type: PdaBorderColor
       borderColor: "#6f6192"
     - type: Icon
@@ -24,11 +19,6 @@
   components:
     - type: Pda
       id: PilotIDCard
-    - type: Appearance
-      appearanceDataInit:
-        enum.PdaVisuals.PdaType:
-          !type:String
-          pda-seniorofficer
     - type: PdaBorderColor
       borderColor: "#A32D26"
       accentVColor: "#DFDFDF"
