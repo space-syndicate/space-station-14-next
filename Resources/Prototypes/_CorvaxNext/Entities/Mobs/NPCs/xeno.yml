@@ -19,7 +19,6 @@
   parent: MobXenoPilgrim
   id: MobXenoPraetorianPilgrim
   name: praetorian
-  suffix: Pilgrim
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -53,7 +52,6 @@
   parent: MobXenoPilgrim
   id: MobXenoQueenPilgrim
   name: queen
-  suffix: Pilgrim
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -92,7 +90,6 @@
   parent: MobXenoPilgrim
   id: MobXenoRavagerPilgrim
   name: ravager
-  suffix: Pilgrim
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -130,7 +127,6 @@
   parent: MobXeno
   id: MobXenoRunnerPilgrim
   name: runner
-  suffix: Pilgrim
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -161,7 +157,6 @@
   parent: MobXenoRunnerPilgrim
   id: MobXenoRounyPilgrim
   name: rouny
-  suffix: Pilgrim
   components:
   - type: Sprite
     drawdepth: Mobs
