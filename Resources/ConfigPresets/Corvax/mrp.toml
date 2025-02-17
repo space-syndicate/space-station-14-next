@@ -3,7 +3,7 @@ fallbackpreset = "extended"
 lobbyenabled = true
 role_timers = true
 contraband_examine = false
-round_restart_time = 0f
+round_restart_time = 1
 
 [ic]
 flavor_text = true

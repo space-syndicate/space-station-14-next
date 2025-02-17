@@ -20,6 +20,7 @@ maximum_width = 26
 lobbyduration = 360
 map_pool = "NextMapPool"
 secret_weight_prototype = "CorvaxSecretDefault"
+round_restart_time = 1
 
 [server]
 rules_file = "CorvaxRuleset"
