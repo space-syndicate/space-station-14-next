@@ -107,7 +107,7 @@ public sealed class FootprintSystem : EntitySystem
             return false;
 
         _solution.TryTransferSolution(puddleSolution.Value, solution.Value.Comp.Solution, GetFootprintVolume(entity, solution.Value));
-        
+
         _solution.TryTransferSolution(solution.Value, puddleSolution.Value.Comp.Solution, FixedPoint2.Max(0, (standing ? entity.Comp.MaxFootVolume : entity.Comp.MaxBodyVolume) - solution.Value.Comp.Solution.Volume));
 
         _solution.UpdateChemicals(puddleSolution.Value, false);
