@@ -47,3 +47,14 @@
   - type: Tag
     tags:
     - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatRedChef
+  name: red chef hat
+  description: red chef hat desc
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Clothing/Head/Hats/red_chef_hat.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Clothing/Head/Hats/red_chef_hat.rsi

@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadRainHood
+  name: rain hood
+  description: rain hood desc
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Clothing/Head/Hats/rain_hood.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Clothing/Head/Hats/rain_hood.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadRainHat
+  name: rain hat
+  description: rain hat desc
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Clothing/Head/Hats/rain_hat.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Clothing/Head/Hats/rain_hat.rsi
