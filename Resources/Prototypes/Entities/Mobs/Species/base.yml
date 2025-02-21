@@ -217,6 +217,11 @@
   - type: Targeting # _CorvaxNext: surgery
   - type: SurgeryTarget # _CorvaxNext: surgery
   - type: LayingDown # _CorvaxNext: LayingDown Laying Down
+  - type: SizeAttributeWhitelist # Corvax-Next
+    tall: true
+    tallscale: 1.1
+    short: true
+    shortscale: 0.90
   - type: AutoCryoSleepable # Corvax-Next-AutoCryo
 
 - type: entity
