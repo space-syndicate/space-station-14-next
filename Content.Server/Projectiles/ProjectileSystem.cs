@@ -1,12 +1,14 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Effects;
 using Content.Server.Weapons.Ranged.Systems;
+using Content.Shared._CorvaxNext.Penetration;
 using Content.Shared.Camera;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.Projectiles;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
+using Robust.Shared.Random;
 
 namespace Content.Server.Projectiles;
 
@@ -17,10 +19,14 @@ public sealed class ProjectileSystem : SharedProjectileSystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly GunSystem _guns = default!;
     [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+
+    private EntityQuery<PenetratableComponent> _penetratableQuery;
 
     public override void Initialize()
     {
         base.Initialize();
+        _penetratableQuery = GetEntityQuery<PenetratableComponent>();
         SubscribeLocalEvent<ProjectileComponent, StartCollideEvent>(OnStartCollide);
     }
 
@@ -68,10 +74,21 @@ public sealed class ProjectileSystem : SharedProjectileSystem
                 _sharedCameraRecoil.KickCamera(target, args.OurBody.LinearVelocity.Normalized());
         }
 
-        component.DamagedEntity = true;
+        // Corvax-Next-Penetration-Start
+        if (component.PenetrationScore > 0
+            && _penetratableQuery.TryGetComponent(target, out var penetratable)
+            && _random.Next(component.PenetrationScore + penetratable.StoppingPower) >= penetratable.StoppingPower)
+        {
+            component.DamagedEntity = component.PenetrationScore < penetratable.StoppingPower;
 
-        if (component.DeleteOnCollide)
+            component.PenetrationScore -= penetratable.StoppingPower;
+        }
+        else
+            component.DamagedEntity = true;
+
+        if (component.DeleteOnCollide && component.DamagedEntity)
             QueueDel(uid);
+        // Corvax-Next-Penetration-End
 
         if (component.ImpactEffect != null && TryComp(uid, out TransformComponent? xform))
         {
