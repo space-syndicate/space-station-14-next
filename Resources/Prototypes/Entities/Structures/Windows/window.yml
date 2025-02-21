@@ -111,6 +111,14 @@
   - type: Occluder
   - type: StaticPrice
     price: 70
+# Corvax-Next-Togglable-Tinted-Window-Start
+  - type: ToggleableOccluder
+  - type: DeviceLinkSink
+    ports:
+    - On
+    - Off
+    - Toggle
+# Corvax-Next-Togglable-Tinted-Window-End
 
 - type: entity
   id: WindowRCDResistant
