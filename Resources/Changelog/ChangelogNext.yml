@@ -1,0 +1,212 @@
+Entries:
+- id: 1
+  author: Crazzy-pingvin
+  time: '2024-10-25'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/8
+  changes:
+  - type: Add
+    message: Добавлена одежда, снаряжение, вооружение, спавнеры и случайное событие для лорного государства Умпорская Федерация.
+  - type: Add
+    message: Добавлена одежда, снаряжение, вооружение, спавнеры для лорного государства Ноократия Эранта.
+  - type: Add
+    message: Добавлена одежда, снаряжение, вооружение, спавнеры для лорной корпорации Витезтви.
+  - type: Add
+    message: Добавлена одежда, снаряжение, вооружение, спавнеры и режим игры для лорной организации Петрищевцев.
+  - type: Add
+    message: Добавлена одежда, снаряжение, вооружение, спавнеры и вариант мобов в экспедициях для лорного государства СНК.
+  - type: Add
+    message: Добавлена одежда, снаряжение, вооружение, спавнеры для лорного государства Империя Миртана.
+  - type: Add
+    message: Добавлена одежда, снаряжение, вооружение, спавнеры для лорной корпорации Космологистика.
+
+- id: 2
+  author: TokenStyle
+  time: '2024-10-30'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/14
+  changes:
+  - type: Add
+    message: Добавлена подсветка для определённых слов в чате, которые можно самостоятельно назначить.
+
+- id: 3
+  author: TasiWeynad
+  time: '2024-11-04'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/19
+  changes:
+  - type: Tweak
+    message: Теперь можно исследовать Т3 технологии всех дисциплин.
+
+- id: 4
+  author: AwareFoxy
+  time: '2024-11-26'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/27
+  changes:
+  - type: Add
+    message: Добавлена новая игровая раса - Резоми!
+
+- id: 5
+  author: AwareFoxy
+  time: '2024-11-09'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/28
+  changes:
+  - type: Add
+    message: В игру добавлена система следов!
+
+- id: 6
+  author: AwareFoxy
+  time: '2024-11-11'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/29
+  changes:
+  - type: Add
+    message: Добавлена система передачи предмета из рук в руки.
+
+- id: 7
+  author: FireNameFN
+  time: '2024-11-11'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/30
+  changes:
+  - type: Add
+    message: Добавлен новый антагонист - агент похищения искусственного интеллекта (АПИИ).
+
+- id: 8
+  author: Zekins3366
+  time: '2024-11-10'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/31
+  changes:
+  - type: Add
+    message: На станции добавлена роль бригмедика.
+ 
+- id: 9
+  author: FireNameFN
+  time: '2024-11-11'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/38
+  changes:
+  - type: Fix
+    message: Небольшие исправления ошибок роли АПИИ.
+  - type: Add
+    message: Добавлена музыка при получении роли АПИИ.
+
+- id: 10
+  author: jailedfish
+  time: '2024-11-13'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/39
+  changes:
+  - type: Add
+    message: Добавлена легендарная шаурма.
+
+- id: 11
+  author: FireNameFN
+  time: '2024-11-11'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/40
+  changes:
+  - type: Remove
+    message: Лорные фракции вырезаны из игры в связи с обнаруженной ошибкой.
+
+- id: 12
+  author: FireNameFN
+  time: '2024-11-22'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/43
+  changes:
+  - type: Add
+    message: Добавлено исследование, открывающее рецепты плат законов.
+  - type: Tweak
+    message: Теперь с помощью робототехнической консоли можно менять законы боргов.
+
+- id: 13
+  author: CaptainSqrBeard
+  time: '2024-11-19'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/47
+  changes:
+  - type: Tweak
+    message: Из автолата теперь можно извлечь чертежи при помощи отдельной кнопки в интерфейсе.
+
+- id: 14
+  author: ksen0morph
+  time: '2024-11-13'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/48
+  changes:
+  - type: Remove
+    message: Легендарная шаурма была вырезана из игры.
+
+- id: 15
+  author: FireNameFN
+  time: '2024-11-20'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/52
+  changes:
+  - type: Tweak
+    message: Теперь у АПИИ сразу появляется имплант хранилища с вещами в нём.
+  - type: Tweak
+    message: Теперь у АПИИ есть глушитель связи.
+
+- id: 16
+  author: RedTerrorDark
+  time: '2024-11-23'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/53
+  changes:
+  - type: Add
+    message: Добавлены огурцы - их семена, само растение, плод, его мутации, а также блюда из СНГ.
+  - type: Tweak
+    message: В ШефШкаф добавлена книга рецептов СССП.
+
+- id: 17
+  author: PuroSlavKing
+  time: '2024-11-15'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/53
+  changes:
+  - type: Add
+    message: Добавлен стиль интерфейса "Оперативник".
+
+- id: 18
+  author: PuroSlavKing
+  time: '2024-11-18'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/57
+  changes:
+  - type: Add
+    message: Добавлено 5 новых вариаций мешков для тел.
+
+- id: 19
+  author: PuroSlavKing
+  time: '2024-11-22'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/58
+  changes:
+  - type: Add
+    message: Добавлен КапитанШкаф, содержащий в себе все вещи капитана.
+  - type: Add
+    message: Добавлены новые стили одежды капитана - белый, шериф, командный.
+
+- id: 20
+  author: CaptainSqrBeard
+  time: '2024-11-18'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/59
+  changes:
+  - type: Fix
+    message: При чистке следов также будут чистится следы вокруг.
+  - type: Add
+    message: Добавлена локализация.
+
+- id: 21
+  author: PuroSlavKing
+  time: '2024-11-17'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/61
+  changes:
+  - type: Fix
+    message: Исправлены незначительные визуальные ошибки стиля интерфейса "Оперативник".
+
+- id: 22
+  author: TokenStyle
+  time: '2024-11-23'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/65
+  changes:
+  - type: Add
+    message: Добавлена хирургия!
+  - type: Add
+    message: Органы и конечности могут повреждаться по отдельности.
+  - type: Add
+    message: Добавлен медицинский биофабрикатор, на котором можно печатать органы и конечности.
+
+- id: 23
+  author: lzk228
+  time: '2024-11-23'
+  url: https://github.com/space-syndicate/space-station-14-next/pull/67
+  changes:
+  - type: Tweak
+    message: Следы стали больше похожи на лужи, теперь их можно - осматривать (и с помощью хим визора), благословить, ПИТЬ, набирать шприцом. Из них не будут пить животные и перенос ДНК стал лучше.
