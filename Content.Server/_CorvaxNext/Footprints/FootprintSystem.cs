@@ -49,6 +49,12 @@ public sealed class FootprintSystem : EntitySystem
 
     private void OnMove(Entity<FootprintOwnerComponent> entity, ref MoveEvent e)
     {
+        if (!e.OldPosition.IsValid(EntityManager))
+            return;
+
+        if (!e.NewPosition.IsValid(EntityManager))
+            return;
+
         var oldPosition = _transform.ToMapCoordinates(e.OldPosition).Position;
         var newPosition = _transform.ToMapCoordinates(e.NewPosition).Position;
 
