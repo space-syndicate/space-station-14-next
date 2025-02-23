@@ -476,7 +476,7 @@
     - BodyBags # Corvax-Next-AdvancedBodyBags
   - type: EmagLatheRecipes
     emagDynamicPacks:
-    - BodyBagSydicate # Corvax-Next-AdvancedBodyBags
+    - BodyBagSyndicate # Corvax-Next-AdvancedBodyBags
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget
