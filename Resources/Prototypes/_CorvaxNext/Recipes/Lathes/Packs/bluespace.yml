@@ -1,0 +1,10 @@
+- type: latheRecipePack
+  id: BluespaceCrystal
+  recipes:
+  - ArtificialBluespaceCrystal
+
+- type: latheRecipePack
+  id: BluespaceBoards
+  recipes:
+  - MachineBluespaceHarvesterCircuitboard
+  - MachineBluespaceTransitorCircuitboard
