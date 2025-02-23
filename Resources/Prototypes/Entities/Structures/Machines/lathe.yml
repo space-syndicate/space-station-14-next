@@ -474,7 +474,7 @@
     dynamicPacks:
     - Chemistry
     - BodyBags # Corvax-Next-AdvancedBodyBags
-  - type: EmagLathe
+  - type: EmagLatheRecipes
     emagDynamicPacks:
     - BodyBagSydicate # Corvax-Next-AdvancedBodyBags
   - type: Machine
