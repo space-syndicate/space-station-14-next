@@ -5,6 +5,7 @@ using Content.Server.PowerCell;
 using Content.Server.Temperature.Components;
 using Content.Server.Traits.Assorted;
 using Content.Shared._CorvaxNext.Targeting;
+using Content.Shared.Traits.Assorted;
 using Content.Shared.Chemistry.EntitySystems;
 // CorvaxNext: surgery Start
 using Content.Shared.Body.Part;
