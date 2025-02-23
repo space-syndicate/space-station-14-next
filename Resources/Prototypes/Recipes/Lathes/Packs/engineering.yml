@@ -19,6 +19,8 @@
   - HandheldStationMap
   - ClothingHeadHatWelding
   - ClothingHeadHatCone
+  - PlantAnalyzer # Corvax-Next-PlantAnalyzer
+  - SnowballMaker # Corvax-Next-Snowballs
 
 - type: latheRecipePack
   id: AtmosStatic

@@ -1,4 +1,5 @@
 # Tier 2
+
 - type: technology
   id: Bluespace
   name: research-technology-bluespace
@@ -12,7 +13,30 @@
   - ArtificialBluespaceCrystal
   - MachineBluespaceTransitorCircuitboard
 
+- type: technology
+  id: AdvancedRobotics
+  name: research-technology-advanced-robotics
+  icon:
+    sprite: Mobs/Silicon/station_ai.rsi
+    state: ai
+  discipline: Experimental
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - AsimovCircuitBoard
+  - CorporateCircuitBoard
+  - NTDefaultCircuitBoard
+  - CommandmentCircuitBoard
+  - PaladinCircuitBoard
+  - LiveLetLiveCircuitBoard
+  - StationEfficiencyCircuitBoard
+  - RobocopCircuitBoard
+  - GameMasterCircuitBoard
+  - ArtistCircuitBoard
+  - NutimovCircuitBoard
+
 # Tier 3
+
 - type: technology
   id: BluespaceMining
   name: research-technology-bluespace-mining

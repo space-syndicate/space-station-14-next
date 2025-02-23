@@ -1,0 +1,12 @@
+- type: latheRecipePack
+  id: BodyBags
+  recipes:
+  - BluespaceBodyBag
+  - NTBodyBag
+  - PrisonerBodyBag
+  - RadiationBodyBag
+
+- type: latheRecipePack
+  id: BodyBagSyndicate
+  recipes:
+  - SyndicateBodyBag
