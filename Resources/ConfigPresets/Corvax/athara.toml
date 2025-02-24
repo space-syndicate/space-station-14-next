@@ -4,6 +4,7 @@ desc = "Корвакс — первый русскоязычный проект 
 maxplayers = 150
 soft_max_players = 70
 map_rotation = true
+round_restart_time = 1
 
 [server]
 lobby_name = "🛰️ Corvax — Атара 🌌⚡"
