@@ -30,3 +30,14 @@
       sprite: _CorvaxNext/Clothing/Uniforms/Jumpsuit/sheriff.rsi
     - type: Clothing
       sprite: _CorvaxNext/Clothing/Uniforms/Jumpsuit/sheriff.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitRedChef
+  name: red chef jumpsuit
+  description: red chef jumpsuit desc
+  components:
+    - type: Sprite
+      sprite: _CorvaxNext/Clothing/Uniforms/Jumpsuit/red_chef.rsi
+    - type: Clothing
+      sprite: _CorvaxNext/Clothing/Uniforms/Jumpsuit/red_chef.rsi
