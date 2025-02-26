@@ -363,6 +363,7 @@
       # Corvax-Next-BluespaceHarvester-Start
       - ArtificialBluespaceCrystal
       # Corvax-Next-BluespaceHarvester-End
+      - Advancedplantanalyzer #CORVAX-NEXT-PlantAnalyzerT2
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
@@ -553,6 +554,11 @@
       - NutimovCircuitBoard
       # Corvax-Next-MutableLaws-End
       - MedicalBiofabMachineBoard #Corvax-Next-Surgery
+      #CORVAX-NEXT-T2service-Start
+      - AdvancedMicrowaveMachineCircuitboard
+      - AdvancedReagentGrinderMachineCircuitboard
+      - HydroponicsTrayAdvancedMachineCircuitboard
+      #CORVAX-NEXT-T2service-End
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
