@@ -75,8 +75,8 @@
   - type: ActivatableUIRequiresPowerCell
   - type: PlantAnalyzer
     settings:
-      scanDelay: 5
-      advScanDelay: 10
+      scanDelay: 4
+      advScanDelay: 8
   - type: Sprite
     sprite: _CorvaxNext/Objects/Devices/plant_analyzerT2.rsi
     layers:
