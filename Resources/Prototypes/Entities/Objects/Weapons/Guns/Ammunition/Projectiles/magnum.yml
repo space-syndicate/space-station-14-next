@@ -8,6 +8,7 @@
     damage:
       types:
         Piercing: 35
+    penetrationScore: 1
 
 - type: entity
   id: BulletMagnumPractice
@@ -19,6 +20,7 @@
     damage:
       types:
         Blunt: 1
+    penetrationScore: 1
 
 - type: entity
   id: BulletMagnumIncendiary
@@ -31,6 +33,7 @@
       types:
         Blunt: 3
         Heat: 32
+    penetrationScore: 1
 
 - type: entity
   id: BulletMagnumAP
@@ -43,6 +46,7 @@
       types:
         Piercing: 26 # 20% decrease
     ignoreResistances: true
+    penetrationScore: 1
 
 - type: entity
   id: BulletMagnumUranium
@@ -55,3 +59,4 @@
       types:
         Radiation: 15
         Piercing: 20
+    penetrationScore: 1
