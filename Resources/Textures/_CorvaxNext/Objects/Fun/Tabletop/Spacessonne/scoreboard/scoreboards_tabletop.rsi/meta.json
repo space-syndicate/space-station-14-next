@@ -1,0 +1,16 @@
+﻿{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "By SonicHDC",
+
+    "size": {
+        "x": 330,
+        "y": 228
+    },
+    "metaAtlas": false,
+    "states": [
+        {
+            "name": "classic_tabletop"
+        }
+    ]
+}
