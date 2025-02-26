@@ -37,7 +37,7 @@
 
 - type: technology
   id: AdvancedCooking
-  name: research-technology-advanced-сooking
+  name: research-technology-advanced-cooking
   icon:
     sprite: _CorvaxNext/Structures/Machines/microwaveT2.rsi
     state: mw

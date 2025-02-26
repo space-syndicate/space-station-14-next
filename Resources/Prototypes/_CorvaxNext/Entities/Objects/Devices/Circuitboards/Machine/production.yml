@@ -90,5 +90,5 @@
         Plasma: 5
       tagRequirements:
         GlassBeaker:
-          amount: `
+          amount: 1
           defaultPrototype: Beaker
