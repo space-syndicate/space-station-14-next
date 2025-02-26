@@ -37,3 +37,58 @@
       Capacitor: 15
   - type: Item
     size: Normal
+
+- type: entity
+  id: AdvancedMicrowaveMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: advanced microwave machine board
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: AdvancedMicrowave
+      stackRequirements:
+        Capacitor: 1
+        Glass: 2
+        Cable: 2
+        Uranium: 2
+      tagRequirements:
+        Igniter:
+          amount: 1
+          defaultPrototype: Igniter
+
+- type: entity
+  id: HydroponicsTrayAdvancedMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: advanced hydroponics tray machine board
+  description: A machine printed circuit board for a advanced hydroponics tray.
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: hydroponicsTrayAdvanced
+      stackRequirements:
+        Glass: 5
+        Cable: 4
+        Plasma: 5
+      tagRequirements:
+        GlassBeaker:
+          amount: 3
+          defaultPrototype: Beaker
+
+- type: entity
+  id: AdvancedReagentGrinderMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: advanced reagent grinder machine board
+  description: A machine printed circuit board for a reagent grinder.
+  components:
+    - type: MachineBoard
+      prototype: AdvancedKitchenReagentGrinder
+      stackRequirements:
+        MatterBin: 2
+        Manipulator: 4
+        Plasma: 5
+      tagRequirements:
+        GlassBeaker:
+          amount: `
+          defaultPrototype: Beaker
