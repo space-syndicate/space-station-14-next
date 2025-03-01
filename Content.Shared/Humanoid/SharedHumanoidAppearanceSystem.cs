@@ -1,6 +1,5 @@
 using System.IO;
 using System.Linq;
-using System.Numerics;
 using Content.Corvax.Interfaces.Shared;
 using Content.Shared.CCVar;
 using Content.Shared.Decals;
@@ -8,7 +7,6 @@ using Content.Shared.Examine;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Corvax.TTS;
-using Content.Shared.Humanoid.Events;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Preferences;
 using Robust.Shared;
@@ -146,6 +144,34 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         SetLayerVisibility(uid, humanoid, layer, visible, permanent, ref dirty);
         if (dirty)
             Dirty(uid, humanoid);
+    }
+
+    /// <summary>
+    ///     Clones a humanoid's appearance to a target mob, provided they both have humanoid components.
+    /// </summary>
+    /// <param name="source">Source entity to fetch the original appearance from.</param>
+    /// <param name="target">Target entity to apply the source entity's appearance to.</param>
+    /// <param name="sourceHumanoid">Source entity's humanoid component.</param>
+    /// <param name="targetHumanoid">Target entity's humanoid component.</param>
+    public void CloneAppearance(EntityUid source, EntityUid target, HumanoidAppearanceComponent? sourceHumanoid = null,
+        HumanoidAppearanceComponent? targetHumanoid = null)
+    {
+        if (!Resolve(source, ref sourceHumanoid) || !Resolve(target, ref targetHumanoid))
+            return;
+
+        targetHumanoid.Species = sourceHumanoid.Species;
+        targetHumanoid.SkinColor = sourceHumanoid.SkinColor;
+        targetHumanoid.EyeColor = sourceHumanoid.EyeColor;
+        targetHumanoid.Age = sourceHumanoid.Age;
+        SetSex(target, sourceHumanoid.Sex, false, targetHumanoid);
+        targetHumanoid.CustomBaseLayers = new(sourceHumanoid.CustomBaseLayers);
+        targetHumanoid.MarkingSet = new(sourceHumanoid.MarkingSet);
+
+        targetHumanoid.Gender = sourceHumanoid.Gender;
+        if (TryComp<GrammarComponent>(target, out var grammar))
+            grammar.Gender = sourceHumanoid.Gender;
+
+        Dirty(target, targetHumanoid);
     }
 
     /// <summary>
@@ -403,7 +429,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         humanoid.Age = profile.Age;
-        
+
         Dirty(uid, humanoid);
     }
 

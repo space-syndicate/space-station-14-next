@@ -227,13 +227,10 @@
       "name": "idseniorphysician"
     },
     {
-      "name": "idseniorofficer"
+        "name": "idseniorofficer"
     },
     {
       "name": "idpilot"
-    },
-    {
-      "name": "idsurgeon"
     },
     {
       "name": "gold-inhand-left",

@@ -44,7 +44,7 @@ namespace Content.Shared.StatusEffect
                     continue;
                 }
 
-                foreach (var state in status.ActiveEffects.ToArray())
+                foreach (var state in status.ActiveEffects)
                 {
                     if (curTime > state.Value.Cooldown.Item2)
                         TryRemoveStatusEffect(uid, state.Key, status);

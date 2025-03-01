@@ -60,6 +60,7 @@ namespace Content.Server.Cloning
         [Dependency] private readonly SharedMindSystem _mindSystem = default!;
         [Dependency] private readonly MetaDataSystem _metaSystem = default!;
         [Dependency] private readonly SharedJobSystem _jobs = default!;
+        [Dependency] private readonly EmagSystem _emag = default!;
 
         public readonly Dictionary<MindComponent, EntityUid> ClonesWaitingForMind = new();
         public const float EasyModeCloningCost = 0.7f;
@@ -144,8 +145,7 @@ namespace Content.Server.Cloning
                 return false;
 
             var mind = mindEnt.Comp;
-            // CorvaxNext: surgery Remove this logic entirely, infinite clone army
-            /*if (ClonesWaitingForMind.TryGetValue(mind, out var clone))
+            if (ClonesWaitingForMind.TryGetValue(mind, out var clone))
             {
                 if (EntityManager.EntityExists(clone) &&
                     !_mobStateSystem.IsDead(clone) &&
@@ -154,11 +154,10 @@ namespace Content.Server.Cloning
                     return false; // Mind already has clone
 
                 ClonesWaitingForMind.Remove(mind);
-            }*/
+            }
 
-            // CorvaxNext: surgery Lets you clone living people
-            //if (mind.OwnedEntity != null && !_mobStateSystem.IsDead(mind.OwnedEntity.Value))
-            //    return false; // Body controlled by mind is not dead
+            if (mind.OwnedEntity != null && !_mobStateSystem.IsDead(mind.OwnedEntity.Value))
+                return false; // Body controlled by mind is not dead
 
             // Yes, we still need to track down the client because we need to open the Eui
             if (mind.UserId == null || !_playerManager.TryGetSessionById(mind.UserId.Value, out var client))
@@ -173,10 +172,10 @@ namespace Content.Server.Cloning
             if (!TryComp<PhysicsComponent>(bodyToClone, out var physics))
                 return false;
 
-            var cloningCost = (int)Math.Round(physics.FixturesMass);
+            var cloningCost = (int) Math.Round(physics.FixturesMass);
 
             if (_configManager.GetCVar(CCVars.BiomassEasyMode))
-                cloningCost = (int)Math.Round(cloningCost * EasyModeCloningCost);
+                cloningCost = (int) Math.Round(cloningCost * EasyModeCloningCost);
 
             // biomass checks
             var biomassAmount = _material.GetMaterialAmount(uid, clonePod.RequiredMaterial);
@@ -196,7 +195,7 @@ namespace Content.Server.Cloning
             if (TryComp<DamageableComponent>(bodyToClone, out var damageable) &&
                 damageable.Damage.DamageDict.TryGetValue("Cellular", out var cellularDmg))
             {
-                var chance = Math.Clamp((float)(cellularDmg / 100), 0, 1);
+                var chance = Math.Clamp((float) (cellularDmg / 100), 0, 1);
                 chance *= failChanceModifier;
 
                 if (cellularDmg > 0 && clonePod.ConnectedConsole != null)
@@ -225,7 +224,7 @@ namespace Content.Server.Cloning
             cloneMindReturn.Mind = mind;
             cloneMindReturn.Parent = uid;
             _containerSystem.Insert(mob, clonePod.BodyContainer);
-            //ClonesWaitingForMind.Add(mind, mob); // CorvaxNext: surgery
+            ClonesWaitingForMind.Add(mind, mob);
             UpdateStatus(uid, CloningPodStatus.NoMind, clonePod);
             _euiManager.OpenEui(new AcceptCloningEui(mindEnt, mind, this), client);
 
@@ -278,10 +277,15 @@ namespace Content.Server.Cloning
         /// </summary>
         private void OnEmagged(EntityUid uid, CloningPodComponent clonePod, ref GotEmaggedEvent args)
         {
+            if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
+                return;
+
+            if (_emag.CheckFlag(uid, EmagType.Interaction))
+                return;
+
             if (!this.IsPowered(uid, EntityManager))
                 return;
 
-            _audio.PlayPvs(clonePod.SparkSound, uid);
             _popupSystem.PopupEntity(Loc.GetString("cloning-pod-component-upgrade-emag-requirement"), uid);
             args.Handled = true;
         }
@@ -311,7 +315,7 @@ namespace Content.Server.Cloning
             var indices = _transformSystem.GetGridTilePositionOrDefault((uid, transform));
             var tileMix = _atmosphereSystem.GetTileMixture(transform.GridUid, null, indices, true);
 
-            if (HasComp<EmaggedComponent>(uid))
+            if (_emag.CheckFlag(uid, EmagType.Interaction))
             {
                 _audio.PlayPvs(clonePod.ScreamSound, uid);
                 Spawn(clonePod.MobSpawnId, transform.Coordinates);
@@ -329,7 +333,7 @@ namespace Content.Server.Cloning
             }
             _puddleSystem.TrySpillAt(uid, bloodSolution, out _);
 
-            if (!HasComp<EmaggedComponent>(uid))
+            if (!_emag.CheckFlag(uid, EmagType.Interaction))
             {
                 _material.SpawnMultipleFromMaterial(_robustRandom.Next(1, (int) (clonePod.UsedBiomass / 2.5)), clonePod.RequiredMaterial, Transform(uid).Coordinates);
             }
