@@ -8,6 +8,7 @@
     damage:
       types:
         Piercing: 19
+    penetrationScore: 1
 
 - type: entity
   id: BulletLightRiflePractice
@@ -19,6 +20,7 @@
     damage:
       types:
         Blunt: 2
+    penetrationScore: 1
 
 - type: entity
   id: BulletLightRifleIncendiary
@@ -31,6 +33,7 @@
       types:
         Blunt: 3
         Heat: 16
+    penetrationScore: 1
 
 - type: entity
   id: BulletLightRifleUranium
@@ -43,3 +46,4 @@
       types:
         Radiation: 9
         Piercing: 10
+    penetrationScore: 1
