@@ -227,9 +227,6 @@
       "name": "pda-seniorofficer"
     },
     {
-      "name": "pda-surgeon"
-    },
-    {
       "name": "equipped-IDCARD",
       "directions": 4
     }
