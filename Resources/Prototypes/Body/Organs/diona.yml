@@ -36,9 +36,6 @@
     heldPrefix: brain
   - type: Sprite
     state: brain
-  - type: Organ # _CorvaxNext
-    slotId: Brain
-  - type: Brain # _CorvaxNext
   - type: SolutionContainerManager
     solutions:
       organ:
@@ -65,13 +62,6 @@
     layers:
       - state: eyeball-l
       - state: eyeball-r
-  - type: Organ # _CorvaxNext
-    slotId: eyes
-  - type: Tag # goob edit
-    tags:
-    - Meat
-    - Organ
-    - Eyes
 
 - type: entity
   id: OrganDionaStomach
@@ -81,8 +71,6 @@
   components:
   - type: Sprite
     state: stomach
-  - type: Organ
-    slotId: stomach
   - type: SolutionContainerManager
     solutions:
       stomach:
@@ -120,9 +108,7 @@
   - type: Item
     size: Small
     heldPrefix: lungs
-  - type: Lung
-  - type: Organ
-    slotId: lungs
+  - type: Lung 
   - type: Metabolizer
     removeEmpty: true
     solutionOnBody: false
@@ -151,7 +137,7 @@
   description: "The source of incredible, unending intelligence. Honk."
   components:
   - type: Brain
-  - type: Nymph # This will make the organs turn into a nymph when they're removed.
+  - type: Nymph # This will make the organs turn into a nymph when they're removed. 
     entityPrototype: OrganDionaNymphBrain
     transferMind: true
 
@@ -190,11 +176,11 @@
 
 - type: entity
   id: OrganDionaNymphStomach
-  parent: MobDionaNymphAccent
+  parent: MobDionaNymphAccent 
   categories: [ HideSpawnMenu ]
   name: diona nymph
   suffix: Stomach
-  description: Contains the stomach of a formerly fully-formed Diona. It doesn't taste any better for it.
+  description: Contains the stomach of a formerly fully-formed Diona. It doesn't taste any better for it. 
   components:
   - type: IsDeadIC
   - type: Body
@@ -206,7 +192,7 @@
   categories: [ HideSpawnMenu ]
   name: diona nymph
   suffix: Lungs
-  description: Contains the lungs of a formerly fully-formed Diona. Breathtaking.
+  description: Contains the lungs of a formerly fully-formed Diona. Breathtaking. 
   components:
   - type: IsDeadIC
   - type: Body

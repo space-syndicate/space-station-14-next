@@ -1,7 +1,6 @@
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
-using Content.Shared._CorvaxNext.Mood;
 using JetBrains.Annotations;
 
 namespace Content.Shared.Nutrition.EntitySystems
@@ -45,11 +44,6 @@ namespace Content.Shared.Nutrition.EntitySystems
             {
                 _appearance.SetData(uid, CreamPiedVisuals.Creamed, value, appearance);
             }
-
-            if (value)
-                RaiseLocalEvent(uid, new MoodEffectEvent("Creampied")); // _CorvaxNext: mood
-            else
-                RaiseLocalEvent(uid, new MoodRemoveEffectEvent("Creampied")); // _CorvaxNext: mood
         }
 
         private void OnCreamPieLand(EntityUid uid, CreamPieComponent component, ref LandEvent args)

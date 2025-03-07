@@ -9,7 +9,6 @@ using Content.Shared.StatusEffect;
 using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
-using Content.Shared._CorvaxNext.Mood;
 using JetBrains.Annotations;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -128,8 +127,6 @@ public sealed class SlipperySystem : EntitySystem
         var playSound = !_statusEffects.HasStatusEffect(other, "KnockedDown");
 
         _stun.TryParalyze(other, TimeSpan.FromSeconds(component.ParalyzeTime), true);
-
-        RaiseLocalEvent(other, new MoodEffectEvent("MobSlipped")); // _CorvaxNext: mood
 
         // Preventing from playing the slip sound when you are already knocked down.
         if (playSound)
