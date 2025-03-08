@@ -35,6 +35,31 @@
   - SecurityCyberneticEyes
   - MedicalCyberneticEyes
 
+- type: technology
+  id: AdvancedCooking
+  name: research-technology-advanced-cooking
+  icon:
+    sprite: _CorvaxNext/Structures/Machines/microwaveT2.rsi
+    state: mw
+  discipline: CivilianServices
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - AdvancedMicrowaveMachineCircuitboard
+  - AdvancedReagentGrinderMachineCircuitboard
+
+- type: technology
+  id: AdvancedBotanic
+  name: research-technology-advanced-botanic
+  icon:
+    sprite: _CorvaxNext/Objects/Devices/plant_analyzerT2.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - HydroponicsTrayAdvancedMachineCircuitboard
+  - Advancedplantanalyzer
 # Tier 3
 
 - type: technology

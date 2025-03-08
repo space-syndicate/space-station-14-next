@@ -57,3 +57,18 @@
   parent: BaseCircuitboardRecipe
   id: MedicalBiofabMachineBoard
   result: MedicalBiofabMachineBoard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: AdvancedMicrowaveMachineCircuitboard
+  result: AdvancedMicrowaveMachineCircuitboard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: AdvancedReagentGrinderMachineCircuitboard
+  result: AdvancedReagentGrinderMachineCircuitboard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: HydroponicsTrayAdvancedMachineCircuitboard
+  result: HydroponicsTrayAdvancedMachineCircuitboard
