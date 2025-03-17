@@ -97,7 +97,7 @@
     sprite: Corvax/Clothing/OuterClothing/Coats/captain.rsi
   - type: Armor
     modifiers:
-      coefficients: # Corvax-Next-EDIT-CaptainCoats
+      coefficients: # Corvax-Next-EditCaptainCoats
         Blunt: 0.7
         Slash: 0.7
         Piercing: 0.7
