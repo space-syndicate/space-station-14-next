@@ -4,7 +4,7 @@ ent-MachineBluespaceHarvesterCircuitboard = плата блюспейс харв
 ent-MachineBluespaceTransitorCircuitboard = плата блюспейс Т.Р.А.Н.З.И.Т.
     .desc = { ent-BaseMachineCircuitboard.desc }
 
-ent-AdvancedMicrowaveMachineCircuitboard = улучшенная микроволновка (машинная плата)
+ent-AdvancedMicrowaveMachineCircuitboard = продвинутая микроволновка (машинная плата)
     .desc = { ent-BaseMachineCircuitboard.desc }
 
 ent-HydroponicsTrayAdvancedMachineCircuitboard = продвинутый гидропонный лоток (машинная плата)
