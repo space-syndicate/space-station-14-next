@@ -5,6 +5,8 @@
   slots:
     head:
       part: HeadHuman
+      connections:
+      - torso
     torso:
       part: TorsoHuman
       connections:
