@@ -3,6 +3,8 @@
   name: "animal"
   root: torso
   slots:
+    head:
+      part: HeadAnimal
     torso:
       part: TorsoAnimal
       connections:

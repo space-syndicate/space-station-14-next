@@ -20,6 +20,11 @@
     components:
     - type: SurgerySpeedModifier
       speedModifier: 2.5
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: startingGear
   id: SurgeonGear

@@ -3,6 +3,8 @@
   name: "aghost"
   root: torso
   slots:
+    head:
+      part: HeadHuman
     torso:
       part: TorsoHuman
       connections:
