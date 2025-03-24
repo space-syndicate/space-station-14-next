@@ -21,8 +21,8 @@
       mindComponents:
       - type: HereticRole
       startingGear: HereticGear # see Roles/Antags/heretic.yml
-      сomponents:
-      - type: Skills
+      components:
+      - type: Skills # Corvax-Next-Skills
         skills:
         - ShuttleControl
         - Shooting
