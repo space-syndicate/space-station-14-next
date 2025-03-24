@@ -189,6 +189,12 @@
     - type: Item
       size: Small
       heldPrefix: heart
+    - type: Tag # goob edit
+      tags:
+      - Meat
+      - Organ
+      - Heart
+
 
 - type: entity
   id: OrganHumanStomach
