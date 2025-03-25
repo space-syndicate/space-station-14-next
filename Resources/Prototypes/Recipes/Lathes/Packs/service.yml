@@ -25,6 +25,7 @@
   - WetFloorSign
   - TapeRecorder
   - CassetteTape
+  - PlantAnalyzer
 
 - type: latheRecipePack
   id: ServiceBoardsStatic
