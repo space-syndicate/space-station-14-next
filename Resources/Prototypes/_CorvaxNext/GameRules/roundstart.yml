@@ -76,3 +76,25 @@
       mindRoles: [ MindRoleVoxRaidersCommander ]
       briefing:
         sound: "/Audio/_CorvaxNext/Misc/vox_raiders_greeting.ogg"
+
+- type: entity
+  id: BattleRoyale
+  name: Battle Royale
+  parent: BaseGameRule
+  components:
+  - type: BattleRoyaleRule
+    gear: DeathMatchGear
+    roundEndDelay: 10
+  - type: PointManager
+
+- type: gamePreset
+  id: BattleRoyale
+  alias:
+    - br
+  name: battle-royale-title
+  description: battle-royale-description
+  showInVote: true
+  minPlayers: 0
+  maxPlayers: 100
+  rules:
+    - BattleRoyale
