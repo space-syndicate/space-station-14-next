@@ -1,0 +1,9 @@
+- type: latheRecipePack
+  id: PlantanalyzerStatic
+  recipes:
+    - Plantanalyzer
+
+- type: latheRecipePack
+  id: AdvancedPlantanalyzer
+  recipes:
+    - Advancedplantanalyzer
