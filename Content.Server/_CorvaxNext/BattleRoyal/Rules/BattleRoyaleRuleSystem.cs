@@ -12,6 +12,7 @@ using Content.Server.RoundEnd;
 using Content.Server.Station.Systems;
 using Content.Shared._CorvaxNext.DynamicRange;
 using Content.Shared.Chat;
+using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
@@ -66,7 +67,6 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
         SubscribeLocalEvent<MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<KillReportedEvent>(OnKillReported);
         SubscribeLocalEvent<PlayerBeforeSpawnEvent>(OnBeforeSpawn);
-        SubscribeLocalEvent<RoundEndTextAppendEvent>(OnRoundEndText);
     }
 
     protected override void Started(EntityUid uid, BattleRoyaleRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
@@ -135,8 +135,12 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
             // Ensure kill tracking for all spawned players
             Timer.Spawn(0, () => 
             {
-                if (!Deleted(ev.EntityUid))
-                    EnsureComp<KillTrackerComponent>(ev.EntityUid);
+                // Создаем EntityUid мобов через SpawnPlayerCharacterOnStation
+                var mobEntity = _stationSpawning.SpawnPlayerCharacterOnStation(ev.Station, null, ev.Profile);
+                if (mobEntity != null)
+                {
+                    EnsureComp<KillTrackerComponent>(mobEntity.Value);
+                }
             });
         }
     }
@@ -192,7 +196,7 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
             var victimName = GetEntityName(ev.Entity);
             
             var message = Loc.GetString(calloutId, ("victim", victimName));
-            _chatSystem.ChatMessageToAll(ChatChannel.Server, message, message, uid, false, true, Color.OrangeRed);
+            _chatManager.ChatMessageToAll(ChatChannel.Server, message, message, uid, false, true, Color.OrangeRed);
             return;
         }
         
@@ -225,7 +229,7 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
                 ("killer", killerString), 
                 ("victim", victimName));
             
-            _chatSystem.ChatMessageToAll(ChatChannel.Server, message, message, uid, false, true, Color.OrangeRed);
+            _chatManager.ChatMessageToAll(ChatChannel.Server, message, message, uid, false, true, Color.OrangeRed);
         }
         else if (ev.Primary is KillNpcSource npcSource)
         {
@@ -242,7 +246,7 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
                 ("killer", killerString), 
                 ("victim", victimName));
             
-            _chatSystem.ChatMessageToAll(ChatChannel.Server, message, message, uid, false, true, Color.OrangeRed);
+            _chatManager.ChatMessageToAll(ChatChannel.Server, message, message, uid, false, true, Color.OrangeRed);
         }
     }
     
@@ -324,10 +328,6 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
             // Play global music for all players
             _audio.PlayGlobal(br.ShrinkMusic, Filter.Broadcast(), false, AudioParams.Default.WithVolume(-5f));
             br.PlayedShrinkMusic = true;
-            
-            // Log that we're playing music
-            _adminLogger.Add(LogType.Sound, LogImpact.Medium, 
-                $"Battle Royale shrink music started with {remainingTime:F1} seconds remaining in shrink cycle {br.ShrinkCycle}");
                 
             // Notify players
             _chatManager.DispatchServerAnnouncement(
@@ -407,18 +407,6 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
         }
 
         return result;
-    }
-
-    private void OnRoundEndText(RoundEndTextAppendEvent args)
-    {
-        var query = EntityQueryEnumerator<BattleRoyaleRuleComponent, GameRuleComponent>();
-        while (query.MoveNext(out var uid, out var br, out var gameRule))
-        {
-            if (!GameTicker.IsGameRuleActive(uid, gameRule))
-                continue;
-
-            AppendRoundEndText(uid, br, gameRule, ref args);
-        }
     }
 
     protected override void AppendRoundEndText(EntityUid uid, 
