@@ -23,6 +23,8 @@
   - MopItem
   - Holoprojector
   - WetFloorSign
+  - TapeRecorder
+  - CassetteTape
 
 - type: latheRecipePack
   id: ServiceBoardsStatic
