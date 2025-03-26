@@ -2,7 +2,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 using Content.Shared.Pinpointer;
 
-namespace Content.Shared._CorvaxNext.RangeFinder;
+namespace Content.Shared._CorvaxNext.BattleRoyale.RangeFinder;
 
 /// <summary>
 /// Компонент для отображения направления к центру сужающегося круга в режиме Battle Royale

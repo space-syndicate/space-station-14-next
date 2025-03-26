@@ -1,8 +1,8 @@
-using Content.Shared._CorvaxNext.RangeFinder;
+using Content.Shared._CorvaxNext.BattleRoyale.RangeFinder;
 using Content.Shared.Pinpointer;
 using Robust.Client.GameObjects;
 
-namespace Content.Client._CorvaxNext.RangeFinder;
+namespace Content.Client._CorvaxNext.BattleRoyale.RangeFinder;
 
 public sealed class RangeFinderVisualizerSystem : VisualizerSystem<RangeFinderComponent>
 {

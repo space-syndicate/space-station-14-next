@@ -1,10 +1,10 @@
-using Content.Shared._CorvaxNext.RangeFinder;
-using Content.Shared._CorvaxNext.DynamicRange;
+using Content.Shared._CorvaxNext.BattleRoyale.RangeFinder;
+using Content.Shared._CorvaxNext.BattleRoyale.DynamicRange;
 using Content.Shared.Pinpointer;
 using System.Numerics;
 using Robust.Shared.Physics.Systems;
 
-namespace Content.Server._CorvaxNext.RangeFinder;
+namespace Content.Server._CorvaxNext.BattleRoyale.RangeFinder;
 
 public sealed class RangeFinderSystem : SharedRangeFinderSystem
 {

@@ -2,7 +2,7 @@ using System.Numerics;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._CorvaxNext.DynamicRange;
+namespace Content.Shared._CorvaxNext.BattleRoyale.DynamicRange;
 
 /// <summary>
 /// Dynamic version of RestrictedRangeComponent that works when added after MapInitEvent

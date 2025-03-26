@@ -1,6 +1,6 @@
 using System.Numerics;
 using Content.Server.Salvage;
-using Content.Shared._CorvaxNext.DynamicRange;
+using Content.Shared._CorvaxNext.BattleRoyale.DynamicRange;
 using Content.Shared.Salvage;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Map;
@@ -9,7 +9,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
-namespace Content.Server._CorvaxNext.DynamicRange;
+namespace Content.Server._CorvaxNext.BattleRoyale.DynamicRange;
 
 public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
 {

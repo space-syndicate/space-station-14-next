@@ -1,7 +1,7 @@
 using Content.Shared.Pinpointer;
 using Content.Shared.Interaction;
 
-namespace Content.Shared._CorvaxNext.RangeFinder;
+namespace Content.Shared._CorvaxNext.BattleRoyale.RangeFinder;
 
 public abstract class SharedRangeFinderSystem : EntitySystem
 {
