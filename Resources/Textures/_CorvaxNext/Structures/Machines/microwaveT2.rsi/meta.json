@@ -1,0 +1,47 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-4.0",
+    "copyright": "By RedTerror",
+    "states": [
+        {
+            "name": "mw"
+        },
+        {
+            "name": "mw_unlit"
+        },
+        {
+            "name": "mw0"
+        },
+        { 
+            "name": "mw_running_unlit",
+            "delays": [
+                [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            ]
+        },
+        {
+            "name": "mwb"
+        },
+        {
+            "name": "mwbloody0"
+        },
+        {
+            "name": "mwbloody1"
+        },
+        {
+            "name": "mwo"
+        }
+      ]
+    }

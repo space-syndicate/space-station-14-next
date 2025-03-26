@@ -32,3 +32,15 @@
   id: BluespaceCrystallDynamic
   recipes:
   - ArtificialBluespaceCrystal
+
+- type: latheRecipePack
+  id: AdvancedCookingBoards
+  recipes:
+  - AdvancedMicrowaveMachineCircuitboard
+  - AdvancedReagentGrinderMachineCircuitboard
+
+- type: latheRecipePack
+  id: AdvancedBotanyBoards
+  recipes:
+  - HydroponicsTrayAdvancedMachineCircuitboard
+

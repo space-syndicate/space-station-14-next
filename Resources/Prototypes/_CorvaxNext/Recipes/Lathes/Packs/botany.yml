@@ -3,3 +3,12 @@
   recipes:
     - Plantanalyzer
 
+- type: latheRecipePack
+  id: AdvancedPlantanalyzer
+  recipes:
+    - Advancedplantanalyzer
+    
+- type: latheRecipePack
+  id: PlantanalyzerStatic
+  recipes:
+    - Plantanalyzer

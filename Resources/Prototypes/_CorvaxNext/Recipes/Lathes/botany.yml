@@ -6,3 +6,14 @@
     Glass: 500
     Steel: 500
     Plastic: 200
+
+- type: latheRecipe
+  id: Advancedplantanalyzer
+  result: AdvancedPlantAnalyzerEmpty
+  completetime: 2
+  materials:
+    Glass: 400
+    Steel: 400
+    Plastic: 300
+    Plasma: 100
+    Silver: 50
