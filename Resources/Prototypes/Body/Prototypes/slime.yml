@@ -17,6 +17,7 @@
       - head
       organs:
         core: SentientSlimeCore
+        stomach: OrganSlimeStomach
         lungs: OrganSlimeLungs
     right arm:
       part: RightArmSlime

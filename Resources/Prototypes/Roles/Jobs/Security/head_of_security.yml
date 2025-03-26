@@ -37,6 +37,10 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
 
 - type: startingGear
   id: HoSGear

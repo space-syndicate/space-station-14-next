@@ -7,3 +7,8 @@
   id: AdvancedPlantanalyzer
   recipes:
     - Advancedplantanalyzer
+    
+- type: latheRecipePack
+  id: PlantanalyzerStatic
+  recipes:
+    - Plantanalyzer

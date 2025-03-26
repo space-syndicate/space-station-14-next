@@ -8,7 +8,7 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Bagel Station {1}'
+          mapNameTemplate: '{0} Багель {1}' # Corvax
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
@@ -63,3 +63,9 @@
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
+        # Goobstation blob-config-start HUGE
+        - type: StationBlobConfig
+          stageBegin: 40
+          stageCritical: 450
+          stageTheEnd: 900
+        # Goobstation blob-config-end

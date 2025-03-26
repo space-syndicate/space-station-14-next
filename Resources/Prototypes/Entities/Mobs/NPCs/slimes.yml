@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   name: basic slime
   id: BaseMobAdultSlimes
   parent: [ SimpleMobBase, MobCombat ]
@@ -119,6 +119,7 @@
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
   # end-_CorvaxNext: surgery
+  - type: Fauna # Lavaland Change
 
 - type: entity
   name: basic slime
@@ -176,6 +177,8 @@
     - type: GhostRole
       description: ghost-role-information-angry-slimes-description
       rules: ghost-role-information-angry-slimes-rules
+      mindRoles:
+      - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: short
 
@@ -214,6 +217,8 @@
     - type: GhostRole
       description: ghost-role-information-angry-slimes-description
       rules: ghost-role-information-angry-slimes-rules
+      mindRoles:
+      - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: short
 
@@ -251,5 +256,7 @@
     - type: GhostRole
       description: ghost-role-information-angry-slimes-description
       rules: ghost-role-information-angry-slimes-rules
+      mindRoles:
+      - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: short

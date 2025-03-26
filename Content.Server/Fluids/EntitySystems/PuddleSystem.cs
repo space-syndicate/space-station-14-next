@@ -1,7 +1,10 @@
+using System.Linq;
 using Content.Server.Administration.Logs;
+using Content.Server.Chemistry.TileReactions;
 using Content.Server.DoAfter;
 using Content.Server.Fluids.Components;
 using Content.Server.Spreader;
+using Content.Shared._CorvaxNext.Footprints;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
@@ -387,23 +390,36 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     private void UpdateSlip(EntityUid entityUid, PuddleComponent component, Solution solution)
     {
         var isSlippery = false;
+        var isSuperSlippery = false;
         // The base sprite is currently at 0.3 so we require at least 2nd tier to be slippery or else it's too hard to see.
         var amountRequired = FixedPoint2.New(component.OverflowVolume.Float() * LowThreshold);
         var slipperyAmount = FixedPoint2.Zero;
+
+        // Utilize the defaults from their relevant systems... this sucks, and is a bandaid
+        var launchForwardsMultiplier = SlipperyComponent.DefaultLaunchForwardsMultiplier;
+        var paralyzeTime = SlipperyComponent.DefaultParalyzeTime;
+        var requiredSlipSpeed = StepTriggerComponent.DefaultRequiredTriggeredSpeed;
 
         foreach (var (reagent, quantity) in solution.Contents)
         {
             var reagentProto = _prototypeManager.Index<ReagentPrototype>(reagent.Prototype);
 
-            if (reagentProto.Slippery)
-            {
-                slipperyAmount += quantity;
+            if (!reagentProto.Slippery)
+                continue;
+            slipperyAmount += quantity;
 
-                if (slipperyAmount > amountRequired)
-                {
-                    isSlippery = true;
-                    break;
-                }
+            if (slipperyAmount <= amountRequired)
+                continue;
+            isSlippery = true;
+
+            foreach (var tileReaction in reagentProto.TileReactions)
+            {
+                if (tileReaction is not SpillTileReaction spillTileReaction)
+                    continue;
+                isSuperSlippery = spillTileReaction.SuperSlippery;
+                launchForwardsMultiplier = launchForwardsMultiplier < spillTileReaction.LaunchForwardsMultiplier ? spillTileReaction.LaunchForwardsMultiplier : launchForwardsMultiplier;
+                requiredSlipSpeed = requiredSlipSpeed > spillTileReaction.RequiredSlipSpeed ? spillTileReaction.RequiredSlipSpeed : requiredSlipSpeed;
+                paralyzeTime = paralyzeTime < spillTileReaction.ParalyzeTime ? spillTileReaction.ParalyzeTime : paralyzeTime;
             }
         }
 
@@ -413,6 +429,14 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
             _stepTrigger.SetActive(entityUid, true, comp);
             var friction = EnsureComp<TileFrictionModifierComponent>(entityUid);
             _tile.SetModifier(entityUid, TileFrictionController.DefaultFriction * 0.5f, friction);
+
+            if (!TryComp<SlipperyComponent>(entityUid, out var slipperyComponent))
+                return;
+            slipperyComponent.SuperSlippery = isSuperSlippery;
+            _stepTrigger.SetRequiredTriggerSpeed(entityUid, requiredSlipSpeed);
+            slipperyComponent.LaunchForwardsMultiplier = launchForwardsMultiplier;
+            slipperyComponent.ParalyzeTime = paralyzeTime;
+
         }
         else if (TryComp<StepTriggerComponent>(entityUid, out var comp))
         {
@@ -424,7 +448,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     private void UpdateSlow(EntityUid uid, Solution solution, PuddleComponent component) // Corvax-Next-Footprints
     {
         // Corvax-Next-Footprints-Start
-        if (!component.ViscosityAffectsMovement)
+        if (!component.AffectsMovement)
             return;
         // Corvax-Next-Footprints-End
 
@@ -674,6 +698,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
         var anchored = _map.GetAnchoredEntitiesEnumerator(gridId, mapGrid, tileRef.GridIndices);
         var puddleQuery = GetEntityQuery<PuddleComponent>();
         var sparklesQuery = GetEntityQuery<EvaporationSparkleComponent>();
+        var footprintQuery = GetEntityQuery<FootprintComponent>(); // Corvax-Next-Footprints
 
         while (anchored.MoveNext(out var ent))
         {
@@ -686,6 +711,11 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
             if (!puddleQuery.TryGetComponent(ent, out var puddle))
                 continue;
+
+            // Corvax-Next-Footprints-Start
+            if (footprintQuery.HasComp(ent))
+                continue;
+            // Corvax-Next-Footprints-End
 
             if (TryAddSolution(ent.Value, solution, sound, puddleComponent: puddle))
             {
@@ -735,11 +765,17 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
         var anc = _map.GetAnchoredEntitiesEnumerator(tile.GridUid, grid, tile.GridIndices);
         var puddleQuery = GetEntityQuery<PuddleComponent>();
+        var footprintQuery = GetEntityQuery<FootprintComponent>(); // Corvax-Next-Footprints
 
         while (anc.MoveNext(out var ent))
         {
             if (!puddleQuery.HasComponent(ent.Value))
                 continue;
+
+            // Corvax-Next-Footprints-Start
+            if (footprintQuery.HasComponent(ent.Value))
+                continue;
+            // Corvax-Next-Footprints-End
 
             puddleUid = ent.Value;
             return true;

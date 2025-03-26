@@ -211,7 +211,9 @@
     - BluespaceCrystallDynamic
     - AdvancedTreatmentDynamic
     - PlasmaCutter
+#Corvax-Next-Start
     - AdvancedPlantanalyzer
+#Corvax-Next-End
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
@@ -273,8 +275,10 @@
     - MedicalBiofabBoards
     - BluespaceTechnologyBoards
     - BluespaceHarvesterBoards
+#Corvax-Next-Start
     - AdvancedCookingBoards
     - AdvancedBotanyBoards
+#Corvax-Next-End
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityBoards

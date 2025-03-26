@@ -63,16 +63,15 @@ public sealed partial class FaxMachineComponent : Component
     /// <summary>
     /// Should that fax receive station goal info
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)]
-    [DataField("receiveStationGoal")]
-    public bool ReceiveStationGoal { get; set; } = false;
-    // Corvax-StationGoal-End
+    [DataField]
+    public bool ReceiveStationGoal { get; set; }
 
     /// <summary>
-    /// Sound to play when fax has been emagged
+    /// Should that fax receive station goals from other stations
     /// </summary>
     [DataField]
-    public SoundSpecifier EmagSound = new SoundCollectionSpecifier("sparks");
+    public bool ReceiveAllStationGoals { get; set; }
+    // Corvax-StationGoal-End
 
     /// <summary>
     /// Sound to play when fax printing new message
@@ -176,11 +175,16 @@ public sealed partial class FaxPrintout
     [DataField]
     public bool Locked { get; private set; }
 
+    // Corvax-Next-FaxMark-Start
+    [DataField]
+    public string? Sender { get; private set; }
+    // Corvax-Next-FaxMark-End
+
     private FaxPrintout()
     {
     }
 
-    public FaxPrintout(string content, string name, string? label = null, string? prototypeId = null, string? stampState = null, List<StampDisplayInfo>? stampedBy = null, bool locked = false)
+    public FaxPrintout(string content, string name, string? label = null, string? prototypeId = null, string? stampState = null, List<StampDisplayInfo>? stampedBy = null, bool locked = false, string? sender = null) // Corvax-Next-FaxMark
     {
         Content = content;
         Name = name;
@@ -189,5 +193,6 @@ public sealed partial class FaxPrintout
         StampState = stampState;
         StampedBy = stampedBy ?? new List<StampDisplayInfo>();
         Locked = locked;
+        Sender = sender; // Corvax-Next-FaxMark
     }
 }
