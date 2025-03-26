@@ -26,7 +26,6 @@
   # Corvax-Next-Recipes-Start
   - TapeRecorder
   - CassetteTape
-  - PlantAnalyzer
   # Corvax-Next-Recipes-End
 
 - type: latheRecipePack
