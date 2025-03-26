@@ -1,16 +1,15 @@
+using Content.Server.Administration.Commands;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server._CorvaxNext.BattleRoyal.Rules.Components;
-using Content.Server._CorvaxNext.DynamicRange;
 using Content.Server.KillTracking;
 using Content.Server.Mind;
 using Content.Server.Points;
 using Content.Server.RoundEnd;
 using Content.Server.Station.Systems;
-using Content.Shared._CorvaxNext.DynamicRange;
 using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
@@ -22,8 +21,6 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Points;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
-using Robust.Shared.Audio;
-using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Network;
@@ -45,16 +42,11 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
     [Dependency] private readonly TransformSystem _transforms = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly KillTrackingSystem _killTracking = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
-    [Dependency] private readonly DynamicRangeSystem _dynamicRange = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-
-    // For storing the song length
-    private float _shrinkSongLength;
     
     // For kill callouts
     private const int MaxNormalCallouts = 60; // death-match-kill-callout-0 to death-match-kill-callout-60
@@ -73,55 +65,8 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
     {
         base.Started(uid, component, gameRule, args);
 
-        // Find an existing DynamicRange entity to use for the battle royale
-        var rangeQuery = EntityQueryEnumerator<DynamicRangeComponent>();
-        while (rangeQuery.MoveNext(out var rangeUid, out _))
-        {
-            component.DynamicRangeEntity = rangeUid;
-            break;
-        }
-
-        // Start first shrink cycle after 3 minutes
-        Timer.Spawn(TimeSpan.FromMinutes(3), () => 
-        {
-            if (GameTicker.RunLevel == GameRunLevel.InRound)
-                StartShrinking(uid, component);
-        });
-
         // Check if there's only one player
         CheckLastManStanding(uid, component);
-    }
-
-    private void StartShrinking(EntityUid uid, BattleRoyaleRuleComponent component)
-    {
-        if (component.DynamicRangeEntity == null || !TryComp<DynamicRangeComponent>(component.DynamicRangeEntity, out var range))
-            return;
-            
-        component.ShrinkCycle++;
-        
-        // Reset the music played flag for the new shrink cycle
-        component.PlayedShrinkMusic = false;
-        
-        // Set shrinking parameters - longer times for later cycles
-        if (range.IsShrinking)
-            return;
-            
-        var shrinkTime = 180f + (component.ShrinkCycle * 30f); // 3 minutes + 30 seconds per cycle
-        
-        _dynamicRange.SetShrinking(component.DynamicRangeEntity.Value, true, range);
-        _dynamicRange.SetShrinkTime(component.DynamicRangeEntity.Value, shrinkTime, range);
-        
-        // Announce the shrinking
-        _chatManager.DispatchServerAnnouncement(
-            Loc.GetString("battle-royale-zone-shrinking", 
-                ("time", shrinkTime)));
-        
-        // Schedule the next shrinking cycle
-        Timer.Spawn(TimeSpan.FromSeconds(shrinkTime + 120), () => 
-        {
-            if (GameTicker.RunLevel == GameRunLevel.InRound)
-                StartShrinking(uid, component);
-        });
     }
 
     private void OnBeforeSpawn(PlayerBeforeSpawnEvent ev)
@@ -132,16 +77,27 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
             if (!GameTicker.IsGameRuleActive(uid, gameRule))
                 continue;
 
-            // Ensure kill tracking for all spawned players
-            Timer.Spawn(0, () => 
-            {
-                // Создаем EntityUid мобов через SpawnPlayerCharacterOnStation
-                var mobEntity = _stationSpawning.SpawnPlayerCharacterOnStation(ev.Station, null, ev.Profile);
-                if (mobEntity != null)
-                {
-                    EnsureComp<KillTrackerComponent>(mobEntity.Value);
-                }
-            });
+            // Create mind for player
+            var newMind = _mind.CreateMind(ev.Player.UserId, ev.Profile.Name);
+            _mind.SetUserId(newMind, ev.Player.UserId);
+
+            // Spawn player character on station
+            var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(ev.Station, null, ev.Profile);
+            DebugTools.AssertNotNull(mobMaybe);
+            var mob = mobMaybe!.Value;
+
+            // Transfer mind to created character
+            _mind.TransferTo(newMind, mob);
+            
+            // Set outfit from BattleRoyaleRule component
+            SetOutfitCommand.SetOutfit(mob, br.Gear, EntityManager);
+            
+            // Add kill tracking component
+            EnsureComp<KillTrackerComponent>(mob);
+            
+            // Mark event as handled to prevent standard spawn
+            ev.Handled = true;
+            break;
         }
     }
 
@@ -274,65 +230,6 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
         
         return Loc.GetString("death-match-name-npc", 
             ("name", MetaData(entity).EntityName));
-    }
-
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-
-        var query = EntityQueryEnumerator<BattleRoyaleRuleComponent, GameRuleComponent>();
-        while (query.MoveNext(out var uid, out var br, out var gameRule))
-        {
-            if (!GameTicker.IsGameRuleActive(uid, gameRule))
-                continue;
-
-            // Check if we should play the shrink music
-            CheckShrinkMusic(uid, br);
-        }
-    }
-
-    private void CheckShrinkMusic(EntityUid uid, BattleRoyaleRuleComponent br)
-    {
-        if (br.DynamicRangeEntity == null || br.PlayedShrinkMusic)
-            return;
-
-        if (!TryComp<DynamicRangeComponent>(br.DynamicRangeEntity, out var dynamicRange))
-            return;
-
-        // Only play music if the zone is currently shrinking
-        if (!dynamicRange.IsShrinking)
-            return;
-
-        // Calculate the time elapsed since shrinking started
-        if (!dynamicRange.ShrinkStartTime.HasValue || !dynamicRange.InitialRange.HasValue)
-            return;
-
-        var curTime = _timing.CurTime;
-        var elapsed = (curTime - dynamicRange.ShrinkStartTime.Value).TotalSeconds;
-        var totalTime = dynamicRange.ShrinkTime;
-        var remainingTime = totalTime - elapsed;
-
-        // Get the song length if we haven't already
-        if (_shrinkSongLength <= 0)
-        {
-            var soundSpec = _audio.ResolveSound(br.ShrinkMusic);
-            if (soundSpec != null)
-            {
-                _shrinkSongLength = (float)_audio.GetAudioLength(soundSpec).TotalSeconds;
-            }
-        }
-
-        // Play the music when appropriate time remains
-        if (remainingTime <= _shrinkSongLength + br.MusicBuffer && !br.PlayedShrinkMusic)
-        {
-            // Play global music for all players
-            _audio.PlayGlobal(br.ShrinkMusic, Filter.Broadcast(), false, AudioParams.Default.WithVolume(-5f));
-            br.PlayedShrinkMusic = true;
-                
-            // Notify players
-            _chatManager.DispatchServerAnnouncement(
-                Loc.GetString("battle-royale-zone-closing"));
-        }
     }
 
     private void CheckLastManStanding(EntityUid uid, BattleRoyaleRuleComponent component)
