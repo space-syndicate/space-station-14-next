@@ -210,7 +210,7 @@
     - BluespaceCrystallDynamic
     - AdvancedTreatmentDynamic
     - PlasmaCutter
-    - PlantAnalyzerDynamic
+    - PlantAnalyzerDynamic # Corvax Next
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
