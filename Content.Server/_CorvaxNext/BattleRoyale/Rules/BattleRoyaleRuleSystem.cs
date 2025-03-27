@@ -3,15 +3,18 @@ using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
+using Content.Server.GameTicking.Events;
 using Content.Server.GameTicking.Rules;
 using Content.Server.KillTracking;
 using Content.Server.Mind;
 using Content.Server.Points;
 using Content.Server.RoundEnd;
+using Content.Server.Shuttles.Components;
+using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
 using Content.Server._CorvaxNext.BattleRoyal.Rules.Components;
+using Content.Server._CorvaxNext.Ghostbar.Components;
 using Content.Shared.Chat;
-using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
@@ -19,20 +22,17 @@ using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Players;
 using Content.Shared.Points;
 using Content.Shared._CorvaxNext.Skills;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
-using Robust.Shared.Network;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Server._CorvaxNext.Ghostbar.Components;
-using Content.Shared.Players;
-using Content.Server.Shuttles.Components;
-using Content.Server.Shuttles.Systems;
-using Content.Server.GameTicking.Events;
+using Robust.Shared.Enums;
 
 namespace Content.Server._CorvaxNext.BattleRoyal.Rules;
 
@@ -78,6 +78,9 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
         // Подписки для контроля входа и системы прибытия
         SubscribeLocalEvent<RefreshLateJoinAllowedEvent>(OnRefreshLateJoinAllowed);
         SubscribeLocalEvent<PlayerSpawningEvent>(OnPlayerSpawning, before: new[] { typeof(ArrivalsSystem) });
+
+        // Добавляем подписку на событие отключения игрока
+        SubscribeLocalEvent<PlayerDetachedEvent>(OnPlayerDetached);
     }
 
     /// <summary>
@@ -340,15 +343,33 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
         }
     }
 
+    private void OnPlayerDetached(PlayerDetachedEvent ev)
+    {
+        var query = EntityQueryEnumerator<BattleRoyaleRuleComponent, GameRuleComponent>();
+        while (query.MoveNext(out var uid, out var br, out var gameRule))
+        {
+            if (!GameTicker.IsGameRuleActive(uid, gameRule))
+                continue;
+
+            // Проверяем, не остался ли один игрок после отключения
+            CheckLastManStanding(uid, br);
+        }
+    }
+
     private List<EntityUid> GetAlivePlayers()
     {
         var result = new List<EntityUid>();
         var mobQuery = EntityQueryEnumerator<MobStateComponent, ActorComponent>();
 
-        while (mobQuery.MoveNext(out var uid, out var mobState, out _))
+        while (mobQuery.MoveNext(out var uid, out var mobState, out var actor))
         {
             // Пропускаем призраков и мертвых IC
             if (HasComp<GhostBarPlayerComponent>(uid) || HasComp<IsDeadICComponent>(uid))
+                continue;
+
+            // Проверяем, что игрок подключен и его сессия активна
+            if (actor.PlayerSession?.Status != SessionStatus.Connected && 
+                actor.PlayerSession?.Status != SessionStatus.InGame)
                 continue;
 
             if (_mobState.IsAlive(uid, mobState))
