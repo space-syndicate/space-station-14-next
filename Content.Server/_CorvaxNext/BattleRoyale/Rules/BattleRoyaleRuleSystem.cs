@@ -19,6 +19,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Points;
+using Content.Shared._CorvaxNext.Skills;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Player;
@@ -47,7 +48,8 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    
+    [Dependency] private readonly SharedSkillsSystem _skills = default!;
+
     // For kill callouts
     private const int MaxNormalCallouts = 60; // death-match-kill-callout-0 to death-match-kill-callout-60
     private const int MaxEnvironmentalCallouts = 10; // death-match-kill-callout-env-0 to death-match-kill-callout-env-10
@@ -59,6 +61,7 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
         SubscribeLocalEvent<MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<KillReportedEvent>(OnKillReported);
         SubscribeLocalEvent<PlayerBeforeSpawnEvent>(OnBeforeSpawn);
+        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
     }
 
     protected override void Started(EntityUid uid, BattleRoyaleRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
@@ -85,6 +88,7 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
             var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(ev.Station, null, ev.Profile);
             DebugTools.AssertNotNull(mobMaybe);
             var mob = mobMaybe!.Value;
+			_skills.GrantAllSkills(mob);
 
             // Transfer mind to created character
             _mind.TransferTo(newMind, mob);
@@ -327,5 +331,18 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
         // Show the kills scoreboard
         args.AddLine(Loc.GetString("battle-royale-scoreboard-header"));
         args.AddLine(new FormattedMessage(point.Scoreboard).ToMarkup());
+    }
+
+    private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent ev)
+    {
+        var query = EntityQueryEnumerator<BattleRoyaleRuleComponent, GameRuleComponent>();
+        while (query.MoveNext(out var uid, out var br, out var gameRule))
+        {
+            if (!GameTicker.IsGameRuleActive(uid, gameRule))
+                continue;
+
+            _skills.GrantAllSkills(ev.Mob);
+            break;
+        }
     }
 }
