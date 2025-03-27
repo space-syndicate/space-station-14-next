@@ -4,12 +4,12 @@ using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
-using Content.Server._CorvaxNext.BattleRoyal.Rules.Components;
 using Content.Server.KillTracking;
 using Content.Server.Mind;
 using Content.Server.Points;
 using Content.Server.RoundEnd;
 using Content.Server.Station.Systems;
+using Content.Server._CorvaxNext.BattleRoyal.Rules.Components;
 using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
@@ -30,14 +30,19 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Server._CorvaxNext.Ghostbar.Components;
 using Content.Shared.Players;
+using Content.Server.Shuttles.Components;
+using Content.Server.Shuttles.Systems;
+using Content.Server.GameTicking.Events;
 
 namespace Content.Server._CorvaxNext.BattleRoyal.Rules;
 
 /// <summary>
-/// Battle Royale game mode where the last player standing wins
+///     Battle Royale game mode where the last player standing wins,
+///     со встроенными проверками для запрета позднего входа.
 /// </summary>
 public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComponent>
 {
+    // Оригинальные зависимости
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly PointSystem _point = default!;
@@ -53,25 +58,74 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedSkillsSystem _skills = default!;
 
-    // For kill callouts
-    private const int MaxNormalCallouts = 60; // death-match-kill-callout-0 to death-match-kill-callout-60
-    private const int MaxEnvironmentalCallouts = 10; // death-match-kill-callout-env-0 to death-match-kill-callout-env-10
+    // Новая зависимость для работы с системой прибытия из дополнений
+    [Dependency] private readonly ArrivalsSystem _arrivals = default!;
+
+    // Для kill callouts
+    private const int MaxNormalCallouts = 60;  // death-match-kill-callout-0..60
+    private const int MaxEnvironmentalCallouts = 10; // death-match-kill-callout-env-0..10
 
     public override void Initialize()
     {
         base.Initialize();
 
+        // Оригинальные подписки на события
         SubscribeLocalEvent<MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<KillReportedEvent>(OnKillReported);
         SubscribeLocalEvent<PlayerBeforeSpawnEvent>(OnBeforeSpawn);
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+
+        // Подписки для контроля входа и системы прибытия
+        SubscribeLocalEvent<RefreshLateJoinAllowedEvent>(OnRefreshLateJoinAllowed);
+        SubscribeLocalEvent<PlayerSpawningEvent>(OnPlayerSpawning, before: new[] { typeof(ArrivalsSystem) });
+    }
+
+    /// <summary>
+    ///     Запрещаем поздний вход, если режим Battle Royale активен.
+    /// </summary>
+    private void OnRefreshLateJoinAllowed(RefreshLateJoinAllowedEvent ev)
+    {
+        if (CheckBattleRoyaleActive())
+        {
+            ev.Disallow();
+        }
+    }
+
+    /// <summary>
+    ///     Перехватываем событие спавна игрока для блокировки системы прибытия.
+    ///     Это работает как для позднего входа, так и для первого присоединения.
+    /// </summary>
+    private void OnPlayerSpawning(PlayerSpawningEvent ev)
+    {
+        // Если режим Battle Royale активен и система прибытия пытается обработать спавн,
+        // то не позволяем ей это сделать, отмечая результат как null
+        if (CheckBattleRoyaleActive() && ev.SpawnResult == null)
+        {
+            // Проверяем, есть ли в этом событии компонент StationArrivalsComponent
+            if (HasComp<StationArrivalsComponent>(ev.Station))
+            {
+                // Устанавливаем SpawnResult в null, чтобы система прибытия его пропустила
+                ev.SpawnResult = null;
+            }
+        }
+    }
+
+    /// <summary>
+    ///     Проверяем, активен ли режим Battle Royale.
+    /// </summary>
+    private bool CheckBattleRoyaleActive()
+    {
+        // Ищем любой компонент BattleRoyaleRuleComponent,
+        // у которого есть ActiveGameRuleComponent.
+        var query = EntityQueryEnumerator<BattleRoyaleRuleComponent, ActiveGameRuleComponent>();
+        return query.MoveNext(out _, out _, out _);
     }
 
     protected override void Started(EntityUid uid, BattleRoyaleRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, component, gameRule, args);
 
-        // Check if there's only one player
+        // Проверяем, не остался ли один игрок
         CheckLastManStanding(uid, component);
     }
 
@@ -83,26 +137,26 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
             if (!GameTicker.IsGameRuleActive(uid, gameRule))
                 continue;
 
-            // Create mind for player
+            // Создаем майнд для игрока
             var newMind = _mind.CreateMind(ev.Player.UserId, ev.Profile.Name);
             _mind.SetUserId(newMind, ev.Player.UserId);
 
-            // Spawn player character on station
+            // Спавним персонажа игрока на станции
             var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(ev.Station, null, ev.Profile);
             DebugTools.AssertNotNull(mobMaybe);
             var mob = mobMaybe!.Value;
-			_skills.GrantAllSkills(mob);
+            _skills.GrantAllSkills(mob);
 
-            // Transfer mind to created character
+            // Переносим mind в созданного персонажа
             _mind.TransferTo(newMind, mob);
-            
-            // Set outfit from BattleRoyaleRule component
+
+            // Выдаем аутфит, прописанный в компоненте BattleRoyaleRuleComponent
             SetOutfitCommand.SetOutfit(mob, br.Gear, EntityManager);
-            
-            // Add kill tracking component
+
+            // Добавляем компонент трекинга убийств
             EnsureComp<KillTrackerComponent>(mob);
-            
-            // Mark event as handled to prevent standard spawn
+
+            // Помечаем событие как обработанное, чтобы предотвратить стандартный спавн
             ev.Handled = true;
             break;
         }
@@ -119,7 +173,7 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
             if (!GameTicker.IsGameRuleActive(uid, gameRule))
                 continue;
 
-            // Check if there's only one player left alive
+            // Проверяем, не остался ли один игрок в живых
             CheckLastManStanding(uid, br);
         }
     }
@@ -132,100 +186,90 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
             if (!GameTicker.IsGameRuleActive(uid, gameRule))
                 continue;
 
-            // Award kill points
+            // Начисляем очки за убийство
             if (ev.Primary is KillPlayerSource player)
             {
                 _point.AdjustPointValue(player.PlayerId, 1, uid, point);
             }
 
-            // Assist points
+            // Начисляем ассист
             if (ev.Assist is KillPlayerSource assist)
             {
                 _point.AdjustPointValue(assist.PlayerId, 0.5f, uid, point);
             }
-            
-            // Send kill callout announcement
+
+            // Отправляем kill callout
             SendKillCallout(uid, ref ev);
         }
     }
-    
+
     private void SendKillCallout(EntityUid uid, ref KillReportedEvent ev)
     {
-        // Determine if this is an environmental death or suicide
+        // Определяем, смерть ли это от окружения или суицид
         if (ev.Primary is KillEnvironmentSource || ev.Suicide)
         {
             var calloutNumber = _random.Next(0, MaxEnvironmentalCallouts + 1);
             var calloutId = $"death-match-kill-callout-env-{calloutNumber}";
             var victimName = GetEntityName(ev.Entity);
-            
+
             var message = Loc.GetString(calloutId, ("victim", victimName));
             _chatManager.ChatMessageToAll(ChatChannel.Server, message, message, uid, false, true, Color.OrangeRed);
             return;
         }
-        
-        // Normal kill with potential assist
+
+        // Обычное убийство (с ассистом или без)
         string killerString;
         if (ev.Primary is KillPlayerSource primarySource)
         {
             var primaryName = GetPlayerName(primarySource.PlayerId);
-            
+
             if (ev.Assist is KillPlayerSource assistSource)
             {
-                // Kill with assist
+                // Убийство с ассистом
                 var assistName = GetPlayerName(assistSource.PlayerId);
-                killerString = Loc.GetString("death-match-assist", 
-                    ("primary", primaryName), 
-                    ("secondary", assistName));
+                killerString = Loc.GetString("death-match-assist", ("primary", primaryName), ("secondary", assistName));
             }
             else
             {
-                // Normal kill
+                // Обычное убийство
                 killerString = primaryName;
             }
-            
-            // Get random callout
+
             var calloutNumber = _random.Next(0, MaxNormalCallouts + 1);
             var calloutId = $"death-match-kill-callout-{calloutNumber}";
             var victimName = GetEntityName(ev.Entity);
-            
-            var message = Loc.GetString(calloutId, 
-                ("killer", killerString), 
-                ("victim", victimName));
-            
+
+            var message = Loc.GetString(calloutId, ("killer", killerString), ("victim", victimName));
             _chatManager.ChatMessageToAll(ChatChannel.Server, message, message, uid, false, true, Color.OrangeRed);
         }
         else if (ev.Primary is KillNpcSource npcSource)
         {
-            // NPC kill
+            // NPC убил
             var npcName = GetEntityName(npcSource.NpcEnt);
             killerString = npcName;
-            
-            // Get random callout
+
             var calloutNumber = _random.Next(0, MaxNormalCallouts + 1);
             var calloutId = $"death-match-kill-callout-{calloutNumber}";
             var victimName = GetEntityName(ev.Entity);
-            
-            var message = Loc.GetString(calloutId, 
-                ("killer", killerString), 
-                ("victim", victimName));
-            
+
+            var message = Loc.GetString(calloutId, ("killer", killerString), ("victim", victimName));
             _chatManager.ChatMessageToAll(ChatChannel.Server, message, message, uid, false, true, Color.OrangeRed);
         }
     }
-    
+
     private string GetPlayerName(NetUserId userId)
     {
         if (!_player.TryGetSessionById(userId, out var session))
             return "Unknown";
-            
+
         if (session.AttachedEntity == null)
             return session.Name;
-            
+
         return Loc.GetString("death-match-name-player",
             ("name", MetaData(session.AttachedEntity.Value).EntityName),
             ("username", session.Name));
     }
-    
+
     private string GetEntityName(EntityUid entity)
     {
         if (TryComp<ActorComponent>(entity, out var actor))
@@ -234,8 +278,8 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
                 ("name", MetaData(entity).EntityName),
                 ("username", actor.PlayerSession.Name));
         }
-        
-        return Loc.GetString("death-match-name-npc", 
+
+        return Loc.GetString("death-match-name-npc",
             ("name", MetaData(entity).EntityName));
     }
 
@@ -243,55 +287,52 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
     {
         var alivePlayers = GetAlivePlayers();
 
-        // If only one player left, they are the winner
+        // Если остался только один игрок, он — победитель
         if (alivePlayers.Count == 1)
         {
             component.Victor = alivePlayers[0];
-            
-            // Make sure the player actually has a mind entity
+
             if (_mind.TryGetMind(component.Victor.Value, out var mindId, out var mind))
             {
                 var victorName = MetaData(component.Victor.Value).EntityName;
-                string playerName = mind.Session?.Name ?? victorName;
-                
-                // Announce the winner
+                var playerName = mind.Session?.Name ?? victorName;
+
+                // Объявляем победителя
                 _chatManager.DispatchServerAnnouncement(
-                    Loc.GetString("battle-royale-winner-announcement", 
-                        ("player", playerName)));
-                
-                // End the round after a delay
-                Timer.Spawn(component.RoundEndDelay, () => {
+                    Loc.GetString("battle-royale-winner-announcement", ("player", playerName)));
+
+                // Завершаем раунд с задержкой
+                Timer.Spawn(component.RoundEndDelay, () =>
+                {
                     if (GameTicker.RunLevel == GameRunLevel.InRound)
                         _roundEnd.EndRound();
                 });
             }
         }
-        // If no players left (everyone died somehow), end the round
+        // Если игроков не осталось вообще, завершаем раунд
         else if (alivePlayers.Count == 0)
         {
             component.Victor = null;
-            
-            // No winner - end immediately
             _roundEnd.EndRound();
         }
-        // If we're starting with just one player, they win automatically
-        else if (alivePlayers.Count == 1 && GameTicker.RunLevel == GameRunLevel.InRound && 
+        // Если изначально зашел только один игрок, он тоже автоматически побеждает
+        else if (alivePlayers.Count == 1 && GameTicker.RunLevel == GameRunLevel.InRound &&
                  component.Victor == null && Timing.CurTime < TimeSpan.FromSeconds(10))
         {
             component.Victor = alivePlayers[0];
-            
+
             if (_mind.TryGetMind(component.Victor.Value, out var mindId, out var mind))
             {
                 var victorName = MetaData(component.Victor.Value).EntityName;
-                string playerName = mind.Session?.Name ?? victorName;
-                
-                // Single player victory
+                var playerName = mind.Session?.Name ?? victorName;
+
+                // Объявляем единственного игрока победителем
                 _chatManager.DispatchServerAnnouncement(
-                    Loc.GetString("battle-royale-single-player", 
-                        ("player", playerName)));
-                    
-                // End round
-                Timer.Spawn(component.RoundEndDelay, () => {
+                    Loc.GetString("battle-royale-single-player", ("player", playerName)));
+
+                // Завершаем раунд
+                Timer.Spawn(component.RoundEndDelay, () =>
+                {
                     if (GameTicker.RunLevel == GameRunLevel.InRound)
                         _roundEnd.EndRound();
                 });
@@ -306,10 +347,10 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
 
         while (mobQuery.MoveNext(out var uid, out var mobState, out _))
         {
-            // Skip entities with GhostBarPlayerComponent or IsDeadICComponent
+            // Пропускаем призраков и мертвых IC
             if (HasComp<GhostBarPlayerComponent>(uid) || HasComp<IsDeadICComponent>(uid))
                 continue;
-                
+
             if (_mobState.IsAlive(uid, mobState))
                 result.Add(uid);
         }
@@ -317,25 +358,25 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
         return result;
     }
 
-    protected override void AppendRoundEndText(EntityUid uid, 
-        BattleRoyaleRuleComponent component, 
-        GameRuleComponent gameRule, 
+    protected override void AppendRoundEndText(EntityUid uid,
+        BattleRoyaleRuleComponent component,
+        GameRuleComponent gameRule,
         ref RoundEndTextAppendEvent args)
     {
         if (!TryComp<PointManagerComponent>(uid, out var point))
             return;
 
-        // Show the winner first if we have one
+        // Сначала показываем победителя, если он есть
         if (component.Victor != null && _mind.TryGetMind(component.Victor.Value, out var victorMindId, out var victorMind))
         {
             var victorName = MetaData(component.Victor.Value).EntityName;
             var victorPlayerName = victorMind.Session?.Name ?? victorName;
-            
+
             args.AddLine(Loc.GetString("battle-royale-winner", ("player", victorPlayerName)));
             args.AddLine("");
         }
 
-        // Show the kills scoreboard
+        // Затем – таблицу убийств (scoreboard)
         args.AddLine(Loc.GetString("battle-royale-scoreboard-header"));
         args.AddLine(new FormattedMessage(point.Scoreboard).ToMarkup());
     }
