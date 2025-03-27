@@ -15,6 +15,7 @@ using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
+using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -27,6 +28,8 @@ using Robust.Shared.Random;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Server._CorvaxNext.Ghostbar.Components;
+using Content.Shared.Players;
 
 namespace Content.Server._CorvaxNext.BattleRoyal.Rules;
 
@@ -303,6 +306,10 @@ public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComp
 
         while (mobQuery.MoveNext(out var uid, out var mobState, out _))
         {
+            // Skip entities with GhostBarPlayerComponent or IsDeadICComponent
+            if (HasComp<GhostBarPlayerComponent>(uid) || HasComp<IsDeadICComponent>(uid))
+                continue;
+                
             if (_mobState.IsAlive(uid, mobState))
                 result.Add(uid);
         }
