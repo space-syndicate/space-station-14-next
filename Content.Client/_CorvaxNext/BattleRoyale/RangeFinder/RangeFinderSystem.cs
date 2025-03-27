@@ -13,18 +13,18 @@ public sealed class RangeFinderSystem : SharedRangeFinderSystem
     {
         base.Update(frameTime);
 
-        // Обновляем направление стрелки в соответствии с поворотом камеры
+        // Update arrow direction based on camera rotation.
         var query = EntityQueryEnumerator<RangeFinderComponent, SpriteComponent>();
         while (query.MoveNext(out var _, out var rangeFinder, out var sprite))
         {
-            // Если компонент неактивен, не вращаем стрелку
+            // If the component is inactive, set arrow rotation to zero.
             if (!rangeFinder.IsActive)
             {
                 sprite.LayerSetRotation(PinpointerLayers.Screen, Angle.Zero);
                 continue;
             }
 
-            // Если нет цели, не вращаем стрелку
+            // If there is no target, set arrow rotation to zero.
             if (rangeFinder.DistanceToTarget == Distance.Unknown)
             {
                 sprite.LayerSetRotation(PinpointerLayers.Screen, Angle.Zero);

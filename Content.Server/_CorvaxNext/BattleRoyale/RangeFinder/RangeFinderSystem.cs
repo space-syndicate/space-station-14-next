@@ -1,7 +1,7 @@
+using System.Numerics;
 using Content.Shared._CorvaxNext.BattleRoyale.RangeFinder;
 using Content.Shared._CorvaxNext.BattleRoyale.DynamicRange;
 using Content.Shared.Pinpointer;
-using System.Numerics;
 using Robust.Shared.Physics.Systems;
 
 namespace Content.Server._CorvaxNext.BattleRoyale.RangeFinder;
@@ -17,7 +17,6 @@ public sealed class RangeFinderSystem : SharedRangeFinderSystem
     public override void Initialize()
     {
         base.Initialize();
-
         _dynamicRangeQuery = GetEntityQuery<DynamicRangeComponent>();
         _transformQuery = GetEntityQuery<TransformComponent>();
     }
@@ -26,7 +25,6 @@ public sealed class RangeFinderSystem : SharedRangeFinderSystem
     {
         base.Update(frameTime);
 
-        // Обновляем направление для всех RangeFinder'ов
         var query = EntityQueryEnumerator<RangeFinderComponent>();
         while (query.MoveNext(out var uid, out var rangeFinder))
         {
@@ -41,10 +39,7 @@ public sealed class RangeFinderSystem : SharedRangeFinderSystem
 
         var isActive = !rangeFinder.IsActive;
         SetActive(uid, isActive, rangeFinder);
-        
-        // Обновляем визуализацию при переключении активности
         UpdateAppearance(uid, rangeFinder);
-        
         return isActive;
     }
 
@@ -52,18 +47,18 @@ public sealed class RangeFinderSystem : SharedRangeFinderSystem
     {
         if (!Resolve(uid, ref rangeFinder))
             return;
-        
+
         if (isActive == rangeFinder.IsActive)
             return;
 
         rangeFinder.IsActive = isActive;
-        
-        // При деактивации сбрасываем дистанцию
+
+        // Reset distance when deactivating
         if (!isActive)
         {
             rangeFinder.DistanceToTarget = Distance.Unknown;
         }
-        
+
         UpdateAppearance(uid, rangeFinder);
         Dirty(uid, rangeFinder);
     }
@@ -73,7 +68,7 @@ public sealed class RangeFinderSystem : SharedRangeFinderSystem
         if (!Resolve(uid, ref rangeFinder))
             return;
 
-        // Если компонент неактивен, убеждаемся что визуализация тоже отключена
+        // If inactive, ensure the distance is reset and appearance is updated.
         if (!rangeFinder.IsActive)
         {
             if (rangeFinder.DistanceToTarget != Distance.Unknown)
@@ -85,9 +80,9 @@ public sealed class RangeFinderSystem : SharedRangeFinderSystem
             return;
         }
 
+        // If target is not set or is invalid, find the closest DynamicRange.
         if (rangeFinder.TargetRange == null || !EntityManager.EntityExists(rangeFinder.TargetRange.Value))
         {
-            // Если цель не установлена или недействительна, находим ближайший DynamicRange
             var closestDynamicRange = FindClosestDynamicRange(uid);
             if (closestDynamicRange == null)
             {
@@ -95,13 +90,12 @@ public sealed class RangeFinderSystem : SharedRangeFinderSystem
                 UpdateAppearance(uid, rangeFinder);
                 return;
             }
-            
             rangeFinder.TargetRange = closestDynamicRange;
         }
 
         var dirVec = CalculateDirection(uid, rangeFinder.TargetRange.Value);
         var oldDist = rangeFinder.DistanceToTarget;
-        
+
         if (dirVec != null)
         {
             var angle = dirVec.Value.ToWorldAngle();
@@ -113,7 +107,7 @@ public sealed class RangeFinderSystem : SharedRangeFinderSystem
         {
             SetDistance(uid, Distance.Unknown, rangeFinder);
         }
-        
+
         if (oldDist != rangeFinder.DistanceToTarget)
             UpdateAppearance(uid, rangeFinder);
     }
@@ -129,7 +123,6 @@ public sealed class RangeFinderSystem : SharedRangeFinderSystem
         var closestDistance = float.MaxValue;
         EntityUid? closestEntity = null;
 
-        // Находим ближайший DynamicRange
         var dynamicRangeQuery = EntityQueryEnumerator<DynamicRangeComponent, TransformComponent>();
         while (dynamicRangeQuery.MoveNext(out var rangeUid, out _, out var rangeTransform))
         {
@@ -151,34 +144,27 @@ public sealed class RangeFinderSystem : SharedRangeFinderSystem
     {
         if (!_transformQuery.TryGetComponent(pinUid, out var pin))
             return null;
-        
+
         if (!_transformQuery.TryGetComponent(trgUid, out var trg))
             return null;
-        
+
         if (!_dynamicRangeQuery.TryGetComponent(trgUid, out var dynamicRange))
             return null;
 
-        // Проверяем, находятся ли они на одной карте
+        // Calculate the direction from the RangeFinder to the center of the DynamicRange if on the same map.
         if (pin.MapID != trg.MapID)
             return null;
 
-        // Получаем мировую позицию для обоих объектов
         var pinPos = _transform.GetWorldPosition(pin);
         var targetPos = _transform.GetWorldPosition(trg);
-        
-        // Направление - от позиции RangeFinder к центру DynamicRange
         var centerPos = targetPos + dynamicRange.Origin;
-        var dir = centerPos - pinPos;
-        
-        return dir;
+        return centerPos - pinPos;
     }
 
     private Distance CalculateDistance(Vector2 vec, RangeFinderComponent rangeFinder)
     {
         var dist = vec.Length();
-        
-        // Улучшенная логика определения дистанции, чтобы избежать искажений вблизи цели
-        if (dist <= rangeFinder.ReachedDistance / 2) // Добавляем дополнительную проверку
+        if (dist <= rangeFinder.ReachedDistance / 2)
             return Distance.Reached;
         else if (dist <= rangeFinder.ReachedDistance)
             return Distance.Reached;

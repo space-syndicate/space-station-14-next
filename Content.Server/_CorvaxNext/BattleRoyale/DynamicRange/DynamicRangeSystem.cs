@@ -3,16 +3,16 @@ using System.Linq;
 using Content.Server.Salvage;
 using Content.Shared._CorvaxNext.BattleRoyale.DynamicRange;
 using Content.Shared.Salvage;
+using Content.Server.Damage;
+using Content.Shared.Damage;
+using Content.Shared.FixedPoint;
+using Content.Shared.Mobs.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Server.Damage;
-using Content.Shared.Damage;
-using Content.Shared.FixedPoint;
-using Content.Shared.Mobs.Components;
 
 namespace Content.Server._CorvaxNext.BattleRoyale.DynamicRange;
 
@@ -26,7 +26,7 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
-    // Query to check if map is initialized
+    // Query to check if the map is initialized
     private EntityQuery<MapComponent> _mapQuery;
     private EntityQuery<TransformComponent> _xformQuery;
 
@@ -37,13 +37,11 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
     private Dictionary<EntityUid, float> _previousShrinkTimeValues = new();
     private Dictionary<EntityUid, float> _previousMinRangeValues = new();
 
-    // Добавляем константы для урона
-    private const float DamageInterval = 1.0f; // Интервал нанесения урона в секундах
-    private const float OutOfBoundsDamage = 10.0f; // Количество урона за тик
+    private const float DamageInterval = 1.0f; // Damage interval in seconds
+    private const float OutOfBoundsDamage = 10.0f; // Damage amount per tick
 
-    // Заменяем константу
-    private const float SearchRangeMultiplier = 3f; // Множитель для радиуса поиска
-    private const float MinSearchRange = 100f; // Минимальный радиус поиска
+    private const float SearchRangeMultiplier = 3f; // Multiplier for search radius
+    private const float MinSearchRange = 100f; // Minimum search radius
 
     private readonly DamageSpecifier _suffocationDamage = new()
     {
@@ -60,7 +58,7 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
         SubscribeLocalEvent<DynamicRangeComponent, ComponentStartup>(OnDynamicRangeStartup);
         SubscribeLocalEvent<DynamicRangeComponent, ComponentShutdown>(OnDynamicRangeShutdown);
 
-        // Still keep this for network sync
+        // Keep for network synchronization
         SubscribeLocalEvent<DynamicRangeComponent, AfterAutoHandleStateEvent>(OnDynamicRangeChanged);
 
         _mapQuery = GetEntityQuery<MapComponent>();
@@ -86,7 +84,6 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
                     _random.NextFloat(comp.MinOriginY, comp.MaxOriginY)
                 );
                 comp.OriginInitialized = true;
-                Logger.Debug($"Initialized Origin for {ToPrettyString(uid)}: {comp.Origin}");
             }
 
             // First initialization
@@ -114,17 +111,13 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
                 configChanged = true;
                 _previousShrinkTimeValues[uid] = comp.ShrinkTime;
 
-                // If we're shrinking, recalculate the start time to maintain the current progress
+                // If shrinking, recalculate the start time to maintain current progress
                 if (comp.IsShrinking && comp.ShrinkStartTime.HasValue && comp.InitialRange.HasValue)
                 {
                     var elapsed = (curTime - comp.ShrinkStartTime.Value).TotalSeconds;
                     var oldProgress = elapsed / prevShrinkTime;
-
-                    // Calculate what time would have been needed to achieve current progress with new ShrinkTime
                     var newElapsed = oldProgress * comp.ShrinkTime;
                     comp.ShrinkStartTime = curTime - TimeSpan.FromSeconds(newElapsed);
-
-                    Logger.Debug($"ShrinkTime changed for {ToPrettyString(uid)}: {prevShrinkTime} -> {comp.ShrinkTime}, adjusted shrink start time");
                 }
             }
 
@@ -134,7 +127,6 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
             {
                 configChanged = true;
                 _previousMinRangeValues[uid] = comp.MinimumRange;
-                Logger.Debug($"MinimumRange changed for {ToPrettyString(uid)}: {prevMinRange} -> {comp.MinimumRange}");
             }
 
             // Check for shrinking state changes
@@ -143,16 +135,11 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
                 configChanged = true;
                 _previousShrinkValues[uid] = comp.IsShrinking;
 
-                // If we just started shrinking, record the start time and initial range
+                // If just started shrinking, record the start time and initial range
                 if (comp.IsShrinking && (!comp.ShrinkStartTime.HasValue || !comp.InitialRange.HasValue))
                 {
                     comp.ShrinkStartTime = curTime;
                     comp.InitialRange = comp.Range;
-                    Logger.Debug($"Started shrinking range for {ToPrettyString(uid)} from {comp.Range}");
-                }
-                else if (!comp.IsShrinking)
-                {
-                    Logger.Debug($"Stopped shrinking for {ToPrettyString(uid)} at {comp.Range}");
                 }
             }
 
@@ -168,27 +155,20 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
                     comp.InitialRange.Value - (comp.InitialRange.Value - comp.MinimumRange) * shrinkProgress
                 );
 
-                // Only update if the range has changed significantly (by at least 0.001)
+                // Update only if the range has changed significantly (by at least 0.001)
                 if (Math.Abs(targetRange - comp.Range) >= 0.001f)
                 {
                     comp.Range = targetRange;
                     UpdateRestrictedRange(uid, comp);
                     _previousRangeValues[uid] = targetRange;
-
-                    // Debug log every whole number change for less spam
-                    if (Math.Floor(targetRange * 10) != Math.Floor(_previousRangeValues[uid] * 10))
-                    {
-                        Logger.Debug($"Shrinking range for {ToPrettyString(uid)}: {targetRange:F1}");
-                    }
                 }
 
-                // If we've reached minimum range, stop shrinking
+                // Stop shrinking if minimum range is reached
                 if (shrinkProgress >= 1.0f)
                 {
                     comp.Range = comp.MinimumRange;
                     comp.IsShrinking = false;
                     _previousShrinkValues[uid] = false;
-                    Logger.Debug($"Shrinking complete for {ToPrettyString(uid)}: Final range {comp.Range}");
                 }
             }
 
@@ -201,25 +181,22 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
                 continue;
             }
 
-            // If values changed manually, update the boundary
+            // Update the boundary if values changed manually
             if (!MathHelper.CloseTo(prevRange, comp.Range) || prevOrigin != comp.Origin)
             {
-                Logger.Debug($"DynamicRange changed for {ToPrettyString(uid)}: Range {prevRange} -> {comp.Range}, Origin {prevOrigin} -> {comp.Origin}");
                 UpdateRestrictedRange(uid, comp);
 
-                // If range was changed manually while shrinking, update the initial range
+                // If range was changed manually during shrinking, update initial range
                 if (comp.IsShrinking)
                 {
                     comp.InitialRange = comp.Range;
                     comp.ShrinkStartTime = curTime;
                 }
 
-                // Update stored values
                 _previousRangeValues[uid] = comp.Range;
                 _previousOriginValues[uid] = comp.Origin;
             }
 
-            // Заменяем строку с поиском игроков
             var searchRadius = Math.Max(MinSearchRange, comp.Range * SearchRangeMultiplier);
             var coordinates = new EntityCoordinates(uid, comp.Origin);
             var players = _lookup.GetEntitiesInRange(coordinates, searchRadius, LookupFlags.Dynamic | LookupFlags.Approximate)
@@ -230,10 +207,10 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
                 var playerPos = _transform.GetWorldPosition(player);
                 var distance = (playerPos - comp.Origin).Length();
 
-                // Если игрок за пределами безопасной зоны
+                // If the player is outside the safe zone
                 if (distance > comp.Range)
                 {
-                    // Проверяем, пора ли наносить урон
+                    // Check if it's time to apply damage
                     if (!comp.LastDamageTimes.TryGetValue(player, out var lastDamage) ||
                         (curTime - lastDamage).TotalSeconds >= DamageInterval)
                     {
@@ -243,7 +220,7 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
                 }
                 else
                 {
-                    // Если игрок вернулся в безопасную зону, удаляем его из словаря
+                    // Remove the player from the tracking dictionary if they returned to the safe zone
                     comp.LastDamageTimes.Remove(player);
                 }
             }
@@ -252,11 +229,11 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
 
     private void OnDynamicRangeShutdown(EntityUid uid, DynamicRangeComponent component, ComponentShutdown args)
     {
-        // When component is removed, also remove RestrictedRangeComponent
+        // When the component is removed, also remove the RestrictedRangeComponent
         if (HasComp<RestrictedRangeComponent>(uid))
             RemComp<RestrictedRangeComponent>(uid);
 
-        // Clean up tracking
+        // Clean up tracking dictionaries
         _previousRangeValues.Remove(uid);
         _previousOriginValues.Remove(uid);
         _previousShrinkValues.Remove(uid);
@@ -266,18 +243,18 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
 
     private void OnDynamicRangeStartup(EntityUid uid, DynamicRangeComponent component, ComponentStartup args)
     {
-        // Mark as unprocessed so Update can handle it
+        // Mark as unprocessed so Update can handle initialization
         component.Processed = false;
     }
 
     private void OnDynamicRangeChanged(EntityUid uid, DynamicRangeComponent component, AfterAutoHandleStateEvent args)
     {
-        // When component changes through network, update RestrictedRangeComponent
+        // When the component changes via network, update the RestrictedRangeComponent
         UpdateRestrictedRange(uid, component);
     }
 
     /// <summary>
-    /// Public method to directly set range and update boundary
+    /// Public method to directly set range and update the boundary.
     /// </summary>
     public void SetRange(EntityUid uid, float range, DynamicRangeComponent? component = null)
     {
@@ -287,19 +264,18 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
         component.Range = range;
         UpdateRestrictedRange(uid, component);
 
-        // If we're shrinking, reset the shrink timer
+        // If shrinking, reset the shrink timer
         if (component.IsShrinking)
         {
             component.InitialRange = range;
             component.ShrinkStartTime = _timing.CurTime;
         }
 
-        // Update tracking
         _previousRangeValues[uid] = range;
     }
 
     /// <summary>
-    /// Public method to directly set origin and update boundary
+    /// Public method to directly set origin and update the boundary.
     /// </summary>
     public void SetOrigin(EntityUid uid, Vector2 origin, DynamicRangeComponent? component = null)
     {
@@ -310,12 +286,11 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
         component.OriginInitialized = true;
         UpdateRestrictedRange(uid, component);
 
-        // Update tracking
         _previousOriginValues[uid] = origin;
     }
 
     /// <summary>
-    /// Public method to start or stop the shrinking process
+    /// Public method to start or stop the shrinking process.
     /// </summary>
     public void SetShrinking(EntityUid uid, bool shrinking, DynamicRangeComponent? component = null)
     {
@@ -332,46 +307,36 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
             // Start shrinking
             component.ShrinkStartTime = _timing.CurTime;
             component.InitialRange = component.Range;
-            Logger.Debug($"Started shrinking for {ToPrettyString(uid)} from {component.Range}");
-        }
-        else
-        {
-            // Stop shrinking
-            Logger.Debug($"Stopped shrinking for {ToPrettyString(uid)} at {component.Range}");
         }
 
         _previousShrinkValues[uid] = shrinking;
     }
 
     /// <summary>
-    /// Public method to set the time it takes to shrink to minimum radius
+    /// Public method to set the time it takes to shrink to the minimum radius.
     /// </summary>
     public void SetShrinkTime(EntityUid uid, float seconds, DynamicRangeComponent? component = null)
     {
         if (!Resolve(uid, ref component))
             return;
 
-        // Save previous value to adjust properly
         var prevShrinkTime = component.ShrinkTime;
         component.ShrinkTime = Math.Max(1f, seconds); // Minimum 1 second to avoid division by zero
 
-        // If we're already shrinking, adjust the start time to maintain the current progress
+        // If already shrinking, adjust the start time to maintain current progress
         if (component.IsShrinking && component.ShrinkStartTime.HasValue && component.InitialRange.HasValue)
         {
             var elapsed = (_timing.CurTime - component.ShrinkStartTime.Value).TotalSeconds;
             var oldProgress = elapsed / prevShrinkTime;
-
-            // Calculate what time would have been needed to achieve current progress with new ShrinkTime
             var newElapsed = oldProgress * component.ShrinkTime;
             component.ShrinkStartTime = _timing.CurTime - TimeSpan.FromSeconds(newElapsed);
         }
 
         _previousShrinkTimeValues[uid] = component.ShrinkTime;
-        Logger.Debug($"Set ShrinkTime for {ToPrettyString(uid)} to {component.ShrinkTime}s");
     }
 
     /// <summary>
-    /// Public method to set the minimum radius
+    /// Public method to set the minimum radius.
     /// </summary>
     public void SetMinimumRange(EntityUid uid, float minRange, DynamicRangeComponent? component = null)
     {
@@ -380,31 +345,30 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
 
         component.MinimumRange = Math.Max(1f, minRange); // Minimum 1 unit radius
         _previousMinRangeValues[uid] = component.MinimumRange;
-        Logger.Debug($"Set MinimumRange for {ToPrettyString(uid)} to {component.MinimumRange}");
     }
 
     public void UpdateRestrictedRange(EntityUid uid, DynamicRangeComponent component)
     {
-        // Check if map is initialized
+        // Check if the map is initialized
         var mapInitialized = false;
         var xform = _xformQuery.GetComponent(uid);
         var mapId = xform.MapID;
 
-        // Get map entity and check if it's initialized
+        // Get the map entity and check its initialization state
         if (_mapManager.MapExists(mapId))
         {
             var mapUid = _mapManager.GetMapEntityId(mapId);
             mapInitialized = _mapQuery.TryComp(mapUid, out var mapComp) && mapComp.MapInitialized;
         }
 
-        // If map is not initialized, delay processing
+        // Delay processing if the map is not initialized
         if (!mapInitialized)
         {
             component.Processed = false;
             return;
         }
 
-        // Remove old RestrictedRangeComponent and its BoundaryEntity
+        // Remove the old RestrictedRangeComponent and its BoundaryEntity
         if (TryComp<RestrictedRangeComponent>(uid, out var oldRestricted) &&
             oldRestricted.BoundaryEntity != EntityUid.Invalid &&
             !Deleted(oldRestricted.BoundaryEntity))
@@ -412,17 +376,17 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
             QueueDel(oldRestricted.BoundaryEntity);
         }
 
-        // Create new RestrictedRangeComponent
+        // Create a new RestrictedRangeComponent
         var restricted = EnsureComp<RestrictedRangeComponent>(uid);
         restricted.Range = component.Range;
         restricted.Origin = component.Origin;
 
-        // Create new BoundaryEntity
+        // Create a new BoundaryEntity
         restricted.BoundaryEntity = _restrictedRange.CreateBoundary(
             new EntityCoordinates(uid, component.Origin),
             component.Range);
 
-        // Make sure the component is marked as dirty for network sync
+        // Mark the component as dirty for network synchronization
         Dirty(uid, restricted);
     }
 }

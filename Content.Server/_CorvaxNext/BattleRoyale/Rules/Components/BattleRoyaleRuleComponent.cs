@@ -30,4 +30,10 @@ public sealed partial class BattleRoyaleRuleComponent : Component
     /// </summary>
     [DataField]
     public EntityUid? Victor;
+	
+    /// <summary>
+    /// The winner was pronounced
+    /// </summary>
+	[DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
+    public bool WinnerAnnounced = false;
 }

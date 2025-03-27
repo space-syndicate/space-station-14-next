@@ -19,7 +19,6 @@ public sealed class RangeFinderVisualizerSystem : VisualizerSystem<RangeFinderCo
         if (!TryComp<SpriteComponent>(uid, out var sprite))
             return;
 
-        // Четко проверяем, что если не активен - то устанавливаем нужное состояние
         if (!isActive)
         {
             sprite.LayerSetState(PinpointerLayers.Screen, "pinonnull");

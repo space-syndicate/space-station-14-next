@@ -21,9 +21,9 @@ public abstract class SharedRangeFinderSystem : EntitySystem
     }
 
     /// <summary>
-    /// Включает/выключает RangeFinder
+    /// Toggles the RangeFinder.
     /// </summary>
-    /// <returns>True если RangeFinder активирован, false если деактивирован</returns>
+    /// <returns>True if activated, false if deactivated.</returns>
     public virtual bool ToggleRangeFinder(EntityUid uid, RangeFinderComponent? rangeFinder = null)
     {
         if (!Resolve(uid, ref rangeFinder))
@@ -35,13 +35,13 @@ public abstract class SharedRangeFinderSystem : EntitySystem
     }
 
     /// <summary>
-    /// Установка активности RangeFinder
+    /// Sets the active state of the RangeFinder.
     /// </summary>
     public virtual void SetActive(EntityUid uid, bool isActive, RangeFinderComponent? rangeFinder = null)
     {
         if (!Resolve(uid, ref rangeFinder))
             return;
-        
+
         if (isActive == rangeFinder.IsActive)
             return;
 
@@ -50,7 +50,7 @@ public abstract class SharedRangeFinderSystem : EntitySystem
     }
 
     /// <summary>
-    /// Установка дистанции до цели
+    /// Sets the distance to the target.
     /// </summary>
     public void SetDistance(EntityUid uid, Distance distance, RangeFinderComponent? rangeFinder = null)
     {
@@ -65,7 +65,7 @@ public abstract class SharedRangeFinderSystem : EntitySystem
     }
 
     /// <summary>
-    /// Попытка установить угол направления стрелки
+    /// Attempts to set the arrow's direction angle.
     /// </summary>
     public bool TrySetArrowAngle(EntityUid uid, Angle arrowAngle, RangeFinderComponent? rangeFinder = null)
     {
@@ -82,10 +82,10 @@ public abstract class SharedRangeFinderSystem : EntitySystem
     }
 
     /// <summary>
-    /// Обновление направления к цели
+    /// Updates the direction to the target.
+    /// (Implemented in derived classes)
     /// </summary>
     protected virtual void UpdateDirectionToTarget(EntityUid uid, RangeFinderComponent? rangeFinder = null)
     {
-        // Реализация в конкретных классах
     }
 }

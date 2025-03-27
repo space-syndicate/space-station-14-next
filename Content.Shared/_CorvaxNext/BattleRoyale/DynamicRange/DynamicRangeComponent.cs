@@ -6,20 +6,17 @@ namespace Content.Shared._CorvaxNext.BattleRoyale.DynamicRange;
 
 /// <summary>
 /// Dynamic version of RestrictedRangeComponent that works when added after MapInitEvent
-/// and updates boundary when Range is changed.
+/// and updates the boundary when Range is changed.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class DynamicRangeComponent : Component
 {
-    // Initial range
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public float Range = 78f;
 
-    // Current origin point
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public Vector2 Origin;
 
-    // Random origin boundaries
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float MinOriginX = -10f;
 
@@ -32,7 +29,6 @@ public sealed partial class DynamicRangeComponent : Component
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float MaxOriginY = 10f;
 
-    // Shrinking controls
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public bool IsShrinking = false;
 
@@ -42,7 +38,6 @@ public sealed partial class DynamicRangeComponent : Component
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float MinimumRange = 5f; // Smallest possible range
 
-    // Tracking fields
     [DataField]
     public bool Processed;
 
@@ -56,7 +51,7 @@ public sealed partial class DynamicRangeComponent : Component
     public TimeSpan? ShrinkStartTime;
 
     /// <summary>
-    /// Словарь для отслеживания времени последнего нанесения урона каждому игроку
+    /// Dictionary to track the last time damage was applied to each player.
     /// </summary>
     [DataField("lastDamageTimes")]
     public Dictionary<EntityUid, TimeSpan> LastDamageTimes = new();

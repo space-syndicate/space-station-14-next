@@ -1,11 +1,11 @@
+using Content.Shared.Pinpointer;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
-using Content.Shared.Pinpointer;
 
 namespace Content.Shared._CorvaxNext.BattleRoyale.RangeFinder;
 
 /// <summary>
-/// Компонент для отображения направления к центру сужающегося круга в режиме Battle Royale
+/// Component for displaying the direction to the center of the shrinking circle in Battle Royale mode.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
 [AutoGenerateComponentState]
@@ -13,25 +13,25 @@ namespace Content.Shared._CorvaxNext.BattleRoyale.RangeFinder;
 public sealed partial class RangeFinderComponent : Component
 {
     /// <summary>
-    /// Расстояние считается средним на этом значении
+    /// The value at which the distance is considered medium.
     /// </summary>
     [DataField("mediumDistance"), ViewVariables(VVAccess.ReadWrite)]
     public float MediumDistance = 16f;
 
     /// <summary>
-    /// Расстояние считается близким на этом значении
+    /// The value at which the distance is considered close.
     /// </summary>
     [DataField("closeDistance"), ViewVariables(VVAccess.ReadWrite)]
     public float CloseDistance = 8f;
 
     /// <summary>
-    /// Расстояние считается достигнутым на этом значении
+    /// The value at which the distance is considered reached.
     /// </summary>
     [DataField("reachedDistance"), ViewVariables(VVAccess.ReadWrite)]
     public float ReachedDistance = 1f;
 
     /// <summary>
-    /// Точность указателя в радианах
+    /// The precision of the pointer in radians.
     /// </summary>
     [DataField("precision"), ViewVariables(VVAccess.ReadWrite)]
     public double Precision = 0.09;
@@ -46,7 +46,7 @@ public sealed partial class RangeFinderComponent : Component
     public Distance DistanceToTarget = Distance.Unknown;
 
     /// <summary>
-    /// Отслеживаемый DynamicRange
+    /// The tracked DynamicRange.
     /// </summary>
     [ViewVariables]
     public EntityUid? TargetRange = null;
