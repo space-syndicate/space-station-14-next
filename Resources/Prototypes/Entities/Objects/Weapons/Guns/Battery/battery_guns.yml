@@ -153,6 +153,8 @@
     zeroVisible: true
   - type: Appearance
   - type: Multishot # Goobstation
+  - type: Gun
+    requiresSkill: true # Corvax-Next-Skills
 
 - type: entity
   name: makeshift laser pistol

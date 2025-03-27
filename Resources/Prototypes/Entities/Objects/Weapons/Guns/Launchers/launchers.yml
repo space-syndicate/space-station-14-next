@@ -45,6 +45,7 @@
       - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+    requiresSkill: true # Corvax-Next-Skills
   - type: BallisticAmmoProvider
     whitelist:
       tags:
@@ -81,6 +82,7 @@
     capacity: 1
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+    requiresSkill: true # Corvax-Next-Skills
   - type: MagazineVisuals
     magState: mag
     steps: 2
@@ -109,6 +111,7 @@
       - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+    requiresSkill: true # Corvax-Next-Skills
   - type: BallisticAmmoProvider
     whitelist:
       tags:
