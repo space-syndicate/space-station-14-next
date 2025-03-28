@@ -16,7 +16,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._CorvaxNext.BattleRoyale.DynamicRange;
 
-public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
+public sealed class DynamicRangeSystem : EntitySystem
 {
     [Dependency] private readonly RestrictedRangeSystem _restrictedRange = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
