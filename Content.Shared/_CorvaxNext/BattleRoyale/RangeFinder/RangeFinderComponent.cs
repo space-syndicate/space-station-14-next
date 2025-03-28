@@ -21,19 +21,19 @@ public sealed partial class RangeFinderComponent : Component
     /// <summary>
     /// The value at which the distance is considered close.
     /// </summary>
-    [DataField("closeDistance"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float CloseDistance = 8f;
 
     /// <summary>
     /// The value at which the distance is considered reached.
     /// </summary>
-    [DataField("reachedDistance"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float ReachedDistance = 1f;
 
     /// <summary>
     /// The precision of the pointer in radians.
     /// </summary>
-    [DataField("precision"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public double Precision = 0.09;
 
     [ViewVariables, AutoNetworkedField]

@@ -7,7 +7,6 @@ public abstract class SharedRangeFinderSystem : EntitySystem
 {
     public override void Initialize()
     {
-        base.Initialize();
         SubscribeLocalEvent<RangeFinderComponent, ActivateInWorldEvent>(OnActivate);
     }
 
