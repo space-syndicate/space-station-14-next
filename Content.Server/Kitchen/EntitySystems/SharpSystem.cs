@@ -1,4 +1,4 @@
-﻿using Content.Server.Body.Systems;
+using Content.Server.Body.Systems;
 using Content.Server.Kitchen.Components;
 using Content.Server.Nutrition.EntitySystems;
 using Content.Shared.Body.Components;
@@ -11,7 +11,6 @@ using Content.Shared.Storage;
 using Content.Shared.Verbs;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
-using Content.Shared.Hands.Components;
 using Content.Shared.Kitchen;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -20,6 +19,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Content.Shared._CorvaxNext.Skills;
+using Content.Shared.Clothing.Components;
 
 namespace Content.Server.Kitchen.EntitySystems;
 
@@ -77,13 +77,21 @@ public sealed class SharpSystem : EntitySystem
         if (!sharp.Butchering.Add(target))
             return false;
 
-        // if the user isn't the entity with the sharp component,
-        // they will need to be holding something with their hands, so we set needHand to true
-        // so that the doafter can be interrupted if they drop the item in their hands
         var needHand = user != knife;
+        var isClothing = HasComp<ClothingComponent>(target);
+        var delayModifier = isClothing
+            ? 1
+            : (_skills.HasSkill(user, Skills.Butchering) ? 1 : ButcherDelayModifierWithoutSkill);
 
         var doAfter =
-            new DoAfterArgs(EntityManager, user, sharp.ButcherDelayModifier * butcher.ButcherDelay * (_skills.HasSkill(user, Skills.Butchering) ? 1 : ButcherDelayModifierWithoutSkill), new SharpDoAfterEvent(), knife, target: target, used: knife) // Corvax-Next-Skills
+            new DoAfterArgs(
+                EntityManager,
+                user,
+                sharp.ButcherDelayModifier * butcher.ButcherDelay * delayModifier,
+                new SharpDoAfterEvent(),
+                knife,
+                target: target,
+                used: knife)
             {
                 BreakOnDamage = true,
                 BreakOnMove = true,
