@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.Administration.Commands;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
@@ -14,6 +15,7 @@ using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
 using Content.Server._CorvaxNext.BattleRoyal.Rules.Components;
 using Content.Server._CorvaxNext.Ghostbar.Components;
+using Content.Shared.Bed.Sleep;
 using Content.Shared.Chat;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
@@ -120,11 +122,11 @@ namespace Content.Server._CorvaxNext.BattleRoyal.Rules
                 var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(ev.Station, null, ev.Profile);
                 DebugTools.AssertNotNull(mobMaybe);
                 var mob = mobMaybe!.Value;
-                _skills.GrantAllSkills(mob);
 
                 _mind.TransferTo(newMind, mob);
                 SetOutfitCommand.SetOutfit(mob, br.Gear, EntityManager);
                 EnsureComp<KillTrackerComponent>(mob);
+				EnsureComp<SleepingComponent>(mob);
 
                 ev.Handled = true;
                 break;
@@ -244,9 +246,9 @@ namespace Content.Server._CorvaxNext.BattleRoyal.Rules
 
             if (alivePlayers.Count == 1)
             {
-                if (!component.WinnerAnnounced || component.Victor == null || component.Victor.Value != alivePlayers[0])
+                if (!component.WinnerAnnounced || component.Victor == null || component.Victor.Value != alivePlayers.First())
                 {
-                    component.Victor = alivePlayers[0];
+                    component.Victor = alivePlayers.First();
                     if (!component.WinnerAnnounced && _mind.TryGetMind(component.Victor.Value, out var mindId, out var mind))
                     {
                         component.WinnerAnnounced = true;
