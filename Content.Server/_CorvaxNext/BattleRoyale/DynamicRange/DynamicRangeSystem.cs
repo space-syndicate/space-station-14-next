@@ -13,6 +13,9 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Server.Audio;
+using Robust.Shared.Audio;
+using Content.Shared.Audio;
 
 namespace Content.Server._CorvaxNext.BattleRoyale.DynamicRange;
 
@@ -25,6 +28,7 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly ServerGlobalSoundSystem _sound = default!;
 
     // Query to check if the map is initialized
     private EntityQuery<MapComponent> _mapQuery;
@@ -148,12 +152,21 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
             {
                 var elapsed = (curTime - comp.ShrinkStartTime.Value).TotalSeconds;
                 var shrinkProgress = (float)Math.Min(elapsed / comp.ShrinkTime, 1.0);
+                var timeRemaining = comp.ShrinkTime - elapsed;
 
                 // Calculate new range
                 var targetRange = Math.Max(
                     comp.MinimumRange,
                     comp.InitialRange.Value - (comp.InitialRange.Value - comp.MinimumRange) * shrinkProgress
                 );
+
+                // Play music when approaching minimum range
+                if (timeRemaining <= comp.MusicStartTime && !comp.PlayedMusic)
+                {
+                    var music = new SoundCollectionSpecifier("NukeMusic");
+                    _sound.DispatchStationEventMusic(uid, music, StationEventMusicType.Nuke);
+                    comp.PlayedMusic = true;
+                }
 
                 // Update only if the range has changed significantly (by at least 0.001)
                 if (Math.Abs(targetRange - comp.Range) >= 0.001f)
@@ -233,6 +246,12 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
         if (HasComp<RestrictedRangeComponent>(uid))
             RemComp<RestrictedRangeComponent>(uid);
 
+        // Stop any playing music
+        if (component.PlayedMusic)
+        {
+            _sound.StopStationEventMusic(uid, StationEventMusicType.Nuke);
+        }
+
         // Clean up tracking dictionaries
         _previousRangeValues.Remove(uid);
         _previousOriginValues.Remove(uid);
@@ -307,6 +326,12 @@ public sealed class DynamicRangeSystem : SharedDynamicRangeSystem
             // Start shrinking
             component.ShrinkStartTime = _timing.CurTime;
             component.InitialRange = component.Range;
+        }
+        else if (component.PlayedMusic)
+        {
+            // Stop music if we're stopping the shrinking
+            _sound.StopStationEventMusic(uid, StationEventMusicType.Nuke);
+            component.PlayedMusic = false;
         }
 
         _previousShrinkValues[uid] = shrinking;
