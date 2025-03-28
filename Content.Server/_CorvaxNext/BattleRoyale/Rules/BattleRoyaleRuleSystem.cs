@@ -15,6 +15,7 @@ using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
 using Content.Server._CorvaxNext.BattleRoyal.Rules.Components;
 using Content.Server._CorvaxNext.Ghostbar.Components;
+using Robust.Shared.Audio;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Chat;
@@ -32,6 +33,7 @@ using Content.Shared._CorvaxNext.Skills;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Network;
+using Robust.Shared.Maths;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -103,10 +105,24 @@ namespace Content.Server._CorvaxNext.BattleRoyal.Rules
         protected override void Started(EntityUid uid, BattleRoyaleRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
         {
             base.Started(uid, component, gameRule, args);
-			Timer.Spawn(TimeSpan.FromSeconds(5), () => 
-			{
-				CheckLastManStanding(uid, component);
-			});
+            
+            Timer.Spawn(TimeSpan.FromSeconds(5), () => 
+            {
+                CheckLastManStanding(uid, component);
+            });
+            
+            Timer.Spawn(TimeSpan.FromMinutes(2), () => 
+            {
+                if (!GameTicker.IsGameRuleActive(uid, gameRule))
+                    return;
+                
+                var message = Loc.GetString("battle-royale-kill-or-be-killed");
+                var title = Loc.GetString("battle-royale-title");
+            
+                var sound = new SoundPathSpecifier("/Audio/Announcements/war.ogg");
+            
+                _chatSystem.DispatchGlobalAnnouncement(message, title, true, sound, Color.Red);
+            });
         }
 
         private void OnBeforeSpawn(PlayerBeforeSpawnEvent ev)
