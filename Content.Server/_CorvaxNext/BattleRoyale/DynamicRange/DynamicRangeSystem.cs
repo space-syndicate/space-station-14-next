@@ -4,7 +4,10 @@ using Content.Server.Salvage;
 using Content.Shared._CorvaxNext.BattleRoyale.DynamicRange;
 using Content.Shared.Salvage;
 using Content.Server.Damage;
+using Content.Server.Audio;
+using Content.Server.Station.Systems;
 using Content.Shared.Damage;
+using Content.Shared.Audio;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs.Components;
 using Robust.Shared.Physics.Systems;
@@ -13,6 +16,8 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Audio;
 
 namespace Content.Server._CorvaxNext.BattleRoyale.DynamicRange;
 
@@ -25,6 +30,9 @@ public sealed class DynamicRangeSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly ServerGlobalSoundSystem _sound = default!; 
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly StationSystem _stationSystem = default!;
 
     private EntityQuery<MapComponent> _mapQuery;
     private EntityQuery<TransformComponent> _xformQuery;
@@ -113,6 +121,16 @@ public sealed class DynamicRangeSystem : EntitySystem
                     comp.InitialRange.Value - (comp.InitialRange.Value - comp.MinimumRange) * shrinkProgress
                 );
 
+                if (!comp.PlayedShrinkMusic && shrinkProgress > 0)
+                {
+                    var timeToMinimum = comp.ShrinkTime * (1 - shrinkProgress);
+                    
+                    if (timeToMinimum <= comp.MusicStartTime)
+                    {
+                        PlayShrinkMusic(uid, comp);
+                    }
+                }
+
                 if (Math.Abs(targetRange - comp.Range) >= 0.001f)
                 {
                     comp.Range = targetRange;
@@ -177,6 +195,18 @@ public sealed class DynamicRangeSystem : EntitySystem
         }
     }
 
+    private void PlayShrinkMusic(EntityUid uid, DynamicRangeComponent component)
+    {
+        if (component.PlayedShrinkMusic)
+            return;
+
+        var selectedMusic = _audio.ResolveSound(component.ShrinkMusic);
+        
+        component.PlayedShrinkMusic = true;
+        
+        _sound.DispatchStationEventMusic(uid, selectedMusic, StationEventMusicType.Nuke);
+    }
+
     private void OnDynamicRangeShutdown(EntityUid uid, DynamicRangeComponent component, ComponentShutdown args)
     {
         if (HasComp<RestrictedRangeComponent>(uid))
@@ -193,9 +223,6 @@ public sealed class DynamicRangeSystem : EntitySystem
         UpdateRestrictedRange(uid, component);
     }
 
-    /// <summary>
-    /// Public method to directly set range and update the boundary.
-    /// </summary>
     public void SetRange(EntityUid uid, float range, DynamicRangeComponent? component = null)
     {
         if (!Resolve(uid, ref component))
@@ -213,9 +240,6 @@ public sealed class DynamicRangeSystem : EntitySystem
         component.PreviousRange = range;
     }
 
-    /// <summary>
-    /// Public method to directly set origin and update the boundary.
-    /// </summary>
     public void SetOrigin(EntityUid uid, Vector2 origin, DynamicRangeComponent? component = null)
     {
         if (!Resolve(uid, ref component))
@@ -228,10 +252,7 @@ public sealed class DynamicRangeSystem : EntitySystem
         component.PreviousOrigin = origin;
     }
 
-    /// <summary>
-    /// Public method to start or stop the shrinking process.
-    /// </summary>
-    public void SetShrinking(EntityUid uid, bool shrinking, DynamicRangeComponent? component = null)
+    public void SetShrinking(EntityUid uid, bool shrinking, bool resetMusic = false, DynamicRangeComponent? component = null)
     {
         if (!Resolve(uid, ref component))
             return;
@@ -245,14 +266,14 @@ public sealed class DynamicRangeSystem : EntitySystem
         {
             component.ShrinkStartTime = _timing.CurTime;
             component.InitialRange = component.Range;
+            
+            if (resetMusic)
+                component.PlayedShrinkMusic = false;
         }
 
         component.PreviousShrinking = shrinking;
     }
 
-    /// <summary>
-    /// Public method to set the time it takes to shrink to the minimum radius.
-    /// </summary>
     public void SetShrinkTime(EntityUid uid, float seconds, DynamicRangeComponent? component = null)
     {
         if (!Resolve(uid, ref component))
@@ -272,9 +293,6 @@ public sealed class DynamicRangeSystem : EntitySystem
         component.PreviousShrinkTime = component.ShrinkTime;
     }
 
-    /// <summary>
-    /// Public method to set the minimum radius.
-    /// </summary>
     public void SetMinimumRange(EntityUid uid, float minRange, DynamicRangeComponent? component = null)
     {
         if (!Resolve(uid, ref component))

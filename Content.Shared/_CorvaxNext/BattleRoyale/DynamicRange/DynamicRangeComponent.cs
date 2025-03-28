@@ -3,6 +3,7 @@ using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
+using Robust.Shared.Audio;
 
 namespace Content.Shared._CorvaxNext.BattleRoyale.DynamicRange;
 
@@ -84,4 +85,13 @@ public sealed partial class DynamicRangeComponent : Component
     
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public float PreviousMinRange;
+    
+    [DataField]
+    public SoundSpecifier ShrinkMusic = new SoundCollectionSpecifier("NukeMusic");
+    
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public bool PlayedShrinkMusic = false;
+    
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float MusicStartTime = 80f;
 }
