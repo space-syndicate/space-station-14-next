@@ -16,7 +16,9 @@ using Content.Server.Station.Systems;
 using Content.Server._CorvaxNext.BattleRoyal.Rules.Components;
 using Content.Server._CorvaxNext.Ghostbar.Components;
 using Content.Shared.Bed.Sleep;
+using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Chat;
+using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
@@ -68,13 +70,11 @@ namespace Content.Server._CorvaxNext.BattleRoyal.Rules
             SubscribeLocalEvent<MobStateChangedEvent>(OnMobStateChanged);
             SubscribeLocalEvent<KillReportedEvent>(OnKillReported);
             SubscribeLocalEvent<PlayerBeforeSpawnEvent>(OnBeforeSpawn);
-            SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
             SubscribeLocalEvent<RefreshLateJoinAllowedEvent>(OnRefreshLateJoinAllowed);
             SubscribeLocalEvent<PlayerSpawningEvent>(OnPlayerSpawning, before: new[] { typeof(ArrivalsSystem) });
             SubscribeLocalEvent<PlayerDetachedEvent>(OnPlayerDetached);
         }
 
-        // Disallow late join when Battle Royale mode is active.
         private void OnRefreshLateJoinAllowed(RefreshLateJoinAllowedEvent ev)
         {
             if (CheckBattleRoyaleActive())
@@ -83,7 +83,6 @@ namespace Content.Server._CorvaxNext.BattleRoyal.Rules
             }
         }
 
-        // Prevent the arrivals system from handling spawns when Battle Royale mode is active.
         private void OnPlayerSpawning(PlayerSpawningEvent ev)
         {
             if (CheckBattleRoyaleActive() && ev.SpawnResult == null)
@@ -95,7 +94,6 @@ namespace Content.Server._CorvaxNext.BattleRoyal.Rules
             }
         }
 
-        // Returns true if any active Battle Royale rule exists.
         private bool CheckBattleRoyaleActive()
         {
             var query = EntityQueryEnumerator<BattleRoyaleRuleComponent, ActiveGameRuleComponent>();
@@ -127,6 +125,22 @@ namespace Content.Server._CorvaxNext.BattleRoyal.Rules
                 SetOutfitCommand.SetOutfit(mob, br.Gear, EntityManager);
                 EnsureComp<KillTrackerComponent>(mob);
 				EnsureComp<SleepingComponent>(mob);
+				
+				_skills.GrantAllSkills(mob);
+				
+				var pacifiedComp = EnsureComp<PacifiedComponent>(mob);
+				Timer.Spawn(TimeSpan.FromMinutes(2), () => 
+				{
+					if (!Deleted(mob) && HasComp<PacifiedComponent>(mob))
+						RemComp<PacifiedComponent>(mob);
+				});
+				
+				var blurryVisionComp = EnsureComp<BlurryVisionComponent>(mob);
+				Timer.Spawn(TimeSpan.FromSeconds(15), () => 
+				{
+					if (!Deleted(mob) && HasComp<BlurryVisionComponent>(mob))
+						RemComp<BlurryVisionComponent>(mob);
+				});
 
                 ev.Handled = true;
                 break;
@@ -239,7 +253,6 @@ namespace Content.Server._CorvaxNext.BattleRoyal.Rules
                 ("name", MetaData(entity).EntityName));
         }
 
-        // Announce the winner only once using the WinnerAnnounced flag.
         private void CheckLastManStanding(EntityUid uid, BattleRoyaleRuleComponent component)
         {
             var alivePlayers = GetAlivePlayers();
@@ -329,18 +342,6 @@ namespace Content.Server._CorvaxNext.BattleRoyal.Rules
 
             args.AddLine(Loc.GetString("battle-royale-scoreboard-header"));
             args.AddLine(new FormattedMessage(point.Scoreboard).ToMarkup());
-        }
-
-        private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent ev)
-        {
-            var query = EntityQueryEnumerator<BattleRoyaleRuleComponent, GameRuleComponent>();
-            while (query.MoveNext(out var uid, out var br, out var gameRule))
-            {
-                if (!GameTicker.IsGameRuleActive(uid, gameRule))
-                    continue;
-                _skills.GrantAllSkills(ev.Mob);
-                break;
-            }
         }
     }
 }
