@@ -127,30 +127,30 @@ namespace Content.Server._CorvaxNext.BattleRoyal.Rules
                 _mind.TransferTo(newMind, mob);
                 SetOutfitCommand.SetOutfit(mob, br.Gear, EntityManager);
                 EnsureComp<KillTrackerComponent>(mob);
-				EnsureComp<SleepingComponent>(mob);
+                EnsureComp<SleepingComponent>(mob);
 				
-				_skills.GrantAllSkills(mob);
+                _skills.GrantAllSkills(mob);
 				
-				var pacifiedComp = EnsureComp<PacifiedComponent>(mob);
-				Timer.Spawn(TimeSpan.FromMinutes(2), () => 
-				{
-					if (!Deleted(mob) && HasComp<PacifiedComponent>(mob))
-						RemComp<PacifiedComponent>(mob);
-				});
+                var pacifiedComp = EnsureComp<PacifiedComponent>(mob);
+                Timer.Spawn(TimeSpan.FromMinutes(2), () => 
+                {
+                    if (!Deleted(mob) && HasComp<PacifiedComponent>(mob))
+				        RemComp<PacifiedComponent>(mob);
+                });
 				
-				var blurryVisionComp = EnsureComp<BlurryVisionComponent>(mob);
-				Timer.Spawn(TimeSpan.FromSeconds(15), () => 
-				{
-					if (!Deleted(mob) && HasComp<BlurryVisionComponent>(mob))
-						RemComp<BlurryVisionComponent>(mob);
-				});
+                var blurryVisionComp = EnsureComp<BlurryVisionComponent>(mob);
+                Timer.Spawn(TimeSpan.FromSeconds(15), () => 
+                {
+                    if (!Deleted(mob) && HasComp<BlurryVisionComponent>(mob))
+				        RemComp<BlurryVisionComponent>(mob);
+                });
 
                 ev.Handled = true;
 				
-				Timer.Spawn(TimeSpan.FromSeconds(0.5), () => 
-				{
-					CheckLastManStanding(uid, br);
-				});
+                Timer.Spawn(TimeSpan.FromSeconds(0.5), () => 
+                {
+                    CheckLastManStanding(uid, br);
+                });
 				
                 break;
             }
