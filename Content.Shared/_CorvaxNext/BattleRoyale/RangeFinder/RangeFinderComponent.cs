@@ -15,7 +15,7 @@ public sealed partial class RangeFinderComponent : Component
     /// <summary>
     /// The value at which the distance is considered medium.
     /// </summary>
-    [DataField("mediumDistance"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float MediumDistance = 16f;
 
     /// <summary>
