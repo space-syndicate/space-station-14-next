@@ -1,4 +1,6 @@
 using System.Numerics;
+using Content.Shared.Damage;
+using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
@@ -17,6 +19,15 @@ public sealed partial class DynamicRangeComponent : Component
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public Vector2 Origin;
 
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
+    public bool IsShrinking = false;
+
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
+    public float ShrinkTime = 100f;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float MinimumRange = 5f;
+    
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float MinOriginX = -10f;
 
@@ -28,34 +39,49 @@ public sealed partial class DynamicRangeComponent : Component
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float MaxOriginY = 10f;
-
-    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
-    public bool IsShrinking = false;
-
-    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
-    public float ShrinkTime = 100f; // Time in seconds to shrink fully
+    
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float DamageInterval = 1.0f;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float MinimumRange = 5f; // Smallest possible range
+    public float OutOfBoundsDamage = 10.0f;
 
-    [DataField]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public string DamageType = "Asphyxiation";
+    
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float SearchRangeMultiplier = 3f;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float MinSearchRange = 100f;
+    
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
     public bool Processed;
 
-    [DataField]
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
     public bool OriginInitialized;
 
-    [DataField]
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
     public float? InitialRange;
 
-    [DataField]
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
     public TimeSpan? ShrinkStartTime;
 
-    [DataField("lastDamageTimes")]
+    [DataField("lastDamageTimes"), ViewVariables(VVAccess.ReadOnly)]
     public Dictionary<EntityUid, TimeSpan> LastDamageTimes = new();
     
-    [DataField]
-    public bool PlayedMusic = false;
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public float PreviousRange;
     
-    [DataField]
-    public float MusicStartTime = 80f;
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public Vector2 PreviousOrigin;
+    
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public bool PreviousShrinking;
+    
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public float PreviousShrinkTime;
+    
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public float PreviousMinRange;
 }
