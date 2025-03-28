@@ -50,9 +50,12 @@ public sealed partial class DynamicRangeComponent : Component
     [DataField]
     public TimeSpan? ShrinkStartTime;
 
-    /// <summary>
-    /// Dictionary to track the last time damage was applied to each player.
-    /// </summary>
     [DataField("lastDamageTimes")]
     public Dictionary<EntityUid, TimeSpan> LastDamageTimes = new();
+    
+    [DataField]
+    public bool PlayedMusic = false;
+    
+    [DataField]
+    public float MusicStartTime = 80f;
 }
