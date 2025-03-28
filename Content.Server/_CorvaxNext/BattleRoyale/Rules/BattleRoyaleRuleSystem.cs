@@ -103,7 +103,10 @@ namespace Content.Server._CorvaxNext.BattleRoyal.Rules
         protected override void Started(EntityUid uid, BattleRoyaleRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
         {
             base.Started(uid, component, gameRule, args);
-            CheckLastManStanding(uid, component);
+			Timer.Spawn(TimeSpan.FromSeconds(5), () => 
+			{
+				CheckLastManStanding(uid, component);
+			});
         }
 
         private void OnBeforeSpawn(PlayerBeforeSpawnEvent ev)
@@ -143,6 +146,12 @@ namespace Content.Server._CorvaxNext.BattleRoyal.Rules
 				});
 
                 ev.Handled = true;
+				
+				Timer.Spawn(TimeSpan.FromSeconds(0.5), () => 
+				{
+					CheckLastManStanding(uid, br);
+				});
+				
                 break;
             }
         }
