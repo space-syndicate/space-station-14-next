@@ -1,5 +1,6 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Map;
 
 namespace Content.Server._CorvaxNext.BattleRoyale.SupplyDrop;
 
@@ -26,10 +27,16 @@ public sealed partial class SupplyDropComponent : Component
 
     [DataField("dynamicRangeSpawnMargin"), ViewVariables(VVAccess.ReadWrite)]
     public float DynamicRangeSpawnMargin = 0.8f;
+    
+    [DataField("minDistanceBetweenSpawns"), ViewVariables(VVAccess.ReadWrite)]
+    public float MinDistanceBetweenSpawns = 2.0f;
 
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public int KillCounter = 0;
 
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public int TotalDropped = 0;
+    
+    [ViewVariables(VVAccess.ReadOnly)]
+    public List<(EntityCoordinates coords, TimeSpan expireTime)> RecentSpawnLocations = new();
 }

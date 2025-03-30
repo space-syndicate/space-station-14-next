@@ -93,6 +93,14 @@ public sealed class SupplyDropSystem : EntitySystem
             Spawn(component.CratePrototype, coordinates);
             if (!string.IsNullOrWhiteSpace(component.SpawnEffectPrototype))
                 Spawn(component.SpawnEffectPrototype, coordinates);
+            
+            // Track the spawn location to avoid clustering
+            component.RecentSpawnLocations.Add((coordinates, _timing.CurTime + TimeSpan.FromMinutes(5)));
+            
+            // Clean up expired recent spawn locations
+            var now = _timing.CurTime;
+            component.RecentSpawnLocations.RemoveAll(loc => loc.expireTime < now);
+            
             component.TotalDropped++;
         }
     }
@@ -194,26 +202,112 @@ public sealed class SupplyDropSystem : EntitySystem
         
         // Get all tiles on the grid that intersect with the dynamic range circle
         var circle = new Circle(rangeCenter, maxRange);
-        var tiles = _mapSystem.GetTilesIntersecting(gridUid, grid, circle).ToList();
+        var allTiles = _mapSystem.GetTilesIntersecting(gridUid, grid, circle).ToList();
         
-        if (tiles.Count == 0)
+        if (allTiles.Count == 0)
             return TryGetGridSpawnCoordinates(gridUid, component, out coordinates); // No intersection, spawn anywhere on grid
+
+        // Filter tiles based on minimum distance from recent spawns
+        var validTiles = new List<TileRef>();
+        var minDistanceSq = component.MinDistanceBetweenSpawns * component.MinDistanceBetweenSpawns;
         
-        // Shuffle the tiles to add randomness
-        _random.Shuffle(tiles);
-        
-        // Try each tile until we find a valid spawn location
-        foreach (var tile in tiles)
+        foreach (var tile in allTiles)
         {
-            if (!IsTileValidForSpawn(gridUid, tile.GridIndices, component, grid))
-                continue;
+            var tileCoords = _mapSystem.GridTileToLocal(gridUid, grid, tile.GridIndices);
+            var tileMapPos = _transform.ToMapCoordinates(tileCoords).Position;
             
-            coordinates = _mapSystem.GridTileToLocal(gridUid, grid, tile.GridIndices);
+            bool isTooClose = false;
+            foreach (var (recentCoord, _) in component.RecentSpawnLocations) 
+            {
+                var recentMapPos = _transform.ToMapCoordinates(recentCoord).Position;
+                var distSq = (tileMapPos - recentMapPos).LengthSquared();
+                
+                if (distSq < minDistanceSq)
+                {
+                    isTooClose = true;
+                    break;
+                }
+            }
+            
+            if (!isTooClose && IsTileValidForSpawn(gridUid, tile.GridIndices, component, grid))
+            {
+                validTiles.Add(tile);
+            }
+        }
+        
+        // If we don't have any valid tiles after distance filtering, use all valid tiles
+        if (validTiles.Count == 0)
+        {
+            validTiles = allTiles.Where(t => IsTileValidForSpawn(gridUid, t.GridIndices, component, grid)).ToList();
+            
+            // If we still don't have valid tiles, give up
+            if (validTiles.Count == 0)
+                return TryGetGridSpawnCoordinates(gridUid, component, out coordinates);
+        }
+
+        // Divide the area into sectors for better distribution
+        var validTilesBySector = DivideTilesIntoSectors(validTiles, rangeCenter, 8);
+        
+        // Try to pick from a sector that doesn't have recent spawns
+        var sectorKeys = validTilesBySector.Keys.ToList();
+        _random.Shuffle(sectorKeys);
+        
+        foreach (var sectorKey in sectorKeys)
+        {
+            var sectorTiles = validTilesBySector[sectorKey];
+            if (sectorTiles.Count == 0)
+                continue;
+                
+            // Get a random tile from this sector
+            var selectedTile = _random.Pick(sectorTiles);
+            coordinates = _mapSystem.GridTileToLocal(gridUid, grid, selectedTile.GridIndices);
             return true;
         }
         
-        // If we couldn't find a valid spawn location within the range, fall back to spawning anywhere on the grid
+        // If all sectors failed, fall back to completely random valid tile
+        if (validTiles.Count > 0)
+        {
+            var randomTile = _random.Pick(validTiles);
+            coordinates = _mapSystem.GridTileToLocal(gridUid, grid, randomTile.GridIndices);
+            return true;
+        }
+        
+        // Last resort
         return TryGetGridSpawnCoordinates(gridUid, component, out coordinates);
+    }
+    
+    /// <summary>
+    /// Divides tiles into sectors based on their angle from center for better distribution.
+    /// </summary>
+    private Dictionary<int, List<TileRef>> DivideTilesIntoSectors(List<TileRef> tiles, Vector2 center, int sectorCount)
+    {
+        var sectoredTiles = new Dictionary<int, List<TileRef>>();
+        
+        // Initialize all sectors
+        for (int i = 0; i < sectorCount; i++)
+        {
+            sectoredTiles[i] = new List<TileRef>();
+        }
+        
+        // Group tiles by sector
+        foreach (var tile in tiles)
+        {
+            var tilePos = new Vector2(tile.X + 0.5f, tile.Y + 0.5f); // Center of tile
+            var dirVector = tilePos - center;
+            
+            // Calculate angle (0 to 2π)
+            var angle = Math.Atan2(dirVector.Y, dirVector.X);
+            if (angle < 0) angle += 2 * Math.PI;
+            
+            // Determine sector (0 to sectorCount-1)
+            var sectorSize = 2 * Math.PI / sectorCount;
+            var sectorIndex = (int)(angle / sectorSize);
+            
+            // Add to appropriate sector
+            sectoredTiles[sectorIndex].Add(tile);
+        }
+        
+        return sectoredTiles;
     }
 
     /// <summary>
