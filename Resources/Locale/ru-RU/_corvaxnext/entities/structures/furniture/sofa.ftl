@@ -1,14 +1,14 @@
 ent-SofaBaseMiddle = средняя часть дивана
 .desc = несколько мест, объединённых в один объект. настоящее чудо науки.
 
-ent-BenchWoodenMiddle = средняя деревянная скамейка
+ent-BenchChapelMiddle = средняя церковная скамейка
 .desc = { ent-BenchComfy.desc }
 
-ent-BenchWoodenLeft = левая деревянная скамейка
-.desc = { ent-BenchWoodenMiddle.desc }
+ent-BenchChapelLeft = левая церковная скамейка
+.desc = { ent-BenchChapelMiddle.desc }
 
-ent-BenchWoodenRight = правая деревянная скамейка
-.desc = { ent-BenchWoodenMiddle.desc }
+ent-BenchChapelRight = правая церковная скамейка
+.desc = { ent-BenchChapelMiddle.desc }
 
 ent-SofaMiddle = средняя часть дивана
 .desc = { ent-SofaBaseMiddle.desc }

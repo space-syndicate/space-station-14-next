@@ -1,7 +1,7 @@
 #bench and sofa
 - type: construction
-  name: wooden bench
-  id: BenchWoodenMiddle
+  name: Chapel Bench
+  id: BenchChapelMiddle
   graph: CompositesBench
   startNode: start
   targetNode: woodenbenchMiddle
@@ -17,8 +17,8 @@
     - !type:TileNotBlocked
 
 - type: construction
-  name: wooden bench left
-  id: BenchWoodenLeft
+  name: Chapel Benchleft
+  id: BenchChapelLeft
   graph: CompositesBench
   startNode: start
   targetNode: woodenbenchLeft
@@ -34,8 +34,8 @@
     - !type:TileNotBlocked
 
 - type: construction
-  name: wooden bench right
-  id: BenchWoodenRight
+  name: Chapel Benchright
+  id: BenchChapelRight
   graph: CompositesBench
   startNode: start
   targetNode: woodenbenchRight

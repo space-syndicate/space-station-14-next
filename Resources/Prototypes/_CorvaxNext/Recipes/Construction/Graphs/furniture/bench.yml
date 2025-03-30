@@ -126,7 +126,7 @@
               amount: 1
 
     - node: woodenbenchMiddle
-      entity: BenchWoodenMiddle
+      entity: BenchChapelMiddle
       edges:
         - to: start
           completed:
@@ -138,7 +138,7 @@
               doAfter: 1
 
     - node: woodenbenchLeft
-      entity: BenchWoodenLeft
+      entity: BenchChapelLeft
       edges:
         - to: start
           completed:
@@ -150,7 +150,7 @@
               doAfter: 1
 
     - node: woodenbenchRight
-      entity: BenchWoodenRight
+      entity: BenchChapelRight
       edges:
         - to: start
           completed:

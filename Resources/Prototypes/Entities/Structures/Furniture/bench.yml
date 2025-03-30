@@ -1,5 +1,5 @@
 - type: entity
-  name: comfortable bench
+  name: bench
   id: BenchComfy
   parent: SeatBase
   description: A bench with an extremely comfortable backrest.
