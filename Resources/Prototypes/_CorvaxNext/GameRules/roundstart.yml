@@ -83,18 +83,6 @@
   parent: BaseGameRule
   components:
   - type: BattleRoyaleRule
-    gear: DeathMatchGear
+    gear: BattleRoyaleGear 
     roundEndDelay: 10
   - type: PointManager
-
-- type: gamePreset
-  id: BattleRoyale
-  alias:
-    - br
-  name: battle-royale-title
-  description: battle-royale-description
-  showInVote: true
-  minPlayers: 0
-  maxPlayers: 100
-  rules:
-    - BattleRoyale

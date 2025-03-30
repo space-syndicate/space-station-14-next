@@ -8,6 +8,8 @@ using Content.Server.GameTicking.Events;
 using Content.Server.GameTicking.Rules;
 using Content.Server.KillTracking;
 using Content.Server.Mind;
+using Content.Server.Traits.Assorted;
+using Content.Server._CorvaxNext.Traits.Assorted;
 using Content.Server.Points;
 using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Components;
@@ -29,6 +31,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Players;
 using Content.Shared.Points;
+using Content.Shared.Traits.Assorted;
 using Content.Shared._CorvaxNext.Skills;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
@@ -139,6 +142,18 @@ namespace Content.Server._CorvaxNext.BattleRoyal.Rules
                 var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(ev.Station, null, ev.Profile);
                 DebugTools.AssertNotNull(mobMaybe);
                 var mob = mobMaybe!.Value;
+				
+				if (HasComp<PainNumbnessComponent>(mob))
+					RemComp<PainNumbnessComponent>(mob);
+				
+				if (HasComp<MoodModifyTraitComponent>(mob))
+					RemComp<MoodModifyTraitComponent>(mob);
+				
+				if (HasComp<PermanentBlindnessComponent>(mob))
+					RemComp<PermanentBlindnessComponent>(mob);
+				
+				if (HasComp<NarcolepsyComponent>(mob))
+					RemComp<NarcolepsyComponent>(mob);
 
                 _mind.TransferTo(newMind, mob);
                 SetOutfitCommand.SetOutfit(mob, br.Gear, EntityManager);
