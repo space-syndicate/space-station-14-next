@@ -19,8 +19,8 @@
     canCollide: false
 
 - type: entity
-  name: wooden bench
-  id: BenchWoodenMiddle
+  name: Chapel bench
+  id: BenchChapelMiddle
   parent: BenchComfy
   placement:
     mode: SnapgridCenter
@@ -33,9 +33,9 @@
     node: woodenbenchMiddle
 
 - type: entity
-  id: BenchWoodenLeft
+  id: BenchChapelLeft
   suffix: Left
-  parent: BenchWoodenMiddle
+  parent: BenchChapelMiddle
   components:
   - type: Sprite
     layers:
@@ -45,9 +45,9 @@
     node: woodenbenchLeft
 
 - type: entity
-  id: BenchWoodenRight
+  id: BenchChapelRight
   suffix: Right
-  parent: BenchWoodenMiddle
+  parent: BenchChapelMiddle
   components:
   - type: Sprite
     layers:
@@ -121,7 +121,7 @@
         acts: ["Destruction"]
       - !type:PlaySoundBehavior
         sound:
-          path: /Audio/Effects/metalbreak.ogg
+          collection: MetalBreak
   - type: Construction
     graph: CompositesBench
     node: sofaCorner
