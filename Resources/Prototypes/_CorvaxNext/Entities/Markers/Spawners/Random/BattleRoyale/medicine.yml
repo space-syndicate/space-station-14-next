@@ -41,5 +41,5 @@
           state: medipen
     - type: EntityTableSpawner
       table: !type:NestedSelector
-        tableId: BattleRoyaleMedicalTable
+        tableId: RoyaleMedicalTable
         prob: 0.9
