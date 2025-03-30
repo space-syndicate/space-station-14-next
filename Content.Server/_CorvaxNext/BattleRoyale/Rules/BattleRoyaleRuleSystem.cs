@@ -10,12 +10,13 @@ using Content.Server.KillTracking;
 using Content.Server.Mind;
 using Content.Server.Traits.Assorted;
 using Content.Server._CorvaxNext.Traits.Assorted;
+using Content.Server._CorvaxNext.BattleRoyale.SupplyDrop;
 using Content.Server.Points;
 using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
-using Content.Server._CorvaxNext.BattleRoyal.Rules.Components;
+using Content.Server._CorvaxNext.BattleRoyale.Rules.Components;
 using Content.Server._CorvaxNext.Ghostbar.Components;
 using Robust.Shared.Audio;
 using Content.Shared.Bed.Sleep;
@@ -43,7 +44,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Robust.Shared.Enums;
 
-namespace Content.Server._CorvaxNext.BattleRoyal.Rules
+namespace Content.Server._CorvaxNext.BattleRoyale.Rules
 {
     /// <summary>
     /// Battle Royale game mode where the last player standing wins, with built-in checks to prevent late joining.
@@ -108,6 +109,8 @@ namespace Content.Server._CorvaxNext.BattleRoyal.Rules
         protected override void Started(EntityUid uid, BattleRoyaleRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
         {
             base.Started(uid, component, gameRule, args);
+			
+			EnsureComp<SupplyDropComponent>(uid);
             
             Timer.Spawn(TimeSpan.FromSeconds(5), () => 
             {

@@ -3,9 +3,10 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Storage;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
+using Content.Server._CorvaxNext.BattleRoyale.Rules;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
-namespace Content.Server._CorvaxNext.BattleRoyal.Rules.Components;
+namespace Content.Server._CorvaxNext.BattleRoyale.Rules.Components;
 
 /// <summary>
 /// Component for Battle Royale game mode

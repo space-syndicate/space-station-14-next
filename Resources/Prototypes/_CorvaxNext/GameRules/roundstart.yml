@@ -86,3 +86,16 @@
     gear: BattleRoyaleGear 
     roundEndDelay: 10
   - type: PointManager
+
+- type: entity
+  id: BattleRoyaleSupplyDropRule
+  parent: BaseGameRule
+  name: Battle Royale Supply Drop
+  components:
+    - type: GameRule
+      minPlayers: 0
+    - type: SupplyDrop
+      cratePrototype: RoyalCrateSupplyDrop
+      killsPerDrop: 1
+      cratesPerDrop: 1
+      spawnEffectPrototype: ExplosionVisualEffect
