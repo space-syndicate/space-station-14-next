@@ -675,7 +675,7 @@
       prob: 0.026
       orGroup: BRArmor
     - id: ClothingOuterArmorRiot
-      prob: 0.027
+      prob: 0.033
       orGroup: BRArmor
     - id: ClothingOuterHardsuitSecurity
       prob: 0.027
@@ -762,9 +762,6 @@
       prob: 0.006
       orGroup: BRArmor
     - id: ClothingOuterHardsuitSyndieCommander
-      prob: 0.006
-      orGroup: BRArmor
-    - id: ClothingOuterHardsuitCybersun
       prob: 0.006
       orGroup: BRArmor
     - id: ClothingOuterHardsuitDeathsquad
