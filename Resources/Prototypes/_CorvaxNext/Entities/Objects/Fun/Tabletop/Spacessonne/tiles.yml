@@ -4,7 +4,6 @@
   name: "tile"
   description: CarcTileBase
   suffix: "DEBUG"
-  Abstract: true
   components:
   - type: Appearance
   - type: Foldable
