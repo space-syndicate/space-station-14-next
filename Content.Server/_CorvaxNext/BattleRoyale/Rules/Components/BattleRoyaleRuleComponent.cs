@@ -17,7 +17,7 @@ public sealed partial class BattleRoyaleRuleComponent : Component
     /// The gear players will spawn with
     /// </summary>
     [DataField("gear", customTypeSerializer: typeof(PrototypeIdSerializer<StartingGearPrototype>)), ViewVariables(VVAccess.ReadWrite)]
-    public string Gear = "DeathMatchGear";
+    public string Gear = "BattleRoyaleGear";
 
     /// <summary>
     /// Time until the round ends after a winner is determined

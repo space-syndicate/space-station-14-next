@@ -1,0 +1,20 @@
+- type: startingGear
+  id: BattleRoyaleGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    shoes: ClothingShoesBootsJackFilled
+    back: ClothingBackpackDuffelSyndicateAmmo
+    gloves: ClothingHandsGlovesFingerless
+    pocket1: HandheldGPSBasic
+    pocket2: RoyalPinpointer
+  storage:
+    back:
+    - RoyalOmnihealT1Medipen
+    - RoyalHyperphaseT1Medipen
+    - BoxFlare
+    - FoodBoxDonut
+    - DrinkWaterBottleFull
+    - DrinkWaterBottleFull
+    - DrinkWaterBottleFull
+  inhand:
+    - SyndicateBusinessCard
