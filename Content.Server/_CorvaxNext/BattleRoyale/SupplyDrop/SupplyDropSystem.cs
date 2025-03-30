@@ -1,26 +1,26 @@
-using System.Numerics;
+using System;
+using System.Collections.Generic;
+using Vector2 = System.Numerics.Vector2;
+using Robust.Shared.Maths;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.KillTracking;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared._CorvaxNext.BattleRoyale.DynamicRange;
-using Content.Server._CorvaxNext.BattleRoyale.Rules.Components; // Note: Namespace typo in original code was BattleRoyal, assuming it should be BattleRoyale like others
+using Content.Server._CorvaxNext.BattleRoyale.Rules.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Physics;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
-// Added Robust.Shared.Physics dependency from original 'using' block, which was missing in the diff's 'using' block.
-using Robust.Shared.Physics; 
-using Robust.Shared.Player; // Added missing dependency from original
+using Robust.Shared.Physics;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
 namespace Content.Server._CorvaxNext.BattleRoyale.SupplyDrop;
 
-/// <summary>
-/// Система для управления спавном ящиков снабжения в режиме Battle Royale
-/// </summary>
 public sealed class SupplyDropSystem : EntitySystem
 {
     [Dependency] private readonly StationSystem _stationSystem = default!;
@@ -29,320 +29,230 @@ public sealed class SupplyDropSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
 
-    // Сохраняем ссылку на компонент SupplyDrop для доступа из глобальных обработчиков
     private EntityUid? _activeSupplyDropComponent = null;
 
     public override void Initialize()
     {
         base.Initialize();
-
         SubscribeLocalEvent<SupplyDropComponent, ComponentStartup>(OnSupplyDropCompStartup);
-
-        // Глобальная подписка на событие убийства
+        SubscribeLocalEvent<SupplyDropComponent, ComponentShutdown>(OnSupplyDropCompShutdown);
         SubscribeLocalEvent<KillReportedEvent>(OnKillReported);
     }
 
     private void OnSupplyDropCompStartup(EntityUid uid, SupplyDropComponent component, ComponentStartup args)
     {
-        // Сохраняем ссылку на активный компонент
         _activeSupplyDropComponent = uid;
-
-        // Подсчитываем общее число игроков
         var playerCount = GetPlayerCount();
-
-        // Округляем вверх и гарантируем минимум 1 ящик
         var initialDrops = Math.Max(1, (int)Math.Ceiling(playerCount / 10.0));
-
-        // Спавним начальные ящики
         for (var i = 0; i < initialDrops; i++)
-        {
             SpawnSupplyCrate(uid, component);
-        }
     }
 
-    // Глобальный обработчик событий убийства
+    private void OnSupplyDropCompShutdown(EntityUid uid, SupplyDropComponent component, ComponentShutdown args)
+    {
+        if (_activeSupplyDropComponent == uid)
+            _activeSupplyDropComponent = null;
+    }
+
     private void OnKillReported(ref KillReportedEvent ev)
     {
-        // Проверяем, есть ли активный компонент SupplyDrop
-        // Ensure EntityMananger is available before TryComp in event handlers
-        if (_activeSupplyDropComponent == null || !EntityManager.TryGetComponent<SupplyDropComponent>(_activeSupplyDropComponent.Value, out var component))
+        if (_activeSupplyDropComponent is not { Valid: true } activeUid) return;
+        if (!EntityManager.TryGetComponent(activeUid, out SupplyDropComponent? component))
+        {
+            _activeSupplyDropComponent = null;
             return;
+        }
 
-        // Увеличиваем счетчик убийств
         component.KillCounter++;
-
-        // Проверяем, нужно ли спавнить новые ящики
         if (component.KillCounter >= component.KillsPerDrop)
         {
             for (var i = 0; i < component.CratesPerDrop; i++)
-            {
-                SpawnSupplyCrate(_activeSupplyDropComponent.Value, component);
-            }
-
-            // Сбрасываем счетчик убийств
+                SpawnSupplyCrate(activeUid, component);
             component.KillCounter = 0;
         }
     }
 
-    /// <summary>
-    /// Спавнит ящик снабжения в случайном месте
-    /// </summary>
     public void SpawnSupplyCrate(EntityUid ruleUid, SupplyDropComponent component)
     {
-        // Получаем координаты для спавна
-        if (!TryGetSpawnCoordinates(ruleUid, out var coordinates))
+        if (!TryGetSpawnCoordinates(ruleUid, component, out var coordinates))
             return;
 
-        // Спавним ящик
-        var crate = Spawn(component.CratePrototype, coordinates);
-
-        // Спавним эффект, если он настроен
-        if (component.SpawnEffectPrototype != null)
-        {
+        Spawn(component.CratePrototype, coordinates);
+        if (!string.IsNullOrWhiteSpace(component.SpawnEffectPrototype))
             Spawn(component.SpawnEffectPrototype, coordinates);
-        }
-
-        // Увеличиваем счетчик спавнутых ящиков
         component.TotalDropped++;
     }
 
-    /// <summary>
-    /// Получает координаты для спавна ящика, учитывая DynamicRange если он есть
-    /// </summary>
-    private bool TryGetSpawnCoordinates(EntityUid ruleUid, out EntityCoordinates coordinates)
+    private bool TryGetSpawnCoordinates(EntityUid ruleUid, SupplyDropComponent component, out EntityCoordinates coordinates)
     {
         coordinates = EntityCoordinates.Invalid;
-
-        // Проверяем наличие DynamicRange
-        var dynamicRangeQuery = EntityQueryEnumerator<DynamicRangeComponent>();
-        EntityUid? dynamicRangeEntity = null;
         DynamicRangeComponent? dynamicRange = null;
+        EntityUid? dynamicRangeEntity = null;
 
-        while (dynamicRangeQuery.MoveNext(out var ent, out var comp))
+        if (TryComp<DynamicRangeComponent>(ruleUid, out var rangeOnRule))
         {
-            dynamicRangeEntity = ent;
-            dynamicRange = comp;
-            break;
+            dynamicRange = rangeOnRule;
+            dynamicRangeEntity = ruleUid;
         }
-
-        // Если нашли DynamicRange, используем его параметры для определения зоны спавна
-        if (dynamicRangeEntity != null && dynamicRange != null)
+        else
         {
-            return TryGetSpawnCoordinatesWithinRange(dynamicRangeEntity.Value, dynamicRange, out coordinates);
-        }
-
-        // Если нет DynamicRange, используем стандартный метод спавна на любой станции
-        return TryGetRandomSpawnCoordinates(out coordinates);
-    }
-
-    /// <summary>
-    /// Получает координаты для спавна внутри безопасной зоны DynamicRange
-    /// </summary>
-    private bool TryGetSpawnCoordinatesWithinRange(EntityUid rangeEntity, DynamicRangeComponent dynamicRange, out EntityCoordinates coordinates)
-    {
-        coordinates = EntityCoordinates.Invalid;
-
-        // Получаем преобразование для entity с DynamicRange
-        var transform = Transform(rangeEntity);
-        var mapId = transform.MapID;
-
-        // Проверяем, что карта существует
-        if (mapId == MapId.Nullspace)
-            return false;
-
-        // Находим все сетки на карте, принадлежащие станциям
-        var grids = new List<EntityUid>();
-
-        // Получаем все станции
-        var stations = _stationSystem.GetStations();
-        foreach (var station in stations)
-        {
-            if (TryComp<StationDataComponent>(station, out var stationData))
+            var query = EntityQueryEnumerator<DynamicRangeComponent>();
+            if (query.MoveNext(out var ent, out var comp))
             {
-                foreach (var grid in stationData.Grids)
-                {
-                    if (Transform(grid).MapID == mapId)
-                    {
-                        grids.Add(grid);
-                    }
-                }
+                dynamicRange = comp;
+                dynamicRangeEntity = ent;
             }
         }
 
-        if (grids.Count == 0)
-            return false;
-
-        // Выбираем случайную сетку
-        var randomGrid = _random.Pick(grids);
-
-        // Получаем мировую позицию центра DynamicRange
-        var worldCenter = _transform.GetWorldPosition(transform) + dynamicRange.Origin;
-
-        // Максимальное количество попыток найти подходящую точку
-        const int maxAttempts = 50;
-
-        for (var i = 0; i < maxAttempts; i++)
+        if (dynamicRange != null && dynamicRangeEntity != null)
         {
-            // Генерируем случайный угол и расстояние внутри безопасной зоны
-            var angle = _random.NextFloat() * 2 * MathF.PI;
-            // Используем 80% диапазона для безопасности
-            var distance = _random.NextFloat() * dynamicRange.Range * 0.8f;
-
-            // Вычисляем точку в мировых координатах
-            var offset = new Vector2(
-                distance * MathF.Cos(angle),
-                distance * MathF.Sin(angle)
-            );
-
-            var worldPos = worldCenter + offset;
-
-            // Преобразуем мировую координату в координату сетки
-            var gridTransform = Transform(randomGrid);
-            var worldToLocal = _transform.GetInvWorldMatrix(gridTransform);
-            var localPos = Vector2.Transform(worldPos, worldToLocal);
-
-            // Создаем координаты сущности
-            coordinates = new EntityCoordinates(randomGrid, localPos);
-
-            // Проверяем, что точка не заблокирована и доступна для спавна
-            if (IsSpawnPositionValid(coordinates, randomGrid))
+            if (TryGetTileCoordinatesWithinRange(dynamicRangeEntity.Value, dynamicRange, component, out coordinates))
                 return true;
+            return TryGetRandomTileCoordinates(component, out coordinates);
         }
-
-        return false;
+        return TryGetRandomTileCoordinates(component, out coordinates);
     }
 
-    /// <summary>
-    /// Получает случайные координаты для спавна на любой станции
-    /// </summary>
-    private bool TryGetRandomSpawnCoordinates(out EntityCoordinates coordinates)
+    private bool TryGetTileCoordinatesWithinRange(EntityUid rangeEntity, DynamicRangeComponent dynamicRange, SupplyDropComponent component, out EntityCoordinates coordinates)
     {
         coordinates = EntityCoordinates.Invalid;
+        if (!TryComp<TransformComponent>(rangeEntity, out var rangeTransform)) return false;
 
-        // Получаем все станции
-        var stations = _stationSystem.GetStations();
-        if (stations.Count == 0)
-            return false;
+        var mapId = rangeTransform.MapID;
+        if (mapId == MapId.Nullspace || !_mapManager.MapExists(mapId)) return false;
 
-        // Выбираем случайную станцию
-        var randomStation = _random.Pick(stations);
+        var grids = GetStationGridsOnMap(mapId);
+        if (grids.Count == 0) return false;
 
-        // Получаем все сетки этой станции
-        if (!TryComp<StationDataComponent>(randomStation, out var stationData))
-            return false;
+        var worldCenter = _transform.GetWorldPosition(rangeTransform);
+        worldCenter += dynamicRange.Origin;
 
-        if (stationData.Grids.Count == 0)
-            return false;
+        var maxRange = dynamicRange.Range * component.DynamicRangeSpawnMargin;
+        var maxRangeSq = maxRange * maxRange;
+        var maxAttempts = component.MaxSpawnAttempts;
 
-        // Выбираем случайную сетку
-        var randomGrid = _random.Pick(stationData.Grids);
-
-        // Максимальное количество попыток найти подходящую точку
-        const int maxAttempts = 50;
-
-        for (var i = 0; i < maxAttempts; i++)
+        for (var attempt = 0; attempt < maxAttempts; attempt++)
         {
-            // Получаем локальный AABB сетки
-            if (!TryComp<MapGridComponent>(randomGrid, out var grid))
-                continue;
+            var randomGridUid = _random.Pick(grids);
+            if (!TryComp<MapGridComponent>(randomGridUid, out var mapGrid)) continue;
 
-            var aabb = grid.LocalAABB;
-
-            // Генерируем случайную точку в пределах AABB
+            var aabb = mapGrid.LocalAABB;
+            if (aabb.Size.X <= 0 || aabb.Size.Y <= 0) continue;
             var randomX = _random.Next((int)aabb.Left, (int)aabb.Right);
             var randomY = _random.Next((int)aabb.Bottom, (int)aabb.Top);
+            var tile = new Vector2i(randomX, randomY);
 
-            // Создаем координаты сущности
-            coordinates = new EntityCoordinates(randomGrid, new Vector2(randomX, randomY));
+            var tileCoords = _mapSystem.GridTileToLocal(randomGridUid, mapGrid, tile);
+            var tileMapCoords = _transform.ToMapCoordinates(tileCoords);
 
-            // Проверяем, что точка не заблокирована и доступна для спавна
-            if (IsSpawnPositionValid(coordinates, randomGrid))
+            if (tileMapCoords.MapId != mapId) continue;
+            Vector2 tileWorldPos = tileMapCoords.Position;
+            Vector2 centerPos = worldCenter;
+            Vector2 delta = tileWorldPos - centerPos;
+
+            float lenSq = delta.LengthSquared();
+            if (lenSq > maxRangeSq)
+                continue;
+
+            if (IsTileValidForSpawn(randomGridUid, tile, component, mapGrid))
+            {
+                coordinates = tileCoords;
                 return true;
+            }
         }
-
         return false;
     }
 
-    /// <summary>
-    /// Проверяет, что позиция подходит для спавна (не заблокирована и есть атмосфера)
-    /// </summary>
-    private bool IsSpawnPositionValid(EntityCoordinates coordinates, EntityUid gridUid)
+    private bool TryGetRandomTileCoordinates(SupplyDropComponent component, out EntityCoordinates coordinates)
     {
-        // Проверяем, что координаты действительны
-        if (!coordinates.IsValid(EntityManager))
-            return false;
+        coordinates = EntityCoordinates.Invalid;
+        var allGrids = GetAllStationGrids();
+        if (allGrids.Count == 0) return false;
 
-        // Проверяем, что сетка существует и у неё есть компонент MapGridComponent
-        if (!TryComp<MapGridComponent>(gridUid, out var grid))
-            return false;
+        var maxAttempts = component.MaxSpawnAttempts;
+        for (var attempt = 0; attempt < maxAttempts; attempt++)
+        {
+            var randomGridUid = _random.Pick(allGrids);
+            if (!TryComp<MapGridComponent>(randomGridUid, out var mapGrid)) continue;
 
-        // Получаем тайл в указанной позиции
-        var tile = grid.GetTileRef(coordinates);
+            var aabb = mapGrid.LocalAABB;
+            if (aabb.Size.X <= 0 || aabb.Size.Y <= 0) continue;
 
-        // Проверяем, не находится ли тайл в космосе
-        // Need MapUid for IsTileSpace
-        if (!TryComp<TransformComponent>(gridUid, out var gridTransform) || gridTransform.MapUid == null)
-             return false; // Should not happen if grid exists, but safety first
-        if (_atmosphere.IsTileSpace(gridUid, gridTransform.MapUid.Value, tile.GridIndices))
-            return false;
+            var randomX = _random.Next((int)aabb.Left, (int)aabb.Right);
+            var randomY = _random.Next((int)aabb.Bottom, (int)aabb.Top);
+            var tile = new Vector2i(randomX, randomY);
 
-        // Проверяем, не заблокирован ли тайл (стена, объект и т.д.) - Requires MapGridComponent
-        if (_atmosphere.IsTileAirBlocked(gridUid, tile.GridIndices, mapGridComp: grid))
-            return false;
+            if (IsTileValidForSpawn(randomGridUid, tile, component, mapGrid))
+            {
+                coordinates = _mapSystem.GridTileToLocal(randomGridUid, mapGrid, tile);
+                return true;
+            }
+        }
+        return false;
+    }
 
-        // Также можно добавить проверку на столкновения, чтобы избежать спавна внутри объектов
-        // Convert EntityCoordinates to MapCoordinates for EntityLookupSystem
-        var mapCoords = coordinates.ToMap(EntityManager, _transform);
-        var collisionMask = (int) CollisionGroup.Impassable; // Example: Check against impassable objects
-        var entitiesNearby = _lookup.GetEntitiesInRange(mapCoords, 0.1f); // Small radius around the center point
+    private bool IsTileValidForSpawn(EntityUid gridUid, Vector2i tileIndices, SupplyDropComponent component, MapGridComponent grid)
+    {
+        var mapUid = Transform(gridUid).MapUid;
+        if (mapUid == null) return false;
+
+        if (_atmosphere.IsTileSpace(gridUid, mapUid, tileIndices)) return false;
+        if (_atmosphere.IsTileAirBlocked(gridUid, tileIndices, mapGridComp: grid)) return false;
+
+        var physQuery = GetEntityQuery<PhysicsComponent>();
+        foreach (var ent in _mapSystem.GetAnchoredEntities(gridUid, grid, tileIndices))
+        {
+            if (!physQuery.TryGetComponent(ent, out var body)) continue;
+            if (body.BodyType == BodyType.Static && body.Hard && (body.CollisionLayer & (int) CollisionGroup.Impassable) != 0)
+                return false;
+        }
+
+        var tileCoords = _mapSystem.GridTileToLocal(gridUid, grid, tileIndices);
+        var mapCoords = _transform.ToMapCoordinates(tileCoords);
+        var checkRadius = component.SpawnCheckRadius;
+        var entitiesNearby = _lookup.GetEntitiesInRange(mapCoords, checkRadius, LookupFlags.Uncontained);
 
         foreach (var entity in entitiesNearby)
         {
-            // Skip the grid itself if found
-            if (entity == gridUid)
-                continue;
-
-             // Check if entity has physics and potentially blocks the space
-             // Note: Using FixturesComponent check from original code. A better check might involve PhysicsComponent.CanCollide
-             if (HasComp<FixturesComponent>(entity)) // Using the original check
-             {
-                 // More robust check: Check if the entity actually collides at the target location
-                 // This would involve more complex physics queries, FixturesComponent check is simpler but less precise.
-                 return false;
-             }
+            if (entity == gridUid) continue;
+            if (HasComp<FixturesComponent>(entity) || HasComp<SupplyDropComponent>(entity))
+                return false;
         }
-
-
-        // Дополнительная проверка: Убедимся, что мы не спавним прямо на тайле с другим ящиком снабжения
-        // (если ящики сами имеют FixturesComponent, предыдущая проверка может это поймать, но явная проверка не помешает)
-        foreach (var entity in entitiesNearby)
-        {
-            if (HasComp<SupplyDropComponent>(entity)) // Check if another supply drop exists nearby (on the same component type basis)
-                 return false; // Avoid stacking drops exactly on top of each other
-        }
-
-
         return true;
     }
 
-
-    /// <summary>
-    /// Получает количество текущих игроков
-    /// </summary>
     private int GetPlayerCount()
     {
-        // Считаем только игроков с ActorComponent (предполагается, что это активные игроки)
-        // Robust PlayerManager might be another way depending on exact requirements
         var count = 0;
-        var playerQuery = EntityQueryEnumerator<ActorComponent>(); // ActorComponent might not be the best indicator for *current* players in a round
-                                                                   // Consider using GameTicker or PlayerManager for a more accurate count of active session players.
-                                                                   // But following the original logic for now.
-        while (playerQuery.MoveNext(out _, out _))
-        {
-            count++;
-        }
-
+        var playerQuery = EntityQueryEnumerator<ActorComponent>();
+        while (playerQuery.MoveNext(out _, out _)) { count++; }
         return count;
+    }
+
+    private List<EntityUid> GetAllStationGrids()
+    {
+        var grids = new List<EntityUid>();
+        foreach (var station in _stationSystem.GetStations())
+        {
+            if (TryComp<StationDataComponent>(station, out var data)) grids.AddRange(data.Grids);
+        }
+        return grids;
+    }
+
+    private List<EntityUid> GetStationGridsOnMap(MapId mapId)
+    {
+        var grids = new List<EntityUid>();
+        foreach (var station in _stationSystem.GetStations())
+        {
+            if (!TryComp<StationDataComponent>(station, out var data)) continue;
+            foreach (var gridUid in data.Grids)
+            {
+                if (Transform(gridUid).MapID == mapId) grids.Add(gridUid);
+            }
+        }
+        return grids;
     }
 }

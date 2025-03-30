@@ -53,7 +53,6 @@ public sealed class RangeFinderSystem : SharedRangeFinderSystem
 
         rangeFinder.IsActive = isActive;
 
-        // Reset distance when deactivating
         if (!isActive)
         {
             rangeFinder.DistanceToTarget = Distance.Unknown;
@@ -68,7 +67,6 @@ public sealed class RangeFinderSystem : SharedRangeFinderSystem
         if (!Resolve(uid, ref rangeFinder))
             return;
 
-        // If inactive, ensure the distance is reset and appearance is updated.
         if (!rangeFinder.IsActive)
         {
             if (rangeFinder.DistanceToTarget != Distance.Unknown)
@@ -80,7 +78,6 @@ public sealed class RangeFinderSystem : SharedRangeFinderSystem
             return;
         }
 
-        // If target is not set or is invalid, find the closest DynamicRange.
         if (rangeFinder.TargetRange == null || !EntityManager.EntityExists(rangeFinder.TargetRange.Value))
         {
             var closestDynamicRange = FindClosestDynamicRange(uid);
@@ -151,7 +148,6 @@ public sealed class RangeFinderSystem : SharedRangeFinderSystem
         if (!_dynamicRangeQuery.TryGetComponent(trgUid, out var dynamicRange))
             return null;
 
-        // Calculate the direction from the RangeFinder to the center of the DynamicRange if on the same map.
         if (pin.MapID != trg.MapID)
             return null;
 
