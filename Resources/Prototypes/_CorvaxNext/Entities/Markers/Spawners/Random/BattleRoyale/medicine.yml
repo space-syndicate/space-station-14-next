@@ -29,7 +29,7 @@
 
 - type: entity
   name: BR Medical Spawner
-  desc: BR issue
+  description: BR issue
   suffix: DO NOT MAP, Battle Royal
   id: RoyalMedicalTableSpawner
   parent: MarkerBase

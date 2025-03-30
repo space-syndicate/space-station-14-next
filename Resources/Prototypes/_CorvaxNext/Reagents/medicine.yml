@@ -173,7 +173,7 @@
         force: true
         probability: 0.6
       - !type:Emote
-        emote: Cry
+        emote: Crying
         showInChat: false
         force: true
         probability: 0.6
@@ -216,7 +216,7 @@
         messages: ["hyperphase-overdose-effect-burning", "hyperphase-overdose-effect-shocking", "hyperphase-overdose-effect-too-much-power"]
         probability: 0.3
       - !type:AdjustAlert
-        alertType: Slowdown
+        alertType: Walking
         conditions:
         - !type:ReagentThreshold
           reagent: RoyalHyperphase

@@ -109,7 +109,7 @@
 
 - type: entity
   name: BR Pistol Spawner
-  desc: BR issue
+  description: BR issue
   suffix: DO NOT MAP, Battle Royal
   id: RoyalPistolTableSpawner
   parent: MarkerBase
@@ -126,7 +126,7 @@
 
 - type: entity
   name: BR Pistol Ammo Spawner
-  desc: BR issue
+  description: BR issue
   suffix: DO NOT MAP, Battle Royal
   id: RoyalPistolAmmoTableSpawner
   parent: MarkerBase
@@ -226,7 +226,7 @@
 
 - type: entity
   name: BR Shotguns Spawner
-  desc: BR issue
+  description: BR issue
   suffix: DO NOT MAP, Battle Royal
   id: RoyalShotgunTableSpawner
   parent: MarkerBase
@@ -243,7 +243,7 @@
 
 - type: entity
   name: BR Shotgun Ammo Spawner
-  desc: BR issue
+  description: BR issue
   suffix: DO NOT MAP, Battle Royal
   id: RoyalShotgunAmmoTableSpawner
   parent: MarkerBase
@@ -356,13 +356,12 @@
       - id: MagazineGrenadeBlast
       - id: MagazineBoxLightRifleBig
       - id: PowerCellMicroreactor
-      - id: MagazineGrenade
       - id: MagazineGrenadeFrag
       
 
 - type: entity
   name: BR Carbine Spawner
-  desc: BR issue
+  description: BR issue
   suffix: DO NOT MAP, Battle Royal
   id: RoyalCarbineTableSpawner
   parent: MarkerBase
@@ -379,7 +378,7 @@
 
 - type: entity
   name: BR Rifle Ammo Spawner
-  desc: BR issue
+  description: BR issue
   suffix: DO NOT MAP, Battle Royal
   id: RoyalCarbineAmmoTableSpawner
   parent: MarkerBase
@@ -450,7 +449,7 @@
 
 - type: entity
   name: BR Heavy Spawner
-  desc: BR issue
+  description: BR issue
   suffix: DO NOT MAP, Battle Royal
   id: RoyalHeavyTableSpawner
   parent: MarkerBase
@@ -552,7 +551,7 @@
 
 - type: entity
   name: BR Melee Spawner
-  desc: BR issue
+  description: BR issue
   suffix: DO NOT MAP, Battle Royal
   id: RoyalMeleeTableSpawner
   parent: MarkerBase
