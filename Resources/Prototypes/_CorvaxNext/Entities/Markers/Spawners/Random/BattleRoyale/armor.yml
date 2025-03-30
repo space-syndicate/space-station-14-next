@@ -60,7 +60,6 @@
       children:
       - id: ClothingOuterHardsuitSyndieElite
       - id: ClothingOuterHardsuitSyndieCommander
-      - id: ClothingOuterHardsuitCybersun
       - id: ClothingOuterHardsuitDeathsquad
       - id: ClothingOuterHardsuitCBURN
       - id: ClothingOuterHardsuitCBURNLeader
