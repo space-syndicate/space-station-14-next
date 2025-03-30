@@ -109,8 +109,9 @@
 
 - type: entity
   name: BR Pistol Spawner
-  id: RoyalPistolTableSpawner
+  desc: BR issue
   suffix: DO NOT MAP, Battle Royal
+  id: RoyalPistolTableSpawner
   parent: MarkerBase
   components:
   - type: Sprite
@@ -125,8 +126,9 @@
 
 - type: entity
   name: BR Pistol Ammo Spawner
-  id: RoyalPistolAmmoTableSpawner
+  desc: BR issue
   suffix: DO NOT MAP, Battle Royal
+  id: RoyalPistolAmmoTableSpawner
   parent: MarkerBase
   components:
   - type: Sprite
@@ -224,8 +226,9 @@
 
 - type: entity
   name: BR Shotguns Spawner
-  id: RoyalShotgunTableSpawner
+  desc: BR issue
   suffix: DO NOT MAP, Battle Royal
+  id: RoyalShotgunTableSpawner
   parent: MarkerBase
   components:
   - type: Sprite
@@ -240,8 +243,9 @@
 
 - type: entity
   name: BR Shotgun Ammo Spawner
-  id: RoyalShotgunAmmoTableSpawner
+  desc: BR issue
   suffix: DO NOT MAP, Battle Royal
+  id: RoyalShotgunAmmoTableSpawner
   parent: MarkerBase
   components:
   - type: Sprite
@@ -358,8 +362,9 @@
 
 - type: entity
   name: BR Carbine Spawner
-  id: RoyalCarbineTableSpawner
+  desc: BR issue
   suffix: DO NOT MAP, Battle Royal
+  id: RoyalCarbineTableSpawner
   parent: MarkerBase
   components:
   - type: Sprite
@@ -374,8 +379,9 @@
 
 - type: entity
   name: BR Rifle Ammo Spawner
-  id: RoyalCarbineAmmoTableSpawner
+  desc: BR issue
   suffix: DO NOT MAP, Battle Royal
+  id: RoyalCarbineAmmoTableSpawner
   parent: MarkerBase
   components:
   - type: Sprite
@@ -444,8 +450,9 @@
 
 - type: entity
   name: BR Heavy Spawner
-  id: RoyalHeavyTableSpawner
+  desc: BR issue
   suffix: DO NOT MAP, Battle Royal
+  id: RoyalHeavyTableSpawner
   parent: MarkerBase
   components:
   - type: Sprite
@@ -545,8 +552,9 @@
 
 - type: entity
   name: BR Melee Spawner
-  id: RoyalMeleeTableSpawner
+  desc: BR issue
   suffix: DO NOT MAP, Battle Royal
+  id: RoyalMeleeTableSpawner
   parent: MarkerBase
   components:
   - type: Sprite

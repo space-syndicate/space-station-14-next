@@ -29,9 +29,10 @@
 
 - type: entity
   name: BR Medical Spawner
+  desc: BR issue
+  suffix: DO NOT MAP, Battle Royal
   id: RoyalMedicalTableSpawner
   parent: MarkerBase
-  suffix: DO NOT MAP, Battle Royal
   components:
     - type: Sprite
       layers:
