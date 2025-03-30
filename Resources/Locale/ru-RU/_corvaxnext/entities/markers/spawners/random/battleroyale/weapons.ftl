@@ -1,0 +1,16 @@
+ent-RoyalPistolTableSpawner = спавнер пистолетов
+    .suffix = НЕ МАППИТЬ, КОРОЛЕВСКАЯ БИТВА
+ent-RoyalPistolAmmoTableSpawner = спавнер боеприпасов пистолетов
+    .suffix = НЕ МАППИТЬ, КОРОЛЕВСКАЯ БИТВА
+ent-RoyalShotgunTableSpawner = спавнер дробовиков
+    .suffix = НЕ МАППИТЬ, КОРОЛЕВСКАЯ БИТВА
+ent-RoyalShotgunAmmoTableSpawner = спавнер боеприпасов дробовиков
+    .suffix = НЕ МАППИТЬ, КОРОЛЕВСКАЯ БИТВА
+ent-RoyalCarbineTableSpawner = спавнер винтовок
+    .suffix = НЕ МАППИТЬ, КОРОЛЕВСКАЯ БИТВА
+ent-RoyalCarbineAmmoTableSpawner = спавнер боеприпасов винтовок
+    .suffix = НЕ МАППИТЬ, КОРОЛЕВСКАЯ БИТВА
+ent-RoyalHeavyTableSpawner = спавнер тяжёлого оружия
+    .suffix = НЕ МАППИТЬ, КОРОЛЕВСКАЯ БИТВА
+ent-RoyalMeleeTableSpawner = спавнер холодного оружия
+    .suffix = НЕ МАППИТЬ, КОРОЛЕВСКАЯ БИТВА
