@@ -8,7 +8,7 @@
     anchored: true
   - type: Rotatable
   - type: Sprite
-    sprite: Structures/Furniture/Bench/comf_bench.rsi
+    sprite: _CorvaxNext/Structures/Furniture/Bench/comf_bench.rsi
     layers:
     - state: bench_solo_base
       color: "#767e82"
