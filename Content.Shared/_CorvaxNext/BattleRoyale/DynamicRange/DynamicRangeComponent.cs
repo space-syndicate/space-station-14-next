@@ -51,7 +51,7 @@ public sealed partial class DynamicRangeComponent : Component
     public string DamageType = "Asphyxiation";
     
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float SearchRangeMultiplier = 3f;
+    public float SearchRangeMultiplier = 1f;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float MinSearchRange = 100f;
