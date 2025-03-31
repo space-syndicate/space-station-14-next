@@ -26,6 +26,7 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
+    sprite: _CorvaxNext/Structures/Furniture/Bench/comf_bench.rsi
     layers:
     - state: pewmiddle
   - type: Construction
@@ -173,7 +174,7 @@
 - type: entity
   name: bench
   id: BenchComfyMiddle
-  parent: BenchComfy
+  parent: BenchChapelMiddle
   components:
   - type: Sprite
     layers:
@@ -216,7 +217,7 @@
   name: bench
   id: BenchRedComfyMiddle
   suffix: Middle. Red
-  parent: BenchRedComfy
+  parent: BenchComfyMiddle
   components:
   - type: Sprite
     layers:
@@ -231,7 +232,7 @@
 - type: entity
   id: BenchRedComfyLeft
   suffix: Left. Red
-  parent: BenchRedComfy
+  parent: BenchComfyMiddle
   components:
   - type: Sprite
     layers:
@@ -246,7 +247,7 @@
 - type: entity
   id: BenchRedComfyRight
   suffix: Right. Red
-  parent: BenchRedComfy
+  parent: BenchComfyMiddle
   components:
   - type: Sprite
     layers:
@@ -262,7 +263,7 @@
   name: bench
   id: BenchBlueComfyMiddle
   suffix: Middle. Blue
-  parent: BenchBlueComfy
+  parent: BenchComfyMiddle
   components:
   - type: Sprite
     layers:
@@ -277,7 +278,7 @@
 - type: entity
   id: BenchBlueComfyLeft
   suffix: Left. Blue
-  parent: BenchBlueComfy
+  parent: BenchComfyMiddle
   components:
   - type: Sprite
     layers:
@@ -292,7 +293,7 @@
 - type: entity
   id: BenchBlueComfyRight
   suffix: Right. Blue
-  parent: BenchBlueComfy
+  parent: BenchComfyMiddle
   components:
   - type: Sprite
     layers:

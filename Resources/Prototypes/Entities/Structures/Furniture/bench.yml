@@ -1,5 +1,5 @@
 - type: entity
-  name: bench
+  name: comfortable bench
   id: BenchComfy
   parent: SeatBase
   description: A bench with an extremely comfortable backrest.
@@ -8,7 +8,7 @@
     anchored: true
   - type: Rotatable
   - type: Sprite
-    sprite: _CorvaxNext/Structures/Furniture/Bench/comf_bench.rsi
+    sprite: Structures/Furniture/Bench/comf_bench.rsi
     layers:
     - state: bench_solo_base
       color: "#767e82"
