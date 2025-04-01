@@ -27581,50 +27581,6 @@ entities:
     - type: Transform
       pos: -58.748463,8.240366
       parent: 2
-- proto: ActionToggleLight
-  entities:
-  - uid: 14014
-    components:
-    - type: Transform
-      parent: 14012
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 14012
-  - uid: 14017
-    components:
-    - type: Transform
-      parent: 14015
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 14015
-  - uid: 14021
-    components:
-    - type: Transform
-      parent: 14019
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 14019
-  - uid: 14024
-    components:
-    - type: Transform
-      parent: 14022
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 14022
-  - uid: 14027
-    components:
-    - type: Transform
-      parent: 14025
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 14025
-  - uid: 14071
-    components:
-    - type: Transform
-      parent: 14069
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 14069
 - proto: Airlock
   entities:
   - uid: 3517
@@ -65915,179 +65871,51 @@ entities:
     - type: Transform
       pos: -84.54462,-81.408554
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 14014
-    - type: PointLight
-      enabled: True
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 14013
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 14014
-    - type: ActionsContainer
   - uid: 14015
     components:
     - type: Transform
       pos: -80.455376,-81.408554
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 14017
-    - type: PointLight
-      enabled: True
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 14016
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 14017
-    - type: ActionsContainer
   - uid: 14019
     components:
     - type: Transform
       pos: -84.552414,-71.36753
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 14021
-    - type: PointLight
-      enabled: True
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 14020
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 14021
-    - type: ActionsContainer
   - uid: 14022
     components:
     - type: Transform
       pos: -76.44478,-73.533226
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 14024
-    - type: PointLight
-      enabled: True
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 14023
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 14024
-    - type: ActionsContainer
   - uid: 14025
     components:
     - type: Transform
       pos: -76.48555,-79.32881
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 14027
-    - type: PointLight
-      enabled: True
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 14026
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 14027
-    - type: ActionsContainer
   - uid: 14069
     components:
     - type: Transform
       pos: -80.53804,-71.37569
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 14071
-    - type: PointLight
-      enabled: True
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 14070
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 14071
-    - type: ActionsContainer
   - uid: 14151
     components:
     - type: Transform
       pos: -97.4029,-71.40863
       parent: 2
-    - type: PointLight
-      enabled: True
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 14152
   - uid: 14155
     components:
     - type: Transform
       pos: -104.5631,-73.43138
       parent: 2
-    - type: PointLight
-      enabled: True
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 14156
   - uid: 14157
     components:
     - type: Transform
       pos: -103.53185,-81.380295
       parent: 2
-    - type: PointLight
-      enabled: True
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 14158
   - uid: 14159
     components:
     - type: Transform
       pos: -96.52144,-79.755295
       parent: 2
-    - type: PointLight
-      enabled: True
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 14160
 - proto: LargeBeaker
   entities:
   - uid: 12523
