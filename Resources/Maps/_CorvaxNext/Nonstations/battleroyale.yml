@@ -96,6 +96,7 @@ entities:
     components:
     - type: MetaData
       name: Battleroyale
+    - type: DynamicRange
     - type: Transform
     - type: Map
       mapPaused: True
@@ -27583,8 +27584,6 @@ entities:
 - proto: ActionToggleLight
   entities:
   - uid: 14014
-    mapInit: true
-    paused: true
     components:
     - type: Transform
       parent: 14012
@@ -27592,8 +27591,6 @@ entities:
       originalIconColor: '#FFFFFFFF'
       container: 14012
   - uid: 14017
-    mapInit: true
-    paused: true
     components:
     - type: Transform
       parent: 14015
@@ -27601,8 +27598,6 @@ entities:
       originalIconColor: '#FFFFFFFF'
       container: 14015
   - uid: 14021
-    mapInit: true
-    paused: true
     components:
     - type: Transform
       parent: 14019
@@ -27610,8 +27605,6 @@ entities:
       originalIconColor: '#FFFFFFFF'
       container: 14019
   - uid: 14024
-    mapInit: true
-    paused: true
     components:
     - type: Transform
       parent: 14022
@@ -27619,8 +27612,6 @@ entities:
       originalIconColor: '#FFFFFFFF'
       container: 14022
   - uid: 14027
-    mapInit: true
-    paused: true
     components:
     - type: Transform
       parent: 14025
@@ -27628,8 +27619,6 @@ entities:
       originalIconColor: '#FFFFFFFF'
       container: 14025
   - uid: 14071
-    mapInit: true
-    paused: true
     components:
     - type: Transform
       parent: 14069
