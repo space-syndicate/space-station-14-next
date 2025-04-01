@@ -97,6 +97,8 @@ entities:
     - type: MetaData
       name: Battleroyale
     - type: Transform
+    - type: DynamicRange
+      IsShrinking: true
     - type: Map
       mapPaused: True
     - type: PhysicsMap
