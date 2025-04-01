@@ -7,10 +7,6 @@ using Robust.Shared.Audio;
 
 namespace Content.Shared._CorvaxNext.BattleRoyale.DynamicRange;
 
-/// <summary>
-/// Dynamic version of RestrictedRangeComponent that works when added after MapInitEvent
-/// and updates the boundary when Range is changed.
-/// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class DynamicRangeComponent : Component
 {
@@ -54,7 +50,7 @@ public sealed partial class DynamicRangeComponent : Component
     public float SearchRangeMultiplier = 1f;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float MinSearchRange = 100f;
+    public float MinSearchRange = 300;
     
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public bool Processed;
@@ -87,11 +83,11 @@ public sealed partial class DynamicRangeComponent : Component
     public float PreviousMinRange;
     
     [DataField]
-    public SoundSpecifier ShrinkMusic = new SoundCollectionSpecifier("NukeMusic");
+    public SoundSpecifier ShrinkMusic = new SoundCollectionSpecifier("BattleRoyale");
     
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public bool PlayedShrinkMusic = false;
     
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float MusicStartTime = 80f;
+    public float MusicStartTime = 500f;
 }
