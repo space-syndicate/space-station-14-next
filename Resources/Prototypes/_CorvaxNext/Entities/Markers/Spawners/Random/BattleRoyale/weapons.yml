@@ -296,7 +296,6 @@
       weight: 5
       children:
       - id: WeaponRifleM90GrenadeLauncher
-      - id: WeaponPulseRifle
       - id: WeaponPulseCarbine
     # Tier 5 - Fun (2%)
     - !type:GroupSelector

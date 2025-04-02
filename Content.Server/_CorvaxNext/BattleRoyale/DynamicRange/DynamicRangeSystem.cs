@@ -224,10 +224,15 @@ public sealed class DynamicRangeSystem : EntitySystem
             return;
 
         var selectedMusic = _audio.ResolveSound(component.ShrinkMusic);
+        if (ResolvedSoundSpecifier.IsNullOrEmpty(selectedMusic))
+            return;
+        
+        var xform = _xformQuery.GetComponent(uid);
+        var stationUid = _stationSystem.GetStationInMap(xform.MapID);
         
         component.PlayedShrinkMusic = true;
         
-        _sound.DispatchStationEventMusic(uid, selectedMusic, StationEventMusicType.Nuke);
+        _sound.DispatchStationEventMusic(stationUid ?? uid, selectedMusic, StationEventMusicType.Nuke);
     }
 
     private void OnDynamicRangeShutdown(EntityUid uid, DynamicRangeComponent component, ComponentShutdown args)

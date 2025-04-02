@@ -20,7 +20,7 @@ public sealed partial class DynamicRangeComponent : Component
     public bool IsShrinking = true;
 
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
-    public float ShrinkTime = 900f;
+    public float ShrinkTime = 730f;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float MinimumRange = 10f;
@@ -89,5 +89,5 @@ public sealed partial class DynamicRangeComponent : Component
     public bool PlayedShrinkMusic = false;
     
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float MusicStartTime = 500f;
+    public float MusicStartTime = 600f;
 }
