@@ -44,7 +44,6 @@ public sealed class DynamicRangeSystem : EntitySystem
         SubscribeLocalEvent<DynamicRangeComponent, ComponentShutdown>(OnDynamicRangeShutdown);
         SubscribeLocalEvent<DynamicRangeComponent, AfterAutoHandleStateEvent>(OnDynamicRangeChanged);
         
-        // Check for boundary entities every frame
         SubscribeLocalEvent<DynamicRangeComponent, MapInitEvent>(OnDynamicRangeMapInit);
 
         _mapQuery = GetEntityQuery<MapComponent>();
@@ -54,7 +53,6 @@ public sealed class DynamicRangeSystem : EntitySystem
 
     private void OnDynamicRangeMapInit(EntityUid uid, DynamicRangeComponent component, MapInitEvent args)
     {
-        // Schedule a frame update to delete the boundary after RestrictedRangeSystem creates it
         RemoveBoundaryEntity(uid);
     }
 
@@ -67,7 +65,6 @@ public sealed class DynamicRangeSystem : EntitySystem
         var query = EntityQueryEnumerator<DynamicRangeComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            // Make sure boundaries are removed
             if (_restrictedRangeQuery.TryComp(uid, out var restrictedRange) && 
                 EntityManager.EntityExists(restrictedRange.BoundaryEntity))
             {
@@ -237,7 +234,6 @@ public sealed class DynamicRangeSystem : EntitySystem
 
     private void OnDynamicRangeShutdown(EntityUid uid, DynamicRangeComponent component, ComponentShutdown args)
     {
-        // Ensure we clean up any boundary entity that might exist
         RemoveBoundaryEntity(uid);
 
         if (HasComp<RestrictedRangeComponent>(uid))
@@ -248,7 +244,6 @@ public sealed class DynamicRangeSystem : EntitySystem
     {
         component.Processed = false;
         
-        // Clean up any existing boundary entities
         RemoveBoundaryEntity(uid);
     }
 
@@ -256,13 +251,9 @@ public sealed class DynamicRangeSystem : EntitySystem
     {
         UpdateVisualization(uid, component);
         
-        // Also make sure to clean up boundaries in case they were recreated
         RemoveBoundaryEntity(uid);
     }
 
-    /// <summary>
-    /// Removes the boundary entity associated with the restricted range component, if any.
-    /// </summary>
     private void RemoveBoundaryEntity(EntityUid uid)
     {
         if (_restrictedRangeQuery.TryComp(uid, out var restrictedRange) && 
@@ -371,14 +362,11 @@ public sealed class DynamicRangeSystem : EntitySystem
             return;
         }
 
-        // Get or create the RestrictedRangeComponent for visualization
         var restricted = EnsureComp<RestrictedRangeComponent>(uid);
         
-        // Update the RestrictedRangeComponent properties for visualization
         restricted.Range = component.Range;
         restricted.Origin = component.Origin;
         
-        // Make sure to delete any boundary entities that might exist
         RemoveBoundaryEntity(uid);
         
         Dirty(uid, restricted);
