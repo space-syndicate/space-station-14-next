@@ -2,6 +2,7 @@
   id: BasicCalmEventsTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
+    - id: NukeCalibration
     - id: AnomalySpawn
     - id: BluespaceArtifact
     - id: BluespaceLocker
@@ -72,6 +73,17 @@
     delay:
       min:  40
       max:  60
+
+- type: entity
+  id: NukeCalibration
+  parent: BaseGameRule
+  components:
+  - type: StationEvent
+    weight: 5
+    duration: 40
+    reoccurrenceDelay: 5
+    minimumPlayers: 25
+  - type: NukeCalibrationRule
 
 - type: entity
   id: AnomalySpawn
