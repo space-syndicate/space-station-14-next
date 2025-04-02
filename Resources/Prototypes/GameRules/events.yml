@@ -469,6 +469,8 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/Intern/aliens.ogg
+      params:
+        volume: -4
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -490,6 +492,8 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/Intern/aliens.ogg
+      params:
+        volume: -4
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -511,6 +515,8 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/Intern/aliens.ogg
+      params:
+        volume: -4
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -528,6 +534,8 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/Intern/aliens.ogg
+      params:
+        volume: -4
     earliestStart: 20
     minimumPlayers: 20
     weight: 1.5
@@ -647,6 +655,8 @@
     startAnnouncement: station-event-communication-interception
     startAudio:
       path: /Audio/Announcements/Intern/intercept.ogg
+      params:
+        volume: -4
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
   - type: AlertLevelInterceptionRule
@@ -716,6 +726,8 @@
   - type: StationEvent
     startAudio:
       collection: InternAlert
+      params:
+        volume: -4
     weight: 5
     minimumPlayers: 25
     reoccurrenceDelay: 20

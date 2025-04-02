@@ -2,3 +2,5 @@
   id: Welcome
   sound:
     collection: RoundStart
+    params:
+        volume: -4

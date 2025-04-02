@@ -30,6 +30,8 @@
     startColor: "#18abf5"
     startAudio:
       path: /Audio/Announcements/Intern/alert6.ogg # pizza
+      params:
+        volume: -4
   - type: CargoGiftsRule
     sender: cargo-gift-default-sender
 

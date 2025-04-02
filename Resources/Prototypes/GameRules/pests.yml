@@ -25,6 +25,8 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/Intern/aliens.ogg
+      params:
+        volume: -4
     earliestStart: 15
     weight: 6
     duration: 120
@@ -48,6 +50,8 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/Intern/aliens.ogg
+      params:
+        volume: -4
     earliestStart: 15
     weight: 6
     duration: 50
@@ -74,6 +78,8 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/Intern/aliens.ogg
+      params:
+        volume: -4
     weight: 6
     duration: 120
   - type: VentCrittersRule
@@ -91,6 +97,8 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/Intern/aliens.ogg
+      params:
+        volume: -4
     weight: 6
     duration: 50
   - type: VentCrittersRule
@@ -110,6 +118,8 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/Intern/aliens.ogg
+      params:
+        volume: -4
     earliestStart: 15
     weight: 6
     duration: 50

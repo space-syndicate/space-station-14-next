@@ -203,6 +203,8 @@
     startAnnouncement: station-event-immovable-rod-start-announcement
     startAudio:
       path: /Audio/Announcements/Intern/meteors.ogg
+      params:
+        volume: -4
     weight: 3.5
     reoccurrenceDelay: 1
     duration: 1
