@@ -54,13 +54,15 @@
             - /Maps/Shuttles/trading_outpost.yml
         mining: !type:GridSpawnGroup
           paths:
-          - /Maps/Corvax/Shuttles/corvax_mining.yml
+          - /Maps/Next/Shuttles/next_mining.yml # Corvax-Next-Mining
         # Spawn last
         ruins: !type:GridSpawnGroup
           hide: true
           nameGrid: true
-          minCount: 2
-          maxCount: 2
+          # Corvax-Next-Mining-Start
+          minCount: 1
+          maxCount: 1
+          # Corvax-Next-Mining-End
           stationGrid: false
           paths:
           - /Maps/Ruins/abandoned_outpost.yml
