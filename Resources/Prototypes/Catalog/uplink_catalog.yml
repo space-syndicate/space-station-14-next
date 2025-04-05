@@ -1897,9 +1897,9 @@
   categories:
   - UplinkJob
   conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - Botanist
+    - !type:BuyerJobCondition
+      whitelist:
+      - Botanist
     - !type:StoreWhitelistCondition
       blacklist:
         tags:
