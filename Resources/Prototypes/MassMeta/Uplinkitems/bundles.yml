@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateFilledM90
+  name: Набор M-90
+  description: Набор со старой доброй балл-пап винтовкой M-90, несмотря на нерабочий подствольный гранатомет, все равно вполне хороший выбор оперативника.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponRifleM90GrenadeLauncher
+      - id: MagazineRifle
+        amount: 3

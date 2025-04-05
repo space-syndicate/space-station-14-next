@@ -1,0 +1,65 @@
+- type: entity
+  parent: BaseSign
+  id: PosterBaseMassMeta
+  abstract: true
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: WallTops
+    snapCardinals: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/poster_broken.ogg
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PosterBroken:
+            min: 1
+            max: 1
+        offset: 0
+
+- type: entity
+  parent: PosterBaseMassMeta
+  id: FightClubPoster1
+  suffix: MassMeta
+  name: "Добро пожаловать, в бойцовский клуб."
+  description: "Ты сам в себя стрелял?"
+  components:
+  - type: Sprite
+    sprite: MM14/Posters/fightclub.rsi
+    state: fightclub
+    scale: "0.1, 0.1"
+
+- type: entity
+  parent: PosterBaseMassMeta
+  id: FightClubPoster2
+  suffix: MassMeta
+  name: "Тайлер Дерден"
+  description: "Ты нарушил обещание."
+  components:
+  - type: Sprite
+    sprite: MM14/Posters/tylerdurden.rsi
+    state: tylerdurden
+    scale: "0.1, 0.1"
+
+- type: entity
+  parent: PosterBaseMassMeta
+  id: WorkerOfTheMonthPoster
+  suffix: MassMeta
+  name: "Работник месяца"
+  description: "Является работником месяца в СБ отделе. Здарова, тренер! Я хотел бы поговорить о переизбытке..."
+  components:
+  - type: Sprite
+    sprite: MM14/Posters/trainer.rsi
+    state: trainer
+    scale: "0.1, 0.1"
+
+# Добавить EN локализацию

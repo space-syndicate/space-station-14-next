@@ -1,0 +1,32 @@
+- type: constructionGraph
+  id: EnergySwordDoubleGraph
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: combined_sword
+          steps:
+            - tag: EnergySword
+              icon:
+                sprite: Objects/Weapons/Melee/e_sword.rsi
+                state: icon
+              name: Energy Sword
+            - tag: EnergySword
+              icon:
+                sprite: Objects/Weapons/Melee/e_sword.rsi
+                state: icon
+              name: Energy Sword
+
+    - node: combined_sword
+      entity: EnergySwordDouble
+
+- type: construction
+  name: Double E-Sword
+  id: EnergySwordDoubleRecipe
+  graph: EnergySwordDoubleGraph
+  startNode: start
+  targetNode: combined_sword
+  category: construction-category-tools
+  description: "Двойной энергетический меч"
+  icon: { sprite: Objects/Weapons/Melee/e_sword_double.rsi, state: icon }
+  objectType: Item

@@ -466,3 +466,6 @@ uplink-fake-mindshield-desc = A togglable implant capable of mimicking the same 
 
 uplink-smuggler-satchel-name = Smuggler's Satchel
 uplink-smuggler-satchel-desc = A handy, suspicious looking satchel. Just flat enough to fit underneath floor tiles.
+
+uplink-rifle-m90-name = M-90 Kit
+uplink-rifle-m90-desc = Bundle with M-90GL Rifle, old good classic.

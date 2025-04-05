@@ -160,6 +160,22 @@
       - NukeOpsUplink
 
 - type: listing
+  id: UplinkM90GL
+  name: uplink-rifle-m90-name
+  description: uplink-rifle-m90-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Rifles/carbine.rsi, state: base }
+  productEntity: ClothingBackpackDuffelSyndicateFilledM90
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkWeaponry
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+
+- type: listing
   id: UplinkSniperBundle
   name: uplink-sniper-bundle-name
   description: uplink-sniper-bundle-desc

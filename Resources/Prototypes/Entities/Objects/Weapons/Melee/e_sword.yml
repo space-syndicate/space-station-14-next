@@ -120,6 +120,9 @@
       map: [ "blade" ]
   - type: Item
     sprite: Objects/Weapons/Melee/e_sword-inhands.rsi
+  - type: Tag
+    tags:
+    - EnergySword
 
 - type: entity
   name: energy dagger
@@ -411,6 +414,9 @@
       jobRequired:
       - SalvageSpecialist
   # Corvax-HiddenDesc-End
+  - type: Construction
+    graph: EnergySwordDoubleGraph 
+    node: start
 
 # Item will look weird in handslot. Will need to adjust handstorage visuals in a future PR
 - type: entity
