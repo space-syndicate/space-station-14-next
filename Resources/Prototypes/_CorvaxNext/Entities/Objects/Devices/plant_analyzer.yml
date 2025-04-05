@@ -63,3 +63,34 @@
     settings:
       scanDelay: 0.1
       advScanDelay: 0.5
+
+- type: entity
+  id: AdvancedPlantAnalyzer
+  name: advanced plant analyzer
+  parent: PlantAnalyzer
+  components:
+  - type: PowerCellDraw
+    drawRate: 0
+    useRate: 10
+  - type: ActivatableUIRequiresPowerCell
+  - type: PlantAnalyzer
+    settings:
+      scanDelay: 4
+      advScanDelay: 8
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Devices/plant_analyzerT2.rsi
+    layers:
+    - state: plantanalyzer
+    - state: unlit
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+      shader: unshaded
+
+- type: entity
+  id: AdvancedPlantAnalyzerEmpty
+  parent: AdvancedPlantAnalyzer
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
