@@ -211,9 +211,7 @@
     - BluespaceCrystallDynamic
     - AdvancedTreatmentDynamic
     - PlasmaCutter
-#Corvax-Next-Start
-    - AdvancedPlantanalyzer
-#Corvax-Next-End
+    - AdvancedPlantanalyzer # Corvax Next
     - PlantAnalyzerDynamic # Corvax Next
   - type: EmagLatheRecipes
     emagDynamicPacks:
