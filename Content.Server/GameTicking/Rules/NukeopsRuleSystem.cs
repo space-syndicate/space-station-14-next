@@ -245,7 +245,8 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 
     private void OnNukeDisarm(NukeDisarmSuccessEvent ev)
     {
-        CheckRoundShouldEnd();
+        if(ev.CheckRoundShouldEnd)
+            CheckRoundShouldEnd();
     }
 
     private void OnComponentRemove(EntityUid uid, NukeOperativeComponent component, ComponentRemove args)
