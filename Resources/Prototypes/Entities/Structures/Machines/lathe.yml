@@ -130,7 +130,7 @@
     - ServiceStatic
     - PowerCellsStatic
     - ElectronicsStatic
-    - PlantanalyzerStatic
+    - NextServiceStatic
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityAmmoStatic
@@ -214,6 +214,7 @@
 #Corvax-Next-Start
     - AdvancedPlantanalyzer
 #Corvax-Next-End
+    - PlantAnalyzerDynamic # Corvax Next
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
