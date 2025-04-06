@@ -1913,9 +1913,13 @@
   categories:
   - UplinkJob
   conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - Botanist
+    - !type:BuyerJobCondition
+      whitelist:
+      - Botanist
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - NukeOpsUplink
 
 - type: listing
   id: uplinkRiggedBoxingGlovesPassenger
@@ -1950,6 +1954,10 @@
     - !type:BuyerJobCondition
       whitelist:
         - Boxer
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - NukeOpsUplink
 
 - type: listing
   id: uplinkNecronomicon
@@ -1964,13 +1972,17 @@
   categories:
   - UplinkJob
   conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - Chaplain
-  - !type:BuyerWhitelistCondition
-    blacklist:
-      components:
-      - SurplusBundle
+    - !type:BuyerJobCondition
+      whitelist:
+      - Chaplain
+    - !type:BuyerWhitelistCondition
+      blacklist:
+        components:
+        - SurplusBundle
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - NukeOpsUplink
 
 - type: listing
   id: uplinkHolyHandGrenade
@@ -1985,9 +1997,13 @@
   categories:
   - UplinkJob
   conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - Chaplain
+    - !type:BuyerJobCondition
+      whitelist:
+      - Chaplain
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - NukeOpsUplink
 
 - type: listing
   id: uplinkRevolverCapGunFake
@@ -2021,9 +2037,13 @@
   categories:
   - UplinkJob
   conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - Clown
+    - !type:BuyerJobCondition
+      whitelist:
+      - Clown
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - NukeOpsUplink
 
 - type: listing
   id: UplinkClusterBananaPeel
@@ -2038,9 +2058,13 @@
   categories:
   - UplinkJob
   conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - Clown
+    - !type:BuyerJobCondition
+      whitelist:
+      - Clown
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - NukeOpsUplink
 
 - type: listing
   id: UplinkHoloclownKit
@@ -2056,9 +2080,13 @@
   categories:
   - UplinkJob
   conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - Clown
+    - !type:BuyerJobCondition
+      whitelist:
+      - Clown
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - NukeOpsUplink
 
 - type: listing
   id: uplinkHotPotato
@@ -2073,12 +2101,16 @@
   categories:
   - UplinkJob
   conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - Chef
-    - Botanist
-    - Clown
-    - Mime
+    - !type:BuyerJobCondition
+      whitelist:
+      - Chef
+      - Botanist
+      - Clown
+      - Mime
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - NukeOpsUplink
 
 - type: listing
   id: UplinkChimpUpgradeKit
@@ -2096,6 +2128,10 @@
     - !type:BuyerDepartmentCondition
       whitelist:
       - Science
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - NukeOpsUplink
 
 - type: listing
   id: uplinkProximityMine
@@ -2132,12 +2168,16 @@
   categories:
   - UplinkJob
   conditions:
-  - !type:BuyerJobCondition # We can't use BuyerDepartmentCondition here since Zookeeper and Chef can also get this
-    whitelist:
-    - Zookeeper
-    - Scientist
-    - ResearchDirector
-    - Chef
+    - !type:BuyerJobCondition # We can't use BuyerDepartmentCondition here since Zookeeper and Chef can also get this
+      whitelist:
+      - Zookeeper
+      - Scientist
+      - ResearchDirector
+      - Chef
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - NukeOpsUplink
 
 - type: listing
   id: UplinkCaneBlade
