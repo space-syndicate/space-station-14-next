@@ -29,6 +29,8 @@
       - Surgery
       - MedicalEquipment
       - Butchering
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
 
 - type: startingGear
   id: ERTLeaderGear
@@ -134,6 +136,8 @@
       - Surgery
       - MedicalEquipment
       - Butchering
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
 
 - type: startingGear
   id: ERTChaplainGear
@@ -228,6 +232,8 @@
       - Surgery
       - MedicalEquipment
       - Butchering
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
 
 - type: startingGear
   id: ERTEngineerGear
@@ -316,6 +322,8 @@
       - Surgery
       - MedicalEquipment
       - Butchering
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
 
 - type: startingGear
   id: ERTSecurityGear
@@ -422,7 +430,8 @@
       - Surgery
       - MedicalEquipment
       - Butchering
-
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
 
 - type: startingGear
   id: ERTMedicalGear
@@ -503,6 +512,8 @@
       - Surgery
       - MedicalEquipment
       - Butchering
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
 
 - type: startingGear
   id: ERTJanitorGear
