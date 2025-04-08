@@ -104,16 +104,16 @@ public abstract class SharedGasPressurePumpSystem : EntitySystem
     }
 
     // Corvax-Next-AutoPipes-Start
-    private void OnMapInit(EntityUid uid, GasPressurePumpComponent pump, MapInitEvent args)
+    private void OnMapInit(Entity<GasPressurePumpComponent> ent, ref MapInitEvent args)
     {
-        if (!pump.StartOnMapInit)
+        if (!ent.Comp.StartOnMapInit)
             return;
 
-        pump.Enabled = true;
-        UpdateAppearance(uid, pump);
+        ent.Comp.Enabled = true;
+        UpdateAppearance(ent);
 
-        Dirty(uid, pump);
-        UserInterfaceSystem.CloseUi(uid, GasPressurePumpUiKey.Key);
+        Dirty(ent);
+        UserInterfaceSystem.CloseUi(ent.Owner, GasPressurePumpUiKey.Key);
     }
     // Corvax-Next-AutoPipes-End
 }
