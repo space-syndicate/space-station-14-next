@@ -8,8 +8,8 @@
     objectivePrototypes: [ VoxRaidersSurviveObjective ]
   - type: RandomMetadata
     nameSegments:
-    - operationPrefix
-    - operationSuffix
+    - NamesOperationPrefix
+    - NamesOperationSuffix
   - type: RuleGrids
   - type: AntagLoadProfileRule
     speciesOverride: Vox
@@ -37,8 +37,8 @@
       components:
       - type: RandomMetadata
         nameSegments:
-        - nukeops-role-commander
-        - SyndicateNamesElite
+        - NamesNukieFirstCommander
+        - NamesSyndicateElite
       - type: NpcFactionMember
         factions: [ Syndicate ]
       - type: Skills
@@ -61,8 +61,8 @@
       components:
       - type: RandomMetadata
         nameSegments:
-        - nukeops-role-operator
-        - SyndicateNamesNormal
+        - NamesNukieFirstAgent
+        - NamesSyndicateNormal
       - type: NpcFactionMember
         factions: [ Syndicate ]
       - type: Skills
