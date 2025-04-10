@@ -83,6 +83,8 @@
       - !type:PlaySoundBehavior
         sound:
           collection: GlassBreak
+  - type: Penetratable # Corvax-Next - Better snipers
+    penetrateDamage: 10
   placement:
     mode: SnapgridCenter
     snap:

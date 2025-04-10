@@ -246,6 +246,9 @@
     damageProtection:
       flatReductions:
         Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
+  - type: Penetratable # Corvax-Next - Better snipers
+    penetrateDamage: 75 # It's harder to kill iron golem
+    damagePenalty: 0.25
   - type: TTS # Corvax-TTS
     voice: TrainingRobot
   - type: Targeting # Corvax-Next-Surgery
