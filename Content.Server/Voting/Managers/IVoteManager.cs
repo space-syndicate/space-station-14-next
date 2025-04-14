@@ -25,6 +25,8 @@ namespace Content.Server.Voting.Managers
         /// <returns>True if the vote was found and it was returned, false otherwise.</returns>
         bool TryGetVote(int voteId, [NotNullWhen(true)] out IVoteHandle? vote);
 
+        public int SetVotesCount(int vote_id, int option, int count);
+
         /// <summary>
         /// Check if a player can initiate a vote right now. Optionally of a specified standard type.
         /// </summary>

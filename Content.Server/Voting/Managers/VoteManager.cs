@@ -109,6 +109,20 @@ namespace Content.Server.Voting.Managers
             }
         }
 
+        public int SetVotesCount(int vote_id, int option, int count)
+        {
+            if (!_votes.TryGetValue(vote_id, out var vote))
+            {
+                throw new ArgumentOutOfRangeException(nameof(vote_id), "No vote with that ID");
+            }
+            if (!IsValidOption(vote, option))
+                throw new ArgumentOutOfRangeException(nameof(option), "Invalid vote option ID");
+            int old_votes = vote.Entries[option].Votes;
+            vote.Entries[option].Votes = count;
+            SendUpdates(vote);
+            return old_votes;
+        }
+
         private void CastVote(VoteReg v, ICommonSession player, int? option)
         {
             if (!IsValidOption(v, option))
