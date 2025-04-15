@@ -686,6 +686,9 @@
     weight: 8
     reoccurrenceDelay: 20
     duration: 1
+    startAnnouncement: "Ионный шторм приближается к станции. Электромагнитные помехи могут нарушить работу оборудования."
+    startAudio:
+      path: /Audio/Corvax/Adminbuse/i-storm1.ogg
   - type: IonStormRule
 
 - type: entity
