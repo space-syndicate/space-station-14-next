@@ -74,6 +74,15 @@ namespace Content.Server.Voting.Managers
             }
         }
 
+        public VoteReg GetVoteInfo(int vote_id)
+        {
+            if (!_votes.TryGetValue(vote_id, out var vote))
+            {
+                throw new ArgumentOutOfRangeException($"Cannot find vote with id {vote_id}");
+            }
+            return vote;
+        }
+
         private void ReceiveVoteMenu(MsgVoteMenu message)
         {
             var sender = message.MsgChannel;
@@ -507,7 +516,7 @@ namespace Content.Server.Voting.Managers
 
         #region Vote Data
 
-        private sealed class VoteReg
+        public sealed class VoteReg
         {
             public readonly int Id;
             public readonly Dictionary<ICommonSession, int> CastVotes = new();
@@ -545,7 +554,7 @@ namespace Content.Server.Voting.Managers
             }
         }
 
-        private struct VoteEntry
+        public struct VoteEntry
         {
             public object Data;
             public string Text;

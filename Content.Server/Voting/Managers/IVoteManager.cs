@@ -27,6 +27,8 @@ namespace Content.Server.Voting.Managers
 
         public int SetVotesCount(int vote_id, int option, int count);
 
+        public VoteManager.VoteReg GetVoteInfo(int vote_id);
+
         /// <summary>
         /// Check if a player can initiate a vote right now. Optionally of a specified standard type.
         /// </summary>
