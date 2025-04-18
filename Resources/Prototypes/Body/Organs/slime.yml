@@ -7,31 +7,6 @@
     - type: Sprite
       sprite: Mobs/Species/Slime/organs.rsi
       state: brain-slime
-    - type: Metabolizer
-      maxReagents: 6
-      metabolizerTypes: [ Slime ]
-      removeEmpty: true
-      groups:
-        - id: Food
-        - id: Drink
-        - id: Medicine
-        - id: Poison
-        - id: Narcotic
-        - id: Alcohol
-          rateModifier: 0.25
-    - type: SolutionContainerManager
-      solutions:
-        stomach:
-          maxVol: 50.0
-        food:
-          maxVol: 5
-          reagents:
-          - ReagentId: GreyMatter
-            Quantity: 5
-        organ:
-          reagents:
-          - ReagentId: Slime
-            Quantity: 10
     - type: Item
       size: Small
       heldPrefix: brain
@@ -105,7 +80,17 @@
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
   - type: Metabolizer
-    updateInterval: 1.5
+    maxReagents: 6
+    metabolizerTypes: [ Slime ]
+    removeEmpty: true
+    groups:
+      - id: Food
+      - id: Drink
+      - id: Medicine
+      - id: Poison
+      - id: Narcotic
+      - id: Alcohol
+        rateModifier: 0.25
   - type: Tag # goob edit
     tags:
     - Meat
