@@ -59,6 +59,8 @@
     spawned:
     - id: FoodMeat
       amount: 1
+    - id: MaterialBones1
+      amount: 1
   - type: Speech
     speechSounds: Parrot
     speechVerb: Parrot

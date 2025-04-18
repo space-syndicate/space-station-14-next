@@ -99,6 +99,8 @@
     - id: MaterialHideBear
       amount: 1
       prob: 0.3
+    - id: MaterialBones1
+      amount: 1
   - type: ReplacementAccent
     accent: genericAggressive
   - type: Vocal
@@ -172,6 +174,8 @@
     spawned:
     - id: FoodMeat
       amount: 1
+    - id: MaterialBones1
+      amount: 1
   - type: Fauna # Lavaland Change
 
 - type: entity
@@ -216,6 +220,8 @@
     - id: EggSpider
       amount: 1
       prob: 0.5
+    - id: MaterialBones1
+      amount: 1
   - type: Bloodstream
     bloodMaxVolume: 250
     bloodReagent: Cryoxadone

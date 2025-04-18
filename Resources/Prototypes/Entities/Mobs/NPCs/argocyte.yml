@@ -193,6 +193,8 @@
     spawned:
     - id: FoodMeatXeno
       amount: 2
+    - id: MaterialBones1
+      amount: 1
   - type: MovementSpeedModifier
     baseSprintSpeed : 5
 
@@ -371,6 +373,8 @@
     spawned:
     - id: FoodMeatXeno
       amount: 3
+    - id: MaterialBones1
+      amount: 1
   - type: MeleeWeapon
     damage:
       types:
@@ -402,6 +406,8 @@
     spawned:
     - id: FoodMeatXeno
       amount: 5
+    - id: MaterialBones1
+      amount: 2
   - type: Fixtures
     fixtures:
       fix1:
@@ -448,6 +454,8 @@
     spawned:
     - id: FoodMeatXeno
       amount: 10
+    - id: MaterialBones1
+      amount: 5
   - type: Fixtures
     fixtures:
       fix1:
