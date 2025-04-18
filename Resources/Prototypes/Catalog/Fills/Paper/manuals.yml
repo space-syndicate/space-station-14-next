@@ -41,3 +41,12 @@
   components:
   - type: Paper
     content: book-text-combat-bakery-kit
+    
+- type: entity
+  id: PaperEchoThiefManual
+  name: Message to you from you
+  description: The single sheet of instructions that came in the kit. 
+  parent: Paper
+  components:
+  - type: Paper
+    content: book-text-echothief-manual

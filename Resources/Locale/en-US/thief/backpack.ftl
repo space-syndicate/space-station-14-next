@@ -62,3 +62,10 @@ thief-backpack-category-smuggler-description =
     Don't forget to link your fulton.
     Includes: Fulton beacon, 10 fultons, 3 smoke grenades,
     and an invisible crate to hide valuable loot.
+
+thief-backpack-category-echo-name = echo theif kit
+thief-backpack-category-echo-description =
+    Echo is coming for them, and there's nothing they can do about it.
+    The set contains equipment and weapons from echo theif.
+    The kit comes with a code that should be followed.
+    Complete the task and get into the organization of echo thief.
