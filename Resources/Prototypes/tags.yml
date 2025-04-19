@@ -220,6 +220,9 @@
   id: CaptainSabre
 
 - type: Tag
+  id: CarcTile
+
+- type: Tag
   id: Carpet
 
 - type: Tag
