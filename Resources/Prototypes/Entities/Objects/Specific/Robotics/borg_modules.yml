@@ -517,7 +517,7 @@
     - HoloprojectorBorg
     - SprayBottleSpaceCleaner
     - Dropper
-    - TrashBag
+    - BagOfCleanliness # Corvax-Next-BluespaceTrashBag
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-cleaning-module }
 
