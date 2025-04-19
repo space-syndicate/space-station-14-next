@@ -28,6 +28,8 @@
       - Surgery
       - MedicalEquipment
       - Butchering
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
 
 - type: startingGear
   id: CBURNGear

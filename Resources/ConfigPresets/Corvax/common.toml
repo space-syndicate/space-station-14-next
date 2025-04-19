@@ -32,3 +32,6 @@ see_own_notes = true
 
 [mood]
 enabled = true
+
+[movement]
+mob_pushing = true
