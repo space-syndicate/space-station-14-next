@@ -29,6 +29,8 @@ namespace Content.Server.Voting.Managers
 
         public VoteManager.VoteReg GetVoteInfo(int vote_id);
 
+        public List<VoteManager.VoteReg> GetActiveVotes();
+
         /// <summary>
         /// Check if a player can initiate a vote right now. Optionally of a specified standard type.
         /// </summary>

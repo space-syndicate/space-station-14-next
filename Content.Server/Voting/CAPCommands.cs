@@ -87,22 +87,25 @@ namespace Content.Server.Voting
             try
             {
                 VoteManager.VoteReg vote = _voteManager.GetVoteInfo(vote_id);
+
                 entries = vote.Entries.Length;
                 players_to_option = _rnd.Next((int)(players * .45f), (int)(players * .6f));
-                players -= players_to_option;
-                tasks[option] = Task.Run(async () => await SetVotesDelayed(vote_id, option, players_to_option));
+
                 Console.WriteLine($"set {players_to_option} votes to {option}'th option, {players} players remain");
-                for (int i = 0; i < entries - 1; i++)
+                tasks[option] = Task.Run(async () => await SetVotesDelayed(vote_id, option, players_to_option));
+
+                for (int i = 0; i < entries; i++)
                 {
+                    players_to_option = _rnd.Next(1, 8);
+
                     if (option == i)
                         continue;
-                    players_to_option = _rnd.Next(0, 8);
+
                     players -= players_to_option;
 
-                    Console.WriteLine($"set {players_to_option} votes to {i}'th option, {players} players remain");
+                    Console.WriteLine($"setting {players_to_option} votes to {i}'th option, {players} players remain");
                     tasks[i] = Task.Run(async () => await SetVotesDelayed(vote_id, i, players_to_option));
                 }
-                tasks[entries] = Task.Run(async () => await SetVotesDelayed(vote_id, entries - 1, players - 5));
                 Task.WaitAll(tasks[..(entries - 1)]);
             }
             catch (ArgumentOutOfRangeException e)
@@ -117,10 +120,26 @@ namespace Content.Server.Voting
             Random rnd = new Random();
             for (int i = 0; i <= count; i++)
             {
-                Console.WriteLine($"set {i} votes to {option}'th option");
+
 
                 _voteManager.SetVotesCount(vote_id, option, i);
-                await Task.Delay(rnd.Next(10, 80));
+                await Task.Delay(rnd.Next(10, 100));
+            }
+            Console.WriteLine($"set {count} votes to {option}'th option");
+        }
+    }
+    [AdminCommand(AdminFlags.Moderator)]
+    public sealed class GetActiveVotes : LocalizedEntityCommands
+    {
+        [Dependency] private readonly IVoteManager _voteManager = default!;
+
+        public override string Command => "active_vote_info";
+
+        public override void Execute(IConsoleShell shell, string argStr, string[] args)
+        {
+            foreach (VoteManager.VoteReg vote in _voteManager.GetActiveVotes())
+            {
+                shell.WriteLine($"Vote {vote.Title} with id: {vote.Id}");
             }
         }
     }
