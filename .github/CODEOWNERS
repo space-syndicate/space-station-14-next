@@ -6,6 +6,10 @@
 # Prototypes
 *.yml @Vonsant
 
+# Map files
+/Resources/Prototypes/Maps/** @Ko4ergaPunk
+/Resources/Maps/** @Ko4ergaPunk
+
 # TTS
 
 /Content.*/Corvax/TTS @Morb0
