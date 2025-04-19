@@ -74,6 +74,20 @@ namespace Content.Server.Voting.Managers
             }
         }
 
+        public VoteReg GetVoteInfo(int vote_id)
+        {
+            if (!_votes.TryGetValue(vote_id, out var vote))
+            {
+                throw new ArgumentOutOfRangeException($"Cannot find vote with id {vote_id}");
+            }
+            return vote;
+        }
+
+        public List<VoteReg> GetActiveVotes()
+        {
+            return _votes.Values.Where(f => !f.Finished).ToList();
+        }
+
         private void ReceiveVoteMenu(MsgVoteMenu message)
         {
             var sender = message.MsgChannel;
@@ -107,6 +121,20 @@ namespace Content.Server.Voting.Managers
                     CastVote(voteReg, e.Session, null);
                 }
             }
+        }
+
+        public int SetVotesCount(int vote_id, int option, int count)
+        {
+            if (!_votes.TryGetValue(vote_id, out var vote))
+            {
+                throw new ArgumentOutOfRangeException(nameof(vote_id), "No vote with that ID");
+            }
+            if (!IsValidOption(vote, option))
+                throw new ArgumentOutOfRangeException(nameof(option), "Invalid vote option ID");
+            int old_votes = vote.Entries[option].Votes;
+            vote.Entries[option].Votes = count;
+            SendUpdates(vote);
+            return old_votes;
         }
 
         private void CastVote(VoteReg v, ICommonSession player, int? option)
@@ -493,7 +521,7 @@ namespace Content.Server.Voting.Managers
 
         #region Vote Data
 
-        private sealed class VoteReg
+        public sealed class VoteReg
         {
             public readonly int Id;
             public readonly Dictionary<ICommonSession, int> CastVotes = new();
@@ -531,7 +559,7 @@ namespace Content.Server.Voting.Managers
             }
         }
 
-        private struct VoteEntry
+        public struct VoteEntry
         {
             public object Data;
             public string Text;
