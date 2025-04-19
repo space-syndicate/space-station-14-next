@@ -4,6 +4,7 @@ desc = "[Требуется 15 часов на другом сервере Corva
 maxplayers = 150
 soft_max_players = 75
 map_rotation = true
+round_restart_time = 1
 
 [server]
 lobby_name = "🛰️ Corvax — Атара 🌌⚡"
