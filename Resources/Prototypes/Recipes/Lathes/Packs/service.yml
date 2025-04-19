@@ -45,6 +45,7 @@
   - WeaponSprayNozzle
   - ClothingBackpackWaterTank
   - MegaSprayBottle
+  - BagOfCleanliness # Corvax-Next-BluespaceTrashBag
 
 - type: latheRecipePack
   id: Instruments
