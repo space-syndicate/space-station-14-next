@@ -40,6 +40,9 @@
     spawned:
     - id: FoodMeat
       amount: 1
+    - id: MaterialBones1
+      amount: 1
+      prob: 0.6
   - type: InteractionPopup
     successChance: 0.2
     interactSuccessString: petting-success-soft-floofy
@@ -230,6 +233,8 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatChicken
+      amount: 1
+    - id: MaterialBones1
       amount: 1
   - type: InteractionPopup
     successChance: 0.8
@@ -669,6 +674,8 @@
     spawned:
     - id: FoodMeatDuck
       amount: 1
+    - id: MaterialBones1
+      amount: 1
   - type: InteractionPopup
     successChance: 0.9
     interactSuccessString: petting-success-bird
@@ -876,6 +883,8 @@
     spawned:
     - id: FoodMeat
       amount: 5
+    - id: MaterialBones1
+      amount: 3
   - type: Grammar
     attributes:
       gender: female # Here because of UdderComponent
@@ -1054,6 +1063,8 @@
     spawned:
     - id: FoodMeat
       amount: 4
+    - id: MaterialBones1
+      amount: 2
   - type: Grammar
     attributes:
       gender: female # Here because of UdderComponent
@@ -1126,6 +1137,8 @@
     spawned:
     - id: FoodMeatChicken
       amount: 2
+    - id: MaterialBones1
+      amount: 1
   - type: InteractionPopup # TODO: Make it so there's a separate chance to make certain animals outright hostile towards you.
     successChance: 0.1 # Yeah, good luck with that.
     interactSuccessString: petting-success-goose
@@ -1175,6 +1188,8 @@
     spawned:
     - id: FoodMeat
       amount: 4
+    - id: MaterialBones1
+      amount: 3
   - type: Bloodstream
     bloodMaxVolume: 300
     # if you fuck with the gorilla he will harambe you
@@ -1421,6 +1436,8 @@
     spawned:
     - id: FoodMeat
       amount: 3
+    - id: MaterialBones1
+      amount: 2
   - type: Puller
     needsHands: false
   - type: CanHostGuardian
@@ -1598,6 +1615,8 @@
     spawned:
     - id: FoodMeat
       amount: 2
+    - id: MaterialBones1
+      amount: 1
   - type: AlwaysRevolutionaryConvertible
   - type: GhostTakeoverAvailable
   - type: SentienceTarget
@@ -1787,6 +1806,9 @@
     spawned:
     - id: FoodMeatRat
       amount: 1
+    - id: MaterialBones1
+      amount: 1
+      prob: 0.2
   - type: ReplacementAccent
     accent: mouse
   - type: Tag
@@ -1962,6 +1984,9 @@
       amount: 1
     - id: SheetUranium1
       amount: 1
+    - id: MaterialBones1
+      amount: 1
+      prob: 0.2
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Zombie
@@ -2005,6 +2030,11 @@
     spawned:
     - id: FoodMeatLizard
       amount: 1
+    - id: MaterialBones1
+      amount: 1
+    - id: MaterialBones1
+      amount: 1
+      prob: 0.4
   - type: InteractionPopup
     successChance: 0.3
     interactSuccessString: petting-success-reptile
@@ -2115,6 +2145,9 @@
     spawned:
     - id: FoodMeat
       amount: 1
+    - id: MaterialBones1
+      amount: 1
+      prob: 0.2
   - type: InteractionPopup
     successChance: 0.6
     interactSuccessString: petting-success-frog
@@ -2166,6 +2199,8 @@
   - type: Butcherable
     spawned:
     - id: FoodMeat
+      amount: 1
+    - id: MaterialBones1
       amount: 1
   - type: Speech
     speechSounds: Parrot
@@ -2220,6 +2255,8 @@
     spawned:
     - id: FoodMeatPenguin
       amount: 3
+    - id: MaterialBones1
+      amount: 1
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-bird
@@ -2387,6 +2424,8 @@
     spawned:
     - id: FoodMeatSpider
       amount: 2
+    - id: MaterialBones1
+      amount: 1
   - type: CombatMode
   - type: Body
     prototype: AnimalHemocyanin
@@ -2630,6 +2669,8 @@
     spawned:
     - id: FoodMeat
       amount: 3
+    - id: MaterialBones1
+      amount: 1
   - type: InteractionPopup
     successChance: 0.2 # Low when undomesticated.
     interactSuccessString: petting-success-possum # Possums don't really make much noise when they're happy. They make clicking noises as a mating call, but that is NOT the same thing!
@@ -2703,6 +2744,8 @@
     spawned:
     - id: FoodMeat
       amount: 3
+    - id: MaterialBones1
+      amount: 2
   - type: InteractionPopup
     successChance: 0.2 # Low when undomesticated.
     interactSuccessString: petting-success-soft-floofy
@@ -2763,6 +2806,8 @@
     spawned:
     - id: FoodMeat
       amount: 3
+    - id: MaterialBones1
+      amount: 1
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-soft-floofy
@@ -2837,6 +2882,8 @@
     spawned:
     - id: FoodMeat
       amount: 2
+    - id: MaterialBones1
+      amount: 1
   - type: ReplacementAccent
     accent: dog
   - type: InteractionPopup
@@ -2986,6 +3033,8 @@
     spawned:
     - id: FoodMeat
       amount: 3
+    - id: MaterialBones1
+      amount: 1
   - type: ReplacementAccent
     accent: cat
   - type: InteractionPopup
@@ -3214,6 +3263,8 @@
     spawned:
     - id: FoodMeat
       amount: 3
+    - id: MaterialBones1
+      amount: 1
   - type: InteractionPopup
     successChance: 0.9
     interactSuccessString: petting-success-sloth
@@ -3475,6 +3526,8 @@
     spawned:
     - id: FoodMeatBacon
       amount: 6
+    - id: MaterialBones1
+      amount: 3
   - type: Grammar
     attributes:
       gender: epicene
@@ -3628,6 +3681,8 @@
     spawned:
     - id: FoodMeat
       amount: 4
+    - id: MaterialBones1
+      amount: 2
   - type: Bloodstream
     bloodMaxVolume: 300
     # Horns though

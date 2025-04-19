@@ -15,6 +15,9 @@
     spawned:
     - id: FoodMeatHuman
       amount: 5
+    - id: MaterialBones1
+      amount: 3
+      prob: 0.9
   - type: HumanoidAppearance
     species: Human
     hideLayersOnEquip:
