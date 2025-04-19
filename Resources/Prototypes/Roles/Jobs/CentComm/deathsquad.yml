@@ -20,6 +20,7 @@
     - type: SurgerySpeedModifier
       speedModifier: 1.5
     #end-_CorvaxNext: surgery
+    - type: CanChokeGrab
     - type: Skills # Corvax-Next-Skills
       skills:
       - ShuttleControl
@@ -28,7 +29,6 @@
       - Surgery
       - MedicalEquipment
       - Butchering
-      - type: CanChokeGrab
 
 - type: startingGear
   id: DeathSquadGear
