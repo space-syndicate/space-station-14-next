@@ -42,6 +42,7 @@
     - id: FoodSnackChowMein
     - id: FoodSnackCookieFortune
     - id: FoodSnackDanDanNoodles
+    - id: FoodSnackCotton
     - id: FoodSnackEnergy
     - id: FoodSnackMREBrownie
     - id: FoodSnackNutribrick
