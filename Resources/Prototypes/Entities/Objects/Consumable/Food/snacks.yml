@@ -172,10 +172,12 @@
       - cheap
       - strange
       - fiber
-      - sweet
   - type: Sprite
     state: cottonbar-open
   - type: Item
+  - type: Tag
+    tags:
+      - ClothMade
 
 - type: entity
   name: energy bar
