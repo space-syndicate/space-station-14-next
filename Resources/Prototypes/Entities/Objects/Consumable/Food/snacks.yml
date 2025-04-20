@@ -172,6 +172,8 @@
       - cheap
       - strange
       - fiber
+  - type: Food
+    requiresSpecialDigestion: true
   - type: Sprite
     state: cottonbar-open
   - type: Item
