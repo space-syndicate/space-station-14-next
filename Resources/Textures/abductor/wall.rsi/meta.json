@@ -1,0 +1,65 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from paradise at https://github.com/ss220-space/Paradise/blob/master220/icons/obj/abductor.dmi",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+		{
+            "name": "alienwall_01"
+        },
+		{
+            "name": "alienwall_02"
+        },
+		{
+            "name": "alienwall_03"
+        },
+		{
+            "name": "alienwall_04"
+        },
+		{
+            "name": "alienwall_05"
+        },
+		{
+            "name": "alienwall_06"
+        },
+		{
+            "name": "alienwall_07"
+        },
+		{
+            "name": "alienwall_09"
+        },
+		{
+            "name": "alienwall_10"
+        },
+		{
+            "name": "alienwall_11"
+        },
+		{
+            "name": "alienwall_14"
+        },
+		{
+            "name": "alienwall_15"
+        },
+		{
+            "name": "alienwall_16"
+        },
+		{
+            "name": "alienwall_19"
+        },
+		{
+            "name": "alienwall_20"
+        },
+		{
+            "name": "alienwall_21"
+        },
+		{
+            "name": "alienwall_23"
+        },
+		{
+            "name": "alienwall_24"
+        }
+    ]
+}
