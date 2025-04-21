@@ -139,7 +139,7 @@
   components:
   - type: SurgeryStep
     tool:
-    - type: Bonesetter
+    - type: BoneSetter
     remove:
     - type: RibcageOpen
     duration: 2
