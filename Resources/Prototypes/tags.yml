@@ -211,9 +211,6 @@
   id: CaptainSabre
 
 - type: Tag
-  id: CarcTile
-
-- type: Tag
   id: Carpet
 
 - type: Tag
@@ -1373,3 +1370,6 @@
   id: WriteIgnoreStamps
 
 # ALPHABETICAL
+
+- type: Tag
+  id: CarcTile # Corvax-Next
