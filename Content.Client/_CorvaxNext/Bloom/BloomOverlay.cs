@@ -1,5 +1,4 @@
 using Content.Shared._CorvaxNext.Bloom;
-using Content.Shared.Examine;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
@@ -13,7 +12,6 @@ public sealed class BloomOverlay : Overlay
     [Dependency] private readonly IEntityManager _entity = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     private SharedTransformSystem? _transform = null;
-    private ExamineSystemShared? _examine = null;
 
     public const int MaxCount = 32;
 
@@ -42,9 +40,6 @@ public sealed class BloomOverlay : Overlay
         if (_transform is null && !_entity.TrySystem(out _transform))
             return false;
 
-        if (_examine is null && !_entity.TrySystem(out _examine))
-            return false;
-
         _count = 0;
         var query = _entity.EntityQueryEnumerator<BloomComponent, PointLightComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var bloom, out var light, out var transform))
@@ -55,17 +50,14 @@ public sealed class BloomOverlay : Overlay
             if (!light.Enabled)
                 continue;
 
-            var mapPos = _transform.GetMapCoordinates(uid);
+            var mapPos = _transform.GetWorldPosition(uid);
 
-            mapPos = new(mapPos.Position + _transform.GetWorldRotation(uid).RotateVec(new(0, 6.5f / 16)), mapPos.MapId);
+            mapPos += _transform.GetWorldRotation(uid).RotateVec(new(0, 6.5f / 16));
 
-            if ((mapPos.Position - args.WorldAABB.ClosestPoint(mapPos.Position)).LengthSquared() >= 1)
+            if ((mapPos - args.WorldAABB.ClosestPoint(mapPos)).LengthSquared() >= 1)
                 continue;
 
-            if (!_examine.InRangeUnOccluded(args.Viewport.Eye.Position, mapPos, ExamineSystemShared.ExamineRange, null))
-                continue;
-
-            var tempCoords = args.Viewport.WorldToLocal(mapPos.Position);
+            var tempCoords = args.Viewport.WorldToLocal(mapPos);
             tempCoords.Y = args.Viewport.Size.Y - tempCoords.Y;
 
             _positions[_count] = tempCoords;
