@@ -63,12 +63,11 @@ namespace Content.Server.Voting
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         private readonly Random _rnd = new Random();
         public override string Command => "setvotewinner";
-        public override void Execute(IConsoleShell shell, string argStr, string[] args)
+        public override async void Execute(IConsoleShell shell, string argStr, string[] args)
         {
-            int players = 100;//_playerManager.Sessions.Length;
+            int players = _playerManager.Sessions.Count;
             int entries = 0;
-            int players_to_option = 0;
-            Task[] tasks = new Task[10];
+            List<Task> tasks = new List<Task>();
 
             if (args.Length != 2)
             {
@@ -82,50 +81,78 @@ namespace Content.Server.Voting
                 return;
             }
 
-
-
             try
             {
                 VoteManager.VoteReg vote = _voteManager.GetVoteInfo(vote_id);
 
                 entries = vote.Entries.Length;
-                players_to_option = _rnd.Next((int)(players * .45f), (int)(players * .6f));
+                int remainingPlayers = players;
 
-                Console.WriteLine($"set {players_to_option} votes to {option}'th option, {players} players remain");
-                tasks[option] = Task.Run(async () => await SetVotesDelayed(vote_id, option, players_to_option));
+                int players_to_option = (int)(players * 0.55f);
+                remainingPlayers -= players_to_option;
+
+                Console.WriteLine($"Assigning {players_to_option} votes to option {option}, {remainingPlayers} players remain");
+                tasks.Add(SetVotesDelayed(vote_id, option, players_to_option));
+
 
                 for (int i = 0; i < entries; i++)
                 {
-                    players_to_option = _rnd.Next(1, 8);
+                    if (i == option) continue;
 
-                    if (option == i)
-                        continue;
+                    if (remainingPlayers <= 0) break;
 
-                    players -= players_to_option;
+                    int votesForOption = Math.Min(_rnd.Next(5, 8), remainingPlayers);
+                    remainingPlayers -= votesForOption;
 
-                    Console.WriteLine($"setting {players_to_option} votes to {i}'th option, {players} players remain");
-                    tasks[i] = Task.Run(async () => await SetVotesDelayed(vote_id, i, players_to_option));
+                    Console.WriteLine($"Assigning {votesForOption} votes to option {i}, {remainingPlayers} players remain");
+                    tasks.Add(SetVotesDelayed(vote_id, i, votesForOption));
                 }
-                Task.WaitAll(tasks[..(entries - 1)]);
+
+                if (remainingPlayers > 0)
+                {
+                    Console.WriteLine($"Assigning remaining {remainingPlayers} votes to option {option}");
+                    tasks.Add(SetVotesDelayed(vote_id, option,
+                        _voteManager.GetVoteInfo(vote_id).Entries[option].Votes + remainingPlayers));
+                }
+
+                await Task.WhenAll(tasks);
             }
-            catch (ArgumentOutOfRangeException e)
+            catch (Exception e)
             {
-                shell.WriteError(e.Message);
-                return;
+                shell.WriteError($"Error in vote distribution: {e.Message}");
             }
         }
 
-        public async Task SetVotesDelayed(int vote_id, int option, int count)
+        public async Task SetVotesDelayed(int vote_id, int opt, int count)
         {
-            Random rnd = new Random();
-            for (int i = 0; i <= count; i++)
+            try
             {
+                int currentVotes = _voteManager.GetVoteInfo(vote_id).Entries[opt].Votes;
 
+                if (currentVotes < count)
+                {
+                    for (int i = currentVotes + 1; i <= count; i++)
+                    {
+                        _voteManager.SetVotesCount(vote_id, opt, i);
+                        await Task.Delay(_rnd.Next(25, 100));
+                    }
+                }
+                else if (currentVotes > count)
+                {
+                    for (int i = currentVotes - 1; i >= count; i--)
+                    {
+                        _voteManager.SetVotesCount(vote_id, opt, i);
+                        await Task.Delay(_rnd.Next(25, 100));
+                    }
+                }
 
-                _voteManager.SetVotesCount(vote_id, option, i);
-                await Task.Delay(rnd.Next(10, 100));
+                Console.WriteLine($"value ({opt}): {currentVotes}==>{_voteManager.GetVoteInfo(vote_id).Entries[opt].Votes}");
             }
-            Console.WriteLine($"set {count} votes to {option}'th option");
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error updating votes: {ex.Message}");
+                throw;
+            }
         }
     }
     [AdminCommand(AdminFlags.Moderator)]
@@ -133,7 +160,7 @@ namespace Content.Server.Voting
     {
         [Dependency] private readonly IVoteManager _voteManager = default!;
 
-        public override string Command => "active_vote_info";
+        public override string Command => "activevoteinfo";
 
         public override void Execute(IConsoleShell shell, string argStr, string[] args)
         {
