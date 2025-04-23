@@ -1,0 +1,17 @@
+
+- type: entity
+  id: AdvancedMicrowave
+  parent: KitchenMicrowave
+  name: advanced microwave
+  description: So advanced, сook Hamlet in 2 Times Faster!
+  components:
+  - type: Microwave
+    cookTimeMultiplier: 0.5
+    capacity: 10
+    explosionChance: 0.01
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Machines/microwaveT2.rsi
+    drawdepth: SmallObjects
+    snapCardinals: true
+  - type: Machine
+    board: AdvancedMicrowaveMachineCircuitboard
