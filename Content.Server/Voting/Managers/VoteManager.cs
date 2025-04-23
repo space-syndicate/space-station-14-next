@@ -130,7 +130,7 @@ namespace Content.Server.Voting.Managers
                 throw new ArgumentOutOfRangeException(nameof(vote_id), "No vote with that ID");
             }
             if (!IsValidOption(vote, option))
-                throw new ArgumentOutOfRangeException(nameof(option), "Invalid vote option ID");
+                throw new ArgumentOutOfRangeException(nameof(option), $"Invalid vote option ID(option: {option}, len: {vote.Entries.Length}, main exp: {option >= 0 && option < vote.Entries.Length})");
             int old_votes = vote.Entries[option].Votes;
             vote.Entries[option].Votes = count;
             SendUpdates(vote);
