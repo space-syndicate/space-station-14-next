@@ -11,14 +11,22 @@ namespace Content.Client.CartridgeLoader.Cartridges;
 [GenerateTypedNameReferences]
 public sealed partial class LogProbeUiFragment : BoxContainer
 {
+    /// <summary>
+    /// Action invoked when the print button gets pressed.
+    /// </summary>
+    public Action? OnPrintPressed;
+
     public LogProbeUiFragment()
     {
         RobustXamlLoader.Load(this);
+
+        PrintButton.OnPressed += _ => OnPrintPressed?.Invoke();
     }
 
-    // Corvax-Next-PDAChat-Start - Update to handle both types of data
-    public void UpdateState(LogProbeUiState state)
+    public void UpdateState(LogProbeUiState state, string name, List<PulledAccessLog> logs)
     {
+        EntityName.Text = name;
+        PrintButton.Disabled = string.IsNullOrEmpty(name);
         ProbedDeviceContainer.RemoveAllChildren();
 
         if (state.NanoChatData != null)
@@ -117,15 +125,13 @@ public sealed partial class LogProbeUiFragment : BoxContainer
             }
         }
     }
-    // Corvax-Next-PDAChat-End
 
-    // Corvax-Next-PDAChat - Handle this in a separate method
     private void DisplayAccessLogs(List<PulledAccessLog> logs)
     {
         //Reverse the list so the oldest entries appear at the bottom
         logs.Reverse();
 
-        var count =  1;
+        var count = 1;
         foreach (var log in logs)
         {
             AddAccessLog(log, count);

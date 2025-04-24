@@ -123,18 +123,18 @@
       enum.HolidayVisuals.Holiday:
         base:
           festive:
-            sprite: Objects/Misc/Lights/lamp.rsi
             state: christmaslamp
         light:
           festive:
-            sprite: Objects/Misc/Lights/lamp.rsi
             state: christmaslamp-on
-  - type: Rotatable # Corvax-Resprite
+  - type: Rotatable # Corvax-Resprite-start
+  - type: PointLight
+    color: "#F0FFA0FF" # Corvax-Resprite-end
 
 - type: entity
   name: interrogator lamp
   id: LampInterrogator
-  parent: BaseLamp
+  parent: [ BaseLamp, BaseSecurityContraband ]
   description: Ultra-bright lamp for the bad cop.
   components:
   - type: Sprite
@@ -184,6 +184,7 @@
         enum.FlashVisuals.LightLayer:
           True: {visible: true}
           False: {visible: false}
+  - type: Rotatable # Corvax-Resprite
 
 - type: entity
   name: floodlight
@@ -194,9 +195,11 @@
   - type: Item
     size: Normal
   - type: Sprite
+    sprite: Objects/Misc/Lights/lights.rsi
     layers:
       - state: floodlight
-      - state: floodlight_on
+        map: [ "base" ]
+      - state: floodlight-on
         shader: unshaded
         visible: false
         map: [ "light" ]
@@ -247,9 +250,13 @@
   parent: BaseItem
   description: A pole with powerful mounted lights on it. It's broken.
   components:
+  - type: Item
+    size: Normal
+    sprite: Objects/Misc/Lights/lights.rsi
+    heldPrefix: floodlight-broken
   - type: Sprite
     sprite: Objects/Misc/Lights/lights.rsi
-    state: floodlight_broken
+    state: floodlight-broken
   - type: Anchorable
   - type: Damageable
     damageContainer: StructuralInorganic

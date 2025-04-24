@@ -18,6 +18,7 @@ maximum_width = 26
 
 [game]
 lobbyduration = 360
+map_pool = "NextMapPool"
 secret_weight_prototype = "CorvaxSecretDefault"
 
 [server]
@@ -30,4 +31,4 @@ rich_main_icon_id = "corvax"
 see_own_notes = true
 
 [mood]
-enabled = false
+enabled = true

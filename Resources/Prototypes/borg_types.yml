@@ -1,4 +1,4 @@
-﻿# Generic borg
+# Generic borg
 - type: borgType
   id: generic
 
@@ -10,6 +10,7 @@
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
+    - BorgModuleScience #until sciborgs are added
 
   defaultModules:
   - BorgModuleTool
@@ -165,6 +166,8 @@
   - type: ShowHealthIcons
     damageContainers:
     - Biological
+  - type: SurgeryTarget # Corvax-Next-Surgery
+  - type: Sanitized # Corvax-Next-Surgery
 
   # Visual
   inventoryTemplateId: borgDutch

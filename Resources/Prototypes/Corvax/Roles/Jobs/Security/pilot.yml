@@ -21,6 +21,12 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
 
 - type: startingGear
   id: PilotGear
@@ -33,7 +39,6 @@
     pocket1: WeaponPistolMk58
   storage:
     back:
-    - BoxSurvivalSecurity
     - Flash
     - MagazinePistol
     - ClothingNeckSecBadgePilot # Corvax-Next-Badges

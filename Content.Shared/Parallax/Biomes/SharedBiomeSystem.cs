@@ -18,7 +18,7 @@ public abstract class SharedBiomeSystem : EntitySystem
     [Dependency] protected readonly ITileDefinitionManager TileDefManager = default!;
     [Dependency] private readonly TileSystem _tile = default!;
 
-    protected const byte ChunkSize = 8;
+    public const byte ChunkSize = 8; // Lavaland change - make it public
 
     private T Pick<T>(List<T> collection, float value)
     {
@@ -118,7 +118,7 @@ public abstract class SharedBiomeSystem : EntitySystem
             // Check if the tile is from meta layer, otherwise fall back to default layers.
             if (layer is BiomeMetaLayer meta)
             {
-                if (TryGetBiomeTile(indices, ProtoManager.Index<BiomeTemplatePrototype>(meta.Template).Layers, seed, grid, out tile))
+                if (TryGetTile(indices, ProtoManager.Index<BiomeTemplatePrototype>(meta.Template).Layers, seed, grid, out tile)) // Corvax-Next-BiomeSpawner: bandage - replaced from TryGetBiomeTile (not working for biomespawner)
                 {
                     return true;
                 }
@@ -129,7 +129,7 @@ public abstract class SharedBiomeSystem : EntitySystem
             if (layer is not BiomeTileLayer tileLayer)
                 continue;
 
-            if (TryGetTile(indices, noiseCopy, tileLayer.Invert, tileLayer.Threshold, ProtoManager.Index<ContentTileDefinition>(tileLayer.Tile), tileLayer.Variants, out tile))
+            if (TryGetTile(indices, noiseCopy, tileLayer.Invert, tileLayer.Threshold, ProtoManager.Index(tileLayer.Tile), tileLayer.Variants, out tile))
             {
                 return true;
             }
@@ -163,7 +163,7 @@ public abstract class SharedBiomeSystem : EntitySystem
             variant = _tile.PickVariant(tileDef, (int) variantValue);
         }
 
-        tile = new Tile(tileDef.TileId, 0, variant);
+        tile = new Tile(tileDef.TileId, variant);
         return true;
     }
 

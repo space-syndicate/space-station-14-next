@@ -8,10 +8,7 @@
   },
   "states": [
     {
-      "name": "open"
-    },
-    {
-      "name": "closed"
+      "name": "icon"
     },
     {
       "name": "inhand-left",

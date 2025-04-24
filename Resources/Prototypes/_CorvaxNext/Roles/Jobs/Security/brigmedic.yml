@@ -25,6 +25,16 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: SurgerySpeedModifier
+      speedModifier: 1.75
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - Shooting
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: startingGear
   id: BrigmedicGear

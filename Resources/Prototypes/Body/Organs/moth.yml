@@ -1,7 +1,7 @@
 - type: entity
   id: OrganMothStomach
   name: moth stomach
-  parent: [OrganAnimalStomach, OrganHumanStomach]
+  parent: [OrganHumanStomach]
   categories: [ HideSpawnMenu ]
   components:
   - type: Stomach
@@ -25,3 +25,8 @@
     groups:
       - id: Food
       - id: Drink
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach

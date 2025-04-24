@@ -1,12 +1,16 @@
 - type: npcFaction
   id: Dragon
   hostile:
-    - NanoTrasen
-    - Syndicate
-    - Xeno
-    - PetsNT
-    - Zombie
-    - Revolutionary
+  - NanoTrasen
+  - Syndicate
+  - Xeno
+  - PetsNT
+  - Zombie
+  - Revolutionary
+  - AllHostile
+  - Wizard
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: NanoTrasen
@@ -16,11 +20,18 @@
   - Xeno
   - Zombie
   - Revolutionary
+  - Dragon
+  - AllHostile
+  - Wizard
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Mouse
   hostile:
-    - PetsNT
+  - PetsNT
+  - AllHostile
+  - Wizard
 
 - type: npcFaction
   id: Passive
@@ -32,6 +43,10 @@
   - SimpleHostile
   - Zombie
   - Xeno
+  - AllHostile
+  - Blob # Goobstation - Blob
+  - Wizard
+  - Dragon
 
 - type: npcFaction
   id: SimpleHostile
@@ -42,6 +57,11 @@
   - PetsNT
   - Zombie
   - Revolutionary
+  - AllHostile
+  - Wizard
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
+  - Dragon
 
 - type: npcFaction
   id: SimpleNeutral
@@ -54,6 +74,11 @@
   - Xeno
   - PetsNT
   - Zombie
+  - Dragon
+  - AllHostile
+  - Wizard
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Xeno
@@ -64,6 +89,11 @@
   - PetsNT
   - Zombie
   - Revolutionary
+  - AllHostile
+  - Wizard
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
+  - Dragon
 
 - type: npcFaction
   id: Zombie
@@ -75,6 +105,11 @@
   - Passive
   - PetsNT
   - Revolutionary
+  - AllHostile
+  - Wizard
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
+  - Dragon
 
 - type: npcFaction
   id: Revolutionary
@@ -83,3 +118,40 @@
   - Zombie
   - SimpleHostile
   - Dragon
+  - AllHostile
+  - Wizard
+  - Blob # Goobstation - Blob
+
+- type: npcFaction
+  id: AllHostile
+  hostile:
+  - NanoTrasen
+  - Dragon
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Wizard
+  - Blob # Goobstation - Blob
+
+- type: npcFaction
+  id: Wizard
+  hostile:
+  - NanoTrasen
+  - Dragon
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - AllHostile
+  - Blob # Goobstation - Blob

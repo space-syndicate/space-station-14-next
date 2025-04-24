@@ -52,47 +52,56 @@
             - type: TradeStation
           paths:
             - /Maps/Shuttles/trading_outpost.yml
+        mining: !type:GridSpawnGroup
+          # Corvax-Next-Mining-Start
+          hide: true
+          nameGrid: true
+          paths:
+          - /Maps/Next/Shuttles/next_mining.yml
+          # Corvax-Next-Mining-End
         # Spawn last
         ruins: !type:GridSpawnGroup
           hide: true
           nameGrid: true
-          minCount: 2
-          maxCount: 2
+          # Corvax-Next-Mining-Start
+          minCount: 1
+          maxCount: 1
+          # Corvax-Next-Mining-End
           stationGrid: false
           paths:
           - /Maps/Ruins/abandoned_outpost.yml
           # Corvax-Mapping-Start
-          - /Maps/Ruins/corvax_accident.yml
-          - /Maps/Ruins/corvax_adventurer.yml
-          - /Maps/Ruins/corvax_aplink.yml
-          - /Maps/Ruins/corvax_battleship.yml
-          - /Maps/Ruins/corvax_gas_station.yml
-          - /Maps/Ruins/corvax_bss_unluck.yml
-          - /Maps/Ruins/corvax_hotel_trivago.yml
-          - /Maps/Ruins/corvax_kamikaze.yml
-          - /Maps/Ruins/corvax_ore.yml
-          - /Maps/Ruins/corvax_research_station.yml
-          - /Maps/Ruins/corvax_rnd_debris.yml
-          - /Maps/Ruins/corvax_sanctus.yml
-          - /Maps/Ruins/corvax_syndi_base.yml
-          - /Maps/Ruins/corvax_ussp_debris.yml
-          - /Maps/Ruins/corvax_ussp_asteroid.yml
+          - /Maps/Corvax/Ruins/corvax_accident.yml
+          - /Maps/Corvax/Ruins/corvax_adventurer.yml
+          - /Maps/Corvax/Ruins/corvax_aplink.yml
+          - /Maps/Corvax/Ruins/corvax_battleship.yml
+          - /Maps/Corvax/Ruins/corvax_gas_station.yml
+          - /Maps/Corvax/Ruins/corvax_bss_unluck.yml
+          - /Maps/Corvax/Ruins/corvax_hotel_trivago.yml
+          - /Maps/Corvax/Ruins/corvax_kamikaze.yml
+          - /Maps/Corvax/Ruins/corvax_ore.yml
+          - /Maps/Corvax/Ruins/corvax_research_station.yml
+          - /Maps/Corvax/Ruins/corvax_rnd_debris.yml
+          - /Maps/Corvax/Ruins/corvax_sanctus.yml
+          - /Maps/Corvax/Ruins/corvax_ussp_debris.yml
+          - /Maps/Corvax/Ruins/corvax_ussp_asteroid.yml
           # Corvax-Mapping-End
-        vgroid: !type:DungeonSpawnGroup
-          minimumDistance: 300
-          maximumDistance: 350
-          nameDataset: NamesBorer
-          stationGrid: false
-          addComponents:
-          - type: Gravity
-            enabled: true
-            inherent: true
-          protos:
-          - VGRoid
-        # Corvax-Mapping-Start
-        mining: !type:GridSpawnGroup
-          paths:
-          - /Maps/Shuttles/corvax_mining.yml
+          - /Maps/Ruins/wrecklaimer.yml
+#        vgroid: !type:DungeonSpawnGroup
+#          minimumDistance: 400
+#          maximumDistance: 450
+#          nameDataset: NamesBorer
+#          stationGrid: false
+#          addComponents:
+#          - type: Gravity
+#            enabled: true
+#            inherent: true
+#          protos:
+#          - VGRoid
+#        # Corvax-Mapping-Start
+#        mining: !type:GridSpawnGroup
+#          paths:
+#          - /Maps/Corvax/Shuttles/corvax_mining.yml
         # Corvax-Mapping-End
 
 - type: entity
@@ -100,7 +109,7 @@
   abstract: true
   components:
     - type: StationCentcomm
-      map: "/Maps/corvax_centcomm.yml" # Corvax-Mapping
+      map: "/Maps/Corvax/corvax_centcomm.yml" # Corvax-Mapping
 
 - type: entity
   id: BaseStationEvacuation
@@ -139,6 +148,12 @@
   abstract: true
   components:
     - type: StationNews
+
+- type: entity
+  id: BaseStationDeliveries
+  abstract: true
+  components:
+  - type: CargoDeliveryData
 
 - type: entity
   id: BaseStationAllEventsEligible

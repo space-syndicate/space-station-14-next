@@ -11,7 +11,7 @@
     - id: EmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -29,9 +29,12 @@
     - id: EmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
-  # Intentionally wrong picture on the box. NT did not care enough to change it.
+  - type: Sprite
+    layers:
+    - state: internals
+    - state: nitrogentank
   - type: Label
     currentLabel: reagent-name-nitrogen
 
@@ -48,7 +51,7 @@
     - id: ExtendedEmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -66,9 +69,12 @@
     - id: ExtendedEmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
-  # Intentionally wrong picture on the box. NT did not care enough to change it.
+  - type: Sprite
+    layers:
+    - state: internals
+    - state: nitrogentank
   - type: Label
     currentLabel: reagent-name-nitrogen
 
@@ -86,7 +92,7 @@
     - id: EmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -104,9 +110,12 @@
     - id: EmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
-  # Intentionally wrong picture on the box. NT did not care enough to change it.
+  - type: Sprite
+    layers:
+    - state: internals
+    - state: nitrogentank
   - type: Label
     currentLabel: reagent-name-nitrogen
 
@@ -124,7 +133,7 @@
     - id: EmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -142,9 +151,12 @@
     - id: EmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
-  # Intentionally wrong picture on the box. NT did not care enough to change it.
+  - type: Sprite
+    layers:
+    - state: internals
+    - state: nitrogentank
   - type: Label
     currentLabel: reagent-name-nitrogen
 
@@ -167,7 +179,7 @@
     - id: EmergencyFunnyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
   - type: Tag
     tags:
@@ -184,7 +196,7 @@
     - id: EmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
   - type: Label
     currentLabel: reagent-name-nitrogen
@@ -216,6 +228,10 @@
     - id: Flare
     - id: FoodBreadBaguette
     - id: DrinkWaterBottleFull
+  - type: Sprite
+    layers:
+    - state: internals
+    - state: nitrogentank
   - type: Label
     currentLabel: reagent-name-nitrogen
 
@@ -250,6 +266,9 @@
     - id: EmergencyMedipen
     - id: Flare
     - id: FoodSnackNutribrick
-    # Intentionally wrong picture on the box to mimic the NT one
+  - type: Sprite
+    layers:
+    - state: internals
+    - state: nitrogentank
   - type: Label
     currentLabel: reagent-name-nitrogen
