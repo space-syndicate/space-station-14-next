@@ -1,0 +1,4 @@
+{
+  "image": "ghcr.io/devcontainers/features/dotnet:2",
+  "features": {}
+}
