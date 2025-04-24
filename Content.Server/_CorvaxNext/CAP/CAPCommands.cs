@@ -22,29 +22,54 @@ namespace Content.Server.Voting
         [Dependency] private readonly VoteWebhooks _voteWebhooks = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
 
-        public override string Command => "setvotesnumber";
+        public override string Command => "setvotescount";
+        public override string Description => Loc.GetString("cmd-setvotescount-desc");
+        public override string Help => Loc.GetString("cmd-setvotescount-help");
+
+
+        public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+        {
+            if (args.Length == 0)
+            {
+                return CompletionResult.FromHint(Loc.GetString("cmd-capshared-arg-vote-id"));
+            }
+            else if (args.Length == 1)
+            {
+                return CompletionResult.FromHint(Loc.GetString("cmd-capshared-arg-option"));
+            }
+            else if (args.Length == 2)
+            {
+                return CompletionResult.FromHint(Loc.GetString("cmd-capshared-arg-count"));
+            }
+            else
+            {
+                return CompletionResult.FromHint(Loc.GetString("shell-wrong-arguments-number"));
+            }
+        }
+
         public override void Execute(IConsoleShell shell, string argStr, string[] args)
         {
             int old_votes;
             if (args.Length != 3)
             {
-                shell.WriteError(Loc.GetString("shell-need-between-arguments", ("lower", 3), ("upper", 3)));
+                shell.WriteError(Loc.GetString("shell-wrong-arguments-number-need-specific", ("properAmount", 3), ("correntAmount", args.Length)));
                 return;
             }
 
             if (!int.TryParse(args[0], out int vote_id) || !int.TryParse(args[1], out int option) || !int.TryParse(args[2], out int count))
             {
-                shell.WriteError("Yo, wtf?");
+                shell.WriteError(Loc.GetString("shell-argument-must-be-number"));
                 return;
             }
             if (count > _playerManager.Sessions.Length)
             {
-                shell.WriteError(Loc.GetString("shell-no-enought-players"));
+                shell.WriteError(Loc.GetString("cmd-setvotescount-no-enought-players"));
                 return;
             }
             try
             {
                 old_votes = _voteManager.SetVotesCount(vote_id, option, count);
+                shell.WriteLine(Loc.GetString("cmd-capshared-success-msg"));
             }
             catch (ArgumentOutOfRangeException e)
             {
@@ -62,22 +87,43 @@ namespace Content.Server.Voting
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         private readonly Random _rnd = new Random();
+
         public override string Command => "setvotewinner";
+        public override string Description => Loc.GetString("cmd-makevotewinner-desc");
+        public override string Help => Loc.GetString("cmd-makevotewinner-help");
+
+        public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+        {
+            if (args.Length == 0)
+            {
+                return CompletionResult.FromHint(Loc.GetString("cmd-capshared-arg-vote-id"));
+            }
+            else if (args.Length == 1)
+            {
+                return CompletionResult.FromHint(Loc.GetString("cmd-capshared-arg-option"));
+            }
+            else
+            {
+                return CompletionResult.FromHint(Loc.GetString("shell-wrong-arguments-number"));
+            }
+        }
+
         public override async void Execute(IConsoleShell shell, string argStr, string[] args)
         {
-            int players = _playerManager.Sessions.Count;
-            int entries = 0;
+            int players = _playerManager.Sessions.Length;
             List<Task> tasks = new List<Task>();
+            int remainingPlayers = players;
+            int players_to_option = 0;
 
             if (args.Length != 2)
             {
-                shell.WriteError(Loc.GetString("shell-need-between-arguments", ("lower", 2), ("upper", 2)));
+                shell.WriteError(Loc.GetString("shell-wrong-arguments-number-need-specific", ("properAmount", 2), ("correntAmount", args.Length)));
                 return;
             }
 
             if (!int.TryParse(args[0], out int vote_id) || !int.TryParse(args[1], out int option))
             {
-                shell.WriteError("Yo, wtf?");
+                shell.WriteError(Loc.GetString("shell-argument-must-be-number"));
                 return;
             }
 
@@ -85,15 +131,12 @@ namespace Content.Server.Voting
             {
                 VoteManager.VoteReg vote = _voteManager.GetVoteInfo(vote_id);
 
-                entries = vote.Entries.Length;
-                int remainingPlayers = players;
+                int entries = vote.Entries.Length;
 
-                int players_to_option = (int)(players * 0.55f);
+                players_to_option = (int)(players * 0.55f);
                 remainingPlayers -= players_to_option;
 
-                Console.WriteLine($"Assigning {players_to_option} votes to option {option}, {remainingPlayers} players remain");
                 tasks.Add(SetVotesDelayed(vote_id, option, players_to_option));
-
 
                 for (int i = 0; i < entries; i++)
                 {
@@ -104,18 +147,29 @@ namespace Content.Server.Voting
                     int votesForOption = Math.Min(_rnd.Next(5, 8), remainingPlayers);
                     remainingPlayers -= votesForOption;
 
-                    Console.WriteLine($"Assigning {votesForOption} votes to option {i}, {remainingPlayers} players remain");
                     tasks.Add(SetVotesDelayed(vote_id, i, votesForOption));
                 }
 
                 if (remainingPlayers > 0)
                 {
-                    Console.WriteLine($"Assigning remaining {remainingPlayers} votes to option {option}");
                     tasks.Add(SetVotesDelayed(vote_id, option,
                         _voteManager.GetVoteInfo(vote_id).Entries[option].Votes + remainingPlayers));
                 }
 
                 await Task.WhenAll(tasks);
+                _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Corvax Antidemocraty Program started, set winner in vote: {vote_id}, option: {option}");
+                shell.WriteLine(Loc.GetString("cmd-capshared-success-msg"));
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                if (ex.ActualValue == nameof(vote_id))
+                {
+                    shell.WriteError(Loc.GetString("cmd-vote-on-execute-error-invalid-vote-id"));
+                }
+                else if (ex.ActualValue == nameof(option))
+                {
+                    shell.WriteError(Loc.GetString("cmd-vote-on-execute-error-invalid-option"));
+                }
             }
             catch (Exception e)
             {
@@ -125,48 +179,23 @@ namespace Content.Server.Voting
 
         public async Task SetVotesDelayed(int vote_id, int opt, int count)
         {
-            try
-            {
-                int currentVotes = _voteManager.GetVoteInfo(vote_id).Entries[opt].Votes;
+            int currentVotes = _voteManager.GetVoteInfo(vote_id).Entries[opt].Votes;
 
-                if (currentVotes < count)
+            if (currentVotes < count)
+            {
+                for (int i = currentVotes + 1; i <= count; i++)
                 {
-                    for (int i = currentVotes + 1; i <= count; i++)
-                    {
-                        _voteManager.SetVotesCount(vote_id, opt, i);
-                        await Task.Delay(_rnd.Next(25, 100));
-                    }
+                    _voteManager.SetVotesCount(vote_id, opt, i);
+                    await Task.Delay(_rnd.Next(25, 100));
                 }
-                else if (currentVotes > count)
+            }
+            else if (currentVotes > count)
+            {
+                for (int i = currentVotes - 1; i >= count; i--)
                 {
-                    for (int i = currentVotes - 1; i >= count; i--)
-                    {
-                        _voteManager.SetVotesCount(vote_id, opt, i);
-                        await Task.Delay(_rnd.Next(25, 100));
-                    }
+                    _voteManager.SetVotesCount(vote_id, opt, i);
+                    await Task.Delay(_rnd.Next(25, 100));
                 }
-
-                Console.WriteLine($"value ({opt}): {currentVotes}==>{_voteManager.GetVoteInfo(vote_id).Entries[opt].Votes}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error updating votes: {ex.Message}");
-                throw;
-            }
-        }
-    }
-    [AdminCommand(AdminFlags.Moderator)]
-    public sealed class GetActiveVotes : LocalizedEntityCommands
-    {
-        [Dependency] private readonly IVoteManager _voteManager = default!;
-
-        public override string Command => "activevoteinfo";
-
-        public override void Execute(IConsoleShell shell, string argStr, string[] args)
-        {
-            foreach (VoteManager.VoteReg vote in _voteManager.GetActiveVotes())
-            {
-                shell.WriteLine($"Vote {vote.Title} with id: {vote.Id}");
             }
         }
     }
