@@ -1,5 +1,5 @@
-cmd-makevotewinner-desc = Фальсифицирует результаты голосования
-cmd-makevotewinner-help = Использование: makevotewinner <vote_id> <option>. Здесь vote_id - id голосования (из listvotes), option - номер варианта (с нуля)
+cmd-setvotewinner-desc = Фальсифицирует результаты голосования
+cmd-stevotewinner-help = Использование: setvotewinner <vote_id> <option>. Здесь vote_id - id голосования (из listvotes), option - номер варианта (с нуля)
 
 cmd-setvotescount-no-enought-players = Вы пытеатесь установить количество голосов, большее чем количество игроков на сервере.
 cmd-setvotescount-desc = Устанавливает количество голосов за один из вариантов, не рекомендуется к использованию.

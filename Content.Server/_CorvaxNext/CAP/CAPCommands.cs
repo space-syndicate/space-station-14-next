@@ -81,7 +81,7 @@ namespace Content.Server.Voting
     }
 
     [AdminCommand(AdminFlags.Moderator)]
-    public sealed class MakeVoteWinner : LocalizedEntityCommands
+    public sealed class setvoteWinner : LocalizedEntityCommands
     {
         [Dependency] private readonly IVoteManager _voteManager = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
@@ -89,8 +89,8 @@ namespace Content.Server.Voting
         private readonly Random _rnd = new Random();
 
         public override string Command => "setvotewinner";
-        public override string Description => Loc.GetString("cmd-makevotewinner-desc");
-        public override string Help => Loc.GetString("cmd-makevotewinner-help");
+        public override string Description => Loc.GetString("cmd-setvotewinner-desc");
+        public override string Help => Loc.GetString("cmd-setvotewinner-help");
 
         public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
         {
