@@ -83,11 +83,6 @@ namespace Content.Server.Voting.Managers
             return vote;
         }
 
-        public List<VoteReg> GetActiveVotes()
-        {
-            return _votes.Values.Where(f => !f.Finished).ToList();
-        }
-
         private void ReceiveVoteMenu(MsgVoteMenu message)
         {
             var sender = message.MsgChannel;
