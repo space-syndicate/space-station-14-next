@@ -24,7 +24,7 @@
   id: BoneSetter
   result: BoneSetter
   materials:
-    Steel: 100
+    Steel: 300
 
 - type: latheRecipe
   parent: BaseSurgicalRecipe
