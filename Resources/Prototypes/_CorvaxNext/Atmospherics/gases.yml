@@ -1,7 +1,7 @@
 ﻿- type: reagent
   id: Brunium
-  name: reagent-name-frezon
-  desc: reagent-desc-frezon
+  name: reagent-name-brunium
+  desc: reagent-desc-brunium
   physicalDesc: reagent-physical-desc-gaseous
   flavor: bitter
   color: "#ed760e"
@@ -24,3 +24,17 @@
             Blunt: -1.25
             Heat: -1.5
             Cold: -0.25
+
+- type: gas
+  id: 9
+  name: brunium
+  specificHeat: 600
+  heatCapacityRatio: 1.33
+  molarMass: 175
+  gasOverlaySprite: /Textures/Effects/atmospherics.rsi
+  gasOverlayState: plasma_old
+  gasMolesVisible: 25
+  color: ed760e
+  reagent: Brunium
+  pricePerMole: 250
+

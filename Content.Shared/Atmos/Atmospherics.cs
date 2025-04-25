@@ -1,4 +1,3 @@
-using Content.Shared.Fax;
 using Robust.Shared.Serialization;
 // ReSharper disable InconsistentNaming
 
@@ -175,7 +174,7 @@ namespace Content.Shared.Atmos
             [Gas.Plasma] = Loc.GetString("gas-plasma-abbreviation"),
             [Gas.Tritium] = Loc.GetString("gas-tritium-abbreviation"),
             [Gas.WaterVapor] = Loc.GetString("gas-water-vapor-abbreviation"),
-            [Gas.Brunium] = "bruh",
+            [Gas.Brunium] = Loc.GetString("gas-brunium-abbreviation"),
         };
 
         #region Excited Groups
