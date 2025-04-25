@@ -1,0 +1,26 @@
+﻿- type: reagent
+  id: Brunium
+  name: reagent-name-frezon
+  desc: reagent-desc-frezon
+  physicalDesc: reagent-physical-desc-gaseous
+  flavor: bitter
+  color: "#ed760e"
+  boilingPoint: -195.8
+  meltingPoint: -210.0
+  metabolisms:
+    Gas:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Brunium
+          min: 0.5
+        scaleByQuantity: true
+        ignoreResistances: true
+        damage:
+          types:
+            Slash: -1.25
+            Piercing: -1.25
+            Blunt: -1.25
+            Heat: -1.5
+            Cold: -0.25

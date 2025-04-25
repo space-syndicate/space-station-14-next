@@ -1,3 +1,4 @@
+using Content.Shared.Fax;
 using Robust.Shared.Serialization;
 // ReSharper disable InconsistentNaming
 
@@ -174,6 +175,7 @@ namespace Content.Shared.Atmos
             [Gas.Plasma] = Loc.GetString("gas-plasma-abbreviation"),
             [Gas.Tritium] = Loc.GetString("gas-tritium-abbreviation"),
             [Gas.WaterVapor] = Loc.GetString("gas-water-vapor-abbreviation"),
+            [Gas.Brunium] = "bruh",
         };
 
         #region Excited Groups
@@ -203,7 +205,7 @@ namespace Content.Shared.Atmos
         /// <summary>
         ///     Total number of gases. Increase this if you want to add more!
         /// </summary>
-        public const int TotalNumberOfGases = 9;
+        public const int TotalNumberOfGases = 10;
 
         /// <summary>
         ///     This is the actual length of the gases arrays in mixtures.
@@ -255,6 +257,13 @@ namespace Content.Shared.Atmos
         public const float FrezonCoolRateModifier = 20f;
 
         public const float FrezonProductionMaxEfficiencyTemperature = 73.15f;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const float BruniumProductionN2ORatio = 2f;
+        public const float BruniumProductionTritRatio = .42f;
+        public const float BruniumProductionConversionRate = 5f;
 
         /// <summary>
         ///     1 mol of N2 is required per X mol of tritium and oxygen.
@@ -367,6 +376,7 @@ namespace Content.Shared.Atmos
         WaterVapor = 5,
         Ammonia = 6,
         NitrousOxide = 7,
-        Frezon = 8
+        Frezon = 8,
+        Brunium = 9,
     }
 }

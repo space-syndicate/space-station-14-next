@@ -1,0 +1,15 @@
+﻿- type: gasReaction
+  id: BruniumProduction
+  priority: -1
+  minimumTemperature: 1
+  minimumRequirements:
+  - 0     # oxygen
+  - 0.03  # nitrogen
+  - 0     # carbon dioxide
+  - 0     # plasma
+  - 0.07  # tritium
+  - 0     # Water vapour
+  - 0     # Ammonia
+  - 0.01  # Nitrous oxide
+  effects:
+  - !type:BruniumProductionReaction {}
