@@ -13,3 +13,20 @@
   - 0.01  # Nitrous oxide
   effects:
   - !type:BruniumProductionReaction {}
+
+- type: gasReaction
+  id: HarviumProduction
+  priority: -1
+  minimumTemperature: 1
+  minimumRequirements:
+  - 0.03  # oxygen
+  - 0     # nitrogen
+  - 0     # carbon dioxide
+  - 0     # plasma
+  - 0     # tritium
+  - 0.06  # Water vapour
+  - 0     # Ammonia
+  - 0     # Nitrous oxide
+  - 0.01  # Frezon
+  effects:
+  - !type:HarviumProductionReaction {}

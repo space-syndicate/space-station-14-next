@@ -61,3 +61,34 @@
     access: [["Atmospherics"], ["Engineering"], ["Research"], ["Medical"]]
   - type: Lock
     locked: true
+
+- type: entity
+  parent: [StorageCanister]
+  id: HarviumCanister
+  name: Канистра харвиума
+  description: Канистра, которая может содержать газ любого рода. В этой возможно находится харвиум.
+  components:
+  - type: Sprite
+    sprite: Structures/Storage/canister.rsi
+    layers:
+    - state: grey
+  - type: GasCanister
+    gasMixture:
+      volume: 1000
+      moles:
+      - 0 # oxygen
+      - 0 # nitrogen
+      - 0 # CO2
+      - 0 # Plasma
+      - 0 # Tritium
+      - 0 # Water vapor
+      - 0 # Ammonia
+      - 0 # N2O
+      - 0 # Brunium
+      - 0
+      - 4615.6 # Harvium
+      temperature: 293.15
+  - type: AccessReader
+    access: [["Atmospherics"], ["Engineering"], ["Research"]]
+  - type: Lock
+    locked: true

@@ -2,7 +2,6 @@ using Content.Server.Atmos;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Reactions;
-using System;
 using JetBrains.Annotations;
 
 namespace Content.Server._CorvaxNext.Atmos.Reactions;
@@ -21,6 +20,7 @@ public sealed partial class BruniumProductionReaction : IGasReactionEffect
         var initialN2O = mixture.GetMoles(Gas.NitrousOxide);
 
         var efficiency = -0.000197385f * Math.Abs(mixture.Pressure - (Atmospherics.OneAtmosphere * 5)) + 1;
+        efficiency = efficiency > 0 ? efficiency : 0;
         var loss = 1 - efficiency;
 
         var catalystLimit = initialN2O * (Atmospherics.BruniumProductionN2ORatio / efficiency);
@@ -39,6 +39,6 @@ public sealed partial class BruniumProductionReaction : IGasReactionEffect
         mixture.AdjustMoles(Gas.Brunium, total * efficiency);
         mixture.AdjustMoles(Gas.NitrousOxide, total * loss);
 
-        return ReactionResult.Reacting;
+        return efficiency > 0 ? ReactionResult.Reacting : ReactionResult.NoReaction;
     }
 }

@@ -36,5 +36,57 @@
   gasMolesVisible: 25
   color: ed760e
   reagent: Brunium
-  pricePerMole: 250
+  pricePerMole: 15
+
+
+- type: reagent
+  id: Harvium
+  name: reagent-name-harvium
+  desc: reagent-desc-harvium
+  physicalDesc: reagent-physical-desc-gaseous
+  flavor: bitter
+  color: "#33cc33"
+  boilingPoint: -195.8
+  meltingPoint: -210.0
+  plantMetabolism:
+  - !type:Harvium
+    amount: 0.05
+  metabolisms:
+    Gas:
+      effects:
+      - !type:Harvium
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Harvium
+          min: 0.2
+        - !type:OrganType
+          type: Plant
+        amount: 0.05
+        scaleByQuantity: true
+        ignoreResistances: true
+
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Harvium
+          min: 1
+        scaleByQuantity: true
+        ignoreResistances: false
+        damage:
+          types:
+            Poison: 4
+            Radiation: 0.2
+
+- type: gas
+  id: 10
+  name: harvium
+  specificHeat: 600
+  heatCapacityRatio: 1.33
+  molarMass: 175
+  gasOverlaySprite: /Textures/Effects/atmospherics.rsi
+  gasOverlayState: miasma_old
+  color: 33cc33
+  gasMolesVisible: 10
+  reagent: Harvium
+  pricePerMole: 25
 
