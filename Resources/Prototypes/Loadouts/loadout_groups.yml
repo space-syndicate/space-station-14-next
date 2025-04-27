@@ -568,6 +568,7 @@
   - EmergencyNitrogenMime
   - EmergencyOxygenMime
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenMimeMoth
 
 - type: loadoutGroup
   id: MusicianJumpsuit
