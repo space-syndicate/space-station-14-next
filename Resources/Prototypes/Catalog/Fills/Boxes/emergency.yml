@@ -319,7 +319,7 @@
   - type: Label
     currentLabel: reagent-name-nitrogen
 
-  - type: entity
+- type: entity
   parent: BoxMime
   id: BoxMimeMoth
   suffix: Mime, Emergency, Moth
