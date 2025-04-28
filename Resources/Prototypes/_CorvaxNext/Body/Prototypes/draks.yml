@@ -11,7 +11,7 @@
         brain: OrganDraksBrain
         eyes: OrganDraksEyes
     torso:
-      part: TorsoResomi
+      part: TorsoDraks
       connections:
       - right arm
       - left arm

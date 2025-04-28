@@ -4,7 +4,7 @@
   roundStart: true
   prototype: MobDraks
   sprites: MobDraksSprites
-  defaultSkinTone: "#ffffff"
+  defaultSkinTone: "#eb943d"
   markingLimits: MobDraksMarkingLimits
   dollPrototype: MobDraksDummy
   skinColoration: Hues
@@ -17,10 +17,8 @@
   id: MobDraksSprites
   sprites:
     Head: MobDraksHead
-    FacialHair: MobHumanoidAnyMarking
     Chest: MobDraksTorso
-    HeadTop: MobHumanoidAnyMarking
-    Eyes: MobDraksEyes
+    HeadTop: MobDraksHeadTop
     LArm: MobDraksLArm
     RArm: MobDraksRArm
     LHand: MobDraksLHand
@@ -47,6 +45,12 @@
   baseSprite:
     sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
     state: head_m
+
+- type: humanoidBaseSprite
+  id: MobDraksHeadTop
+  baseSprite:
+    sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.yml
+    state: medium
 
 - type: humanoidBaseSprite
   id: MobDraksHeadMale
