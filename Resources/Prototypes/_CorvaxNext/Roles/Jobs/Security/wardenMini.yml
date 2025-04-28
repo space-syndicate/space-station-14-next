@@ -35,7 +35,7 @@
   equipment:
     head: ClothingHeadHatWardenHelper
     eyes: ClothingEyesGlassesSecurity
-    id: WardenPDA
+    id: WardenMiniPDA
     ears: ClothingHeadsetSecurity
     pocket1: WeaponPistolMk58
     pocket2: BookSpaceLaw

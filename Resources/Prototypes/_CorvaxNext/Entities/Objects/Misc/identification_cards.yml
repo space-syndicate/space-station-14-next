@@ -9,3 +9,16 @@
     - state: idsurgeon
   - type: PresetIdCard
     job: Surgeon
+
+- type: entity
+  parent: IDCardStandard
+  id: WardenMiniIDCard
+  name: warden assistant ID card
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - sprite: _CorvaxNext/Objects/Misc/id_cards.rsi
+          state: idwardenmini
+    - type: PresetIdCard
+      job: WardenHelper

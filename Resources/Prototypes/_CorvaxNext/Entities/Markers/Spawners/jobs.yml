@@ -9,4 +9,5 @@
   - type: Sprite
     layers:
       - state: green
-      - state: warden
+      - sprite: _CorvaxNext/Objects/Misc/id_cards.rsi
+        state: idwardenmini
