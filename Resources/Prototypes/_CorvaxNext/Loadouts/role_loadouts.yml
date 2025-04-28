@@ -23,7 +23,7 @@
   - SurgeonScalpel
 
 - type: roleLoadout
-  id: WardenHelper
+  id: JobWardenHelper
   groups:
   - Inventory # Corvax-Loadouts
   - WardenJumpsuit
