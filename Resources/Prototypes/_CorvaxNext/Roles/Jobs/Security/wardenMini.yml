@@ -10,6 +10,7 @@
   startingGear: WardenMiniGear
   icon: "JobIconWardenHelper"
   supervisors: job-supervisors-hos
+  weight: 4
   canBeAntag: false
   access:
   - Security
