@@ -3,3 +3,6 @@
 
 - type: playTimeTracker
   id: JobSurgeon
+
+- type: playTimeTracker
+  id: JobWardenHelper

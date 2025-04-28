@@ -1,18 +1,14 @@
 - type: job
-  id: Warden
-  name: job-name-warden
-  description: job-description-warden
+  id: WardenHelper
+  name: job-name-wardenMini
+  description: job-description-wardenMini
   playTimeTracker: JobWarden
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 108000 #50 hrs # Corvax-RoleTime
-    - !type:RoleTimeRequirement
-      role: JobWardenHelper
-      time: 18000 #5 hrs # Corvax-WardHelp-NEXT
-  weight: 5
-  startingGear: WardenGear
-  icon: "JobIconWarden"
+      time: 90000 #25 hrs
+  startingGear: WardenMiniGear
+  icon: "JobIconWardenHelper"
   supervisors: job-supervisors-hos
   canBeAntag: false
   access:
@@ -33,17 +29,17 @@
       - type: Skills # Corvax-Next-Skills
         skills:
         - Shooting
-        - ShuttleControl
 
 - type: startingGear
-  id: WardenGear
+  id: WardenMiniGear
   equipment:
     eyes: ClothingEyesGlassesSecurity
     id: WardenPDA
     ears: ClothingHeadsetSecurity
     pocket1: WeaponPistolMk58
+    pocket2: BookSpaceLaw
   storage:
     back:
     - Flash
     - MagazinePistol
-    - ClothingNeckSecBadgeWarden # Corvax-Next-Badges
+    - ClothingNeckSecBadgeWardenMini

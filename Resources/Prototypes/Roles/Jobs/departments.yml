@@ -116,6 +116,7 @@
   - Pilot # Corvax-Pilot
   - Detective
   - Warden
+  - WardenHelper # Corvax-Next-WardenHelper
 
 - type: department
   id: Science
