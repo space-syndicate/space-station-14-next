@@ -33,6 +33,7 @@
 - type: startingGear
   id: WardenMiniGear
   equipment:
+    head: ClothingHeadHatWardenHelper
     eyes: ClothingEyesGlassesSecurity
     id: WardenPDA
     ears: ClothingHeadsetSecurity

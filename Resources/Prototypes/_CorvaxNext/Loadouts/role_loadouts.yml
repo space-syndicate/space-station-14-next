@@ -26,7 +26,6 @@
   id: WardenHelper
   groups:
   - Inventory # Corvax-Loadouts
-  - WardenHead
   - WardenJumpsuit
   - SecurityBackpack
   - SecurityBelt
