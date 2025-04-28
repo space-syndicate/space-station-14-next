@@ -2,7 +2,7 @@
   id: WardenHelper
   name: job-name-wardenMini
   description: job-description-wardenMini
-  playTimeTracker: JobWarden
+  playTimeTracker: JobWardenHelper
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
