@@ -11,7 +11,7 @@
     HandheldHealthAnalyzer: 3
     Scalpel: 2
     SawElectric: 2
-    Bonesetter: 2 #(add when robotics)
+    BoneSetter: 2 #(add when robotics)
     NitrousOxideTankFilled: 2
     ClothingMaskBreathMedical: 5
     ClothingHeadHatWeldingMaskFlame: 1
