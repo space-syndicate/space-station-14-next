@@ -42,3 +42,6 @@
 
 - type: Tag
   id: ArtificialBluespaceCrystal
+
+- type: Tag
+  id: CarcTile # Spacessonne
