@@ -41,14 +41,22 @@
         - SyndicateNamesElite
       - type: NpcFactionMember
         factions: [ Syndicate ]
+      - type: Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles: [ MindRoleVoxRaiders ]
       briefing:
         sound: "/Audio/_CorvaxNext/Misc/vox_raiders_greeting.ogg"
     - prefRoles: [ VoxRaiders ]
       fallbackRoles: [ VoxRaidersCommander ]
       spawnerPrototype: SpawnPointVoxRaidersOperative
-      max: 3
-      playerRatio: 15
+      min: 4
+      max: 4
       startingGear: VoxRaidersOperativeGear
       components:
       - type: RandomMetadata
@@ -57,6 +65,24 @@
         - SyndicateNamesNormal
       - type: NpcFactionMember
         factions: [ Syndicate ]
+      - type: Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles: [ MindRoleVoxRaidersCommander ]
       briefing:
         sound: "/Audio/_CorvaxNext/Misc/vox_raiders_greeting.ogg"
+
+- type: entity
+  id: BattleRoyale
+  name: Battle Royale
+  parent: BaseGameRule
+  components:
+  - type: BattleRoyaleRule
+    gear: BattleRoyaleGear 
+    roundEndDelay: 10
+  - type: PointManager

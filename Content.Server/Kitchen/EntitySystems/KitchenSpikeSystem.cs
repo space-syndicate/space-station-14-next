@@ -2,11 +2,13 @@ using Content.Server.Administration.Logs;
 using Content.Server.Body.Systems;
 using Content.Server.Kitchen.Components;
 using Content.Server.Popups;
+using Content.Shared._CorvaxNext.Skills;
 using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.DragDrop;
+using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
@@ -38,6 +40,9 @@ namespace Content.Server.Kitchen.EntitySystems
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly MetaDataSystem _metaData = default!;
         [Dependency] private readonly SharedSuicideSystem _suicide = default!;
+        [Dependency] private readonly SharedSkillsSystem _skills = default!;
+
+        private const float ButcherDelayModifierWithoutSkill = 5;
 
         public override void Initialize()
         {
@@ -143,7 +148,11 @@ namespace Content.Server.Kitchen.EntitySystems
             if (!Resolve(uid, ref component) || !Resolve(victimUid, ref butcherable))
                 return;
 
-            _logger.Add(LogType.Gib, LogImpact.Extreme, $"{ToPrettyString(userUid):user} kitchen spiked {ToPrettyString(victimUid):target}");
+            var logImpact = LogImpact.Medium;
+            if (HasComp<HumanoidAppearanceComponent>(victimUid))
+                logImpact = LogImpact.Extreme;
+
+            _logger.Add(LogType.Gib, logImpact, $"{ToPrettyString(userUid):user} kitchen spiked {ToPrettyString(victimUid):target}");
 
             // TODO VERY SUS
             component.PrototypesToSpawn = EntitySpawnCollection.GetSpawns(butcherable.SpawnedEntities, _random);
@@ -264,7 +273,7 @@ namespace Content.Server.Kitchen.EntitySystems
             butcherable.BeingButchered = true;
             component.InUse = true;
 
-            var doAfterArgs = new DoAfterArgs(EntityManager, userUid, component.SpikeDelay + butcherable.ButcherDelay, new SpikeDoAfterEvent(), uid, target: victimUid, used: uid)
+            var doAfterArgs = new DoAfterArgs(EntityManager, userUid, (component.SpikeDelay + butcherable.ButcherDelay) * (_skills.HasSkill(userUid, Skills.Butchering) ? 1 : ButcherDelayModifierWithoutSkill), new SpikeDoAfterEvent(), uid, target: victimUid, used: uid) // Corvax-Next-Skills
             {
                 BreakOnDamage = true,
                 BreakOnMove = true,

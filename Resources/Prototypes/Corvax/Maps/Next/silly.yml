@@ -1,6 +1,6 @@
 - type: gameMap
   id: NextSilly
-  mapName: 'Next Silly'
+  mapName: 'NTABK Силли'
   mapPath: /Maps/Next/next_silly.yml
   maxRandomOffset: 0
   randomRotation: false
@@ -17,8 +17,6 @@
             prefixCreator: 'ABK'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_corvaxsilly.yml
-        - type: StationCargoShuttle
-          path: /Maps/Corvax/Shuttles/cargo_corvaxsilly.yml
         - type: StationJobs
           availableJobs:
             # command
@@ -80,3 +78,9 @@
           - Botany
           - Bunker
           - BluespaceHarvest
+        # Corvax-next blob-config-start LOW
+        - type: StationBlobConfig
+          stageBegin: 10
+          stageCritical: 300
+          stageTheEnd: 600
+        # Corvax-next blob-config-end

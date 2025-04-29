@@ -1,6 +1,6 @@
 - type: gameMap
   id: NextPilgrim
-  mapName: 'Next Pilgrim'
+  mapName: 'NTTA Пилигрим'
   mapPath: /Maps/Next/next_pilgrim.yml
   maxRandomOffset: 0
   randomRotation: false
@@ -87,3 +87,9 @@
           - Theatre
           - Botany
           - BluespaceHarvest
+          # Corvax-next blob-config-start HUGEs
+        - type: StationBlobConfig
+          stageBegin: 40
+          stageCritical: 700
+          stageTheEnd: 1200
+          # Corvax-next blob-config-end

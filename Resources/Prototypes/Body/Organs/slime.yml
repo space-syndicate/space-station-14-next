@@ -1,40 +1,12 @@
 - type: entity
   id: SentientSlimeCore
-  parent: [BaseItem, OrganHumanBrain]
+  parent: [OrganHumanBrain]
   name: sentient slime core
   description: "The source of incredible, unending gooeyness."
   components:
     - type: Sprite
       sprite: Mobs/Species/Slime/organs.rsi
       state: brain-slime
-    - type: Stomach
-    - type: Organ
-      slotId: core
-    - type: Metabolizer
-      maxReagents: 6
-      metabolizerTypes: [ Slime ]
-      removeEmpty: true
-      groups:
-        - id: Food
-        - id: Drink
-        - id: Medicine
-        - id: Poison
-        - id: Narcotic
-        - id: Alcohol
-          rateModifier: 0.25
-    - type: SolutionContainerManager
-      solutions:
-        stomach:
-          maxVol: 50.0
-        food:
-          maxVol: 5
-          reagents:
-          - ReagentId: GreyMatter
-            Quantity: 5
-        organ:
-          reagents:
-          - ReagentId: Slime
-            Quantity: 10
     - type: Item
       size: Small
       heldPrefix: brain
@@ -80,3 +52,47 @@
   - type: Item
     size: Small
     heldPrefix: lungs
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
+
+- type: entity
+  id: OrganSlimeStomach
+  parent: OrganAnimalStomach
+  name: stomach
+  description: "Gross. This is hard to stomach."
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Slime/organs.rsi
+    state: brain-slime
+  - type: Stomach
+    digestionDelay: 30
+    updateInterval: 1.5
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 50
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: Metabolizer
+    maxReagents: 6
+    metabolizerTypes: [ Slime ]
+    removeEmpty: true
+    groups:
+      - id: Food
+      - id: Drink
+      - id: Medicine
+      - id: Poison
+      - id: Narcotic
+      - id: Alcohol
+        rateModifier: 0.25
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach

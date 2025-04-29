@@ -1,6 +1,6 @@
 - type: gameMap
   id: NextBox
-  mapName: 'Next Box'
+  mapName: 'NTTG Бокс'
   mapPath: /Maps/Next/next_box.yml
   maxRandomOffset: 0
   randomRotation: false
@@ -68,3 +68,9 @@
             # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 3 ]
+        # Corvax-next blob-config-start HUGEs
+        - type: StationBlobConfig
+          stageBegin: 40
+          stageCritical: 700
+          stageTheEnd: 1200
+        # Corvax-next blob-config-end

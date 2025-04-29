@@ -1,5 +1,5 @@
 using Content.Server._CorvaxNext.VoxRaiders.Components;
-using Content.Server.Objectives.Components.Targets;
+using Content.Server.Objectives.Systems;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Systems;
 using Robust.Shared.Prototypes;
@@ -41,10 +41,10 @@ public sealed class ExtractConditionSystem : EntitySystem
             if (target.StealGroup != entity.Comp.StealGroup)
                 continue;
 
-            if (!TryComp<ExtractionShuttleComponent>(transform.GridUid, out var shuttle))
+            if (!TryComp<ExtractionMapComponent>(transform.MapUid, out var map))
                 continue;
 
-            if (!shuttle.Owners.Contains(e.MindId))
+            if (!map.Owners.Contains(e.MindId))
                 continue;
 
             e.Progress = 1;

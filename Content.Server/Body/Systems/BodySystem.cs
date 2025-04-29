@@ -20,6 +20,7 @@ namespace Content.Server.Body.Systems;
 
 public sealed class BodySystem : SharedBodySystem
 {
+    [Dependency] private readonly BloodstreamSystem _bloodstream = default!; // Shitmed Change
     [Dependency] private readonly GhostSystem _ghostSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidSystem = default!;
@@ -80,13 +81,19 @@ public sealed class BodySystem : SharedBodySystem
         // TODO: Predict this probably.
         base.AddPart(bodyEnt, partEnt, slotId);
 
-        if (TryComp<HumanoidAppearanceComponent>(bodyEnt, out var humanoid))
+        var layer = partEnt.Comp.ToHumanoidLayers();
+        if (layer != null)
         {
-            var layer = partEnt.Comp.ToHumanoidLayers();
-            if (layer != null)
+            if (TryComp<HumanoidAppearanceComponent>(bodyEnt, out var humanoid))
             {
+                var layers = HumanoidVisualLayersExtension.Sublayers(layer.Value);
                 _humanoidSystem.SetLayersVisibility(
-                    bodyEnt, new[] { layer.Value }, visible: true, permanent: true, humanoid);
+                    (bodyEnt, humanoid), layers, visible: true);
+            }
+            else
+            {
+                var layers = HumanoidVisualLayersExtension.Sublayers(layer.Value);
+                _humanoidSystem.SetLayersVisibility(bodyEnt.Owner, layers, visible: true);
             }
         }
     }
@@ -107,9 +114,9 @@ public sealed class BodySystem : SharedBodySystem
             return;
 
         var layers = HumanoidVisualLayersExtension.Sublayers(layer.Value);
-
+        
         _humanoidSystem.SetLayersVisibility(
-            bodyEnt, layers, visible: false, permanent: true, humanoid);
+            (bodyEnt, humanoid), layers, visible: false);
         _appearance.SetData(bodyEnt, layer, true);
     }
 
@@ -200,6 +207,14 @@ public sealed class BodySystem : SharedBodySystem
                 _humanoidSystem.RemoveMarking(target, marking.MarkingId, sync: false, humanoid: bodyAppearance);
 
         Dirty(target, bodyAppearance);
+    }
+
+    protected override void PartRemoveDamage(Entity<BodyComponent?> bodyEnt, Entity<BodyPartComponent> partEnt)
+    {
+        var bleeding = partEnt.Comp.SeverBleeding;
+        if (partEnt.Comp.IsVital)
+            bleeding *= 2f;
+        _bloodstream.TryModifyBleedAmount(bodyEnt, bleeding);
     }
     // end-_CorvaxNext: surgery
 }

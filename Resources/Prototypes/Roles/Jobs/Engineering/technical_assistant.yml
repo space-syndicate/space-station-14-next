@@ -18,6 +18,14 @@
   - Maintenance
   - Engineering
   - External
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - AdvancedBuilding
+        - ShuttleControl
+
 
 - type: startingGear
   id: TechnicalAssistantGear
