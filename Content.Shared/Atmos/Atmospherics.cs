@@ -351,6 +351,11 @@ namespace Content.Shared.Atmos
         /// </summary>
         public const float BreathMolesToReagentMultiplier = 1144;
 
+        /// <summary>
+        ///     Mayby that's working/
+        /// </summary>
+        public const float SeedBreathMolesToReagentMultiplier = 0.005f;
+
         #region Pipes
 
         /// <summary>
