@@ -39,7 +39,7 @@ public sealed class SeedLungSystem : EntitySystem
             if (!_solutionContainerSystem.ResolveSolution(uid, plantHolder.SoilSolutionName, ref plantHolder.SoilSolution, out var solution))
                 continue;
 
-            GasToReagent(lung.Air, solution);
+            GasToReagent(lung.Air.RemoveVolume(2000f), solution);
             _plantHolderSystem.UpdateReagents(uid, plantHolder);
         }
     }

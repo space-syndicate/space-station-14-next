@@ -53,7 +53,6 @@
   - !type:PlantAdjustPotency
     amount: 15
     probability: 0.5
-  - !type:Glow {}
   - !type:PlantAdjustWaterConsumation
     amount: 0.1
     probability: 0.25
