@@ -32,7 +32,7 @@ public abstract partial class PlantAdjustAttribute : EntityEffect
     /// <param name="entityManager">The entity manager</param>
     /// <param name="mustHaveAlivePlant">Whether to check if it has an alive plant or not</param>
     /// <returns></returns>
-    public bool CanMetabolize(EntityUid plantHolder, [NotNullWhen(true)] out PlantHolderComponent? plantHolderComponent,
+    public static bool CanMetabolize(EntityUid plantHolder, [NotNullWhen(true)] out PlantHolderComponent? plantHolderComponent,
         IEntityManager entityManager,
         bool mustHaveAlivePlant = true)
     {
