@@ -90,29 +90,29 @@
     balance:
       Telecrystal: 0
 
-- type: entity
+- type: entity # Corvax-Next: Uplink rebalance: 20->100TC
   parent: BaseUplinkRadio
   id: BaseUplinkRadio20TC
-  suffix: 20 TC
+  suffix: 100 TC
   components:
   - type: Store
     balance:
-      Telecrystal: 20
+      Telecrystal: 100
 
-- type: entity
+- type: entity # Corvax-Next: Uplink rebalance: 25->125TC
   parent: BaseUplinkRadio
   id: BaseUplinkRadio25TC
-  suffix: 25 TC
+  suffix: 125 TC
   components:
   - type: Store
     balance:
-      Telecrystal: 25
+      Telecrystal: 125
 
 #this uplink MUST be used for nukeops, as it has the tag for filtering the listing.
-- type: entity
+- type: entity # Corvax-Next: Uplink rebalance: 40->250TC
   parent: BaseUplinkRadio
   id: BaseUplinkRadio40TC
-  suffix: 40 TC, NukeOps
+  suffix: 250 TC, NukeOps
   components:
   - type: Store
     balance:
@@ -121,14 +121,14 @@
     tags:
     - NukeOpsUplink
 
-- type: entity
+- type: entity # Corvax-Next: Uplink rebalance: 60->300TC
   parent: BaseUplinkRadio
   id: BaseUplinkRadio60TC
-  suffix: 60 TC, LoneOps
+  suffix: 300 TC, LoneOps
   components:
   - type: Store
     balance:
-      Telecrystal: 60
+      Telecrystal: 300
   - type: Tag
     tags:
     - NukeOpsUplink
