@@ -1672,9 +1672,9 @@
   productEntity: CrateCybersunJuggernautBundle
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 75
+    Telecrystal: 120
   cost:
-    Telecrystal: 135
+    Telecrystal: 165
   categories:
   - UplinkWearables
 

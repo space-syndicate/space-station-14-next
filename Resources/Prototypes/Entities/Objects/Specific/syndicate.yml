@@ -112,11 +112,11 @@
 - type: entity # Corvax-Next: Uplink rebalance: 40->250TC
   parent: BaseUplinkRadio
   id: BaseUplinkRadio40TC
-  suffix: 250 TC, NukeOps
+  suffix: 200 TC, NukeOps
   components:
   - type: Store
     balance:
-      Telecrystal: 40
+      Telecrystal: 200
   - type: Tag
     tags:
     - NukeOpsUplink
