@@ -199,6 +199,7 @@
   components:
   - type: StorageFill
     contents:
+      - id: CarcBoxClassic # Corvax Next Spacessonne
       - id: ChessBoard
       - id: BackgammonBoard
       - id: ParchisBoard
