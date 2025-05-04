@@ -1,13 +1,13 @@
 - type: job
   id: WardenHelper
-  name: job-name-wardenMini
-  description: job-description-wardenMini
+  name: job-name-wardenHelper
+  description: job-description-wardenHelper
   playTimeTracker: JobWardenHelper
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
       time: 90000 #25 hrs
-  startingGear: WardenMiniGear
+  startingGear: WardenHelperGear
   icon: "JobIconWardenHelper"
   supervisors: job-supervisors-hos
   weight: 4
@@ -32,11 +32,11 @@
         - Shooting
 
 - type: startingGear
-  id: WardenMiniGear
+  id: WardenHelperGear
   equipment:
     head: ClothingHeadHatWardenHelper
     eyes: ClothingEyesGlassesSecurity
-    id: WardenMiniPDA
+    id: WardenHelperPDA
     ears: ClothingHeadsetSecurity
     pocket1: WeaponPistolMk58
     pocket2: BookSpaceLaw
@@ -44,4 +44,4 @@
     back:
     - Flash
     - MagazinePistol
-    - ClothingNeckSecBadgeWardenMini
+    - ClothingNeckSecBadgeWardenHelper

@@ -10,4 +10,4 @@
     layers:
       - state: green
       - sprite: _CorvaxNext/Markers/jobs.rsi
-        state: WardMini
+        state: WardenHelper

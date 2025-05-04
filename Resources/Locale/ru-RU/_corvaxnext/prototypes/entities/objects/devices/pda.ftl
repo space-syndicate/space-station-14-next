@@ -1,4 +1,4 @@
 ent-SurgeonPDA = КПК хирурга
     .desc = { ent-MedicalPDA.desc }
-ent-WardenMiniPDA = КПК помошника смотрителя
+ent-WardenHelperPDA = КПК помощника смотрителя
     .desc = { ent-BaseSecurityPDA.desc }

@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Surgeon by Ko4erga, WardenMini by RedTerror",
+    "copyright": "Surgeon by Ko4erga, WardenHelper by RedTerror",
 
     "size": {
         "x": 8,
@@ -12,7 +12,7 @@
             "name": "Surgeon"
         },
         {
-            "name": "WardenMini"
+            "name": "WardenHelper"
         }
     ]
 }

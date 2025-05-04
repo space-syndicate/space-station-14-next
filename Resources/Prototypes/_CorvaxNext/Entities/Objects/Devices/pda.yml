@@ -17,12 +17,12 @@
 
 - type: entity
   parent: BaseSecurityPDA
-  id: WardenMiniPDA
+  id: WardenHelperPDA
   name: warden assistant PDA
   description: The OS appears to have been jailbroken.
   components:
   - type: Pda
-    id: WardenMiniIDCard
+    id: WardenHelperIDCard
   - type: Appearance
     appearanceDataInit:
      enum.PdaVisuals.PdaType:

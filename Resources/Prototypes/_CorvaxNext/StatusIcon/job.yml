@@ -11,6 +11,6 @@
   id: JobIconWardenHelper
   icon:
     sprite: /Textures/_CorvaxNext/Interface/Misc/job_icons.rsi
-    state: WardenMini
-  jobName: job-name-wardenmini
+    state: WardenHelper
+  jobName: job-name-wardenhelper
 

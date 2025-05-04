@@ -1,4 +1,4 @@
 ent-SurgeonIDCard = ID карта хирурга
     .desc = { ent-IDCardStandard.desc }
-ent-WardenMiniIDCard = ID карта помошника смотрителя
+ent-WardenHelperIDCard = ID карта помощника смотрителя
     .desc = { ent-IDCardStandard.desc }

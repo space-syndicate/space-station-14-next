@@ -12,13 +12,13 @@
 
 - type: entity
   parent: IDCardStandard
-  id: WardenMiniIDCard
+  id: WardenHelperIDCard
   name: warden assistant ID card
   components:
     - type: Sprite
       layers:
         - state: default
         - sprite: _CorvaxNext/Objects/Misc/id_cards.rsi
-          state: idwardenmini
+          state: idwardenhelper
     - type: PresetIdCard
       job: WardenHelper
