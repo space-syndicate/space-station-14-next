@@ -13704,8 +13704,6 @@ entities:
       pos: 76.5,37.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 122
   - uid: 537
@@ -60181,8 +60179,6 @@ entities:
       pos: 73.5,38.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 8286
       - 8288
@@ -60196,8 +60192,6 @@ entities:
       pos: 73.5,37.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 8286
       - 8288
@@ -60211,8 +60205,6 @@ entities:
       pos: 73.5,36.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 8286
       - 8288
