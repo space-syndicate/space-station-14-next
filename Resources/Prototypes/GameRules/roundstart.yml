@@ -208,6 +208,7 @@
   id: BaseTraitorRule
   components:
   - type: TraitorRule
+    startingBalance: 26 #Corvax Balance
   # TODO: codewords in yml
   # TODO: uplink in yml
   - type: AntagRandomObjectives
