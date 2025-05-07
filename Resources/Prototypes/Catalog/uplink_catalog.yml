@@ -101,9 +101,9 @@
   productEntity: ClothingHandsGlovesNorthStar
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 3
+    Telecrystal: 3 #Corvax price 
   cost:
-    Telecrystal: 6
+    Telecrystal: 6 #Corvax price 
   categories:
   - UplinkWeaponry
 
@@ -116,7 +116,7 @@
   discountDownTo:
     Telecrystal: 3
   cost:
-    Telecrystal: 5
+    Telecrystal: 5 #Corvax price 
   categories:
   - UplinkWeaponry
   conditions:
@@ -359,9 +359,9 @@
   productEntity: ClothingBackpackDuffelSyndicateC4tBundle
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 6
+    Telecrystal: 6 #Corvax price 
   cost:
-    Telecrystal: 10
+    Telecrystal: 10 #Corvax price 
   categories:
   - UplinkExplosives
 
@@ -520,7 +520,7 @@
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi, state: icon }
   productEntity: SpeedLoaderMagnumAP
   cost:
-    Telecrystal: 2
+    Telecrystal: 2 #Corvax price 
   categories:
   - UplinkAmmo
 
@@ -651,7 +651,7 @@
   discountDownTo:
     Telecrystal: 2
   cost:
-    Telecrystal: 4
+    Telecrystal: 4 #Corvax price
   categories:
   - UplinkChemicals
 
@@ -753,7 +753,7 @@
   discountDownTo:
     Telecrystal: 2
   cost:
-    Telecrystal: 3
+    Telecrystal: 3 #Corvax price 
   categories:
   - UplinkDeception
 
@@ -859,7 +859,7 @@
   productEntity: ClothingBackpackDuffelSyndicateDecoyKitFilled
   discountCategory: usualDiscounts
   cost:
-    Telecrystal: 2
+    Telecrystal: 2 #Corvax price 
   categories:
   - UplinkDeception
 
@@ -898,7 +898,7 @@
   productEntity: Emag
   discountCategory: veryRareDiscounts
   cost:
-    Telecrystal: 3
+    Telecrystal: 3 #Corvax price 
   categories:
   - UplinkDisruption
 
@@ -1596,7 +1596,7 @@
   productEntity: ClothingBackpackDuffelSyndicateEVABundle
   discountCategory: rareDiscounts
   cost:
-    Telecrystal: 1
+    Telecrystal: 1 #Corvax price 
   categories:
   - UplinkWearables
 
