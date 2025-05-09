@@ -8,7 +8,6 @@
     damage:
       types:
         Piercing: 100 # Corvax-Next
-        Ion: 20 # Corvax-Next
     penetrationThreshold: 100 # Corvax-Next - This count as penetration health
   - type: StaminaDamageOnCollide
     damage: 50
