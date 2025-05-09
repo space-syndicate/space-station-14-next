@@ -101,9 +101,9 @@
   productEntity: ClothingHandsGlovesNorthStar
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 3 #Corvax price 
+    Telecrystal: 4
   cost:
-    Telecrystal: 6 #Corvax price 
+    Telecrystal: 7 #Corvax price 
   categories:
   - UplinkWeaponry
 
@@ -1668,7 +1668,7 @@
   discountDownTo:
     Telecrystal: 8
   cost:
-    Telecrystal: 12
+    Telecrystal: 14
   categories:
   - UplinkWearables
 
