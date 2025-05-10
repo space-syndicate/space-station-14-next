@@ -41,7 +41,7 @@
     state: boritos
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketBoritosTrash
 
 - type: entity
@@ -57,7 +57,7 @@
     state: cnds
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketCnDsTrash
 
 - type: entity
@@ -74,7 +74,7 @@
     state: cheesiehonkers
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketCheesieTrash
 
 - type: entity
@@ -92,7 +92,7 @@
     state: chips
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketChipsTrash
 
 - type: entity
@@ -146,6 +146,42 @@
           Quantity: 1
 
 - type: entity
+  name: cotton bar
+  parent: FoodSnackBase
+  id: FoodSnackCotton
+  description: A silk bar made from cheap ingredients.
+  components:
+  - type: Sprite
+    state: cottonbar
+  - type: Item
+  - type: SpawnItemsOnUse
+    items:
+      - id: FoodPacketCottonTrash
+      - id: FoodSnackCottonBar
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  name: cotton bar
+  parent: FoodSnackBase
+  id: FoodSnackCottonBar
+  description: A silk bar made from cheap ingredients.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cheap
+      - strange
+      - fiber
+  - type: Food
+    requiresSpecialDigestion: true
+  - type: Sprite
+    state: cottonbar-open
+  - type: Item
+  - type: Tag
+    tags:
+      - ClothMade
+
+- type: entity
   name: energy bar
   parent: FoodSnackBase
   id: FoodSnackEnergy
@@ -191,7 +227,7 @@
     state: pistachio
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketPistachioTrash
   - type: Tag
     tags:
@@ -213,7 +249,7 @@
   - type: Item
     heldPrefix: popcorn
   - type: Food
-    trash: 
+    trash:
     - FoodPacketPopcornTrash
 
 - type: entity
@@ -229,7 +265,7 @@
     state: raisins
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketRaisinsTrash
   - type: Tag
     tags:
@@ -248,7 +284,7 @@
     state: semki
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketSemkiTrash
 
 - type: entity
@@ -264,7 +300,7 @@
     state: susjerky
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketSusTrash
   - type: Tag
     tags:
@@ -283,7 +319,7 @@
     state: syndicakes
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketSyndiTrash
 
 - type: entity
@@ -308,7 +344,7 @@
   - type: Sprite
     state: ramen
   - type: Food
-    trash: 
+    trash:
     - FoodPacketCupRamenTrash
 
 - type: entity
@@ -351,7 +387,7 @@
         - ReagentId: Soysauce
           Quantity: 2
   - type: Food
-    trash: 
+    trash:
     - FoodPacketChowMeinTrash
 
 - type: entity
@@ -380,7 +416,7 @@
         - ReagentId: Soysauce
           Quantity: 2
   - type: Food
-    trash: 
+    trash:
     - FoodPacketDanDanTrash
 
 - type: entity
@@ -406,7 +442,7 @@
     heldPrefix: packet
     size: Tiny
   - type: Food
-    trash: 
+    trash:
     - FoodCookieFortune
 
 - type: entity
@@ -567,6 +603,15 @@
   components:
   - type: Sprite
     state: chocolatebar-trash
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketCottonTrash
+  name: cottonbar wrapper
+  components:
+  - type: Sprite
+    state: cottonbar-trash
 
 - type: entity
   categories: [ HideSpawnMenu ]
