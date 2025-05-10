@@ -25,6 +25,8 @@
       Ammonia: stationAmmonia
       NitrousOxide: stationNO
       Frezon: danger
+      Brunium: danger
+      Harvium: danger
   - type: Tag
     tags:
       - AirSensor
