@@ -1,0 +1,9 @@
+- type: latheRecipe
+  id: BagOfCleanliness
+  result: BagOfCleanliness
+  completetime: 5
+  materials:
+    Steel: 1000
+    Silver: 450
+    Plasma: 500
+    Uranium: 50

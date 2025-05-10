@@ -148,6 +148,7 @@
   recipeUnlocks:
   - AdvMopItem
   - MegaSprayBottle
+  - BagOfCleanliness # Corvax-Next-BluespaceTrashBag
 
 - type: technology
   id: HONKMech
