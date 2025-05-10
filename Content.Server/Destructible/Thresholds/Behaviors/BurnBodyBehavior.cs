@@ -1,5 +1,6 @@
 ﻿using Content.Shared.Body.Components;
 using Content.Shared.Body.Part; // CorvaxNext: surgery
+using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using JetBrains.Annotations;
@@ -39,5 +40,9 @@ public sealed partial class BurnBodyBehavior : IThresholdBehavior
             system.EntityManager.QueueDeleteEntity(bodyId);
         }
         // end-_CorvaxNext: surgery
+        var bodyIdentity = Identity.Entity(bodyId, system.EntityManager);
+        sharedPopupSystem.PopupCoordinates(Loc.GetString("bodyburn-text-others", ("name", bodyIdentity)), transformSystem.GetMoverCoordinates(bodyId), PopupType.LargeCaution);
+
+        system.EntityManager.QueueDeleteEntity(bodyId);
     }
 }
