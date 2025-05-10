@@ -81,6 +81,16 @@
 
 - type: entity
   parent: ClothingNeckSecBadgeBase
+  id: ClothingNeckSecBadgeWardenHelper
+  name: warden assistant badge
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Clothing/Neck/SecBadge/WardenHelperbadge.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Clothing/Neck/SecBadge/WardenHelperbadge.rsi
+
+- type: entity
+  parent: ClothingNeckSecBadgeBase
   id: ClothingNeckSecBadgeHos
   name: head of security badge
   components:
