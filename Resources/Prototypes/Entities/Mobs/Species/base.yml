@@ -221,6 +221,9 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+  - type: Penetratable # Corvax-Next - Better snipers
+    penetrateDamage: 50
+    damagePenalty: 0.2
   - type: Targeting # _CorvaxNext: surgery
   - type: SurgeryTarget # _CorvaxNext: surgery
   - type: LayingDown # _CorvaxNext: LayingDown Laying Down
