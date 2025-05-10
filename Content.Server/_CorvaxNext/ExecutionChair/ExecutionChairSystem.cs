@@ -1,8 +1,8 @@
-using Content.Server.DeviceLinking.Events;
 using Content.Server.DeviceLinking.Systems;
 using Content.Server.Electrocution;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Buckle.Components;
+using Content.Shared.DeviceLinking.Events;
 using Content.Shared.Popups;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
