@@ -99,6 +99,7 @@ namespace Content.IntegrationTests.Tests
             "NextMarathon",
             "NextOmega",
             "NextPacked",
+			"NextChloris",
             "BattleRoyale", // BattleRoyale Change
             "Lavatest", // Lavaland Change
             // Corvax-Next-end
