@@ -9,13 +9,13 @@ public sealed partial class MovementImpairedComponent : Component
     /// What number is this entities speed multiplied by when impaired?
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float ImpairedSpeedMultiplier { get; set; } = 0.4f;
+    public float ImpairedSpeedMultiplier { get; set; } = 0.6f;
 
     /// <summary>
     /// The original speed multiplier of the entity, stored and restored when the item is picked up or put down.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float BaseImpairedSpeedMultiplier { get; set; } = 0.4f;
+    public float BaseImpairedSpeedMultiplier { get; set; } = 0.6f;
 
     /// <summary>
     /// How many movement correcting items the entity has.
