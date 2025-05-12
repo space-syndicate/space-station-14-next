@@ -20,6 +20,7 @@
     - Reptilian
     - Vulpkanin # Corvax-MRP
     - Resomi #Corvax-Next
+    - Tajaran
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox

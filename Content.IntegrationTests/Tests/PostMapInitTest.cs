@@ -66,10 +66,9 @@ namespace Content.IntegrationTests.Tests
             "CorvaxOutpost",
             "CorvaxAstra",
             "CorvaxGelta",
-            "CorvaxMaus",
-            "CorvaxIshimura",
-            "CorvaxPaper",
-            "CorvaxCute",
+			"CorvaxMaus",
+			"CorvaxIshimura",
+			"CorvaxPaper",
             "CorvaxPilgrim",
             "CorvaxSplit",
             "CorvaxTerra",
@@ -78,6 +77,7 @@ namespace Content.IntegrationTests.Tests
             "CorvaxTushkan",
             "CorvaxGlacier",
             "CorvaxAwesome",
+			"CorvaxChloris",
             // Corvax-End
             // Corvax-Next-start
             "NextAvrite",
@@ -99,6 +99,7 @@ namespace Content.IntegrationTests.Tests
             "NextMarathon",
             "NextOmega",
             "NextPacked",
+			"NextChloris",
             "BattleRoyale", // BattleRoyale Change
             "Lavatest", // Lavaland Change
             // Corvax-Next-end

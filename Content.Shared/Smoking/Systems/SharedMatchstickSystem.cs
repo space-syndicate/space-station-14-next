@@ -1,6 +1,6 @@
 // CorvaxNext Change Start
-using Content.Shared.Smoking.Components;
-
+using Content.Shared.IgnitionSource.Components; 
+using Content.Shared.Smoking;
 namespace Content.Shared.Smoking.Systems;
 
 public abstract class SharedMatchstickSystem : EntitySystem
@@ -10,7 +10,8 @@ public abstract class SharedMatchstickSystem : EntitySystem
         if (ent.Comp.CurrentState == state)
             return false;
 
-        ent.Comp.CurrentState = state;
+        ent.Comp.State = state;
+
         Dirty(ent);
         return true;
     }
