@@ -16,13 +16,14 @@
     - 0, 0, 3, 0
   - type: ItemToggle
     soundActivate:
-      path: /Audio/Weapons/telescopicon.ogg
+      path: /Audio/_CorvaxNext/Weapons/batonextend.ogg
       params:
-        volume: -5
+        volume: -4
     soundDeactivate:
-      path: /Audio/Weapons/telescopicoff.ogg
+      path: /Audio/_CorvaxNext/Weapons/batonextend.ogg
       params:
-        volume: -5
+        volume: -4
+        pitch: 0.7
   - type: Appearance
   - type: GenericVisualizer
     visuals:
