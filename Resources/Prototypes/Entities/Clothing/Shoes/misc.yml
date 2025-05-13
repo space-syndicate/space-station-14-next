@@ -154,6 +154,7 @@
         name: power-cell-slot-component-slot-name-default
   - type: Tag
     tags: []
+  - type: StaminaDrain # CorvaxNext
 
 - type: entity
   id: ActionToggleSpeedBoots
