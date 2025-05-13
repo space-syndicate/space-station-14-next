@@ -2709,7 +2709,7 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: BecomesStation
-      id: Silly
+      id: NextSilly
     - type: NavMap
     - type: Joint
       joints: {}
