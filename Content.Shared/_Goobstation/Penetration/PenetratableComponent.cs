@@ -1,4 +1,4 @@
-namespace Content.Shared.Common.Weapons.Penetration;
+namespace Content.Shared._Goobstation.Penetration;
 
 /// <summary>
 /// This penetratable component determine how many "penetration health" projectile requires to penetrate object.

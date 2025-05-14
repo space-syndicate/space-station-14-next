@@ -126,7 +126,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
-  #- type: BallisticAmmoProvider - Goobstation - Magazine Sniper
+  #- type: BallisticAmmoProvider - Corvax-Next - Magazine Sniper
   #  whitelist:
   #    tags:
   #    - CartridgeAntiMateriel
@@ -137,8 +137,8 @@
     sprintModifier: 0.25
   - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset
-    maxOffset: 10 # Goobstation - Sniper rifles buff
-    pvsIncrease: 1.0 # Goobstation - Sniper rifles buff
+    maxOffset: 10 # Corvax-Next - Sniper rifles buff
+    pvsIncrease: 1.0 # Corvax-Next - Sniper rifles buff
 
 - type: entity
   name: musket

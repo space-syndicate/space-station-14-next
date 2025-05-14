@@ -1,4 +1,3 @@
-using Content.Shared.Common.Weapons.Penetration;
 using Content.Server.Administration.Logs;
 using Content.Server.Destructible;
 using Content.Server.Effects;
@@ -10,6 +9,7 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Projectiles;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
+using Content.Shared._Goobstation.Penetration;
 
 namespace Content.Server.Projectiles;
 
