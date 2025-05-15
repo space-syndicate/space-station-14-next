@@ -138719,13 +138719,6 @@ entities:
     - type: Transform
       pos: -47.5,-29.5
       parent: 2
-- proto: SpawnMechRipley
-  entities:
-  - uid: 21035
-    components:
-    - type: Transform
-      pos: 45.5,3.5
-      parent: 2
 - proto: SpawnMobAlexander
   entities:
   - uid: 21036
