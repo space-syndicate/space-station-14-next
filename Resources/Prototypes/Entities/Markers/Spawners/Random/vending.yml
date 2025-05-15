@@ -1,7 +1,7 @@
 - type: entity
   id: RandomVending
   name: random vending machine spawner
-  suffix: Any
+  suffix: DO NOT MAP, Any # Corvax-Next-VendomatsTweak
   parent: MarkerBase
   components:
   - type: Sprite
@@ -43,8 +43,10 @@
       weight: 40
     - id: VendingMachineWinter
       weight: 40
-    - id: VendingMachinePride
-      weight: 10
+    # Corvax-Next-VendomatsTweak-start
+    #- id: VendingMachinePride
+      #weight: 10
+    # Corvax-Next-VendomatsTweak-end
     - id: VendingMachineTheater
       weight: 10
 

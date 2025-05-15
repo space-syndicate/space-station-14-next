@@ -793,7 +793,7 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-    initialStockQuality: 0.33
+    initialStockQuality: 0.25 # Corvax-Next-VendomatsTweak
   - type: Advertise
     pack: DiscountDansAds
   - type: SpeakOnUIClosed
@@ -1009,7 +1009,7 @@
     normalState: normal-unshaded
     ejectState: eject-unshaded
     denyState: deny-unshaded
-    initialStockQuality: 0.33
+    initialStockQuality: 0.25 # Corvax-Next-VendomatsTweak
   - type: Advertise
     pack: GetmoreChocolateCorpAds
   - type: SpeakOnUIClosed
@@ -1352,7 +1352,7 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-    initialStockQuality: 0.33
+    initialStockQuality: 0.25 # Corvax-Next-VendomatsTweak
   - type: Advertise
     pack: ChangAds
   - type: SpeakOnUIClosed
@@ -1444,7 +1444,7 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-    initialStockQuality: 0.33
+    initialStockQuality: 0.25 # Corvax-Next-VendomatsTweak
   - type: Advertise
     pack: DonutAds
   - type: SpeakOnUIClosed
