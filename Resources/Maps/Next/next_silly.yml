@@ -5413,8 +5413,6 @@ entities:
 - proto: ActionToggleInternals
   entities:
   - uid: 3347
-    mapInit: true
-    paused: true
     components:
     - type: Transform
       parent: 3346
