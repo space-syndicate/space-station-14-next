@@ -43,10 +43,8 @@
       weight: 40
     - id: VendingMachineWinter
       weight: 40
-    # Corvax-Next-VendomatsTweak-start
-    #- id: VendingMachinePride
-      #weight: 10
-    # Corvax-Next-VendomatsTweak-end
+    - id: VendingMachinePride
+      weight: 10
     - id: VendingMachineTheater
       weight: 10
 

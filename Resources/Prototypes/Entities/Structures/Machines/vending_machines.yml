@@ -2166,7 +2166,7 @@
   - type: PointLight
     radius: 1.5
     energy: 1.3 # reduced energy since the color is pure white
-    color: "#FFFFFF"
+    color: "#FF9CE0" # Corvax-Next-VendomatsTweak
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/pride.rsi
     layers:
