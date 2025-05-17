@@ -1,7 +1,7 @@
 - type: entity
   id: RandomVendingSnacks
   name: random vending machine spawner
-  suffix: Snacks
+  suffix: Snacks, Lowpop 25% # Corvax-Next-VendomatsTweak
   parent: MarkerBase
   components:
   - type: Sprite

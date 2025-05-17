@@ -1,7 +1,7 @@
-advertisement-pride-1 = Be gay do crime!
-advertisement-pride-2 = Полный цветов!
-advertisement-pride-3 = Вы валидны!
-advertisement-pride-4 = Первый прайд-парад был бунтом!
-thankyou-pride-1 = Жги!
+advertisement-pride-1 = Поделись своей нежностью!
+advertisement-pride-2 = Давай подерёмся подушками!
+advertisement-pride-3 = Самые милые акулки!
+advertisement-pride-4 = Станция меняет людей... Раньше я был радужным!
+thankyou-pride-1 = Как это миленько!
 thankyou-pride-2 = Свали их наповал!
-thankyou-pride-3 = Какое сияние!
+thankyou-pride-3 = Толпа кричала: "Грейтайд, сияй"!

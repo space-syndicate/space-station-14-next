@@ -1,7 +1,7 @@
 - type: entity
   id: RandomVending
   name: random vending machine spawner
-  suffix: Any
+  suffix: DO NOT MAP, Any # Corvax-Next-VendomatsTweak
   parent: MarkerBase
   components:
   - type: Sprite
