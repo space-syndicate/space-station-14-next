@@ -25,6 +25,9 @@
   - type: Tag
     tags:
       - Structure
+  - type: Penetratable # Corvax-Next - Better snipers
+    penetrateDamage: 25
+    damagePenalty: 0.1
 
 - type: entity
   # This means that it's not anchored on spawn.
