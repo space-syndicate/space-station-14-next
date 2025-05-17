@@ -1,0 +1,149 @@
+- type: humanoidBaseSprite
+  id: MobDraksEyes
+  baseSprite:
+    sprite: _CorvaxNext/Mobs/Customization/Draks/eyes.yml
+    state: eyes
+
+- type: marking
+  id: ForearmLarm
+  markingCategory: Arms
+  bodyPart: LArm
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.yml
+      state: forearm_l_arm
+
+- type: marking
+  id: ForearmRarm
+  markingCategory: Arms
+  bodyPart: RArm
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.yml
+      state: forearm_r_arm
+
+- type: marking
+  id: LongLarm
+  markingCategory: Arms
+  bodyPart: LArm
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.yml
+      state: long_l_arm
+
+- type: marking
+  id: LongRarm
+  markingCategory: Arms
+  bodyPart: RArm
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.yml
+      state: long_r_arm
+
+- type: marking
+  id: StandartLarm
+  markingCategory: Arms
+  bodyPart: LArm
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.yml
+      state: standart_l_arm
+
+- type: marking
+  id: StandartRarm
+  markingCategory: Arms
+  bodyPart: RArm
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.yml
+      state: standart_r_arm
+
+- type: marking
+  id: UpperLarm
+  markingCategory: Arms
+  bodyPart: LArm
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.yml
+      state: upper_l_arm
+
+- type: marking
+  id: UpperRarm
+  markingCategory: Arms
+  bodyPart: RArm
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.yml
+      state: upper_r_arm
+
+- type: marking
+  id: Large
+  markingCategory: HeadTop
+  bodyPart: HeadTop
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.yml
+      state: large
+
+- type: marking
+  id: Lush
+  markingCategory: HeadTop
+  bodyPart: HeadTop
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.yml
+      state: lush
+
+- type: marking
+  id: Medium
+  markingCategory: HeadTop
+  bodyPart: HeadTop
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.yml
+      state: medium
+
+- type: marking
+  id: Short
+  markingCategory: HeadTop
+  bodyPart: HeadTop
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.yml
+      state: short
+
+- type: marking
+  id: Untidy
+  markingCategory: HeadTop
+  bodyPart: HeadTop
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.yml
+      state: untidy
+
+- type: marking
+  id: Eyes
+  markingCategory: Head
+  bodyPart: Head
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/eyes.yml
+      state: eyes
+
+- type: marking
+  id: Cute
+  markingCategory: Head
+  bodyPart: Head
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/eyes.yml
+      state: cute
+
+- type: marking
+  id: Tired
+  markingCategory: Head
+  bodyPart: Head
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/eyes.yml
+      state: tired
