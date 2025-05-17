@@ -19,6 +19,7 @@ public sealed class SurgeryToolExamineSystem : EntitySystem
 
         SubscribeLocalEvent<BoneGelComponent, SurgeryToolExaminedEvent>(OnExamined);
         SubscribeLocalEvent<BoneSawComponent, SurgeryToolExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<BoneSetterComponent, SurgeryToolExaminedEvent>(OnExamined);
         SubscribeLocalEvent<CauteryComponent, SurgeryToolExaminedEvent>(OnExamined);
         SubscribeLocalEvent<HemostatComponent, SurgeryToolExaminedEvent>(OnExamined);
         SubscribeLocalEvent<RetractorComponent, SurgeryToolExaminedEvent>(OnExamined);

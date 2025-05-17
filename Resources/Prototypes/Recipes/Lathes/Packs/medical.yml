@@ -30,6 +30,7 @@
   recipes:
   - Scalpel
   - Retractor
+  - BoneSetter
   - Cautery
   - Drill
   - Saw
