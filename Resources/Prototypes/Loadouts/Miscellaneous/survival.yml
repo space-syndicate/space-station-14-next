@@ -16,7 +16,6 @@
     - Diona
     - Dwarf
     - Human
-    - Moth
     - Reptilian
     - Vulpkanin # Corvax-MRP
     - Resomi #Corvax-Next
@@ -85,7 +84,6 @@
   storage:
     back:
     - BoxMimeNitrogen
-
 
 # Engineering / Extended
 - type: loadout

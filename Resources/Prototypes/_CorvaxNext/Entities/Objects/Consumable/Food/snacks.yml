@@ -1,0 +1,35 @@
+- type: entity
+  name: cotton bar
+  parent: FoodSnackBase
+  id: FoodSnackCotton
+  description: A silk bar made from cheap ingredients.
+  components:
+  - type: Sprite
+    state: cottonbar
+  - type: Item
+  - type: SpawnItemsOnUse
+    items:
+      - id: FoodPacketCottonTrash
+      - id: FoodSnackCottonBar
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  name: cotton bar
+  parent: FoodSnackBase
+  id: FoodSnackCottonBar
+  description: A silk bar made from cheap ingredients.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cheap
+      - strange
+      - fiber
+  - type: Food
+    requiresSpecialDigestion: true
+  - type: Sprite
+    state: cottonbar-open
+  - type: Item
+  - type: Tag
+    tags:
+      - ClothMade
