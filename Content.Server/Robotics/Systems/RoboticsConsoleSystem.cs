@@ -126,6 +126,11 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
         if (!_slots.TryGetSlot(ent, ent.Comp.CircuitBoardItemSlot, out var slot) || slot.Item is null)
             return;
 
+        // Corvax-Next-AiRemoteControl-Start
+        if (data.IsAiControllable)
+            return;
+        // Corvax-Next-AiRemoteControl-End
+
         var payload = new NetworkPayload()
         {
             [DeviceNetworkConstants.Command] = RoboticsConsoleConstants.NET_CHANGE_LAWS_COMMAND,
