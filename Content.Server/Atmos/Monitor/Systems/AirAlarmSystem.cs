@@ -4,8 +4,8 @@ using Content.Server.DeviceLinking.Systems;
 using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
+using Content.Server.Doors.Systems;
 using Content.Server.Popups;
-using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
@@ -17,12 +17,13 @@ using Content.Shared.Atmos.Piping.Unary.Components;
 using Content.Shared.Database;
 using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceNetwork;
+using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.DeviceNetwork.Systems;
+using Content.Shared.Doors.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Power;
 using Content.Shared.Wires;
 using Robust.Server.GameObjects;
-using Robust.Shared.Player;
 using System.Linq;
 
 namespace Content.Server.Atmos.Monitor.Systems;
@@ -47,6 +48,8 @@ public sealed class AirAlarmSystem : EntitySystem
     [Dependency] private readonly DeviceListSystem _deviceList = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
+
+    [Dependency] private readonly FirelockSystem _firelock = default!;
 
     #region Device Network API
 
@@ -676,7 +679,7 @@ public sealed class AirAlarmSystem : EntitySystem
 
     private const float Delay = 8f;
     private float _timer;
-
+    #endregion
     public override void Update(float frameTime)
     {
         _timer += frameTime;
@@ -687,8 +690,22 @@ public sealed class AirAlarmSystem : EntitySystem
             {
                 SyncAllSensors(uid);
             }
+
+            var query = EntityQueryEnumerator<AtmosAlarmableComponent, DeviceListComponent>();
+            while (query.MoveNext(out var uid, out var atmosAlarmable, out var deviceList)) //closing undesirably open airlocks
+            {
+                if (atmosAlarmable.LastAlarmState == AtmosAlarmType.Danger && this.IsPowered(uid, EntityManager))
+                {
+                    var indoor = GetEntityQuery<DoorComponent>();
+                    var infirelock = GetEntityQuery<FirelockComponent>();
+                    foreach (EntityUid i in deviceList.Devices)
+                    {
+                        if (!indoor.TryGetComponent(i, out var nouse) && !infirelock.TryGetComponent(i, out var nouse2)) continue;
+                        var door = indoor.GetComponent(i); var firelock = infirelock.GetComponent(i);
+                        if (door.State == DoorState.Open && this.IsPowered(i, EntityManager)) _firelock.UrgentClosure(i, door, firelock);
+                    }
+                }
+            }
         }
     }
-
-    #endregion
 }
