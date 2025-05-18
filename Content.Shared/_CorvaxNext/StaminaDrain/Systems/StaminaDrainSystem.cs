@@ -1,3 +1,4 @@
+using Content.Shared._CorvaxNext.StaminaDrain.Components;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
@@ -7,7 +8,7 @@ using Content.Shared.Item.ItemToggle.Components;
 using Robust.Shared.Containers;
 using Content.Shared.Popups;
 
-namespace Content.Shared.Clothing.EntitySystems;
+namespace Content.Shared._CorvaxNext.StaminaDrain.Systems;
 
 public sealed class StaminaDrainSystem : EntitySystem
 {
