@@ -9581,29 +9581,6 @@ entities:
     - type: InstantAction
       originalIconColor: '#FFFFFFFF'
       container: 8141
-- proto: ActionToggleLight
-  entities:
-  - uid: 277
-    components:
-    - type: Transform
-      parent: 1243
-    - type: InstantAction
-      container: 1243
-  - uid: 13415
-    components:
-    - type: Transform
-      parent: 13414
-    - type: InstantAction
-      container: 13414
-  - uid: 23586
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 20903
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 20903
 - proto: AirAlarm
   entities:
   - uid: 23
@@ -101195,22 +101172,6 @@ entities:
     - type: Transform
       pos: -3.5870948,-3.3489125
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 277
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 277
-    - type: Physics
-      canCollide: True
-    - type: ActionsContainer
   - uid: 1471
     components:
     - type: Transform
@@ -101248,22 +101209,6 @@ entities:
     - type: Transform
       pos: -2.616333,46.237305
       parent: 15658
-    - type: HandheldLight
-      toggleActionEntity: 23586
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 23586
-    - type: Physics
-      canCollide: True
-    - type: ActionsContainer
   - uid: 21854
     components:
     - type: Transform
@@ -101285,20 +101230,6 @@ entities:
       rot: 1.5184364492350666 rad
       pos: 20.363422,45.489143
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 13415
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 13415
-    - type: ActionsContainer
 - proto: LedLightBulb
   entities:
   - uid: 2667
