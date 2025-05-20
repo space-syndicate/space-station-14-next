@@ -244,9 +244,10 @@
   # end-_CorvaxNext: surgery
 
 # Bone setter
+
 - type: entity
   parent: BaseToolSurgery
-  id: Bonesetter
+  id: BoneSetter
   name: bone setter
   description: Used for setting bones back into place.
   components:
@@ -256,6 +257,10 @@
   - type: Item
     sprite: Objects/Specific/Medical/Surgery/bonesetter.rsi
   - type: BoneSetter
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - BoneSetter
 
 # Bone Gel
 - type: entity
@@ -492,6 +497,8 @@
   - type: Tweezers
     speed: 1.5
   - type: Tending
+    speed: 1.5
+  - type: BoneSetter
     speed: 1.5
   - type: Tag
     tags:

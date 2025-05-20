@@ -67,6 +67,7 @@
       - id: Drill
       - id: SawElectric # Shitmed Change
       - id: Hemostat
+      - id: BoneSetter
       # start-_CorvaxNext: surgery
       - id: BoneGel
       - id: BoxLatexGloves

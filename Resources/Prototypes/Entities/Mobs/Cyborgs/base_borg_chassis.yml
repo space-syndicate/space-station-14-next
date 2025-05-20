@@ -250,6 +250,14 @@
   - type: TTS # Corvax-TTS
     voice: TrainingRobot
   - type: Targeting # Corvax-Next-Surgery
+  - type: Skills # Corvax-Next-Skills
+    skills:
+    - ShuttleControl
+    - Shooting
+    - AdvancedBuilding
+    - Surgery
+    - MedicalEquipment
+    - Butchering
 
 - type: entity
   abstract: true

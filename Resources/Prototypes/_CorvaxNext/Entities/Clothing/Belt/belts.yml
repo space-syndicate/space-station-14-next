@@ -33,6 +33,8 @@
   - type: Clothing
     sprite: _CorvaxNext/Clothing/Belt/surgical_board.rsi
   - type: Storage
+    grid:
+    - 0,0,8,1
     whitelist:
       tags:
         - Hemostat
@@ -45,6 +47,7 @@
         - EnergyCautery
         - Drill
         - SawElectric
+        - BoneSetter
   - type: ItemMapper
     mapLayers:
       hemostat:
@@ -103,3 +106,4 @@
       - id: Cautery
       - id: Drill
       - id: SawElectric
+      - id: BoneSetter

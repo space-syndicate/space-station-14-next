@@ -319,7 +319,6 @@ public sealed class AtmosAlarmableSystem : EntitySystem
 public sealed class AtmosAlarmEvent : EntityEventArgs
 {
     public AtmosAlarmType AlarmType { get; }
-
     public AtmosAlarmEvent(AtmosAlarmType netMax)
     {
         AlarmType = netMax;
