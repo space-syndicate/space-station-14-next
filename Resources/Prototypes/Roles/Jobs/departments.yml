@@ -116,6 +116,7 @@
   - Detective
   - Warden
   - Brigmedic # Corvax-Brigmedic
+  - WardenHelper # Corvax-Next-WardenHelper
 
 - type: department
   id: Science

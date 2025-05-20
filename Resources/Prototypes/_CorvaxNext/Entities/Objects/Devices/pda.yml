@@ -14,3 +14,22 @@
   - type: GuideHelp
     guides:
     - Medical Doctor
+
+- type: entity
+  parent: BaseSecurityPDA
+  id: WardenHelperPDA
+  name: warden assistant PDA
+  description: The OS appears to have been jailbroken.
+  components:
+  - type: Pda
+    id: WardenHelperIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-warden
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+    accentVColor: "#949137"
+  - type: Icon
+    state: pda-warden
