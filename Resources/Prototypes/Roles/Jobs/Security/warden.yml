@@ -10,7 +10,7 @@
     - !type:RoleTimeRequirement
       role: JobWardenHelper
       time: 18000 #5 hrs # Corvax-WardHelp-NEXT
-  weight: 5
+  weight: 6
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
