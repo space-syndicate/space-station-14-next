@@ -7,6 +7,9 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 108000 #50 hrs # Corvax-RoleTime
+    - !type:RoleTimeRequirement
+      role: JobWardenHelper
+      time: 18000 #5 hrs # Corvax-WardHelp-NEXT
   weight: 5
   startingGear: WardenGear
   icon: "JobIconWarden"
