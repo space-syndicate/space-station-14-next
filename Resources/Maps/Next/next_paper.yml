@@ -4,8 +4,8 @@ meta:
   engineVersion: 250.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/18/2025 08:21:50
-  entityCount: 18677
+  time: 05/22/2025 15:20:43
+  entityCount: 18678
 maps:
 - 1
 grids:
@@ -55869,7 +55869,7 @@ entities:
     - type: Label
       currentLabel: кофейный ликёр
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.30787602
+      sprayFizzinessThresholdRoll: 0.47007984
     - type: NameModifier
       baseName: бутылка кофейного ликёра
     - type: ContainerContainer
@@ -56155,7 +56155,7 @@ entities:
     - type: Label
       currentLabel: ром
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.58830416
+      sprayFizzinessThresholdRoll: 0.3476388
     - type: NameModifier
       baseName: кубинский пряный ром капитана Пита
     - type: ContainerContainer
@@ -56197,7 +56197,7 @@ entities:
     - type: Label
       currentLabel: текила
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.36909038
+      sprayFizzinessThresholdRoll: 0.9763387
     - type: NameModifier
       baseName: бутылка текилы Каккаво гарантированного качества
     - type: ContainerContainer
@@ -56238,7 +56238,7 @@ entities:
     - type: Label
       currentLabel: вермут
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.758901
+      sprayFizzinessThresholdRoll: 0.5610329
     - type: NameModifier
       baseName: бутылка вермута Золотой глаз
     - type: ContainerContainer
@@ -56261,7 +56261,7 @@ entities:
     - type: Label
       currentLabel: водка
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.3009377
+      sprayFizzinessThresholdRoll: 0.3209785
     - type: NameModifier
       baseName: бутылка водки
     - type: ContainerContainer
@@ -56311,7 +56311,7 @@ entities:
     - type: Label
       currentLabel: вино
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.6171207
+      sprayFizzinessThresholdRoll: 0.33521166
     - type: NameModifier
       baseName: особое двухбородое бородатое вино
     - type: ContainerContainer
@@ -60013,7 +60013,7 @@ entities:
       pos: 39.5,13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -66425.58
+      secondsUntilStateChange: -66475.92
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -98289,7 +98289,7 @@ entities:
     - type: Transform
       pos: 23.5,60.5
       parent: 2
-- proto: RandomVendingSnacks
+- proto: RandomVendingSnacksMidpop
   entities:
   - uid: 886
     components:
@@ -105798,6 +105798,13 @@ entities:
     components:
     - type: Transform
       pos: 55.5,20.5
+      parent: 2
+- proto: SpawnPointWardenHelper
+  entities:
+  - uid: 17957
+    components:
+    - type: Transform
+      pos: 53.5,20.5
       parent: 2
 - proto: SpawnPointZookeeper
   entities:

@@ -4,8 +4,8 @@ meta:
   engineVersion: 250.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/18/2025 07:56:50
-  entityCount: 18731
+  time: 05/22/2025 15:18:58
+  entityCount: 18732
 maps:
 - 1
 grids:
@@ -83368,7 +83368,7 @@ entities:
     - type: Transform
       pos: -31.5,-54.5
       parent: 2
-- proto: RandomVendingSnacks
+- proto: RandomVendingSnacksMidpop
   entities:
   - uid: 11784
     components:
@@ -88813,6 +88813,13 @@ entities:
     components:
     - type: Transform
       pos: -38.5,-10.5
+      parent: 2
+- proto: SpawnPointWardenHelper
+  entities:
+  - uid: 11626
+    components:
+    - type: Transform
+      pos: -38.5,-9.5
       parent: 2
 - proto: SpeedLoaderCap
   entities:

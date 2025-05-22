@@ -4,7 +4,7 @@ meta:
   engineVersion: 250.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/15/2025 11:56:52
+  time: 05/22/2025 15:37:04
   entityCount: 7193
 maps:
 - 1
@@ -37646,6 +37646,13 @@ entities:
     components:
     - type: Transform
       pos: -8.5,19.5
+      parent: 2
+- proto: SpawnPointWardenHelper
+  entities:
+  - uid: 3344
+    components:
+    - type: Transform
+      pos: -8.5,15.5
       parent: 2
 - proto: SpearBone
   entities:
