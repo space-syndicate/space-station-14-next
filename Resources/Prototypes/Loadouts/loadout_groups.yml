@@ -95,6 +95,7 @@
   - EmergencyNitrogen
   - EmergencyOxygen
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenMoth # NEXT_MOTH_LOADOUT
 
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
@@ -510,6 +511,7 @@
   - EmergencyNitrogenClown
   - EmergencyOxygenClown
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenClownMoth # NEXT_MOTH_LOADOUT
 
 - type: loadoutGroup
   id: MimeHead
@@ -566,6 +568,7 @@
   - EmergencyNitrogenMime
   - EmergencyOxygenMime
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenMimeMoth # NEXT_MOTH_LOADOUT
 
 - type: loadoutGroup
   id: MusicianJumpsuit
@@ -852,6 +855,7 @@
   - EmergencyNitrogenExtended
   - EmergencyOxygenExtended
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenExtendedMoth # NEXT_MOTH_LOADOUT
 
 # Science
 - type: loadoutGroup
@@ -1144,6 +1148,7 @@
   - EmergencyNitrogenSecurity
   - EmergencyOxygenSecurity
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenSecurityMoth # NEXT_MOTH_LOADOUT
 
 - type: loadoutGroup
   id: SecurityStar
@@ -1333,6 +1338,7 @@
   - EmergencyNitrogenMedical
   - EmergencyOxygenMedical
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenMedicalMoth # NEXT_MOTH_LOADOUT
 
 # Wildcards
 - type: loadoutGroup
