@@ -13,7 +13,7 @@
   alternateRequirementSets:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 7200 #2 hrs
+      time: 36000 #10 hrs
   weight: 6
   startingGear: WardenGear
   icon: "JobIconWarden"
