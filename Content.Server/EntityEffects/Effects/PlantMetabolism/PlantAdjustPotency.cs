@@ -11,6 +11,9 @@ public sealed partial class PlantAdjustPotency : PlantAdjustAttribute
 {
     public override string GuidebookAttributeName { get; set; } = "plant-attribute-potency";
 
+    [DataField("limit")]
+    public int PotencyLimit { get; set; } = 50;
+
     public override void Effect(EntityEffectBaseArgs args)
     {
         if (!CanMetabolize(args.TargetEntity, out var plantHolderComp, args.EntityManager))
@@ -23,6 +26,6 @@ public sealed partial class PlantAdjustPotency : PlantAdjustAttribute
 
         plantHolder.EnsureUniqueSeed(args.TargetEntity, plantHolderComp);
 
-        plantHolderComp.Seed.Potency = Math.Max(plantHolderComp.Seed.Potency + Amount, 1);
+        plantHolderComp.Seed.Potency = Math.Min(Math.Max(plantHolderComp.Seed.Potency + Amount, 1), PotencyLimit);
     }
 }
