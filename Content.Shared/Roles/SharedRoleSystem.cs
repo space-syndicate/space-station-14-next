@@ -630,6 +630,19 @@ public abstract class SharedRoleSystem : EntitySystem
 
         return antag.Requirements;
     }
+
+    // Corvax-Next-PascalCaseNameOfTheFicha-Start
+    public Dictionary<string, HashSet<JobRequirement>>? GetAlternateJobRequirements(JobPrototype job)
+    {
+        return job.AlternateRequirementSets;
+    }
+
+    public Dictionary<string, HashSet<JobRequirement>>? GetAlternateJobRequirements(ProtoId<JobPrototype> job)
+    {
+        return _prototypes.Index(job).AlternateRequirementSets;
+    }
+    // Corvax-Next-PascalCaseNameOfTheFicha-End
+
 }
 
 /// <summary>

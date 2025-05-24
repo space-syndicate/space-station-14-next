@@ -50,6 +50,9 @@ namespace Content.Shared.Roles
         [DataField, Access(typeof(SharedRoleSystem), Other = AccessPermissions.None)]
         public HashSet<JobRequirement>? Requirements;
 
+        [DataField, Access(typeof(SharedRoleSystem), Other = AccessPermissions.None)] // Corvax-Next-PascalCaseNameOfTheFicha
+        public Dictionary<string, HashSet<JobRequirement>>? AlternateRequirementSets; // Corvax-Next-PascalCaseNameOfTheFicha: sets of requirements - one must be matched in order to
+
         /// <summary>
         ///     When true - the station will have anouncement about arrival of this player.
         /// </summary>
