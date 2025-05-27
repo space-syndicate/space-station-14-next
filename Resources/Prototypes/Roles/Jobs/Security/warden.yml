@@ -40,7 +40,7 @@
   equipment:
     eyes: ClothingEyesGlassesSecurity
     id: WardenPDA
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetAltSecurity
     pocket1: WeaponPistolMk58
   storage:
     back:
