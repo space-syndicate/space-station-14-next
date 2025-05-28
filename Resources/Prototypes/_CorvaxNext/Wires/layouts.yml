@@ -5,3 +5,10 @@
   - !type:AiInteractWireAction
   - !type:PowerWireAction
   - !type:AccessWireAction
+
+- type: wireLayout
+  id: ScannerGate
+  wires:
+  - !type:PowerWireAction
+  - !type:PowerWireAction
+  dummyWires: 2

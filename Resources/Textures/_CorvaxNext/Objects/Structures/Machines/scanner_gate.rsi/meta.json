@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from TG at commit https://github.com/tgstation/tgstation/commit/1e7c87a9d76c9c448f1dcba2c96dbc84b4abce89#diff-b01dfe2752108328f8386413ee5074f0901510ef466d3280160ee34f3eff6016",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "scangate_idle",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ]
+      ]
+    },
+	{
+      "name": "scangate_no",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ]
+      ]
+    },
+	{
+      "name": "scangate_ok",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "scangate",
+      "directions": 4
+    },
+    {
+      "name": "scangate_open",
+      "directions": 4
+    },
+	{
+      "name": "icon"
+    }
+  ]
+}

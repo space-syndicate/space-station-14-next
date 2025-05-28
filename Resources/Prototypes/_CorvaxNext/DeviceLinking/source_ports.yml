@@ -1,0 +1,26 @@
+- type: sourcePort
+  id: GateTrigger
+  name: scanner-gate-port-name-trigger
+  description: scanner-gate-port-description-trigger
+  defaultLinks:
+    - Toggle
+    - Trigger
+    - Timer
+
+- type: sourcePort
+  id: GatePassed
+  name: scanner-gate-port-name-passed
+  description: scanner-gate-port-description-passed
+  defaultLinks:
+    - Toggle
+    - Trigger
+    - Timer
+
+- type: sourcePort
+  id: GateDenied
+  name: scanner-gate-port-name-denied
+  description: scanner-gate-port-description-denied
+  defaultLinks:
+    - Toggle
+    - Trigger
+    - Timer

@@ -35,6 +35,7 @@
   - BoozeDispenserMachineCircuitboard
   - SodaDispenserMachineCircuitboard
   - PrinterDocMachineCircuitboard # Corvax-Printer
+  - ScannerGateCircuitboard # Corvax-Next-ScannerGate
 
 ## Dynamic
 
@@ -61,4 +62,3 @@
   - MassMediaCircuitboard
   - ReagentGrinderIndustrialMachineCircuitboard
   - JukeboxCircuitBoard
-  - DawInstrumentMachineCircuitboard

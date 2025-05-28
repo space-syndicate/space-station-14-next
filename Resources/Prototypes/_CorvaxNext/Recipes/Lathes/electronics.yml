@@ -7,3 +7,8 @@
   parent: BaseGoldCircuitboardRecipe
   id: MachineBluespaceTransitorCircuitboard
   result: MachineBluespaceTransitorCircuitboard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: ScannerGateCircuitboard
+  result: ScannerGateCircuitboard
