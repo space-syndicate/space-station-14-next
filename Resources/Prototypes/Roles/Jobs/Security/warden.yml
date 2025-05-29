@@ -7,7 +7,10 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 108000 #50 hrs # Corvax-RoleTime
-  weight: 5
+    - !type:RoleTimeRequirement
+      role: JobWardenHelper
+      time: 18000 #5 hrs # Corvax-WardHelp-NEXT
+  weight: 6
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
@@ -37,7 +40,7 @@
   equipment:
     eyes: ClothingEyesGlassesSecurity
     id: WardenPDA
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetAltSecurity # Corvax-Next-WardenHeadset
     pocket1: WeaponPistolMk58
   storage:
     back:

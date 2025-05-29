@@ -4,8 +4,8 @@ meta:
   engineVersion: 250.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/15/2025 20:44:04
-  entityCount: 19705
+  time: 05/22/2025 15:16:46
+  entityCount: 19706
 maps:
 - 1
 grids:
@@ -17288,7 +17288,7 @@ entities:
       pos: -43.5,-45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -46503.984
+      secondsUntilStateChange: -47979.56
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -110231,6 +110231,13 @@ entities:
     components:
     - type: Transform
       pos: -21.5,4.5
+      parent: 2
+- proto: SpawnPointWardenHelper
+  entities:
+  - uid: 9444
+    components:
+    - type: Transform
+      pos: -21.5,0.5
       parent: 2
 - proto: SpearBone
   entities:

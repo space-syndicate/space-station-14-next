@@ -48,6 +48,9 @@
     messagePerceivedByOthers: comp-window-knock
     interactSuccessSound:
       path: /Audio/Effects/glass_knock.ogg
+  - type: Penetratable # Corvax-Next - Better snipers
+    penetrateDamage: 200
+    damagePenalty: 0.4
 
 - type: entity
   id: BlastDoorOpen

@@ -256,6 +256,13 @@
   components:
   - type: StaticPrice
     price: 420
+  # Corvax-Next-LaserGunsRebalancea-start
+  - type: Battery
+    maxCharge: 1875
+    startingCharge: 1875
+  - type: Gun
+    fireRate: 2.25
+  # Corvax-Next-LaserGunsRebalancea-end
   - type: HitscanBatteryAmmoProvider
     proto: RedLaser
     fireCost: 62.5
@@ -391,6 +398,11 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
     requiresSkill: true # Corvax-Next-Skills
+  # Corvax-Next-LaserGunsRebalancea-start
+  - type: Battery
+    maxCharge: 1500
+    startingCharge: 1500
+  # Corvax-Next-LaserGunsRebalancea-end
   - type: HitscanBatteryAmmoProvider
     proto: RedHeavyLaser
     fireCost: 100

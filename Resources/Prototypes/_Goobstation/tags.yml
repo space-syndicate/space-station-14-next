@@ -17,6 +17,18 @@
   id: Lungs
 
 - type: Tag
+  id: MagazineAntiMateriel
+
+- type: Tag
+  id: MagazineHighCaliber
+
+- type: Tag
+  id: MagazineMagnumLeverRifle
+
+- type: Tag
+  id: MagazineSmart
+
+- type: Tag
   id: Mask
 
 - type: Tag

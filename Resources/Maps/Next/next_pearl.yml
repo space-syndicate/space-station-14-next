@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 248.0.2
+  engineVersion: 250.0.0
   forkId: ""
   forkVersion: ""
-  time: 04/04/2025 16:57:55
-  entityCount: 23645
+  time: 05/22/2025 15:21:47
+  entityCount: 23646
 maps:
 - 3180
 grids:
@@ -33022,7 +33022,7 @@ entities:
       pos: 111.5,63.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -17332.94
+      secondsUntilStateChange: -17375.348
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -59708,6 +59708,54 @@ entities:
     - type: Transform
       pos: 51.76444,80.61526
       parent: 1
+- proto: ChemistryBottleEpinephrine
+  entities:
+  - uid: 16960
+    components:
+    - type: Transform
+      parent: 16953
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 16962
+    components:
+    - type: Transform
+      parent: 16953
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: ChemistryBottleEZNutrient
+  entities:
+  - uid: 12031
+    components:
+    - type: Transform
+      pos: 146.81624,62.702812
+      parent: 1
+  - uid: 12792
+    components:
+    - type: Transform
+      pos: 111.71776,87.77846
+      parent: 1
+  - uid: 12793
+    components:
+    - type: Transform
+      pos: 111.71776,87.57533
+      parent: 1
+  - uid: 12794
+    components:
+    - type: Transform
+      pos: 97.69946,87.80971
+      parent: 1
+  - uid: 12795
+    components:
+    - type: Transform
+      pos: 97.66821,87.52846
+      parent: 1
+  - uid: 14107
+    components:
+    - type: Transform
+      pos: 93.71416,24.96386
+      parent: 1
 - proto: ChemistryHotplate
   entities:
   - uid: 16250
@@ -60321,6 +60369,7 @@ entities:
     - type: Transform
       pos: 53.531258,89.87706
       parent: 1
+    - type: Visibility
   - uid: 16513
     components:
     - type: Transform
@@ -60338,6 +60387,7 @@ entities:
           occludes: True
           ents:
           - 16514
+    - type: Visibility
 - proto: ClothingBeltJanitorFilled
   entities:
   - uid: 11821
@@ -72059,22 +72109,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 49.5,128.5
       parent: 1
-- proto: EpinephrineChemistryBottle
-  entities:
-  - uid: 16960
-    components:
-    - type: Transform
-      parent: 16953
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 16962
-    components:
-    - type: Transform
-      parent: 16953
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ExosuitFabricator
   entities:
   - uid: 15023
@@ -72226,38 +72260,6 @@ entities:
     components:
     - type: Transform
       pos: 88.5,72.5
-      parent: 1
-- proto: EZNutrientChemistryBottle
-  entities:
-  - uid: 12031
-    components:
-    - type: Transform
-      pos: 146.81624,62.702812
-      parent: 1
-  - uid: 12792
-    components:
-    - type: Transform
-      pos: 111.71776,87.77846
-      parent: 1
-  - uid: 12793
-    components:
-    - type: Transform
-      pos: 111.71776,87.57533
-      parent: 1
-  - uid: 12794
-    components:
-    - type: Transform
-      pos: 97.69946,87.80971
-      parent: 1
-  - uid: 12795
-    components:
-    - type: Transform
-      pos: 97.66821,87.52846
-      parent: 1
-  - uid: 14107
-    components:
-    - type: Transform
-      pos: 93.71416,24.96386
       parent: 1
 - proto: FaxMachineBase
   entities:
@@ -129671,7 +129673,7 @@ entities:
     - type: Transform
       pos: 121.5,73.5
       parent: 1
-- proto: RandomVendingSnacks
+- proto: RandomVendingSnacksMidpop
   entities:
   - uid: 11661
     components:
@@ -134166,6 +134168,13 @@ entities:
     components:
     - type: Transform
       pos: 92.5,58.5
+      parent: 1
+- proto: SpawnPointWardenHelper
+  entities:
+  - uid: 10186
+    components:
+    - type: Transform
+      pos: 91.5,58.5
       parent: 1
 - proto: SpiderWeb
   entities:

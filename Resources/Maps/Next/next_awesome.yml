@@ -2,10 +2,10 @@ meta:
   format: 7
   category: Map
   engineVersion: 250.0.0
-  forkId: syndicate-next
-  forkVersion: 6b9cd54358156a15cf1cfb2640088256ad1af1bd
-  time: 05/17/2025 06:03:06
-  entityCount: 23749
+  forkId: ""
+  forkVersion: ""
+  time: 05/22/2025 14:43:15
+  entityCount: 23747
 maps:
 - 1
 grids:
@@ -11736,7 +11736,7 @@ entities:
       pos: 12.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -62806.938
+      secondsUntilStateChange: -62873.77
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11747,7 +11747,7 @@ entities:
       pos: 13.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -62805.37
+      secondsUntilStateChange: -62872.203
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -114812,7 +114812,7 @@ entities:
     - type: Transform
       pos: 6.5,78.5
       parent: 2
-- proto: RandomVendingSnacks
+- proto: RandomVendingSnacksMidpop
   entities:
   - uid: 767
     components:
@@ -121506,6 +121506,7 @@ entities:
     - type: EntityStorage
       air:
         volume: 200
+        immutable: False
         temperature: 293.14673
         moles:
         - 1.7459903
@@ -121521,12 +121522,32 @@ entities:
         - 0
         - 0
       closeSound: !type:SoundPathSpecifier
+        params:
+          variation: null
+          playOffsetSeconds: 0
+          loop: False
+          referenceDistance: 1
+          rolloffFactor: 1
+          maxDistance: 15
+          pitch: 1
+          volume: 0
         path: /Audio/Effects/closetclose.ogg
       openSound: !type:SoundPathSpecifier
+        params:
+          variation: null
+          playOffsetSeconds: 0
+          loop: False
+          referenceDistance: 1
+          rolloffFactor: 1
+          maxDistance: 15
+          pitch: 1
+          volume: 0
         path: /Audio/Effects/closetopen.ogg
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
+          showEnts: False
+          occludes: True
           ents:
           - 4873
           - 4871
@@ -121548,6 +121569,8 @@ entities:
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
+          showEnts: False
+          occludes: True
           ents:
           - 17692
           - 17691
@@ -123594,6 +123617,13 @@ entities:
     components:
     - type: Transform
       pos: 28.5,-29.5
+      parent: 2
+- proto: SpawnPointWardenHelper
+  entities:
+  - uid: 277
+    components:
+    - type: Transform
+      pos: 28.5,-25.5
       parent: 2
 - proto: SpeedLoaderMagnum
   entities:

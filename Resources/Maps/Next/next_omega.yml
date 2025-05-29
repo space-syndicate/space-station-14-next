@@ -4,8 +4,8 @@ meta:
   engineVersion: 250.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/15/2025 17:19:06
-  entityCount: 14213
+  time: 05/22/2025 15:17:55
+  entityCount: 14214
 maps:
 - 1
 grids:
@@ -75243,6 +75243,13 @@ entities:
     components:
     - type: Transform
       pos: -34.5,15.5
+      parent: 2
+- proto: SpawnPointWardenHelper
+  entities:
+  - uid: 14214
+    components:
+    - type: Transform
+      pos: -29.5,15.5
       parent: 2
 - proto: Spoon
   entities:

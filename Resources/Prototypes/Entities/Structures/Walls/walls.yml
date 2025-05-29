@@ -51,6 +51,10 @@
   - type: RadiationBlocker
     resistance: 2
   - type: BlockWeather
+  - type: Penetratable # Corvax-Next - Better snipers
+    penetrateDamage: 50
+    damagePenalty: 0.1
+
   - type: SunShadowCast
 
 - type: entity
@@ -461,6 +465,9 @@
     - type: IconSmooth
       key: walls
       base: plastitanium
+    - type: Penetratable # Corvax-Next - Better snipers
+      penetrateDamage: 1000
+      damagePenalty: 0.8
 
 - type: entity
   parent: WallPlastitaniumIndestructible
@@ -484,6 +491,9 @@
                   max: 1
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
+    - type: Penetratable # Corvax-Next - Better snipers
+      penetrateDamage: 200
+      damagePenalty: 0.5
 
 - type: entity
   parent: WallShuttleDiagonal
@@ -528,6 +538,9 @@
           collection: MetalSlam
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: Penetratable # Corvax-Next - Better snipers
+    penetrateDamage: 200
+    damagePenalty: 0.5
 
 - type: entity
   id: WallPlastitaniumDiagonalIndestructible
@@ -577,6 +590,9 @@
         - FullTileMask
         layer:
         - WallLayer
+  - type: Penetratable # Corvax-Next - Better snipers
+    penetrateDamage: 1000
+    damagePenalty: 0.8
 
 - type: entity
   parent: BaseWall
@@ -636,6 +652,10 @@
     price: 250
   - type: RadiationBlocker
     resistance: 5
+  - type: Penetratable # Corvax-Next - Better snipers
+    penetrateDamage: 100
+    damagePenalty: 0.25
+
 
 - type: entity
   parent: WallReinforced
@@ -736,6 +756,9 @@
     base: riveted
   - type: StaticPrice
     price: 150
+  - type: Penetratable # Corvax-Next - Better snipers
+    penetrateDamage: 200
+    damagePenalty: 0.5
 
 - type: entity
   parent: BaseWall
@@ -895,6 +918,9 @@
   - type: Construction
     graph: Girder
     node: diagonalshuttleWall
+  - type: Penetratable # Corvax-Next - Better snipers
+    penetrateDamage: 90
+    damagePenalty: 0.3
 
 - type: entity
   parent: BaseWall
@@ -954,6 +980,9 @@
           3: { state: shuttle_construct-3, visible: true}
           4: { state: shuttle_construct-4, visible: true}
           5: { state: shuttle_construct-5, visible: true}
+  - type: Penetratable # Corvax-Next - Better snipers
+    penetrateDamage: 90
+    damagePenalty: 0.3
   - type: Reflect
     reflectProb: 1
 

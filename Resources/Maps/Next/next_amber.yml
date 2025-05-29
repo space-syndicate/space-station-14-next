@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 248.0.2
+  engineVersion: 250.0.0
   forkId: ""
   forkVersion: ""
-  time: 04/04/2025 10:19:32
-  entityCount: 21449
+  time: 05/22/2025 14:38:00
+  entityCount: 21450
 maps:
 - 1
 grids:
@@ -24640,6 +24640,8 @@ entities:
     - type: Transform
       pos: -13.459316,-32.28296
       parent: 2
+    - type: CollisionWake
+      enabled: False
     - type: Conveyed
   - uid: 3726
     components:
@@ -54287,6 +54289,13 @@ entities:
     - type: Transform
       pos: -26.5,-34.5
       parent: 2
+- proto: ChemistryBottleEZNutrient
+  entities:
+  - uid: 17701
+    components:
+    - type: Transform
+      pos: 48.696175,-60.376625
+      parent: 2
 - proto: ChemistryEmptyBottle03
   entities:
   - uid: 7111
@@ -55382,6 +55391,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+    - type: Visibility
 - proto: ClothingBackpackDuffel
   entities:
   - uid: 1038
@@ -55389,6 +55399,7 @@ entities:
     - type: Transform
       pos: 52.586926,-35.256138
       parent: 2
+    - type: Visibility
 - proto: ClothingBackpackDuffelBrigmedic
   entities:
   - uid: 8615
@@ -55398,6 +55409,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+    - type: Visibility
 - proto: ClothingBackpackDuffelCargo
   entities:
   - uid: 979
@@ -55405,6 +55417,7 @@ entities:
     - type: Transform
       pos: 0.116775274,20.693357
       parent: 2
+    - type: Visibility
 - proto: ClothingBackpackDuffelSurgeryFilled
   entities:
   - uid: 5746
@@ -55431,6 +55444,7 @@ entities:
           priority: 0
           component: ClothingSpeedModifier
         title: null
+    - type: Visibility
 - proto: ClothingBackpackDuffelSyndicatePyjamaBundle
   entities:
   - uid: 7203
@@ -55457,6 +55471,7 @@ entities:
           priority: 0
           component: ClothingSpeedModifier
         title: null
+    - type: Visibility
 - proto: ClothingBackpackSatchelBrigmedic
   entities:
   - uid: 8229
@@ -55466,6 +55481,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+    - type: Visibility
 - proto: ClothingBeltBandolier
   entities:
   - uid: 8283
@@ -66605,13 +66621,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 36.5,-23.5
-      parent: 2
-- proto: EZNutrientChemistryBottle
-  entities:
-  - uid: 17701
-    components:
-    - type: Transform
-      pos: 48.696175,-60.376625
       parent: 2
 - proto: FaxMachineBase
   entities:
@@ -108940,7 +108949,7 @@ entities:
     - type: Transform
       pos: 26.5,-24.5
       parent: 2
-- proto: RandomVendingSnacks
+- proto: RandomVendingSnacksMidpop
   entities:
   - uid: 1187
     components:
@@ -117385,6 +117394,13 @@ entities:
     components:
     - type: Transform
       pos: -21.5,-4.5
+      parent: 2
+- proto: SpawnPointWardenHelper
+  entities:
+  - uid: 20967
+    components:
+    - type: Transform
+      pos: -25.5,-4.5
       parent: 2
 - proto: SpawnVendingMachineRestockFoodDrink
   entities:

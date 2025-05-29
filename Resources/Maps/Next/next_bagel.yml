@@ -4,7 +4,7 @@ meta:
   engineVersion: 250.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/15/2025 11:41:52
+  time: 05/22/2025 14:44:19
   entityCount: 26753
 maps:
 - 1
@@ -12697,7 +12697,7 @@ entities:
       pos: -20.5,-3.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -144613.31
+      secondsUntilStateChange: -144652.44
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -14485,7 +14485,7 @@ entities:
       pos: -58.5,30.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -32457.21
+      secondsUntilStateChange: -32496.34
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -14502,7 +14502,7 @@ entities:
       pos: -63.5,33.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -32456.678
+      secondsUntilStateChange: -32495.807
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -127459,7 +127459,7 @@ entities:
     - type: Transform
       pos: 7.5,-19.5
       parent: 2
-- proto: RandomVendingSnacks
+- proto: RandomVendingSnacksMidpop
   entities:
   - uid: 19083
     components:
@@ -139426,6 +139426,13 @@ entities:
     components:
     - type: Transform
       pos: -26.5,-9.5
+      parent: 2
+- proto: SpawnPointWardenHelper
+  entities:
+  - uid: 21035
+    components:
+    - type: Transform
+      pos: -26.5,-4.5
       parent: 2
 - proto: SpawnVendingMachineRestockFoodDrink
   entities:
