@@ -6,6 +6,27 @@
   placement:
     mode: AlignTileAny
   components:
+    - type: RequireProjectileTarget
+    - type: Damageable
+      damageContainer: StructuralInorganic
+      damageModifierSet: StructuralMetallic
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
     - type: ApcPowerReceiver
       powerLoad: 1000
     - type: ExtensionCableReceiver
@@ -52,13 +73,22 @@
           - MachineMask
           layer:
           - MachineLayer
+        fix3:
+          hard: true
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.49,-0.49,0.49,0.49"
+          mask:
+          - TabletopMachineMask
+          layer:
+          - TabletopMachineLayer
         scangate:
           hard: false
           shape:
             !type:PhysShapeAabb
             bounds: "-0.4,-0.1,0.4,0.1"
           mask:
-          - MachineMask
+          - ItemMask
           layer:
           - MachineLayer
     - type: AccessReader
