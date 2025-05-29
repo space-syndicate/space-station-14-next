@@ -37,10 +37,14 @@
     noRot: true
   - type: PlantHolder
     drawWarnings: false
+  - type: SeedLung
   - type: SolutionContainerManager
     solutions:
       soil:
         maxVol: 200
+      SeedLung:
+        maxVol: 100.0
+        canReact: true
   - type: RefillableSolution
     solution: soil
     maxRefill: 50

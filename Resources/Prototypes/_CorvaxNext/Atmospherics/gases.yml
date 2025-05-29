@@ -1,0 +1,109 @@
+﻿- type: reagent
+  id: Brunium
+  name: reagent-name-brunium
+  desc: reagent-desc-brunium
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: bitter
+  color: "#ed760e"
+  boilingPoint: -195.8
+  meltingPoint: -210.0
+  metabolisms:
+    Gas:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Brunium
+          min: 0.5
+        scaleByQuantity: true
+        ignoreResistances: true
+        damage:
+          types:
+            Slash: -1.25
+            Piercing: -1.25
+            Blunt: -1.25
+            Heat: -1.5
+            Cold: -0.25
+
+- type: gas
+  id: 9
+  name: brunium
+  specificHeat: 600
+  heatCapacityRatio: 1.33
+  molarMass: 175
+  gasOverlaySprite: /Textures/Effects/atmospherics.rsi
+  gasOverlayState: plasma_old
+  gasMolesVisible: 25
+  color: ed760e
+  reagent: Brunium
+  pricePerMole: 15
+
+
+- type: reagent
+  id: Harvium
+  name: reagent-name-harvium
+  desc: reagent-desc-harvium
+  physicalDesc: reagent-physical-desc-robust
+  flavor: bitter
+  color: "#33cc33"
+  boilingPoint: -195.8
+  meltingPoint: -210.0
+  plantMetabolism:
+  - !type:PlantHarviumEffects {}
+  - !type:PlantAdjustPotency
+    amount: 15
+    probability: 0.5
+  - !type:PlantAdjustWaterConsumation
+    amount: 0.1
+    probability: 0.25
+  metabolisms:
+    Gas:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Harvium
+          min: 1
+        - !type:OrganType
+          type: Plant
+          shouldHave: false
+        scaleByQuantity: true
+        ignoreResistances: false
+        damage:
+          types:
+            Poison: 4
+            Radiation: 0.2
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Harvium
+          min: 1
+        - !type:OrganType
+          type: Plant
+        damage:
+          types:
+            Poison: -0.5
+            Radiation: -0.25
+      - !type:SatiateThirst
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Harvium
+          min: 1
+        - !type:OrganType
+          type: Plant
+        factor: -50
+
+
+- type: gas
+  id: 10
+  name: harvium
+  specificHeat: 600
+  heatCapacityRatio: 1.33
+  molarMass: 175
+  gasOverlaySprite: /Textures/Effects/atmospherics.rsi
+  gasOverlayState: miasma_old
+  color: 33cc33
+  gasMolesVisible: 10
+  reagent: Harvium
+  pricePerMole: 25
+
