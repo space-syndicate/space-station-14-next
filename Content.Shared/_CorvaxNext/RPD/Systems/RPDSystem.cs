@@ -311,7 +311,7 @@ public class RPDSystem : EntitySystem
         if (_charges.IsEmpty(uid, charges))
         {
             if (popMsgs)
-                _popup.PopupClient(Loc.GetString("rcd-component-no-ammo-message"), uid, user);
+                _popup.PopupClient(Loc.GetString("rpd-component-no-ammo-message"), uid, user);
 
             return false;
         }
@@ -319,7 +319,7 @@ public class RPDSystem : EntitySystem
         if (_charges.HasInsufficientCharges(uid, component.CachedPrototype.Cost, charges))
         {
             if (popMsgs)
-                _popup.PopupClient(Loc.GetString("rcd-component-insufficient-ammo-message"), uid, user);
+                _popup.PopupClient(Loc.GetString("rpd-component-insufficient-ammo-message"), uid, user);
 
             return false;
         }

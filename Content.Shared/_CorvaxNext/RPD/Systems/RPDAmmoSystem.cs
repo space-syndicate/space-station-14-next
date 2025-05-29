@@ -28,7 +28,7 @@ public sealed class RPDAmmoSystem : EntitySystem
         if (!args.IsInDetailsRange)
             return;
 
-        var examineMessage = Loc.GetString("rcd-ammo-component-on-examine", ("charges", comp.Charges));
+        var examineMessage = Loc.GetString("rpd-ammo-component-on-examine", ("charges", comp.Charges));
         args.PushText(examineMessage);
     }
 
@@ -47,11 +47,11 @@ public sealed class RPDAmmoSystem : EntitySystem
         var count = FixedPoint2.Min(charges.MaxCharges - charges.Charges,comp.Charges);
         if (count <= 0)
         {
-            _popup.PopupClient(Loc.GetString("rcd-ammo-component-after-interact-full"), target, user);
+            _popup.PopupClient(Loc.GetString("rpd-ammo-component-after-interact-full"), target, user);
             return;
         }
 
-        _popup.PopupClient(Loc.GetString("rcd-ammo-component-after-interact-refilled"), target, user);
+        _popup.PopupClient(Loc.GetString("rpd-ammo-component-after-interact-refilled"), target, user);
         _charges.AddCharges(target, count, charges);
         comp.Charges -= count;
         Dirty(uid, comp);

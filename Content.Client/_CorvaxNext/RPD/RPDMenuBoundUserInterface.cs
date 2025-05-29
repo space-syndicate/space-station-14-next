@@ -97,7 +97,7 @@ public sealed class RPDMenuBoundUserInterface : BoundUserInterface
         if (_playerManager.LocalSession?.AttachedEntity == null)
             return;
 
-        var msg = Loc.GetString("rcd-component-change-mode", ("mode", Loc.GetString(proto.SetName)));
+        var msg = Loc.GetString("rpd-component-change-mode", ("mode", Loc.GetString(proto.SetName)));
 
         if (proto.Mode is RpdMode.ConstructObject)
         {
@@ -107,7 +107,7 @@ public sealed class RPDMenuBoundUserInterface : BoundUserInterface
                 _prototypeManager.TryIndex(proto.Prototype, out var entProto, logError: false))
                 name = entProto.Name;
 
-            msg = Loc.GetString("rcd-component-change-build-mode", ("name", name));
+            msg = Loc.GetString("rpd-component-change-build-mode", ("name", name));
         }
 
         // Popup message
