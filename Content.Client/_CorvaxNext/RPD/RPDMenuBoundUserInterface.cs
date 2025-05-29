@@ -1,26 +1,26 @@
 using Content.Client.Popups;
 using Content.Client.UserInterface.Controls;
-using Content.Shared.RCD;
-using Content.Shared.RCD.Components;
+using Content.Shared.RPD;
+using Content.Shared.RPD.Components;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Client.RCD;
+namespace Content.Client.RPD;
 
 [UsedImplicitly]
-public sealed class RCDMenuBoundUserInterface : BoundUserInterface
+public sealed class RPDMenuBoundUserInterface : BoundUserInterface
 {
     private static readonly Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)> PrototypesGroupingInfo
         = new Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)>
         {
             ["WallsAndFlooring"] = ("rcd-component-walls-and-flooring", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCD/walls_and_flooring.png"))),
-            ["WindowsAndGrilles"] = ("rcd-component-windows-and-grilles", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCD/windows_and_grilles.png"))),
-            ["Airlocks"] = ("rcd-component-airlocks", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCD/airlocks.png"))),
-            ["Electrical"] = ("rcd-component-electrical", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCD/multicoil.png"))),
-            ["Lighting"] = ("rcd-component-lighting", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCD/lighting.png"))),
+            ["Piping"] = ("rpd-component-piping", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RPD/fourway.png"))),
+            ["AtmosphericUtility"] = ("rpd-component-atmosphericutility", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RPD/port.png"))),
+            ["PumpsValves"] = ("rpd-component-pumps", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RPD/pump_volume.png"))),
+            ["Vents"] = ("rpd-component-vents", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RPD/vent_passive.png"))),
         };
 
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -28,7 +28,7 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
 
     private SimpleRadialMenu? _menu;
 
-    public RCDMenuBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+    public RPDMenuBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
         IoCManager.InjectDependencies(this);
     }
@@ -37,18 +37,18 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
     {
         base.Open();
 
-        if (!EntMan.TryGetComponent<RCDComponent>(Owner, out var rcd))
+        if (!EntMan.TryGetComponent<RPDComponent>(Owner, out var rpd))
             return;
 
         _menu = this.CreateWindow<SimpleRadialMenu>();
         _menu.Track(Owner);
-        var models = ConvertToButtons(rcd.AvailablePrototypes);
+        var models = ConvertToButtons(rpd.AvailablePrototypes);
         _menu.SetButtons(models);
 
         _menu.OpenOverMouseScreenPosition();
     }
 
-    private IEnumerable<RadialMenuNestedLayerOption> ConvertToButtons(HashSet<ProtoId<RCDPrototype>> prototypes)
+    private IEnumerable<RadialMenuNestedLayerOption> ConvertToButtons(HashSet<ProtoId<RPDPrototype>> prototypes)
     {
         Dictionary<string, List<RadialMenuActionOption>> buttonsByCategory = new();
         foreach (var protoId in prototypes)
@@ -63,7 +63,7 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
                 buttonsByCategory.Add(prototype.Category, list);
             }
 
-            var actionOption = new RadialMenuActionOption<RCDPrototype>(HandleMenuOptionClick, prototype)
+            var actionOption = new RadialMenuActionOption<RPDPrototype>(HandleMenuOptionClick, prototype)
             {
                 Sprite = prototype.Sprite,
                 ToolTip = GetTooltip(prototype)
@@ -87,11 +87,11 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
         return models;
     }
 
-    private void HandleMenuOptionClick(RCDPrototype proto)
+    private void HandleMenuOptionClick(RPDPrototype proto)
     {
         // A predicted message cannot be used here as the RCD UI is closed immediately
         // after this message is sent, which will stop the server from receiving it
-        SendMessage(new RCDSystemMessage(proto.ID));
+        SendMessage(new RPDSystemMessage(proto.ID));
 
 
         if (_playerManager.LocalSession?.AttachedEntity == null)
@@ -99,7 +99,7 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
 
         var msg = Loc.GetString("rcd-component-change-mode", ("mode", Loc.GetString(proto.SetName)));
 
-        if (proto.Mode is RcdMode.ConstructTile or RcdMode.ConstructObject)
+        if (proto.Mode is RpdMode.ConstructObject)
         {
             var name = Loc.GetString(proto.SetName);
 
@@ -115,11 +115,11 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
         popup.PopupClient(msg, Owner, _playerManager.LocalSession.AttachedEntity);
     }
 
-    private string GetTooltip(RCDPrototype proto)
+    private string GetTooltip(RPDPrototype proto)
     {
         string tooltip;
 
-        if (proto.Mode is RcdMode.ConstructTile or RcdMode.ConstructObject
+        if (proto.Mode is RpdMode.ConstructObject
             && proto.Prototype != null
             && _prototypeManager.TryIndex(proto.Prototype, out var entProto, logError: false))
         {

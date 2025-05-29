@@ -1,11 +1,12 @@
 using Content.Shared.FixedPoint;
 using Content.Shared.RCD.Systems;
+using Content.Shared.RPD.Systems;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.RCD.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(RCDAmmoSystem))]
+[Access(typeof(RCDAmmoSystem), typeof(RPDAmmoSystem))]
 public sealed partial class RCDAmmoComponent : Component
 {
     /// <summary>

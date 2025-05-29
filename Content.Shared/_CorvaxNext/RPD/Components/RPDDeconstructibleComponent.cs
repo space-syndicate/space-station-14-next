@@ -1,13 +1,13 @@
 using Content.Shared.FixedPoint;
-using Content.Shared.RCD.Systems;
+using Content.Shared.RPD.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.RCD.Components;
+namespace Content.Shared.RPD.Components;
 
 [RegisterComponent, NetworkedComponent]
-[Access(typeof(RCDSystem))]
-public sealed partial class RCDDeconstructableComponent : Component
+[Access(typeof(RPDSystem))]
+public sealed partial class RPDDeconstructableComponent : Component
 {
     /// <summary>
     /// Number of charges consumed when the deconstruction is completed
@@ -31,11 +31,12 @@ public sealed partial class RCDDeconstructableComponent : Component
     /// Toggles whether this entity is deconstructable or not
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public bool Deconstructable = true;
+    public bool Deconstructable = false;
+
 
     /// <summary>
     /// Toggles whether this entity is deconstructable by the RPD or not
     /// </summary>
     [DataField("rpd"), ViewVariables(VVAccess.ReadWrite)]
-    public bool RpdDeconstructable = false;
+    public bool RpdDeconstructable = true;
 }
