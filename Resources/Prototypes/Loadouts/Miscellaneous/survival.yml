@@ -27,6 +27,13 @@
     species:
     - Vox
 
+- type: loadoutEffectGroup
+  id: CottonEater
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Moth
+
 # Basic
 - type: loadout
   id: EmergencyOxygen
@@ -45,6 +52,15 @@
   storage:
     back:
     - BoxSurvivalNitrogen
+
+- type: loadout
+  id: EmergencyOxygenMoth
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CottonEater
+  storage:
+    back:
+    - BoxSurvivalMoth
 
 # Clown
 - type: loadout
@@ -65,6 +81,15 @@
     back:
     - BoxHugNitrogen
 
+- type: loadout
+  id: EmergencyOxygenClownMoth
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CottonEater
+  storage:
+    back:
+    - BoxHugMoth
+
 # Mime
 - type: loadout
   id: EmergencyOxygenMime
@@ -83,6 +108,15 @@
   storage:
     back:
     - BoxMimeNitrogen
+
+- type: loadout
+  id: EmergencyOxygenMimeMoth
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CottonEater
+  storage:
+    back:
+    - BoxMimeMoth
 
 # Engineering / Extended
 - type: loadout
@@ -103,6 +137,15 @@
     back:
     - BoxSurvivalEngineeringNitrogen
 
+- type: loadout
+  id: EmergencyOxygenExtendedMoth
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CottonEater
+  storage:
+    back:
+    - BoxSurvivalEngineeringMoth
+
 # Medical
 - type: loadout
   id: EmergencyOxygenMedical
@@ -122,6 +165,15 @@
     back:
     - BoxSurvivalMedicalNitrogen
 
+- type: loadout
+  id: EmergencyOxygenMedicalMoth
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CottonEater
+  storage:
+    back:
+    - BoxSurvivalMedicalMoth
+
 # Security
 - type: loadout
   id: EmergencyOxygenSecurity
@@ -140,6 +192,15 @@
   storage:
     back:
     - BoxSurvivalSecurityNitrogen
+
+- type: loadout
+  id: EmergencyOxygenSecurityMoth
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CottonEater
+  storage:
+    back:
+    - BoxSurvivalSecurityMoth
 
 # Syndicate
 - type: loadout

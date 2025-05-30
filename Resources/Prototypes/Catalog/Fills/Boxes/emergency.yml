@@ -79,6 +79,7 @@
     currentLabel: reagent-name-nitrogen
 
 - type: entity
+
   parent: BoxCardboard
   id: BoxSurvivalSecurity
   name: survival box
@@ -119,6 +120,7 @@
     currentLabel: reagent-name-nitrogen
 
 - type: entity
+
   parent: BoxCardboard
   id: BoxSurvivalMedical
   name: survival box
