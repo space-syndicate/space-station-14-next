@@ -31,7 +31,7 @@ public sealed partial class RPDComponent : Component
     /// The ProtoId of the currently selected RCD prototype
     /// </summary>
     [DataField, AutoNetworkedField]
-    public ProtoId<RPDPrototype> ProtoId { get; set; } = ProtoId;
+    public ProtoId<RPDPrototype> ProtoId { get; set; } = default!;
 
     /// <summary>
     /// A cached copy of currently selected RCD prototype
