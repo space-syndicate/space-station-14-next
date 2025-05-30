@@ -97,7 +97,7 @@
       - id: RPD
       - id: RCD
       - id: RCDAmmo
-      - id: RPDAmmo
+      - id: RCDAmmo
 
 - type: entity
   id: LockerAtmosphericsFilled
@@ -115,7 +115,7 @@
       - id: RPD
       - id: RCD
       - id: RCDAmmo
-      - id: RPDAmmo
+      - id: RCDAmmo
 
 - type: entity
   id: LockerEngineerFilledHardsuit

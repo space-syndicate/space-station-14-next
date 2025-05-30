@@ -6,7 +6,7 @@ using Robust.Shared.GameStates;
 namespace Content.Shared.RCD.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(RCDAmmoSystem), typeof(RPDAmmoSystem))]
+[Access(typeof(RCDAmmoSystem))]
 public sealed partial class RCDAmmoComponent : Component
 {
     /// <summary>
