@@ -51,8 +51,6 @@ public class RPDSystem : EntitySystem
     private readonly int _instantConstructionDelay = 0;
     private readonly EntProtoId _instantConstructionFx = "EffectRCDConstruct0";
     private readonly ProtoId<RPDPrototype> _deconstructLatticeProto = "DeconstructLattice";
-    private static readonly ProtoId<TagPrototype> CatwalkTag = "Catwalk";
-
     private HashSet<EntityUid> _intersectingEntities = new();
 
     public override void Initialize()

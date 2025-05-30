@@ -16,12 +16,6 @@ public sealed partial class RPDPrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     /// <summary>
-    /// The RCD mode associated with the operation
-    /// </summary>
-    [DataField(required: true), ViewVariables(VVAccess.ReadOnly)]
-    public RpdMode Mode { get; private set; } = RpdMode.Invalid;
-
-    /// <summary>
     /// The name associated with the prototype
     /// </summary>
     [DataField("name"), ViewVariables(VVAccess.ReadOnly)]
@@ -127,7 +121,6 @@ public sealed partial class RPDPrototype : IPrototype
 
 public enum RpdMode : byte
 {
-    Invalid,
     Deconstruct,
     ConstructObject,
 }
@@ -138,7 +131,6 @@ public enum RpdConstructionRule : byte
     CanBuildOnEmptyTile,        // Can be built on empty space or replace an existing tile (e.g. hull plating)
     MustBuildOnSubfloor,        // Can only be built on exposed subfloor (e.g. catwalks on lattice or hull plating)
     IsWindow,                   // The entity is a window and can be built on grilles
-    IsCatwalk,                  // The entity is a catwalk
 }
 
 public enum RpdRotation : byte
