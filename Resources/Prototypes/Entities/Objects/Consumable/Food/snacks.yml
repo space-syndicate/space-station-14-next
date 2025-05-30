@@ -571,15 +571,6 @@
 - type: entity
   categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
-  id: FoodPacketCottonTrash
-  name: cottonbar wrapper
-  components:
-  - type: Sprite
-    state: cottonbar-trash
-
-- type: entity
-  categories: [ HideSpawnMenu ]
-  parent: FoodPacketTrash
   id: FoodPacketEnergyTrash
   name: energybar wrapper
   components:

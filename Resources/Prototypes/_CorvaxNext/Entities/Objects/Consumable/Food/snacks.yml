@@ -33,3 +33,12 @@
   - type: Tag
     tags:
       - ClothMade
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketCottonTrash
+  name: cottonbar wrapper
+  components:
+  - type: Sprite
+    state: cottonbar-trash
