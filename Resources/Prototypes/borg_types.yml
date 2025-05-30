@@ -47,7 +47,7 @@
   defaultModules:
   - BorgModuleTool
   - BorgModuleConstruction
-  - BorgModuleRCD
+  - BorgModuleRaDi
   - BorgModuleCable
 
   radioChannels:
