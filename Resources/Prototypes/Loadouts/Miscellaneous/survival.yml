@@ -16,7 +16,6 @@
     - Diona
     - Dwarf
     - Human
-    - Moth
     - Reptilian
     - Vulpkanin # Corvax-MRP
     - Resomi #Corvax-Next
@@ -28,6 +27,13 @@
   - !type:SpeciesLoadoutEffect
     species:
     - Vox
+
+- type: loadoutEffectGroup # Corvax-Next-MothLoadout
+  id: CottonEater
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Moth
 
 # Basic
 - type: loadout
@@ -48,6 +54,15 @@
     back:
     - BoxSurvivalNitrogen
 
+- type: loadout # Corvax-Next-MothLoadout
+  id: EmergencyOxygenMoth
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CottonEater
+  storage:
+    back:
+    - BoxSurvivalMoth
+
 # Clown
 - type: loadout
   id: EmergencyOxygenClown
@@ -66,6 +81,15 @@
   storage:
     back:
     - BoxHugNitrogen
+
+- type: loadout # Corvax-Next-MothLoadout
+  id: EmergencyOxygenClownMoth
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CottonEater
+  storage:
+    back:
+    - BoxHugMoth
 
 # Mime
 - type: loadout
@@ -86,6 +110,14 @@
     back:
     - BoxMimeNitrogen
 
+- type: loadout # Corvax-Next-MothLoadout
+  id: EmergencyOxygenMimeMoth
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CottonEater
+  storage:
+    back:
+    - BoxMimeMoth
 
 # Engineering / Extended
 - type: loadout
@@ -106,6 +138,15 @@
     back:
     - BoxSurvivalEngineeringNitrogen
 
+- type: loadout # Corvax-Next-MothLoadout
+  id: EmergencyOxygenExtendedMoth
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CottonEater
+  storage:
+    back:
+    - BoxSurvivalEngineeringMoth
+
 # Medical
 - type: loadout
   id: EmergencyOxygenMedical
@@ -125,6 +166,15 @@
     back:
     - BoxSurvivalMedicalNitrogen
 
+- type: loadout # Corvax-Next-MothLoadout
+  id: EmergencyOxygenMedicalMoth
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CottonEater
+  storage:
+    back:
+    - BoxSurvivalMedicalMoth
+
 # Security
 - type: loadout
   id: EmergencyOxygenSecurity
@@ -143,6 +193,15 @@
   storage:
     back:
     - BoxSurvivalSecurityNitrogen
+
+- type: loadout # Corvax-Next-MothLoadout
+  id: EmergencyOxygenSecurityMoth
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CottonEater
+  storage:
+    back:
+    - BoxSurvivalSecurityMoth
 
 # Syndicate
 - type: loadout
