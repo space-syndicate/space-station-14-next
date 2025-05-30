@@ -422,6 +422,37 @@
     key: enum.RpdUiKey.Key
 
 - type: entity
+  id: RPDEmpty
+  parent: RPD
+  suffix: Empty
+  components:
+  - type: LimitedCharges
+    charges: 0
+
+- type: entity
+  id: RPDRecharging
+  parent: RPD
+  name: experimental RPD
+  description: A bluespace-enhanced rapid construction device that passively generates its own compressed matter.
+  suffix: AutoRecharge
+  components:
+  - type: LimitedCharges
+    maxCharges: 30
+    charges: 30
+  - type: AutoRecharge
+    rechargeDuration: 10
+
+- type: entity
+  id: RPDExperimental
+  parent: RPD
+  suffix: Admeme
+  name: experimental RPD
+  description: A bluespace-enhanced rapid construction device that passively generates its own compressed matter.
+  components:
+  - type: AutoRecharge
+    rechargeDuration: 1
+
+- type: entity
   name: ammo for RPD
   parent: BaseItem
   id: RPDAmmo
