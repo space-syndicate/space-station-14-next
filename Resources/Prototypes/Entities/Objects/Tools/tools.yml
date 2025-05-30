@@ -510,6 +510,7 @@
   description: A cartridge of raw matter compacted by bluespace technology. Used in rapid construction devices.
   components:
   - type: RCDAmmo
+  - type: RPDAmmo
   - type: Sprite
     sprite: Objects/Tools/rcd.rsi
     state: ammo
