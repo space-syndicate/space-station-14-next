@@ -16,6 +16,12 @@ public sealed partial class RPDPrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     /// <summary>
+    /// The RCD mode associated with the operation
+    /// </summary>
+    [DataField(required: true), ViewVariables(VVAccess.ReadOnly)]
+    public RpdMode Mode { get; private set; } = RpdMode.ConstructObject;
+
+    /// <summary>
     /// The name associated with the prototype
     /// </summary>
     [DataField("name"), ViewVariables(VVAccess.ReadOnly)]
