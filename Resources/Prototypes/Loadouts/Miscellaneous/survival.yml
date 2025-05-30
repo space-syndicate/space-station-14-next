@@ -27,7 +27,7 @@
     species:
     - Vox
 
-- type: loadoutEffectGroup
+- type: loadoutEffectGroup # Corvax-Next-MothLoadout
   id: CottonEater
   effects:
   - !type:SpeciesLoadoutEffect
@@ -53,7 +53,7 @@
     back:
     - BoxSurvivalNitrogen
 
-- type: loadout
+- type: loadout # Corvax-Next-MothLoadout
   id: EmergencyOxygenMoth
   effects:
   - !type:GroupLoadoutEffect
@@ -81,7 +81,7 @@
     back:
     - BoxHugNitrogen
 
-- type: loadout
+- type: loadout # Corvax-Next-MothLoadout
   id: EmergencyOxygenClownMoth
   effects:
   - !type:GroupLoadoutEffect
@@ -109,7 +109,7 @@
     back:
     - BoxMimeNitrogen
 
-- type: loadout
+- type: loadout # Corvax-Next-MothLoadout
   id: EmergencyOxygenMimeMoth
   effects:
   - !type:GroupLoadoutEffect
@@ -137,7 +137,7 @@
     back:
     - BoxSurvivalEngineeringNitrogen
 
-- type: loadout
+- type: loadout # Corvax-Next-MothLoadout
   id: EmergencyOxygenExtendedMoth
   effects:
   - !type:GroupLoadoutEffect
@@ -165,7 +165,7 @@
     back:
     - BoxSurvivalMedicalNitrogen
 
-- type: loadout
+- type: loadout # Corvax-Next-MothLoadout
   id: EmergencyOxygenMedicalMoth
   effects:
   - !type:GroupLoadoutEffect
@@ -193,7 +193,7 @@
     back:
     - BoxSurvivalSecurityNitrogen
 
-- type: loadout
+- type: loadout # Corvax-Next-MothLoadout
   id: EmergencyOxygenSecurityMoth
   effects:
   - !type:GroupLoadoutEffect
