@@ -18,7 +18,7 @@
       - id: ClothingShoesBootsJack
       - id: HoloprojectorSecurity
       - id: BookSpaceLaw
-      - id: ClothingHandsGlovesColorBlack
+      - id: ClothingHandsGlovesCombat
       - id: ClothingBeltUtilityFilled
       - id: ClothingOuterWinterPilot
 
@@ -43,6 +43,6 @@
       - id: ClothingShoesBootsJack
       - id: HoloprojectorSecurity
       - id: BookSpaceLaw
-      - id: ClothingHandsGlovesColorBlack
+      - id: ClothingHandsGlovesCombat
       - id: ClothingBeltUtilityFilled
       - id: ClothingOuterWinterPilot
