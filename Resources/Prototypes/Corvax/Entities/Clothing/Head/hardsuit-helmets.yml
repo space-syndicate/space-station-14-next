@@ -24,7 +24,6 @@
   name: helmet pilot security services
   description: Helmet for the security service pilot's suit. It has a more powerful flashlight for better patrolling.
   components:
-  - type: BreathMask
   - type: Sprite
     sprite: Corvax/Clothing/Head/hardsuits/pilot.rsi
     layers:
