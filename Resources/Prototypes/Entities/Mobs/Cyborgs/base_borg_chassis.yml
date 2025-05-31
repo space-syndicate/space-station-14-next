@@ -351,6 +351,8 @@
       Unsexed: UnisexSiliconSyndicate
   - type: PointLight
     color: "#dd200b"
+  - type: StationAiVision
+    range: -1
 
 - type: entity
   id: BaseBorgChassisDerelict
@@ -371,3 +373,5 @@
   - type: IonStormTarget
     chance: 1
   - type: ShowJobIcons
+  - type: StationAiVision
+    range: 2
