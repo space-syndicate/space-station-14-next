@@ -253,7 +253,7 @@
   - type: TTS # Corvax-TTS
     voice: TrainingRobot
   - type: Targeting # Corvax-Next-Surgery
-  - type: StationAiVision
+  - type: StationAiVision # Corvax-Next
   - type: Skills # Corvax-Next-Skills
     skills:
     - ShuttleControl
@@ -351,7 +351,7 @@
       Unsexed: UnisexSiliconSyndicate
   - type: PointLight
     color: "#dd200b"
-  - type: StationAiVision
+  - type: StationAiVision #Corvax-Next
     range: -1
 
 - type: entity
@@ -373,5 +373,5 @@
   - type: IonStormTarget
     chance: 1
   - type: ShowJobIcons
-  - type: StationAiVision
+  - type: StationAiVision # Corvax-Next
     range: 2
