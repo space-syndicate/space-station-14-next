@@ -253,6 +253,7 @@
   - type: TTS # Corvax-TTS
     voice: TrainingRobot
   - type: Targeting # Corvax-Next-Surgery
+  - type: StationAiVision
   - type: Skills # Corvax-Next-Skills
     skills:
     - ShuttleControl
