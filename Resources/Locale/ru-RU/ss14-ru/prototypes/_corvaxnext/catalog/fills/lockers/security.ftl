@@ -1,6 +1,6 @@
-ent-LockerPilotFilledHardsuit = { ent-LockerWarden }
+ent-LockerPilotFilledHardsuit = { ent-LockerPilot }
     .suffix = Заполненный, Скафандр
-    .desc = { ent-LockerWarden.desc }
-ent-LockerPilotFilled = { ent-LockerWarden }
+    .desc = { ent-LockerPilot.desc }
+ent-LockerPilotFilled = { ent-LockerPilot }
     .suffix = Заполненный
-    .desc = { ent-LockerWarden.desc }
+    .desc = { ent-LockerPilot.desc }
