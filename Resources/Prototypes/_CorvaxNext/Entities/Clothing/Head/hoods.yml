@@ -5,9 +5,9 @@
   name: pilot coat hood
   components:
   - type: Sprite
-    sprite: Corvax/Clothing/Head/Hoods/Coat/hoodpilot.rsi
+    sprite: _CorvaxNext/Clothing/Head/Hoods/Coat/hoodpilot.rsi
   - type: Clothing
-    sprite: Corvax/Clothing/Head/Hoods/Coat/hoodpilot.rsi
+    sprite: _CorvaxNext/Clothing/Head/Hoods/Coat/hoodpilot.rsi
   - type: Armor
     modifiers:
       coefficients:

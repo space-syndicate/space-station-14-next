@@ -5,7 +5,7 @@
   components:
   - type: Appearance
   - type: Sprite
-    sprite: Corvax/Structures/Storage/closet.rsi
+    sprite: _CorvaxNext/Structures/Storage/closet.rsi
     noRot: true
     layers:
     - state: pilot
