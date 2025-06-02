@@ -5,7 +5,7 @@
   description: A heavy, armored jacket made from 'synthetic' animal furs special for pilot of the security.
   components:
   - type: Sprite
-    sprite: Corvax/Clothing/OuterClothing/WinterCoats/coatpilot.rsi
+    sprite: _CorvaxNext/Clothing/OuterClothing/WinterCoats/coatpilot.rsi
     layers:
     - state: Pilot-icon
   - type: Item
@@ -15,7 +15,7 @@
       right:
       - state: Pilot-inhand-right
   - type: Clothing
-    sprite: Corvax/Clothing/OuterClothing/WinterCoats/coatpilot.rsi
+    sprite: _CorvaxNext/Clothing/OuterClothing/WinterCoats/coatpilot.rsi
     clothingVisuals:
       outerClothing:
       - state: Pilot-equipped-OUTERCLOTHING
