@@ -453,9 +453,9 @@
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: construction-module }
 
 - type: entity
-  id: BorgModuleRCD
+  id: BorgModuleRaDe
   parent: [ BaseBorgModuleEngineering, BaseProviderBorgModule ]
-  name: RCD cyborg module
+  name: rapid devices cyborg module
   components:
   - type: Sprite
     layers:
@@ -464,6 +464,7 @@
   - type: ItemBorgModule
     items:
     - RCDRecharging
+    - RPDRecharging
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: rcd-module }
 

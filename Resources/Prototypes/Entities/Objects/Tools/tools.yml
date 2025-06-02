@@ -368,6 +368,37 @@
     key: enum.RcdUiKey.Key
 
 - type: entity
+  id: RCDEmpty
+  parent: RCD
+  suffix: Empty
+  components:
+  - type: LimitedCharges
+    charges: 0
+
+- type: entity
+  id: RCDRecharging
+  parent: RCD
+  name: experimental RCD
+  description: A bluespace-enhanced rapid construction device that passively generates its own compressed matter.
+  suffix: AutoRecharge
+  components:
+  - type: LimitedCharges
+    maxCharges: 20
+    charges: 20
+  - type: AutoRecharge
+    rechargeDuration: 10
+
+- type: entity
+  id: RCDExperimental
+  parent: RCD
+  suffix: Admeme
+  name: experimental RCD
+  description: A bluespace-enhanced rapid construction device that passively generates its own compressed matter.
+  components:
+  - type: AutoRecharge
+    rechargeDuration: 1
+
+- type: entity
   id: RPD
   parent: RCD
   name: RPD
@@ -401,20 +432,19 @@
   - type: Sprite
     sprite: Objects/Tools/rpd.rsi
 
-
 - type: entity
-  id: RCDEmpty
-  parent: RCD
+  id: RPDEmpty
+  parent: RPD
   suffix: Empty
   components:
   - type: LimitedCharges
     charges: 0
 
 - type: entity
-  id: RCDRecharging
-  parent: RCD
-  name: experimental RCD
-  description: A bluespace-enhanced rapid construction device that passively generates its own compressed matter.
+  id: RPDRecharging
+  parent: RPD
+  name: experimental RPD
+  description: A bluespace-enhanced rapid pipe dispencer that passively generates its own compressed matter.
   suffix: AutoRecharge
   components:
   - type: LimitedCharges
@@ -424,10 +454,10 @@
     rechargeDuration: 10
 
 - type: entity
-  id: RCDExperimental
-  parent: RCD
+  id: RPDExperimental
+  parent: RPD
   suffix: Admeme
-  name: experimental RCD
+  name: experimental RPD
   description: A bluespace-enhanced rapid construction device that passively generates its own compressed matter.
   components:
   - type: AutoRecharge
