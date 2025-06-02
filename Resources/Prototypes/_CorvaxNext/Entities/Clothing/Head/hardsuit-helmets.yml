@@ -121,7 +121,7 @@
   description: Helmet for the security service pilot's suit. It has a more powerful flashlight for better patrolling.
   components:
   - type: Sprite
-    sprite: _CorvaxNext/Clothing/Head/hardsuits/pilot.rsi
+    sprite: _CorvaxNext/Clothing/Head/Hardsuits/pilot.rsi
     layers:
     - state: icon
     - state: icon-unshaded
@@ -131,7 +131,7 @@
       shader: unshaded
       map: [ "light" ]
   - type: Clothing
-    sprite: _CorvaxNext/Clothing/Head/hardsuits/pilot.rsi
+    sprite: _CorvaxNext/Clothing/Head/Hardsuits/pilot.rsi
     equippedPrefix: off
     equipDelay: 1.5
     unequipDelay: 1
