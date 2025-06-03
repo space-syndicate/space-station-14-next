@@ -470,12 +470,12 @@
 - type: entity
   parent: IDCardStandard
   id: CentcomIDCard
-  name: command officer ID card
+  name: ID карта офицера штаба центком
   components:
   - type: Sprite
     layers:
     - state: centcom
-    - state: idcentcom
+    - state: idCentcomm
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
@@ -489,7 +489,7 @@
   - type: Sprite
     layers:
     - state: gold
-    - state: ert_commander
+    - state: idLeader
   - type: PresetIdCard
     job: ERTLeader
   - type: Item
@@ -502,8 +502,8 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_chaplain # we have the sprite for the id but dont have chaplain ERT equipment for now.
+    - state: silver
+    - state: idERT
   - type: PresetIdCard
     job: ERTChaplain
   - type: Item
@@ -516,8 +516,8 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_engineer
+    - state: silver
+    - state: idERT
   - type: PresetIdCard
     job: ERTEngineer
 
@@ -528,8 +528,8 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_janitor
+    - state: silver
+    - state: idERT
   - type: PresetIdCard
     job: ERTJanitor
 
@@ -540,8 +540,8 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_medic
+    - state: silver
+    - state: idERT
   - type: PresetIdCard
     job: ERTMedical
 
@@ -552,8 +552,8 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_security
+    - state: silver
+    - state: idERT
   - type: PresetIdCard
     job: ERTSecurity
 
@@ -749,7 +749,8 @@
   components:
   - type: Sprite
     layers:
-    - state: centcom
+    - state: silver
+    - state: idCBURN
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
@@ -865,3 +866,53 @@
     interfaces:
       enum.AgentIDCardUiKey.Key:
         type: AgentIDCardBoundUserInterface
+
+- type: entity
+  parent: IDCardStandard
+  id: BlueshieldIDCard
+  name: ID карта офицера "синий щит"
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: idblueshield
+  - type: PresetIdCard
+    job: Blueshield
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+    - WhitelistChameleonIdCard
+    
+- type: entity
+  parent: IDCardStandard
+  id: CentcomIDCardSpecial
+  name: ID карта офицера спецопераций
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandSpecial
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomIDCardAdmiral
+  name: ID карта начальника штаба центком
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idAdmiral
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandAdmiral
+  - type: Tag
+    tags:
+    - DoorBumpOpener

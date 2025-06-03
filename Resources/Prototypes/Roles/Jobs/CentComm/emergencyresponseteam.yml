@@ -5,8 +5,8 @@
   description: job-description-ertleader
   playTimeTracker: JobERTLeader
   setPreference: false
-  startingGear: ERTLeaderGearEVA
-  icon: "JobIconNanotrasen"
+  startingGear: ERTLeaderGear
+  icon: "JobIconLeader"
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
@@ -117,7 +117,7 @@
   playTimeTracker: JobERTChaplain
   setPreference: false
   startingGear: ERTChaplainGear
-  icon: "JobIconNanotrasen"
+  icon: "JobIconERT"
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
@@ -207,9 +207,8 @@
   name: job-name-ertengineer
   description: job-description-ertengineer
   playTimeTracker: JobERTEngineer
-  setPreference: false
-  startingGear: ERTEngineerGearEVA
-  icon: "JobIconNanotrasen"
+  startingGear: ERTEngineerGear
+  icon: "JobIconERT"
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
@@ -297,9 +296,8 @@
   name: job-name-ertsecurity
   description: job-description-ertsecurity
   playTimeTracker: JobERTSecurity
-  setPreference: false
-  startingGear: ERTEngineerGearEVA
-  icon: "JobIconNanotrasen"
+  startingGear: ERTSecurityGear
+  icon: "JobIconERT"
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
@@ -405,9 +403,8 @@
   name: job-name-ertmedic
   description: job-description-ertmedic
   playTimeTracker: JobERTMedical
-  setPreference: false
-  startingGear: ERTMedicalGearEVA
-  icon: "JobIconNanotrasen"
+  startingGear: ERTMedicalGear
+  icon: "JobIconERT"
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
@@ -489,8 +486,8 @@
   description: job-description-ertjanitor
   playTimeTracker: JobERTJanitor
   setPreference: false
-  startingGear: ERTJanitorGearEVA
-  icon: "JobIconNanotrasen"
+  startingGear: ERTJanitorGear
+  icon: "JobIconERT"
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:

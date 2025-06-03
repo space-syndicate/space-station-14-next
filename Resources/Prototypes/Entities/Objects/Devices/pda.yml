@@ -1554,3 +1554,101 @@
     borderColor: "#7F3300"
   - type: Icon
     state: pda-wizard
+
+- type: entity
+  parent: BaseSecurityPDA
+  id: BlueshieldPDA
+  name: КПК центком
+  description: светло-зелёный символ ходячей бюрократии.
+  components:
+  - type: Pda
+    id: BlueshieldIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-centcom
+  - type: PdaBorderColor
+    borderColor: "#00842e"
+  - type: Icon
+    state: pda-centcom
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - MedTekCartridge
+      - WantedListCartridge
+      - LogProbeCartridge
+      - NanoChatCartridge # Corvax-Next-PDAChat
+     
+- type: entity
+  parent: BaseSecurityPDA
+  id: SpecialPDA
+  name: КПК центком
+  description: Светло-зелёный символ ходячей бюрократии.
+  components:
+  - type: Pda
+    id: CentcomIDCardSpecial
+    penSlot:
+      startingItem: PenCentcom
+      whitelist:
+        tags:
+        - Write
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-centcom
+  - type: PdaBorderColor
+    borderColor: "#00842e"
+  - type: Icon
+    state: pda-centcom
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - MedTekCartridge
+      - WantedListCartridge
+      - LogProbeCartridge
+      - AstroNavCartridge
+      - NanoChatCartridge # Corvax-Next-PDAChat
+      
+- type: entity
+  parent: BaseSecurityPDA
+  id: AdmiralPDA
+  name: КПК центком
+  description: Светло-зелёный символ ходячей бюрократии.
+  components:
+  - type: Pda
+    id: CentcomIDCardAdmiral
+    penSlot:
+      startingItem: PenCentcom
+      whitelist:
+        tags:
+        - Write
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-centcom
+  - type: PdaBorderColor
+    borderColor: "#00842e"
+  - type: Icon
+    state: pda-centcom
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - MedTekCartridge
+      - WantedListCartridge
+      - LogProbeCartridge
+      - AstroNavCartridge
+      - NanoChatCartridge # Corvax-Next-PDAChat

@@ -39,7 +39,10 @@
   description: department-CentralCommand-description
   color: "#0c344d"
   roles:
+  - CentralCommandAdmiral
+  - CentralCommandSpecial
   - CentralCommandOfficial
+  - Blueshield
   - CBURN
   - ERTLeader
   - ERTChaplain
@@ -48,7 +51,6 @@
   - ERTSecurity
   - ERTEngineer
   - DeathSquad
-  editorHidden: true
   weight: 120
 
 - type: department
@@ -65,15 +67,6 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
-  - CentralCommandOfficial
-  - CBURN
-  - ERTLeader
-  - ERTChaplain
-  - ERTJanitor
-  - ERTMedical
-  - ERTSecurity
-  - ERTEngineer
-  - DeathSquad
   primary: false
   weight: 100
 

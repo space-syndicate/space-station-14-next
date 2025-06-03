@@ -1,0 +1,28 @@
+- type: job
+  id: CentralCommandSpecial
+  name: офицер спецопераций
+  description: job-description-centcomoff
+  playTimeTracker: JobCentralCommandSpecial
+  startingGear: OfficerGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom # Corvax-JobSupervisors
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear
+  id: OfficerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficerBlack
+    shoes: ClothingShoesCentcomBlack
+    head: ClothingHeadCapCentcomBlack
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterVestWeb
+    id: SpecialPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltMilitaryWebbing

@@ -1,0 +1,40 @@
+- type: job
+  id: Blueshield
+  name: офицер "синий щит"
+  description: job-description-centcomoff
+  playTimeTracker: JobBlueshield
+  weight: 10
+  startingGear: BlueshieldGear
+  icon: "JobIconBlueShield"
+  supervisors: job-supervisors-centcom # Corvax-JobSupervisors
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - Shooting
+      - MedicalEquipment
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: BlueshieldGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSecBlue
+    shoes: ClothingShoesBootsCombatFilled
+    head: ClothingHeadHatBlueshield
+    eyes: ClothingEyesGlassesBlueshield
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorBlueshield
+    id: BlueshieldPDA
+    ears: ClothingHeadsetAltCommand
+    belt: ClothingBeltBlueshieldWebbing
+    pocket1: WeaponPulsePistol
+    pocket2: HandheldCrewMonitor
+  storage:
+    back:
+    - Flash
+    - MedkitCombatFilled

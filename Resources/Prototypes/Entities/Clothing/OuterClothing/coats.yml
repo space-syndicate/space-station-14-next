@@ -482,3 +482,14 @@
   parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatExpensive]
   id: ClothingOuterCoatExpensiveOpened
   name: expensive coat
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatBomberWhitepower
+  name: бомбер
+  description: Чёрный бомбер, как и подобает всем канонам.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/bomberwhite.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/bomberwhite.rsi

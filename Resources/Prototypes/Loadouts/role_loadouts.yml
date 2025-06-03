@@ -638,3 +638,50 @@
   groups:
   - GroupEVATank
   - SurvivalExtended
+
+- type: roleLoadout
+  id: JobBlueshield
+  groups:
+  - Inventory # Corvax-Loadouts
+  - Trinkets
+  - SecurityStar
+  - GroupSpeciesBreathToolSecurity
+  - Glasses
+  - Survival
+  - CommonBackpack
+  
+- type: roleLoadout
+  id: JobCentralCommandSpecial
+  groups:
+  - Inventory # Corvax-Loadouts
+  - Trinkets
+  - GroupSpeciesBreathToolSecurity
+  - Survival
+  - OSOCapes
+  - OSOGlasses
+  
+- type: roleLoadout
+  id: JobCentralCommandOfficial
+  groups:
+  - Inventory # Corvax-Loadouts
+  - Trinkets
+  - GroupSpeciesBreathTool
+  - Survival
+  - CentcommGlasses
+  - CentcommCapes
+  - CentcommJumpsuit
+  - CentcommGloves
+  - CentcommHat
+  - CentcommBoots
+  - CentcommCoat
+  
+- type: roleLoadout
+  id: JobCentralCommandAdmiral
+  groups:
+  - Inventory # Corvax-Loadouts
+  - Trinkets
+  - GroupSpeciesBreathTool
+  - Survival
+  - AdmiralJumpsuit
+  - AdmiralHat
+  - AdmiralBoots

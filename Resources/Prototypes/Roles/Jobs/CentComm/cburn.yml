@@ -1,11 +1,11 @@
 - type: job
   id: CBURN
-  name: job-name-cburn
+  name: солдат РХБЗЗ
   description: job-description-cburn
   playTimeTracker: JobCBURN
   setPreference: false
   startingGear: CBURNGear
-  icon: "JobIconNanotrasen"
+  icon: "JobIconCBURN"
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:

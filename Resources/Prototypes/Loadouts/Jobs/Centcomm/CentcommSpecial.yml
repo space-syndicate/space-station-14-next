@@ -1,0 +1,24 @@
+- type: loadout
+  id: GlassesCommand
+  equipment:
+    eyes: ClothingEyesGlassesCommand
+    
+- type: loadout
+  id: GlassesBlueshield
+  equipment:
+    eyes: ClothingEyesGlassesBlueshield
+
+- type: loadout
+  id: GlassesMerc
+  equipment:
+    eyes: ClothingEyesGlassesMercenary
+    
+- type: loadout
+  id: GlassesSec
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
+    
+- type: loadout
+  id: OSOCape
+  equipment:
+    neck: ClothingNeckCloakCentcomBlack

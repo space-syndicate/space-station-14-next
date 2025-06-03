@@ -1,0 +1,29 @@
+- type: job
+  id: CentralCommandAdmiral
+  name: начальник штаба Центком
+  description: job-description-centcomoff
+  playTimeTracker: JobCentralCommandAdmiral
+  startingGear: AdmiralGear
+  icon: "JobIconAdmiral"
+  supervisors: job-supervisors-centcom # Corvax-JobSupervisors
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear
+  id: AdmiralGear
+  equipment:
+    id: AdmiralPDA
+    neck: ClothingNeckCloakCentcomAdmiral
+    gloves: ClothingHandsGlovesCentcomNaval
+    ears: ClothingHeadsetCentCom
+    belt: WeaponPistolN1984
+    pocket1: RubberStampCentcom
+    outerClothing: ClothingOuterArmorCentcomCarapace
+    back: ClothingBackpackSatchelLeather
+    eyes: ClothingEyesGlassesCommand

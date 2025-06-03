@@ -1,11 +1,10 @@
 - type: job
   id: CentralCommandOfficial
-  name: job-name-centcomoff
+  name: офицер штаба Центком
   description: job-description-centcomoff
   playTimeTracker: JobCentralCommandOfficial
-  setPreference: false
   startingGear: CentcomGear
-  icon: "JobIconNanotrasen"
+  icon: "JobIconCentcomm"
   supervisors: job-supervisors-centcom # Corvax-JobSupervisors
   canBeAntag: false
   accessGroups:
@@ -19,14 +18,7 @@
 - type: startingGear
   id: CentcomGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitCentcomOfficial
-    shoes: ClothingShoesBootsCombatFilled
-    head: ClothingHeadHatCentcom
-    eyes: ClothingEyesGlassesSunglasses
-    gloves: ClothingHandsGlovesColorBlack
-    outerClothing: ClothingOuterArmorBasic
     id: CentcomPDA
-    ears: ClothingHeadsetAltCentCom
+    ears: ClothingHeadsetCentCom
     belt: WeaponPistolN1984
     pocket1: BoxFolderBlack
-    pocket2: PenCentcom

@@ -1,0 +1,19 @@
+- type: loadout
+  id: AgentJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomAgent
+    
+- type: loadout
+  id: AdmiralJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomAdmiral
+    
+- type: loadout
+  id: AdmiralBoots
+  equipment:
+    shoes: ClothingShoesGreenLizardskin
+    
+- type: loadout
+  id: FlotCap
+  equipment:
+    head: ClothingHeadCapCentcomNaval

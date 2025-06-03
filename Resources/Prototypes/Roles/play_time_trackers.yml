@@ -6,6 +6,12 @@
 # Jobs
 - type: playTimeTracker
   id: JobAtmosphericTechnician
+  
+- type: playTimeTracker
+  id: JobCentralCommandSpecial
+
+- type: playTimeTracker
+  id: JobBlueshield
 
 - type: playTimeTracker
   id: JobBartender

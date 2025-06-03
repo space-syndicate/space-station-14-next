@@ -1402,3 +1402,120 @@
   hidden: true
   loadouts:
   - LoadoutSpeciesBreathToolSecurity
+
+- type: loadoutGroup
+  id: OSOGlasses
+  name: Очки
+  loadouts:
+  - GlassesCommand
+  - GlassesMerc
+  - GlassesBlueshield
+  - GlassesSec
+  - Glasses
+  - GlassesJamjar
+  - GlassesJensen
+  
+- type: loadoutGroup
+  id: OSOCapes
+  minLimit: 0
+  name: Офицер спецопераций, шея
+  loadouts:
+  - OSOCape
+  
+- type: loadoutGroup
+  id: CentcommGlasses
+  minLimit: 0
+  name: Очки
+  loadouts:
+  - CentcommSunglasses
+  - Glasses
+  - GlassesJamjar
+  - GlassesJensen
+  
+- type: loadoutGroup
+  id: CentcommCapes
+  minLimit: 0
+  name: Офицер штаба Центком, шея
+  loadouts:
+  - CentcommCloak
+  
+- type: loadoutGroup
+  id: CentcommJumpsuit
+  minLimit: 1
+  maxLimit: 1
+  name: Офицер штаба Центком, комбинезон
+  loadouts:
+  - CentcommJumpsuit
+  - CentcommJumpskirt
+  - CentcommFormalDress
+  - CentcommFormal
+  - CentcommOfficer
+  - CentcommOfficerJumpskirt
+  
+- type: loadoutGroup
+  id: CentcommGloves
+  minLimit: 1
+  maxLimit: 1
+  name: Офицер штаба Центком, перчатки
+  loadouts:
+  - CentcommBlackGloves
+  - CentcommCombatGloves
+  
+- type: loadoutGroup
+  id: CentcommHat
+  minLimit: 1
+  maxLimit: 1
+  name: Офицер штаба Центком, голова
+  loadouts:
+  - CentcommBeret
+  - CentcommCap
+  - CentcommHead
+  
+- type: loadoutGroup
+  id: CentcommBoots
+  minLimit: 1
+  maxLimit: 1
+  name: Офицер штаба Центком, обувь
+  loadouts:
+  - CentcommCombatBoots
+  - CentcommBoots
+  
+- type: loadoutGroup
+  id: CentcommCoat
+  minLimit: 1
+  maxLimit: 1
+  name: Офицер штаба Центком верхняя одежда
+  loadouts:
+  - CentcommArmor
+  - CentcommWintercoat
+  
+- type: loadoutGroup
+  id: AdmiralHat
+  minLimit: 1
+  maxLimit: 1
+  name: Начальник штаба Центком, голова
+  loadouts:
+  - FlotCap
+  - CentcommCap
+  - CentcommHead
+  
+- type: loadoutGroup
+  id: AdmiralBoots
+  minLimit: 1
+  maxLimit: 1
+  name: Начальник штаба Центком, обувь
+  loadouts:
+  - CentcommCombatBoots
+  - CentcommBoots
+  - AdmiralBoots
+  
+- type: loadoutGroup
+  id: AdmiralJumpsuit
+  minLimit: 1
+  maxLimit: 1
+  name: Начальник штаба Центком, комбинезон
+  loadouts:
+  - AdmiralJumpsuit
+  - CentcommJumpskirt
+  - CentcommFormalDress
+  - AgentJumpsuit
