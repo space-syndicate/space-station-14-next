@@ -662,6 +662,7 @@
     access: [[ "Command" ]]
   - type: CommunicationsConsole
     title: comms-console-announcement-title-station
+    canShuttle: false
   - type: DeviceNetwork
     transmitFrequencyId: ShuttleTimer
   - type: ActivatableUI

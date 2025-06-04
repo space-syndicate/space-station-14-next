@@ -916,3 +916,18 @@
   - type: Tag
     tags:
     - DoorBumpOpener
+    
+- type: entity
+  parent: CentcomIDCard
+  id: CBURNLeaderIDcard
+  name: ID карта лидера РХБЗЗ
+  suffix: CBURN
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: idCBURN
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CBURNLeader

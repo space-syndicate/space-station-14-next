@@ -9,7 +9,6 @@
   - CaptainBackpack
   - CaptainOuterClothing
   - Survival
-
   - Trinkets
   - GroupSpeciesBreathTool
 
@@ -685,3 +684,38 @@
   - AdmiralJumpsuit
   - AdmiralHat
   - AdmiralBoots
+  
+- type: roleLoadout
+  id: JobERTSecurity
+  groups:
+  - Inventory
+  - Trinkets
+  - GroupSpeciesBreathToolSecurity
+  - ERTsecJumpsuit
+  - ERTsecBelt
+  - ERTsecHead
+  - ERTvest
+  - ERTgetrs
+  
+- type: roleLoadout
+  id: JobERTMedical
+  groups:
+  - Inventory
+  - Trinkets
+  - GroupSpeciesBreathTool
+  - ERTmedvest
+  - ERTmedHead
+  - ERTmedJumpsuit
+  - ERTmedgloves
+  - ERTmedgetrs
+  
+- type: roleLoadout
+  id: JobERTEngineer
+  groups:
+  - Inventory
+  - Trinkets
+  - GroupSpeciesBreathTool
+  - ERTengJumpsuit
+  - ERTengHead
+  - ERTvest
+  - ERTgetrs

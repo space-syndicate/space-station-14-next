@@ -1408,12 +1408,7 @@
   name: Очки
   loadouts:
   - GlassesCommand
-  - GlassesMerc
-  - GlassesBlueshield
   - GlassesSec
-  - Glasses
-  - GlassesJamjar
-  - GlassesJensen
   
 - type: loadoutGroup
   id: OSOCapes
@@ -1482,9 +1477,9 @@
   
 - type: loadoutGroup
   id: CentcommCoat
-  minLimit: 1
+  minLimit: 0
   maxLimit: 1
-  name: Офицер штаба Центком верхняя одежда
+  name: Офицер штаба Центком, верхняя одежда
   loadouts:
   - CentcommArmor
   - CentcommWintercoat
@@ -1519,3 +1514,116 @@
   - CentcommJumpskirt
   - CentcommFormalDress
   - AgentJumpsuit
+  
+- type: loadoutGroup
+  id: ERTvest
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, верхняя одежда
+  loadouts:
+  - ArmorVest
+  - ArmorVestSlim
+  
+- type: loadoutGroup
+  id: ERTsecHead
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, голова
+  loadouts:
+  - ERTsecHead
+  - SecurityHelmet
+  - MercHead
+  
+- type: loadoutGroup
+  id: ERTsecBelt
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, пояс
+  loadouts:
+  - SecurityBelt
+  - SecurityWebbing
+  
+- type: loadoutGroup
+  id: ERTsecJumpsuit
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, комбинезон
+  loadouts:
+  - ERTsecJumpsuit
+  - MercJumpsuit
+  
+- type: loadoutGroup
+  id: ERTgetrs
+  minLimit: 0
+  maxLimit: 1
+  name: ОБР, маска
+  loadouts:
+  - ERTgetr
+  - Mercgetr
+  
+- type: loadoutGroup
+  id: ERTmedgetrs
+  minLimit: 0
+  maxLimit: 1
+  name: ОБР, маска
+  loadouts:
+  - Mercgetr
+  - SterileMaskMed
+  - MilMask
+  
+- type: loadoutGroup
+  id: ERTmedgloves
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, перчатки
+  loadouts:
+  - Nitrile
+  - Latex
+  
+- type: loadoutGroup
+  id: ERTmedJumpsuit
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, комбинезон
+  loadouts:
+  - ERTmedJumpsuit
+  - MercJumpsuit
+  
+- type: loadoutGroup
+  id: ERTmedHead
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, голова
+  loadouts:
+  - ERTmedHead
+  - medHead
+  - MercHead
+  
+- type: loadoutGroup
+  id: ERTmedvest
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, верхняя одежда
+  loadouts:
+  - ArmorVest
+  - ArmorVestSlim
+  - BrigmedArmor
+  
+- type: loadoutGroup
+  id: ERTengHead
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, голова
+  loadouts:
+  - engHead
+  - engHeadarmored
+  - MercHead
+  
+- type: loadoutGroup
+  id: ERTengJumpsuit
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, комбинезон
+  loadouts:
+  - ERTengJumpsuit
+  - MercJumpsuit

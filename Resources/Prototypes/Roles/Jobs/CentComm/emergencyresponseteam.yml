@@ -207,7 +207,7 @@
   name: job-name-ertengineer
   description: job-description-ertengineer
   playTimeTracker: JobERTEngineer
-  startingGear: ERTEngineerGear
+  startingGear: ERTEngineerGearStart
   icon: "JobIconERT"
   supervisors: job-supervisors-centcom
   canBeAntag: false
@@ -263,6 +263,31 @@
     - SheetGlass
 
 - type: startingGear
+  id: ERTEngineerGearStart
+  equipment:
+    back: ClothingBackpackERTEngineer
+    shoes: ClothingShoesBootsWork
+    eyes: ClothingEyesGlassesMeson
+    gloves: ClothingHandsGlovesCombat
+    id: ERTEngineerPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltChiefEngineerFilled
+    pocket1: Flare
+    pocket2: GasAnalyzer
+  storage:
+    back:
+    - trayScanner
+    - RCD
+    - RCDAmmo
+    - RCDAmmo
+    - CableMVStack
+    - CableHVStack
+    - CableApcStack
+    - SheetPlasteel
+    - SheetSteel
+    - SheetGlass
+    
+- type: startingGear
   id: ERTEngineerGearEVA
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTEngineer
@@ -296,7 +321,7 @@
   name: job-name-ertsecurity
   description: job-description-ertsecurity
   playTimeTracker: JobERTSecurity
-  startingGear: ERTSecurityGear
+  startingGear: ERTSecurityGearStart
   icon: "JobIconERT"
   supervisors: job-supervisors-centcom
   canBeAntag: false
@@ -336,6 +361,26 @@
     id: ERTSecurityPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
+    pocket1: WeaponPistolMk58
+    pocket2: FlashlightSeclite
+  storage:
+    back:
+    - WeaponDisabler
+    - MedicatedSuture
+    - RegenerativeMesh
+    - BoxZiptie
+    - CrowbarRed
+    - MagazinePistol
+    
+- type: startingGear
+  id: ERTSecurityGearStart
+  equipment:
+    back: ClothingBackpackERTSecurity
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    id: ERTSecurityPDA
+    ears: ClothingHeadsetAltCentCom
     pocket1: WeaponPistolMk58
     pocket2: FlashlightSeclite
   storage:
@@ -403,7 +448,7 @@
   name: job-name-ertmedic
   description: job-description-ertmedic
   playTimeTracker: JobERTMedical
-  startingGear: ERTMedicalGear
+  startingGear: ERTMedicalGearStart
   icon: "JobIconERT"
   supervisors: job-supervisors-centcom
   canBeAntag: false
@@ -441,6 +486,26 @@
     eyes: ClothingEyesHudMedical
     gloves: ClothingHandsGlovesNitrile
     outerClothing: ClothingOuterArmorBasicSlim
+    id: ERTMedicPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltMedicalFilled
+    pocket1: Flare
+  storage:
+    back:
+    - Hypospray
+    - MedkitCombatFilled
+    - MedkitCombatFilled
+    - CrowbarRed
+    - ChemistryBottleOmnizine
+    - ChemistryBottleEpinephrine
+    - ChemistryBottleEpinephrine
+
+- type: startingGear
+  id: ERTMedicalGearStart
+  equipment:
+    back: ClothingBackpackERTMedical
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesBlueshield
     id: ERTMedicPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltMedicalFilled

@@ -135,9 +135,22 @@
 
 
 - type: listing
+  id: CBURNleaderspawn
+  name: Лидер РХБЗЗ
+  description: Пахнет аммиаком.
+  productEntity: RandomHumanoidSpawnerCBURNLeader
+  cost:
+    Telecrystal: 10
+  categories:
+  - Leader
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
   id: ERT leader
   name: Лидер ОБР
-  description: HEAD OF HEADS
+  description: HEAD OF HEADS.
   productEntity: RandomHumanoidSpawnerERTLeader
   cost:
     Telecrystal: 10
@@ -193,7 +206,7 @@
   description: any threat except Nukes and reva is mine
   productEntity: RandomHumanoidSpawnerCBURNUnit
   cost:
-    Telecrystal: 4
+    Telecrystal: 2
   categories:
   - CBURN
 #оржие
@@ -465,6 +478,16 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+    
+- type: listing
+  id: CBURNHardsuit
+  name: Скафандр РХБЗЗ
+  description: Сделан, чтобы ты не расплавился, не сгнил, не мутировал и не стал обедом для ходячих. Почти всегда срабатывает
+  productEntity: ClothingOuterHardsuitCBURN
+  cost:
+    Telecrystal: 5
+  categories:
+  - hardsuits
 
 
 #медицина
@@ -681,6 +704,26 @@
   productEntity: ClothingShoesBootsMagSci
   cost:
     Telecrystal: 2
+  categories:
+  - other
+  
+- type: listing
+  id: ClothingHeadHatCentcomcap
+  name: фуражка Центком
+  description: Экстравагантная, причудливая фуражка офицера Центрального командования.
+  productEntity: ClothingHeadHatCentcomcap
+  cost:
+    Telecrystal: 1
+  categories:
+  - other
+  
+- type: listing
+  id: ClothingOuterCoatExpensive
+  name: дорогая шуба
+  description: Очень пушистая розовая шуба, сделанная из очень дорогого меха (очевидно).
+  productEntity: ClothingOuterCoatExpensive
+  cost:
+    Telecrystal: 1
   categories:
   - other
 

@@ -7,11 +7,6 @@
   id: GlassesBlueshield
   equipment:
     eyes: ClothingEyesGlassesBlueshield
-
-- type: loadout
-  id: GlassesMerc
-  equipment:
-    eyes: ClothingEyesGlassesMercenary
     
 - type: loadout
   id: GlassesSec
