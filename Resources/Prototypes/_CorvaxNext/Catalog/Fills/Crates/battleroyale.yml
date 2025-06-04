@@ -656,9 +656,6 @@
     - id: ClothingOuterArmorBasicSlim
       prob: 0.060
       orGroup: BRArmor
-    - id: ClothingOuterHardsuitBasic
-      prob: 0.061
-      orGroup: BRArmor
     - id: ClothingOuterHardsuitSalvage
       prob: 0.061
       orGroup: BRArmor

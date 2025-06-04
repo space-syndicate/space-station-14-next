@@ -3,6 +3,9 @@ using Content.Shared.FixedPoint;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Physics.Dynamics;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+
 
 namespace Content.Shared.Projectiles;
 
@@ -98,4 +101,18 @@ public sealed partial class ProjectileComponent : Component
     /// </summary>
     [DataField]
     public FixedPoint2 PenetrationAmount = FixedPoint2.Zero;
+
+    // Corvax-Next start
+    [DataField]
+    public bool Penetrate;
+
+    /// <summary>
+    ///     Collision mask of what not to penetrate if <see cref="Penetrate"/> is true.
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(FlagSerializer<CollisionMask>))]
+    public int NoPenetrateMask = 0;
+
+    [NonSerialized]
+    public List<EntityUid> IgnoredEntities = new();
+    // Corvax-Next end
 }

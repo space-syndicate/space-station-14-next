@@ -4,6 +4,7 @@
   id: ServiceStatic
   recipes:
   - Bucket
+  - Ashtray
   - DrinkMug
   - DrinkMugMetal
   - DrinkGlass
@@ -19,6 +20,7 @@
   - FoodPlateMuffinTin
   - FoodKebabSkewer
   - SprayBottle
+  - TrashBag
   - LightReplacer
   - MopItem
   - Holoprojector
@@ -45,11 +47,13 @@
   - WeaponSprayNozzle
   - ClothingBackpackWaterTank
   - MegaSprayBottle
+  - BagOfCleanliness # Corvax-Next-BluespaceTrashBag
 
 - type: latheRecipePack
   id: Instruments
   recipes:
   - SynthesizerInstrument
+  - PushHorn
 
 - type: latheRecipePack
   id: ServiceBoards

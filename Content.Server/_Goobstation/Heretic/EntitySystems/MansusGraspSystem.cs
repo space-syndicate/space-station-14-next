@@ -1,6 +1,5 @@
 using Content.Server.Atmos.Commands;
 using Content.Server.Chat.Systems;
-using Content.Server.EntityEffects.Effects.StatusEffects;
 using Content.Server.Hands.Systems;
 using Content.Server.Heretic.Components;
 using Content.Server.Speech.EntitySystems;
@@ -32,7 +31,7 @@ namespace Content.Server.Heretic.EntitySystems;
 
 public sealed partial class MansusGraspSystem : EntitySystem
 {
-    [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ChatSystem _chat = default!;

@@ -15,6 +15,9 @@
   id: Retractor
 
 - type: Tag
+  id: BoneSetter
+
+- type: Tag
   id: AdvancedRetractor
 
 - type: Tag
@@ -34,3 +37,6 @@
 
 - type: Tag
   id: Skills
+
+- type: Tag
+  id: CarcTile # Spacessonne

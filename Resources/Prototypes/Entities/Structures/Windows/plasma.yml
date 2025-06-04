@@ -52,6 +52,9 @@
     price: 100
   - type: RadiationBlocker
     resistance: 2
+  - type: Penetratable # Corvax-Next - Better snipers
+    penetrateDamage: 75
+    damagePenalty: 0.1
 
 - type: entity
   id: PlasmaWindowDirectional
@@ -108,6 +111,9 @@
     price: 50
   - type: RadiationBlocker
     resistance: 1
+  - type: Penetratable # Corvax-Next - Better snipers
+    penetrateDamage: 50
+    damagePenalty: 0.1
 
 - type: entity
   parent: PlasmaWindow

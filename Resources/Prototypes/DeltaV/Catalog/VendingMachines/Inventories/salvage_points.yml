@@ -21,7 +21,7 @@
     cost: 500
   - id: ClothingBeltSalvageWebbing
     cost: 500
-  - id: PKAUpgradeLight
+  - id: LavalandPKAUpgradeLight
     cost: 500
   - id: DoubleEmergencyOxygenTank
     cost: 550
@@ -43,13 +43,13 @@
     cost: 800
   - id: Fulton
     cost: 1000
-  - id: PKAUpgradeRange
+  - id: LavalandPKAUpgradeRange
     cost: 1000
-  - id: PKAUpgradeFireRate
+  - id: LavalandPKAUpgradeFireRate
     cost: 1000
   - id: AdvancedMineralScanner
     cost: 1100
-  - id: PKAUpgradeDamage
+  - id: LavalandPKAUpgradeDamage
     cost: 1200
   - id: LavalandEquipmentExplorerSuit
     cost: 1200

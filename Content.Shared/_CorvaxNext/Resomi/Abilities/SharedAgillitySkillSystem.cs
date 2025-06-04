@@ -16,7 +16,7 @@ public abstract class SharedAgillitySkillSystem : EntitySystem
     [Dependency] protected readonly IGameTiming Timing = default!;
     [Dependency] protected readonly SharedPopupSystem _popup = default!;
     [Dependency] protected readonly ClimbSystem _climb = default!;
-    [Dependency] protected readonly StaminaSystem _stamina = default!;
+    [Dependency] protected readonly SharedStaminaSystem _stamina = default!;
     [Dependency] protected readonly SharedActionsSystem _actions = default!;
 
     protected const int BaseCollisionGroup = (int)(CollisionGroup.MobMask);

@@ -1,4 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.AlertLevel;
 using Content.Server.Antag;
@@ -33,6 +33,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
     [Dependency] private readonly ObjectivesSystem _objectivesSystem = default!;
     [Dependency] private readonly AlertLevelSystem _alertLevelSystem = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
+    [Dependency] private readonly ActorSystem _actor = default!;
 
     private static readonly SoundPathSpecifier BlobDetectAudio = new ("/Audio/_CorvaxNext/Misc/outbreak5.ogg");
     public override void Initialize()
@@ -213,7 +214,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
         foreach (var (mindId, mind) in blob.Blobs)
         {
             var name = mind.CharacterName;
-            _mindSystem.TryGetSession(mindId, out var session);
+            _actor.TryGetSession(mindId, out var session);
             var username = session?.Name;
 
             var objectives = mind.Objectives.ToArray();

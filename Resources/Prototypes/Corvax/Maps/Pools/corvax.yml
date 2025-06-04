@@ -6,6 +6,7 @@
   - CorvaxAvrite
   - CorvaxAstra
   - CorvaxPilgrim # 40+
+  - CorvaxChloris
   - Box
 
   # Semi-Highpop 25–65
@@ -21,7 +22,6 @@
   # Semi-Midpop 0–35
   - CorvaxMaus
   # Lowpop 0–25
-  - CorvaxCute
   - CorvaxSilly
   - CorvaxTushkan
   - Omega

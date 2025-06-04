@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 248.0.2
+  engineVersion: 250.0.0
   forkId: ""
   forkVersion: ""
-  time: 04/04/2025 11:20:03
-  entityCount: 22766
+  time: 05/22/2025 14:51:11
+  entityCount: 22767
 maps:
 - 5350
 grids:
@@ -11440,7 +11440,7 @@ entities:
       pos: 34.5,45.5
       parent: 30
     - type: Door
-      secondsUntilStateChange: -25574.873
+      secondsUntilStateChange: -25602.223
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -52857,6 +52857,7 @@ entities:
     - type: Transform
       pos: 24.465357,37.55109
       parent: 30
+    - type: Visibility
 - proto: ClothingBackpackDuffelSurgeryFilled
   entities:
   - uid: 22956
@@ -52864,6 +52865,7 @@ entities:
     - type: Transform
       pos: -24.508173,-15.332602
       parent: 30
+    - type: Visibility
 - proto: ClothingBeltHolster
   entities:
   - uid: 15997
@@ -103029,6 +103031,9 @@ entities:
       rot: 3.141592653589793 rad
       pos: 35.498177,-11.398144
       parent: 30
+    - type: CollisionWake
+      enabled: False
+    - type: Conveyed
   - uid: 19713
     components:
     - type: Transform
@@ -111293,7 +111298,7 @@ entities:
     - type: Transform
       pos: -34.5,-7.5
       parent: 30
-- proto: RandomVendingSnacks
+- proto: RandomVendingSnacksMidpop
   entities:
   - uid: 3698
     components:
@@ -120449,6 +120454,13 @@ entities:
     components:
     - type: Transform
       pos: -43.5,47.5
+      parent: 30
+- proto: SpawnPointWardenHelper
+  entities:
+  - uid: 10385
+    components:
+    - type: Transform
+      pos: -43.5,43.5
       parent: 30
 - proto: SpawnVendingMachineRestockFood
   entities:

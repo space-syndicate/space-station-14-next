@@ -18,6 +18,7 @@
     MysteryFigureBox: 2
     BooksBag: 3
     CardBoxBlack: 5 # Corvax Next Cards
+    CarcBoxClassic: 1 # Corvax Next Spacessonne
   contrabandInventory:
     Basketball: 1
     FoodSnackBoritos: 3

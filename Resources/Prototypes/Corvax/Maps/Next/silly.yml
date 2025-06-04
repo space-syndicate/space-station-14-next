@@ -17,6 +17,8 @@
             prefixCreator: 'ABK'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_corvaxsilly.yml
+        - type: StationCargoShuttle
+          path: /Maps/Corvax/Shuttles/cargo_corvaxsilly.yml
         - type: StationJobs
           availableJobs:
             # command
@@ -45,6 +47,7 @@
             # security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
+            WardenHelper: [ 1, 1 ]
             SecurityOfficer: [ 2, 2 ]
             SecurityCadet: [ 2, 2 ]
             Detective: [ 1, 1 ]

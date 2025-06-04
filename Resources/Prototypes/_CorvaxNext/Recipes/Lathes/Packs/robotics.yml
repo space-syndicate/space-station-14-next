@@ -3,7 +3,6 @@
   recipes:
     - BorgModuleSurgery
     - BorgModuleAdvancedSurgery
-    - BorgModuleDefibrillator
 
 - type: latheRecipePack
   id: CyberneticEnhancementsDynamic
