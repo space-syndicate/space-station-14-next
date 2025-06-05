@@ -185,7 +185,6 @@
       enum.SharedGasTankUiKey.Key:
         type: GasTankBoundUserInterface
   - type: InputMover
-    toParent: true
   - type: CanMoveInAir
   - type: MovementSpeedModifier
     weightlessAcceleration: 1
