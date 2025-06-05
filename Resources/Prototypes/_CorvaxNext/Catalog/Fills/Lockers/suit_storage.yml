@@ -6,7 +6,6 @@
   - type: StorageFill
     contents:
         - id: DoubleEmergencyOxygenTankFilled
-        - id: OxygenTankFilled
         - id: ClothingOuterHardsuitSecPilotFilled
         - id: ClothingMaskBreath
         - id: ClothingHeadHelmetHardsuitSecPilot

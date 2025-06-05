@@ -30,6 +30,7 @@
   components:
   - type: StorageFill
     contents:
+      - id: ClothingHeadHelmetHardsuitSecPilot
       - id: ClothingOuterHardsuitSecPilotFilled
       - id: FlashlightSeclite
       - id: WeaponDisabler
@@ -43,6 +44,7 @@
       - id: ClothingShoesBootsJack
       - id: HoloprojectorSecurity
       - id: BookSpaceLaw
+      - id: ThrusterFlatpack
       - id: ClothingHandsGlovesCombat
       - id: ClothingBeltUtilityFilled
       - id: ClothingOuterWinterPilot
