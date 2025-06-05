@@ -7,6 +7,7 @@ using Content.Server.CartridgeLoader;
 using Content.Shared.Cargo.Components;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.CartridgeLoader.Cartridges;
+using Content.Server.Cargo.Systems;
 
 namespace Content.Server._CorvaxNext.CartridgeLoader.Cartridges;
 
@@ -14,6 +15,7 @@ public sealed class StockTradingCartridgeSystem : EntitySystem
 {
     [Dependency] private readonly CartridgeLoaderSystem _cartridgeLoader = default!;
     [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private readonly CargoSystem _cargoSystem = default!;
 
     public override void Initialize()
     {
@@ -93,7 +95,7 @@ public sealed class StockTradingCartridgeSystem : EntitySystem
         var state = new StockTradingUiState(
             entries: entries,
             ownedStocks: stockMarket.StockOwnership,
-            balance: bankAccount.Balance
+            balance: _cargoSystem.GetBalanceFromAccount(ent.Comp.Station.Value, bankAccount.PrimaryAccount)
         );
 
         _cartridgeLoader.UpdateCartridgeUiState(loader, state);

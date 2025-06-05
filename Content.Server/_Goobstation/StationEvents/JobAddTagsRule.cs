@@ -6,6 +6,7 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind.Components;
 using Content.Shared.Roles.Jobs;
 using Content.Shared.Tag;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.StationEvents.Events;
@@ -16,6 +17,7 @@ public sealed class JobAddTagsRule : StationEventSystem<JobAddTagsRuleComponent>
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly SharedJobSystem _job = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly ISharedPlayerManager _player = default!;
 
     protected override void Started(EntityUid uid, JobAddTagsRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
@@ -30,7 +32,7 @@ public sealed class JobAddTagsRule : StationEventSystem<JobAddTagsRuleComponent>
                 if (_job.MindHasJobWithId(mindContainer.Mind, proto))
                 {
                     _tag.AddTags(target, component.Tags);
-                    if (component.Message != null && _mind.TryGetSession(mindContainer.Mind.Value, out var session))
+                    if (component.Message != null && _mind.TryGetMind(target, out var mindId, out var mind) && _player.TryGetSessionById(mind.UserId, out var session))
                     {
                         var message = Loc.GetString("chat-manager-server-wrap-message", ("message", Loc.GetString(component.Message)));
                         _chat.ChatMessageToOne(ChatChannel.Local, message, message, EntityUid.Invalid, false, session.Channel);

@@ -81,6 +81,7 @@
     icon:
       sprite: _CorvaxNext/Misc/program_icons.rsi
       state: stock_trading
-  - type: BankClient
+  - type: CargoOrderConsole
+    removeLimitAccess: [ "Quartermaster" ]
   - type: AccessReader # This is so that we can restrict who can buy stocks
     access: [["Command"]]

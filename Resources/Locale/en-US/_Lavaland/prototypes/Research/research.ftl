@@ -1,1 +1,1 @@
-research-technology-kinetic-modifications = Kinnetical Modifications
+lavaland-research-technology-kinetic-modifications = Kinnetical Modifications

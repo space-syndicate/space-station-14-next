@@ -97,7 +97,32 @@
       - ReagentId: Blood
         Quantity: 20
 
-# Monkey head for borging/transplanting pun pun
+- type: entity
+  parent: PartAnimal
+  id: LeftHandSmartCorgi
+  name: corgi hand
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: l_hand
+  - type: BodyPart
+    partType: Hand
+    symmetry: Left
+
+- type: entity
+  parent: PartAnimal
+  id: RightHandSmartCorgi
+  name: corgi hand
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: r_hand
+  - type: BodyPart
+    partType: Hand
+    symmetry: Right
+
 - type: entity
   parent: [PartAnimal, BaseHead]
   id: HeadAnimal

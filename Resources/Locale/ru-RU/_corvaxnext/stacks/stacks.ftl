@@ -1,0 +1,1 @@
+stack-artificialbluespacecrystal = блюспейс-кристалл

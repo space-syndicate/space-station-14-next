@@ -34,6 +34,32 @@ public sealed partial class RCDComponent : Component
     public ProtoId<RCDPrototype> ProtoId { get; set; } = "Invalid";
 
     /// <summary>
+    /// The direction constructed entities will face upon spawning
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public Direction ConstructionDirection
+    {
+        get => _constructionDirection;
+        set
+        {
+            _constructionDirection = value;
+            ConstructionTransform = new Transform(new(), _constructionDirection.ToAngle());
+        }
+    }
+
+    private Direction _constructionDirection = Direction.South;
+
+    // Corvax-Next-RCD Start
+    /// <summary>
+    /// Returns a rotated transform based on the specified ConstructionDirection
+    /// </summary>
+    /// <remarks>
+    /// Contains no position data
+    /// </remarks>
+    [ViewVariables(VVAccess.ReadOnly)]
+    public Transform ConstructionTransform { get; private set; }
+
+    /// <summary>
     /// A cached copy of currently selected RCD prototype
     /// </summary>
     /// <remarks>
@@ -53,32 +79,5 @@ public sealed partial class RCDComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool IsRpd { get; set; } = false;
-
-    /// <summary>
-    /// The direction constructed entities will face upon spawning
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public Direction ConstructionDirection
-    {
-        get
-        {
-            return _constructionDirection;
-        }
-        set
-        {
-            _constructionDirection = value;
-            ConstructionTransform = new Transform(new(), _constructionDirection.ToAngle());
-        }
-    }
-
-    private Direction _constructionDirection = Direction.South;
-
-    /// <summary>
-    /// Returns a rotated transform based on the specified ConstructionDirection
-    /// </summary>
-    /// <remarks>
-    /// Contains no position data
-    /// </remarks>
-    [ViewVariables(VVAccess.ReadOnly)]
-    public Transform ConstructionTransform { get; private set; } = default!;
+    // Corvax-Next-RCD End
 }

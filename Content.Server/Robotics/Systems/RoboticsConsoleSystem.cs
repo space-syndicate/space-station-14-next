@@ -1,5 +1,4 @@
 using Content.Server.Administration.Logs;
-using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Radio.EntitySystems;
 using Content.Shared.Lock;
@@ -13,6 +12,7 @@ using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Containers.ItemSlots;
 using Robust.Shared.Containers;
+using Content.Shared.DeviceNetwork.Events;
 
 namespace Content.Server.Research.Systems;
 
