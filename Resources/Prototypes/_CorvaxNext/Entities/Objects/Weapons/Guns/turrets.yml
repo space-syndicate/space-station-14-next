@@ -1,9 +1,0 @@
-- type: entity
-  parent: BaseWeaponTurret
-  id: WeaponTurretControl
-  suffix: Control
-  components:
-  - type: NpcFactionMember
-    factions:
-    - TurretPeace
-  - type: TurretControllable
