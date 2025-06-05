@@ -39,16 +39,27 @@
   description: department-CentralCommand-description
   color: "#0c344d"
   roles:
+  - CentralCommandAdmiral
   - CentralCommandOfficial
-  - CBURN
+  weight: 120
+  
+- type: department
+  id: SpecOps
+  name: Департамент спецопераций
+  description: department-CentralCommand-description
+  color: "#0c344d"
+  roles:
+  - CentralCommandSpecial
+  - DeathSquad
+  - CBURNLeader
   - ERTLeader
+  - CBURN
   - ERTChaplain
   - ERTJanitor
   - ERTMedical
   - ERTSecurity
   - ERTEngineer
-  - DeathSquad
-  editorHidden: true
+  - Blueshield
   weight: 120
 
 - type: department
@@ -65,15 +76,6 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
-  - CentralCommandOfficial
-  - CBURN
-  - ERTLeader
-  - ERTChaplain
-  - ERTJanitor
-  - ERTMedical
-  - ERTSecurity
-  - ERTEngineer
-  - DeathSquad
   primary: false
   weight: 100
 

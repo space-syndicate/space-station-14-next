@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBlueshield
+  name: Берет офицера "синий щит"
+  description: Синий берет из дюраткани со значком из золота, обозначающим его владельца как офицера "синего щита".
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Head/Hats/BS_beret.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Head/Hats/BS_beret.rsi

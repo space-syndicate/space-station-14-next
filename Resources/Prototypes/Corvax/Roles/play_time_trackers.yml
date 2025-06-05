@@ -54,3 +54,6 @@
   
 - type: playTimeTracker
   id: JobEvent16
+
+- type: playTimeTracker
+  id: JobCentralCommandAdmiral

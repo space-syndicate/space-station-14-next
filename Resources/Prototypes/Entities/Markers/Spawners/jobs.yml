@@ -611,3 +611,51 @@
     layers:
       - state: green
       - state: zookeeper
+
+- type: entity
+  id: SpawnPointBlueshield
+  parent: SpawnPointJobBase
+  name: Blueshield
+  components:
+  - type: SpawnPoint
+    job_id: Blueshield
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ertleader
+      
+- type: entity
+  id: SpawnPointSpecial
+  parent: SpawnPointJobBase
+  name: Офицер спецопераций
+  components:
+  - type: SpawnPoint
+    job_id: CentralCommandSpecial
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ertleader
+      
+- type: entity
+  id: SpawnPointAdmiral
+  parent: SpawnPointJobBase
+  name: Начальник штаба Центком
+  components:
+  - type: SpawnPoint
+    job_id: CentralCommandAdmiral
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ertleader
+      
+- type: entity
+  id: SpawnPointCentcomm
+  parent: SpawnPointJobBase
+  name: Офицер штаба Центком
+  components:
+  - type: SpawnPoint
+    job_id: CentralCommandOfficial
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ertleader

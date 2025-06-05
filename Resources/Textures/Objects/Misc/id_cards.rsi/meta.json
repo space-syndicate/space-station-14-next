@@ -11,6 +11,24 @@
             "name": "default"
         },
         {
+            "name": "idLeader"
+        },
+        {
+            "name": "idAdmiral"
+        },
+        {
+            "name": "idblueshield"
+        },
+        {
+            "name": "idCBURN"
+        },
+        {
+            "name": "idCentcomm"
+        },
+        {
+            "name": "idERT"
+        }
+        {
             "name": "centcom"
         },
         {

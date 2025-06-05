@@ -452,3 +452,52 @@
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: Admin
   allowSelection: false
+  
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBlueShield
+  icon:
+    sprite: /Textures/Interface/Misc/icons.rsi
+    state: BlueShield
+  
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconAdmiral
+  icon:
+    sprite: /Textures/Interface/Misc/icons.rsi
+    state: Admiral
+  
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCBURN
+  icon:
+    sprite: /Textures/Interface/Misc/icons.rsi
+    state: CBURN
+  
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDeath
+  icon:
+    sprite: /Textures/Interface/Misc/icons.rsi
+    state: Death
+  
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconERT
+  icon:
+    sprite: /Textures/Interface/Misc/icons.rsi
+    state: ERT
+    
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconLeader
+  icon:
+    sprite: /Textures/Interface/Misc/icons.rsi
+    state: Leader
+  
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCentcomm
+  icon:
+    sprite: /Textures/Interface/Misc/icons.rsi
+    state: Centcomm

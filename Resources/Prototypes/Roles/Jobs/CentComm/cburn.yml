@@ -1,11 +1,11 @@
 - type: job
   id: CBURN
-  name: job-name-cburn
+  name: солдат РХБЗЗ
   description: job-description-cburn
   playTimeTracker: JobCBURN
   setPreference: false
   startingGear: CBURNGear
-  icon: "JobIconNanotrasen"
+  icon: "JobIconCBURN"
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
@@ -34,13 +34,14 @@
 - type: startingGear
   id: CBURNGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitColorBrown
+    jumpsuit: ClothingUniformJumpsuitEngineeringHazard
     back: ClothingBackpackDuffelCBURN
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlassesSecurity
     ears: ClothingHeadsetAltCentCom
+    head: ClothingHeadHelmetRiot
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitCBURN
+    outerClothing: ClothingOuterArmorRiot
     shoes: ClothingShoesBootsCombatFilled
     id: CBURNPDA
     pocket1: RadioHandheld
@@ -53,3 +54,66 @@
     - GrenadeFlashBang
     - PillAmbuzolPlus
     - PillAmbuzol
+    - BodyBagRadiationFolded
+    - BodyBagRadiationFolded
+    - BodyBagRadiationFolded
+    
+- type: job
+  id: CBURNLeader
+  name: лидер РХБЗЗ
+  description: job-description-cburn
+  playTimeTracker: JobCBURNLeader
+  setPreference: false
+  startingGear: CBURNLeaderGear
+  icon: "JobIconLeader"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddComponentSpecial
+    components:
+    #start-_CorvaxNext: surgery
+    #- type: CPRTraining
+    - type: SurgerySpeedModifier
+      speedModifier: 1.5
+    #end-_CorvaxNext: surgery
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear
+  id: CBURNLeaderGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitEngineeringHazard
+    back: ClothingBackpackDuffelCBURN
+    mask: ClothingMaskGasERT
+    eyes: ClothingEyesGlassesSecurity
+    ears: ClothingHeadsetAltCentCom
+    head: ClothingHeadHelmetRiot
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorRiot
+    shoes: ClothingShoesBootsCombatFilled
+    id: CBURNLeaderPDA
+    pocket1: RadioHandheld
+    pocket2: WeaponAntiqueLaser
+    belt: ClothingBeltBandolier
+  storage:
+    back:
+    - WeaponShotgunDoubleBarreled
+    - BoxShotgunIncendiary
+    - GrenadeFlashBang
+    - PillAmbuzolPlus
+    - PillAmbuzol
+    - BodyBagRadiationFolded
+    - BodyBagRadiationFolded
+    - BodyBagRadiationFolded

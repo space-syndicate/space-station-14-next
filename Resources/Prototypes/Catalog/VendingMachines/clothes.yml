@@ -1,0 +1,5 @@
+- type: vendingMachineInventory
+  id: ClothesMateInventory
+  startingInventory:
+    ClothingOuterCoatBomberWhitepower: 2
+    ClothingShoesWhitepower: 2

@@ -1,0 +1,23 @@
+- type: entity
+  parent: [ClothingEyesBase, ShowMedicalIcons, ShowSecurityIcons]
+  id: ClothingEyesGlassesBlueshield
+  name: Очки офицера "синий щит"
+  description: Очки, что паказывают как присутствие импланта ЗР и айди карты, так и общее состояние здоровья.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/commandglasses.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/commandglasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: Construction
+    graph: GlassesSecHUD
+    node: glassesSec
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - HudMedical
+  - type: IdentityBlocker
+    coverage: EYES

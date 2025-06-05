@@ -1418,3 +1418,228 @@
   hidden: true
   loadouts:
   - LoadoutSpeciesBreathToolSecurity
+
+- type: loadoutGroup
+  id: OSOGlasses
+  name: Очки
+  loadouts:
+  - GlassesCommand
+  - GlassesSec
+  
+- type: loadoutGroup
+  id: OSOCapes
+  minLimit: 0
+  name: Офицер спецопераций, шея
+  loadouts:
+  - OSOCape
+  
+- type: loadoutGroup
+  id: CentcommGlasses
+  minLimit: 0
+  name: Очки
+  loadouts:
+  - CentcommSunglasses
+  - Glasses
+  - GlassesJamjar
+  - GlassesJensen
+  
+- type: loadoutGroup
+  id: CentcommCapes
+  minLimit: 0
+  name: Офицер штаба Центком, шея
+  loadouts:
+  - CentcommCloak
+  
+- type: loadoutGroup
+  id: CentcommJumpsuit
+  minLimit: 1
+  maxLimit: 1
+  name: Офицер штаба Центком, комбинезон
+  loadouts:
+  - CentcommJumpsuit
+  - CentcommJumpskirt
+  - CentcommFormalDress
+  - CentcommFormal
+  - CentcommOfficer
+  - CentcommOfficerJumpskirt
+  
+- type: loadoutGroup
+  id: CentcommGloves
+  minLimit: 1
+  maxLimit: 1
+  name: Офицер штаба Центком, перчатки
+  loadouts:
+  - CentcommBlackGloves
+  - CentcommCombatGloves
+  
+- type: loadoutGroup
+  id: CentcommHat
+  minLimit: 1
+  maxLimit: 1
+  name: Офицер штаба Центком, голова
+  loadouts:
+  - CentcommBeret
+  - CentcommCap
+  - CentcommHead
+  
+- type: loadoutGroup
+  id: CentcommBoots
+  minLimit: 1
+  maxLimit: 1
+  name: Офицер штаба Центком, обувь
+  loadouts:
+  - CentcommCombatBoots
+  - CentcommBoots
+  
+- type: loadoutGroup
+  id: CentcommCoat
+  minLimit: 0
+  maxLimit: 1
+  name: Офицер штаба Центком, верхняя одежда
+  loadouts:
+  - CentcommArmor
+  - CentcommWintercoat
+  
+- type: loadoutGroup
+  id: AdmiralHat
+  minLimit: 1
+  maxLimit: 1
+  name: Начальник штаба Центком, голова
+  loadouts:
+  - FlotCap
+  - CentcommCap
+  - CentcommHead
+  
+- type: loadoutGroup
+  id: AdmiralBoots
+  minLimit: 1
+  maxLimit: 1
+  name: Начальник штаба Центком, обувь
+  loadouts:
+  - CentcommCombatBoots
+  - CentcommBoots
+  - AdmiralBoots
+  
+- type: loadoutGroup
+  id: AdmiralJumpsuit
+  minLimit: 1
+  maxLimit: 1
+  name: Начальник штаба Центком, комбинезон
+  loadouts:
+  - AdmiralJumpsuit
+  - CentcommJumpskirt
+  - CentcommFormalDress
+  - AgentJumpsuit
+  
+- type: loadoutGroup
+  id: ERTvest
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, верхняя одежда
+  loadouts:
+  - ArmorVest
+  - ArmorVestSlim
+  
+- type: loadoutGroup
+  id: ERTsecHead
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, голова
+  loadouts:
+  - ERTsecHead
+  - SecurityHelmet
+  - MercHead
+  
+- type: loadoutGroup
+  id: ERTsecBelt
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, пояс
+  loadouts:
+  - SecurityBelt
+  - SecurityWebbing
+  
+- type: loadoutGroup
+  id: ERTsecJumpsuit
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, комбинезон
+  loadouts:
+  - ERTsecJumpsuit
+  - MercJumpsuit
+  
+- type: loadoutGroup
+  id: ERTgetrs
+  minLimit: 0
+  maxLimit: 1
+  name: ОБР, маска
+  loadouts:
+  - ERTgetr
+  - Mercgetr
+  
+- type: loadoutGroup
+  id: ERTmedgetrs
+  minLimit: 0
+  maxLimit: 1
+  name: ОБР, маска
+  loadouts:
+  - Mercgetr
+  - SterileMaskMed
+  - MilMask
+  
+- type: loadoutGroup
+  id: ERTmedgloves
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, перчатки
+  loadouts:
+  - Nitrile
+  - Latex
+  
+- type: loadoutGroup
+  id: ERTmedJumpsuit
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, комбинезон
+  loadouts:
+  - ERTmedJumpsuit
+  - MercJumpsuit
+  
+- type: loadoutGroup
+  id: ERTmedHead
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, голова
+  loadouts:
+  - ERTmedHead
+  - medHead
+  - MercHead
+  
+- type: loadoutGroup
+  id: ERTmedvest
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, верхняя одежда
+  loadouts:
+  - ArmorVest
+  - ArmorVestSlim
+  - BrigmedArmor
+  
+- type: loadoutGroup
+  id: ERTengHead
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, голова
+  loadouts:
+  - engHead
+  - engHeadarmored
+  - MercHead
+  
+- type: loadoutGroup
+  id: ERTengJumpsuit
+  minLimit: 1
+  maxLimit: 1
+  name: ОБР, комбинезон
+  loadouts:
+  - ERTengJumpsuit
+  - MercJumpsuit

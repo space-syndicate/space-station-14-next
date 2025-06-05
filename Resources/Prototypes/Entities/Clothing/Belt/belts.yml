@@ -716,3 +716,18 @@
     whitelist:
       tags:
       - WizardWand
+
+- type: entity
+  parent: ClothingBeltSecurity
+  id: ClothingBeltBlueshieldWebbing
+  name: РПС офицера "синий щит"
+  description: Уникальный, универсальный разгрузочный жилет с ремнями и поясом, может вмещать снаряжение офицера "синий щит".
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/blueshieldwebbing.rsi
+  - type: Clothing
+    sprite: Clothing/Belt/blueshieldwebbing.rsi
+  - type: Item
+    size: Huge
+  - type: ExplosionResistance
+    damageCoefficient: 0.1

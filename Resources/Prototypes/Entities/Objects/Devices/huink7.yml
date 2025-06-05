@@ -1,0 +1,748 @@
+- type: entity
+  name: bluespace crystals
+  parent: BaseItem
+  id: Telecrystal2
+  suffix: 20 TC
+  description: It seems to be pulsing with suspiciously enticing energies.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Syndicate/telecrystal.rsi
+    state: telecrystal
+  - type: Item
+    sprite: Objects/Specific/Syndicate/telecrystal.rsi
+    size: Tiny
+  - type: Stack
+    count: 20
+    stackType: Telecrystal
+  - type: StaticPrice
+    price: 0
+  - type: StackPrice
+    price: 200
+  - type: Currency
+    price:
+      Telecrystal: 1
+
+- type: entity
+  parent: Telecrystal2
+  id: Telecrystal21
+  suffix: 1 TC
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: Telecrystal2
+  id: Telecrystal25
+  suffix: 5 TC
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent: Telecrystal2
+  id: Telecrystal210
+  suffix: 10 TC
+  components:
+  - type: Stack
+    count: 10
+
+- type: storeCategory
+  id: Leader
+  name: Лидер
+
+- type: storeCategory
+  id: ERT
+  name: ОБР
+
+- type: storeCategory
+  id: CBURN
+  name: РХБЗЗ
+
+- type: storeCategory
+  id: Arsenal
+  name: Вооружение
+
+- type: storeCategory
+  id: Ammunition
+  name: Боеприпасы
+
+- type: storeCategory
+  id: hardsuits
+  name: Скафандры
+
+- type: storeCategory
+  id: medicines
+  name: Медицина
+
+- type: storeCategory
+  id: other
+  name: Другое
+
+- type: storeCategory
+  id: explosion
+  name: Взрывчатка
+  
+- type: storeCategory
+  id: deathsquad
+  name: Совершенно секретно
+  
+- type: entity
+  id: Store
+  abstract: true
+  components:
+  - type: Store
+    name: store-preset-name-uplink
+    categories:
+    - Leader
+    - ERT
+    - CBURN
+    - Arsenal
+    - Ammunition
+    - hardsuits
+    - medicines
+    - other
+    - explosion
+    - deathsquad
+    currencyWhitelist:
+    - Telecrystal
+    balance:
+      Telecrystal: 0
+
+# Uplinks
+- type: entity
+  parent: [ BaseItem, Store]
+  id: OSOUP
+  name: Аплинк разморозки отрядов ДСО
+  description: a new way to summon someone
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/communication.rsi
+    layers:
+    - state: old-radio
+  - type: Item
+    sprite: Objects/Devices/communication.rsi
+    heldPrefix: old-radio
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    balance:
+      Telecrystal: 60
+
+
+
+- type: listing
+  id: CBURNleaderspawn
+  name: Лидер РХБЗЗ
+  description: Пахнет аммиаком.
+  productEntity: RandomHumanoidSpawnerCBURNLeader
+  cost:
+    Telecrystal: 10
+  categories:
+  - Leader
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ERT leader
+  name: Лидер ОБР
+  description: HEAD OF HEADS.
+  productEntity: RandomHumanoidSpawnerERTLeader
+  cost:
+    Telecrystal: 10
+  categories:
+  - Leader
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ERT engineer
+  name: Инженер ОБР
+  description: Put dispencer here!
+  productEntity: RandomHumanoidSpawnerERTEngineer
+  cost:
+    Telecrystal: 2
+  categories:
+  - ERT
+
+- type: listing
+  id: ERT medic
+  name: Медик ОБР
+  description: medic!
+  productEntity: RandomHumanoidSpawnerERTMedical
+  cost:
+    Telecrystal: 2
+  categories:
+  - ERT
+  
+- type: listing
+  id: ERT officer
+  name: Офицер безопасности ОБР
+  description: shitcure
+  productEntity: RandomHumanoidSpawnerERTSecurity
+  cost:
+    Telecrystal: 2
+  categories:
+  - ERT
+
+- type: listing
+  id: ERT Janitor
+  name: Уборщик ОБР
+  description: clear! clear! clear! 
+  productEntity: RandomHumanoidSpawnerERTJanitor
+  cost:
+    Telecrystal: 1
+  categories:
+  - ERT
+
+- type: listing
+  id: CBURN Unit
+  name: Солдат РХБЗЗ
+  description: any threat except Nukes and reva is mine
+  productEntity: RandomHumanoidSpawnerCBURNUnit
+  cost:
+    Telecrystal: 2
+  categories:
+  - CBURN
+#оржие
+- type: listing
+  id: Lecter
+  name: Лектер
+  description: Gold Standart
+  productEntity: WeaponRifleLecter
+  cost:
+    Telecrystal: 1
+  categories:
+  - Arsenal
+
+- type: listing
+  id: Pulse Carbine
+  name: Импульсный карабин
+  description: Gold Standart
+  productEntity: WeaponPulseCarbine
+  cost:
+    Telecrystal: 2
+  categories:
+  - Arsenal
+
+- type: listing
+  id: Pulse Pistol
+  name: Импульсный пистолет
+  description: Gold Standart
+  productEntity: WeaponPulsePistol
+  cost:
+    Telecrystal: 1
+  categories:
+  - Arsenal
+
+- type: listing
+  id: Enforcer
+  name: Силовик
+  description: Best of legal
+  productEntity: WeaponShotgunEnforcer
+  cost:
+    Telecrystal: 2
+  categories:
+  - Arsenal
+
+- type: listing
+  id: Wt550
+  name: WT550
+  description: Best of legal smg
+  productEntity: WeaponSubMachineGunWt550
+  cost:
+    Telecrystal: 2
+  categories:
+  - Arsenal
+
+- type: listing
+  id: Kammerer
+  name: Каммерер
+  description: Eco?
+  productEntity: WeaponShotgunKammerer
+  cost:
+    Telecrystal: 1
+  categories:
+  - Arsenal
+
+- type: listing
+  id: Bulldog
+  name: Бульдог
+  description: Hurt me plenty!
+  productEntity: WeaponShotgunBulldog
+  cost:
+    Telecrystal: 4
+  categories:
+  - Arsenal
+
+- type: listing
+  id: Laser Carbine
+  name: Лазерный карабин
+  description: Cheap alternative but effecive
+  productEntity: WeaponLaserCarbine
+  cost:
+    Telecrystal: 1
+  categories:
+  - Arsenal
+
+- type: listing
+  id: Advanced Laser
+  name: Продвинутый лазерный пистолет
+  description: Infinite?
+  productEntity: WeaponAdvancedLaser
+  cost:
+    Telecrystal: 1
+  categories:
+  - Arsenal
+
+#патроны
+
+- type: listing
+  id: Magazine Rifle
+  name: Магазин .20
+  description: extra ammo
+  productEntity: MagazineRifle
+  cost:
+    Telecrystal: 1
+  categories:
+  - Ammunition
+
+- type: listing
+  id: Shotgun Incendiary
+  name: Коробка .50 зажигательных
+  description: extra ammo
+  productEntity: BoxShotgunIncendiary
+  cost:
+    Telecrystal: 1
+  categories:
+  - Ammunition
+
+- type: listing
+  id: Magazine ShotgunIncendiary
+  name: Коробка магазинов .50 зажигательных
+  description: extra ammo
+  productEntity: BoxMagazineShotgunIncendiary
+  cost:
+    Telecrystal: 2
+  categories:
+  - Ammunition
+
+- type: listing
+  id: SubMachine Gun TopMounted mag
+  name: Коробка магазинов .35 авто
+  description: extra ammo
+  productEntity: BoxMagazinePistolSubMachineGunTopMounted
+  cost:
+    Telecrystal: 2
+  categories:
+  - Ammunition
+
+- type: listing
+  id: Rifle Incendiary
+  name: Коробка .35 авто зажигательных
+  description: extra ammo
+  productEntity: MagazineBoxRifleIncendiary
+  cost:
+    Telecrystal: 2
+  categories:
+  - Ammunition
+
+- type: listing
+  id: Pistol Incendiary
+  name: Коробка .35 авто зажигательных
+  description: extra ammo
+  productEntity: MagazineBoxPistolIncendiary
+  cost:
+    Telecrystal: 2
+  categories:
+  - Ammunition
+
+- type: listing
+  id: Rifle Uranium
+  name: Коробка .20 урановых
+  description: extra ammo
+  productEntity: MagazineBoxRifleUranium
+  cost:
+    Telecrystal: 5
+  categories:
+  - Ammunition
+
+- type: listing
+  id: Pistol Uranium
+  name: Коробка .35 авто урановых
+  description: extra ammo
+  productEntity: MagazineBoxPistolUranium
+  cost:
+    Telecrystal: 5
+  categories:
+  - Ammunition
+
+- type: listing
+  id: Box Pistol
+  name: Коробка .35 авто
+  description: extra ammo
+  productEntity: MagazineBoxPistol
+  cost:
+    Telecrystal: 1
+  categories:
+  - Ammunition
+- type: listing
+  id: Box Rifle
+  name: Коробка .20
+  description: extra ammo
+  productEntity: MagazineBoxRifle
+  cost:
+    Telecrystal: 1
+  categories:
+  - Ammunition
+
+#hardsuits
+
+- type: listing
+  id: ERTJanitor
+  name: Скафандр уборщика ОБР
+  description: Даже элитным отрядам нужен кто-то, кто вытрет последствия ‘контакта с аномалией’
+  productEntity: ClothingOuterHardsuitERTJanitor
+  cost:
+    Telecrystal: 2
+  categories:
+  - hardsuits
+
+- type: listing
+  id: ERTChaplain
+  name: Скафандр священника ОБР
+  description: Молитва, ладан и дробовик. Изгоняет нечисть из станции — и из экипажа, если потребуется.
+  productEntity: ClothingOuterHardsuitERTChaplain
+  cost:
+    Telecrystal: 10
+  categories:
+  - hardsuits
+
+- type: listing
+  id: ERTSecurity
+  name: Скафандр офицера безопасности ОБР
+  description: Просто вояка с пушкой. Бежит первым, умирает красиво. Зато броня блестит.
+  productEntity: ClothingOuterHardsuitERTSecurity
+  cost:
+    Telecrystal: 5
+  categories:
+  - hardsuits
+
+- type: listing
+  id: ERTEngineer
+  name: Скафандр инженера ОБР
+  description: Крякнем, плюнем - и надежно склеим скотчем!
+  productEntity: ClothingOuterHardsuitERTEngineer
+  cost:
+    Telecrystal: 2
+  categories:
+  - hardsuits
+
+- type: listing
+  id: ERTMedical
+  name: Скафандр медика ОБР
+  description: Создан, чтобы лечить раны... и твою гордость после того, как ты снова упал на ровном месте.
+  productEntity: ClothingOuterHardsuitERTMedical
+  cost:
+    Telecrystal: 5
+  categories:
+  - hardsuits
+
+- type: listing
+  id: ERTLeader
+  name: Скафандр лидера ОБР
+  description: Выглядит важно. Орёт громко. Потерял карту, но уверяет, что это стратегический манёвр.
+  productEntity: ClothingOuterHardsuitERTLeader
+  cost:
+    Telecrystal: 8
+  categories:
+  - hardsuits
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: CBURNLeader
+  name: Скафандр лидера РХБЗЗ
+  description: Сделан, чтобы ты не расплавился, не сгнил, не мутировал и не стал обедом для ходячих. Почти всегда срабатывает
+  productEntity: ClothingOuterHardsuitCBURNLeader
+  cost:
+    Telecrystal: 8
+  categories:
+  - hardsuits
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+    
+- type: listing
+  id: CBURNHardsuit
+  name: Скафандр РХБЗЗ
+  description: Сделан, чтобы ты не расплавился, не сгнил, не мутировал и не стал обедом для ходячих. Почти всегда срабатывает
+  productEntity: ClothingOuterHardsuitCBURN
+  cost:
+    Telecrystal: 5
+  categories:
+  - hardsuits
+
+
+#медицина
+
+- type: listing
+  id: MedkitCombatFilled
+  name: Боевая аптечка
+  description: Для любителей больших пушек среди нас.
+  productEntity: MedkitCombatFilled
+  cost:
+    Telecrystal: 6
+  categories:
+  - medicines
+
+- type: listing
+  id: MedkitAdvancedFilled
+  name: Продвинутая аптечка первой помощи
+  description: Продвинутый набор для оказания помощи при продвинутых ранах.
+  productEntity: MedkitAdvancedFilled
+  cost:
+    Telecrystal: 4
+  categories:
+  - medicines
+
+- type: listing
+  id: MedkitFilled
+  name: Аптечка первой помощи
+  description: Это экстренная аптечка для серьёзных бо-бо.
+  productEntity: MedkitFilled
+  cost:
+    Telecrystal: 3
+  categories:
+  - medicines
+
+- type: listing
+  id: MedkitBurnFilled
+  name: Набор для лечения физических травм
+  description: Специализированная аптечка на случай, если лаборатория с токсинами *внезапно* сгорит.
+  productEntity: MedkitBurnFilled
+  cost:
+    Telecrystal: 3
+  categories:
+  - medicines
+
+- type: listing
+  id: MedkitToxinFilled
+  name: Набор для лечения токсинов
+  description: Используется для лечения токсинов в крови.
+  productEntity: MedkitToxinFilled
+  cost:
+    Telecrystal: 3
+  categories:
+  - medicines
+
+- type: listing
+  id: MedkitBruteFilled
+  name: Набор для лечения механических травм
+  description: Аптечка для оказания первой помощи избитым ящиком с инструментами.
+  productEntity: MedkitBruteFilled
+  cost:
+    Telecrystal: 3
+  categories:
+  - medicines
+
+- type: listing
+  id: MedkitRadiationFilled
+  name: Набор для выведения радиации
+  description: Если бы вы приняли свой Рад-X, вам бы это не понадобилось.
+  productEntity: MedkitRadiationFilled
+  cost:
+    Telecrystal: 3
+  categories:
+  - medicines
+  
+- type: listing
+  id: MedkitOxygenFilled
+  name: Набор для лечения кислородного голодания
+  description: Коробка, полная кислородных лакомств.
+  productEntity: MedkitOxygenFilled
+  cost:
+    Telecrystal: 3
+  categories:
+  - medicines
+
+- type: listing
+  id: CombatMedipen
+  name: Боевой медипен
+  description: Одноразовый медипен, содержащий химические вещества, восстанавливающие большинство видов повреждений.
+  productEntity: CombatMedipen
+  cost:
+    Telecrystal: 3
+  categories:
+  - medicines
+
+- type: listing
+  id: PunctAutoInjector
+  name: Автоинъектор пунктураза
+  description: Экспресс-доза пунктураза и транексамовой кислоты, предназначенная для применения в боевых условиях.
+  productEntity: PunctAutoInjector
+  cost:
+    Telecrystal: 1
+  categories:
+  - medicines
+
+
+- type: listing
+  id: PyraAutoInjector
+  name: Автоинъектор пиразина
+  description: Экспресс-доза пиразина и дермалина, предназначенная для применения в боевых условиях.
+  productEntity: PyraAutoInjector
+  cost:
+    Telecrystal: 1
+  categories:
+  - medicines
+
+- type: listing
+  id: Hypospray
+  name: Гипоспрей
+  description: 
+  productEntity: Hypospray
+  cost:
+    Telecrystal: 3
+  categories:
+  - medicines
+
+- type: listing
+  id: Hypospray Brigmedic
+  name: Гипоспрей бригмедика
+  description: 
+  productEntity: HyposprayBrigmedic
+  cost:
+    Telecrystal: 1
+  categories:
+  - medicines
+  
+- type: listing
+  id: компактный дефибриллятор
+  name: Компактный дефибриллятор
+  description: Теперь и в весёлом размере!
+  productEntity: DefibrillatorCompact
+  cost:
+    Telecrystal: 1
+  categories:
+  - medicines
+  
+#expa
+
+- type: listing
+  id: Box Flashbang
+  name: Коробка светошумовых гранат
+  description: WARNING These devices are extremely dangerous and may cause blindness or deafness if used repeatedly.
+  productEntity: BoxFlashbang
+  cost:
+    Telecrystal: 2
+  categories:
+  - explosion
+
+- type: listing
+  id: Box Stinger
+  name: Коробка травматических гранат
+  description: A full box of traumatic grenades. Disperse!
+  productEntity: BoxStinger
+  cost:
+    Telecrystal: 3
+  categories:
+  - explosion
+
+- type: listing
+  id: C4
+  name: C-4
+  description: Used to make neat, not too big, breaches in the places of laying. A favorite tool of saboteurs.
+  productEntity: C4
+  cost:
+    Telecrystal: 5
+  categories:
+  - explosion
+
+- type: listing
+  id: Grenade Incendiary
+  name: Зажигательная граната
+  description: Light it up tonight.
+  productEntity: GrenadeIncendiary
+  cost:
+    Telecrystal: 3
+  categories:
+  - explosion
+
+
+#прочее
+- type: listing
+  id: ClothingShoesBootsMagAdv
+  name: Продвинутые магнитные сапоги
+  description: Новейшие магнитные сапоги, которые не замедляют движения своего владельца.
+  productEntity: ClothingShoesBootsMagAdv
+  cost:
+    Telecrystal: 10
+  categories:
+  - other
+
+- type: listing
+  id: ClothingShoesBootsMag
+  name: Магнитные сапоги
+  description: Магнитные сапоги, используемые во время работы вне корабля, чтобы оставаться надёжно прикреплёнными к поверхности.
+  productEntity: ClothingShoesBootsMag
+  cost:
+    Telecrystal: 2
+  categories:
+  - other
+
+- type: listing
+  id: ClothingShoesBootsMagSci
+  name: Магнитные сапоги
+  description: Магнитные сапоги, используемые во время работы вне корабля, чтобы оставаться надёжно прикреплёнными к поверхности.
+  productEntity: ClothingShoesBootsMagSci
+  cost:
+    Telecrystal: 2
+  categories:
+  - other
+  
+- type: listing
+  id: ClothingHeadHatCentcomcap
+  name: фуражка Центком
+  description: Экстравагантная, причудливая фуражка офицера Центрального командования.
+  productEntity: ClothingHeadHatCentcomcap
+  cost:
+    Telecrystal: 1
+  categories:
+  - other
+  
+- type: listing
+  id: ClothingOuterCoatExpensive
+  name: дорогая шуба
+  description: Очень пушистая розовая шуба, сделанная из очень дорогого меха (очевидно).
+  productEntity: ClothingOuterCoatExpensive
+  cost:
+    Telecrystal: 1
+  categories:
+  - other
+
+- type: listing
+  id: deathsquad
+  name: Отряд "Танго"
+  description: после них, останется лишь тишина...
+  productEntity: RandomHumanoidSpawnerDeathSquad
+  cost:
+    Telecrystal: 12
+  categories:
+  - deathsquad
+
+
+
+
+
+
+
+
+
+

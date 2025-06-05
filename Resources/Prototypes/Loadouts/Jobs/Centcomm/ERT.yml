@@ -1,0 +1,84 @@
+- type: loadout
+  id: ERTsecJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitERTSecurity
+    
+- type: loadout
+  id: MercJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMercenary
+
+- type: loadout
+  id: ERTmedJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitERTMedic
+    
+- type: loadout
+  id: ERTengJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitERTEngineer
+
+- type: loadout
+  id: MercHead
+  equipment:
+    head: ClothingHeadHelmetMerc
+    
+- type: loadout
+  id: ERTsecHead
+  equipment:
+    head: ClothingHeadHelmetERTSecurity
+    
+- type: loadout
+  id: ERTmedHead
+  equipment:
+    head: ClothingHeadHelmetERTMedic
+    
+- type: loadout
+  id: medHead
+  equipment:
+    head: ClothingHeadHelmetSecurityMedic
+
+- type: loadout
+  id: ERTgetr
+  equipment:
+    mask: ClothingMaskNeckGaiter
+    
+- type: loadout
+  id: Mercgetr
+  equipment:
+    mask: ClothingMaskBandMerc
+    
+- type: loadout
+  id: MilMask
+  equipment:
+    mask: ClothingMaskBreathMedicalSecurity
+    
+- type: loadout
+  id: SterileMaskMed
+  equipment:
+    mask: ClothingMaskSterile
+    
+- type: loadout
+  id: Nitrile
+  equipment:
+    gloves: ClothingHandsGlovesNitrile
+    
+- type: loadout
+  id: Latex
+  equipment:
+    gloves: ClothingHandsGlovesLatex
+    
+- type: loadout
+  id: BrigmedArmor
+  equipment:
+    outerClothing: ClothingOuterVestArmorMedSec
+    
+- type: loadout
+  id: engHeadarmored
+  equipment:
+    head: ClothingHeadHelmetERTEngineer
+    
+- type: loadout
+  id: engHead
+  equipment:
+    head: ClothingHeadHatHardhatArmored

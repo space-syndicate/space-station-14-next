@@ -9,7 +9,6 @@
   - CaptainBackpack
   - CaptainOuterClothing
   - Survival
-
   - Trinkets
   - GroupSpeciesBreathTool
 
@@ -640,3 +639,85 @@
   groups:
   - GroupEVATank
   - SurvivalExtended
+
+- type: roleLoadout
+  id: JobBlueshield
+  groups:
+  - Inventory # Corvax-Loadouts
+  - Trinkets
+  - SecurityStar
+  - GroupSpeciesBreathToolSecurity
+  - Glasses
+  - Survival
+  - CommonBackpack
+  
+- type: roleLoadout
+  id: JobCentralCommandSpecial
+  groups:
+  - Inventory # Corvax-Loadouts
+  - Trinkets
+  - GroupSpeciesBreathToolSecurity
+  - Survival
+  - OSOCapes
+  - OSOGlasses
+  
+- type: roleLoadout
+  id: JobCentralCommandOfficial
+  groups:
+  - Inventory # Corvax-Loadouts
+  - Trinkets
+  - GroupSpeciesBreathTool
+  - Survival
+  - CentcommGlasses
+  - CentcommCapes
+  - CentcommJumpsuit
+  - CentcommGloves
+  - CentcommHat
+  - CentcommBoots
+  - CentcommCoat
+  
+- type: roleLoadout
+  id: JobCentralCommandAdmiral
+  groups:
+  - Inventory # Corvax-Loadouts
+  - Trinkets
+  - GroupSpeciesBreathTool
+  - Survival
+  - AdmiralJumpsuit
+  - AdmiralHat
+  - AdmiralBoots
+  
+- type: roleLoadout
+  id: JobERTSecurity
+  groups:
+  - Inventory
+  - Trinkets
+  - GroupSpeciesBreathToolSecurity
+  - ERTsecJumpsuit
+  - ERTsecBelt
+  - ERTsecHead
+  - ERTvest
+  - ERTgetrs
+  
+- type: roleLoadout
+  id: JobERTMedical
+  groups:
+  - Inventory
+  - Trinkets
+  - GroupSpeciesBreathTool
+  - ERTmedvest
+  - ERTmedHead
+  - ERTmedJumpsuit
+  - ERTmedgloves
+  - ERTmedgetrs
+  
+- type: roleLoadout
+  id: JobERTEngineer
+  groups:
+  - Inventory
+  - Trinkets
+  - GroupSpeciesBreathTool
+  - ERTengJumpsuit
+  - ERTengHead
+  - ERTvest
+  - ERTgetrs

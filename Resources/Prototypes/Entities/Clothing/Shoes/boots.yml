@@ -250,3 +250,14 @@
     sprite: Clothing/Shoes/Boots/cowboybootsfancy.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/cowboybootsfancy.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesWhitepower
+  name: берцы
+  description: вайт прайд ворлд вайд!
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Specific/white.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Specific/white.rsi
