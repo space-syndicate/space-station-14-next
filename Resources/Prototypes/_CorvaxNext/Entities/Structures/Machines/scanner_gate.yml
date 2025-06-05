@@ -2,7 +2,7 @@
   id: ScannerGate
   parent: [ConstructibleMachine, BaseStructure]
   name: scanner gate
-  description: 'Scans any item for prohibited traits. On the main sign you can see the inscription: "NOT RADIODANGEROUS".'
+  description: "Scans any item for prohibited traits. On the main sign you can see the inscription: \"NOT RADIODANGEROUS\"."
   placement:
     mode: AlignTileAny
   components:

@@ -12,7 +12,7 @@
   parent: BaseCircuitboardRecipe
   id: ScannerGateCircuitboard
   result: ScannerGateCircuitboard
-  
+
 - type: latheRecipe
   id: AiRemoteBrain
   result: AiRemoteBrain
