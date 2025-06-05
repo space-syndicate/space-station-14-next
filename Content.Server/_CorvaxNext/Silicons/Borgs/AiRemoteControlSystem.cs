@@ -6,7 +6,6 @@ using Content.Shared._CorvaxNext.Silicons.Borgs.Components;
 using Content.Shared.Actions;
 using Content.Shared.Mind;
 using Content.Shared.Mobs;
-using Content.Shared.Roles;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.StationAi;
@@ -24,7 +23,6 @@ namespace Content.Server._CorvaxNext.Silicons.Borgs
         [Dependency] private readonly SharedStationAiSystem _stationAiSystem = default!;
         [Dependency] private readonly SharedMindSystem _mind = default!;
         [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
-        [Dependency] private readonly SharedRoleSystem _roles = default!;
         [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
         [Dependency] private readonly TelephoneSystem _telephoneSystem = default!;
 
