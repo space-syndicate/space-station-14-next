@@ -110,7 +110,7 @@
   - type: GunRequiresWield
   - type: Gun # Corvax-Next-Skills
     requiresSkill: false
-  
+
 - type: entity
   name: Hristov
   parent: [BaseWeaponSniperMagazine, BaseGunWieldable, BaseSyndicateContraband]
