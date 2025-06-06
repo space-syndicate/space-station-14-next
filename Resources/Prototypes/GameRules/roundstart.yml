@@ -24,7 +24,7 @@
       prob: 0.5
     - id: Heretic # goob edit
       prob: 0.2
-    #- id: SubWizard
+    #- id: SubWizard #Corvax-NO-WIZARD
     #  prob: 0.05
 
 - type: entity
@@ -331,7 +331,7 @@
   id: Wizard
   components:
   - type: GameRule
-    minPlayers: 45
+    minPlayers: 45 # Corvax-more-people-for-wizard
   - type: AntagSelection
     agentName: wizard-round-end-name
     selectionTime: PrePlayerSpawn
