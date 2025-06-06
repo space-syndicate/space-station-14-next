@@ -311,9 +311,11 @@
   - type: StationEvent
     weight: 1 # rare
     duration: 1
-    earliestStart: 60
+    # Crovax-more-people-for-wizard-start
+    earliestStart: 60 
     reoccurrenceDelay: 60
     minimumPlayers: 45
+    # Corvax-more-people-for-wizard-end
   - type: AntagSelection
     agentName: wizard-round-end-name
     definitions:
