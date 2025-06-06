@@ -41,7 +41,7 @@
     - id: DerelictCyborgSpawn
    # - id: ZombieOutbreak
     - id: BlobSpawn #Goobstation - Blob
-   # - id: WizardSpawn
+   # - id: WizardSpawn # next-NO-WIZARD
 
 - type: entity
   id: BaseStationEvent
