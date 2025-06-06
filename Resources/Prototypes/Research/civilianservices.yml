@@ -103,6 +103,7 @@
   - FauxTileAstroIce
   - FauxTileAstroSnow
   - FauxTileAstroAsteroidSand
+  - TileItemBluespace # Corvax-Next-BluespaceTile
 
 - type: technology
   id: BiochemicalStasis
