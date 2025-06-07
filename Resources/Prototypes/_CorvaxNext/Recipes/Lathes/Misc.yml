@@ -20,3 +20,11 @@
   materials:
     Steel: 250
     Plastic: 250
+
+- type: latheRecipe
+  id: TileItemBluespace
+  result: FloorTileItemBluespace
+  completetime: 1.5
+  materials:
+    Uranium: 25
+    Steel: 100
