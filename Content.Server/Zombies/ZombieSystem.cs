@@ -252,6 +252,12 @@ namespace Content.Server.Zombies
                 if (!TryComp<MobStateComponent>(entity, out var mobState))
                     continue;
 
+                if (HasComp<InitialInfectedComponent>(entity)) // Corvax-Next-NoFriendlyFireToInitials
+                {
+                    args.BonusDamage = -args.BaseDamage;
+                    continue;
+                }
+
                 if (HasComp<ZombieComponent>(entity))
                 {
                     args.BonusDamage = -args.BaseDamage;
