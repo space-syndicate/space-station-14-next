@@ -43,3 +43,4 @@
   storage:
     back:
     - Flash
+    - TelescopicBaton # Corvax-Next-TelescopicBaton

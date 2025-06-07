@@ -134,8 +134,6 @@
     steps: 5
     zeroVisible: true
   - type: Multishot # Goobstation
-  - type: Gun
-    requiresSkill: true # Corvax-Next-Skills
 
 - type: entity
   name: retro laser blaster
@@ -160,8 +158,6 @@
     zeroVisible: true
   - type: Appearance
   - type: Multishot # Goobstation
-  - type: Gun
-    requiresSkill: true # Corvax-Next-Skills
 
 - type: entity
   name: makeshift laser pistol
@@ -246,7 +242,6 @@
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
-    requiresSkill: true # Corvax-Next-Skills
   - type: HitscanBatteryAmmoProvider
     proto: RedLaserPractice
     fireCost: 62.5
@@ -402,7 +397,6 @@
     fireRate: 1.5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
-    requiresSkill: true # Corvax-Next-Skills
   # Corvax-Next-LaserGunsRebalancea-start
   - type: Battery
     maxCharge: 1500
@@ -465,6 +459,7 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
+    requiresSkill: true # Corvax-Next-Skills
   - type: HitscanBatteryAmmoProvider
     proto: XrayLaser
     fireCost: 100
@@ -681,7 +676,6 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
-    requiresSkill: true # Corvax-Next-Skills
   - type: HitscanBatteryAmmoProvider
     proto: RedMediumLaser
     fireCost: 100
