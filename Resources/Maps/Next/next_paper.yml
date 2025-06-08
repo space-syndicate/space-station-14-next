@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 06/07/2025 16:43:50
-  entityCount: 18677
+  time: 06/08/2025 14:02:00
+  entityCount: 18692
 maps:
 - 1
 grids:
@@ -31180,11 +31180,6 @@ entities:
     - type: Transform
       pos: 50.5,76.5
       parent: 2
-  - uid: 3778
-    components:
-    - type: Transform
-      pos: 46.5,70.5
-      parent: 2
   - uid: 3779
     components:
     - type: Transform
@@ -33843,7 +33838,7 @@ entities:
   - uid: 4322
     components:
     - type: Transform
-      pos: 45.5,70.5
+      pos: 43.5,67.5
       parent: 2
   - uid: 4323
     components:
@@ -33863,12 +33858,12 @@ entities:
   - uid: 4326
     components:
     - type: Transform
-      pos: 45.5,70.5
+      pos: 43.5,66.5
       parent: 2
   - uid: 4327
     components:
     - type: Transform
-      pos: 44.5,70.5
+      pos: 43.5,65.5
       parent: 2
   - uid: 4328
     components:
@@ -35775,6 +35770,11 @@ entities:
     - type: Transform
       pos: 46.5,-14.5
       parent: 2
+  - uid: 5231
+    components:
+    - type: Transform
+      pos: 43.5,63.5
+      parent: 2
   - uid: 5476
     components:
     - type: Transform
@@ -35840,6 +35840,11 @@ entities:
     - type: Transform
       pos: 22.5,-26.5
       parent: 2
+  - uid: 15425
+    components:
+    - type: Transform
+      pos: 43.5,64.5
+      parent: 2
   - uid: 17390
     components:
     - type: Transform
@@ -35849,6 +35854,66 @@ entities:
     components:
     - type: Transform
       pos: 22.5,-25.5
+      parent: 2
+  - uid: 17960
+    components:
+    - type: Transform
+      pos: 44.5,63.5
+      parent: 2
+  - uid: 17961
+    components:
+    - type: Transform
+      pos: 44.5,61.5
+      parent: 2
+  - uid: 17962
+    components:
+    - type: Transform
+      pos: 44.5,61.5
+      parent: 2
+  - uid: 17963
+    components:
+    - type: Transform
+      pos: 44.5,60.5
+      parent: 2
+  - uid: 17969
+    components:
+    - type: Transform
+      pos: 44.5,62.5
+      parent: 2
+  - uid: 18480
+    components:
+    - type: Transform
+      pos: 45.5,60.5
+      parent: 2
+  - uid: 18481
+    components:
+    - type: Transform
+      pos: 46.5,60.5
+      parent: 2
+  - uid: 18482
+    components:
+    - type: Transform
+      pos: 47.5,60.5
+      parent: 2
+  - uid: 18483
+    components:
+    - type: Transform
+      pos: 47.5,59.5
+      parent: 2
+  - uid: 18484
+    components:
+    - type: Transform
+      pos: 48.5,59.5
+      parent: 2
+  - uid: 18485
+    components:
+    - type: Transform
+      pos: 48.5,58.5
+      parent: 2
+  - uid: 18486
+    components:
+    - type: Transform
+      pos: 48.5,57.5
       parent: 2
 - proto: CableHVStack
   entities:
@@ -38294,11 +38359,6 @@ entities:
     components:
     - type: Transform
       pos: 43.5,69.5
-      parent: 2
-  - uid: 5231
-    components:
-    - type: Transform
-      pos: 45.5,69.5
       parent: 2
   - uid: 5232
     components:
@@ -40879,6 +40939,16 @@ entities:
     components:
     - type: Transform
       pos: 47.5,-1.5
+      parent: 2
+  - uid: 17958
+    components:
+    - type: Transform
+      pos: 45.5,70.5
+      parent: 2
+  - uid: 17959
+    components:
+    - type: Transform
+      pos: 46.5,70.5
       parent: 2
   - uid: 18176
     components:
@@ -55874,7 +55944,7 @@ entities:
     - type: Label
       currentLabel: кофейный ликёр
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.089824766
+      sprayFizzinessThresholdRoll: 0.3872209
     - type: NameModifier
       baseName: бутылка кофейного ликёра
     - type: ContainerContainer
@@ -56160,7 +56230,7 @@ entities:
     - type: Label
       currentLabel: ром
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.045070775
+      sprayFizzinessThresholdRoll: 0.083001785
     - type: NameModifier
       baseName: кубинский пряный ром капитана Пита
     - type: ContainerContainer
@@ -56202,7 +56272,7 @@ entities:
     - type: Label
       currentLabel: текила
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.6739662
+      sprayFizzinessThresholdRoll: 0.65793085
     - type: NameModifier
       baseName: бутылка текилы Каккаво гарантированного качества
     - type: ContainerContainer
@@ -56243,7 +56313,7 @@ entities:
     - type: Label
       currentLabel: вермут
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.5853099
+      sprayFizzinessThresholdRoll: 0.2767929
     - type: NameModifier
       baseName: бутылка вермута Золотой глаз
     - type: ContainerContainer
@@ -56266,7 +56336,7 @@ entities:
     - type: Label
       currentLabel: водка
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.30859345
+      sprayFizzinessThresholdRoll: 0.22366355
     - type: NameModifier
       baseName: бутылка водки
     - type: ContainerContainer
@@ -56316,7 +56386,7 @@ entities:
     - type: Label
       currentLabel: вино
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.38383573
+      sprayFizzinessThresholdRoll: 0.34221298
     - type: NameModifier
       baseName: особое двухбородое бородатое вино
     - type: ContainerContainer
@@ -60018,7 +60088,7 @@ entities:
       pos: 39.5,13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -68266.1
+      secondsUntilStateChange: -68488.984
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -102307,6 +102377,11 @@ entities:
       parent: 2
 - proto: SheetSteel
   entities:
+  - uid: 3778
+    components:
+    - type: Transform
+      pos: 45.55799,70.0959
+      parent: 2
   - uid: 4493
     components:
     - type: Transform
