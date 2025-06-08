@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 06/07/2025 12:23:09
-  entityCount: 18734
+  time: 06/08/2025 17:46:59
+  entityCount: 18733
 maps:
 - 1
 grids:
@@ -42790,6 +42790,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 28.5,-1.5
       parent: 2
+- proto: ComputerSalvageJobBoard
+  entities:
+  - uid: 11459
+    components:
+    - type: Transform
+      pos: -8.5,37.5
+      parent: 2
 - proto: ComputerShuttle
   entities:
   - uid: 18667
@@ -77137,6 +77144,13 @@ entities:
     - type: Transform
       pos: 28.5,-52.5
       parent: 2
+- proto: MachineMaterialSilo
+  entities:
+  - uid: 10973
+    components:
+    - type: Transform
+      pos: 23.5,0.5
+      parent: 2
 - proto: MagazineLightRifle
   entities:
   - uid: 823
@@ -78809,10 +78823,10 @@ entities:
     - type: Transform
       pos: -59.5,40.5
       parent: 2
-  - uid: 10973
+  - uid: 11456
     components:
     - type: Transform
-      pos: 23.5,0.5
+      pos: 30.5,0.5
       parent: 2
 - proto: PlasmaReinforcedWindowDirectional
   entities:
@@ -81648,25 +81662,10 @@ entities:
     - type: Transform
       pos: 18.394753,26.667368
       parent: 2
-  - uid: 11456
-    components:
-    - type: Transform
-      pos: 23.81519,-26.214342
-      parent: 2
   - uid: 11457
     components:
     - type: Transform
       pos: -24.415558,21.53302
-      parent: 2
-  - uid: 11459
-    components:
-    - type: Transform
-      pos: 1.9320722,28.827274
-      parent: 2
-  - uid: 11460
-    components:
-    - type: Transform
-      pos: -27.548952,25.789152
       parent: 2
 - proto: PresentRandomCoal
   entities:
