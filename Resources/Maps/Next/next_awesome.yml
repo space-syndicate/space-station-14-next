@@ -8133,7 +8133,7 @@ entities:
     - type: RadiationGridResistance
     - type: NavMap
     - type: BecomesStation
-      id: Awesome
+      id: NextAwesome
     - type: ImplicitRoof
   - uid: 15658
     components:
