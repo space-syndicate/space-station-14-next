@@ -76,7 +76,7 @@ public sealed class SmartFridgeSystem : SharedSmartFridgeSystem
 
     ProcessReagentLabeling(ev.Used);
     UpdateFridgeInventory(entity, component);
-    
+
     ev.Handled = true;
 }
 
@@ -92,15 +92,15 @@ public sealed class SmartFridgeSystem : SharedSmartFridgeSystem
     {
         case 0:
             return;
-            
+
         case 1:
             LabelSingleReagent(entity, reagents[0], totalQuantity);
             break;
-            
+
         case 2:
             LabelTwoReagents(entity, reagents[0], reagents[1], totalQuantity);
             break;
-            
+
         default:
             LabelComplexMixture(entity, reagents, totalQuantity);
             break;
@@ -115,12 +115,12 @@ private void LabelSingleReagent(EntityUid entity, ReagentQuantity reagent, float
     var purity = 100f * reagent.Quantity.Float() / totalQuantity;
     var roundedPurity = (int)Math.Round(purity);
     var units = (int)Math.Round(totalQuantity);
-    
-    _label.Label(entity, purity >= 99.99f 
-        ? Loc.GetString("smart-fridge-pure-with-units-label", 
+
+    _label.Label(entity, purity >= 99.99f
+        ? Loc.GetString("smart-fridge-pure-with-units-label",
             ("reagent", reagentProto.LocalizedName),
             ("units", units))
-        : Loc.GetString("smart-fridge-impure-label", 
+        : Loc.GetString("smart-fridge-impure-label",
             ("reagent", reagentProto.LocalizedName),
             ("purity", roundedPurity),
             ("units", units)));
@@ -135,7 +135,7 @@ private void LabelTwoReagents(EntityUid entity, ReagentQuantity reagent1, Reagen
     var percent1 = (int)Math.Round(100f * reagent1.Quantity.Float() / totalQuantity);
     var percent2 = (int)Math.Round(100f * reagent2.Quantity.Float() / totalQuantity);
     var units = (int)Math.Round(totalQuantity);
-    
+
     _label.Label(entity, Loc.GetString("smart-fridge-mixed-label",
         ("reagent1", proto1.LocalizedName),
         ("percent1", percent1),
@@ -162,9 +162,9 @@ private void LabelComplexMixture(EntityUid entity, IReadOnlyList<ReagentQuantity
     var percent3 = (int)Math.Round(100f * primaryReagents[2].Quantity.Float() / totalQuantity);
     var othersPercent = 100 - percent1 - percent2 - percent3;
     var units = (int)Math.Round(totalQuantity);
-    
+
     string labelText;
-    
+
     if (reagents.Count > 3 && othersPercent > 0)
     {
         labelText = Loc.GetString("smart-fridge-mixed-multiple-label",
@@ -188,7 +188,7 @@ private void LabelComplexMixture(EntityUid entity, IReadOnlyList<ReagentQuantity
             ("percent3", percent3),
             ("units", units));
     }
-    
+
     _label.Label(entity, labelText);
 }
 

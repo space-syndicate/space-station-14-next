@@ -67,8 +67,8 @@ public sealed partial class SmartFridgeMenu : FancyWindow
         OutOfStockLabel.Visible = false;
 
        inventory.Sort((a, b) => string.Compare(
-        a.ItemName, 
-        b.ItemName, 
+        a.ItemName,
+        b.ItemName,
         StringComparison.InvariantCultureIgnoreCase));
 
         var listData = new List<VendorItemsListData>();
