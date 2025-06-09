@@ -16,7 +16,7 @@
       - Syringe
   - type: ActivatableUI
     key: enum.SmartFridgeUiKey.Key
-  - type: ActivatableUIRequiresPower
+  # - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
       enum.SmartFridgeUiKey.Key:
@@ -37,8 +37,8 @@
       map: ["enum.StorageVisualLayers.Door"]
       shader: unshaded
   # Corvax-Next-SmartFridge-Start
-  - type: ApcPowerReceiver
-    powerLoad: 100
+# - type: ApcPowerReceiver
+  # powerLoad: 100
   - type: ExtensionCableReceiver
   - type: LightningTarget
     priority: 1

@@ -4,6 +4,7 @@ using Robust.Shared.Input;
 using System.Linq;
 using Content.Shared._CorvaxNext.Medical.SmartFridge;
 using SmartFridgeMenu = Content.Client._CorvaxNext.Medical.SmartFridge.UI.SmartFridgeMenu;
+using Content.Client.VendingMachines.UI;
 
 namespace Content.Client._CorvaxNext.Medical.SmartFridge;
 

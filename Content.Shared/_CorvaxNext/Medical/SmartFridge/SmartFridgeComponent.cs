@@ -49,7 +49,7 @@ public sealed partial class SmartFridgeComponent : Component
     /// How long should the SmartFridge take to dispense something. In Seconds.
     /// </summary>
     [DataField]
-    public float EjectDelay = 1.2f;
+    public float EjectDelay = 0f;
 
     /// <summary>
     /// If the SmartFridge is currently vending anything.
