@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: syndicate-next
   forkVersion: b126efd26e57dad6bcdee667b02caac6f37f1987
-  time: 06/10/2025 09:53:46
-  entityCount: 22818
+  time: 06/10/2025 11:36:33
+  entityCount: 22814
 maps:
 - 5350
 grids:
@@ -9680,7 +9680,7 @@ entities:
       pos: -38.5,52.5
       parent: 30
     - type: Door
-      secondsUntilStateChange: -15355.993
+      secondsUntilStateChange: -15461.095
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11398,7 +11398,7 @@ entities:
       pos: -27.5,18.5
       parent: 30
     - type: Door
-      secondsUntilStateChange: -9046.366
+      secondsUntilStateChange: -9151.468
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11508,7 +11508,7 @@ entities:
       pos: 34.5,45.5
       parent: 30
     - type: Door
-      secondsUntilStateChange: -70097.336
+      secondsUntilStateChange: -70202.44
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12075,7 +12075,7 @@ entities:
       pos: -6.5,14.5
       parent: 30
     - type: Door
-      secondsUntilStateChange: -40792.25
+      secondsUntilStateChange: -40897.35
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -65215,7 +65215,7 @@ entities:
       pos: 11.5,-12.5
       parent: 30
     - type: Door
-      secondsUntilStateChange: -866.9814
+      secondsUntilStateChange: -972.08276
       state: Closing
     - type: Forensics
       residues: []
@@ -100530,40 +100530,12 @@ entities:
     - type: Transform
       pos: -9.5,40.5
       parent: 30
-- proto: HolopadCommandCaptain
-  entities:
-  - uid: 1729
-    components:
-    - type: Transform
-      pos: -20.5,35.5
-      parent: 30
-- proto: HolopadCommandHop
-  entities:
-  - uid: 10501
-    components:
-    - type: Transform
-      pos: 3.5,33.5
-      parent: 30
 - proto: HolopadCommandMeetingRoom
   entities:
   - uid: 22931
     components:
     - type: Transform
       pos: -9.5,34.5
-      parent: 30
-- proto: HolopadCommandQm
-  entities:
-  - uid: 10459
-    components:
-    - type: Transform
-      pos: 27.5,1.5
-      parent: 30
-- proto: HolopadCommandRd
-  entities:
-  - uid: 22972
-    components:
-    - type: Transform
-      pos: 26.5,14.5
       parent: 30
 - proto: HolopadCommandVault
   entities:
