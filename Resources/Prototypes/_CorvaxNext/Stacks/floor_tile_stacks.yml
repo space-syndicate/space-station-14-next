@@ -1,0 +1,6 @@
+- type: stack
+  id: BluespaceTile
+  name: stack-bluespace-tile
+  spawn: FloorTileItemBluespace
+  icon: { sprite: /Textures/_CorvaxNext/Objects/Tiles/bluespace.rsi, state: bluespace }
+  maxCount: 30
