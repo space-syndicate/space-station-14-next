@@ -150,7 +150,7 @@
       - id: RCD
       - id: RCDAmmo
       - id: MetalFoamGrenade
-      - id: EngBag
+      - id: ConstructionBag
         prob: 0.2
 
 - type: entity
@@ -166,7 +166,7 @@
       - id: RCD
       - id: RCDAmmo
       - id: MetalFoamGrenade
-      - id: EngBag
+      - id: ConstructionBag
         prob: 0.6
 
 - type: entity
