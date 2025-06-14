@@ -10,6 +10,7 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Mind;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Whitelist;
+using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
@@ -596,7 +597,17 @@ public abstract class SharedActionsSystem : EntitySystem
             action.Toggled = !action.Toggled;
         }
 
-        _audio.PlayPredicted(action.Sound, performer, predicted ? performer : null);
+        // Corvax-Next CombatMode Start
+        if (action.Sound is null)
+        {
+            if (action.Toggled)
+                PlayActionSound(action.SoundOn, performer, predicted ? performer : null, local: action.SoundLocal);
+            else
+                PlayActionSound(action.SoundOff, performer, predicted ? performer : null, local: action.SoundLocal);
+        }
+        else
+            PlayActionSound(action.Sound, performer, predicted ? performer : null, local: action.SoundLocal);
+        // Corvax-Next CombatMode End
 
         var dirty = toggledBefore != action.Toggled;
 
@@ -1015,4 +1026,14 @@ public abstract class SharedActionsSystem : EntitySystem
         // TODO: Check for charge recovery timer
         return action.Cooldown.HasValue && action.Cooldown.Value.End > curTime;
     }
+
+    // Corvax-Next CombatMode Start
+    private void PlayActionSound(SoundSpecifier? sound, EntityUid source, EntityUid? soundInitiator, AudioParams? audioParams = null, bool local = false)
+    {
+        if (local)
+            _audio.PlayLocal(sound, source, soundInitiator);
+        else
+            _audio.PlayPredicted(sound, source, soundInitiator);
+    }
+    // Corvax-Next CombatMode End
 }

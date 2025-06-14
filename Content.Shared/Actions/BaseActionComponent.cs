@@ -176,6 +176,12 @@ public abstract partial class BaseActionComponent : Component
     ///     If not null, this sound will be played when performing this action.
     /// </summary>
     [DataField("sound")] public SoundSpecifier? Sound;
+
+    // Corvax-Next CombatMode Start
+    [DataField("soundOn")] public SoundSpecifier? SoundOn;
+    [DataField("soundOff")] public SoundSpecifier? SoundOff;
+    [DataField("soundLocal")] public bool SoundLocal = false;
+    // Corvax-Next CombatMode End
 }
 
 [Serializable, NetSerializable]
