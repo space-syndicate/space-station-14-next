@@ -46,3 +46,14 @@
     - Flash
     - MagazinePistol
     - ClothingNeckSecBadgePilot # Corvax-Next-Badges
+
+- type: chameleonOutfit
+  id: PilotChameleonOutfit
+  job: Pilot
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBeretSecurity
+    eyes: ClothingEyesGlassesSecurity
+    mask: ClothingMaskGasSecurity
+    neck: Dinkystar
+    gloves: ClothingHandsGlovesColorBlack

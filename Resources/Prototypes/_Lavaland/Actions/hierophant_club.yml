@@ -5,14 +5,15 @@
   description: action-hierophant-place-marker-desc
   categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: Action
     icon:
       sprite: _Lavaland/Objects/Weapons/hierophant_club.rsi
       state: icon
     itemIconStyle: NoItem
-    event: !type:HierophantClubPlaceMarkerEvent
     useDelay: 30
-
+  - type: InstantAction
+    event: !type:HierophantClubPlaceMarkerEvent
+    
 # Teleportation
 - type: entity
   id: ActionHierophantTeleport
@@ -20,13 +21,14 @@
   description: action-hierophant-teleport-desc
   categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: Action
     icon:
       sprite: _Lavaland/Objects/Weapons/hierophant_club.rsi
       state: icon
     itemIconStyle: NoItem
-    event: !type:HierophantClubTeleportToMarkerEvent
     useDelay: 60
+  - type: InstantAction
+    event: !type:HierophantClubTeleportToMarkerEvent
 
 # Spawn cross
 - type: entity
@@ -34,13 +36,15 @@
   name: action-hierophant-spawn-cross
   description: action-hierophant-spawn-cross-desc
   components:
-  - type: WorldTargetAction
+  - type: Action
     icon:
       sprite: _Lavaland/Objects/Weapons/hierophant_club.rsi
       state: icon
     itemIconStyle: NoItem
-    event: !type:HierophantClubActivateCrossEvent
-    checkCanAccess: true
-    range: 8
     priority: -21
     useDelay: 1
+  - type: TargetAction
+    range: 8
+    checkCanAccess: true
+  - type: WorldTargetAction
+    event: !type:HierophantClubActivateCrossEvent

@@ -114,6 +114,7 @@
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
   - type: FTLKnockdownImmune # Corvax-Next-FTLImmune
+  - type: Rootable
 
 - type: entity
   parent: BaseSpeciesDummy

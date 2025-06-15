@@ -1,5 +1,6 @@
 using Content.Shared.Actions;
 using Content.Shared._CorvaxNext.Mood;
+using Content.Shared.Actions.Components;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Events;
@@ -259,7 +260,7 @@ public sealed partial class SleepingSystem : EntitySystem
     private void Wake(Entity<SleepingComponent> ent)
     {
         RemComp<SleepingComponent>(ent);
-        _actionsSystem.RemoveAction(ent, ent.Comp.WakeAction);
+        _actionsSystem.RemoveAction(ent.Owner, ent.Comp.WakeAction);
 
         var ev = new SleepStateChangedEvent(false);
         RaiseLocalEvent(ent, ref ev);

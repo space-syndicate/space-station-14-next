@@ -3,47 +3,53 @@
   name: blob-create-factory-action-name
   description: blob-create-factory-action-desc
   components:
-    - type: WorldTargetAction
+    - type: Action
       icon:
         sprite: _Goobstation/Blob/Actions/blob.rsi
         state: blobFactory
+      itemIconStyle: BigAction
+      useDelay: 0.5
+    - type: TargetAction
+      range: 200
+    - type: WorldTargetAction
       event: !type:BlobTransformTileActionEvent
         transformFrom: Normal
         tileType: Factory
-      itemIconStyle: BigAction
-      range: 200
-      useDelay: 0.5
 
 - type: entity
   id: ActionCreateBlobResource
   name: blob-create-resource-action-name
   description: blob-create-resource-action-desc
   components:
+    - type: TargetAction
+      range: 200
     - type: WorldTargetAction
-      icon:
-        sprite: _Goobstation/Blob/Actions/blob.rsi
-        state: blobResource
       event: !type:BlobTransformTileActionEvent
         transformFrom: Normal
         tileType: Resource
+    - type: Action
       itemIconStyle: BigAction
-      range: 200
       useDelay: 0.5
+      icon:
+        sprite: _Goobstation/Blob/Actions/blob.rsi
+        state: blobResource
 
 - type: entity
   id: ActionCreateBlobNode
   name: blob-create-node-action-name
   description: blob-create-node-action-desc
   components:
+    - type: TargetAction
+      range: 200
     - type: WorldTargetAction
-      icon:
-        sprite: _Goobstation/Blob/Actions/blob.rsi
-        state: blobNode
       event: !type:BlobTransformTileActionEvent
         transformFrom: Normal
         tileType: Node
+    - type: Action
+      icon:
+        sprite: _Goobstation/Blob/Actions/blob.rsi
+        state: blobNode
       itemIconStyle: BigAction
-      range: 200
       useDelay: 0.5
 
 - type: entity
@@ -51,41 +57,48 @@
   name: blob-produce-blobbernaut-action-name
   description: blob-produce-blobbernaut-action-desc
   components:
+    - type: TargetAction
+      range: 200
     - type: WorldTargetAction
+      event: !type:BlobCreateBlobbernautActionEvent
+    - type: Action
       icon:
         sprite: _Goobstation/Blob/Actions/blob.rsi
         state: blobBlobbernaut
-      event: !type:BlobCreateBlobbernautActionEvent
       itemIconStyle: BigAction
-      range: 200
       useDelay: 0.5
+
 
 - type: entity
   id: ActionSplitBlobCore
   name: blob-split-core-action-name
   description: blob-split-core-action-desc
   components:
-    - type: WorldTargetAction
+    - type: TargetAction
+      range: 200
+    - type: Action
       icon:
         sprite: _Goobstation/Blob/Actions/blob.rsi
         state: blobSplit
-      event: !type:BlobSplitCoreActionEvent
       itemIconStyle: BigAction
-      range: 200
       useDelay: 0.5
+    - type: WorldTargetAction
+      event: !type:BlobSplitCoreActionEvent
 
 - type: entity
   id: ActionSwapBlobCore
   name: blob-swap-core-action-name
   description: blob-swap-core-action-desc
   components:
+    - type: TargetAction
+      range: 200
     - type: WorldTargetAction
+      event: !type:BlobSwapCoreActionEvent
+    - type: Action
       icon:
         sprite: _Goobstation/Blob/Actions/blob.rsi
         state: blobSwap
-      event: !type:BlobSwapCoreActionEvent
       itemIconStyle: BigAction
-      range: 200
       useDelay: 0.5
 
 - type: entity
@@ -94,10 +107,11 @@
   description: blob-teleport-to-core-action-desc
   components:
     - type: InstantAction
+      event: !type:BlobToCoreActionEvent
+    - type: Action
       icon:
         sprite: _Goobstation/Blob/Actions/blob.rsi
         state: blobToCore
-      event: !type:BlobToCoreActionEvent
       itemIconStyle: BigAction
       useDelay: 0.5
 
@@ -107,20 +121,22 @@
   description: blob-swap-chem-action-desc
   components:
     - type: InstantAction
+      event: !type:BlobSwapChemActionEvent
+    - type: Action
       icon:
         sprite: _Goobstation/Blob/Actions/blob.rsi
         state: blobChemSwap
-      event: !type:BlobSwapChemActionEvent
 
 - type: entity
   id: ActionTransformToBlob
   name: blob-carrier-transform-to-blob-action-name
   description: blob-carrier-transform-to-blob-action-desc
   components:
-    - type: InstantAction
+    - type: Action
       icon:
         sprite: _Goobstation/Blob/Actions/blob.rsi
         state: blobToCore
+    - type: InstantAction
       event: !type:TransformToBlobActionEvent
 
 - type: entity
@@ -129,12 +145,14 @@
   description: blob-downgrade-action-desc
   components:
     - type: WorldTargetAction
-      icon:
-        sprite: _Goobstation/Blob/Actions/blob.rsi
-        state: blobDowngrade
       event: !type:BlobTransformTileActionEvent
         transformFrom: Invalid
         tileType: Normal
+    - type: Action
+      icon:
+        sprite: _Goobstation/Blob/Actions/blob.rsi
+        state: blobDowngrade
       itemIconStyle: BigAction
-      range: 200
       useDelay: 0.5
+    - type: TargetAction
+      range: 200
