@@ -1,0 +1,50 @@
+﻿- type: body
+  id: Draks
+  name: "draks"
+  root: torso
+  slots:
+    head: # Не забудь проверить отъебнется ли хирургия если засунуть сердце
+      part: HeadDraks
+      connections:
+      - torso
+      organs:
+        brain: OrganDraksBrain
+        eyes: OrganDraksEyes
+    torso:
+      part: TorsoDraks
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganDraksHeart
+        lungs: OrganDraksLungs
+        stomach: OrganDraksStomach
+        liver:  OrganDraksLiver
+        kidneys: OrganDraksKidneys
+    right arm:
+      part: RightArmDraks
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmDraks
+      connections:
+      - left hand
+    right hand:
+      part: RightHandDraks
+    left hand:
+      part: LeftHandDraks
+    right leg:
+      part: RightLegDraks
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegDraks
+      connections:
+      - left foot
+    right foot:
+      part: RightFootDraks
+    left foot:
+      part: LeftFootDraks
