@@ -69,6 +69,7 @@
   - FauxTileAstroIce
   - FauxTileAstroSnow
   - FauxTileAstroAsteroidSand
+  - TileItemBluespace # Corvax-Next-BluespaceTile
 
 # Only contains parts for making basic modular grenades, no actual explosives
 - type: latheRecipePack
