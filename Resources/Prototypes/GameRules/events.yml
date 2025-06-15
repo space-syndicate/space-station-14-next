@@ -313,7 +313,7 @@
     duration: 1
     earliestStart: 30
     reoccurrenceDelay: 60
-    minimumPlayers: 10
+    minimumPlayers: 40 #Corvax-Next wizard-gamerule-rebalance
   - type: AntagSelection
     agentName: wizard-round-end-name
     definitions:
