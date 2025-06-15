@@ -9,6 +9,11 @@
   result: MachineBluespaceTransitorCircuitboard
 
 - type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: ScannerGateCircuitboard
+  result: ScannerGateCircuitboard
+
+- type: latheRecipe
   id: AiRemoteBrain
   result: AiRemoteBrain
   completetime: 4
