@@ -9751,13 +9751,10 @@ entities:
     - type: InstantAction
       container: 13414
   - uid: 23586
-    mapInit: true
-    paused: true
     components:
     - type: Transform
       parent: 20903
     - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
       container: 20903
 - proto: AirAlarm
   entities:
@@ -14003,8 +14000,6 @@ entities:
       pos: -14.5,-14.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 9431
   - uid: 778
@@ -57090,44 +57085,11 @@ entities:
     - type: Transform
       pos: -4.5,25.5
       parent: 15658
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - invalid
-          - invalid
-          - invalid
-          - invalid
-          - invalid
-          - invalid
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
   - uid: 20501
     components:
     - type: Transform
       pos: 5.5,25.5
       parent: 15658
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - invalid
-          - invalid
-          - invalid
-          - invalid
-          - invalid
-          - invalid
-          - invalid
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: CrateFunInstrumentsVariety
   entities:
   - uid: 1408
@@ -68551,8 +68513,6 @@ entities:
       pos: -11.5,-15.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 9431
   - uid: 4076
@@ -68601,8 +68561,6 @@ entities:
       pos: -11.5,-13.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 9431
   - uid: 4876
@@ -70836,8 +70794,6 @@ entities:
       pos: -16.5,-16.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 12270
       - 9431
@@ -70848,8 +70804,6 @@ entities:
       pos: -18.5,-16.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 12270
       - 9431
@@ -91086,8 +91040,6 @@ entities:
       pos: -16.5,-14.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 9431
   - uid: 6571
@@ -91146,8 +91098,6 @@ entities:
       pos: 21.5,21.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 11176
   - uid: 11355
@@ -92840,8 +92790,6 @@ entities:
       pos: -12.5,-14.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 9431
   - uid: 5045
@@ -94109,8 +94057,6 @@ entities:
       pos: 20.5,21.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 11176
     - type: AtmosPipeColor
@@ -102512,7 +102458,6 @@ entities:
           - 20886
           - 20887
           - 20888
-          - invalid
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True

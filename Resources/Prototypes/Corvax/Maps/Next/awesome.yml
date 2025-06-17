@@ -16,7 +16,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'TBK'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_awesome.yml
+          emergencyShuttlePath: /Maps/Next/Shuttles/Awesome/emergency_nextAwesome.yml
         - type: StationJobs
           availableJobs:
             # command
@@ -67,9 +67,7 @@
             # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
-        # Corvax-next blob-config-start SMALL+
         - type: StationBlobConfig
           stageBegin: 40
           stageCritical: 500
           stageTheEnd: 900
-        # Corvax-next blob-config-end

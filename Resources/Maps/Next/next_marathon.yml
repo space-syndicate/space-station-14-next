@@ -7604,13 +7604,10 @@ entities:
 - proto: ActionToggleLight
   entities:
   - uid: 9401
-    mapInit: true
-    paused: true
     components:
     - type: Transform
       parent: 1773
     - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
       container: 1773
   - uid: 11287
     components:
@@ -65449,8 +65446,6 @@ entities:
       pos: -33.5,40.5
       parent: 30
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 21903
   - uid: 10401
