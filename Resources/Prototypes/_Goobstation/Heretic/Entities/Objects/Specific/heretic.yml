@@ -11,7 +11,7 @@
       map: [ "base" ]
   - type: GenericVisualizer
     visuals:
-      enum.ToggleVisuals.Toggled:
+      enum.ToggleableVisuals.Enabled:
         base:
           True: { state: icon-on }
           False: { state: icon }

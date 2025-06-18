@@ -1,11 +1,8 @@
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Content.Shared._CorvaxNext.Resomi.Abilities.Hearing;
-using Content.Shared.Actions;
-using Content.Shared.DoAfter;
 using Robust.Shared.Utility;
 using Robust.Shared.Player;
-using Content.Shared.GameTicking;
 
 namespace Content.Client._CorvaxNext.Overlays;
 
@@ -13,10 +10,6 @@ public sealed class ListenUpSystem : SharedListenUpSkillSystem
 {
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
-
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-
-    private Entity<BaseActionComponent> action;
 
     private ListenUpOverlay _listenUpOverlay = default!;
 

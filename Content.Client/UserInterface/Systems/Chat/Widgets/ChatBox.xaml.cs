@@ -49,14 +49,10 @@ public partial class ChatBox : UIWidget
         ChatInput.Input.OnFocusExit += OnFocusExit;
         ChatInput.ChannelSelector.OnChannelSelect += OnChannelSelect;
         ChatInput.FilterButton.Popup.OnChannelFilter += OnChannelFilter;
-        // Corvax-Highlights-Start
         ChatInput.FilterButton.Popup.OnNewHighlights += OnNewHighlights;
-        // Corvax-Highlights-End
         _controller = UserInterfaceManager.GetUIController<ChatUIController>();
         _controller.MessageAdded += OnMessageAdded;
-        // Corvax-Highlights-Start
-        _controller.HighlightsUpdated += OnHighlightsReceived;
-        // Corvax-Highlights-End
+        _controller.HighlightsUpdated += OnHighlightsUpdated;
         _controller.RegisterChat(this);
     }
 
@@ -91,6 +87,11 @@ public partial class ChatBox : UIWidget
         AddLine(msg.WrappedMessage, color);
     }
 
+    private void OnHighlightsUpdated(string highlights)
+    {
+        ChatInput.FilterButton.Popup.UpdateHighlights(highlights);
+    }
+
     private void OnChannelSelect(ChatSelectChannel channel)
     {
         _controller.UpdateSelectedChannel(this);
@@ -121,31 +122,10 @@ public partial class ChatBox : UIWidget
         }
     }
 
-    // Corvax-Highlights-Start
     private void OnNewHighlights(string highlighs)
     {
         _controller.UpdateHighlights(highlighs);
     }
-
-    private void OnHighlightsReceived(string highlights)
-    {
-        // Save the newly provided list of highlighs if different.
-        var cfg = IoCManager.Resolve<IConfigurationManager>();
-        if (!cfg.GetCVar(CCCVars.ChatHighlights).Equals(highlights, StringComparison.CurrentCultureIgnoreCase))
-        {
-            cfg.SetCVar(CCCVars.ChatHighlights, highlights);
-            cfg.SaveToFile();
-        }
-
-        // Fill the array with the highlights separated by commas, disregarding empty entries.
-        string[] arr_highlights = highlights.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
-        _highlights.Clear();
-        foreach (var keyword in arr_highlights)
-        {
-            _highlights.Add(keyword);
-        }
-    }
-    // Corvax-Highlights-Start
 
     public void AddLine(string message, Color color)
     {
