@@ -190,6 +190,12 @@
     iconOn: Interface/Actions/harm.png
     event: !type:ToggleCombatActionEvent
     priority: -100
+    useDelay: 1 # Corvax-Next CombatMode
+    soundLocal: true # Corvax-Next CombatMode
+    soundOff: !type:SoundPathSpecifier # Corvax-Next CombatMode
+      path: /Audio/_CorvaxNext/Misc/ui_toggleoffcombat.ogg
+    soundOn: !type:SoundPathSpecifier # Corvax-Next CombatMode
+      path: /Audio/_CorvaxNext/Misc/ui_togglecombat.ogg
 
 - type: entity
   id: ActionCombatModeToggleOff
