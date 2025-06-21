@@ -185,6 +185,32 @@
     coverage: EYES
 
 - type: entity
+  parent: [ClothingEyesBase, ShowSecurityIcons, BaseSecurityContraband]
+  id: ClothingEyesLensSecurity
+  name: Служебные линзы
+  description: Линзы предназначеные для сотрудников безопасности, весьма тонкие.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/lens.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/lens.rsi
+  - type: EyeProtection
+    protectionTime: 5
+  - type: Construction
+    graph: GlassesSecHUD
+    node: glassesSec
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+  - type: GuideHelp
+    guides:
+    - Security
+    - Antagonists
+  - type: IdentityBlocker
+    coverage: EYES
+
+- type: entity
   parent: [ClothingEyesBase, BaseCommandContraband]
   id: ClothingEyesGlassesCommand
   name: administration glasses
