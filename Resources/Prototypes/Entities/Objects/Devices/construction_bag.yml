@@ -1,8 +1,8 @@
 - type: entity
-  name: construction bag
+  name: Сумка Конструкций 
   id: ConstructionBag
   parent: BaseStorageItem
-  description: Convenient bag for transporting building materials.
+  description: Удобная сумка для транспортировки ресурсов.
   components:
   - type: Sprite
     sprite: Objects/Specific/Atmos/construction_bag.rsi
