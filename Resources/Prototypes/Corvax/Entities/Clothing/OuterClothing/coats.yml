@@ -97,11 +97,11 @@
     sprite: Corvax/Clothing/OuterClothing/Coats/captain.rsi
   - type: Armor
     modifiers:
-      coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.6
-        Heat: 0.5
+      coefficients: # Corvax-Next-EditCaptainCoats
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.8
 
 - type: entity
   parent: ClothingOuterStorageBase
