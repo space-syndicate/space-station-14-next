@@ -1,7 +1,7 @@
 - type: entity
   name: Сумка Конструкций 
   id: ConstructionBag
-  parent: BaseStorageItem
+  parent: [ BaseStorageItem, BaseEngineeringContraband ]
   description: Удобная сумка для транспортировки ресурсов.
   components:
   - type: Sprite
