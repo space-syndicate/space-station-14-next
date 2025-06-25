@@ -1,0 +1,5 @@
+- type: jukebox
+  id: space_asshole
+  name: Chris Remo - Space Asshole
+  path:
+    path: /Audio/Lobby/space_asshole.ogg
