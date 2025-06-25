@@ -33,6 +33,7 @@
         - CrateTrashCartFilled
         - ClosetMaintenanceFilledRandom
         - ClosetEmergencyFilledRandom
+        - ClothingBackpackDuffelSalvageSCAF # Corvax-Next SCAF
       rareChance: 0.4
       prototypes:
         - CrateSalvageAssortedGoodies
