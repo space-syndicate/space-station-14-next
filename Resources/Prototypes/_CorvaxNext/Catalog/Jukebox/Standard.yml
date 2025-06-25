@@ -2,4 +2,10 @@
   id: space_asshole
   name: Chris Remo - Space Asshole
   path:
-    path: /Audio/Lobby/space_asshole.ogg
+    path: /Audio/_CorvaxNext/Jukebox/space_asshole.ogg
+
+- type: jukebox
+  id: nodecision
+  name: Cobber3 - Nodecision
+  path:
+    path: /Audio/_CorvaxNext/Jukebox/nodecision.ogg
