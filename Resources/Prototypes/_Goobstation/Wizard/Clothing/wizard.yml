@@ -1,0 +1,23 @@
+- type: entity
+  parent: ClothingHeadHatWizard
+  id: ClothingHeadHatCentCommwizardReal
+  name: Шляпа ЦК Волшебника
+  suffix: АДМИН
+  description: Благородная зелено-золотая шляпа Волшебника, специальный выпуск для тайных оперативников Центрального Командования. Носится только теми, кто уполномочен знать секретные тауматургические фокусы!
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Wizard/Head/comwizard.rsi
+  - type: Clothing
+    sprite: _Goobstation/Wizard/Head/comwizard.rsi
+
+- type: entity
+  parent: ClothingOuterWizard
+  id: ClothingOuterWizardCentCommwizardReal
+  name: Мантия ЦК Волшебника
+  suffix: АДМИН
+  description: Благородная зелено-золотая мантия Волшебника, специальный выпуск для тайных оперативников Центрального Командования. Носится только теми, кто уполномочен знать секретные тауматургические фокусы!
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Wizard/OuterClothing/comwizard.rsi
+  - type: Clothing
+    sprite: _Goobstation/Wizard/OuterClothing/comwizard.rsi
