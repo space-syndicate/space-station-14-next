@@ -203,6 +203,7 @@
     - id: RCD
     - id: RCDAmmo
     - id: MetalFoamGrenade
+    - id: ConstructionBag
 
 - type: entityTable
   id: FillEngineerHardsuit
