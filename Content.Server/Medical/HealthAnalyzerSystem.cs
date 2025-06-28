@@ -27,6 +27,11 @@ using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using System.Linq;
 using Content.Shared.Traits.Assorted;
+// Start-_CorvaxNext: healthAnalyzerupdate
+using Content.Shared.Chemistry.Reagent; // CorvaxNext: healthAnalyzerupdate
+using Content.Shared.FixedPoint; // CorvaxNext: healthAnalyzerupdate
+using Robust.Shared.Prototypes; // CorvaxNext: healthAnalyzerupdate
+// End-_CorvaxNext: healthAnalyzerupdate
 
 namespace Content.Server.Medical;
 
@@ -42,6 +47,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
+    [Dependency] private readonly IPrototypeManager _prototypes = default!; // CorvaxNext: healthAnalyzerupdate
 
     public override void Initialize()
     {
@@ -250,15 +256,31 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         var bloodAmount = float.NaN;
         var bleeding = false;
         var unrevivable = false;
+        // Start-_CorvaxNext: healthAnalyzerupdate
+        Dictionary<string, FixedPoint2>? chemicals = null;
 
-        if (TryComp<BloodstreamComponent>(target, out var bloodstream) &&
-            _solutionContainerSystem.ResolveSolution(target, bloodstream.BloodSolutionName,
-                ref bloodstream.BloodSolution, out var bloodSolution))
+        if (TryComp<BloodstreamComponent>(target, out var bloodstream))
         {
-            bloodAmount = bloodSolution.FillFraction;
-            bleeding = bloodstream.BleedAmount > 0;
-        }
+            if (_solutionContainerSystem.ResolveSolution(target, bloodstream.BloodSolutionName,
+                 ref bloodstream.BloodSolution, out var bloodSolution))
+            {
+                bloodAmount = bloodSolution.FillFraction;
+                bleeding = bloodstream.BleedAmount > 0;
+            }
 
+
+            if (_solutionContainerSystem.ResolveSolution(target, bloodstream.ChemicalSolutionName,
+                ref bloodstream.ChemicalSolution, out var chemSolution))
+            {
+                chemicals = new Dictionary<string, FixedPoint2>();
+                foreach (var reagent in chemSolution.Contents)
+                {
+                    var proto = _prototypes.Index<ReagentPrototype>(reagent.Reagent.Prototype);
+                    chemicals[proto.LocalizedName] = reagent.Quantity;
+                }
+            }
+        }
+            // End-_CorvaxNext: healthAnalyzerupdate
         if (HasComp<UnrevivableComponent>(target))
             unrevivable = true;
 
@@ -276,7 +298,8 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             bleeding,
             unrevivable,
             body, // CorvaxNext: surgery
-            part != null ? GetNetEntity(part) : null // CorvaxNext: surgery
+            part != null ? GetNetEntity(part) : null, // CorvaxNext: surgery
+            chemicals //CorvaxNext: healthAnalyzerupdate
         ));
     }
 }
