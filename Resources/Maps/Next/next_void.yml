@@ -16964,9 +16964,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 160.5,135.5
       parent: 1
-    - type: GridFill
-      addComponents: []
-      path: /Maps/Next/Shuttles/Void/nt-sec_eda.yml
 - proto: AirlockHeadOfPersonnelLocked
   entities:
   - uid: 4186
