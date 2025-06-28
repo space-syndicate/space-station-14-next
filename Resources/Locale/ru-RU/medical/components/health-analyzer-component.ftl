@@ -17,3 +17,5 @@ health-analyzer-window-scan-mode-text = Режим сканирования:
 health-analyzer-window-scan-mode-active = АКТИВЕН
 health-analyzer-window-scan-mode-inactive = НЕАКТИВЕН
 health-analyzer-popup-scan-target = { CAPITALIZE($user) } пытается просканировать вас!
+health-analyzer-window-entity-reagents-text = Химикаты в крови:  
+health-analyzer-window-entity-no-chemicals-text = Отсутствуют

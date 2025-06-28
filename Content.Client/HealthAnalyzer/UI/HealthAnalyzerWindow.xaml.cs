@@ -26,6 +26,8 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.Chemistry.Components.SolutionManager; // CorvaxNext: healthAnalyzerupdate
+using Content.Shared.Chemistry.EntitySystems; // CorvaxNext: healthAnalyzerupdate
 
 namespace Content.Client.HealthAnalyzer.UI
 {
@@ -171,7 +173,11 @@ namespace Content.Client.HealthAnalyzer.UI
             BloodLabel.Text = !float.IsNaN(msg.BloodLevel)
                 ? $"{msg.BloodLevel * 100:F1} %"
                 : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
-
+                // Start-_CorvaxNext: healthAnalyzerupdate
+            ChemicalsLabel.Text = msg.Chemicals != null && msg.Chemicals.Count > 0
+                ? string.Join("\n", msg.Chemicals.Select(c => $"{c.Key}: {c.Value.Float():F1}u"))
+                : Loc.GetString("health-analyzer-window-entity-no-chemicals-text");
+               // End-_CorvaxNext: healthAnalyzerupdate
             StatusLabel.Text =
                 _entityManager.TryGetComponent<MobStateComponent>(_target.Value, out var mobStateComponent)
                     ? GetStatus(mobStateComponent.CurrentState)

@@ -1,6 +1,7 @@
 using Content.Shared._CorvaxNext.Targeting;
 using Content.Shared.Body.Components;
 using Robust.Shared.Serialization;
+using Content.Shared.FixedPoint; // CorvaxNext: healthAnalyzerupdate
 
 namespace Content.Shared.MedicalScanner;
 
@@ -18,8 +19,9 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
     public bool? Unrevivable;
     public Dictionary<TargetBodyPart, TargetIntegrity>? Body; // CorvaxNext: surgery
     public NetEntity? Part; // CorvaxNext: surgery
+    public readonly Dictionary<string, FixedPoint2>? Chemicals; // CorvaxNext: healthAnalyzerupdate
 
-    public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable, Dictionary<TargetBodyPart, TargetIntegrity>? body, NetEntity? part = null)
+    public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable, Dictionary<TargetBodyPart, TargetIntegrity>? body, NetEntity? part = null, Dictionary<string, FixedPoint2>? сhemicals = null) // ,Dictionary<string, FixedPoint2>? chemicals = null - CorvaxNext
     {
         TargetEntity = targetEntity;
         Temperature = temperature;
@@ -29,6 +31,7 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
         Unrevivable = unrevivable;
         Body = body; // CorvaxNext: surgery
         Part = part; // CorvaxNext: surgery
+        Chemicals = сhemicals; // CorvaxNext: healthAnalyzerupdate
     }
 }
 
