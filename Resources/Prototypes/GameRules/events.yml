@@ -166,7 +166,7 @@
   id: DragonSpawn
   components:
   - type: StationEvent
-    weight: 6.5
+    weight: 4.5 #Corvax-next-event
     earliestStart: 40
     reoccurrenceDelay: 20
     minimumPlayers: 20
@@ -573,7 +573,7 @@
   components:
   - type: StationEvent
     earliestStart: 35
-    weight: 5.5
+    weight: 4.5 #Corvax-next-event
     minimumPlayers: 20
     duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end scrreen (not always "Neutral outcome!") and... ending the game if the station is nuked.
   - type: RuleGrids
@@ -617,7 +617,7 @@
   id: BlobMidround
   components:
   - type: StationEvent
-    weight: 4
+    weight: 2 #Corvax-next-event
     earliestStart: 55
     minimumPlayers: 25
     duration: null
