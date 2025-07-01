@@ -32,7 +32,7 @@
   id: MobDraksMarkingLimits
   points:
     HeadTop:
-      points: 2
+      points: 1
       required: true
       defaultMarkings: [ Medium ]
     Head:
