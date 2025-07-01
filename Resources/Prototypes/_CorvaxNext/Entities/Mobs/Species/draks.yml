@@ -10,7 +10,7 @@
   - type: Hunger
     baseDecayRate: 0.02
   - type: Thirst
-    baseDecayRate: 0.15
+    baseDecayRate: 0.2
   - type: Icon
     sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
     state: full
@@ -26,10 +26,44 @@
     damage:
       types:
         Slash: 10
-        Structural: 10
+        Structural: 30 # кирка
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Draks
+  - type: Temperature
+    heatDamageThreshold: 325
+    coldDamageThreshold: -999
+    currentTemperature: 310.15
+    specificHeat: 42
+    coldDamage:
+      types:
+        Cold: 0
+    heatDamage:
+      types:
+        Heat: 1.2
+  - type: TemperatureSpeed
+    thresholds:
+      0: 1 # хз как еще сделать
+  - type: Bloodstream
+    bloodReagent: Cryoxadone
+  - type: Magboots
+  - type: DamageVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    targetLayers:
+    - "enum.HumanoidVisualLayers.Chest"
+    - "enum.HumanoidVisualLayers.Head"
+    - "enum.HumanoidVisualLayers.LArm"
+    - "enum.HumanoidVisualLayers.LLeg"
+    - "enum.HumanoidVisualLayers.RArm"
+    - "enum.HumanoidVisualLayers.RLeg"
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#0091ff"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
+  - type: Barotrauma
+    maxDamage: 0
 
 - type: entity
   save: false
