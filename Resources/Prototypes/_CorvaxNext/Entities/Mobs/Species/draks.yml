@@ -18,6 +18,18 @@
     prototype: Draks
     requiredLegs: 2
   - type: Inventory
+    templateId: diona
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _CorvaxNext/Mobs/Species/Draks/displacement.rsi
+            state: jumpsuit
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _CorvaxNext/Mobs/Species/Draks/displacement.rsi
+            state: hand
   - type: ContentEye
   - type: MeleeWeapon
     animation: WeaponArcClaw
@@ -26,7 +38,7 @@
     damage:
       types:
         Slash: 10
-        Structural: 30 # кирка
+        Structural: 30 # pickaxe structure damage
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Draks
@@ -43,7 +55,7 @@
         Heat: 1.2
   - type: TemperatureSpeed
     thresholds:
-      0: 1 # хз как еще сделать
+      0: 1
   - type: Bloodstream
     bloodReagent: Cryoxadone
   - type: Magboots
@@ -62,8 +74,16 @@
         color: "#0091ff"
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
-  - type: Barotrauma
-    maxDamage: 0
+  - type: Barotrauma # hasImmunity not working for some reason
+    damage:
+      types:
+        Blunt: 0
+        Heat: 0
+        Cold: 0
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4
+    baseSprintSpeed: 2.5
+    
 
 - type: entity
   save: false
