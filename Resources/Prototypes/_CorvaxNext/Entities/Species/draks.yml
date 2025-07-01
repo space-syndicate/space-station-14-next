@@ -8,10 +8,9 @@
   markingLimits: MobDraksMarkingLimits
   dollPrototype: MobDraksDummy
   skinColoration: Hues
-  maleFirstNames: NamesTajaranFirstMale
-  femaleFirstNames: NamesTajaranFirstFemale
-  maleLastNames: NamesTajaranLast # Corvax-LastnameGender
-  femaleLastNames: NamesTajaranLast # Corvax-LastnameGender
+  maleFirstNames: NamesDraks
+  femaleFirstNames: NamesDraks
+  naming: FirstDashFirstDashFirst
   sexes:
   - Unsexed
 
