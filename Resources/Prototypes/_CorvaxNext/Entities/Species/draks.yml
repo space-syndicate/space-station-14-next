@@ -12,6 +12,8 @@
   femaleFirstNames: NamesTajaranFirstFemale
   maleLastNames: NamesTajaranLast # Corvax-LastnameGender
   femaleLastNames: NamesTajaranLast # Corvax-LastnameGender
+  sexes:
+  - Unsexed
 
 - type: speciesBaseSprites
   id: MobDraksSprites
@@ -31,10 +33,19 @@
 - type: markingPoints
   id: MobDraksMarkingLimits
   points:
+    Hair:
+      points: 0
+      required: false
+    FacialHair:
+      points: 0
+      required: false
+    Tail:
+      points: 0
+      required: false
     HeadTop:
       points: 1
       required: true
-      defaultMarkings: [ Medium ]
+      defaultMarkings: [ Short ]
     Head:
       points: 1
       required: true
