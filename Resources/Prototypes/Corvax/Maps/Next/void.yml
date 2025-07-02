@@ -16,8 +16,6 @@
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Next/Shuttles/Void/emergency_void.yml
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
             # command
             Captain: [ 1, 1 ]
