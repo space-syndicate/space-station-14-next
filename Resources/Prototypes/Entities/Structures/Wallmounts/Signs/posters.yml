@@ -9,6 +9,11 @@
     drawdepth: WallMountedItems
     sprite: Structures/Wallmounts/posters.rsi
     snapCardinals: true
+  - type: ReplaceOnUseHand # Corvax-Next-Posters
+    delay: 0.65
+    replaceSound:
+      path: /Audio/Effects/poster_broken.ogg
+    replacingEntity: PosterBroken
   - type: Destructible
     thresholds:
     - trigger: # Excess damage, don't spawn entities

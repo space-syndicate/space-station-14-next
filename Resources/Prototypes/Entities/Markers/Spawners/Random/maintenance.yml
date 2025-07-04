@@ -93,6 +93,7 @@
       weight: 23
       children:
       - id: ClothingNeckCloakHerald
+      - id: PosterLegit # Corvax-Next-Posters
       - id: ClothingHeadHelmetTemplar
       # Cloaks
       - !type:GroupSelector
@@ -175,6 +176,7 @@
     - !type:GroupSelector
       weight: 2
       children:
+      - id: PosterIllegal # Corvax-Next-Posters
       - id: Skub
       - id: PonderingOrb
       - id: CluwneHorn
