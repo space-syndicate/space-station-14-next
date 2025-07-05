@@ -6,4 +6,11 @@ namespace Content.Shared._DV.Salvage.Components;
 /// Adds points to <see cref="MiningPointsComponent"/> when making a recipe that has miningPoints set.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class MiningPointsLatheComponent : Component;
+public sealed partial class MiningPointsLatheComponent : Component
+{
+    /// <summary>
+    /// Can points be claimed on lavaland
+    /// </summary>
+    [DataField]
+    public bool WorksOnLavaland = false;
+}

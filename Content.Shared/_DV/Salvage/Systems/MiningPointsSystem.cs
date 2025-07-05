@@ -24,10 +24,6 @@ public sealed class MiningPointsSystem : EntitySystem
         _query = GetEntityQuery<MiningPointsComponent>();
 
         SubscribeLocalEvent<MiningPointsLatheComponent, MaterialEntityInsertedEvent>(OnMaterialEntityInserted);
-        Subs.BuiEvents<MiningPointsLatheComponent>(LatheUiKey.Key, subs =>
-        {
-            subs.Event<LatheClaimMiningPointsMessage>(OnClaimMiningPoints);
-        });
     }
 
     #region Event Handlers
@@ -41,13 +37,6 @@ public sealed class MiningPointsSystem : EntitySystem
         var points = unclaimedOre.MiningPoints * args.Count;
         if (points > 0)
             AddPoints(ent.Owner, (uint) points);
-    }
-
-    private void OnClaimMiningPoints(Entity<MiningPointsLatheComponent> ent, ref LatheClaimMiningPointsMessage args)
-    {
-        var user = args.Actor;
-        if (TryFindIdCard(user) is {} dest)
-            TransferAll(ent.Owner, dest);
     }
 
     #endregion
