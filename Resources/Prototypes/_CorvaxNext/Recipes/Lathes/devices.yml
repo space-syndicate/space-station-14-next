@@ -7,3 +7,11 @@
     Steel: 500
     Plastic: 200
 
+- type: latheRecipe
+  id: AnomalyPayload
+  result: AnomalyPayloadEmpty
+  completetime: 2
+  materials:
+    Steel: 600
+    Silver: 300
+    Gold: 400
