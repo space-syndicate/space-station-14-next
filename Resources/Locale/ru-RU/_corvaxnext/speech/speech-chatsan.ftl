@@ -12,3 +12,5 @@ corvax-next-chatsan-word-6 = грабай
 corvax-next-chatsan-replacement-6 = хватай
 corvax-next-chatsan-word-7 = грабни
 corvax-next-chatsan-replacement-7 = схвати
+corvax-next-chatsan-word-8 = грабом
+corvax-next-chatsan-replacement-8 = захватом
