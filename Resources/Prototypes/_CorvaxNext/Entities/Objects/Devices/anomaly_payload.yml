@@ -78,6 +78,8 @@
     - state: anomaly-payload
       color: "#fffb01"
   - type: EmpOnTrigger
+  - type: UseDelay
+    delay: 260
 
 - type: entity
   parent: BaseAnomalyPayload
@@ -99,7 +101,7 @@
   - type: SpawnOnTrigger
     proto: EffectWhitehole
   - type: UseDelay
-    delay: 450
+    delay: 250
 
 - type: entity
   parent: BaseAnomalyPayload
@@ -150,7 +152,7 @@
       spawns:
       - KudzuFlowerFriendly
   - type: UseDelay
-    delay: 80
+    delay: 70
 
 - type: entity
   parent: BaseAnomalyPayload
@@ -200,7 +202,7 @@
       - WallSpawnAsteroidCoal
       - WallSpawnAsteroidCoalCrab
   - type: UseDelay
-    delay: 160
+    delay: 140
 
 - type: entity
   parent: BaseAnomalyPayload
@@ -268,7 +270,7 @@
       color: "#003ec4"
   - type: BluespaceTeleportOnTrigger
   - type: UseDelay
-    delay: 120
+    delay: 130
 
 - type: entity
   parent: BaseAnomalyPayload
