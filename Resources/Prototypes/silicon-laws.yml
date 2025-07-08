@@ -17,6 +17,7 @@
 - type: siliconLawset
   id: Crewsimov
   laws:
+  - SiliconLaw0 # CorvaxNext-ZeroLaw
   - Crewsimov1
   - Crewsimov2
   - Crewsimov3
@@ -46,6 +47,7 @@
 - type: siliconLawset
   id: Corporate
   laws:
+  - SiliconLaw0 # CorvaxNext-ZeroLaw
   - Corporate1
   - Corporate2
   - Corporate3
@@ -76,6 +78,7 @@
 - type: siliconLawset
   id: NTDefault
   laws:
+  - SiliconLaw0 # CorvaxNext-ZeroLaw
   - NTDefault1
   - NTDefault2
   - NTDefault3
@@ -217,6 +220,7 @@
 - type: siliconLawset
   id: CommandmentsLawset
   laws:
+  - SiliconLaw0 # CorvaxNext-ZeroLaw
   - Commandment1
   - Commandment2
   - Commandment3
@@ -259,6 +263,7 @@
 - type: siliconLawset
   id: PaladinLawset
   laws:
+  - SiliconLaw0 # CorvaxNext-ZeroLaw
   - Paladin1
   - Paladin2
   - Paladin3
@@ -281,6 +286,7 @@
 - type: siliconLawset
   id: LiveLetLiveLaws
   laws:
+  - SiliconLaw0 # CorvaxNext-ZeroLaw
   - Lall1
   - Lall2
   obeysTo: laws-owner-crew
@@ -305,6 +311,7 @@
 - type: siliconLawset
   id: EfficiencyLawset
   laws:
+  - SiliconLaw0 # CorvaxNext-ZeroLaw
   - Efficiency1
   - Efficiency2
   - Efficiency3
@@ -330,6 +337,7 @@
 - type: siliconLawset
   id: RobocopLawset
   laws:
+  - SiliconLaw0 # CorvaxNext-ZeroLaw
   - Robocop1
   - Robocop2
   - Robocop3
@@ -399,6 +407,7 @@
 - type: siliconLawset
   id: GameMasterLawset
   laws:
+  - SiliconLaw0 # CorvaxNext-ZeroLaw
   - Game1
   - Game2
   - Game3
@@ -431,6 +440,7 @@
 - type: siliconLawset
   id: PainterLawset
   laws:
+  - SiliconLaw0 # CorvaxNext-ZeroLaw
   - Painter1
   - Painter2
   - Painter3
@@ -492,6 +502,7 @@
 - type: siliconLawset
   id: NutimovLawset
   laws:
+  - SiliconLaw0 # CorvaxNext-ZeroLaw
   - Nutimov1
   - Nutimov2
   - Nutimov3
