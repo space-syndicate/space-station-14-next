@@ -24,6 +24,7 @@
       Male: UnisexDraks
       Female: UnisexDraks
       Unsexed: UnisexDraks
+  - type: DraksAccent
   - type: Inventory
     templateId: diona
     displacements:

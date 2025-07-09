@@ -16,6 +16,7 @@
     - type: ReplacementAccent
       accent: dwarf
     - type: ResomiAccent # Corvax-Next-Resomi
+    - type: DraksAccent # Corvax-Next-Draks
 
 # 1 Cost
 
