@@ -17,6 +17,13 @@
   - type: Body
     prototype: Draks
     requiredLegs: 2
+  - type: Speech
+    speechSounds: Draks
+  - type: Vocal
+    sounds:
+      Male: UnisexDraks
+      Female: UnisexDraks
+      Unsexed: UnisexDraks
   - type: Inventory
     templateId: diona
     displacements:
