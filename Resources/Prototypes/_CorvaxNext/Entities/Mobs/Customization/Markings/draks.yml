@@ -1,7 +1,7 @@
 - type: humanoidBaseSprite
   id: MobDraksEyes
   baseSprite:
-    sprite: _CorvaxNext/Mobs/Customization/Draks/eyes.yml
+    sprite: _CorvaxNext/Mobs/Customization/Draks/eyes.rsi
     state: eyes
 
 - type: marking
@@ -10,7 +10,7 @@
   bodyPart: LArm
   speciesRestriction: [Draks]
   sprites:
-    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.yml
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.rsi
       state: forearm_l_arm
 
 - type: marking
@@ -19,7 +19,7 @@
   bodyPart: RArm
   speciesRestriction: [Draks]
   sprites:
-    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.yml
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.rsi
       state: forearm_r_arm
 
 - type: marking
@@ -28,7 +28,7 @@
   bodyPart: LArm
   speciesRestriction: [Draks]
   sprites:
-    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.yml
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.rsi
       state: long_l_arm
 
 - type: marking
@@ -37,7 +37,7 @@
   bodyPart: RArm
   speciesRestriction: [Draks]
   sprites:
-    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.yml
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.rsi
       state: long_r_arm
 
 - type: marking
@@ -46,7 +46,7 @@
   bodyPart: LArm
   speciesRestriction: [Draks]
   sprites:
-    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.yml
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.rsi
       state: standart_l_arm
 
 - type: marking
@@ -55,7 +55,7 @@
   bodyPart: RArm
   speciesRestriction: [Draks]
   sprites:
-    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.yml
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.rsi
       state: standart_r_arm
 
 - type: marking
@@ -64,7 +64,7 @@
   bodyPart: LArm
   speciesRestriction: [Draks]
   sprites:
-    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.yml
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.rsi
       state: upper_l_arm
 
 - type: marking
@@ -73,7 +73,7 @@
   bodyPart: RArm
   speciesRestriction: [Draks]
   sprites:
-    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.yml
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.rsi
       state: upper_r_arm
 
 - type: marking
@@ -82,7 +82,7 @@
   bodyPart: HeadTop
   speciesRestriction: [Draks]
   sprites:
-    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.yml
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.rsi
       state: large
 
 - type: marking
@@ -91,7 +91,7 @@
   bodyPart: HeadTop
   speciesRestriction: [Draks]
   sprites:
-    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.yml
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.rsi
       state: lush
 
 - type: marking
@@ -100,7 +100,7 @@
   bodyPart: HeadTop
   speciesRestriction: [Draks]
   sprites:
-    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.yml
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.rsi
       state: medium
 
 - type: marking
@@ -109,7 +109,7 @@
   bodyPart: HeadTop
   speciesRestriction: [Draks]
   sprites:
-    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.yml
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.rsi
       state: short
 
 - type: marking
@@ -118,7 +118,7 @@
   bodyPart: HeadTop
   speciesRestriction: [Draks]
   sprites:
-    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.yml
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.rsi
       state: untidy
 
 - type: marking
@@ -127,7 +127,7 @@
   bodyPart: Head
   speciesRestriction: [Draks]
   sprites:
-    - sprite: _CorvaxNext/Mobs/Customization/Draks/eyes.yml
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/eyes.rsi
       state: eyes
 
 - type: marking
@@ -136,7 +136,7 @@
   bodyPart: Head
   speciesRestriction: [Draks]
   sprites:
-    - sprite: _CorvaxNext/Mobs/Customization/Draks/eyes.yml
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/eyes.rsi
       state: cute
 
 - type: marking
@@ -145,5 +145,5 @@
   bodyPart: Head
   speciesRestriction: [Draks]
   sprites:
-    - sprite: _CorvaxNext/Mobs/Customization/Draks/eyes.yml
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/eyes.rsi
       state: tired

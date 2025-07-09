@@ -59,7 +59,7 @@
 - type: humanoidBaseSprite
   id: MobDraksHeadTop
   baseSprite:
-    sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.yml
+    sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.rsi
     state: medium
 
 - type: humanoidBaseSprite
