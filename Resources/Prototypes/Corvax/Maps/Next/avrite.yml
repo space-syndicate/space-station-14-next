@@ -14,7 +14,7 @@
         nameGenerator: !type:NanotrasenNameGenerator
           prefixCreator: 'SY'
       - type: StationEmergencyShuttle
-        emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_corvaxavrite.yml
+        emergencyShuttlePath: /Maps/Next/Shuttles/Avrite/emergency_nextAvrite.yml
       - type: StationJobs
         availableJobs:
           # command
@@ -44,6 +44,7 @@
           # security
           HeadOfSecurity: [ 1, 1 ]
           Warden: [ 1, 1 ]
+          WardenHelper: [ 1, 1 ]
           SecurityOfficer: [ 8, 9 ]
           SecurityCadet: [ 3, 4 ]
           Detective: [ 1, 1 ]
@@ -67,10 +68,7 @@
           # silicon
           StationAi: [ 1, 1 ]
           Borg: [ 2, 3 ]
-
-        # Corvax-next blob-config-start HUGEs
       - type: StationBlobConfig
         stageBegin: 40
         stageCritical: 700
         stageTheEnd: 1200
-        # Corvax-next blob-config-end

@@ -11,7 +11,7 @@
     HandheldHealthAnalyzer: 3
     Scalpel: 2
     SawElectric: 2
-    #Bonesetter: 2 add when robotics
+    BoneSetter: 2 #(add when robotics)
     NitrousOxideTankFilled: 2
     ClothingMaskBreathMedical: 5
     ClothingHeadHatWeldingMaskFlame: 1
@@ -19,4 +19,4 @@
     Screwdriver: 2
     Crowbar: 2
   contrabandInventory:
-    FoodBurgerRobot: 1  
+    FoodBurgerRobot: 1

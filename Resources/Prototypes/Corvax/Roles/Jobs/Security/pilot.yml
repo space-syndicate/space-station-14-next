@@ -7,6 +7,10 @@
   - !type:DepartmentTimeRequirement
     department: Security
     time: 72000 #20 hrs
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - Muted
   startingGear: PilotGear
   icon: "JobIconPilot"
   supervisors: job-supervisors-hos
@@ -42,3 +46,14 @@
     - Flash
     - MagazinePistol
     - ClothingNeckSecBadgePilot # Corvax-Next-Badges
+
+- type: chameleonOutfit
+  id: PilotChameleonOutfit
+  job: Pilot
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBeretSecurity
+    eyes: ClothingEyesGlassesSecurity
+    mask: ClothingMaskGasSecurity
+    neck: Dinkystar
+    gloves: ClothingHandsGlovesColorBlack

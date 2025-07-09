@@ -7,6 +7,13 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 108000 #50 hrs # Corvax-RoleTime
+    - !type:RoleTimeRequirement
+      role: JobWardenHelper
+      time: 18000 #5 hrs # Corvax-WardHelp-NEXT
+    - !type:TraitsRequirement #Corvax-TraitsRequirement
+      inverted: true
+      traits:
+      - Muted
   weight: 5
   startingGear: WardenGear
   icon: "JobIconWarden"
@@ -37,10 +44,24 @@
   equipment:
     eyes: ClothingEyesGlassesSecurity
     id: WardenPDA
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetAltSecurity # Corvax-Next-WardenHeadset
     pocket1: WeaponPistolMk58
   storage:
     back:
     - Flash
     - MagazinePistol
     - ClothingNeckSecBadgeWarden # Corvax-Next-Badges
+
+- type: chameleonOutfit
+  id: WardenChameleonOutfit
+  job: Warden
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatWarden
+    mask: ClothingMaskGasSecurity
+    outerClothing: ClothingOuterCoatWarden
+    jumpsuit: ClothingUniformJumpsuitWarden
+    neck: Dinkystar
+    belt: ClothingBeltSecurity
+    gloves: ClothingHandsGlovesCombat
+    shoes: ClothingShoesBootsJack

@@ -15,11 +15,11 @@ public sealed class GunUpgradeSystem : SharedGunUpgradeSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<GunUpgradeDamageComponent, GunShotEvent>(OnDamageGunShot);
-        SubscribeLocalEvent<GunUpgradeDamageComponent, ProjectileShotEvent>(OnProjectileShot);
+        SubscribeLocalEvent<LavalandGunUpgradeDamageComponent, GunShotEvent>(OnDamageGunShot);
+        SubscribeLocalEvent<LavalandGunUpgradeDamageComponent, ProjectileShotEvent>(OnProjectileShot);
     }
 
-    private void OnDamageGunShot(Entity<GunUpgradeDamageComponent> ent, ref GunShotEvent args)
+    private void OnDamageGunShot(Entity<LavalandGunUpgradeDamageComponent> ent, ref GunShotEvent args)
     {
         foreach (var (ammo, _) in args.Ammo)
         {
@@ -34,7 +34,7 @@ public sealed class GunUpgradeSystem : SharedGunUpgradeSystem
         }
     }
 
-    private void OnProjectileShot(Entity<GunUpgradeDamageComponent> ent, ref ProjectileShotEvent args)
+    private void OnProjectileShot(Entity<LavalandGunUpgradeDamageComponent> ent, ref ProjectileShotEvent args)
     {
         if (!TryComp<ProjectileComponent>(args.FiredProjectile, out var projectile))
             return;

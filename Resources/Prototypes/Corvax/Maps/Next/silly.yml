@@ -16,7 +16,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'ABK'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_corvaxsilly.yml
+          emergencyShuttlePath: /Maps/Next/Shuttles/Silly/emergency_nextSilly.yml
         - type: StationJobs
           availableJobs:
             # command
@@ -45,6 +45,7 @@
             # security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
+            WardenHelper: [ 1, 1 ]
             SecurityOfficer: [ 2, 2 ]
             SecurityCadet: [ 2, 2 ]
             Detective: [ 1, 1 ]
@@ -78,9 +79,9 @@
           - Botany
           - Bunker
           - BluespaceHarvest
-        # Corvax-next blob-config-start LOW
+        - type: StationCargoShuttle
+          path: /Maps/Next/Shuttles/Silly/cargo_nextSilly.yml
         - type: StationBlobConfig
           stageBegin: 10
           stageCritical: 300
           stageTheEnd: 600
-        # Corvax-next blob-config-end

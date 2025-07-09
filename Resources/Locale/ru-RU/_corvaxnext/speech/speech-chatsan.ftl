@@ -1,0 +1,16 @@
+corvax-next-chatsan-word-1 = граб
+corvax-next-chatsan-replacement-1 = захват
+corvax-next-chatsan-word-2 = заграбал
+corvax-next-chatsan-replacement-2 = схватил
+corvax-next-chatsan-word-3 = заграбил
+corvax-next-chatsan-replacement-3 = схватил
+corvax-next-chatsan-word-4 = грабнул
+corvax-next-chatsan-replacement-4 = схватил
+corvax-next-chatsan-word-5 = грабнули
+corvax-next-chatsan-replacement-5 = схватили
+corvax-next-chatsan-word-6 = грабай
+corvax-next-chatsan-replacement-6 = хватай
+corvax-next-chatsan-word-7 = грабни
+corvax-next-chatsan-replacement-7 = схвати
+corvax-next-chatsan-word-8 = грабом
+corvax-next-chatsan-replacement-8 = захватом

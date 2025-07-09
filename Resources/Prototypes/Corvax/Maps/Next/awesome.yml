@@ -16,7 +16,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'TBK'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_awesome.yml
+          emergencyShuttlePath: /Maps/Next/Shuttles/Awesome/emergency_nextAwesome.yml
         - type: StationJobs
           availableJobs:
             # command
@@ -46,8 +46,9 @@
             # security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
-            SecurityOfficer: [ 2, 2 ]
-            SecurityCadet: [ 2, 2 ]
+            WardenHelper: [ 1, 1 ]
+            SecurityOfficer: [ 4, 6 ]
+            SecurityCadet: [ 2, 4 ]
             Detective: [ 1, 1 ]
             # service
             HeadOfPersonnel: [ 1, 1 ]
@@ -66,9 +67,7 @@
             # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
-        # Corvax-next blob-config-start SMALL+
         - type: StationBlobConfig
           stageBegin: 40
           stageCritical: 500
           stageTheEnd: 900
-        # Corvax-next blob-config-end

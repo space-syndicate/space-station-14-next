@@ -5,3 +5,11 @@
     sprite: /Textures/_CorvaxNext/Interface/Misc/job_icons.rsi
     state: Surgeon
   jobName: job-name-surgeon
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconWardenHelper
+  icon:
+    sprite: /Textures/_CorvaxNext/Interface/Misc/job_icons.rsi
+    state: WardenHelper
+  jobName: job-name-wardenhelper

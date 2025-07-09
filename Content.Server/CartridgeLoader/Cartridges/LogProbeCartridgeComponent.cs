@@ -1,4 +1,4 @@
-﻿using Content.Shared.CartridgeLoader.Cartridges;
+using Content.Shared.CartridgeLoader.Cartridges;
 using Content.Shared._CorvaxNext.CartridgeLoader.Cartridges;
 using Content.Shared.Paper;
 using Robust.Shared.Audio;
@@ -27,7 +27,7 @@ public sealed partial class LogProbeCartridgeComponent : Component
     /// The sound to make when we scan something with access
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public SoundSpecifier SoundScan = new SoundPathSpecifier("/Audio/Machines/scan_finish.ogg");
+    public SoundSpecifier SoundScan = new SoundPathSpecifier("/Audio/Machines/scan_finish.ogg", AudioParams.Default.WithVariation(0.25f));
 
     /// <summary>
     /// Corvax-Next-PDAChat: The last scanned NanoChat data, if any

@@ -18,11 +18,11 @@ reagent-effect-condition-guidebook-total-hunger =
     }
 reagent-effect-condition-guidebook-reagent-threshold =
     { $max ->
-        [2147483648] в кровеносной системе имеется по крайней мере { NATURALFIXED($min, 2) }ед. { $reagent }
+        [2147483648] в кровеносной системе имеется по крайней мере { NATURALFIXED($min, 2) } ед. { $reagent }
        *[other]
             { $min ->
-                [0] имеется не более { NATURALFIXED($max, 2) }ед. { $reagent }
-               *[other] имеет между { NATURALFIXED($min, 2) }ед. и { NATURALFIXED($max, 2) }ед. { $reagent }
+                [0] имеется не более { NATURALFIXED($max, 2) } ед. { $reagent }
+               *[other] имеет между { NATURALFIXED($min, 2) } ед. и { NATURALFIXED($max, 2) } ед. { $reagent }
             }
     }
 reagent-effect-condition-guidebook-mob-state-condition = пациент в { $state }
@@ -56,3 +56,13 @@ reagent-effect-condition-guidebook-has-tag =
        *[false] имеет
     } метку { $tag }
 reagent-effect-condition-guidebook-this-reagent = этот реагент
+reagent-effect-condition-guidebook-breathing =
+    the metabolizer is { $isBreathing ->
+        [true] breathing normally
+       *[false] suffocating
+    }
+reagent-effect-condition-guidebook-internals =
+    the metabolizer is { $usingInternals ->
+        [true] using internals
+       *[false] breathing atmospheric air
+    }

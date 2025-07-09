@@ -28,6 +28,8 @@
       - Surgery
       - MedicalEquipment
       - Butchering
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
 
 - type: startingGear
   id: CBURNGear
@@ -51,3 +53,11 @@
     - GrenadeFlashBang
     - PillAmbuzolPlus
     - PillAmbuzol
+
+- type: chameleonOutfit
+  id: CBURNChameleonOutfit
+  job: CBURN
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHelmetCBURN
+    neck: ClothingNeckScarfStripedBrown

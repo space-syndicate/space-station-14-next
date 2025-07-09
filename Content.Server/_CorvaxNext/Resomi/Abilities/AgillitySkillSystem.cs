@@ -10,6 +10,7 @@ using Content.Shared.Movement.Systems;
 using Content.Shared._CorvaxNext.Resomi.Abilities;
 using Content.Shared.Damage.Components;
 using Robust.Shared.Physics;
+using Content.Shared.Actions.Components;
 
 namespace Content.Server._CorvaxNext.Resomi.Abilities;
 
@@ -18,7 +19,7 @@ public sealed class AgillitySkillSystem : SharedAgillitySkillSystem
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
 
-    private Entity<BaseActionComponent> action;
+    private Entity<ActionComponent> action;
 
     public override void Initialize()
     {
@@ -47,7 +48,7 @@ public sealed class AgillitySkillSystem : SharedAgillitySkillSystem
         }
     }
 
-    private void ActivateAgility(Entity<AgillitySkillComponent> ent, Entity<BaseActionComponent> action)
+    private void ActivateAgility(Entity<AgillitySkillComponent> ent, Entity<ActionComponent> action)
     {
         if (!TryComp<MovementSpeedModifierComponent>(ent.Owner, out var comp))
             return;
@@ -63,7 +64,7 @@ public sealed class AgillitySkillSystem : SharedAgillitySkillSystem
         RaiseLocalEvent(ent.Owner, ref ev);
     }
 
-    private void DeactivateAgility(EntityUid uid, AgillitySkillComponent component, Entity<BaseActionComponent> action)
+    private void DeactivateAgility(EntityUid uid, AgillitySkillComponent component, Entity<ActionComponent> action)
     {
         if (!TryComp<MovementSpeedModifierComponent>(uid, out var comp))
             return;

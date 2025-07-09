@@ -14,6 +14,10 @@ using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Verbs;
+using Content.Shared.Labels.Components;
+using Content.Shared.Labels.EntitySystems;
+using System.Linq;
+using Content.Shared.FixedPoint;
 
 namespace Content.Server._CorvaxNext.Medical.SmartFridge;
 
@@ -68,31 +72,130 @@ public sealed class SmartFridgeSystem : SharedSmartFridgeSystem
         }
 
         if (!_itemSlotsSystem.TryInsertEmpty(ev.Target, ev.Used, ev.User, true))
+        return;
+
+    ProcessReagentLabeling(ev.Used);
+    UpdateFridgeInventory(entity, component);
+
+    ev.Handled = true;
+}
+
+    private void ProcessReagentLabeling(EntityUid entity)
+{
+    if (!_solutionContainerSystem.TryGetDrainableSolution(entity, out _, out var solution) || solution.Volume <= 0)
+        return;
+
+    var reagents = solution.Contents;
+    var totalQuantity = solution.Volume.Float();
+
+    switch (reagents.Count)
+    {
+        case 0:
             return;
 
-        if (_solutionContainerSystem.TryGetDrainableSolution(ev.Used, out _, out var sol))
-        {
-            ReagentId? reagentId = sol.GetPrimaryReagentId();
-            if (reagentId is not null && _prototypeManager.TryIndex<ReagentPrototype>(reagentId.Value.Prototype, out var reagent))
-            {
-                var reagentQuantity = sol.GetReagentQuantity(reagentId.Value);
-                var totalQuantity = sol.Volume;
+        case 1:
+            LabelSingleReagent(entity, reagents[0], totalQuantity);
+            break;
 
-                if (reagentQuantity == totalQuantity)
-                    _label.Label(ev.Used, reagent.LocalizedName);
-                else
-                {
-                    _label.Label(ev.Used, Loc.GetString("reagent-dispenser-component-impure-auto-label",
-                        ("reagent", reagent.LocalizedName),
-                        ("purity", 100.0f * reagentQuantity / totalQuantity)));
-                }
-            }
-        }
+        case 2:
+            LabelTwoReagents(entity, reagents[0], reagents[1], totalQuantity);
+            break;
 
-        component.Inventory = GetInventory(entity);
-        Dirty(entity, component);
+        default:
+            LabelComplexMixture(entity, reagents, totalQuantity);
+            break;
+    }
+}
 
-        ev.Handled = true;
+private void LabelSingleReagent(EntityUid entity, ReagentQuantity reagent, float totalQuantity)
+{
+    if (!_prototypeManager.TryIndex<ReagentPrototype>(reagent.Reagent.Prototype, out var reagentProto))
+        return;
+
+    var purity = 100f * reagent.Quantity.Float() / totalQuantity;
+    var roundedPurity = (int)Math.Round(purity);
+    var units = (int)Math.Round(totalQuantity);
+
+    _label.Label(entity, purity >= 99.99f
+        ? Loc.GetString("smart-fridge-pure-with-units-label",
+            ("reagent", reagentProto.LocalizedName),
+            ("units", units))
+        : Loc.GetString("smart-fridge-impure-label",
+            ("reagent", reagentProto.LocalizedName),
+            ("purity", roundedPurity),
+            ("units", units)));
+}
+
+private void LabelTwoReagents(EntityUid entity, ReagentQuantity reagent1, ReagentQuantity reagent2, float totalQuantity)
+{
+    if (!_prototypeManager.TryIndex<ReagentPrototype>(reagent1.Reagent.Prototype, out var proto1) ||
+        !_prototypeManager.TryIndex<ReagentPrototype>(reagent2.Reagent.Prototype, out var proto2))
+        return;
+
+    var percent1 = (int)Math.Round(100f * reagent1.Quantity.Float() / totalQuantity);
+    var percent2 = (int)Math.Round(100f * reagent2.Quantity.Float() / totalQuantity);
+    var units = (int)Math.Round(totalQuantity);
+
+    _label.Label(entity, Loc.GetString("smart-fridge-mixed-label",
+        ("reagent1", proto1.LocalizedName),
+        ("percent1", percent1),
+        ("reagent2", proto2.LocalizedName),
+        ("percent2", percent2),
+        ("units", units)));
+}
+
+private void LabelComplexMixture(EntityUid entity, IReadOnlyList<ReagentQuantity> reagents, float totalQuantity)
+{
+    var primaryReagents = reagents
+        .OrderByDescending(r => r.Quantity.Float())
+        .Take(3)
+        .ToList();
+
+    if (primaryReagents.Count < 3 ||
+        !_prototypeManager.TryIndex<ReagentPrototype>(primaryReagents[0].Reagent.Prototype, out var proto1) ||
+        !_prototypeManager.TryIndex<ReagentPrototype>(primaryReagents[1].Reagent.Prototype, out var proto2) ||
+        !_prototypeManager.TryIndex<ReagentPrototype>(primaryReagents[2].Reagent.Prototype, out var proto3))
+        return;
+
+    var percent1 = (int)Math.Round(100f * primaryReagents[0].Quantity.Float() / totalQuantity);
+    var percent2 = (int)Math.Round(100f * primaryReagents[1].Quantity.Float() / totalQuantity);
+    var percent3 = (int)Math.Round(100f * primaryReagents[2].Quantity.Float() / totalQuantity);
+    var othersPercent = 100 - percent1 - percent2 - percent3;
+    var units = (int)Math.Round(totalQuantity);
+
+    string labelText;
+
+    if (reagents.Count > 3 && othersPercent > 0)
+    {
+        labelText = Loc.GetString("smart-fridge-mixed-multiple-label",
+            ("reagent1", proto1.LocalizedName),
+            ("percent1", percent1),
+            ("reagent2", proto2.LocalizedName),
+            ("percent2", percent2),
+            ("reagent3", proto3.LocalizedName),
+            ("percent3", percent3),
+            ("othersPercent", othersPercent),
+            ("units", units));
+    }
+    else
+    {
+        labelText = Loc.GetString("smart-fridge-triple-label",
+            ("reagent1", proto1.LocalizedName),
+            ("percent1", percent1),
+            ("reagent2", proto2.LocalizedName),
+            ("percent2", percent2),
+            ("reagent3", proto3.LocalizedName),
+            ("percent3", percent3),
+            ("units", units));
+    }
+
+    _label.Label(entity, labelText);
+}
+
+    private void UpdateFridgeInventory(EntityUid uid, SmartFridgeComponent component)
+    {
+        component.Inventory = GetInventory(uid);
+        Dirty(uid, component);
     }
 
     private void OnItemEjectEvent(EntityUid entity, SmartFridgeComponent component, ref ItemSlotEjectAttemptEvent ev)

@@ -77,6 +77,21 @@ reagent-effect-guidebook-health-change =
                *[both] изменяют здоровье на
             }
     } { $changes }
+reagent-effect-guidebook-even-health-change =
+    { $chance ->
+        [1]
+            { $healsordeals ->
+                [heals] Evenly heals
+                [deals] Evenly deals
+               *[both] Evenly modifies health by
+            }
+       *[other]
+            { $healsordeals ->
+                [heals] evenly heal
+                [deals] evenly deal
+               *[both] evenly modify health by
+            }
+    } { $changes }
 reagent-effect-guidebook-status-effect =
     { $type ->
         [add]
@@ -133,7 +148,7 @@ reagent-effect-guidebook-adjust-reagent-reagent =
                 [1] добавляют
                *[-1] удаляют
             }
-    } { NATURALFIXED($amount, 2) }ед. от { $reagent } { $deltasign ->
+    } { NATURALFIXED($amount, 2) } ед. от { $reagent } { $deltasign ->
         [1] к
        *[-1] из
     } раствора
@@ -225,6 +240,11 @@ reagent-effect-guidebook-drunk =
         [1] Вызывает
        *[other] вызывают
     } опьянение
+reagent-effect-guidebook-emote =
+    { $chance ->
+        [1] Will force
+       *[other] force
+    } the metabolizer to [bold][color=white]{ $emote }[/color][/bold]
 reagent-effect-guidebook-electrocute =
     { $chance ->
         [1] Бьёт током
@@ -334,6 +354,11 @@ reagent-effect-guidebook-area-reaction =
         [few] секунды
        *[other] секунд
     }
+reagent-effect-guidebook-artifact-unlock =
+    { $chance ->
+        [1] Helps
+       *[other] help
+    } unlock an alien artifact.
 reagent-effect-guidebook-add-to-solution-reaction =
     { $chance ->
         [1] Заставляет

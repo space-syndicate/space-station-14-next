@@ -14,7 +14,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_lox.yml
+          emergencyShuttlePath: /Maps/Next/Shuttles/Bagel/emergency_nextBagel.yml
         - type: StationJobs
           availableJobs:
             # command
@@ -36,6 +36,7 @@
             Paramedic: [ 1, 1 ]
             Chemist: [ 2, 2 ]
             Surgeon: [ 1, 1 ]
+            Psychologist: [ 1, 1 ]
             # science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 5, 5 ]
@@ -43,9 +44,12 @@
             # security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
+            WardenHelper: [ 1, 1 ]
             SecurityOfficer: [ 7, 7 ]
             SecurityCadet: [ 4, 4 ]
             Detective: [ 1, 1 ]
+            Pilot: [ 1, 1]
+            Brigmedic: [ 1, 1 ]
             # service
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 2 ]
@@ -63,9 +67,7 @@
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
-        # Goobstation blob-config-start HUGEs
         - type: StationBlobConfig
           stageBegin: 40
           stageCritical: 450
           stageTheEnd: 900
-        # Goobstation blob-config-end

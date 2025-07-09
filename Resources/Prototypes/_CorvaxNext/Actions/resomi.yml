@@ -4,16 +4,18 @@
   description: Switching agility
   components:
   - type: InstantAction
+    event: !type:SwitchAgillityActionEvent
+  - type: Action
     icon: _CorvaxNext/Mobs/Species/Resomi/Abilities/Agility/AgilityOff.png
     iconOn: _CorvaxNext/Mobs/Species/Resomi/Abilities/Agility/AgilityOn.png
-    event: !type:SwitchAgillityActionEvent
 
 - type: entity
   id: SwitchListenUpAction
   name: Listen up
   description: Listen up
   components:
-  - type: InstantAction
+  - type: Action
     icon: _CorvaxNext/Mobs/Species/Resomi/Abilities/ListenUp/EarsDown.png
     iconOn: _CorvaxNext/Mobs/Species/Resomi/Abilities/ListenUp/EarsUp.png
+  - type: InstantAction
     event: !type:ListenUpActionEvent

@@ -26,6 +26,7 @@
 <Box>
 <GuideEntityEmbed Entity="Scalpel" Caption="скальпель"/>
 <GuideEntityEmbed Entity="Retractor" Caption="ретрактор"/>
+<GuideEntityEmbed Entity="BoneSetter" Caption="установщик костей">
 <GuideEntityEmbed Entity="Hemostat" Caption="гемостат"/>
 <GuideEntityEmbed Entity="Drill" Caption="дрель"/>
 </Box>

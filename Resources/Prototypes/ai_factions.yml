@@ -25,6 +25,7 @@
   - Wizard
   - Heretic # goob edit - heretics
   - Blob # Goobstation - Blob
+  - Xenoborg
 
 - type: npcFaction
   id: Mouse
@@ -57,11 +58,14 @@
   - PetsNT
   - Zombie
   - Revolutionary
+  - Dragon
+  - Xeno
   - AllHostile
   - Wizard
   - Heretic # goob edit - heretics
   - Blob # Goobstation - Blob
   - Dragon
+  - Xenoborg
 
 - type: npcFaction
   id: SimpleNeutral
@@ -79,6 +83,7 @@
   - Wizard
   - Heretic # goob edit - heretics
   - Blob # Goobstation - Blob
+  - Xenoborg
 
 - type: npcFaction
   id: Xeno
@@ -94,6 +99,7 @@
   - Heretic # goob edit - heretics
   - Blob # Goobstation - Blob
   - Dragon
+  - Xenoborg
 
 - type: npcFaction
   id: Zombie
@@ -110,6 +116,7 @@
   - Heretic # goob edit - heretics
   - Blob # Goobstation - Blob
   - Dragon
+  - Xenoborg
 
 - type: npcFaction
   id: Revolutionary
@@ -121,6 +128,7 @@
   - AllHostile
   - Wizard
   - Blob # Goobstation - Blob
+  - Xenoborg
 
 - type: npcFaction
   id: AllHostile
@@ -138,6 +146,7 @@
   - Revolutionary
   - Wizard
   - Blob # Goobstation - Blob
+  - Xenoborg
 
 - type: npcFaction
   id: Wizard
@@ -155,3 +164,20 @@
   - Revolutionary
   - AllHostile
   - Blob # Goobstation - Blob
+  - Xenoborg
+
+- type: npcFaction
+  id: Xenoborg
+  hostile:
+  # they have brains
+  - NanoTrasen
+  - Syndicate
+  - Zombie
+  - Revolutionary
+  - Wizard
+
+  - Xeno # rivalry
+
+  # cause they are hostile to them
+  - SimpleHostile 
+  - AllHostile

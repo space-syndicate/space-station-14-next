@@ -1,0 +1,9 @@
+stack-goldoreunprocessed = золотая необработанная руда
+stack-steeloreunprocessed = стальная необработанная руда
+stack-diamondoreunprocessed = алмазная необработанная руда
+stack-plasmaoreunprocessed = плазменная необработанная руда
+stack-silveroreunprocessed = серебряная необработанная руда
+stack-spacequartzunprocessed = кварцевая необработанная руда
+stack-uraniumoreunprocessed = урановая необработанная руда
+stack-bananiumoreunprocessed = бананиумовая необработанная руда
+stack-coalunprocessed = угольная необработанная руда

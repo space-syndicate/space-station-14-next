@@ -112,10 +112,11 @@
   - HeadOfSecurity
   - SecurityCadet
   - SecurityOfficer
-  - Brigmedic # Corvax-Next-Brigmedic
   - Pilot # Corvax-Pilot
   - Detective
   - Warden
+  - Brigmedic # Corvax-Brigmedic
+  - WardenHelper # Corvax-Next-WardenHelper
 
 - type: department
   id: Science

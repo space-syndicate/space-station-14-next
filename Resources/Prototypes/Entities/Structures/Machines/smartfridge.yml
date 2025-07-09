@@ -16,7 +16,7 @@
       - Syringe
   - type: ActivatableUI
     key: enum.SmartFridgeUiKey.Key
-  - type: ActivatableUIRequiresPower
+  # - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
       enum.SmartFridgeUiKey.Key:
@@ -37,8 +37,8 @@
       map: ["enum.StorageVisualLayers.Door"]
       shader: unshaded
   # Corvax-Next-SmartFridge-Start
-  - type: ApcPowerReceiver
-    powerLoad: 100
+# - type: ApcPowerReceiver
+  # powerLoad: 100
   - type: ExtensionCableReceiver
   - type: LightningTarget
     priority: 1
@@ -91,6 +91,15 @@
   - type: InteractionOutline
   - type: Destructible
     thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 100

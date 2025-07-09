@@ -119,12 +119,22 @@
   group: market
 
 - type: cargoProduct
+  id: FunSharkPlushies
+  icon:
+    sprite: Objects/Fun/sharkplush.rsi
+    state: blue
+  product: CrateFunSharkPlushieBulk
+  cost: 500
+  category: cargoproduct-category-name-fun
+  group: market
+
+- type: cargoProduct
   id: FunBoardGames
   icon:
     sprite: Objects/Fun/dice.rsi
     state: d6_6
   product: CrateFunBoardGames
-  cost: 1500
+  cost: 2000 # Corvax Next Inflation
   category: cargoproduct-category-name-fun
   group: market
 
@@ -335,5 +345,15 @@
     state: toms
   product: TomDrumsInstrument
   cost: 1500
+  category: cargoproduct-category-name-fun
+  group: market
+
+- type: cargoProduct
+  id: FunPlants
+  icon:
+    sprite: Structures/Furniture/potted_plants.rsi
+    state: random
+  product: CratePlants
+  cost: 1000
   category: cargoproduct-category-name-fun
   group: market

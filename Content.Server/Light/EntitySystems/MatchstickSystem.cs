@@ -4,9 +4,8 @@ using Content.Shared.Audio;
 using Content.Shared.Interaction;
 using Content.Shared.Item;
 using Content.Shared.Smoking;
-using Content.Shared.Smoking.Components; // CorvaxNext Change
+using Content.Shared.IgnitionSource.Components;
 using Content.Shared.Smoking.Systems;
-using Content.Shared.Smoking.Systems; // CorvaxNext Change
 using Content.Shared.Temperature;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
@@ -15,7 +14,7 @@ using Robust.Shared.Player;
 
 namespace Content.Server.Light.EntitySystems
 {
-    public sealed class MatchstickSystem : SharedMatchstickSystem // CorvaxNext Change
+    public sealed class MatchstickSystem : SharedMatchstickSystem
     {
         [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
@@ -29,7 +28,6 @@ namespace Content.Server.Light.EntitySystems
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<MatchstickComponent, InteractUsingEvent>(OnInteractUsing);
             SubscribeLocalEvent<MatchstickComponent, IsHotEvent>(OnIsHotEvent);
             SubscribeLocalEvent<MatchstickComponent, ComponentShutdown>(OnShutdown);
         }
@@ -48,13 +46,10 @@ namespace Content.Server.Light.EntitySystems
                 if (match.Comp.CurrentState != SmokableState.Lit || Paused(match) || match.Comp.Deleted)
                     continue;
 
-                var xform = Transform(match);
-
-                if (xform.GridUid is not {} gridUid)
+                if (Transform(match).GridUid is not { } gridUid)
                     return;
 
-                var position = _transformSystem.GetGridOrMapTilePosition(match, xform);
-
+                var position = _transformSystem.GetGridOrMapTilePosition(match, Transform(match));
                 _atmosphereSystem.HotspotExpose(gridUid, position, 400, 50, match, true);
             }
         }
@@ -82,50 +77,37 @@ namespace Content.Server.Light.EntitySystems
         public void Ignite(Entity<MatchstickComponent> matchstick, EntityUid user)
         {
             var component = matchstick.Comp;
-
-            // Play Sound
             _audio.PlayPvs(component.IgniteSound, matchstick, AudioParams.Default.WithVariation(0.125f).WithVolume(-0.125f));
-
-            // Change state
-            SetState((matchstick, component), SmokableState.Lit); // CorvaxNext Change
+            SetState((matchstick, component), SmokableState.Lit);
             _litMatches.Add(matchstick);
             matchstick.Owner.SpawnTimer(component.Duration * 1000, delegate
             {
-                SetState((matchstick, component), SmokableState.Burnt); // CorvaxNext Change
+                SetState((matchstick, component), SmokableState.Burnt);
                 _litMatches.Remove(matchstick);
             });
         }
 
-        // CorvaxNext Change Start
         public override bool SetState(Entity<MatchstickComponent> ent, SmokableState value)
         {
             var uid = ent.Owner;
             var component = ent.Comp;
-
-            component.CurrentState = value;
+            ent.Comp.State = value;
             if (_lights.TryGetLight(uid, out var pointLightComponent))
             {
             }
 
             if (EntityManager.TryGetComponent(uid, out ItemComponent? item))
             {
-                switch (component.CurrentState)
-                {
-                    case SmokableState.Lit:
-                        _item.SetHeldPrefix(uid, "lit", component: item);
-                        break;
-                    default:
-                        _item.SetHeldPrefix(uid, "unlit", component: item);
-                        break;
-                }
+                if (component.CurrentState == SmokableState.Lit)
+                    _item.SetHeldPrefix(uid, "lit", component: item);
+                else
+                    _item.SetHeldPrefix(uid, "unlit", component: item);
             }
 
             if (EntityManager.TryGetComponent(uid, out AppearanceComponent? appearance))
-            {
                 _appearance.SetData(uid, SmokingVisuals.Smoking, component.CurrentState, appearance);
-            }
 
-            return true; // CorvaxNext Change
+            return true;
         }
     }
 }

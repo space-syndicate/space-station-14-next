@@ -29,7 +29,7 @@
     proto: PelletKineticSpread
     capacity: 1
     count: 1
-  - type: UpgradeableGun
+  - type: LavalandUpgradeableGun
     maxUpgradeCapacity: 60
     whitelist:
       tags:
@@ -79,7 +79,7 @@
     proto: RapidBulletKinetic
     capacity: 3
     count: 3
-  - type: UpgradeableGun
+  - type: LavalandUpgradeableGun
     maxUpgradeCapacity: 60
     whitelist:
       tags:
@@ -115,7 +115,7 @@
     proto: WeakBulletKinetic
     capacity: 1
     count: 1
-  - type: UpgradeableGun
+  - type: LavalandUpgradeableGun
     maxUpgradeCapacity: 200
     whitelist:
       tags:
@@ -132,7 +132,8 @@
   name: action-name-toggle-pka-light
   description: action-description-toggle-pka-light
   components:
-  - type: InstantAction
+  - type: Action
     useDelay: 0.5
     icon: { sprite: Objects/Tools/seclite.rsi, state: seclite }
+  - type: InstantAction
     event: !type:ToggleActionEvent

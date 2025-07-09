@@ -697,6 +697,16 @@
     corvax-chatsan-word-124: corvax-chatsan-replacement-124
     corvax-chatsan-word-125: corvax-chatsan-replacement-125
 # Corvax-ChatSanitize-End
+# Corvax-Next-SpeechReplacement-start
+    corvax-next-chatsan-word-1: corvax-next-chatsan-replacement-1
+    corvax-next-chatsan-word-2: corvax-next-chatsan-replacement-2
+    corvax-next-chatsan-word-3: corvax-next-chatsan-replacement-3
+    corvax-next-chatsan-word-4: corvax-next-chatsan-replacement-4
+    corvax-next-chatsan-word-5: corvax-next-chatsan-replacement-5
+    corvax-next-chatsan-word-6: corvax-next-chatsan-replacement-6
+    corvax-next-chatsan-word-7: corvax-next-chatsan-replacement-7
+    corvax-next-chatsan-word-8: corvax-next-chatsan-replacement-8
+# Corvax-Next-SpeechReplacement-end
 
 - type: accent
   id: liar

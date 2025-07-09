@@ -244,6 +244,7 @@
         nameSegments:
         - NamesNinjaTitle
         - NamesNinja
+        nameFormat: name-format-ninja
       mindRoles:
       - MindRoleNinja
 
@@ -312,7 +313,7 @@
     duration: 1
     earliestStart: 30
     reoccurrenceDelay: 60
-    minimumPlayers: 10
+    minimumPlayers: 40 #Corvax-Next wizard-gamerule-rebalance
   - type: AntagSelection
     agentName: wizard-round-end-name
     definitions:
@@ -346,6 +347,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+        nameFormat: name-format-wizard
       mindRoles:
       - MindRoleWizard
 
@@ -573,7 +575,7 @@
     earliestStart: 35
     weight: 5.5
     minimumPlayers: 20
-    duration: 1
+    duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end scrreen (not always "Neutral outcome!") and... ending the game if the station is nuked.
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
@@ -594,6 +596,7 @@
         nameSegments:
         - NamesSyndicatePrefix
         - NamesSyndicateNormal
+        nameFormat: name-format-nukie-generic
       - type: NpcFactionMember
         factions:
         - Syndicate
@@ -686,6 +689,9 @@
     weight: 8
     reoccurrenceDelay: 20
     duration: 1
+    startAnnouncement: station-event-ion-storm-start-announcement
+    startAudio:
+      path: /Audio/Corvax/Adminbuse/i-storm1.ogg
   - type: IonStormRule
 
 - type: entity

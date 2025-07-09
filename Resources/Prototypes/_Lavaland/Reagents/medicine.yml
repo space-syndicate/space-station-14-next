@@ -40,12 +40,23 @@
           worksOnLavaland: true
       - !type:HealthChange
         conditions:
+        - !type:PressureThreshold
+          min: 0
+          max: 50
+          worksOnLavaland: true
         - !type:ReagentThreshold
           min: 21
         damage:
           types:
-            Poison: 15
+            Poison: 14
             Cold: 15
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 41
+        damage:
+          types:
+            Poison: 0.5
       - !type:Jitter
       - !type:PopupMessage
         type: Local

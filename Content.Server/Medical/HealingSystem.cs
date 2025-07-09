@@ -27,6 +27,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using System.Linq;
 using Content.Shared._CorvaxNext.Targeting;
+using Robust.Shared.Audio;
 
 namespace Content.Server.Medical;
 
@@ -37,7 +38,6 @@ public sealed class HealingSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly StackSystem _stacks = default!;
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!;
@@ -122,7 +122,7 @@ public sealed class HealingSystem : EntitySystem
                 $"{EntityManager.ToPrettyString(args.User):user} healed themselves for {total:damage} damage");
         }
 
-        _audio.PlayPvs(healing.HealingEndSound, entity.Owner, AudioHelpers.WithVariation(0.125f, _random).WithVolume(1f));
+        _audio.PlayPvs(healing.HealingEndSound, entity.Owner);
 
         // Logic to determine whether or not to repeat the healing action
         args.Repeat = HasDamage(entity, healing) && !dontRepeat || IsPartDamaged(args.User, entity);
@@ -229,8 +229,7 @@ public sealed class HealingSystem : EntitySystem
             return false;
         }
 
-        _audio.PlayPvs(component.HealingBeginSound, uid,
-                AudioHelpers.WithVariation(0.125f, _random).WithVolume(1f));
+        _audio.PlayPvs(component.HealingBeginSound, uid);
 
         var isNotSelf = user != target;
 

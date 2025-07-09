@@ -1,0 +1,20 @@
+- type: entity
+  name: spell of all-consuming cleanliness
+  id: BagOfCleanliness
+  parent: TrashBag
+  components:
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,19,9
+    quickInsert: true
+    areaInsert: true
+    areaInsertRadius: 7
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Specific/Janitorial/trashbag.rsi
+    layers:
+      - state: icon-0
+        map: ["enum.StorageFillLayers.Fill"]
+  - type: Clothing
+    slots: [belt]
+    sprite: _CorvaxNext/Objects/Specific/Janitorial/trashbag.rsi

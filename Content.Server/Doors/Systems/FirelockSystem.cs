@@ -1,7 +1,6 @@
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Monitor.Systems;
-using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Shuttles.Components;
 using Content.Shared.Atmos;
@@ -58,7 +57,7 @@ namespace Content.Server.Doors.Systems
             while (query.MoveNext(out var uid, out var firelock, out var door))
             {
                 // only bother to check pressure on doors that are some variation of closed.
-                if (door.State != DoorState.Closed
+                if (door.State != DoorState.Closed 
                     && door.State != DoorState.Welded
                     && door.State != DoorState.Denying)
                 {
@@ -73,6 +72,8 @@ namespace Content.Server.Doors.Systems
                     _appearance.SetData(uid, DoorVisuals.ClosedLights, fire || pressure, appearance);
                     firelock.Temperature = fire;
                     firelock.Pressure = pressure;
+                    _appearance.SetData(uid, FirelockVisuals.PressureWarning, pressure, appearance);
+                    _appearance.SetData(uid, FirelockVisuals.TemperatureWarning, fire, appearance);
                     Dirty(uid, firelock);
 
                     if (pointLightQuery.TryComp(uid, out var pointLight))

@@ -3,7 +3,8 @@
   name: Stealth hardsuit
   description: Toggles your stealth hardsuit.
   components:
-  - type: InstantAction
+  - type: Action
     useDelay: 20
     priority: -9
+  - type: InstantAction
     event: !type:ToggleActionEvent
