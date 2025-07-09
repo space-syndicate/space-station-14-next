@@ -44,11 +44,11 @@
     HeadTop:
       points: 1
       required: true
-      defaultMarkings: [ Short ]
+      defaultMarkings: [ DraksShort ]
     Head:
       points: 1
       required: true
-      defaultMarkings: [ Eyes ]
+      defaultMarkings: [ DraksEyes ]
 
 - type: humanoidBaseSprite
   id: MobDraksHead

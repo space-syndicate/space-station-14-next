@@ -1,0 +1,15 @@
+ent-OrganDraksBrain = { ent-OrganHumanBrain }
+    .desc = { ent-OrganHumanBrain.desc }
+ent-OrganDraksEyes = { ent-OrganHumanEyes }
+    .desc = Я тебя вижу! Ой, подождите... Их три!
+ent-OrganDraksLungs = { ent-OrganHumanLungs }
+    .desc = Фильтрует кислород из атмосферы, который затем поступает в кровь для использования в качестве переносчика электронов. Круто светятся!
+    .suffix = дракс
+ent-OrganDraksHeart = { ent-OrganHumanHeart }
+    .desc = { ent-OrganHumanHeart.desc }
+ent-OrganDraksStomach = { ent-OrganHumanStomach }
+    .desc = { ent-OrganHumanStomach.desc }
+ent-OrganDraksLiver = { ent-OrganHumanLiver }
+    .desc = { ent-OrganHumanLiver.desc }
+ent-OrganDraksKidneys = { ent-OrganHumanKidneys }
+    .desc = { ent-OrganHumanKidneys.desc }

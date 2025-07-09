@@ -5,7 +5,7 @@
     state: eyes
 
 - type: marking
-  id: ForearmLarm
+  id: DraksForearmLarm
   markingCategory: Arms
   bodyPart: LArm
   speciesRestriction: [Draks]
@@ -14,7 +14,7 @@
       state: forearm_l_arm
 
 - type: marking
-  id: ForearmRarm
+  id: DraksForearmRarm
   markingCategory: Arms
   bodyPart: RArm
   speciesRestriction: [Draks]
@@ -23,7 +23,7 @@
       state: forearm_r_arm
 
 - type: marking
-  id: LongLarm
+  id: DraksLongLarm
   markingCategory: Arms
   bodyPart: LArm
   speciesRestriction: [Draks]
@@ -32,7 +32,7 @@
       state: long_l_arm
 
 - type: marking
-  id: LongRarm
+  id: DraksLongRarm
   markingCategory: Arms
   bodyPart: RArm
   speciesRestriction: [Draks]
@@ -41,7 +41,7 @@
       state: long_r_arm
 
 - type: marking
-  id: StandartLarm
+  id: DraksStandartLarm
   markingCategory: Arms
   bodyPart: LArm
   speciesRestriction: [Draks]
@@ -50,7 +50,7 @@
       state: standart_l_arm
 
 - type: marking
-  id: StandartRarm
+  id: DraksStandartRarm
   markingCategory: Arms
   bodyPart: RArm
   speciesRestriction: [Draks]
@@ -59,7 +59,7 @@
       state: standart_r_arm
 
 - type: marking
-  id: UpperLarm
+  id: DraksUpperLarm
   markingCategory: Arms
   bodyPart: LArm
   speciesRestriction: [Draks]
@@ -68,7 +68,7 @@
       state: upper_l_arm
 
 - type: marking
-  id: UpperRarm
+  id: DraksUpperRarm
   markingCategory: Arms
   bodyPart: RArm
   speciesRestriction: [Draks]
@@ -77,7 +77,7 @@
       state: upper_r_arm
 
 - type: marking
-  id: Large
+  id: DraksLarge
   markingCategory: HeadTop
   bodyPart: HeadTop
   speciesRestriction: [Draks]
@@ -86,7 +86,7 @@
       state: large
 
 - type: marking
-  id: Lush
+  id: DraksLush
   markingCategory: HeadTop
   bodyPart: HeadTop
   speciesRestriction: [Draks]
@@ -95,7 +95,7 @@
       state: lush
 
 - type: marking
-  id: Medium
+  id: DraksMedium
   markingCategory: HeadTop
   bodyPart: HeadTop
   speciesRestriction: [Draks]
@@ -104,7 +104,7 @@
       state: medium
 
 - type: marking
-  id: Short
+  id: DraksShort
   markingCategory: HeadTop
   bodyPart: HeadTop
   speciesRestriction: [Draks]
@@ -113,7 +113,7 @@
       state: short
 
 - type: marking
-  id: Untidy
+  id: DraksUntidy
   markingCategory: HeadTop
   bodyPart: HeadTop
   speciesRestriction: [Draks]
@@ -122,7 +122,7 @@
       state: untidy
 
 - type: marking
-  id: Eyes
+  id: DraksEyes
   markingCategory: Head
   bodyPart: Head
   speciesRestriction: [Draks]
@@ -131,7 +131,7 @@
       state: eyes
 
 - type: marking
-  id: Cute
+  id: DraksCute
   markingCategory: Head
   bodyPart: Head
   speciesRestriction: [Draks]
@@ -140,7 +140,7 @@
       state: cute
 
 - type: marking
-  id: Tired
+  id: DraksTired
   markingCategory: Head
   bodyPart: Head
   speciesRestriction: [Draks]

@@ -13,4 +13,5 @@ species-name-gingerbread = вкуснейшая выпечка
 snail-hurt-by-salt-popup = Солевой раствор жжёт как кислота!
 # Corvax-Next-Resomi-Start
 species-name-resomi = Резоми
+species-name-draks = Дракс
 # Corvax-Next-Resomi-End
