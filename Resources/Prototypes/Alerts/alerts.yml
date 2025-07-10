@@ -528,3 +528,12 @@
     state: critical
   name: Debug6
   description: Debug
+
+#CorvaxNext-MindShieldAlert
+- type: alert
+  id: MindShieldAlert
+  icons:
+  - sprite: /Textures/Interface/Actions/actions_fakemindshield.rsi
+    state: icon-on
+  name: alerts-mindshield-name
+  description: alerts-mindshield-desc
