@@ -1,4 +1,4 @@
-﻿namespace Content.Server._Lavaland.Procedural.Components;
+namespace Content.Shared._Lavaland.Procedural.Components;
 
 /// <summary>
 /// Assigned to all main objects of the lavaland that you can FTL to.

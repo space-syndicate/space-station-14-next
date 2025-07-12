@@ -1,0 +1,15 @@
+- type: ambientMusic
+  id: Lavaland
+  sound:
+    params:
+      volume: -12
+    path: /Audio/Lobby/absconditus.ogg
+  rules: OnLavaland
+  fadeIn: true
+  interruptable: true
+  priority: 2
+
+- type: rules
+  id: OnLavaland
+  rules:
+    - !type:OnLavalandRule

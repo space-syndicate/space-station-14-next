@@ -21,6 +21,7 @@ using Timer = Robust.Shared.Timing.Timer;
 using Content.Shared.Station.Components;
 using Content.Server.Cargo.Components;
 using Content.Shared.Cargo.Components;
+using Content.Shared._Lavaland.Procedural.Components;
 
 namespace Content.Server._Lavaland.Shuttles.Systems;
 

@@ -1,10 +1,11 @@
-﻿using Content.Shared._Lavaland.Procedural.Prototypes;
+using Content.Shared._Lavaland.Procedural.Prototypes;
+using Content.Shared._Lavaland.Procedural.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Lavaland.Procedural.Components;
 
 [RegisterComponent]
-public sealed partial class LavalandMapComponent : Component
+public sealed partial class LavalandMapComponent : SharedLavalandMapComponent
 {
     [ViewVariables]
     public EntityUid Outpost;
