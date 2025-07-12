@@ -2,8 +2,10 @@
   id: NextVoid
   mapName: 'NTKF Войд'
   mapPath: /Maps/Next/next_void.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 25
-  maxPlayers: 65
+  maxPlayers: 55
   stations:
     NextVoid:
       stationProto: StandardNanotrasenStation
@@ -19,7 +21,7 @@
           availableJobs:
             # command
             Captain: [ 1, 1 ]
-            IAA: [1, 1]
+            IAA: [ 1, 1 ]
             # cargo
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 4, 4 ]
@@ -68,9 +70,7 @@
             # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 3, 3 ]
-        # Corvax-next blob-config-start LOW
         - type: StationBlobConfig
           stageBegin: 50
           stageCritical: 500
           stageTheEnd: 1500
-        # Corvax-next blob-config-end
