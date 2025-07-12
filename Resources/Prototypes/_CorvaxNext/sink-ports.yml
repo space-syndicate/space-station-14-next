@@ -1,0 +1,47 @@
+- type: sinkPort
+  id: QuantumTelepad
+  name: quantum-telepad-port-name
+  description: quantum-telepad-port-description
+
+- type: sourcePort
+  id: QuantumTelepad
+  name: quantum-telepad-port-name
+  description: quantum-telepad-port-description
+  defaultLinks: [ QuantumTelepad ]
+
+- type: entity
+  id: QuantumTelepad
+  parent: BaseMachinePowered
+  name: cloning pod
+  description: A Cloning Pod. 50% reliable.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Machines/artifact_analyzer.rsi
+    drawdepth: HighFloorObjects
+    layers:
+    - state: icon
+    - state: unshaded
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.35,0.35,0.35"
+        mask:
+        - Impassable
+        hard: False
+  - type: DeviceList
+  - type: DeviceNetwork
+    deviceNetId: Wired
+    receiveFrequencyId: BasicDevice
+  - type: DeviceLinkSink
+    ports:
+      - QuantumTelepad
+  - type: DeviceLinkSource
+    range: 10
+    ports:
+      - QuantumTelepad
+  - type: QuantumTelepad
