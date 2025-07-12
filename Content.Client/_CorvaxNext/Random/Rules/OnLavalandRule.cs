@@ -8,7 +8,10 @@ public sealed partial class OnLavalandRule : RulesRule
 {
     public override bool Check(EntityManager entManager, EntityUid uid)
     {
-        if (!entManager.TryGetComponent(uid, out TransformComponent? xform) || xform is not null && !entManager.HasComponent<LavalandMapComponent>(xform.MapUid) && !entManager.HasComponent<LavalandStationComponent>(xform.GridUid))
+        if (!entManager.TryGetComponent(uid, out TransformComponent? xform))
+            return false;
+
+        if (!entManager.HasComponent<LavalandMapComponent>(xform.MapUid) || entManager.HasComponent<LavalandStationComponent>(xform.GridUid))
         {
             return Inverted;
         }
