@@ -27,6 +27,7 @@
   groups:
   - Inventory # Corvax-Loadouts
   - BrigmedicHead
+  - BrigmedicGlasses
   - BrigmedicMask
   - BrigmedicJumpsuit
   - BrigmedicGloves
