@@ -240,8 +240,8 @@
         Slash: 0.95
         Piercing: 0.95
         Heat: 0.95
-        Radiation: 0.90
-        Caustic: 0.90
+        Radiation: 0.5
+        Caustic: 0.5
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
