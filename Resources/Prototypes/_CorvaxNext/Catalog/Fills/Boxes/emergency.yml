@@ -106,6 +106,7 @@
     - id: CableApcStack
     - id: PowerCellMicroreactor
     - id: Flare
+    - id: Screwdriver
   - type: Sprite
     layers:
     - state: internals
