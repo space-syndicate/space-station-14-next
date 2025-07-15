@@ -1399,7 +1399,7 @@
   - LoadoutSpeciesVoxNitrogen
   - EmergencyNoAirSyndicateIpc
 
-  - type: loadoutGroup
+- type: loadoutGroup
   id: SurvivalCentralCommand
   name: loadout-group-survival-central-command
   minLimit: 2
