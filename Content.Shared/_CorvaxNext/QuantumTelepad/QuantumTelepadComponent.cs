@@ -1,5 +1,6 @@
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._CorvaxNext.QuantumTelepad;
@@ -11,13 +12,19 @@ public sealed partial class QuantumTelepadComponent : Component
     /// Recharge time to teleport again
     /// </summary>
     [DataField]
-    public float Delay = 2f;
+    public float Delay = 30f;
 
     /// <summary>
-    /// How much time need to wait before next teleport
+    /// How much time need to wait before next teleport in seconds
     /// </summary>
     [DataField]
     public TimeSpan NextTeleport;
+
+    /// <summary>
+    /// Time after start teleport
+    /// </summary>
+    [DataField]
+    public TimeSpan TeleportAt;
 
     /// <summary>
     /// Whitelist of allowed to teleport entities
@@ -32,28 +39,31 @@ public sealed partial class QuantumTelepadComponent : Component
     public EntityWhitelist? Blacklist;
 
     [DataField]
-    public SoundSpecifier TeleportSound = new SoundPathSpecifier("/Audio/Machines/phasein.ogg");
+    public SoundSpecifier TeleportSound = new SoundPathSpecifier("/Audio/_CorvaxNext/Effects/emitter2.ogg");
+
+    [DataField]
+    public SoundSpecifier PreTeleportSound = new SoundPathSpecifier("/Audio/Weapons/flash.ogg");
+
+    /// <summary>
+    /// Visual effect of teleport that applies to entity
+    /// </summary>
+    [DataField]
+    public EntProtoId? TeleportEffect;
 
     /// <summary>
     /// Current telepad status
     /// </summary>
     [DataField]
-    public TelepadState State = TelepadState.Unpowered;
-
-    /// <summary>
-    /// Maximum distance of connection to another telepad
-    /// </summary>
-    [DataField]
-    public float MaxTeleportDistance = 10;
+    public QuantumTelepadState State = QuantumTelepadState.Idle;
 
     [DataField]
-    public float MaxEntitiesToTeleportAtOnce = 3;
+    public float MaxEntitiesToTeleportAtOnce = 1;
 
     /// <summary>
     /// Search range for entities to teleport
     /// </summary>
     [DataField]
-    public float WorkingRange = 1;
+    public float WorkingRange = 0.3f;
 
     /// <summary>
     /// Flag to query entities
@@ -61,21 +71,27 @@ public sealed partial class QuantumTelepadComponent : Component
     [DataField("flag")]
     public LookupFlags LookupFlag = LookupFlags.Dynamic;
 
-    /// <summary>
-    /// Can be activated by close interaction
-    /// </summary>
-    [DataField]
-    public bool WorksOnInteract = true;
-
     [DataField]
     public bool MustBeAnchored = true;
+
+    /// <summary>
+    /// Works only with <see cref="DeviceLinkSourceComponent"/> "Range" field.
+    /// </summary>
+    [DataField]
+    public bool CheckConnectionRange = true;
 }
 
 [Serializable, NetSerializable]
-public enum TelepadState : byte
+public enum QuantumTelepadState : byte
 {
-    Unpowered,
     Idle,
+    Unlit,
     Teleporting,
-    Recharging,
+    ReceiveTeleporting
+};
+
+[Serializable, NetSerializable]
+public enum QuantumTelepadVisuals : byte
+{
+    State,
 };
