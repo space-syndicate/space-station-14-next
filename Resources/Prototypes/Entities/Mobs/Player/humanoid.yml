@@ -72,7 +72,7 @@
       - MindRoleGhostRoleFamiliar
     - type: Loadout
       prototypes: [ DeathSquadGear ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ]
     - type: RandomMetadata
       nameSegments:
         - NamesMilitaryFirstLeader
@@ -111,7 +111,7 @@
       job: ERTLeader
     - type: Loadout
       prototypes: [ ERTLeaderGear ]
-      roleLoadout: [ RoleSurvivalExtended ]
+      roleLoadout: [ RoleSurvivalCentralCommand ]
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryFirstLeader
@@ -143,7 +143,7 @@
       job: ERTLeader
     - type: Loadout
       prototypes: [ ERTLeaderGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ]
 
 - type: entity
   id: RandomHumanoidSpawnerERTLeaderEVALecter
@@ -166,7 +166,7 @@
       job: ERTLeader
     - type: Loadout
       prototypes: [ ERTLeaderGearEVALecter ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ]
 
 ## ERT Chaplain
 
@@ -206,7 +206,7 @@
       nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTChaplainGear ]
-      roleLoadout: [ RoleSurvivalExtended ]
+      roleLoadout: [ RoleSurvivalCentralCommand ]
 
 - type: entity
   id: RandomHumanoidSpawnerERTChaplainEVA
@@ -233,7 +233,7 @@
       job: ERTChaplain
     - type: Loadout
       prototypes: [ ERTChaplainGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ]
     - type: BibleUser
 
 ## ERT Janitor
@@ -273,7 +273,7 @@
       nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTJanitorGear ]
-      roleLoadout: [ RoleSurvivalExtended ]
+      roleLoadout: [ RoleSurvivalCentralCommand ]
 
 - type: entity
   id: RandomHumanoidSpawnerERTJanitorEVA
@@ -300,7 +300,7 @@
       job: ERTJanitor
     - type: Loadout
       prototypes: [ ERTJanitorGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ]
 
 ## ERT Engineer
 
@@ -339,7 +339,7 @@
       nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTEngineerGear ]
-      roleLoadout: [ RoleSurvivalExtended ]
+      roleLoadout: [ RoleSurvivalCentralCommand ]
 
 - type: entity
   id: RandomHumanoidSpawnerERTEngineerEVA
@@ -366,7 +366,7 @@
       job: ERTEngineer
     - type: Loadout
       prototypes: [ ERTEngineerGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ]
 
 ## ERT Security
 
@@ -407,7 +407,7 @@
       nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTSecurityGear ]
-      roleLoadout: [ RoleSurvivalExtended ]
+      roleLoadout: [ RoleSurvivalCentralCommand ]
 
 - type: entity
   id: RandomHumanoidSpawnerERTSecurityEVA
@@ -434,7 +434,7 @@
       job: ERTSecurity
     - type: Loadout
       prototypes: [ ERTSecurityGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ]
 
 - type: entity
   id: RandomHumanoidSpawnerERTSecurityEVALecter
@@ -457,7 +457,7 @@
       job: ERTSecurity
     - type: Loadout
       prototypes: [ ERTSecurityGearEVALecter ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ]
 
 ## ERT Medic
 
@@ -496,7 +496,7 @@
       nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTMedicalGear ]
-      roleLoadout: [ RoleSurvivalExtended ]
+      roleLoadout: [ RoleSurvivalCentralCommand ]
 
 - type: entity
   id: RandomHumanoidSpawnerERTMedicalEVA
@@ -523,7 +523,7 @@
       job: ERTMedical
     - type: Loadout
       prototypes: [ ERTMedicalGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ]
 
 ## CBURN
 
@@ -546,7 +546,7 @@
   components:
     - type: Loadout
       prototypes: [CBURNGear]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ]
     - type: GhostRole
       name: ghost-role-information-cburn-agent-name
       description: ghost-role-information-cburn-agent-description
@@ -583,7 +583,7 @@
         settings: default
     - type: Loadout
       prototypes: [ CentcomGear ]
-      roleLoadout: [ RoleSurvivalStandard ]
+      roleLoadout: [ RoleSurvivalCentralCommand ]
 
 ## Syndicate
 

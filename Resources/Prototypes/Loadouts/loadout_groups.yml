@@ -97,6 +97,7 @@
   - EmergencyNitrogen
   - EmergencyOxygen
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyNoAirIpc
 
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
@@ -513,6 +514,7 @@
   - EmergencyNitrogenClown
   - EmergencyOxygenClown
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyNoAirClownIpc
 
 - type: loadoutGroup
   id: MimeHead
@@ -570,6 +572,7 @@
   - EmergencyOxygenMime
   - EmergencySpeciesMothMime
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyNoAirMimeIpc
 
 - type: loadoutGroup
   id: MusicianJumpsuit
@@ -856,6 +859,7 @@
   - EmergencyNitrogenExtended
   - EmergencyOxygenExtended
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyNoAirExtended
 
 # Science
 - type: loadoutGroup
@@ -1148,6 +1152,7 @@
   - EmergencyNitrogenSecurity
   - EmergencyOxygenSecurity
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyNoAirSecurityIpc
 
 - type: loadoutGroup
   id: SecurityStar
@@ -1349,6 +1354,7 @@
   - EmergencyNitrogenMedical
   - EmergencyOxygenMedical
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyNoAirMedicalIpc
 
 # Wildcards
 - type: loadoutGroup
@@ -1391,6 +1397,18 @@
   - EmergencyNitrogenSyndicate
   - EmergencyOxygenSyndicate
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyNoAirSyndicateIpc
+
+  - type: loadoutGroup
+  id: SurvivalCentralCommand
+  name: loadout-group-survival-central-command
+  minLimit: 2
+  hidden: true
+  loadouts:
+  - EmergencyNitrogenExtended
+  - EmergencyOxygenExtended
+  - LoadoutSpeciesVoxNitrogen
+  - EmergencyNoAirCentralCommandIpc
 
 - type: loadoutGroup
   id: GroupSpeciesBreathTool
