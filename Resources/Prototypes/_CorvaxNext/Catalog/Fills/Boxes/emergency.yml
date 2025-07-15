@@ -103,7 +103,7 @@
   - type: StorageFill
     contents:
     - id: WelderIndustrial
-    - id: CableApcStack30
+    - id: CableApcStack
     - id: PowerCellHigh
     - id: Flare
 
