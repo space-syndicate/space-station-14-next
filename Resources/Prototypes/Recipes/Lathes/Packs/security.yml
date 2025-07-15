@@ -133,6 +133,14 @@
   - WeaponLaserCarbine
   - WeaponXrayCannon
   - WeaponTemperatureGun
+  - WeaponProtoKineticAccelerator
+  - WeaponProtoKineticShotgun
+  - WeaponProtoKineticRepeater
+  - WeaponProtoKineticPistol
+  - LavalandPKAUpgradeLight
+  - LavalandPKAUpgradeDamage
+  - LavalandPKAUpgradeRange
+  - LavalandPKAUpgradeFireRate
 
 - type: latheRecipePack
   id: SecurityDisablers
