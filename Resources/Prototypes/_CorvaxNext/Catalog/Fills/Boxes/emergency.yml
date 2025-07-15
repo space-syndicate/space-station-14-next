@@ -96,6 +96,18 @@
     - id: CrayonMime
 
 - type: entity
+  parent: BoxSurvivalSyndicate
+  id: BoxSurvivalSyndicateIpc
+  suffix: Syndicate, IPC
+  components:
+  - type: StorageFill
+    contents:
+    - id: WelderIndustrial
+    - id: CableApcStack30
+    - id: PowerCellHigh
+    - id: Flare
+
+- type: entity
   parent: BoxCardboard
   id: BoxCentralCommandIpc
   suffix: CC, IPC
