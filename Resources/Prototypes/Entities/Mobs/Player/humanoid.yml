@@ -28,6 +28,7 @@
       - Surgery
       - MedicalEquipment
       - Butchering
+    - type: CanChokeGrab # Corvax-Next-Grab
 
 - type: randomHumanoidSettings
   id: EventHumanoidCentcomm

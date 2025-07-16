@@ -237,6 +237,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab # Corvax-Next-Grab
       - type: AutoImplant
         implants:
         - DeathAcidifierImplant
@@ -291,6 +292,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab # Corvax-Next-Grab
 
 - type: entity
   parent: BaseGameRule
@@ -347,6 +349,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab # Corvax-Next-Grab
         nameFormat: name-format-wizard
       mindRoles:
       - MindRoleWizard
@@ -559,6 +562,15 @@
       - type: ZombifyOnDeath
       - type: IncurableZombie
       - type: InitialInfected
+      - type: CanChokeGrab # Corvax-Next-Grab
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       # Corvax-MRP
       - type: NpcFactionMember
         addFriendlyFactions:
@@ -608,6 +620,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab # Corvax-Next-Grab
       mindRoles:
       - MindRoleNukeops
 
@@ -646,6 +659,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab # Corvax-Next-Grab
       mindRoles:
       - MindRoleTraitorSleeper
 
