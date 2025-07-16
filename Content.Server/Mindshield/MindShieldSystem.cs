@@ -9,6 +9,7 @@ using Content.Shared.Revolutionary.Components;
 using Content.Shared.Tag;
 using Content.Shared.Mindcontrol;  //Goobstation - Mindcontrol Implant
 using Robust.Shared.Containers;
+using Content.Shared.Alert; //CorvaxNext - MindShieldAlert
 
 namespace Content.Server.Mindshield;
 
@@ -22,6 +23,7 @@ public sealed class MindShieldSystem : EntitySystem
     [Dependency] private readonly RoleSystem _roleSystem = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
+    [Dependency] private readonly AlertsSystem _alertsSystem = default!; //CorvaxNext - MindShieldAlert
 
     public override void Initialize()
     {
@@ -36,7 +38,8 @@ public sealed class MindShieldSystem : EntitySystem
         if (ev.Implanted == null)
             return;
 
-        EnsureComp<MindShieldComponent>(ev.Implanted.Value);
+        var comp = EnsureComp<MindShieldComponent>(ev.Implanted.Value); //CorvaxNext - MindShieldAlert
+        _alertsSystem.ShowAlert(ev.Implanted.Value, comp.MindShieldAlert); //CorvaxNext - MindShieldAlert
         MindShieldRemovalCheck(ev.Implanted.Value, ev.Implant);
     }
 
@@ -63,6 +66,9 @@ public sealed class MindShieldSystem : EntitySystem
 
     private void OnImplantDraw(Entity<MindShieldImplantComponent> ent, ref EntGotRemovedFromContainerMessage args)
     {
+        if (TryComp<MindShieldComponent>(args.Container.Owner, out var comp)) //CorvaxNext - MindShieldAlert
+            _alertsSystem.ClearAlert(args.Container.Owner, comp.MindShieldAlert); //CorvaxNext - MindShieldAlertz
+
         RemComp<MindShieldComponent>(args.Container.Owner);
     }
 }
