@@ -2646,7 +2646,7 @@
     - type: Bloodstream
       bloodMaxVolume: 150
       bloodReagent: Laughter
-    - type: NpcFactionMember      #Corvax-Next
+    - type: NpcFactionMember # Corvax-Next
       addFriendlyFactions:
       - Clown
 
