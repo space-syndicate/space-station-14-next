@@ -41,6 +41,8 @@
     - type: NpcFactionMember
       factions:
         - SimpleHostile
+      addFriendlyFactions: # Corvax-Next
+        - Clown
     - type: Speech
       speechVerb: Cluwne
     - type: CombatMode
@@ -118,9 +120,6 @@
       bloodMaxVolume: 300
       bloodReagent: Laughter
     - type: Fauna # Lavaland Change
-    - type: NpcFactionMember # Corvax-Next
-      addFriendlyFactions:
-      - Clown
 
 - type: entity
   name: behonker
