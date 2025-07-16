@@ -46,6 +46,7 @@
   id: FillBiohazardGearSecurity
   table: !type:AllSelector
     children:
+    - id: ClothingMaskSecurityMedicalRespirator
     - id: ClothingOuterBioSecurity
     - id: ClothingHeadHatHoodBioSecurity
 
