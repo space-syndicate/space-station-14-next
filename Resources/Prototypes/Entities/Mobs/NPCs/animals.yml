@@ -2646,6 +2646,9 @@
     - type: Bloodstream
       bloodMaxVolume: 150
       bloodReagent: Laughter
+    - type: NpcFactionMember      #Corvax-Next
+      addFriendlyFactions:
+      - Clown
 
 - type: entity
   name: wizard spider

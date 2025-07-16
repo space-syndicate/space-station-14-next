@@ -31,6 +31,10 @@
     # end-backmen: mood
   - !type:AddImplantSpecial
     implants: [ SadTromboneImplant ]
+  - type: NoSlip      #Corvax-Next
+  - type: NpcFactionMember
+    factions:
+    - Clown
 
 - type: startingGear
   id: ClownGear
