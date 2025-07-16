@@ -93,3 +93,16 @@
 #      blacklist:
 #        tags:
 #          - NukeOpsUplink # i guess we dont let nukies have this, they have to mutch TC
+
+# Free rolled up posters
+
+- type: listing
+  id: UplinkSyndicateRolledUpPostersBox
+  name: uplink-rolled-up-posters-box-name
+  description: uplink-rolled-up-posters-box-desc
+  productEntity: BoxPosterIllegalPack
+  categories:
+    - UplinkPointless
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1

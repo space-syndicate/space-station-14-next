@@ -28,3 +28,11 @@
   materials:
     Uranium: 25
     Steel: 100
+
+- type: latheRecipe
+  id: PosterLegit
+  result: PosterLegit
+  completetime: 4
+  materials:
+    Cloth: 500
+    Steel: 350
