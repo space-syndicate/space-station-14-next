@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: NamesDraks
+  values:
+    prefix: names-draks-dataset-
+    count: 18
