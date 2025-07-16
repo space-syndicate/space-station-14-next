@@ -1,0 +1,21 @@
+- type: constructionGraph
+  id: AnomalyPayload
+  start: anomalypayload
+  graph:
+    - node: anomalypayload
+      entity: AnomalyPayloadEmpty
+      edges:
+        - to: start
+          conditions:
+            - !type:ContainerNotEmpty
+              container: anomaly-core
+          steps:
+            - tool: Prying
+              doAfter: 2
+              completed:
+                - !type:EmptyAllContainers
+    - node: start
+      actions:
+        - !type:SpawnPrototype
+          prototype: AnomalyPayloadEmpty
+        - !type:DeleteEntity
