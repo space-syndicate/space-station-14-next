@@ -1,4 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
 using Content.Server._Lavaland.Procedural.Components;
@@ -7,6 +7,7 @@ using Content.Server.Atmos.EntitySystems;
 using Content.Server.GameTicking;
 using Content.Server.Parallax;
 using Content.Server.Shuttles.Systems;
+using Content.Shared._Lavaland.Procedural.Components;
 using Content.Shared._Lavaland.Procedural.Prototypes;
 using Content.Shared.Atmos;
 using Content.Shared.CCVar;
