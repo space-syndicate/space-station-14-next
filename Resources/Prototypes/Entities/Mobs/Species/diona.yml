@@ -115,6 +115,9 @@
             state: jumpsuit-female
   - type: FTLKnockdownImmune # Corvax-Next-FTLImmune
   - type: Rootable
+  - type: NpcFactionMember # Corvax-Next
+    factions:
+    - Plant
 
 - type: entity
   parent: BaseSpeciesDummy

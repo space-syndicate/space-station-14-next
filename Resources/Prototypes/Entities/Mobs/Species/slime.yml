@@ -118,6 +118,9 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+  - type: NpcFactionMember # Corvax-Next
+    factions:
+    - slime
 
 - type: entity
   parent: MobHumanDummy

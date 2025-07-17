@@ -41,8 +41,7 @@
     - type: NpcFactionMember
       factions:
         - SimpleHostile
-      addFriendlyFactions: # Corvax-Next
-        - Clown
+        - clown # Corvax-Next
     - type: Speech
       speechVerb: Cluwne
     - type: CombatMode
