@@ -118,6 +118,9 @@
   - type: Inventory
     templateId: arachnid
     speciesId: arachnid
+  - type: NpcFactionMember # Corvax-Next
+    factions:
+    - spider
 
 
 - type: entity

@@ -482,6 +482,9 @@
     - type: RandomMetadata
       nameSegments:
       - NamesClown
+    - type: NpcFactionMember
+      factions:
+      - Clown
 
 - type: randomHumanoidSettings
   id: VisitorJanitor
