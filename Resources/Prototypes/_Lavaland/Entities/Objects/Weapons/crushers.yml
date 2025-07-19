@@ -86,6 +86,12 @@
       types:
         Blunt: 11
         Slash: 9
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/crusher.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
 
 - type: entity
   parent: LavalandWeaponKineticBase
@@ -124,6 +130,12 @@
     boost:
       types: # BLOOD FOR THE BLOOD GOD ITS A FUCKING HAMMER
         Blunt: 75
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/crusher.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
 
 
 - type: entity
@@ -147,7 +159,7 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Slash: 5 
+        Slash: 5
     soundHit:
       collection: MetalThud
     angle: 0
@@ -206,3 +218,9 @@
   - type: BlockCharge
     rechargeTime: 120
     markerReductionTime: 20
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/crusher.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
