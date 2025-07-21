@@ -1,2 +1,2 @@
-ent-WindowTintedDirectional = направленное тонированное окно
+ent-WindowTintedDirectional = одностороннее зеркальное окно
     .desc = Смотри не заляпай.
