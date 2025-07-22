@@ -1005,7 +1005,8 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
     /// <summary>
     /// Creates a simple planet setup for a map.
     /// </summary>
-    public void EnsurePlanet(EntityUid mapUid, BiomeTemplatePrototype biomeTemplate, int? seed = null, MetaDataComponent? metadata = null, Color? mapLight = null)
+    public void EnsurePlanet(EntityUid mapUid, BiomeTemplatePrototype biomeTemplate, int? seed = null,
+        MetaDataComponent? metadata = null, Color? mapLight = null, GasMixture? atmosphere = null)
     {
         if (!Resolve(mapUid, ref metadata))
             return;
@@ -1038,14 +1039,34 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
         EnsureComp<SunShadowComponent>(mapUid);
         EnsureComp<SunShadowCycleComponent>(mapUid);
-
-        var moles = new float[Atmospherics.AdjustedNumberOfGases];
-        moles[(int)Gas.Oxygen] = 21.824779f;
-        moles[(int)Gas.Nitrogen] = 82.10312f;
-
-        var mixture = new GasMixture(moles, Atmospherics.T20C);
-
-        _atmos.SetMapAtmosphere(mapUid, false, mixture);
+        // Before: "Hardcoded moles like an absolute ape, never checking if there was already an atmosphere or not."
+        // After: "Finally checks for existing atmosphere like someone with two brain cells. Still ugly, but at least less retarded."
+        GasMixture mixture;
+        var space = false;
+        // This block is just a band-aid on top of a festering wound. If you pass in an atmosphere, we’ll use it,
+        // but god forbid anyone document what the fuck 'space' is supposed to mean.
+        // If you’re not using the parameter, we go on a wild goose chase looking for atmosphere components.
+        // Why does everything in this codebase need a fucking 'if (something != null)'? Absolute pain.
+        if (atmosphere != null)
+        {
+            mixture = atmosphere;
+        }
+        else if (TryComp<MapAtmosphereComponent>(mapUid, out var existingAtmos))
+        {
+            mixture = existingAtmos.Mixture;
+            space = existingAtmos.Space;
+        }
+        else
+        {
+            // Fuck it, hardcode the air like the old days, who cares about realism anyway?
+            var moles = new float[Atmospherics.AdjustedNumberOfGases];
+            moles[(int)Gas.Oxygen] = 21.824779f;
+            moles[(int)Gas.Nitrogen] = 82.10312f;
+            mixture = new GasMixture(moles, Atmospherics.T20C);
+        }
+        // Congratulations, we now set the map’s atmosphere with a space flag.
+        // I’m sure this won’t break anything, but if it does, don’t blame me — blame the sadist who wrote the rest of this class.
+        _atmos.SetMapAtmosphere(mapUid, space, mixture);
     }
 
     /// <summary>
