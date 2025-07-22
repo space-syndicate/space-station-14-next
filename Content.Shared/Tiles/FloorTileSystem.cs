@@ -57,8 +57,13 @@ public sealed class FloorTileSystem : EntitySystem
         if (component.OutputTiles == null)
             return;
 
-        // this looks a bit sussy but it might be because it needs to be able to place off of grids and expand them
-        var location = args.ClickLocation.AlignWithClosestGridTile();
+        // Jesus fucking Christ, this old code was an absolute disaster.
+        // Who the fuck wrote AlignWithClosestGridTile()? Did they ever even launch the fucking game?
+        // SnapToGrid at least makes sure we don’t place shit on the wrong grid when there are shuttles or other abominations stacked up.
+        // Now at least it won’t magically teleport your shit to the shadow realm because some grid is hiding under your mouse.
+        // Using SnapToGrid so it finally does what any sane person would expect, and stays on the clicked grid.
+        // If you revert this, I hope you step on a Lego.
+        var location = args.ClickLocation.SnapToGrid(EntityManager, _mapManager);
         var locationMap = _transform.ToMapCoordinates(location);
         if (locationMap.MapId == MapId.Nullspace)
             return;
