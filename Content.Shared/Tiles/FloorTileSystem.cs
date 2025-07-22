@@ -13,9 +13,9 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using Content.Shared.Coordinates.Helpers;
+using Content.Shared.Coordinates.Helpers; // Corvax-Next
 using Robust.Shared.Network;
-using Content.Shared.Parallax.Biomes;
+using Content.Shared.Parallax.Biomes; // Corvax-Next
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
@@ -58,14 +58,14 @@ public sealed class FloorTileSystem : EntitySystem
 
         if (component.OutputTiles == null)
             return;
-
+        // var location = args.ClickLocation.AlignWithClosestGridTile();
         // Jesus fucking Christ, this old code was an absolute disaster.
         // Who the fuck wrote AlignWithClosestGridTile()? Did they ever even launch the fucking game?
         // SnapToGrid at least makes sure we don’t place shit on the wrong grid when there are shuttles or other abominations stacked up.
         // Now at least it won’t magically teleport your shit to the shadow realm because some grid is hiding under your mouse.
         // Using SnapToGrid so it finally does what any sane person would expect, and stays on the clicked grid.
         // If you revert this, I hope you step on a Lego.
-        var location = args.ClickLocation.SnapToGrid(EntityManager, _mapManager);
+        var location = args.ClickLocation.SnapToGrid(EntityManager, _mapManager); // Corvax-Next
         var locationMap = _transform.ToMapCoordinates(location);
         if (locationMap.MapId == MapId.Nullspace)
             return;
@@ -81,11 +81,13 @@ public sealed class FloorTileSystem : EntitySystem
         // so we're just gon with this for now.
         const bool inRange = true;
         var state = (inRange, location.EntityId);
-        _mapManager.FindGridsIntersecting<(bool weh, EntityUid EntityId)>(map.MapId,
-            new Box2(map.Position - CheckRange, map.Position + CheckRange), ref state,
-            (EntityUid entityUid, MapGridComponent grid, ref (bool weh, EntityUid EntityId) tuple) =>
+        // _mapManager.FindGridsIntersecting(map.MapId, new Box2(map.Position - CheckRange, map.Position + CheckRange), ref state,
+        //     static (EntityUid entityUid, MapGridComponent grid, ref (bool weh, EntityUid EntityId) tuple) =>        
+        _mapManager.FindGridsIntersecting<(bool weh, EntityUid EntityId)>(map.MapId, // Corvax-Next
+            new Box2(map.Position - CheckRange, map.Position + CheckRange), ref state, // Corvax-Next
+            (EntityUid entityUid, MapGridComponent grid, ref (bool weh, EntityUid EntityId) tuple) => // Corvax-Next
             {
-                if (tuple.EntityId == entityUid || HasComp<BiomeComponent>(entityUid))
+                if (tuple.EntityId == entityUid || HasComp<BiomeComponent>(entityUid)) // Corvax-Next
                     return true;
 
                 tuple.weh = false;
