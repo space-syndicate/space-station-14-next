@@ -15,6 +15,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Content.Shared.Coordinates.Helpers;
 using Robust.Shared.Network;
+using Content.Shared.Parallax.Biomes;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
@@ -82,9 +83,9 @@ public sealed class FloorTileSystem : EntitySystem
         var state = (inRange, location.EntityId);
         _mapManager.FindGridsIntersecting<(bool weh, EntityUid EntityId)>(map.MapId,
             new Box2(map.Position - CheckRange, map.Position + CheckRange), ref state,
-            static (EntityUid entityUid, MapGridComponent grid, ref (bool weh, EntityUid EntityId) tuple) =>
+            (EntityUid entityUid, MapGridComponent grid, ref (bool weh, EntityUid EntityId) tuple) =>
             {
-                if (tuple.EntityId == entityUid)
+                if (tuple.EntityId == entityUid || HasComp<BiomeComponent>(entityUid))
                     return true;
 
                 tuple.weh = false;
