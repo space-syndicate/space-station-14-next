@@ -1,4 +1,19 @@
-﻿# Tier 2
+﻿# Tier 1
+
+- type: technology
+  id: MedipenFilling
+  name: research-technology-injectors-filling
+  icon:
+    sprite: _CorvaxNext/Structures/Machines/medipen_refiller.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 1
+  cost: 10000
+  recipeUnlocks:
+  - FillableMedipen
+  - MachineMedipenRefillerCircuitboard
+
+# Tier 2
 
 - type: technology
   id: AdvancedTreatment
