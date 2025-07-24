@@ -9,12 +9,23 @@ namespace Content.Server._CorvaxNext.Power;
 /// </summary>
 public sealed class PowerTransitSystem : EntitySystem
 {
+    [Dependency] private readonly BatterySystem _battery = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
         UpdatesAfter.Add(typeof(PowerNetSystem));
-        SubscribeLocalEvent<PowerTransitComponent, ChargeChangedEvent>(OnChargeChanged);
+
         SubscribeLocalEvent<PowerTransitComponent, NewLinkEvent>(OnNewLink);
+    }
+
+    public override void Update(float frameTime)
+    {
+        var query = EntityQueryEnumerator<PowerTransitComponent, BatteryComponent>();
+
+        while (query.MoveNext(out var uid, out var transit, out var _))
+        {
+            TransitPowerWithLinked((uid, transit));
+        }
     }
 
     private void OnNewLink(Entity<PowerTransitComponent> ent, ref NewLinkEvent args)
@@ -24,11 +35,6 @@ public sealed class PowerTransitSystem : EntitySystem
             return;
 
         LinkPair(ent, (args.Sink, comp));
-    }
-
-    private void OnChargeChanged(Entity<PowerTransitComponent> ent, ref ChargeChangedEvent _)
-    {
-        TransitPowerWithLinked(ent);
     }
 
     public void LinkPair(Entity<PowerTransitComponent> ent, Entity<PowerTransitComponent> anotherEnt)
@@ -42,10 +48,12 @@ public sealed class PowerTransitSystem : EntitySystem
         if (ent.Comp.LinkedPair == null)
             return;
 
+        var anotherEnt = ent.Comp.LinkedPair.GetValueOrDefault();
+
         if (!TryComp<BatteryComponent>(ent, out var batteryComponent))
             return;
 
-        if (!TryComp<BatteryComponent>(ent, out var anotherBatteryComponent))
+        if (!TryComp<BatteryComponent>(anotherEnt, out var anotherBatteryComponent))
             return;
 
         var difference = batteryComponent.CurrentCharge - anotherBatteryComponent.CurrentCharge;
@@ -53,7 +61,7 @@ public sealed class PowerTransitSystem : EntitySystem
         if  (difference == 0)
             return;
 
-        batteryComponent.CurrentCharge -= difference / 2;
-        anotherBatteryComponent.CurrentCharge += difference / 2;
+        _battery.UseCharge(ent.Owner, difference / 2);
+        _battery.AddCharge(anotherEnt.Owner, difference / 2);
     }
 }
