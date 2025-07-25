@@ -1400,17 +1400,6 @@
   - EmergencyNoAirSyndicateIpc
 
 - type: loadoutGroup
-  id: SurvivalCentralCommand
-  name: loadout-group-survival-central-command
-  minLimit: 2
-  hidden: true
-  loadouts:
-  - EmergencyNitrogenExtended
-  - EmergencyOxygenExtended
-  - LoadoutSpeciesVoxNitrogen
-  - EmergencyNoAirCentralCommandIpc
-
-- type: loadoutGroup
   id: GroupSpeciesBreathTool
   name: loadout-group-breath-tool
   minLimit: 1
