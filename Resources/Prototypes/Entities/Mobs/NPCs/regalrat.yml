@@ -139,7 +139,7 @@
   - type: Skills # Corvax-Next-Skills
     skills:
     - Butchering
-  - type: NightVision
+  - type: NightVision # Corvax-next
     color: "#db7a7a"
 
 - type: entity
