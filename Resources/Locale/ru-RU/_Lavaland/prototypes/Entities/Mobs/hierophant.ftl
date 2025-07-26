@@ -1,4 +1,4 @@
-ent-LavalandBossHierophant = хиерофант
+ent-LavalandBossHierophant = иерофант
   .desc = Массивный металлический посох, повисший в воздухе. Он заставит вас танцевать под свою музыку.
-ent-LavalandHierophantTelepad = телепад хиерофанта
+ent-LavalandHierophantTelepad = телепад иерофанта
   .desc = Блокирует вас от внешнего мира, и заставляет танцевать.
