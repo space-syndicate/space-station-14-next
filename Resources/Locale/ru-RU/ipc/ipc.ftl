@@ -1,2 +1,2 @@
-ipc-component-ready = Готов к разрядке
+ipc-component-ready = Готов к зарядке
 ipc-component-disabled = Зарядка батареи отключена.
