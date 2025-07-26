@@ -269,6 +269,9 @@
   - type: TypingIndicator
     proto: spider
   - type: Fauna # Lavaland Change
+  - type: NpcFactionMember # Corvax-Next
+    factions:
+    - spider
 
 - type: entity
   id: MobSpiderSpaceSalvage

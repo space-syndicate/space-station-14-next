@@ -141,6 +141,7 @@
   - type: NpcFactionMember
     factions:
       - SimpleHostile
+      - Plant
   - type: HTN
     rootTask:
       task: KillerTomatoCompound

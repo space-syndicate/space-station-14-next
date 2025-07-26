@@ -16,6 +16,7 @@
   - type: NpcFactionMember
     factions:
     - SimpleHostile
+    - Plant
   - type: NPCImprintingOnSpawnBehaviour
     spawnFriendsSearchRadius: 10
     whitelist:

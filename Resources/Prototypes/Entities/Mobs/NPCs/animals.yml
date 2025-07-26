@@ -2529,6 +2529,9 @@
         type: SurgeryBui
   # end-_CorvaxNext: surgery
   - type: Fauna # Lavaland Change
+  - type: NpcFactionMember # Corvax-Next
+    factions:
+    - spider
 
 - type: entity
   parent: MobSpiderBase
@@ -2646,6 +2649,9 @@
     - type: Bloodstream
       bloodMaxVolume: 150
       bloodReagent: Laughter
+    - type: NpcFactionMember # Corvax-Next
+      factions:
+      - clown
 
 - type: entity
   name: wizard spider
