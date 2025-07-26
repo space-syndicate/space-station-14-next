@@ -57,3 +57,8 @@
   parent: BaseCircuitboardRecipe
   id: MedicalBiofabMachineBoard
   result: MedicalBiofabMachineBoard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: MachineMedipenRefillerCircuitboard
+  result: MachineMedipenRefillerCircuitboard

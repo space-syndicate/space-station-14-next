@@ -97,6 +97,7 @@
   - SyringeBluespace
   - LauncherSyringe
   - MiniSyringe
+  - FillableMedipen # Corvax-Next-RefillableMedipens
 
 - type: latheRecipePack
   id: MedicalBoards
@@ -104,3 +105,4 @@
   - StasisBedMachineCircuitboard
   - CryoPodMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
+  - MachineMedipenRefillerCircuitboard # Corvax-Next-RefillableMedipens
