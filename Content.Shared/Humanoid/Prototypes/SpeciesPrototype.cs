@@ -142,5 +142,6 @@ public enum SpeciesNaming : byte
     First,
     FirstLast,
     FirstDashFirst,
+    FirstDashFirstDashFirst, // Corvax-Next-Draks
     TheFirstofLast,
 }
