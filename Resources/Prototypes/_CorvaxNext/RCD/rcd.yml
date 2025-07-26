@@ -1,0 +1,11 @@
+# Electrical
+- type: rcd
+  id: Camera
+  category: Electrical
+  sprite: /Textures/Structures/Wallmounts/camera.rsi/cameracase.png
+  mode: ConstructObject
+  prototype: SurveillanceCameraConstructed
+  cost: 3
+  delay: 4
+  rotation: User
+  fx: EffectRCDConstruct4
