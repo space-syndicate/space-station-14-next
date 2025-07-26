@@ -54,9 +54,13 @@
   - WeaponPistolCHIMP
   - WeaponForceGun
   - WeaponProtoKineticAccelerator
-  - PKAUpgradeDamage
-  - PKAUpgradeRange
-  - PKAUpgradeFireRate
+  - WeaponProtoKineticShotgun
+  - WeaponProtoKineticRepeater
+  - WeaponProtoKineticPistol
+  - LavalandPKAUpgradeLight
+  - LavalandPKAUpgradeDamage
+  - LavalandPKAUpgradeRange
+  - LavalandPKAUpgradeFireRate
   - WeaponTetherGun
   - WeaponGauntletGorilla
 
