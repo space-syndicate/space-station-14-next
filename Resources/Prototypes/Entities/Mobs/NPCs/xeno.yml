@@ -60,10 +60,10 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead
+      90: Dead # Corvax-Next
   - type: SlowOnDamage
     speedModifierThresholds:
-      25: 0.5
+      70: 0.5 # Corvax-Next
   - type: Stamina
     critThreshold: 200
   - type: Bloodstream
@@ -76,8 +76,10 @@
      collection: AlienClaw
     animation: WeaponArcBite
     damage:
+      types:
+       Structural: 20 # Corvax-Next
       groups:
-        Brute: 6
+        Brute: 10
   - type: DamageStateVisuals
     rotate: true
     states:
@@ -88,6 +90,7 @@
       Dead:
         Base: dead
   - type: Puller
+    needsHands: false # Corvax-Next
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -138,12 +141,16 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Dead
+      200: Dead # Corvax-Next
   - type: Stamina
     critThreshold: 300
   - type: SlowOnDamage
     speedModifierThresholds:
-      50: 0.7
+      150: 0.7 # Corvax-Next
+  - type: MeleeWeapon # Corvax-Next
+    damage:
+      groups:
+        Brute: 20
   - type: Fixtures
     fixtures:
       fix1:
@@ -171,7 +178,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      80: Dead
+      80: Dead # Corvax-Next
   - type: SlowOnDamage
     speedModifierThresholds:
       40: 0.7
@@ -211,12 +218,12 @@
       300: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      150: 0.7
+      200: 0.7 # Corvax-Next
   - type: MovementSpeedModifier
   - type: MeleeWeapon
     damage:
      groups:
-       Brute: 12
+       Brute: 25 # Corvax-Next
   - type: Fixtures
     fixtures:
       fix1:
@@ -247,16 +254,16 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Dead
+      120: Dead # Corvax-Next
   - type: MovementSpeedModifier
     baseSprintSpeed: 4
   - type: MeleeWeapon
     damage:
      groups:
-       Brute: 10
+       Brute: 15 # Corvax-Next
   - type: SlowOnDamage
     speedModifierThresholds:
-      50: 0.7
+      80: 0.7 # Corvax-Next
   - type: Fixtures
     fixtures:
       fix1:
@@ -329,10 +336,10 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead
+      70: Dead # Corvax-Next
   - type: SlowOnDamage
     speedModifierThresholds:
-      25: 0.7
+      50: 0.7 # Corvax-Next
   - type: HTN
     rootTask:
       task: SimpleRangedHostileCompound
