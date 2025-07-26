@@ -43,9 +43,6 @@
 - type: startingGear
   id: BrigmedicGear
   equipment:
-    shoes: ClothingShoesBootsJackSecFilled
-    gloves: ClothingHandsGlovesNitrile
-    eyes: ClothingEyesHudMedSec
     id: BrigmedicPDA
     ears: ClothingHeadsetBrigmedic
     belt: ClothingBeltMedicalFilled

@@ -73,11 +73,11 @@
   components:
   - type: StorageFill
     contents:
+      - id: ClothingMaskSecurityMedicalRespirator
+        amount: 2
       - id: ClothingOuterBioSecurity
         amount: 2
       - id: ClothingHeadHatHoodBioSecurity
-        amount: 2
-      - id: ClothingMaskSterile
         amount: 2
 
 - type: entity

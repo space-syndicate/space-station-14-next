@@ -137,6 +137,7 @@
       - id: BoxBodyBagPrisoner # Corvax-Next-AdvancedBodyBags
         # Corvax-Brigmedic-Start
       - id: ClothingMaskBreathMedicalSecurity
+      - id: ClothingMaskSecurityMedicalRespirator
       - id: BoxBodyBag
       - id: Defibrillator
       - id: MedkitAdvancedFilled
