@@ -31,6 +31,8 @@
       solutionArea:
         maxVol: 600
         canReact: false
+  - type: ExaminableSolution # Corvax-Next 
+    solution: solutionArea # Corvax-Next
 
 - type: entity
   parent: BaseFoam

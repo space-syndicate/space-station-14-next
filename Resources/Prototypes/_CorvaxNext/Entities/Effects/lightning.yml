@@ -1,0 +1,10 @@
+- type: entity
+  id: EffectFlashLightningBolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    radius: 10.5
+    energy: 15
+    color: "#fcfcf6"
+  - type: TimedDespawn
+    lifetime: 0.4

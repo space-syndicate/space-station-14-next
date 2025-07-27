@@ -84,6 +84,8 @@ namespace Content.Server.Administration.Systems
             AddSmiteVerbs(ev);
             AddTricksVerbs(ev);
             AddAntagVerbs(ev);
+
+            AddCorvaxNextSmites(ev); // CorvaxNext-Smites
         }
 
         private void AddAdminVerbs(GetVerbsEvent<Verb> args)
