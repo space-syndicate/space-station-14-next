@@ -1,0 +1,94 @@
+# Species
+- type: loadoutEffectGroup
+  id: NoAir
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Ipc
+
+# Basic
+- type: loadout
+  id: EmergencyNoAirIpc
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: NoAir
+  storage:
+    back:
+    - BoxSurvivalIpc
+
+# Clown
+- type: loadout
+  id: EmergencyNoAirClownIpc
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: NoAir
+  storage:
+    back:
+    - BoxHugIpc
+
+# Mime
+- type: loadoutEffectGroup
+  id: NoAirMime
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Ipc
+
+- type: loadout
+  id: EmergencyNoAirMimeIpc
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: NoAirMime
+  storage:
+    back:
+    - BoxMimeIpc
+
+# Engineering / Extended
+- type: loadout
+  id: EmergencyNoAirExtended
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: NoAir
+  storage:
+    back:
+    - BoxSurvivalEngineeringIpc
+
+# Medical
+- type: loadout
+  id: EmergencyNoAirMedicalIpc
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: NoAir
+  storage:
+    back:
+    - BoxSurvivalMedicalIpc
+
+# Security
+- type: loadout
+  id: EmergencyNoAirSecurityIpc
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: NoAir
+  storage:
+    back:
+    - BoxSurvivalSecurityIpc
+
+# Syndicate
+- type: loadout
+  id: EmergencyNoAirSyndicateIpc
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: NoAir
+  storage:
+    back:
+    - BoxSurvivalSyndicateIpc
+
+# Central Command
+- type: loadout
+  id: EmergencyNoAirCentralCommandIpc
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: NoAir
+  storage:
+    back:
+    - BoxCentralCommandIpc
