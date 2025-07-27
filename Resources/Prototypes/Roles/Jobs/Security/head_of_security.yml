@@ -61,3 +61,11 @@
     - MagazinePistol
     - ClothingNeckSecBadgeHos # Corvax-Next-Badges
     - TelescopicBaton # Corvax-Next-TelescopicBaton
+
+- type: chameleonOutfit
+  id: HeadOfSecurityChameleonOutfit
+  job: HeadOfSecurity
+  hasMindShield: true
+  equipment:
+    mask: ClothingMaskGasSecurity
+    neck: ClothingNeckCloakHos

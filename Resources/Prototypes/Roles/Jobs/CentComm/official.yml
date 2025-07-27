@@ -33,3 +33,11 @@
   storage: # Corvax-Next-TelescopicBaton
     back:
     - TelescopicBaton
+
+- type: chameleonOutfit
+  id: CentralCommandOfficialOutfit
+  job: CentralCommandOfficial
+  hasMindShield: true
+  equipment:
+    neck: ClothingNeckScarfStripedCentcom
+    mask: ClothingMaskGasCentcom

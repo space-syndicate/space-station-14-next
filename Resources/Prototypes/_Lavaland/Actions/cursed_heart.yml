@@ -4,10 +4,11 @@
   description: action-pump-heart-desc
   categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: Action
     icon:
       sprite: _Lavaland/Objects/Specific/Lavaland/loot.rsi
       state: cursed_heart
     itemIconStyle: BigAction
-    event: !type:PumpHeartActionEvent
     useDelay: 1
+  - type: InstantAction
+    event: !type:PumpHeartActionEvent

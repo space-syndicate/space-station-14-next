@@ -1,0 +1,13 @@
+- type: entity
+  id: SuitStorageSecPilot
+  parent: SuitStorageBase
+  suffix: Security, Pilot
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: ClothingOuterHardsuitSecPilotFilled
+        - id: ClothingMaskBreath
+        - id: ClothingHeadHelmetHardsuitSecPilot
+  - type: AccessReader
+    access: [["Security"]]

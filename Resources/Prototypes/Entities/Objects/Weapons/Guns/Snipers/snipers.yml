@@ -110,6 +110,8 @@
   - type: GunRequiresWield
   - type: Gun # Corvax-Next-Skills
     requiresSkill: false
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   name: Hristov
@@ -142,6 +144,8 @@
   - type: EyeCursorOffset
     maxOffset: 10 # Corvax-Next - Sniper rifles buff
     pvsIncrease: 1.0 # Corvax-Next - Sniper rifles buff
+  - type: StaticPrice
+    price: 3500
 
 - type: entity
   name: musket

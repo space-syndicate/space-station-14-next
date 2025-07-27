@@ -124,6 +124,8 @@
     sprite: Clothing/Eyes/Glasses/outlawglasses.rsi
   - type: VisionCorrection
   - type: IdentityBlocker
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   parent: ClothingEyesBase
@@ -265,6 +267,9 @@
   - type: Clothing
     sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
   - type: FlashImmunity
+  - type: ClothingGrantComponent # Corvax-Next-NightVision-For-Ninja
+    component:
+    - type: NightVision
 
 - type: entity
   parent: ClothingEyesBase
@@ -281,7 +286,7 @@
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 5
-  - type: BlackAndWhiteOverlay
+  - type: NoirOverlay
   - type: Tag
     tags:
     - HamsterWearable

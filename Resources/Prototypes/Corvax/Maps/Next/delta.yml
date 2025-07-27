@@ -4,7 +4,7 @@
   mapPath: /Maps/Next/next_delta.yml
   maxRandomOffset: 0
   randomRotation: false
-  minPlayers: 40
+  minPlayers: 55
   stations:
     NextDelta:
       stationProto: StandardNanotrasenStation
@@ -15,7 +15,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'TG'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_corvaxdelta.yml
+          emergencyShuttlePath: /Maps/Next/Shuttles/Delta/emergency_nextDelta.yml
         - type: StationJobs
           availableJobs:
             # command
@@ -92,9 +92,7 @@
           - XenobiologyRepair
           - VirusologyAmbusol
           - BluespaceHarvest
-          # Corvax-next blob-config-start HUGEs
         - type: StationBlobConfig
           stageBegin: 40
           stageCritical: 1400
           stageTheEnd: 2000
-          # Corvax-next blob-config-end

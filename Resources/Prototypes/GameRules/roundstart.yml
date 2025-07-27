@@ -199,7 +199,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
-      - type: CanChokeGrab
+      - type: CanChokeGrab # Corvax-Next-Grab
       mindRoles:
       - MindRoleNukeops
 
@@ -294,7 +294,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
-      - type: CanChokeGrab
+      - type: CanChokeGrab # Corvax-Next-Grab
       mindRoles:
       - MindRoleHeadRevolutionary
 
@@ -331,7 +331,7 @@
   id: Wizard
   components:
   - type: GameRule
-    minPlayers: 10
+    minPlayers: 25 #Corvax-Next wizard-gamerule-rebalance
   - type: AntagSelection
     agentName: wizard-round-end-name
     selectionTime: PrePlayerSpawn
@@ -532,3 +532,11 @@
       prob: 0.90
     - id: SolarPanelDamageVariationPass
     - id: SolarPanelEmptyVariationPass
+    - id: BasicDecalDirtVariationPass
+    - id: BasicDecalGraffitiVariationPass
+    - id: BasicDecalBrunsVariationPass
+      prob: 0.50
+      orGroup: monospaceDecals
+    - id: BasicDecalDirtMonospaceVariationPass
+      prob: 0.50
+      orGroup: monospaceDecals
