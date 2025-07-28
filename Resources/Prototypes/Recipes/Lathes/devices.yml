@@ -184,18 +184,16 @@
     Glass: 100
     Uranium: 200
 
-#Corvax-Next-PKA-craft-update-start
-#- type: latheRecipe
-#  id: WeaponProtoKineticAccelerator
-#  result: WeaponProtoKineticAccelerator
-#  categories:
-#  - Weapons
-#  completetime: 5
-#  materials:
-#    Steel: 1000
-#    Glass: 500
-#    Silver: 100
-#Corvax-Next-PKA-craft-update-end
+- type: latheRecipe
+  id: WeaponProtoKineticAccelerator
+  result: WeaponProtoKineticAccelerator
+  categories:
+  - Weapons
+  completetime: 5
+  materials:
+    Steel: 1000
+    Glass: 500
+    Silver: 100
 
 - type: latheRecipe
   id: WeaponTetherGun
