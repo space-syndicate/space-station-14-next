@@ -6,6 +6,11 @@
   components:
   - type: Pda
     id: SurgeonIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-surgeon
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentVColor: "#5db8be"
