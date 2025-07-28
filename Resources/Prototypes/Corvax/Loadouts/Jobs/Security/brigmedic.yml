@@ -12,9 +12,7 @@
   id: BrigmedicHelmet
   equipment:
     head: ClothingHeadHelmetSecurityMedic
-<<<<<<< Updated upstream
-=======
-    
+
 # Очки
 - type: loadout
   id: BrigmedicSecurityGlasses
@@ -40,7 +38,6 @@
   id: BrigmedicHudMedSec
   equipment:
     eyes: ClothingEyesHudMedSec
->>>>>>> Stashed changes
 
 # Маска
 - type: loadout
