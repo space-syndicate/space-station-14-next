@@ -133,6 +133,7 @@
   - WeaponLaserCarbine
   - WeaponXrayCannon
   - WeaponTemperatureGun
+  #Corvax-Next-PKA-craft-update-start
   - WeaponProtoKineticAccelerator
   - WeaponProtoKineticShotgun
   - WeaponProtoKineticRepeater
@@ -141,6 +142,7 @@
   - LavalandPKAUpgradeDamage
   - LavalandPKAUpgradeRange
   - LavalandPKAUpgradeFireRate
+  #Corvax-Next-PKA-craft-update-end
 
 - type: latheRecipePack
   id: SecurityDisablers

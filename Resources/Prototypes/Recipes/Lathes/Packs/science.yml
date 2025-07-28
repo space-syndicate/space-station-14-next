@@ -54,6 +54,10 @@
   - WeaponPistolCHIMP
   - WeaponForceGun
   - WeaponProtoKineticAccelerator
+  #Corvax-Next-PKA-craft-update-start
+  #- PKAUpgradeDamage
+  #- PKAUpgradeRange
+  #- PKAUpgradeFireRate
   - WeaponProtoKineticShotgun
   - WeaponProtoKineticRepeater
   - WeaponProtoKineticPistol
@@ -61,6 +65,7 @@
   - LavalandPKAUpgradeDamage
   - LavalandPKAUpgradeRange
   - LavalandPKAUpgradeFireRate
+  #Corvax-Next-PKA-craft-update-end
   - WeaponTetherGun
   - WeaponGauntletGorilla
 

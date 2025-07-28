@@ -56,6 +56,10 @@
 - type: latheRecipePack
   id: SalvageSecurityWeapons
   recipes:
+  #Corvax-Next-PKA-craft-update-start
+  #- PKAUpgradeDamage
+  #- PKAUpgradeRange
+  #- PKAUpgradeFireRate
   - WeaponProtoKineticAccelerator
   - WeaponProtoKineticShotgun
   - WeaponProtoKineticRepeater
@@ -64,3 +68,4 @@
   - LavalandPKAUpgradeDamage
   - LavalandPKAUpgradeRange
   - LavalandPKAUpgradeFireRate
+  #Corvax-Next-PKA-craft-update-end
