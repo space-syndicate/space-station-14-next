@@ -21,6 +21,7 @@
   minLimit: 0
   loadouts:
   - SurgeonScalpelLaser
+  
 # Security
 - type: loadoutGroup
   id: BrigmedicGlasses
