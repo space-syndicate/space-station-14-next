@@ -73,18 +73,14 @@
   components:
   - type: StorageFill
     contents:
-      #Corvax-Next-brigmedic-loadout-update-start
-      - id: ClothingMaskSecurityMedicalRespirator
+      - id: ClothingMaskSecurityMedicalRespirator #Corvax-Next-brigmedic-loadout-update-start
         amount: 2
-      #Corvax-Next-brigmedic-loadout-update-end
       - id: ClothingOuterBioSecurity
         amount: 2
       - id: ClothingHeadHatHoodBioSecurity
         amount: 2
-      #Corvax-Next-brigmedic-loadout-update-start
-      #- id: ClothingMaskSterile
+      #- id: ClothingMaskSterile #Corvax-Next-brigmedic-loadout-update-start
       #  amount: 2
-      #Corvax-Next-brigmedic-loadout-update-end
 
 - type: entity
   id: CrateSecurityTrackingMindshieldImplants
