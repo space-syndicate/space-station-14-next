@@ -30,7 +30,6 @@
   - SignallerAdvanced
   - DeviceQuantumSpinInverter
   - DeviceDesynchronizer
-  - ClothingHeadsetInject #Corvax-Next
 
 
 - type: latheRecipePack
@@ -42,6 +41,7 @@
   - ClothingBackpackHolding
   - ClothingBackpackSatchelHolding
   - ClothingBackpackDuffelHolding
+  - ClothingHeadsetInject #Corvax-Next
 
 - type: latheRecipePack
   id: PowerCells
