@@ -3,6 +3,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Chemistry.Components;
 using Content.Server.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.EntitySystems;
 using Robust.Shared.GameObjects;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Interaction;
