@@ -1,0 +1,31 @@
+# Очки
+- type: loadout
+  id: BrigmedicSecurityGlasses
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
+
+- type: loadout
+  id: BrigmedicSungGlasses
+  equipment:
+    eyes: ClothingEyesGlassesSunglasses
+
+- type: loadout
+  id: BrigmedicGlasses
+  equipment:
+    eyes: ClothingEyesGlasses
+
+- type: loadout
+  id: BrigmedicHudMedical
+  equipment:
+    eyes: ClothingEyesHudMedical
+
+- type: loadout
+  id: BrigmedicHudMedSec
+  equipment:
+    eyes: ClothingEyesHudMedSec
+
+# Маска
+- type: loadout
+  id: BrigmedicSecurityMedicalRespirator
+  equipment:
+    mask: ClothingMaskSecurityMedicalRespirator

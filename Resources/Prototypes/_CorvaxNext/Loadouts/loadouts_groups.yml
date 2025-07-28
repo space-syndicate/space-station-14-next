@@ -21,3 +21,13 @@
   minLimit: 0
   loadouts:
   - SurgeonScalpelLaser
+# Security
+- type: loadoutGroup
+  id: BrigmedicGlasses
+  name: loadout-group-brigmedic-glasses
+  loadouts:
+  - BrigmedicSecurityGlasses
+  - BrigmedicSungGlasses
+  - BrigmedicGlasses
+  - BrigmedicHudMedical
+  - BrigmedicHudMedSec

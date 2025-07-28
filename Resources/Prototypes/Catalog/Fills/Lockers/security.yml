@@ -137,11 +137,11 @@
       - id: BoxBodyBagPrisoner # Corvax-Next-AdvancedBodyBags
         # Corvax-Brigmedic-Start
       - id: ClothingMaskBreathMedicalSecurity
-      - id: ClothingMaskSecurityMedicalRespirator
       - id: BoxBodyBag
       - id: Defibrillator
       - id: MedkitAdvancedFilled
         # Corvax-Brigmedic-End
+      - id: ClothingMaskSecurityMedicalRespirator #Corvax-Next-brigmedic-loadout-update
 
 - type: entity
   id: LockerDetectiveFilled

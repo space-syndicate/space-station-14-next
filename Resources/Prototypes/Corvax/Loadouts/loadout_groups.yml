@@ -22,20 +22,10 @@
   - BrigmedicHelmet
 
 - type: loadoutGroup
-  id: BrigmedicGlasses
-  name: loadout-group-brigmedic-glasses
-  loadouts:
-  - BrigmedicSecurityGlasses
-  - BrigmedicSungGlasses
-  - BrigmedicGlasses
-  - BrigmedicHudMedical
-  - BrigmedicHudMedSec
-
-- type: loadoutGroup
   id: BrigmedicMask
   name: loadout-group-brigmedic-mask
   loadouts:
-  - BrigmedicSecurityMedicalRespirator
+  - BrigmedicSecurityMedicalRespirator #Corvax-Next-brigmedic-loadout-update
   - BrigmedicGasSecurity
   - BrigmedicMedicalSecurity
 
