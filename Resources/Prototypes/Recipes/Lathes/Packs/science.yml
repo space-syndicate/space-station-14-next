@@ -30,6 +30,8 @@
   - SignallerAdvanced
   - DeviceQuantumSpinInverter
   - DeviceDesynchronizer
+  - ClothingHeadsetInject #Corvax-Next
+
 
 - type: latheRecipePack
   id: ScienceClothing

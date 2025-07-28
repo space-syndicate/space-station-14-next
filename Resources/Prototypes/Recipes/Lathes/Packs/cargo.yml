@@ -5,6 +5,8 @@
   recipes:
   - AppraisalTool
   - Pickaxe
+  - ClothingHeadsetInject #Corvax-Next
+
 
 - type: latheRecipePack
   id: CargoBoardsStatic
