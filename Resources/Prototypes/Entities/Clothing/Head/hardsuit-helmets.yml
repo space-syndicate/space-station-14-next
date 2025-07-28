@@ -240,8 +240,10 @@
         Slash: 0.95
         Piercing: 0.95
         Heat: 0.95
+        # Corvax-Next-uprade-suit-brigmed-start
         Radiation: 0.5
         Caustic: 0.5
+        # Corvax-Next-uprade-suit-brigmed-end
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
