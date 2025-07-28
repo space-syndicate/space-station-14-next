@@ -76,7 +76,7 @@
   - Weapons
   completetime: 5
   materials:
-    Steel: 1000
+    Steel: 1500
     Glass: 500
     Silver: 100
 
@@ -87,7 +87,7 @@
   - Weapons
   completetime: 5
   materials:
-    Steel: 1000
+    Steel: 1500
     Glass: 500
     Silver: 100
 
@@ -98,7 +98,7 @@
   - Weapons
   completetime: 5
   materials:
-    Steel: 1000
+    Steel: 1500
     Glass: 500
     Silver: 100
 
@@ -109,7 +109,7 @@
   - Weapons
   completetime: 5
   materials:
-    Steel: 600
+    Steel: 1000
     Glass: 300
     Silver: 100
 
