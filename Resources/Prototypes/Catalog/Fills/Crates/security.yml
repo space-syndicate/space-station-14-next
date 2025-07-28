@@ -79,8 +79,8 @@
         amount: 2
       - id: ClothingHeadHatHoodBioSecurity
         amount: 2
-      #- id: ClothingMaskSterile #Corvax-Next-brigmedic-loadout-update
-      #  amount: 2
+      - id: ClothingMaskSterile
+        amount: 2
 
 - type: entity
   id: CrateSecurityTrackingMindshieldImplants
