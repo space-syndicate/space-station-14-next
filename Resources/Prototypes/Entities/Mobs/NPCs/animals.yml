@@ -1356,8 +1356,6 @@
   description: The genetic bipedal ancestor of... Uh... Something. Yeah, there's definitely something on the station that descended from whatever this is.
   abstract: true
   components:
-  - type: HumanoidAppearance
-    species: Monkey
   - type: CombatMode
   - type: Inventory
     templateId: monkey
@@ -1497,12 +1495,20 @@
       effects:
       - !type:WashCreamPieReaction
 
-
+- type: entity # corvax-next
+  name: base mob monkey
+  id: BaseMobMonkey
+  parent: MobBaseAncestor
+  description: base mob monkey
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: Monkey
 
 - type: entity
   name: monkey
   id: MobMonkey
-  parent: MobBaseAncestor
+  parent: BaseMobMonkey # corvax-next
   description: New church of neo-darwinists actually believe that EVERY animal evolved from a monkey. Tastes like pork, and killing them is both fun and relaxing.
   components:
   - type: NameIdentifier
@@ -1537,7 +1543,7 @@
 - type: entity
   name: monkey
   id: MobBaseSyndicateMonkey
-  parent: MobBaseAncestor
+  parent: BaseMobMonkey # corvax-next
   description: New church of neo-darwinists actually believe that EVERY animal evolved from a monkey. Tastes like pork, and killing them is both fun and relaxing.
   suffix: syndicate base
   components:
@@ -1659,6 +1665,11 @@
     name: ghost-role-information-kobold-name
     description: ghost-role-information-kobold-description
     rules: ghost-role-information-nonantagonist-rules
+  - type: Sprite # corvax-next
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: kobold
+      sprite: Mobs/Animals/kobold.rsi
 
 - type: entity
   name: kobold
