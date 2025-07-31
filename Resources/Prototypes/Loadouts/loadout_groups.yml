@@ -97,6 +97,7 @@
   - EmergencyNitrogen
   - EmergencyOxygen
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenMoth # Corvax-Next-MothLoadout
 
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
@@ -524,6 +525,7 @@
   - EmergencyNitrogenClown
   - EmergencyOxygenClown
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenClownMoth # Corvax-Next-MothLoadout
 
 - type: loadoutGroup
   id: MimeHead
@@ -581,6 +583,7 @@
   - EmergencyOxygenMime
   - EmergencySpeciesMothMime
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenMimeMoth # Corvax-Next-MothLoadout
 
 - type: loadoutGroup
   id: MusicianJumpsuit
@@ -867,6 +870,7 @@
   - EmergencyNitrogenExtended
   - EmergencyOxygenExtended
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenExtendedMoth # Corvax-Next-MothLoadout
 
 # Science
 - type: loadoutGroup
@@ -1159,6 +1163,7 @@
   - EmergencyNitrogenSecurity
   - EmergencyOxygenSecurity
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenSecurityMoth # Corvax-Next-MothLoadout
 
 - type: loadoutGroup
   id: SecurityStar
@@ -1360,6 +1365,7 @@
   - EmergencyNitrogenMedical
   - EmergencyOxygenMedical
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenMedicalMoth # Corvax-Next-MothLoadout
 
 # Wildcards
 - type: loadoutGroup
