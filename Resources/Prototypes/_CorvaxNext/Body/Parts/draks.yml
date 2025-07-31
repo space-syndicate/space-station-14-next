@@ -1,0 +1,216 @@
+- type: entity
+  id: PartDraks
+  parent: PartResomi
+  name: "draks body part"
+  abstract: true
+
+- type: entity
+  id: TorsoDraks
+  name: "draks torso"
+  parent: PartDraks
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "torso_m"
+  - type: Icon
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "torso_m"
+  - type: BodyPart
+    partType: Torso
+    toolName: "a torso"
+    containerName: "torso_slot"
+  - type: ContainerContainer
+    containers:
+      torso_slot: !type:ContainerSlot {}
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 300
+      behaviors:
+      - !type:GibPartBehavior { }
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Slash
+        damage: 300
+      behaviors:
+      - !type:GibPartBehavior { }
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 400
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawnInContainer: true
+        spawn:
+          Ash:
+            min: 1
+            max: 1
+      - !type:BurnBodyBehavior { }
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MeatLaserImpact
+
+- type: entity
+  id: HeadDraks
+  name: "draks head"
+  parent: PartDraks
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "head_m"
+  - type: Icon
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "head_m"
+  - type: BodyPart
+    partType: Head
+    vital: true
+    toolName: "a head"
+  - type: Input
+    context: "ghost"
+  - type: InputMover
+  - type: GhostOnMove
+  - type: Tag
+    tags:
+      - Head
+
+- type: entity
+  id: LeftArmDraks
+  name: "left draks arm"
+  parent: PartDraks
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "l_arm"
+  - type: Icon
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "l_arm"
+  - type: BodyPart
+    partType: Arm
+    symmetry: Left
+    toolName: "a left arm"
+
+- type: entity
+  id: RightArmDraks
+  name: "right draks arm"
+  parent: PartDraks
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "r_arm"
+  - type: Icon
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "r_arm"
+  - type: BodyPart
+    partType: Arm
+    symmetry: Right
+    toolName: "a right arm"
+
+- type: entity
+  id: LeftHandDraks
+  name: "left draks hand"
+  parent: PartDraks
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "l_hand"
+  - type: Icon
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "l_hand"
+  - type: BodyPart
+    partType: Hand
+    symmetry: Left
+    toolName: "a left hand"
+
+- type: entity
+  id: RightHandDraks
+  name: "right draks hand"
+  parent: PartDraks
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "r_hand"
+  - type: Icon
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "r_hand"
+  - type: BodyPart
+    partType: Hand
+    symmetry: Right
+    toolName: "a right hand"
+
+- type: entity
+  id: LeftLegDraks
+  name: "left draks leg"
+  parent: PartDraks
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "l_leg"
+  - type: Icon
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "l_leg"
+  - type: BodyPart
+    partType: Leg
+    symmetry: Left
+    toolName: "a left leg"
+  - type: MovementBodyPart
+
+- type: entity
+  id: RightLegDraks
+  name: "right draks leg"
+  parent: PartDraks
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "r_leg"
+  - type: Icon
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "r_leg"
+  - type: BodyPart
+    partType: Leg
+    symmetry: Right
+    toolName: "a right leg"
+  - type: MovementBodyPart
+
+- type: entity
+  id: LeftFootDraks
+  name: "left draks foot"
+  parent: PartDraks
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "l_foot"
+  - type: Icon
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "l_foot"
+  - type: BodyPart
+    partType: Foot
+    symmetry: Left
+    toolName: "a left foot"
+
+- type: entity
+  id: RightFootDraks
+  name: "right draks foot"
+  parent: PartDraks
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "r_foot"
+  - type: Icon
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: "r_foot"
+  - type: BodyPart
+    partType: Foot
+    symmetry: Right
+    toolName: "a right foot"

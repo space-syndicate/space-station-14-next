@@ -62,3 +62,13 @@
     Slash: 0.9
     Piercing: 0.9
     Heat: 1.5
+
+- type: damageModifierSet
+  id: Draks
+  coefficients:
+    Cold: 0.25
+    Heat: 3
+    Blunt: 2
+    Slash: 2
+    Piercing: 2
+    Shock: 2

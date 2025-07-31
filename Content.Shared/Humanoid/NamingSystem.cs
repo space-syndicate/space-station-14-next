@@ -38,6 +38,9 @@ namespace Content.Shared.Humanoid
                 case SpeciesNaming.FirstDashFirst:
                     return Loc.GetString("namepreset-firstdashfirst",
                         ("first1", GetFirstName(speciesProto, gender)), ("first2", GetFirstName(speciesProto, gender)));
+                case SpeciesNaming.FirstDashFirstDashFirst:
+                    return Loc.GetString("namepreset-firstdashfirstdashfirst",
+                        ("first1", GetFirstName(speciesProto, gender)), ("first2", GetFirstName(speciesProto, gender)), ("first3", GetFirstName(speciesProto, gender))); // Corvax-Next-Draks
                 case SpeciesNaming.FirstLast:
                 default:
                     return Loc.GetString("namepreset-firstlast",
