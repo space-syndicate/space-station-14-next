@@ -100,3 +100,18 @@
   - SmokeGrenade
   - SmokeGrenade
   - SmokeGrenade
+
+- type: thiefEchoSet
+  id: Echo thief set
+  name: thief-backpack-category-echo-name
+  description: thief-backpack-category-echo-description
+  sprite:
+    sprite: Objects/Weapons/Guns/Battery/disabler_smg.rsi
+    state: icon
+  content:
+  - ClothingOuterEchoThief
+  - ClothingHeadHelmetHardsuitEchoThief
+  - ClothingShoesEchoThief
+  - ClothingUniformJumpsuitEchoThief
+  - WeaponDisablerSMGEchoThief
+  - PaperEchoThiefManual
