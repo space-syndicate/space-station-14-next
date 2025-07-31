@@ -24,6 +24,7 @@
     - id: SpiderClownSpawn
     - id: SpiderSpawn
     - id: VentClog
+    - id: RadiationOutburst #Corvax-Next
 
 - type: entityTable
   id: BasicAntagEventsTable
