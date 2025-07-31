@@ -32,6 +32,7 @@
   - DeviceDesynchronizer
   - ClothingBackpackHarmpack
 
+
 - type: latheRecipePack
   id: ScienceClothing
   recipes:
@@ -42,6 +43,7 @@
   - ClothingBackpackHolding
   - ClothingBackpackSatchelHolding
   - ClothingBackpackDuffelHolding
+  - ClothingHeadsetInject #Corvax-Next
 
 - type: latheRecipePack
   id: PowerCells
