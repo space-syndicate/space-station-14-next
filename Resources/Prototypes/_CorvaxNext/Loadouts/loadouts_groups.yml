@@ -21,3 +21,15 @@
   minLimit: 0
   loadouts:
   - SurgeonScalpelLaser
+
+# Other
+- type: loadoutGroup
+  id: SurvivalCentralCommand
+  name: loadout-group-survival-central-command
+  minLimit: 2
+  hidden: true
+  loadouts:
+  - EmergencyNitrogenExtended
+  - EmergencyOxygenExtended
+  - LoadoutSpeciesVoxNitrogen
+  - EmergencyNoAirCentralCommandIpc

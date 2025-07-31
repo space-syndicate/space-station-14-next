@@ -24,3 +24,15 @@
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
+- type: roleLoadout
+  id: RoleSurvivalCentralCommand
+  groups:
+  - SurvivalCentralCommand
+  - GroupSpeciesBreathTool
+  - GroupTankHarness
+
+- type: roleLoadout
+  id: RoleSurvivalCentralCommandEVA
+  groups:
+  - SurvivalCentralCommand
+  - GroupEVATank
