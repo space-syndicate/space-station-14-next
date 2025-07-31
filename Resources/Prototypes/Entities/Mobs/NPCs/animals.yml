@@ -1495,16 +1495,6 @@
       effects:
       - !type:WashCreamPieReaction
 
-- type: entity # corvax-next
-  name: base mob monkey
-  id: BaseMobMonkey
-  parent: MobBaseAncestor
-  description: base mob monkey
-  abstract: true
-  components:
-  - type: HumanoidAppearance
-    species: Monkey
-
 - type: entity
   name: monkey
   id: MobMonkey
