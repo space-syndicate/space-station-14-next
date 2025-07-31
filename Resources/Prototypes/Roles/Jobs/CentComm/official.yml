@@ -30,7 +30,9 @@
     belt: WeaponPistolN1984
     pocket1: BoxFolderBlack
     pocket2: PenCentcom
-
+  storage: # Corvax-Next-TelescopicBaton
+    back:
+    - TelescopicBaton
 
 - type: chameleonOutfit
   id: CentralCommandOfficialOutfit
