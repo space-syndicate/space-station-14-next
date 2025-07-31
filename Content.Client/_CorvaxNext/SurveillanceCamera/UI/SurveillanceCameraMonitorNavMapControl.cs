@@ -19,7 +19,7 @@ public sealed partial class SurveillanceCameraMonitorNavMapControl : NavMapContr
 
     public bool ShowEye = false;
 
-    public float ScaleModifier = 1f;
+    public float ScaleModifier = 0.206f;
 
     private readonly IClydeViewport? _viewport;
 
@@ -54,7 +54,7 @@ public sealed partial class SurveillanceCameraMonitorNavMapControl : NavMapContr
             var position = Vector2.Transform(camPosition.Position, _transformSystem.GetInvWorldMatrix(_xform!)) - offset;
             position = ScalePosition(position with { Y = -position.Y });
 
-            var positionOffset = new Vector2(texture.Width, texture.Height) * (MinmapScaleModifier * float.Sqrt(MinimapScale) * ScaleModifier);
+            var positionOffset = new Vector2(texture.Width, texture.Height) * (MinmapScaleModifier * MinimapScale * ScaleModifier);
 
             var positionTopLeft = position - positionOffset;
             var positionBottomRight = position + positionOffset;

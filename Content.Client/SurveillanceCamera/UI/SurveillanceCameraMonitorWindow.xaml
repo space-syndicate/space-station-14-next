@@ -15,7 +15,7 @@
                              Margin="20 0 5 0"/>
                 <Label Text="{Loc 'ent-SurveillanceWirelessCameraBase'}"/>
                 <Label Text="| Camera Scale: "/>
-                <Slider HorizontalExpand="True" Name="CameraScaleModifier" MinValue="0.5" Value="1" MaxValue="2"/>
+                <Slider HorizontalExpand="True" Name="CameraScaleModifier" MinValue="0.1" Value="0.206" MaxValue="0.3"/>
             </BoxContainer>
         </BoxContainer>
         <BoxContainer Orientation="Vertical" MinWidth="350" Margin="0 0 10 10" VerticalExpand="True">
