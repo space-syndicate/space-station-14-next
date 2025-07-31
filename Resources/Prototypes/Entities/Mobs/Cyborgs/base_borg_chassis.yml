@@ -105,7 +105,8 @@
   - type: ZombieImmune
   - type: Repairable
     doAfterDelay: 10
-    allowSelfRepair: false
+    allowSelfRepair: true # Corvax-Next from false to true
+    selfRepairPenalty: 6 # Corvax-Next-SelfRepairable
   - type: BorgChassis
   - type: LockingWhitelist
     blacklist:
