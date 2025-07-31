@@ -103,7 +103,7 @@
   discountDownTo:
     Telecrystal: 4
   cost:
-    Telecrystal: 8
+    Telecrystal: 7 #Corvax price 
   categories:
   - UplinkWeaponry
 
@@ -130,7 +130,7 @@
   discountDownTo:
     Telecrystal: 3
   cost:
-    Telecrystal: 6
+    Telecrystal: 5 #Corvax price 
   categories:
   - UplinkWeaponry
   conditions:
@@ -387,9 +387,9 @@
   productEntity: ClothingBackpackDuffelSyndicateC4tBundle
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 8
+    Telecrystal: 6 #Corvax price 
   cost:
-    Telecrystal: 12 #you're buying bulk so its a 25% discount, so no additional random discount over it
+    Telecrystal: 10 #Corvax price 
   categories:
   - UplinkExplosives
 
@@ -571,7 +571,7 @@
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi, state: icon }
   productEntity: SpeedLoaderMagnumAP
   cost:
-    Telecrystal: 3
+    Telecrystal: 2 #Corvax price 
   categories:
   - UplinkAmmo
 
@@ -713,7 +713,7 @@
   discountDownTo:
     Telecrystal: 2
   cost:
-    Telecrystal: 5
+    Telecrystal: 4 #Corvax price
   categories:
   - UplinkChemicals
 
@@ -812,7 +812,7 @@
   discountDownTo:
     Telecrystal: 2
   cost:
-    Telecrystal: 5
+    Telecrystal: 3 #Corvax price 
   categories:
   - UplinkDeception
 
@@ -917,10 +917,8 @@
   icon: { sprite: /Textures/Objects/Tools/Decoys/operative_decoy.rsi, state: folded }
   productEntity: ClothingBackpackDuffelSyndicateDecoyKitFilled
   discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 3
   cost:
-    Telecrystal: 6
+    Telecrystal: 2 #Corvax price 
   categories:
   - UplinkDeception
 
@@ -958,10 +956,8 @@
   description: uplink-emag-desc
   productEntity: Emag
   discountCategory: veryRareDiscounts
-  discountDownTo:
-    Telecrystal: 3
   cost:
-    Telecrystal: 5
+    Telecrystal: 3 #Corvax price 
   categories:
   - UplinkDisruption
 
@@ -1679,10 +1675,8 @@
   icon: { sprite: /Textures/Clothing/OuterClothing/Suits/eva_syndicate.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateEVABundle
   discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 1
   cost:
-    Telecrystal: 2
+    Telecrystal: 1 #Corvax price 
   categories:
   - UplinkWearables
 
@@ -1753,7 +1747,7 @@
   icon: { sprite: /Textures/Structures/Storage/Crates/syndicate.rsi, state: icon }
   productEntity: CrateCybersunJuggernautBundle
   cost:
-    Telecrystal: 12
+    Telecrystal: 14
   categories:
   - UplinkWearables
   conditions:
