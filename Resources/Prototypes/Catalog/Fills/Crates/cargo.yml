@@ -176,6 +176,9 @@
     - id: ClothingUniformJumpsuitFamilyGuy
       prob: 0.05
       orGroup: Clothes
+    - id: ClothingBackpackDuffelSalvageSCAF # Corvax-Next SCAF
+      prob: 0.01
+      orGroup: Clothes
     - id: ClothingOuterHardsuitCBURN
       prob: 0.001
       orGroup: Clothes
