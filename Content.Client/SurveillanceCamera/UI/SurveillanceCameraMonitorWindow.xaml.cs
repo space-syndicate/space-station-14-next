@@ -23,7 +23,6 @@ public sealed partial class SurveillanceCameraMonitorWindow : FancyWindow
 {
     [Dependency] private readonly IEntityManager _entManager = null!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = null!;
-    [Dependency] private readonly IResourceCache _resourceCache = null!;
     private readonly SpriteSystem _spriteSystem;
 
     public event Action<string>? CameraSelected;
@@ -102,7 +101,7 @@ public sealed partial class SurveillanceCameraMonitorWindow : FancyWindow
     // pass it here so that the UI can change its view.
     public void UpdateState(IEye? eye, HashSet<string> subnets, string activeAddress, string activeSubnet, Dictionary<string, string> cameras, Dictionary<string, NetEntity> camerasById)
     {
-        if (activeSubnet == _currentAddress)
+        if (activeSubnet == SelectedSubnet)
         {
             foreach (var (address, entity) in camerasById)
             {
@@ -112,8 +111,7 @@ public sealed partial class SurveillanceCameraMonitorWindow : FancyWindow
         else
             _camerasById = camerasById;
 
-        _currentAddress = activeSubnet;
-        _currentAddress = activeAddress;
+        _currentAddress = eye == null ? string.Empty : activeAddress;
         SetCameraView(eye);
 
         if (subnets.Count == 0)
@@ -169,14 +167,15 @@ public sealed partial class SurveillanceCameraMonitorWindow : FancyWindow
 
         foreach (var (key, entity) in camerasById)
         {
-            if (_cachedCoordinates.TryGetValue(key, out var coordinates))
-            {
-            }
-            else if (_entManager.TryGetComponent(_entManager.GetEntity(entity), out TransformComponent? transform))
+            EntityCoordinates coordinates;
+            if (_entManager.TryGetComponent(_entManager.GetEntity(entity), out TransformComponent? transform) && transform.Coordinates.IsValid(_entManager))
             {
                 coordinates = transform.Coordinates;
-                // кешируем корды на случай, если entity исчезнет из PVS
-                _cachedCoordinates.Add(key, coordinates);
+                // кешируем/обновляем корды на случай, если entity исчезнет из PVS
+                _cachedCoordinates[key] = coordinates;
+            }
+            else if (_cachedCoordinates.TryGetValue(key, out coordinates))
+            {
             }
             else
                 continue;
