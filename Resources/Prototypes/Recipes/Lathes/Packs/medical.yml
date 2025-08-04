@@ -6,7 +6,6 @@
   - Brutepack
   - Ointment
   - Gauze
-  - ClothingHeadsetInject #Corvax-Next
 
 - type: latheRecipePack
   id: BasicChemistryStatic
@@ -98,6 +97,7 @@
   - SyringeBluespace
   - LauncherSyringe
   - MiniSyringe
+  - ClothingHeadsetInject #Corvax-Next
 
 - type: latheRecipePack
   id: MedicalBoards

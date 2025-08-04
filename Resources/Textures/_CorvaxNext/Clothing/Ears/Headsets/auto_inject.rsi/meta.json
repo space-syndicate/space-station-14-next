@@ -1,14 +1,22 @@
 {
   "version": 1,
   "license": "CC-BY-SA-4.0",
-  "copyright": "Made by Hqlle and SonicHDC (github)",
+  "copyright": "Resprite from Goonstation_13 by HolyYogurt",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
     {
-      "name": "icon"
+      "name": "icon",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
     },
     {
       "name": "alt-equipped-EARS",

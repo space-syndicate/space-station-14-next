@@ -17,8 +17,8 @@
     
 - type: entity
   id: ClothingHeadsetInject
-  name: Headset with an auto-injector
-  description: headset with an auto-injector that activates in critical condition.
+  name: headset with an auto-injector
+  description: Headset with an auto-injector that activates in critical condition.
   parent: ClothingHeadset
   components:
     - type: Sprite
@@ -38,4 +38,4 @@
       solutionName: headset
       injectOnly: true
       onlyAffectsMobs: true
-    - type: AutoInjectOnCrit
+    - type: AutoInjector
