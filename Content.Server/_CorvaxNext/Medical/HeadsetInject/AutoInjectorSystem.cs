@@ -3,6 +3,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Chemistry.Components;
 using Content.Server.Chemistry.EntitySystems;
 using Content.Shared.Interaction;
+using Content.Shared.Chemistry.EntitySystems;
 
 namespace Content.Server._CorvaxNext.Medical.AutoInjector;
 
