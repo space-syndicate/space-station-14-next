@@ -81,8 +81,8 @@ public partial class NavMapControl : MapGridControl
     // Components
     private NavMapComponent? _navMap;
     private MapGridComponent? _grid;
-    private TransformComponent? _xform;
-    private PhysicsComponent? _physics;
+    protected TransformComponent? _xform; // corvax-next
+    protected PhysicsComponent? _physics; // corvax-next
     private FixturesComponent? _fixtures;
 
     // TODO: https://github.com/space-wizards/RobustToolbox/issues/3818

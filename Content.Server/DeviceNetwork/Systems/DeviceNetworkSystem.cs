@@ -203,6 +203,22 @@ namespace Content.Server.DeviceNetwork.Systems
             return network.Devices.ContainsKey(address);
         }
 
+        // corvax-next start
+        /// <summary>
+        /// Возвращает DeviceNet для объекта, в котором тот состоит
+        /// </summary>
+        public DeviceNet? GetDeviceNetForDevice(EntityUid uid, DeviceNetworkComponent? device)
+        {
+            if (!Resolve(uid, ref device, false))
+                return null;
+
+            if (!_networks.TryGetValue(device.DeviceNetId, out var deviceNet))
+                return null;
+
+            return deviceNet;
+        }
+        // corvax-next end
+
         public void SetReceiveFrequency(EntityUid uid, uint? frequency, DeviceNetworkComponent? device = null)
         {
             if (!Resolve(uid, ref device, false))

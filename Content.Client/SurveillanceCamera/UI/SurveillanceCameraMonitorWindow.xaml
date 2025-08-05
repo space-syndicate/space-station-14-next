@@ -1,9 +1,24 @@
-<DefaultWindow xmlns="https://spacestation14.io"
-               xmlns:viewport="clr-namespace:Content.Client.Viewport"
-               Title="{Loc 'surveillance-camera-monitor-ui-window'}">
-    <BoxContainer Orientation="Horizontal">
-        <BoxContainer Orientation="Vertical" MinWidth="350" VerticalExpand="True">
-            <!-- lazy -->
+<!-- corvax-next file -->
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      xmlns:corvaxui="clr-namespace:Content.Client._CorvaxNext.SurveillanceCamera.UI"
+                      Title="{Loc 'surveillance-camera-monitor-ui-window'}">
+    <BoxContainer Orientation="Horizontal" VerticalExpand="True" HorizontalExpand="True">
+        <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="true">
+            <corvaxui:SurveillanceCameraMonitorNavMapControl Name="NavMap" Margin="5 5" VerticalExpand="True" HorizontalExpand="True" />
+            <!-- Nav map legend -->
+            <BoxContainer Orientation="Horizontal" Margin="0 10 0 10">
+                <TextureRect Stretch="KeepAspectCentered"
+                             TexturePath="/Textures/Interface/NavMap/beveled_circle.png"
+                             Modulate="#ff0000"
+                             SetSize="16 16"
+                             Margin="20 0 5 0"/>
+                <Label Text="{Loc 'ent-SurveillanceWirelessCameraBase'}"/>
+                <Label Text="| Camera Scale: "/>
+                <Slider HorizontalExpand="True" Name="CameraScaleModifier" MinValue="0.1" Value="0.206" MaxValue="0.3"/>
+            </BoxContainer>
+        </BoxContainer>
+        <BoxContainer Orientation="Vertical" MinWidth="350" Margin="0 0 10 10" VerticalExpand="True">
             <OptionButton Name="SubnetSelector" />
             <Button Name="SubnetRefreshButton" Text="{Loc 'surveillance-camera-monitor-ui-refresh-subnets'}" />
             <ScrollContainer VerticalExpand="True">
@@ -13,13 +28,5 @@
             <Button Name="CameraDisconnectButton" Text="{Loc 'surveillance-camera-monitor-ui-disconnect'}" />
             <Label Name="CameraStatus" />
         </BoxContainer>
-        <Control VerticalExpand="True" HorizontalExpand="True" Margin="5 5 5 5" Name="CameraViewBox">
-            <viewport:ScalingViewport Name="CameraView"
-                                      VerticalExpand="True"
-                                      HorizontalExpand="True"
-                                      MinSize="500 500"
-                                      MouseFilter="Ignore" />
-            <TextureRect VerticalExpand="True" HorizontalExpand="True" MinSize="500 500" Name="CameraViewBackground" />
-        </Control>
     </BoxContainer>
-</DefaultWindow>
+</controls:FancyWindow>
