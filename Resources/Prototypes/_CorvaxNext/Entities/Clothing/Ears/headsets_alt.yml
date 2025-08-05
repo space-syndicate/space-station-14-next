@@ -14,3 +14,28 @@
     sprite: _CorvaxNext/Clothing/Ears/Headsets/vox_raiders.rsi
   - type: Clothing
     sprite: _CorvaxNext/Clothing/Ears/Headsets/vox_raiders.rsi
+    
+- type: entity
+  id: ClothingHeadsetInject
+  name: headset with an auto-injector
+  description: Headset with an auto-injector that activates in critical condition.
+  parent: ClothingHeadset
+  components:
+    - type: Sprite
+      sprite: _CorvaxNext/Clothing/Ears/Headsets/auto_inject.rsi
+    - type: Clothing
+      sprite: _CorvaxNext/Clothing/Ears/Headsets/auto_inject.rsi
+    - type: SolutionContainerManager
+      solutions:
+        headset:
+          maxVol: 10
+    - type: RefillableSolution
+      solution: headset
+    - type: InjectableSolution
+      solution: headset
+    - type: Hypospray
+      transferAmount: 10
+      solutionName: headset
+      injectOnly: true
+      onlyAffectsMobs: true
+    - type: AutoInjector
