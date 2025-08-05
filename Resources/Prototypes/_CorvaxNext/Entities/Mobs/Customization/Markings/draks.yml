@@ -1,0 +1,149 @@
+- type: humanoidBaseSprite
+  id: MobDraksEyes
+  baseSprite:
+    sprite: _CorvaxNext/Mobs/Customization/Draks/eyes.rsi
+    state: eyes
+
+- type: marking
+  id: DraksForearmLarm
+  markingCategory: Arms
+  bodyPart: LArm
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.rsi
+      state: forearm_l_arm
+
+- type: marking
+  id: DraksForearmRarm
+  markingCategory: Arms
+  bodyPart: RArm
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.rsi
+      state: forearm_r_arm
+
+- type: marking
+  id: DraksLongLarm
+  markingCategory: Arms
+  bodyPart: LArm
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.rsi
+      state: long_l_arm
+
+- type: marking
+  id: DraksLongRarm
+  markingCategory: Arms
+  bodyPart: RArm
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.rsi
+      state: long_r_arm
+
+- type: marking
+  id: DraksStandartLarm
+  markingCategory: Arms
+  bodyPart: LArm
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.rsi
+      state: standart_l_arm
+
+- type: marking
+  id: DraksStandartRarm
+  markingCategory: Arms
+  bodyPart: RArm
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.rsi
+      state: standart_r_arm
+
+- type: marking
+  id: DraksUpperLarm
+  markingCategory: Arms
+  bodyPart: LArm
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.rsi
+      state: upper_l_arm
+
+- type: marking
+  id: DraksUpperRarm
+  markingCategory: Arms
+  bodyPart: RArm
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/outgrowth.rsi
+      state: upper_r_arm
+
+- type: marking
+  id: DraksLarge
+  markingCategory: HeadTop
+  bodyPart: HeadTop
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.rsi
+      state: large
+
+- type: marking
+  id: DraksLush
+  markingCategory: HeadTop
+  bodyPart: HeadTop
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.rsi
+      state: lush
+
+- type: marking
+  id: DraksMedium
+  markingCategory: HeadTop
+  bodyPart: HeadTop
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.rsi
+      state: medium
+
+- type: marking
+  id: DraksShort
+  markingCategory: HeadTop
+  bodyPart: HeadTop
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.rsi
+      state: short
+
+- type: marking
+  id: DraksUntidy
+  markingCategory: HeadTop
+  bodyPart: HeadTop
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/tentackles.rsi
+      state: untidy
+
+- type: marking
+  id: DraksEyes
+  markingCategory: Head
+  bodyPart: Head
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/eyes.rsi
+      state: eyes
+
+- type: marking
+  id: DraksCute
+  markingCategory: Head
+  bodyPart: Head
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/eyes.rsi
+      state: cute
+
+- type: marking
+  id: DraksTired
+  markingCategory: Head
+  bodyPart: Head
+  speciesRestriction: [Draks]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/Draks/eyes.rsi
+      state: tired
