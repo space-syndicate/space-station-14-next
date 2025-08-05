@@ -1,6 +1,5 @@
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Content.Server.Chat.Systems;
-using Content.Server.Communications;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.GameTicking;
@@ -50,8 +49,6 @@ public sealed partial class TTSSystem : EntitySystem
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
 
         SubscribeNetworkEvent<RequestPreviewTTSEvent>(OnRequestPreviewTTS);
-
-        SubscribeLocalEvent<CommunicationConsoleAnnouncementEvent>(OnConsoleAnnouncement); // CorvaxNext-TTSAnnouncements
 
         RegisterRateLimits();
     }

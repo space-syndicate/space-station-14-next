@@ -1,4 +1,3 @@
-using Content.Shared._CorvaxNext;
 using Content.Shared.Chat;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.TTS;
@@ -16,7 +15,7 @@ namespace Content.Client.Corvax.TTS;
 /// Plays TTS audio in world
 /// </summary>
 // ReSharper disable once InconsistentNaming
-public sealed partial class TTSSystem : EntitySystem // CorvaxNext-TTSAnnouncements : added partial mod to class
+public sealed class TTSSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IResourceManager _res = default!;
@@ -52,10 +51,6 @@ public sealed partial class TTSSystem : EntitySystem // CorvaxNext-TTSAnnounceme
         _sawmill = Logger.GetSawmill("tts");
         _cfg.OnValueChanged(CCCVars.TTSVolume, OnTtsVolumeChanged, true);
         SubscribeNetworkEvent<PlayTTSEvent>(OnPlayTTS);
-
-        SubscribeNetworkEvent<TTSAnnouncedEvent>(OnAnnounced); // CorvaxNext-TTSAnnouncements
-
-        _startSoundLength = _audio.GetAudioLength(_audio.ResolveSound(_startSound!)); // CorvaxNext-TTSAnnouncements
     }
 
     public override void Shutdown()
