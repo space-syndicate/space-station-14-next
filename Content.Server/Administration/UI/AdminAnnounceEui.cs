@@ -1,3 +1,4 @@
+using Content.Server.Corvax.TTS;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat;
 using Content.Server.Chat.Managers;
@@ -22,6 +23,7 @@ namespace Content.Server.Administration.UI
         {
             IoCManager.InjectDependencies(this);
             _chatSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<ChatSystem>();
+            _tts = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<TTSSystem>()!; // CorvaxNext-TTS
         }
 
         public override void Opened()

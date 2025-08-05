@@ -1,3 +1,4 @@
+using Content.Server.Corvax.TTS;
 using Content.Server.Administration;
 using Content.Server.Chat.Systems;
 using Content.Shared.Administration;
@@ -30,7 +31,7 @@ public sealed class AnnounceCommand : LocalizedEntityCommands
             case 0:
                 shell.WriteError(Loc.GetString("shell-need-minimum-one-argument"));
                 return;
-            case > 4:
+            case > 5: // CorvaxNext-TTS Edit from 4 to 5
                 shell.WriteError(Loc.GetString("shell-wrong-arguments-number"));
                 return;
         }
@@ -83,6 +84,7 @@ public sealed class AnnounceCommand : LocalizedEntityCommands
                 CompletionHelper.AudioFilePath(args[3], _proto, _res),
                 Loc.GetString("cmd-announce-arg-sound")
             ),
+            5 => CompletionResult.FromHint(Loc.GetString("cmd-announce-arg-voice")), // CorvaxNext-TTS
             _ => CompletionResult.Empty
         };
     }
