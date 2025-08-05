@@ -6,6 +6,8 @@ using Robust.Shared.Audio;
 using Robust.Shared.Console;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Configuration;
+using Content.Shared.Corvax.CCCVars;
 
 namespace Content.Server.Announcements;
 
@@ -14,6 +16,7 @@ public sealed class AnnounceCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly TTSSystem _tts = default!; // CorvaxNext-TTS
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IResourceManager _res = default!;
 
@@ -63,12 +66,9 @@ public sealed class AnnounceCommand : LocalizedEntityCommands
         _chat.DispatchGlobalAnnouncement(message, sender, true, sound, color);
 
         // CorvaxNext-TTS-Start
-        if (args.Length >= 5)
-        {
-            _tts.SendTTSAdminAnnouncement(message, args[4]);
-
-        }
-         // CorvaxNext-TTS-Start
+        if (args.Length >= 5 && _cfg.GetCVar(CCCVars.TTSEnabled))
+            _tts.SendTTSAdminAnnouncement(message, args[4], args[3]);
+        // CorvaxNext-TTS-Start
 
         shell.WriteLine(Loc.GetString("shell-command-success"));
     }

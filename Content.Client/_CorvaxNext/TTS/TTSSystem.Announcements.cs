@@ -74,12 +74,20 @@ public sealed partial class TTSSystem
         var noiseParams = AudioParams.Default
             .WithLoop(true);
 
-        var mainSound = _audio.PlayGlobal(soundSpecifier, Filter.Local(), true, audioParams);
+
+        try // I really don't sure about method SetEffect so I just put it into try-catch
+        {
+            var mainSound = _audio.PlayGlobal(soundSpecifier, Filter.Local(), true, audioParams);
+
+            _audio.SetEffect(mainSound!.Value.Entity, mainSound.Value.Component, "TTSCommunication");
+        }
+        catch (Exception ex)
+        {
+            _sawmill.Error($"Failed to apply audio effect: {ex}");
+        }
 
         _endTime = _audio.GetAudioLength(_audio.ResolveSound(soundSpecifier)) + _timing.CurTime + TimeSpan.FromSeconds(0.5);
         _isPlayingTTS = true;
-
-        _audio.SetEffect(mainSound!.Value.Entity, mainSound.Value.Component, "TTSCommunication");
 
         _contentRoot.RemoveFile(filePath);
     }
@@ -99,4 +107,3 @@ public sealed partial class TTSSystem
         _isPlayingIntro = true;
     }
 }
-

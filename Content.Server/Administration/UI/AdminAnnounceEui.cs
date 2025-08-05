@@ -6,6 +6,8 @@ using Content.Server.Chat.Systems;
 using Content.Server.EUI;
 using Content.Shared.Administration;
 using Content.Shared.Eui;
+using Content.Shared.Corvax.CCCVars;
+using Robust.Shared.Configuration;
 
 namespace Content.Server.Administration.UI
 {
@@ -13,6 +15,7 @@ namespace Content.Server.Administration.UI
     {
         [Dependency] private readonly IAdminManager _adminManager = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
+        [Dependency] private readonly IConfigurationManager _cfg = default!;
         private readonly TTSSystem _tts; // CorvaxNext-TTS
         private readonly ChatSystem _chatSystem;
 
@@ -54,7 +57,8 @@ namespace Content.Server.Administration.UI
                         // TODO: Per-station announcement support
                         case AdminAnnounceType.Station:
                             _chatSystem.DispatchGlobalAnnouncement(doAnnounce.Announcement, doAnnounce.Announcer, colorOverride: Color.Gold);
-                            _tts.SendTTSAdminAnnouncement(doAnnounce.Announcement, doAnnounce.Voice); // CorvaxNext-TTS
+                            if (_cfg.GetCVar(CCCVars.TTSEnabled))
+                                _tts.SendTTSAdminAnnouncement(doAnnounce.Announcement, doAnnounce.Voice); // CorvaxNext-TTS
                             break;
                     }
 
