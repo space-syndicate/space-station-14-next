@@ -634,55 +634,11 @@
     proto: BulletTaserSuper
     fireCost: 200
 
-- type: entity
-  name: antique laser pistol
-  parent: [BaseWeaponBatterySmall, BaseGrandTheftContraband]
-  id: WeaponAntiqueLaser
-  description: This is an antique laser pistol. All craftsmanship is of the highest quality. It is decorated with a mahogany grip and chrome filigree. The object menaces with spikes of energy. On the item is an image of a captain and a clown. The clown is dead. The captain is striking a heroic pose.
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/antiquelasergun.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-unshaded-4
-      map: ["enum.GunVisualLayers.MagUnshaded"]
-      shader: unshaded
-  - type: Clothing
-    sprite: Objects/Weapons/Guns/Battery/antiquelasergun.rsi
-  - type: Gun
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
-  - type: HitscanBatteryAmmoProvider
-    proto: RedMediumLaser
-    fireCost: 100
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargeRate: 40
-  - type: MagazineVisuals
-    magState: mag
-    steps: 5
-    zeroVisible: true
-  - type: Appearance
-  - type: Tag
-    tags:
-    - HighRiskItem
-    - Sidearm
-    - WeaponAntiqueLaser
-  - type: StaticPrice
-    price: 750
-  - type: StealTarget
-    stealGroup: WeaponAntiqueLaser
-  - type: SentienceTarget # I hope this is only the captain's gun
-    flavorKind: station-event-random-sentience-flavor-inanimate
-    weight: 0.0002 # 5,000 times less likely than 1 regular animal
-    # not putting a BlockMovement component here cause that's funny.
-  - type: Multishot # Goobstation
 
 - type: entity
   name: Автомат КЛ
   parent: [BaseWeaponBatterySmall, BaseGrandTheftContraband]
-  id: WeaponKLLaser
+  id: WeaponAntiqueLaser
   description: Этот автомат довольно старая переделка автомата Калашникова под лазерные пули.
   components:
   - type: Sprite
