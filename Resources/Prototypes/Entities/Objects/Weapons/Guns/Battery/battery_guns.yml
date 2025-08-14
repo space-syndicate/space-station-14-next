@@ -642,7 +642,11 @@
   description: Этот автомат довольно старая переделка автомата Калашникова под лазерные пули.
   components:
   - type: Sprite
+<<<<<<< HEAD
     sprite: Objects/Weapons/Guns/Battery/aidar.rsi
+=======
+    sprite: Objects/Weapons/Guns/Battery/kl_laser_rifle.rsi
+>>>>>>> 2da14e1f94 (Обновление оружия)
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -650,7 +654,11 @@
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
   - type: Clothing
+<<<<<<< HEAD
     sprite: Objects/Weapons/Guns/Battery/aidar.rsi
+=======
+    sprite: Objects/Weapons/Guns/Battery/kl_laser_rifle.rsi
+>>>>>>> 2da14e1f94 (Обновление оружия)
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg # Или другой подходящий звук
@@ -687,7 +695,11 @@
   - type: Item
     size: Normal  # Intentionally larger than other pistols
   - type: Sprite
+<<<<<<< HEAD
     sprite: Objects/Weapons/Guns/Battery/aidar.rsi
+=======
+    sprite: Objects/Weapons/Guns/Battery/kl_laser_rifle.rsi
+>>>>>>> 2da14e1f94 (Обновление оружия)
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -695,7 +707,11 @@
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
   - type: Clothing
+<<<<<<< HEAD
     sprite: Objects/Weapons/Guns/Battery/aidar.rsi
+=======
+    sprite: Objects/Weapons/Guns/Battery/kl_laser_rifle.rsi
+>>>>>>> 2da14e1f94 (Обновление оружия)
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
