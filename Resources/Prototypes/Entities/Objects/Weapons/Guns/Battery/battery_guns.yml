@@ -680,49 +680,6 @@
   - type: Multishot # Goobstation
 
 - type: entity
-  name: Автомат КЛ
-  parent: [BaseWeaponBatterySmall, BaseGrandTheftContraband]
-  id: WeaponKLLaser
-  description: Этот автомат довольно старая переделка автомата Калашникова под лазерные пули.
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/kl_laser_rifle.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-unshaded-4  # Изменил на 5
-      map: ["enum.GunVisualLayers.MagUnshaded"]
-      shader: unshaded
-  - type: Clothing
-    sprite: Objects/Weapons/Guns/Battery/kl_laser_rifle.rsi
-  - type: Gun
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg # Или другой подходящий звук
-  - type: HitscanBatteryAmmoProvider
-    proto: RedMediumLaser  # Или другой подходящий лазерный прототип
-    fireCost: 150          # Настройте цену выстрела
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargeRate: 30   # Настройте скорость перезарядки
-  - type: MagazineVisuals
-    magState: mag          # Состояние для полного магазина
-    steps: 6               # Количество шагов (состояний) магазина, включая 0
-    zeroVisible: true     # Показывать ли состояние mag-unshaded-0
-  - type: Appearance
-  - type: Tag
-    tags:
-    - HighRiskItem
-    - Sidearm         # Если это пистолет, иначе - Rifle
-    - WeaponKLLaser
-  - type: StaticPrice
-    price: 900          # Настройте цену
-  - type: StealTarget
-    stealGroup: WeaponKLLaser
-
-
-
-
-- type: entity
   name: advanced laser pistol
   parent: [BaseWeaponBatterySmall, BaseSecurityContraband]
   id: WeaponAdvancedLaser
