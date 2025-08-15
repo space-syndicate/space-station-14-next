@@ -638,11 +638,11 @@
 - type: entity
   name: Автомат КЛ
   parent: [BaseWeaponBatterySmall, BaseGrandTheftContraband]
-  id: WeaponKL
+  id: WeaponAntiqueLaser
   description: Этот автомат довольно старая переделка автомата Калашникова под лазерные пули.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/kl_laser_rifle.rsi
+    sprite: Objects/Weapons/Guns/LMGs/l6.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -650,7 +650,7 @@
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Battery/kl_laser_rifle.rsi
+    sprite: Objects/Weapons/Guns/LMGs/l6.rsi
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg # Или другой подходящий звук
@@ -687,7 +687,7 @@
   - type: Item
     size: Normal  # Intentionally larger than other pistols
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/kl_laser_rifle.rsi
+    sprite: Objects/Weapons/Guns/Battery/advancedlasergun.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -695,7 +695,7 @@
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Battery/kl_laser_rifle.rsi
+    sprite: Objects/Weapons/Guns/Battery/advancedlasergun.rsi
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
