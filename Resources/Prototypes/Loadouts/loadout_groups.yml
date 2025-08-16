@@ -98,6 +98,8 @@
   - EmergencyOxygen
   - LoadoutSpeciesVoxNitrogen
   - EmergencyOxygenMoth # Corvax-Next-MothLoadout
+  - EmergencyNoAirIpc # Corvax-Next-emergency-box-for-IPC
+
 
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
@@ -397,6 +399,17 @@
   - ChaplainNeck
 
 - type: loadoutGroup
+  id: ChaplainBible
+  name: loadout-group-chaplain-bible
+  minLimit: 1
+  loadouts:
+  - Bible
+  - BibleDruid
+  - BibleNanoTrasen
+  - BibleSatanic
+  - BibleTanakh
+
+- type: loadoutGroup
   id: JanitorHead
   name: loadout-group-janitor-head
   minLimit: 0
@@ -515,6 +528,8 @@
   - EmergencyOxygenClown
   - LoadoutSpeciesVoxNitrogen
   - EmergencyOxygenClownMoth # Corvax-Next-MothLoadout
+  - EmergencyNoAirClownIpc # Corvax-Next-emergency-box-for-IPC
+
 
 - type: loadoutGroup
   id: MimeHead
@@ -573,6 +588,8 @@
   - EmergencySpeciesMothMime
   - LoadoutSpeciesVoxNitrogen
   - EmergencyOxygenMimeMoth # Corvax-Next-MothLoadout
+  - EmergencyNoAirMimeIpc # Corvax-Next-emergency-box-for-IPC
+
 
 - type: loadoutGroup
   id: MusicianJumpsuit
@@ -860,6 +877,8 @@
   - EmergencyOxygenExtended
   - LoadoutSpeciesVoxNitrogen
   - EmergencyOxygenExtendedMoth # Corvax-Next-MothLoadout
+  - EmergencyNoAirExtended # Corvax-Next-emergency-box-for-IPC
+
 
 # Science
 - type: loadoutGroup
@@ -1153,6 +1172,8 @@
   - EmergencyOxygenSecurity
   - LoadoutSpeciesVoxNitrogen
   - EmergencyOxygenSecurityMoth # Corvax-Next-MothLoadout
+  - EmergencyNoAirSecurityIpc # Corvax-Next-emergency-box-for-IPC
+
 
 - type: loadoutGroup
   id: SecurityStar
@@ -1355,6 +1376,8 @@
   - EmergencyOxygenMedical
   - LoadoutSpeciesVoxNitrogen
   - EmergencyOxygenMedicalMoth # Corvax-Next-MothLoadout
+  - EmergencyNoAirMedicalIpc # Corvax-Next-emergency-box-for-IPC
+
 
 # Wildcards
 - type: loadoutGroup
@@ -1397,6 +1420,7 @@
   - EmergencyNitrogenSyndicate
   - EmergencyOxygenSyndicate
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyNoAirSyndicateIpc # Corvax-Next-emergency-box-for-IPC
 
 - type: loadoutGroup
   id: GroupSpeciesBreathTool

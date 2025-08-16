@@ -85,7 +85,7 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
 
     private void OnStartup(Entity<BlobObserverComponent> ent, ref ComponentStartup args)
     {
-        _hands.AddHand(ent,"BlobHand",HandLocation.Middle);
+        _hands.AddHand(ent.Owner,"BlobHand",HandLocation.Middle);
 
         ent.Comp.VirtualItem = Spawn(MobObserverBlobController, Transform(ent).Coordinates);
         var comp = EnsureComp<BlobObserverControllerComponent>(ent.Comp.VirtualItem);
@@ -174,7 +174,9 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
             return;
         }
 
-        _action.GrantActions(uid, component.Core.Value.Comp.Actions, component.Core.Value);
+
+
+        _action.GrantActions(uid, component.Core.Value.Comp.Actions, component.Core.Value.Owner);
         _viewSubscriberSystem.AddViewSubscriber(component.Core.Value, playerSession); // GrantActions require keep in pvs
     }
 
@@ -332,7 +334,7 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
         var newCore = Spawn(blobCoreComponent.TilePrototypes[BlobTileType.Core], args.Target);
 
         blobCoreComponent.CanSplit = false;
-        _action.RemoveAction(args.Action);
+        _action.RemoveAction(args.Action.Owner);
 
         if (TryComp<BlobCoreComponent>(newCore, out var newBlobCoreComponent))
         {

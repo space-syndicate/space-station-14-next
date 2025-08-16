@@ -1,12 +1,12 @@
 using Content.Shared.Projectiles;
-using Content.Shared._CorvaxNext.Standing;
 using Content.Shared.Throwing;
+using Content.Shared.Standing;
 
 namespace Content.Shared._White.Collision.Knockdown;
 
 public sealed class KnockdownOnCollideSystem : EntitySystem
 {
-    [Dependency] private readonly SharedLayingDownSystem _layingDown = default!;
+    [Dependency] private readonly StandingStateSystem _standing = default!;
 
     public override void Initialize()
     {
@@ -28,6 +28,6 @@ public sealed class KnockdownOnCollideSystem : EntitySystem
 
     private void ApplyEffects(EntityUid target, KnockdownOnCollideComponent component)
     {
-        _layingDown.TryLieDown(target, null, null, component.Behavior);
+        _standing.Down(target, force: true, dropHeldItems: component.DropItems);
     }
 }

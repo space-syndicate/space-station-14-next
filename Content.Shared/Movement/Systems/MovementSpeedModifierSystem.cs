@@ -1,9 +1,8 @@
 using System.Text.Json.Serialization.Metadata;
-using Content.Shared._CorvaxNext.Standing;
+using Content.Shared.Movement.Events;
 using Content.Shared.CCVar;
 using Content.Shared.Inventory;
 using Content.Shared.Movement.Components;
-using Content.Shared.Movement.Events;
 using Content.Shared.Standing;
 using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
@@ -13,25 +12,22 @@ namespace Content.Shared.Movement.Systems
     public sealed class MovementSpeedModifierSystem : EntitySystem
     {
         [Dependency] private readonly IGameTiming _timing = default!;
-        [Dependency] private   readonly IConfigurationManager _configManager = default!;
+        [Dependency] private readonly IConfigurationManager _configManager = default!;
 
         private float _frictionModifier;
         private float _airDamping;
         private float _offGridDamping;
 
-        private EntityQuery<LayingDownComponent> _layerQuery; // Corvax-Next-Laying
-        private EntityQuery<StandingStateComponent> _standingStateQuery; // Corvax-Next-Laying
         public override void Initialize()
         {
             base.Initialize();
             SubscribeLocalEvent<MovementSpeedModifierComponent, MapInitEvent>(OnModMapInit);
+            SubscribeLocalEvent<MovementSpeedModifierComponent, DownedEvent>(OnDowned);
+            SubscribeLocalEvent<MovementSpeedModifierComponent, StoodEvent>(OnStand);
 
             Subs.CVar(_configManager, CCVars.TileFrictionModifier, value => _frictionModifier = value, true);
             Subs.CVar(_configManager, CCVars.AirFriction, value => _airDamping = value, true);
             Subs.CVar(_configManager, CCVars.OffgridFriction, value => _offGridDamping = value, true);
-
-            _layerQuery = GetEntityQuery<LayingDownComponent>(); // Corvax-Next-Laying
-            _standingStateQuery = GetEntityQuery<StandingStateComponent>(); // Corvax-Next-Laying
         }
 
         private void OnModMapInit(Entity<MovementSpeedModifierComponent> ent, ref MapInitEvent args)
@@ -46,6 +42,18 @@ namespace Content.Shared.Movement.Systems
             ent.Comp.Friction = _frictionModifier * ent.Comp.BaseFriction;
             ent.Comp.FrictionNoInput = _frictionModifier * ent.Comp.BaseFriction;
             Dirty(ent);
+        }
+
+        private void OnDowned(Entity<MovementSpeedModifierComponent> entity, ref DownedEvent args)
+        {
+            RefreshFrictionModifiers(entity);
+            RefreshMovementSpeedModifiers(entity);
+        }
+
+        private void OnStand(Entity<MovementSpeedModifierComponent> entity, ref StoodEvent args)
+        {
+            RefreshFrictionModifiers(entity);
+            RefreshMovementSpeedModifiers(entity);
         }
 
         public void RefreshWeightlessModifiers(EntityUid uid, MovementSpeedModifierComponent? move = null)
@@ -95,25 +103,12 @@ namespace Content.Shared.Movement.Systems
             var ev = new RefreshMovementSpeedModifiersEvent();
             RaiseLocalEvent(uid, ev);
 
-            // start-_CorvaxNext: layingdown
-            var walkSpeedModifier = ev.WalkSpeedModifier;
-            var sprintSpeedModifier = ev.SprintSpeedModifier;
-            // cap moving speed while laying
-            if (_standingStateQuery.TryComp(uid, out var standing) &&
-                !standing.Standing &&
-                _layerQuery.TryComp(uid, out var layingDown))
-            {
-                walkSpeedModifier = Math.Min(walkSpeedModifier, layingDown.SpeedModify);
-                sprintSpeedModifier = Math.Min(sprintSpeedModifier, layingDown.SpeedModify);
-            }
-            // end-_CorvaxNext: layingdows
-
-            if (MathHelper.CloseTo(walkSpeedModifier, move.WalkSpeedModifier) &&
-                MathHelper.CloseTo(sprintSpeedModifier, move.SprintSpeedModifier))
+            if (MathHelper.CloseTo(ev.WalkSpeedModifier, move.WalkSpeedModifier) &&
+                MathHelper.CloseTo(ev.SprintSpeedModifier, move.SprintSpeedModifier))
                 return;
 
-            move.WalkSpeedModifier = walkSpeedModifier;
-            move.SprintSpeedModifier = sprintSpeedModifier;
+            move.WalkSpeedModifier = ev.WalkSpeedModifier;
+            move.SprintSpeedModifier = ev.SprintSpeedModifier;
             Dirty(uid, move);
         }
 

@@ -12,7 +12,6 @@ using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Eye.Blinding.Systems;
-using Content.Shared._CorvaxNext.Standing;
 using Content.Shared.Hands.Components;
 using Content.Shared.Heretic;
 using Content.Shared.Interaction;
@@ -20,6 +19,7 @@ using Content.Shared.Item;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Speech.Muting;
+using Content.Shared.Standing;
 using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
 using Content.Shared.Tag;
@@ -172,7 +172,7 @@ public sealed partial class MansusGraspSystem : EntitySystem
 
                     // ultra stun if the person is looking away or laying down
                     var degrees = Transform(target).LocalRotation.Degrees - Transform(performer).LocalRotation.Degrees;
-                    if (HasComp<LayingDownComponent>(target) // laying down
+                    if (HasComp<StandingStateComponent>(target) // laying down
                     || (degrees >= 160 && degrees <= 210));
                     break;
                 }
@@ -235,7 +235,7 @@ public sealed partial class MansusGraspSystem : EntitySystem
         }
 
         if (TryComp<HandsComponent>(target, out var hands))
-            _hands.TryDrop(target, Transform(target).Coordinates, handsComp: hands);
+            _hands.TryDrop(target, Transform(target).Coordinates);
 
         SpendInfusionCharges(ent, charges: ent.Comp.MaxCharges); // spend all because RCHTHTRTH
     }

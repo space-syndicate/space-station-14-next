@@ -118,6 +118,9 @@
         - SurveillanceCameraGeneral
         - SurveillanceCameraMedical
         - SurveillanceCameraCommand
+    - type: RCDDeconstructable # Corvax-Next-Camera-In-RCD
+      cost: 4
+      delay: 6
 
 - type: entity
   parent: SurveillanceCameraBase

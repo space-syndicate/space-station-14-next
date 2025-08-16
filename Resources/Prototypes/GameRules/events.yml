@@ -50,8 +50,8 @@
   components:
   - type: GameRule
     delay:
-      min:  10
-      max:  20
+      min:  20 # Corax-MRP # 10
+      max:  30 # Corax-MRP # 20
 
 - type: entity
   id: BaseStationEventShortDelay
@@ -60,8 +60,8 @@
   components:
   - type: GameRule
     delay:
-      min:  10
-      max:  20
+      min:  20 # Corax-MRP # 10
+      max:  30 # Corax-MRP # 20
 
 - type: entity
   id: BaseStationEventLongDelay
@@ -70,8 +70,8 @@
   components:
   - type: GameRule
     delay:
-      min:  40
-      max:  60
+      min:  50 # Corax-MRP # 40
+      max:  70 # Corax-MRP # 60
 
 - type: entity
   id: AnomalySpawn
@@ -166,9 +166,9 @@
   id: DragonSpawn
   components:
   - type: StationEvent
-    weight: 6.5
-    earliestStart: 40
-    reoccurrenceDelay: 20
+    weight: 4.5 # Corvax-Next-event
+    earliestStart: 50 # Corax-MRP # 40
+    reoccurrenceDelay: 30 # Corax-MRP # 20
     minimumPlayers: 20
     duration: null
   - type: SpaceSpawnRule
@@ -237,6 +237,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab # Corvax-Next-Grab
       - type: AutoImplant
         implants:
         - DeathAcidifierImplant
@@ -291,6 +292,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab # Corvax-Next-Grab
 
 - type: entity
   parent: BaseGameRule
@@ -300,7 +302,7 @@
     weight: 7.5
     duration: 1
     earliestStart: 45
-    minimumPlayers: 20
+    minimumPlayers: 30 # Corax-MRP # 20
   - type: RandomSpawnRule
     prototype: MobRevenant
 
@@ -311,9 +313,9 @@
   - type: StationEvent
     weight: 1 # rare
     duration: 1
-    earliestStart: 30
+    earliestStart: 40 # Corax-MRP # 30
     reoccurrenceDelay: 60
-    minimumPlayers: 10
+    minimumPlayers: 40 #Corvax-Next wizard-gamerule-rebalance
   - type: AntagSelection
     agentName: wizard-round-end-name
     definitions:
@@ -347,6 +349,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab # Corvax-Next-Grab
         nameFormat: name-format-wizard
       mindRoles:
       - MindRoleWizard
@@ -461,7 +464,7 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    earliestStart: 20
+    earliestStart: 30 # Corax-MRP # 20
     minimumPlayers: 15
     weight: 5
     duration: 60
@@ -482,7 +485,7 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    earliestStart: 20
+    earliestStart: 30 # Corax-MRP # 20
     minimumPlayers: 15
     weight: 5
     duration: 60
@@ -503,7 +506,7 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    earliestStart: 20
+    earliestStart: 30 # Corax-MRP # 20
     minimumPlayers: 15
     weight: 5
     duration: 60
@@ -520,7 +523,7 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    earliestStart: 20
+    earliestStart: 30 # Corax-MRP # 20
     minimumPlayers: 20
     weight: 1.5
     duration: 60
@@ -559,6 +562,15 @@
       - type: ZombifyOnDeath
       - type: IncurableZombie
       - type: InitialInfected
+      - type: CanChokeGrab # Corvax-Next-Grab
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       # Corvax-MRP
       - type: NpcFactionMember
         addFriendlyFactions:
@@ -572,8 +584,8 @@
   id: LoneOpsSpawn
   components:
   - type: StationEvent
-    earliestStart: 35
-    weight: 5.5
+    earliestStart: 40 # Corax-MRP # 30
+    weight: 4.5 # Corvax-Next-Event
     minimumPlayers: 20
     duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end scrreen (not always "Neutral outcome!") and... ending the game if the station is nuked.
   - type: RuleGrids
@@ -608,32 +620,17 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab # Corvax-Next-Grab
       mindRoles:
       - MindRoleNukeops
 
-# Blob Midround
-- type: entity
-  parent: BaseGameRule
-  id: BlobMidround
-  components:
-  - type: StationEvent
-    weight: 4
-    earliestStart: 55
-    minimumPlayers: 25
-    duration: null
-    maxOccurrences: 2
-  - type: BlobSpawnRule
-    carrierBlobProtos:
-    - SpawnPointGhostBlobRat
-    playersPerCarrierBlob: 35
-    maxCarrierBlob: 2
 
 - type: entity
   parent: BaseTraitorRule
   id: SleeperAgents
   components:
   - type: StationEvent
-    earliestStart: 30
+    earliestStart: 40 # Corax-MRP #
     weight: 8
     minimumPlayers: 15
     maxOccurrences: 1 # can only happen once per round
@@ -662,6 +659,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab # Corvax-Next-Grab
       mindRoles:
       - MindRoleTraitorSleeper
 

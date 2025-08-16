@@ -1,4 +1,9 @@
+﻿using Content.Shared._CorvaxNext.Body.Components;
+
 namespace Content.Client._CorvaxNext.Body.Components;
 
 [RegisterComponent]
-public sealed partial class BrainComponent : Component;
+public sealed partial class BrainComponent : SharedBrainComponent
+{
+
+}

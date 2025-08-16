@@ -1,12 +1,14 @@
 using Content.Shared.Alert;
 using Content.Shared._CorvaxNext.OfferItem;
 using Content.Shared.Hands.Components;
+using Content.Server.Hands.Systems;
 
 namespace Content.Server._CorvaxNext.OfferItem;
 
 public sealed class OfferItemSystem : SharedOfferItemSystem
 {
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
+    [Dependency] private readonly HandsSystem _hands = default!;
 
     private float _offerAcc = 0;
     private const float OfferAccMax = 3f;
@@ -23,10 +25,10 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
         var query = EntityQueryEnumerator<OfferItemComponent, HandsComponent>();
         while (query.MoveNext(out var uid, out var offerItem, out var hands))
         {
-            if (hands.ActiveHand is null)
+            if (hands.ActiveHandId is null)
                 continue;
 
-            if (offerItem.Hand is not null && hands.Hands[offerItem.Hand].HeldEntity is null)
+            if (offerItem.Hand is not null && _hands.GetActiveItem(uid) is null)
                 if (offerItem.Target is not null)
                 {
                     UnReceive(offerItem.Target.Value, offerItem: offerItem);

@@ -1,4 +1,5 @@
 using Content.Shared.Research.Prototypes;
+using NetSerializer;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
@@ -9,12 +10,13 @@ public sealed class LatheUpdateState : BoundUserInterfaceState
 {
     public List<ProtoId<LatheRecipePrototype>> Recipes;
 
-    public List<LatheRecipePrototype> Queue;
+    public ProtoId<LatheRecipePrototype>[] Queue;
 
-    public LatheRecipePrototype? CurrentlyProducing;
+    public ProtoId<LatheRecipePrototype>? CurrentlyProducing;
+
     public bool HasAnyBlueprints; // Corvax-Next-BlueprintEject
 
-    public LatheUpdateState(List<ProtoId<LatheRecipePrototype>> recipes, List<LatheRecipePrototype> queue, LatheRecipePrototype? currentlyProducing = null, bool hasAnyBlueprints = false) // Corvax-Next-BlueprintEject
+    public LatheUpdateState(List<ProtoId<LatheRecipePrototype>> recipes, ProtoId<LatheRecipePrototype>[] queue, ProtoId<LatheRecipePrototype>? currentlyProducing = null, bool hasAnyBlueprints = false) // Corvax-Next-BlueprintEject
     {
         Recipes = recipes;
         Queue = queue;

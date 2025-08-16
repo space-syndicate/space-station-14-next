@@ -72,7 +72,7 @@ public sealed partial class SharedMultishotSystem : EntitySystem
             return;
 
         // Find first suitable weapon
-        foreach (var held in _handsSystem.EnumerateHeld(args.User, handsComp))
+        foreach (var held in _handsSystem.EnumerateHeld(args.User))
         {
             if (held == multishotWeapon.Owner)
                 continue;

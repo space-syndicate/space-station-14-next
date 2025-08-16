@@ -48,8 +48,6 @@ namespace Content.IntegrationTests.Tests
         {
             "/Maps/centcomm.yml",
             "/Maps/bagel.yml", // Contains mime's rubber stamp --> Either fix this, remove the category, or remove this comment if intentional.
-            "/Maps/gate.yml", // Contains positronic brain and LSE-1200c "Perforator"
-            "/Maps/meta.yml", // Contains warden's rubber stamp
             "/Maps/reach.yml", // Contains handheld crew monitor
             "/Maps/Shuttles/ShuttleEvent/cruiser.yml", // Contains LSE-1200c "Perforator"
             "/Maps/Shuttles/ShuttleEvent/honki.yml", // Contains golden honker, clown's rubber stamp
@@ -65,14 +63,11 @@ namespace Content.IntegrationTests.Tests
             "CorvaxSilly",
             "CorvaxOutpost",
             "CorvaxAstra",
-            "CorvaxGelta",
 			"CorvaxMaus",
-			"CorvaxIshimura",
 			"CorvaxPaper",
             "CorvaxPilgrim",
             "CorvaxSplit",
             "CorvaxTerra",
-            "CorvaxFrame",
             "CorvaxPearl",
             "CorvaxTushkan",
             "CorvaxGlacier",
@@ -91,7 +86,6 @@ namespace Content.IntegrationTests.Tests
             "NextPilgrim",
             "NextPearl",
             "NextTushkan",
-            "NextGlacier",
             "NextAwesome",
             "NextBagel",
             "NextBox",
@@ -100,35 +94,30 @@ namespace Content.IntegrationTests.Tests
             "NextOmega",
             "NextPacked",
 			"NextChloris",
-            "BattleRoyale", // BattleRoyale Change
-            "Lavatest", // Lavaland Change
+            "NextVoid",
+            "Lavatest",
             // Corvax-Next-end
             "Dev",
             "TestTeg",
             "Fland",
-            "Meta",
             "Packed",
-            "Omega",
             "Bagel",
             "CentComm",
             "Box",
-            "Core",
             "Marathon",
             "MeteorArena",
             "Saltern",
             "Reach",
-            "Train",
             "Oasis",
-            "Gate",
             "Amber",
-            "Loop",
             "Plasma",
             "Elkridge",
-            "Convex",
             "Relic",
-            "dm01-entryway"
-
+            "dm01-entryway",
+            "Exo",
         };
+
+        private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";
 
         /// <summary>
         /// Asserts that specific files have been saved as grids and not maps.
@@ -307,7 +296,7 @@ namespace Content.IntegrationTests.Tests
                 return;
 
             var yamlEntities = node["entities"];
-            if (!protoManager.TryIndex<EntityCategoryPrototype>("DoNotMap", out var dnmCategory))
+            if (!protoManager.TryIndex(DoNotMapCategory, out var dnmCategory))
                 return;
 
             Assert.Multiple(() =>

@@ -48,8 +48,8 @@
     - id: ClothingHeadsetAltCommand
 #    - id: ClothingOuterArmorCaptainCarapace # Corvax-Next-CaptainDrobe
     - id: CommsComputerCircuitboard
-    - id: DoorRemoteCommand
 #    - id: MedalCase # Corvax-Next-CaptainDrobe
+    - id: DoorRemoteCustom
     - id: NukeDisk
     - id: PinpointerNuclear
     - id: PlushieNuke

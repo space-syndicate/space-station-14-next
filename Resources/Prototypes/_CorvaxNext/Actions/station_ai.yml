@@ -4,6 +4,8 @@
   description: Sends your mind back to the core.
   components:
   - type: InstantAction
+    event: !type:ReturnMindIntoAiEvent
+  - type: Action
     checkConsciousness: false
     checkCanInteract: false
     priority: -9
@@ -11,7 +13,6 @@
     icon:
       sprite: Interface/Actions/actions_ai.rsi
       state: ai_core
-    event: !type:ReturnMindIntoAiEvent
     
 - type: entity
   id: ActionOpenRemoteDevicesMenu
@@ -19,11 +20,12 @@
   description: Opens a menu with available remote devices.
   components:
   - type: InstantAction
+    event: !type:ToggleRemoteDevicesScreenEvent
+  - type: Action
     checkConsciousness: false
     checkCanInteract: false
     priority: -9
     itemIconStyle: BigAction
-    event: !type:ToggleRemoteDevicesScreenEvent
     icon:
       sprite: Mobs/Silicon/chassis.rsi
       state: robot

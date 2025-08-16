@@ -1,7 +1,6 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Server.StationEvents.Components;
 using Content.Server.Ghost.Roles.Events;
-using Content.Server.Nutrition.Components;
 using Content.Server.Station.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
@@ -11,6 +10,7 @@ using Content.Shared.Players;
 using Content.Shared.Station.Components;
 using Robust.Server.Player;
 using Robust.Shared.Player;
+using Content.Shared.Nutrition.Components;
 
 namespace Content.Server.StationEvents.Events;
 

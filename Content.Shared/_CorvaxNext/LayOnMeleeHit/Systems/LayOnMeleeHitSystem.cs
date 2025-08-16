@@ -5,17 +5,14 @@ using Content.Shared.Standing;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Stunnable;
-using Content.Shared._CorvaxNext.Standing;
 
 namespace Content.Shared._CorvaxNext.LayOnMeleeHit;
 
 public sealed class LayOnMeleeHitSystem : EntitySystem
 {
     [Dependency] private readonly SharedItemSystem _item = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly ItemToggleSystem _itemToggle = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
-    [Dependency] private readonly SharedLayingDownSystem _layingDown = default!;
 
     public override void Initialize()
     {
@@ -31,10 +28,7 @@ public sealed class LayOnMeleeHitSystem : EntitySystem
     {
         foreach (var (uid, _) in args.HitList)
         {
-            if (TryComp<LayingDownComponent>(uid, out var layingDownComponent))
-            {
-                _layingDown.TryLieDown(uid, layingDownComponent, null, DropHeldItemsBehavior.NoDrop);
-            }
+            _standing.Down(uid, dropHeldItems: false);
         }
     }
 

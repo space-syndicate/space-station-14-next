@@ -34,6 +34,10 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab # Corvax-Next-Grab
+      - type: Thieving
+        stripTimeReduction: 2
+        stealthy: true
 #      components: # Corvax-MRP
 #      - type: Pacified
       mindRoles:
@@ -67,6 +71,7 @@
       - type: NpcFactionMember
         factions:
         - Wizard
+      - type: CanChokeGrab # Corvax-Next-Grab
       - type: Skills # Corvax-Next-Skills
         skills:
         - ShuttleControl

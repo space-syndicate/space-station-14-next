@@ -12,6 +12,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Fail if we are attempting to run on the master branch
+      if: ${{GITHUB.REF_NAME == 'master' && github.repository == 'space-wizards/space-station-14'}}
+      run: exit 1
+
 #    - name: Install dependencies
 #      run: sudo apt-get install -y python3-paramiko python3-lxml
 
@@ -35,6 +39,7 @@ jobs:
         cp -R Secrets/Resources/ServerPrototypes Resources/Prototypes/CorvaxSecretsServer
         cp -R Secrets/Resources/Locale Resources/Locale/ru-RU/corvax-secrets
         cp -R Secrets/Resources/Textures Resources/Textures/CorvaxSecrets
+        cp -R Secrets/Resources/Audio Resources/Audio/CorvaxSecrets
     # Corvax-Secrets-End
 
     - name: Setup .NET Core

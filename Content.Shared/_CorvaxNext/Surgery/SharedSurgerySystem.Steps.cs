@@ -15,7 +15,6 @@ using Content.Shared.Item;
 using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using System.Linq;
-using Content.Shared._CorvaxNext.Surgery;
 using Content.Shared._CorvaxNext.Mood;
 using Content.Shared._CorvaxNext.Surgery.Body.Events;
 using Content.Shared._CorvaxNext.Surgery.Body.Organs;
@@ -123,7 +122,7 @@ public abstract partial class SharedSurgerySystem
             }
         }
 
-        if (!HasComp<ForcedSleepingComponent>(args.Body))
+        if (!HasComp<ForcedSleepingStatusEffectComponent>(args.Body))
             RaiseLocalEvent(args.Body, new MoodEffectEvent("SurgeryPain"));
 
         if (!_inventory.TryGetSlotEntity(args.User, "gloves", out var _)
@@ -442,12 +441,16 @@ public abstract partial class SharedSurgerySystem
         foreach (var tool in args.Tools)
         {
             if (HasComp(tool, firstOrgan.Component.GetType())
-                && TryComp<OrganComponent>(tool, out var insertedOrgan)
-                && _body.InsertOrgan(args.Part, tool, insertedOrgan.SlotId, partComp, insertedOrgan))
+                && TryComp<OrganComponent>(tool, out var insertedOrgan))
             {
+                // запоминаем Id тушки органа, т.к insertedOrgan.originalBody после InsertOrgan поменяется на новую тушку, тогда проверка не пройдет, и не будет эффекта
+                var originalBody = insertedOrgan.OriginalBody; // corvax-next
+                if (!_body.InsertOrgan(args.Part, tool, insertedOrgan.SlotId, partComp, insertedOrgan))
+                    return;
+
                 EnsureComp<OrganReattachedComponent>(tool);
                 if (_body.TrySetOrganUsed(tool, true, insertedOrgan)
-                    && insertedOrgan.OriginalBody != args.Body)
+                    && originalBody != args.Body)
                 {
                     var ev = new SurgeryStepDamageChangeEvent(args.User, args.Body, args.Part, ent);
                     RaiseLocalEvent(ent, ref ev);

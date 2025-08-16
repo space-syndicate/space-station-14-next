@@ -4,7 +4,7 @@
   mapPath: /Maps/Next/next_pilgrim.yml
   maxRandomOffset: 0
   randomRotation: false
-  minPlayers: 40
+  minPlayers: 55
   stations:
     NextPilgrim:
       stationProto: StandardNanotrasenStation
@@ -15,7 +15,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'TA'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_pilgrim.yml
+          emergencyShuttlePath: /Maps/Next/Shuttles/Pilgrim/emergency_nextPilgrim.yml
         - type: StationJobs
           availableJobs:
             # command
@@ -88,9 +88,7 @@
           - Theatre
           - Botany
           - BluespaceHarvest
-          # Corvax-next blob-config-start HUGEs
         - type: StationBlobConfig
           stageBegin: 40
           stageCritical: 700
           stageTheEnd: 1200
-          # Corvax-next blob-config-end

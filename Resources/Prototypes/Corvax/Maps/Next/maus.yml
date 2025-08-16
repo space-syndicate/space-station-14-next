@@ -5,7 +5,7 @@
   maxRandomOffset: 0
   randomRotation: false
   minPlayers: 0
-  maxPlayers: 35
+  maxPlayers: 25
   stations:
     NextMaus:
       stationProto: StandardNanotrasenStation
@@ -16,7 +16,7 @@
            !type:NanotrasenNameGenerator
             prefixCreator: "MG"
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_maus.yml
+          emergencyShuttlePath: /Maps/Next/Shuttles/Maus/emergency_nextMaus.yml
         - type: StationJobs
           availableJobs:
             # command
@@ -70,9 +70,7 @@
             # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 1, 1 ]
-        # Corvax-next blob-config-start LOW
         - type: StationBlobConfig
           stageBegin: 20
           stageCritical: 300
           stageTheEnd: 600
-        # Corvax-next blob-config-end

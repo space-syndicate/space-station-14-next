@@ -7,7 +7,7 @@
   minPlayers: 25
   maxPlayers: 55
   stations:
-    NextPearl:
+    Pearl:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
@@ -16,7 +16,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'SR'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Corvax/Shuttles/corvax_emergency.yml
+          emergencyShuttlePath: /Maps/Next/Shuttles/emergency_next.yml
         - type: StationJobs
           availableJobs:
             # command
@@ -29,15 +29,15 @@
             # engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 1, 1 ]
-            StationEngineer: [ 3, 3 ]
-            TechnicalAssistant: [ 3, 3 ]
+            StationEngineer: [ 4, 4 ]
+            TechnicalAssistant: [ 2, 2 ]
             # medical
             ChiefMedicalOfficer: [ 1, 1 ]
             MedicalDoctor: [ 2, 2 ]
             MedicalIntern: [ 2, 2 ]
             Psychologist: [ 1, 1 ]
             Paramedic: [ 1, 1 ]
-            Chemist: [ 1, 1 ]
+            Chemist: [ 2, 2 ]
             # science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 2, 2 ]
@@ -65,9 +65,9 @@
             Musician: [ 2, 2 ]
             ServiceWorker: [ 2, 2 ]
             Passenger: [ -1, -1 ]
-            Reporter: [ 1, 1 ]
+            Zookeeper: [ 1, 1 ]
             # silicon
-            Borg: [ 1, 1 ]
+            Borg: [ 2, 2 ]
             StationAi: [ 1, 1 ]
         - type: StationGoal
           goals:
@@ -88,9 +88,7 @@
           - Botany
           - Bunker
           - BluespaceHarvest
-        # Corvax-next blob-config-start SMALL+
         - type: StationBlobConfig
           stageBegin: 40
           stageCritical: 500
           stageTheEnd: 900
-        # Corvax-next blob-config-end

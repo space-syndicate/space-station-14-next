@@ -1,0 +1,25 @@
+- type: constructionGraph
+  id: PosterIllegal
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: PosterIllegal
+      steps:
+      - tag: RolledUpPoster
+        name: construction-graph-tag-rolled-up-poster
+        icon:
+          sprite: _CorvaxNext/Objects/Misc/poster_scroll.rsi
+          state: poster_legit
+        doAfter: 0.5
+      - material: Cloth
+        amount: 2
+        doAfter: 0.5
+      - tag: Crayon
+        name: construction-graph-tag-crayon
+        icon:
+          sprite: Objects/Fun/crayons.rsi
+          state: white
+        doAfter: 0.5
+  - node: PosterIllegal
+    entity: PosterIllegal

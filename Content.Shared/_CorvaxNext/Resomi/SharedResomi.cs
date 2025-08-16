@@ -1,7 +1,7 @@
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Robust.Shared.Serialization;
-using Content.Shared._CorvaxNext.Resomi.Abilities.Hearing;
+using Content.Shared.Actions.Components;
 
 namespace Content.Shared._CorvaxNext.Resomi;
 
@@ -18,4 +18,4 @@ public sealed partial class ListenUpDoAfterEvent : SimpleDoAfterEvent;
 /// <param name="action"> Entity of Action that we want change the state</param>
 /// <param name="toggled"> </param>
 [ByRefEvent]
-public readonly record struct SwitchAgillity(Entity<BaseActionComponent> action, bool toggled);
+public readonly record struct SwitchAgillity(Entity<ActionComponent> action, bool toggled);

@@ -11,6 +11,18 @@
     - id: Flare
     - id: FoodSnackCotton
     - id: DrinkWaterBottleFull
+- type: entity
+  parent: BoxCardboard
+  id: BoxSurvivalIpc
+  suffix: Standard, IPC
+  components:
+  - type: StorageFill
+    contents:
+    - id: Welder
+    - id: CableApcStack1
+      amount: 5
+    - id: PowerCellSmall
+    - id: Flare
   - type: Sprite
     layers:
     - state: internals
@@ -29,6 +41,17 @@
     - id: Flare
     - id: FoodSnackCotton
     - id: DrinkWaterBottleFull
+- type: entity
+  parent: BoxSurvivalEngineering
+  id: BoxSurvivalEngineeringIpc
+  suffix: Extended, IPC
+  components:
+  - type: StorageFill
+    contents:
+    - id: Welder
+    - id: CableApcStack10
+    - id: PowerCellMedium
+    - id: Flare
   - type: Sprite
     layers:
     - state: internals
@@ -47,6 +70,20 @@
     - id: Flare
     - id: FoodSnackCotton
     - id: DrinkWaterBottleFull
+
+- type: entity
+  parent: BoxSurvivalSecurity
+  id: BoxSurvivalSecurityIpc
+  suffix: Security, IPC
+  components:
+  - type: StorageFill
+    contents:
+    - id: Welder
+    - id: CableApcStack1
+      amount: 5
+    - id: PowerCellSmall
+    - id: Flare
+    - id: ClothingMaskGasSecurity
   - type: Sprite
     layers:
     - state: internals
@@ -65,6 +102,20 @@
     - id: Flare
     - id: FoodSnackCotton
     - id: DrinkWaterBottleFull
+
+- type: entity
+  parent: BoxSurvivalMedical
+  id: BoxSurvivalMedicalIpc
+  suffix: Medical, IPC
+  components:
+  - type: StorageFill
+    contents:
+    - id: Welder
+    - id: CableApcStack1
+      amount: 5
+    - id: PowerCellSmall
+    - id: Flare
+    - id: ClothingMaskSterile
   - type: Sprite
     layers:
     - state: internals
@@ -97,3 +148,62 @@
     - id: Flare
     - id: FoodBreadBaguetteCotton
     - id: DrinkWaterBottleFull
+
+
+- type: entity
+  parent: BoxHug
+  id: BoxHugIpc
+  suffix: Clown, Emergency, IPC
+  components:
+  - type: StorageFill
+    contents:
+    - id: Welder
+    - id: CableApcStack1
+      amount: 5
+    - id: PowerCellSmall
+    - id: Flare
+    - id: CrayonRainbow
+
+- type: entity
+  parent: BoxMime
+  id: BoxMimeIpc
+  suffix: Mime, Emergency, IPC
+  components:
+  - type: StorageFill
+    contents:
+    - id: Welder
+    - id: CableApcStack1
+      amount: 5
+    - id: PowerCellSmall
+    - id: Flare
+    - id: CrayonMime
+
+- type: entity
+  parent: BoxSurvivalSyndicate
+  id: BoxSurvivalSyndicateIpc
+  suffix: Syndicate, IPC
+  components:
+  - type: StorageFill
+    contents:
+    - id: WelderIndustrial
+    - id: CableApcStack
+    - id: PowerCellHigh
+    - id: Flare
+
+- type: entity
+  parent: BoxCardboard
+  id: BoxCentralCommandIpc
+  suffix: CC, IPC
+  components:
+  - type: StorageFill
+    contents:
+    - id: WelderExperimental
+    - id: CableApcStack
+    - id: PowerCellMicroreactor
+    - id: Flare
+    - id: Screwdriver
+  - type: Sprite
+    layers:
+    - state: internals
+    - state: extendedtank
+
