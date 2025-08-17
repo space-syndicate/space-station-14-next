@@ -3,3 +3,6 @@ ent-MachineBluespaceHarvesterCircuitboard = плата блюспейс харв
 
 ent-MachineBluespaceTransitorCircuitboard = плата блюспейс Т.Р.А.Н.З.И.Т.
     .desc = { ent-BaseMachineCircuitboard.desc }
+
+ent-QuantumTelepadMachineCircuitboard = квантовый телепад (машинная плата)
+    .desc = { ent-BaseMachineCircuitboard.desc }
