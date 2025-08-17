@@ -97,7 +97,9 @@
   - EmergencyNitrogen
   - EmergencyOxygen
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenMoth # Corvax-Next-MothLoadout
   - EmergencyNoAirIpc # Corvax-Next-emergency-box-for-IPC
+
 
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
@@ -525,7 +527,9 @@
   - EmergencyNitrogenClown
   - EmergencyOxygenClown
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenClownMoth # Corvax-Next-MothLoadout
   - EmergencyNoAirClownIpc # Corvax-Next-emergency-box-for-IPC
+
 
 - type: loadoutGroup
   id: MimeHead
@@ -583,7 +587,9 @@
   - EmergencyOxygenMime
   - EmergencySpeciesMothMime
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenMimeMoth # Corvax-Next-MothLoadout
   - EmergencyNoAirMimeIpc # Corvax-Next-emergency-box-for-IPC
+
 
 - type: loadoutGroup
   id: MusicianJumpsuit
@@ -870,7 +876,9 @@
   - EmergencyNitrogenExtended
   - EmergencyOxygenExtended
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenExtendedMoth # Corvax-Next-MothLoadout
   - EmergencyNoAirExtended # Corvax-Next-emergency-box-for-IPC
+
 
 # Science
 - type: loadoutGroup
@@ -1163,7 +1171,9 @@
   - EmergencyNitrogenSecurity
   - EmergencyOxygenSecurity
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenSecurityMoth # Corvax-Next-MothLoadout
   - EmergencyNoAirSecurityIpc # Corvax-Next-emergency-box-for-IPC
+
 
 - type: loadoutGroup
   id: SecurityStar
@@ -1365,7 +1375,9 @@
   - EmergencyNitrogenMedical
   - EmergencyOxygenMedical
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyOxygenMedicalMoth # Corvax-Next-MothLoadout
   - EmergencyNoAirMedicalIpc # Corvax-Next-emergency-box-for-IPC
+
 
 # Wildcards
 - type: loadoutGroup
