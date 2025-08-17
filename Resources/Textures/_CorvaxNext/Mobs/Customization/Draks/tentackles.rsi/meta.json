@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "by Ko4erga (discord)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "large",
+      "directions": 4
+    },
+    {
+      "name": "lush",
+      "directions": 4
+    },
+    {
+      "name": "medium",
+      "directions": 4
+    },
+    {
+      "name": "short",
+      "directions": 4
+    },
+    {
+      "name": "untidy",
+      "directions": 4
+    }
+  ]
+}

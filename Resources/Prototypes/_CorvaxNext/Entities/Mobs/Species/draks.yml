@@ -1,0 +1,105 @@
+- type: entity
+  save: false
+  name: Urist McOcto
+  parent: BaseMobSpeciesOrganic
+  id: BaseMobDraks
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: Draks
+  - type: Hunger
+    baseDecayRate: 0.02
+  - type: Thirst
+    baseDecayRate: 0.2
+  - type: Icon
+    sprite: _CorvaxNext/Mobs/Species/Draks/parts.rsi
+    state: full
+  - type: Body
+    prototype: Draks
+    requiredLegs: 2
+  - type: Speech
+    speechSounds: Draks
+  - type: Vocal
+    sounds:
+      Male: UnisexDraks
+      Female: UnisexDraks
+      Unsexed: UnisexDraks
+  - type: DraksAccent
+  - type: Inventory
+    templateId: diona
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _CorvaxNext/Mobs/Species/Draks/displacement.rsi
+            state: jumpsuit
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _CorvaxNext/Mobs/Species/Draks/displacement.rsi
+            state: hand
+  - type: ContentEye
+  - type: MeleeWeapon
+    animation: WeaponArcClaw
+    soundHit:
+      collection: AlienClaw
+    damage:
+      types:
+        Slash: 10
+        Structural: 30 # pickaxe structure damage
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Draks
+  - type: Temperature
+    heatDamageThreshold: 325
+    coldDamageThreshold: -999
+    currentTemperature: 310.15
+    specificHeat: 42
+    coldDamage:
+      types:
+        Cold: 0
+    heatDamage:
+      types:
+        Heat: 1.2
+  - type: TemperatureSpeed
+    thresholds:
+      0: 1
+  - type: Bloodstream
+    bloodReagent: Cryoxadone
+  - type: Magboots
+  - type: DamageVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    targetLayers:
+    - "enum.HumanoidVisualLayers.Chest"
+    - "enum.HumanoidVisualLayers.Head"
+    - "enum.HumanoidVisualLayers.LArm"
+    - "enum.HumanoidVisualLayers.LLeg"
+    - "enum.HumanoidVisualLayers.RArm"
+    - "enum.HumanoidVisualLayers.RLeg"
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#0091ff"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
+  - type: Barotrauma # hasImmunity not working for some reason
+    damage:
+      types:
+        Blunt: 0
+        Heat: 0
+        Cold: 0
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4
+    baseSprintSpeed: 2.5
+
+- type: entity
+  save: false
+  name: Urist McOcto
+  parent: MobHumanDummy
+  id: MobDraksDummy
+  categories: [ HideSpawnMenu ]
+  description: A dummy draks meant to be used in character setup.
+  components:
+  - type: HumanoidAppearance
+    species: Draks
+  - type: Inventory
