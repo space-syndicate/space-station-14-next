@@ -6,12 +6,3 @@
     path: /Audio/_CorvaxNext/Voice/Resomi/Speech/resomi_2_ask.ogg
   exclaimSound:
     path: /Audio/_CorvaxNext/Voice/Resomi/Speech/resomi_2_exclaim.ogg
-
-- type: speechSounds
-  id: Draks
-  saySound:
-    path: /Audio/_CorvaxNext/Voice/Draks/Speech/drasktalk.ogg
-  askSound:
-    path: /Audio/_CorvaxNext/Voice/Draks/drasksneeze.ogg
-  exclaimSound:
-    path: /Audio/_CorvaxNext/Voice/Draks/Speech/drasktalk2.ogg
