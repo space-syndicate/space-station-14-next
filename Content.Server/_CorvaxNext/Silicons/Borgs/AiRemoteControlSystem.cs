@@ -1,12 +1,15 @@
 using Content.Server.Radio.Components;
 using Content.Server.Silicons.Laws;
+using Content.Server.Telephone;
 using Content.Shared._CorvaxNext.Silicons.Borgs;
 using Content.Shared._CorvaxNext.Silicons.Borgs.Components;
 using Content.Shared.Actions;
 using Content.Shared.Mind;
+using Content.Shared.Mobs;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.StationAi;
+using Content.Shared.Telephone;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
@@ -21,6 +24,7 @@ namespace Content.Server._CorvaxNext.Silicons.Borgs
         [Dependency] private readonly SharedMindSystem _mind = default!;
         [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
         [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
+        [Dependency] private readonly TelephoneSystem _telephoneSystem = default!;
 
         public override void Initialize()
         {
@@ -30,6 +34,7 @@ namespace Content.Server._CorvaxNext.Silicons.Borgs
             SubscribeLocalEvent<AiRemoteControllerComponent, MapInitEvent>(OnMapInit);
             SubscribeLocalEvent<AiRemoteControllerComponent, ComponentShutdown>(OnShutdown);
             SubscribeLocalEvent<AiRemoteControllerComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
+            SubscribeLocalEvent<AiRemoteControllerComponent, MobStateChangedEvent>(OnMobState);
             SubscribeLocalEvent<StationAiHeldComponent, AiRemoteControllerComponent.RemoteDeviceActionMessage>(OnUiRemoteAction);
 
             SubscribeLocalEvent<StationAiHeldComponent, ToggleRemoteDevicesScreenEvent>(OnToggleRemoteDevicesScreen);
@@ -37,17 +42,25 @@ namespace Content.Server._CorvaxNext.Silicons.Borgs
 
         private void OnMapInit(Entity<AiRemoteControllerComponent> entity, ref MapInitEvent args)
         {
-            var visionComp = AddComp<StationAiVisionComponent>(entity.Owner);
+            var visionComp = AddComp<StationAiVisionComponent>(entity);
+
+            if (HasComp<IonStormTargetComponent>(entity))
+                entity.Comp.HadIonStormTargetBefore = true;
+
+            RemComp<IonStormTargetComponent>(entity);
             EntityUid? actionEnt = null;
 
-            _actions.AddAction(entity.Owner, ref actionEnt, entity.Comp.BackToAiAction);
+            _actions.AddAction(entity, ref actionEnt, entity.Comp.BackToAiAction);
 
             if (actionEnt != null)
                 entity.Comp.BackToAiActionEntity = actionEnt.Value;
         }
+
         private void OnShutdown(Entity<AiRemoteControllerComponent> entity, ref ComponentShutdown args)
         {
-            _actions.RemoveAction(entity.Owner, entity.Comp.BackToAiActionEntity);
+            _actions.RemoveAction(entity, entity.Comp.BackToAiActionEntity);
+
+            RemComp<StationAiVisionComponent>(entity);
 
             var backArgs = new ReturnMindIntoAiEvent();
             backArgs.Performer = entity;
@@ -58,7 +71,18 @@ namespace Content.Server._CorvaxNext.Silicons.Borgs
             if (TryComp(entity, out ActiveRadioComponent? activeRadio) && entity.Comp.PreviouslyActiveRadioChannels != null)
                 activeRadio.Channels = [.. entity.Comp.PreviouslyActiveRadioChannels];
 
+            if (entity.Comp.HadIonStormTargetBefore)
+                EnsureComp<IonStormTargetComponent>(entity);
+
             ReturnMindIntoAi(entity);
+        }
+
+        private void OnMobState(Entity<AiRemoteControllerComponent> ent, ref MobStateChangedEvent args)
+        {
+            if (args.NewMobState == MobState.Dead)
+                ToggleDeviceEnabled(ent, false);
+            else if (args.OldMobState == MobState.Dead)
+                ToggleDeviceEnabled(ent, true);
         }
 
         private void OnGetVerbs(Entity<AiRemoteControllerComponent> entity, ref GetVerbsEvent<AlternativeVerb> args)
@@ -83,6 +107,7 @@ namespace Content.Server._CorvaxNext.Silicons.Borgs
         {
             ReturnMindIntoAi(entity);
         }
+
         public void AiTakeControl(EntityUid ai, EntityUid entity)
         {
             if (!_mind.TryGetMind(ai, out var mindId, out var mind))
@@ -93,6 +118,19 @@ namespace Content.Server._CorvaxNext.Silicons.Borgs
 
             if (!TryComp<AiRemoteControllerComponent>(entity, out var aiRemoteComp))
                 return;
+
+            if (!aiRemoteComp.Enabled)
+                return;
+
+            if (!_stationAiSystem.TryGetCore(ai, out var stationAiCore))
+                return;
+
+            if (!TryComp<TelephoneComponent>(stationAiCore, out var stationAiCoreTelephone))
+                return;
+
+            RemComp<IonStormTargetComponent>(entity);
+
+            _telephoneSystem.EndTelephoneCalls((stationAiCore, stationAiCoreTelephone));
 
             if (TryComp(entity, out IntrinsicRadioTransmitterComponent? transmitter))
             {
@@ -115,9 +153,6 @@ namespace Content.Server._CorvaxNext.Silicons.Borgs
             aiRemoteComp.LinkedMind = mindId;
 
             stationAiHeldComp.CurrentConnectedEntity = entity;
-
-            if (!_stationAiSystem.TryGetCore(ai, out var stationAiCore))
-                return;
 
             _stationAiSystem.SwitchRemoteEntityMode(stationAiCore, false);
 
@@ -159,7 +194,10 @@ namespace Content.Server._CorvaxNext.Silicons.Borgs
 
             var target = GetEntity(msg.RemoteAction?.Target);
 
-            if (!HasComp<AiRemoteControllerComponent>(target))
+            if (!TryComp<AiRemoteControllerComponent>(target, out var controller))
+                return;
+
+            if (controller.Enabled == false)
                 return;
 
             if (msg.RemoteAction?.ActionType == RemoteDeviceActionEvent.RemoteDeviceActionType.MoveToDevice)
