@@ -62,26 +62,3 @@
     Sigh:
       collection: FemaleSigh
 
-- type: emoteSounds
-  id: UnisexDraks
-  params:
-    variation: 0.125
-  sounds:
-    Scream:
-      path: /Audio/_CorvaxNext/Voice/Draks/Speech/drasktalk2.ogg
-    Laugh:
-      path: /Audio/_CorvaxNext/Voice/Draks/drasksneeze.ogg
-    Sneeze:
-      path: /Audio/_CorvaxNext/Voice/Draks/drasksneeze.ogg
-    Cough:
-      path: /Audio/_CorvaxNext/Voice/Draks/draskcough.ogg
-    Honk:
-      collection: BikeHorn
-    Weh:
-      collection: Weh
-    Gasp:
-      path: /Audio/_CorvaxNext/Voice/Draks/draskcough.ogg
-    DefaultDeathgasp:
-      path: /Audio/_CorvaxNext/Voice/Draks/Speech/drasktalk2.ogg
-    Sigh:
-      path: /Audio/_CorvaxNext/Voice/Draks/drasksneeze.ogg
