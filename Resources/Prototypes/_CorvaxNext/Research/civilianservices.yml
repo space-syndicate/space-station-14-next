@@ -48,3 +48,15 @@
   cost: 10000
   recipeUnlocks:
   - OmnimedTool
+
+- type: technology
+  id: EmergencyTreatment
+  name: research-technology-headset-with-injector
+  icon:
+    sprite: _CorvaxNext/Clothing/Ears/Headsets/auto_inject.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - ClothingHeadsetInject
