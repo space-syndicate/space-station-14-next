@@ -12,6 +12,8 @@ using Robust.Shared.Utility;
 using System.Linq;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
+using Content.Shared.Timing;
+using Content.Shared.Trigger;
 
 namespace Content.Server.Payload.EntitySystems;
 
@@ -22,6 +24,8 @@ public sealed class PayloadSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
+    [Dependency] private readonly UseDelaySystem _useDelay = default!; // Corvax-Next-AnomalyGrenades
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!; // Corvax-Next-AnomalyGrenades
 
     private static readonly ProtoId<TagPrototype> PayloadTag = "Payload";
 
@@ -60,9 +64,41 @@ public sealed class PayloadSystem : EntitySystem
         // Pass trigger event onto all contained payloads. Payload capacity configurable by construction graphs.
         foreach (var ent in GetAllPayloads(uid, contMan))
         {
+            // Corvax-Next-AnomalyGrenade-Start
+            if (TryComp<UseDelayComponent>(ent, out var useDelayComp))
+                if (_useDelay.IsDelayed((ent, useDelayComp)))
+                    continue;
+                else
+                {
+                    _useDelay.TryResetDelay((ent, useDelayComp));
+
+                    EnsureComp<UseDelayComponent>(uid);
+                    _useDelay.SetLength(uid, useDelayComp.Delay);
+                    _useDelay.TryResetDelay(uid);
+                }
+            // Corvax-Next-AnomalyGrenade-End
+
             RaiseLocalEvent(ent, args, false);
         }
     }
+
+    // Corvax-Next-AnomalyGrenade-Start
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<PayloadCaseComponent, UseDelayComponent>();
+        while (query.MoveNext(out var uid, out var _, out var useDelay))
+        {
+            if (!_useDelay.IsDelayed(uid))
+            {
+                RemComp<UseDelayComponent>(uid);
+                if (TryComp<AppearanceComponent>(uid, out var appearance))
+                    _appearance.SetData(uid, TriggerVisuals.VisualState, TriggerVisualState.Unprimed, appearance);
+            }
+        }
+    }
+    // Corvax-Next-AnomalyGrenade-End
 
     private void OnTriggerTriggered(EntityUid uid, PayloadTriggerComponent component, TriggerEvent args)
     {

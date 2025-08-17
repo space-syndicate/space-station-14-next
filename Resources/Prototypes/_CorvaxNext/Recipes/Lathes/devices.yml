@@ -18,3 +18,11 @@
     Gold: 100
     Silver: 100
 
+- type: latheRecipe
+  id: AnomalyPayload
+  result: AnomalyPayloadEmpty
+  completetime: 2
+  materials:
+    Steel: 600
+    Silver: 300
+    Gold: 400

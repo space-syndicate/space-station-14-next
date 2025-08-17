@@ -30,6 +30,7 @@
   - SignallerAdvanced
   - DeviceQuantumSpinInverter
   - DeviceDesynchronizer
+  - AnomalyPayload # Corvax-Next-AnomalyGrenades
   - ClothingBackpackHarmpack
 
 - type: latheRecipePack
