@@ -10,6 +10,7 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Random;
 using Content.Shared._CorvaxNext.Targeting;
 using Robust.Shared.Containers;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -23,8 +24,8 @@ namespace Content.Shared.Body.Systems;
 public partial class SharedBodySystem
 {
     [Dependency] private readonly RandomHelperSystem _randomHelper = default!;
-    [Dependency] private readonly InventorySystem _inventorySystem = default!;
 
+    private static readonly ProtoId<DamageTypePrototype> BloodlossDamageType = "Bloodloss";
     private void InitializeParts()
     {
         // TODO: This doesn't handle comp removal on child ents.
@@ -100,7 +101,7 @@ public partial class SharedBodySystem
             && TryGetPartSlotContainerName(partEnt.Comp.PartType, out var containerNames))
         {
             foreach (var containerName in containerNames)
-                _inventorySystem.DropSlotContents(partEnt.Comp.Body.Value, containerName, inventory);
+                _inventory.DropSlotContents(partEnt.Comp.Body.Value, containerName, inventory);
         }
 
     }
@@ -145,7 +146,7 @@ public partial class SharedBodySystem
         // I don't know if this can cause issues, since any part that's being detached HAS to have a Body.
         // though I really just want the compiler to shut the fuck up.
         var body = partEnt.Comp.Body.GetValueOrDefault();
-        if (TryComp(partEnt, out TransformComponent? transform) && _gameTiming.IsFirstTimePredicted)
+        if (TryComp(partEnt, out TransformComponent? transform) && _timing.IsFirstTimePredicted)
         {
             var enableEvent = new BodyPartEnableChangedEvent(false);
             RaiseLocalEvent(partEnt, ref enableEvent);
@@ -367,6 +368,9 @@ public partial class SharedBodySystem
         if (partEnt.Comp.PartType == BodyPartType.Torso)
         {
             RaiseLocalEvent(partEnt.Comp.Body.Value, new MoodRemoveEffectEvent("SurgeryNoTorso"));
+            // TODO BODY SYSTEM KILL : remove this when wounding and required parts are implemented properly
+            var damage = new DamageSpecifier(Prototypes.Index(BloodlossDamageType), 300);
+            Damageable.TryChangeDamage(partEnt, damage);
         }
     }
 

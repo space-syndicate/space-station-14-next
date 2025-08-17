@@ -171,6 +171,7 @@ namespace Content.Client.Options.UI.Tabs
             AddCheckBox("ui-options-hotkey-toggle-walk", _cfg.GetCVar(CCVars.ToggleWalk), HandleToggleWalk);
             AddCheckBox("ui-options-hotkey-auto-up", _cfg.GetCVar(Shared._CorvaxNext.NextVars.NextVars.AutoGetUp), HandleToggleAutoGetUp); // CorvaxNext: Laying System
             InitToggleWalk();
+            AddButton(ContentKeyFunctions.ToggleKnockdown);
 
             AddHeader("ui-options-header-camera");
             AddButton(EngineKeyFunctions.CameraRotateLeft);

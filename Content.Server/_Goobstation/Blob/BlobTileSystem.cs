@@ -10,6 +10,7 @@ using Content.Shared._Goobstation.Blob.Components;
 using Content.Shared.Damage;
 using Content.Shared.Destructible;
 using Content.Shared.FixedPoint;
+using Content.Shared.Flash;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;

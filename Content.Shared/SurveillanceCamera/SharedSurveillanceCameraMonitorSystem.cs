@@ -1,3 +1,5 @@
+using Content.Shared.DeviceNetwork;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.SurveillanceCamera;
@@ -23,13 +25,17 @@ public sealed class SurveillanceCameraMonitorUiState : BoundUserInterfaceState
     // Known cameras, by address and name.
     public Dictionary<string, string> Cameras { get; }
 
-    public SurveillanceCameraMonitorUiState(NetEntity? activeCamera, HashSet<string> subnets, string activeAddress, string activeSubnet, Dictionary<string, string> cameras)
+    // Все известные камеры, только возвращает Id вместо имени камеры
+    public Dictionary<string, NetEntity> CameraEntityById { get; } // corvax-next
+
+    public SurveillanceCameraMonitorUiState(NetEntity? activeCamera, HashSet<string> subnets, string activeAddress, string activeSubnet, Dictionary<string, string> cameras, Dictionary<string, NetEntity> camerasById)
     {
         ActiveCamera = activeCamera;
         Subnets = subnets;
         ActiveAddress = activeAddress;
         ActiveSubnet = activeSubnet;
         Cameras = cameras;
+        CameraEntityById = camerasById; // corvax-next
     }
 }
 
@@ -83,11 +89,11 @@ public sealed class SurveillanceCameraSetupBoundUiState : BoundUserInterfaceStat
 {
     public string Name { get; }
     public uint Network { get; }
-    public List<string> Networks { get; }
+    public List<ProtoId<DeviceFrequencyPrototype>> Networks { get; }
     public bool NameDisabled { get; }
     public bool NetworkDisabled { get; }
 
-    public SurveillanceCameraSetupBoundUiState(string name, uint network, List<string> networks, bool nameDisabled, bool networkDisabled)
+    public SurveillanceCameraSetupBoundUiState(string name, uint network, List<ProtoId<DeviceFrequencyPrototype>> networks, bool nameDisabled, bool networkDisabled)
     {
         Name = name;
         Network = network;

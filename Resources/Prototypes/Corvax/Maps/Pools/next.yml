@@ -5,14 +5,14 @@
   - NextDelta
   - NextAvrite
   - NextAstra
-  - NextPilgrim # 40+
+  - NextPilgrim
   - NextBox
   - NextChloris
+  - NextGlacier
 
-  # Semi-Highpop 25–65
+  # Midpop 25–55
   - NextBagel
   - NextVoid
-  # Midpop 25–55
   - NextPaper
   - NextOutpost
   - NextAwesome
@@ -20,9 +20,8 @@
   - NextAmber
   - NextMarathon
 
-  # Semi-Midpop 0–35
-  - NextMaus
   # Lowpop 0–25
+  - NextMaus
   - NextSilly
   - NextTushkan
   - NextOmega

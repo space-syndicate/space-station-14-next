@@ -30,7 +30,6 @@
         mask:
         - Opaque
   - type: KnockdownOnCollide
-    behavior: DropIfStanding
   - type: BlurOnCollide
 
 - type: entity

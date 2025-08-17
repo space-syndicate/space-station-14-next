@@ -176,6 +176,7 @@
   cost: 10000
   recipeUnlocks:
   - DeviceQuantumSpinInverter
+  - QuantumTelepadMachineCircuitboard # Corvax-Next-QuantumTelepad
 
 - type: technology
   id: BluespaceTimeManipulation

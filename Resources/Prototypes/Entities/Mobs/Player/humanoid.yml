@@ -18,7 +18,9 @@
   id: EventHumanoidMindShielded
   parent: EventHumanoid
   components:
-    - type: MindShield
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
     - type: AntagImmune
     - type: Skills # Corvax-Next-Skills
       skills:
@@ -28,6 +30,7 @@
       - Surgery
       - MedicalEquipment
       - Butchering
+    - type: CanChokeGrab # Corvax-Next-Grab
 
 - type: randomHumanoidSettings
   id: EventHumanoidCentcomm
@@ -36,6 +39,7 @@
   components:
   - type: AutoImplant
     implants:
+    - MindShieldImplant
     - DeathRattleImplantCentcomm
 
 ## Death Squad
@@ -72,7 +76,7 @@
       - MindRoleGhostRoleFamiliar
     - type: Loadout
       prototypes: [ DeathSquadGear ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ] # Corvax-Next-emergency-box-for-IPC
     - type: RandomMetadata
       nameSegments:
         - NamesMilitaryFirstLeader
@@ -111,7 +115,7 @@
       job: ERTLeader
     - type: Loadout
       prototypes: [ ERTLeaderGear ]
-      roleLoadout: [ RoleSurvivalExtended ]
+      roleLoadout: [ RoleSurvivalCentralCommand ] # Corvax-Next-emergency-box-for-IPC
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryFirstLeader
@@ -143,7 +147,7 @@
       job: ERTLeader
     - type: Loadout
       prototypes: [ ERTLeaderGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ] # Corvax-Next-emergency-box-for-IPC
 
 - type: entity
   id: RandomHumanoidSpawnerERTLeaderEVALecter
@@ -166,7 +170,7 @@
       job: ERTLeader
     - type: Loadout
       prototypes: [ ERTLeaderGearEVALecter ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ] # Corvax-Next-emergency-box-for-IPC
 
 ## ERT Chaplain
 
@@ -206,7 +210,7 @@
       nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTChaplainGear ]
-      roleLoadout: [ RoleSurvivalExtended ]
+      roleLoadout: [ RoleSurvivalCentralCommand ] # Corvax-Next-emergency-box-for-IPC
 
 - type: entity
   id: RandomHumanoidSpawnerERTChaplainEVA
@@ -233,7 +237,7 @@
       job: ERTChaplain
     - type: Loadout
       prototypes: [ ERTChaplainGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ] # Corvax-Next-emergency-box-for-IPC
     - type: BibleUser
 
 ## ERT Janitor
@@ -273,7 +277,7 @@
       nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTJanitorGear ]
-      roleLoadout: [ RoleSurvivalExtended ]
+      roleLoadout: [ RoleSurvivalCentralCommand ] # Corvax-Next-emergency-box-for-IPC
 
 - type: entity
   id: RandomHumanoidSpawnerERTJanitorEVA
@@ -300,7 +304,7 @@
       job: ERTJanitor
     - type: Loadout
       prototypes: [ ERTJanitorGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ] # Corvax-Next-emergency-box-for-IPC
 
 ## ERT Engineer
 
@@ -339,7 +343,7 @@
       nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTEngineerGear ]
-      roleLoadout: [ RoleSurvivalExtended ]
+      roleLoadout: [ RoleSurvivalCentralCommand ] # Corvax-Next-emergency-box-for-IPC
 
 - type: entity
   id: RandomHumanoidSpawnerERTEngineerEVA
@@ -366,7 +370,7 @@
       job: ERTEngineer
     - type: Loadout
       prototypes: [ ERTEngineerGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ] # Corvax-Next-emergency-box-for-IPC
 
 ## ERT Security
 
@@ -407,7 +411,7 @@
       nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTSecurityGear ]
-      roleLoadout: [ RoleSurvivalExtended ]
+      roleLoadout: [ RoleSurvivalCentralCommand ] # Corvax-Next-emergency-box-for-IPC
 
 - type: entity
   id: RandomHumanoidSpawnerERTSecurityEVA
@@ -434,7 +438,7 @@
       job: ERTSecurity
     - type: Loadout
       prototypes: [ ERTSecurityGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ] # Corvax-Next-emergency-box-for-IPC
 
 - type: entity
   id: RandomHumanoidSpawnerERTSecurityEVALecter
@@ -457,7 +461,7 @@
       job: ERTSecurity
     - type: Loadout
       prototypes: [ ERTSecurityGearEVALecter ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ] # Corvax-Next-emergency-box-for-IPC
 
 ## ERT Medic
 
@@ -496,7 +500,7 @@
       nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTMedicalGear ]
-      roleLoadout: [ RoleSurvivalExtended ]
+      roleLoadout: [ RoleSurvivalCentralCommand ] # Corvax-Next-emergency-box-for-IPC
 
 - type: entity
   id: RandomHumanoidSpawnerERTMedicalEVA
@@ -523,7 +527,7 @@
       job: ERTMedical
     - type: Loadout
       prototypes: [ ERTMedicalGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ] # Corvax-Next-emergency-box-for-IPC
 
 ## CBURN
 
@@ -546,7 +550,7 @@
   components:
     - type: Loadout
       prototypes: [CBURNGear]
-      roleLoadout: [ RoleSurvivalEVA ]
+      roleLoadout: [ RoleSurvivalCentralCommandEVA ] # Corvax-Next-emergency-box-for-IPC
     - type: GhostRole
       name: ghost-role-information-cburn-agent-name
       description: ghost-role-information-cburn-agent-description
@@ -583,7 +587,7 @@
         settings: default
     - type: Loadout
       prototypes: [ CentcomGear ]
-      roleLoadout: [ RoleSurvivalStandard ]
+      roleLoadout: [ RoleSurvivalCentralCommand ] # Corvax-Next-emergency-box-for-IPC
 
 ## Syndicate
 

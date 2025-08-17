@@ -1,0 +1,73 @@
+- type: entity
+  parent: BaseItem
+  id: PosterLegit
+  name: rolled up poster
+  description: A piece of paper with propaganda information that you can see on it.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/poster_scroll.rsi
+    state: poster_legit
+  - type: UserInterface
+    interfaces:
+      enum.DisposablePlacerSelectRadioUiKey.Key:
+        type: DisposablePlacerBoundUserInterface
+  - type: Item
+    size: Small
+  - type: ActivatableUI
+    key: enum.DisposablePlacerSelectRadioUiKey.Key
+    inHandsOnly: true
+  - type: DisposablePlacer
+    delay: 4.8
+    whitelist:
+      tags:
+      - Wall
+      - Window # Can be also placed on directional windows. Meh
+    effect: EffectPosterPlacement
+    sound:
+      path: /Audio/_CorvaxNext/Effects/poster_being_created.ogg
+    selectablePrototypes:
+    - PosterLegitNanotrasenLogo
+    - PosterLegitWalk
+    - PosterLegitReportCrimes
+    - PosterLegitObey
+    - PosterContrabandKosmicheskayaStantsiya
+    - PosterLegitEnlist
+    - PosterLegitThereIsNoGasGiant
+    - PosterLegitHereForYourSafety
+    - PosterLegitGetYourLEGS
+    - PosterLegitSecWatch
+    - PosterLegitNoERP # the most useful poster
+    - PosterLegitDoNotQuestion
+    - PosterLegitSafetyMothHardhat
+    - PosterLegitSafetyMothSSD
+    - PosterLegitSafetyMothMeth
+    - PosterLegitSafetyMothDelam
+    - PosterLegitSafetyMothPiping
+    - PosterLegitSafetyMothEpi
+  - type: Tag
+    tags:
+    - RolledUpPoster
+
+- type: entity
+  parent: [ PosterLegit, BaseMinorContraband]
+  id: PosterIllegal
+  components:
+  - type: Sprite
+    state: poster_illegal
+  - type: DisposablePlacer
+    selectablePrototypes:
+    - PosterContrabandFreeSyndicateEncryptionKey
+    - PosterContrabandFunPolice
+    - PosterContrabandCommunistState
+    - PosterContrabandEnlistGorlex
+    - PosterContrabandRise
+    - PosterContrabandSyndicateRecruitment
+    - PosterContrabandPunchShit
+    - PosterContrabandRevolt
+    - PosterContrabandMoth
+  - type: Construction
+    graph: PosterIllegal
+    node: PosterIllegal
+  - type: Tag
+    tags:
+    - RolledUpPosterIllegal

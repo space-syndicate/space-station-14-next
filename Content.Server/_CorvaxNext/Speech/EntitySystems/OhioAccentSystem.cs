@@ -1,6 +1,6 @@
 using Content.Server._CorvaxNext.Speech.Components;
-using Content.Server.Speech;
 using Content.Server.Speech.EntitySystems;
+using Content.Shared.Speech;
 using Robust.Shared.Random;
 
 namespace Content.Server._CorvaxNext.Speech.EntitySystems;

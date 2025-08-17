@@ -80,12 +80,12 @@ public sealed class DamageOnInteractSystem : EntitySystem
 
         TargetBodyPart? targetPart = null;
         var hands = CompOrNull<HandsComponent>(args.User);
-        if (hands is { ActiveHand: not null })
+        if (hands is { ActiveHandId: not null })
         {
-            targetPart = hands.ActiveHand.Location switch
+            targetPart = hands.Hands[hands.ActiveHandId].Location switch
             {
-                HandLocation.Left => TargetBodyPart.LeftArm,
-                HandLocation.Right => TargetBodyPart.RightArm,
+                HandLocation.Left => TargetBodyPart.LeftHand,
+                HandLocation.Right => TargetBodyPart.RightHand,
                 _ => null
             };
         }
@@ -109,7 +109,7 @@ public sealed class DamageOnInteractSystem : EntitySystem
 
             // Attempt to paralyze the user after they have taken damage
             if (_random.Prob(entity.Comp.StunChance))
-                _stun.TryParalyze(args.User, TimeSpan.FromSeconds(entity.Comp.StunSeconds), true);
+                _stun.TryUpdateParalyzeDuration(args.User, TimeSpan.FromSeconds(entity.Comp.StunSeconds));
         }
         // Check if the entity's Throw bool is false, or if the entity has the PullableComponent, then if the entity is currently being pulled.
         // BeingPulled must be checked because the entity will be spastically thrown around without this.

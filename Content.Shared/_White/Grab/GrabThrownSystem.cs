@@ -6,10 +6,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
 using System.Numerics;
-using Content.Shared._White;
-using Content.Shared._CorvaxNext.Standing;
-using Content.Shared.Standing;
 using Robust.Shared.Physics.Components;
+using Content.Shared.Standing;
 
 namespace Content.Shared._White.Grab;
 
@@ -20,7 +18,7 @@ public sealed class GrabThrownSystem : EntitySystem
     [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly INetManager _netMan = default!;
-    [Dependency] private readonly SharedLayingDownSystem _layingDown = default!;
+    [Dependency] private readonly StandingStateSystem _standing = default!;
 
     public override void Initialize()
     {
@@ -65,7 +63,7 @@ public sealed class GrabThrownSystem : EntitySystem
         kineticEnergyDamage *= Math.Floor(kineticEnergy / 100) / 2 + 3;
         _damageable.TryChangeDamage(args.OtherEntity, kineticEnergyDamage);
 
-        _layingDown.TryLieDown(args.OtherEntity, behavior: DropHeldItemsBehavior.AlwaysDrop);
+        _standing.Down(args.OtherEntity);
 
         _color.RaiseEffect(Color.Red, new List<EntityUid>() { ent }, Filter.Pvs(ent, entityManager: EntityManager));
     }
@@ -101,7 +99,7 @@ public sealed class GrabThrownSystem : EntitySystem
         comp.IgnoreEntity.Add(thrower);
         comp.DamageOnCollide = damageToUid;
 
-        _layingDown.TryLieDown(uid, behavior: DropHeldItemsBehavior.AlwaysDrop);
+        _standing.Down(uid);
         _throwing.TryThrow(uid, vector, grabThrownSpeed, animated: false);
     }
 }

@@ -43,3 +43,9 @@
 
 - type: Tag
   id: AnomalyPayload
+
+- type: Tag
+  id: RolledUpPoster
+
+- type: Tag
+  id: RolledUpPosterIllegal

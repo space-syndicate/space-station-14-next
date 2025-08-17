@@ -1,0 +1,18 @@
+﻿- type: entity
+  id: EffectPosterPlacement
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: True
+  - type: Sprite
+    snapCardinals: true
+    noRot: true
+    drawdepth: Effects
+    sprite: /Textures/_CorvaxNext/Effects/poster.rsi
+    state: poster_being_set
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: TimedDespawn
+    lifetime: 4.8
+  - type: AnimationPlayer

@@ -32,7 +32,6 @@ public sealed class StockMarketSystem : EntitySystem
     [Dependency] private readonly IdCardSystem _idCardSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly CargoSystem _cargoSystem = default!;
 
     private ISawmill _sawmill = default!;
     private const float MaxPrice = 262144; // 1/64 of max safe integer
@@ -164,7 +163,7 @@ public sealed class StockMarketSystem : EntitySystem
         var totalValue = (int)Math.Round(company.CurrentPrice * amount);
 
         // See if we can afford it
-        if (_cargoSystem.GetBalanceFromAccount(station, bank.PrimaryAccount) < totalValue)
+        if (_cargo.GetBalanceFromAccount(station, bank.PrimaryAccount) < totalValue)
             return false;
 
         if (!stockMarket.StockOwnership.TryGetValue(companyIndex, out var currentOwned))

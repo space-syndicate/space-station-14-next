@@ -172,6 +172,7 @@
     - id: ClothingHeadHatFancyCrown
     - id: GoldenBikeHorn
     - id: ClothingHeadHatCatEars
+    - id: GoldenPersonalAI
     - id: TreasureCoinDiamond
       amount: !type:RangeNumberSelector
         range: 2, 5
@@ -261,6 +262,7 @@
     - id: WeaponCrusherGlaive
     - id: ClothingOuterHardsuitSalvage
     - id: ChemistryBottleOmnizine
+    - id: ClothingBackpackDuffelSalvageSCAF # Corvax-Next SCAF
     - !type:GroupSelector
       children:
       - id: JetpackBlueFilled

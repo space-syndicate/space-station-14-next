@@ -40,6 +40,10 @@
     anchored: false
   - type: AnchorableStorage
     # Corvax-Next-Stashes-End
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - Backpack
 
 - type: entity
   parent: ClothingBackpack

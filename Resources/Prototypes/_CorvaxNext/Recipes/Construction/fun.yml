@@ -1,0 +1,7 @@
+- type: construction
+  id: PosterIllegal
+  graph: PosterIllegal
+  startNode: start
+  targetNode: PosterIllegal
+  category: construction-category-misc
+  objectType: Item

@@ -1,10 +1,12 @@
 using Content.Server.Body.Components;
 using Content.Server.Chemistry.Containers.EntitySystems;
-using Content.Server.Medical.Components;
-using Content.Server.PowerCell;
 using Content.Server.Temperature.Components;
 using Content.Server.Traits.Assorted;
 using Content.Shared._CorvaxNext.Targeting;
+using Content.Server.Medical.Components;
+using Content.Server.PowerCell;
+using Content.Server.Temperature.Components;
+using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.EntitySystems;
 // CorvaxNext: surgery Start
 using Content.Shared.Body.Part;
@@ -20,6 +22,7 @@ using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.MedicalScanner;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
+using Content.Shared.Traits.Assorted;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;

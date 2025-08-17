@@ -1,0 +1,7 @@
+- type: entity
+  parent: PosterBroken
+  id: PosterBrokenDespawnable
+  suffix: Despawnable
+  components:
+  - type: TimedDespawn
+    lifetime: 300 # 5 min

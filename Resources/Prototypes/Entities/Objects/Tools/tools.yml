@@ -340,6 +340,7 @@
     - HVCable
     - CableTerminal
     - Deconstruct
+    - Camera # Corvax-Next-Camera-In-RCD
   - type: LimitedCharges
     maxCharges: 30
   - type: Sprite

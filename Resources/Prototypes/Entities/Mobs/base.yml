@@ -47,8 +47,9 @@
     active: False
   - type: Penetratable # Corvax-Next - Better snipers
     penetrateDamage: 15 # Kill million mices
-    damagePenalty: 0.05 
+    damagePenalty: 0.05
   - type: AnimatedEmotes # Corvax-Next-AutoAnimate
+  - type: StunVisuals
 
 - type: entity
   save: false
