@@ -27,6 +27,10 @@
     - WhitelistChameleon
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
+  - type: AllowSuitStorage # Corvax-Start
+    whitelist:
+      tags:
+      - GasTank
 
 - type: entity
   parent: ClothingOuterSuitBomb
