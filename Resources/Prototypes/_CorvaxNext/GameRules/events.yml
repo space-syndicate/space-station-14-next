@@ -1,0 +1,13 @@
+- type: entity
+  id: RadiationOutburst
+  parent: BaseGameRule
+  components:
+  - type: StationEvent
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+      weight: 4
+      minimumPlayers: 5
+      duration: 1
+  - type: RadiationOutburstRule
+    severity: 7
+    maxSeverity: 3
