@@ -399,6 +399,8 @@
         type: StrippableBoundUserInterface
       enum.SurgeryUIKey.Key: # _CorvaxNext: surgery
         type: SurgeryBui
+      enum.IpcFaceUiKey.Face:
+        type: IpcFaceUserInterface
       # Goobstation - heretics
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface

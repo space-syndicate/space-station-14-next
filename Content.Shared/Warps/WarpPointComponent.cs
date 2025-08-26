@@ -10,7 +10,7 @@ namespace Content.Shared.Warps;
 public sealed partial class WarpPointComponent : Component
 {
     // Corvax-Next-Warper-Start: Unique (across all loaded maps) identifier for teleporting to warp points.
-	[ViewVariables(VVAccess.ReadWrite), DataField("id")]
+    [ViewVariables(VVAccess.ReadWrite), DataField("id")]
     public string? ID { get; set; }
     // Corvax-Next-Warper-End
 
