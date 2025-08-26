@@ -1343,15 +1343,6 @@
     - state: medical
     - state: icon-surgery
   - type: ItemBorgModule
-    items:
-    - Scalpel
-    - Drill
-    - Hemostat
-    - Retractor
-    - Cautery
-    - SawElectric
-    - BoneGel
-    - BoneSetter
     hands: []
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: surgery-module }
