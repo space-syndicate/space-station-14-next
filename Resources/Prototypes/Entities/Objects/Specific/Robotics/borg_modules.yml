@@ -1357,11 +1357,11 @@
     - state: medical
     - state: icon-advanced-surgery
   - type: ItemBorgModule
-    items:
-    - EnergyScalpel
-    - EnergyCautery
-    - AdvancedRetractor
-    - BoneGel
+    hands:
+    - item: EnergyScalpel
+    - item: EnergyCautery
+    - item: AdvancedRetractor
+    - item: BoneGel
     hands: []
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-surgery-module }
