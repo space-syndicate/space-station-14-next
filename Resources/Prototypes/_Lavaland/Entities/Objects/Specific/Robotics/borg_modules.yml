@@ -8,6 +8,9 @@
     - state: generic
     - state: icon-gps
   - type: ItemBorgModule
-    hands: []
+    hands:
+    - item: HandheldGPSBasic
+    - item: HandHeldMassScannerBorg
+    - item: HandheldStationMapUnpowered
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: gps-module }
