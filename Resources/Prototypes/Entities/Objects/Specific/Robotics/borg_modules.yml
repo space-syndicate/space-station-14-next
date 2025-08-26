@@ -1361,6 +1361,7 @@
     - SawElectric
     - BoneGel
     - BoneSetter
+    hands: []
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: surgery-module }
 
@@ -1379,6 +1380,7 @@
     - EnergyCautery
     - AdvancedRetractor
     - BoneGel
+    hands: []
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-surgery-module }
     

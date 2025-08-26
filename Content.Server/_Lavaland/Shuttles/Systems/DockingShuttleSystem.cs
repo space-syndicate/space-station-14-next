@@ -11,6 +11,7 @@ using Content.Server.GameTicking;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
+using Content.Shared.Station.Components;
 
 namespace Content.Server._Lavaland.Shuttles.Systems;
 

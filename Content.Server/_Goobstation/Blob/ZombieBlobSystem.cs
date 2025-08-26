@@ -31,6 +31,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Content.Shared.Trigger.Systems;
 
 namespace Content.Server._Goobstation.Blob;
 

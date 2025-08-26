@@ -18,6 +18,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.Utility;
+using Content.Shared.Station.Components;
 
 namespace Content.Server._CorvaxNext.AdditionalMap;
 

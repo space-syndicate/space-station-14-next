@@ -20,10 +20,6 @@ public sealed class BrainSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<BrainComponent, OrganAddedToBodyEvent>((uid, _, args) => HandleMind(args.Body, uid));
-        SubscribeLocalEvent<BrainComponent, OrganRemovedFromBodyEvent>((uid, _, args) => HandleMind(uid, args.OldBody));
-        SubscribeLocalEvent<BrainComponent, PointAttemptEvent>(OnPointAttempt);
-
         SubscribeLocalEvent<BrainComponent, OrganAddedToBodyEvent>(HandleAddition);
         SubscribeLocalEvent<BrainComponent, OrganRemovedFromBodyEvent>(HandleRemoval);
         SubscribeLocalEvent<BrainComponent, PointAttemptEvent>(OnPointAttempt);

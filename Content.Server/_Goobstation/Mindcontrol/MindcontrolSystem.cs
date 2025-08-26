@@ -12,6 +12,7 @@ using Content.Server.Stunnable;
 using Content.Shared.Mindcontrol;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Player;
+using Content.Shared.Roles.Components;
 
 namespace Content.Server.Mindcontrol;
 

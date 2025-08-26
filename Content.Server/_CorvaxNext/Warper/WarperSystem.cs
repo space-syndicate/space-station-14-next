@@ -1,5 +1,4 @@
 using Content.Server.Ghost.Components;
-using Content.Server.Warps;
 using Content.Server.Popups;
 using Content.Shared.Ghost;
 using Content.Shared.Interaction;
@@ -9,6 +8,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using System.Numerics;
+using Content.Shared.Warps;
 
 namespace Content.Server._CorvaxNext.Warper;
 
