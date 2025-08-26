@@ -62,19 +62,19 @@
   - Utility Surgeries
 
 - type: guideEntry
-  id: Part Manipulation
+  id: "Part Manipulation"
   name: guide-entry-partmanipulation
   text: "/ServerInfo/Corvax/Guidebook/Medical/PartManipulation.xml"
   filterEnabled: true
 
 - type: guideEntry
-  id: Organ Manipulation
+  id: "Organ Manipulation"
   name: guide-entry-organmanipulation
   text: "/ServerInfo/Corvax/Guidebook/Medical/OrganManipulation.xml"
   filterEnabled: true
 
 - type: guideEntry
-  id: Utility Surgeries
+  id: "Utility Surgeries"
   name: guide-entry-utilitysurgeries
   text: "/ServerInfo/Corvax/Guidebook/Medical/UtilitySurgeries.xml"
   filterEnabled: true

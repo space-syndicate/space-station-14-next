@@ -736,15 +736,6 @@
     - state: janitor
     - state: icon-mop-adv
   - type: ItemBorgModule
-    items:
-    - AdvMopItem
-    - BorgMegaSprayBottle
-    - HoloprojectorBorg
-    - SprayBottleSpaceCleaner
-    - Dropper
-    - BagOfCleanliness # Corvax-Next-BluespaceTrashBag
-    - BorgDropper
-    - BorgBeaker
     hands:
     - item: AdvMopItem
     - item: BorgMegaSprayBottle
