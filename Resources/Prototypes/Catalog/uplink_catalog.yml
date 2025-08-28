@@ -2236,16 +2236,13 @@
   categories:
   - UplinkJob
   conditions:
-    - !type:BuyerJobCondition # We can't use BuyerDepartmentCondition here since Zookeeper and Chef can also get this
-      whitelist:
-      - Zookeeper
-      - Scientist
-      - ResearchDirector
-      - Chef
-    - !type:StoreWhitelistCondition
-      blacklist:
-        tags:
-          - NukeOpsUplink
+  - !type:BuyerJobCondition # We can't use BuyerDepartmentCondition here since Zookeeper and Chef can also get this
+    whitelist:
+    - Zookeeper
+    - Scientist
+    - SeniorResearcher # Corvax-MentorRoles
+    - ResearchDirector
+    - Chef
 
 - type: listing
   id: UplinkCaneBlade

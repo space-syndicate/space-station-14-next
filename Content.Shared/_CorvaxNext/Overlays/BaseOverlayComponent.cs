@@ -1,3 +1,5 @@
+using System.Numerics;
+
 namespace Content.Shared._CorvaxNext.Overlays;
 
 public abstract partial class BaseOverlayComponent : Component

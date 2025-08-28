@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Mobs.Components;
@@ -67,7 +68,7 @@ public sealed class BackStabSystem : EntitySystem
         var userXform = Transform(user);
         var v1 = -_transform.GetWorldRotation(xform).ToWorldVec();
         var v2 = _transform.GetWorldPosition(userXform) - _transform.GetWorldPosition(xform);
-        var angle = Vector3.CalculateAngle(new Vector3(v1), new Vector3(v2));
+        var angle = Math.Abs(v1.ToAngle() - v2.ToAngle());
 
         if (angle > tolerance.Theta)
             return false;

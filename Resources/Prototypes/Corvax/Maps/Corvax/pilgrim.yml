@@ -4,7 +4,7 @@
   mapPath: /Maps/Corvax/corvax_pilgrim.yml
   maxRandomOffset: 0
   randomRotation: false
-  minPlayers: 40
+  minPlayers: 55
   stations:
     Pilgrim:
       stationProto: StandardNanotrasenStation
@@ -68,6 +68,11 @@
             # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 1, 1 ]
+            # corvax senior
+            SeniorEngineer: [ 1, 1 ]
+            SeniorPhysician: [ 1, 1 ]
+            SeniorResearcher: [ 1, 1 ]
+            SeniorOfficer: [ 1, 1 ]
         - type: StationGoal
           goals:
           - Singularity

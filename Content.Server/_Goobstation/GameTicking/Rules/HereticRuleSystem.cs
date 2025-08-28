@@ -8,6 +8,7 @@ using Content.Shared.Heretic;
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Roles;
+using Content.Shared.Roles.Components;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
 using Robust.Shared.Audio;
