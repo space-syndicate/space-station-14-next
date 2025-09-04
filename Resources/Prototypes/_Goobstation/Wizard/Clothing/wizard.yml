@@ -1,0 +1,25 @@
+## CentComm
+
+- type: entity
+  parent: ClothingHeadHatWizard
+  id: ClothingHeadHatCentCommwizardReal
+  name: CentComm wizard hat
+  suffix: ADMIN
+  description: A pristine green and gold wizard hat, regulation issue for Central Command's arcane operatives. Worn only by those authorized to wield classified thaumaturgic instruments.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Wizard/Head/comwizard.rsi
+  - type: Clothing
+    sprite: _Goobstation/Wizard/Head/comwizard.rsi
+
+- type: entity
+  parent: ClothingOuterWizard
+  id: ClothingOuterWizardCentCommwizardReal
+  name: CentComm wizard robes
+  suffix: ADMIN
+  description: A pristine green and gold gem-lined robe, regulation issue for Central Command's arcane operatives. Worn only by those authorized to wield classified thaumaturgic instruments.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Wizard/OuterClothing/comwizard.rsi
+  - type: Clothing
+    sprite: _Goobstation/Wizard/OuterClothing/comwizard.rsi
