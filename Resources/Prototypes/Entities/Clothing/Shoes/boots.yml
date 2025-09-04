@@ -175,6 +175,32 @@
     sprite: Clothing/Shoes/Boots/winterbootssyndicate.rsi
 
 - type: entity
+  parent: ClothingShoesMilitaryBase
+  id: ClothingShoesEchoThief
+  name: Echo thief boots
+  description: People who say you can't outrun a bullet have a severe lack of imagination.
+  components:
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 6
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/echo_thief.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/echo_thief.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHighHeels
+      params:
+        variation: 0.09
+  - type: NoSlip
+  - type: ClothingSpeedModifier
+    walkModifier: 1.4
+    sprintModifier: 1.2
+  - type: Unremoveable
+    deleteOnDrop: true
+
+- type: entity
   parent: ClothingShoesBaseWinterBoots
   id: ClothingShoesBootsWinterWeb
   name: web winter boots

@@ -513,6 +513,39 @@
     energy: 3
 
 #ANTAG HARDSUITS
+
+#EchoThef hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitEchoThief
+  name: Echo thief helmet
+  description: I gave up my name to join Echo thiefs. And it's a choice I would gladly make again.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardsuits/echo_thief.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardsuits/echo_thief.rsi
+  - type: PointLight
+    color: "#ffeead"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+  - type: Unremoveable
+    deleteOnDrop: true
+
 #Blood-red Hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
