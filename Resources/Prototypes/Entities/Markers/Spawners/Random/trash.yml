@@ -13,6 +13,7 @@
       - id: FoodPacketCnDsTrash
       - id: FoodPacketDanDanTrash
       - id: FoodPacketPistachioTrash
+      - id: FoodPacketCottonTrash # Corvax-Next-MothLoadout
       - id: FoodPacketEnergyTrash
       - id: FoodPacketPopcornTrash
       - id: FoodPacketRaisinsTrash

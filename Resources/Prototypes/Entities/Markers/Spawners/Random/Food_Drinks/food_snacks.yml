@@ -42,6 +42,7 @@
     - id: FoodSnackChowMein
     - id: FoodSnackCookieFortune
     - id: FoodSnackDanDanNoodles
+    - id: FoodSnackCotton # NEXT_MOTH_LOADOUT
     - id: FoodSnackEnergy
     - id: FoodSnackMREBrownie
     - id: FoodSnackNutribrick
