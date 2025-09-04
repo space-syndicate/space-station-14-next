@@ -112,6 +112,9 @@
       collection: Welder
     endSound:
       collection: WelderOff
+  - type: Tag
+    tags:
+    - Welder # Goobstation-WelderSword
 
 - type: entity
   name: industrial welding tool
@@ -130,6 +133,9 @@
         - ReagentId: WeldingFuel
           Quantity: 250
         maxVol: 250
+  - type: Tag # Goobstation-WelderSword
+    tags:
+    - WelderIndustrial
 
 - type: entity
   name: advanced industrial welding tool
@@ -180,6 +186,10 @@
         Quantity: 1
   - type: RequiresEyeProtection
     statusEffectTime: 5 # less harmful; sunglasses can block it
+  - type: Tag # Goobstation-WelderSword
+    tags:
+    - WelderExperimental
+
 
 - type: entity
   name: emergency welding tool
