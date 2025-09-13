@@ -1,0 +1,65 @@
+- type: entity
+  parent: FoodSnackBase
+  id: NextFoodSnackBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Consumable/Food/snacks.rsi
+  - type: Item
+    sprite: _CorvaxNext/Objects/Consumable/Food/snacks.rsi
+
+- type: entity
+  name: cotton bar
+  parent: NextFoodSnackBase
+  id: FoodSnackCotton
+  description: A silk bar made from cheap ingredients.
+  components:
+  - type: Sprite
+    state: cottonbar
+  - type: Item
+  - type: SpawnItemsOnUse
+    items:
+      - id: FoodPacketCottonTrash
+      - id: FoodSnackCottonBar
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  name: cotton bar
+  parent: NextFoodSnackBase
+  id: FoodSnackCottonBar
+  description: A silk bar made from cheap ingredients.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cheap
+      - strange
+      - fiber
+  - type: Food
+    requiresSpecialDigestion: true
+  - type: Sprite
+    state: cottonbar-open
+  - type: Item
+  - type: Tag
+    tags:
+      - ClothMade
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: NextFoodPacketTrash
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Consumable/Food/snacks.rsi
+  - type: Item
+    sprite: _CorvaxNext/Objects/Consumable/Food/snacks.rsi
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: NextFoodPacketTrash
+  id: FoodPacketCottonTrash
+  name: cottonbar wrapper
+  components:
+  - type: Sprite
+    state: cottonbar-trash

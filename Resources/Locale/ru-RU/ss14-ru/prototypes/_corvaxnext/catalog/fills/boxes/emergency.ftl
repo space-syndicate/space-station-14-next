@@ -1,3 +1,23 @@
+
+ent-BoxSurvivalMoth = аварийный запас
+    .desc = { ent-BoxSurvival.desc }
+    .suffix = Стандартный, Нианы
+ent-BoxSurvivalEngineeringMoth = расширенный аварийный запас
+    .desc = { ent-BoxSurvivalEngineering.desc }
+    .suffix = Инженерный, Нианы
+ent-BoxSurvivalSecurityMoth = аварийный запас
+    .desc = { ent-BoxSurvivalSecurity.desc }
+    .suffix = СБ, Нианы
+ent-BoxSurvivalMedicalMoth = аварийный запас
+    .desc = { ent-BoxSurvivalMedical.desc }
+    .suffix = Медицинский, Нианы
+ent-BoxHugMoth = коробка обнимашек
+    .desc = { ent-BoxHug.desc }
+    .suffix = Аварийный, Нианы
+ent-BoxMimeMoth = { ent-BoxSurvival }
+    .desc = { ent-BoxSurvival.desc }
+    .suffix = Мим, Аварийный, Нианы
+
 ent-BoxSurvivalIpc = { ent-BoxSurvival }
     .desc = { ent-BoxSurvival.desc }
     .suffix = Стандартный, КПБ
@@ -19,3 +39,4 @@ ent-BoxMimeIpc = { ent-BoxMime }
 ent-BoxCentralCommandIpc = { ent-BoxSurvival }
     .desc = Коробка с набором для работы КПБ в должностях Центрального Командования.
     .suffix = ЦК, КПБ
+
