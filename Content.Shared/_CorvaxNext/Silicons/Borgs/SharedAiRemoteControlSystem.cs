@@ -2,6 +2,7 @@ using Content.Shared._CorvaxNext.Silicons.Borgs.Components;
 using Content.Shared.Actions;
 using Content.Shared.Mind;
 using Content.Shared.Silicons.StationAi;
+using Content.Shared.StationAi;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._CorvaxNext.Silicons.Borgs
@@ -41,7 +42,21 @@ namespace Content.Shared._CorvaxNext.Silicons.Borgs
 
             _xformSystem.SetCoordinates(stationAiCore.Comp.RemoteEntity.Value, Transform(entity).Coordinates);
         }
+
+        public void ToggleDeviceEnabled(Entity<AiRemoteControllerComponent> ent, bool isEnabled)
+        {
+            ent.Comp.Enabled = isEnabled;
+
+            if (isEnabled == false)
+            {
+                RemComp<StationAiVisionComponent>(ent.Owner);
+                ReturnMindIntoAi(ent.Owner);
+            }
+            else
+                EnsureComp<StationAiVisionComponent>(ent.Owner);
+        }
     }
+
     public sealed partial class ReturnMindIntoAiEvent : InstantActionEvent
     {
 
