@@ -1,0 +1,75 @@
+- type: latheRecipe
+  id: WeaponProtoKineticShotgun
+  result: WeaponProtoKineticShotgun
+  categories:
+  - Weapons
+  completetime: 5
+  materials:
+    Steel: 1000
+    Glass: 500
+    Silver: 100
+
+- type: latheRecipe
+  id: WeaponProtoKineticRepeater
+  result: WeaponProtoKineticRepeater
+  categories:
+  - Weapons
+  completetime: 5
+  materials:
+    Steel: 1000
+    Glass: 500
+    Silver: 100
+
+- type: latheRecipe
+  id: WeaponProtoKineticPistol
+  result: WeaponProtoKineticPistol
+  categories:
+  - Weapons
+  completetime: 5
+  materials:
+    Steel: 500
+    Glass: 250
+    Silver: 100
+
+- type: latheRecipe
+  id: LavalandPKAUpgradeLight
+  result: LavalandPKAUpgradeLight
+  categories:
+  - Weapons
+  completetime: 5
+  materials:
+    Steel: 500
+    Glass: 500
+
+- type: latheRecipe
+  id: LavalandPKAUpgradeDamage
+  result: LavalandPKAUpgradeDamage
+  categories:
+  - Weapons
+  completetime: 5
+  materials:
+    Steel: 500
+    Gold: 100
+    Silver: 100
+
+- type: latheRecipe
+  id: LavalandPKAUpgradeRange
+  result: LavalandPKAUpgradeRange
+  categories:
+  - Weapons
+  completetime: 5
+  materials:
+    Steel: 500
+    Gold: 100
+    Silver: 100
+
+- type: latheRecipe
+  id: LavalandPKAUpgradeFireRate
+  result: LavalandPKAUpgradeFireRate
+  categories:
+  - Weapons
+  completetime: 5
+  materials:
+    Steel: 500
+    Gold: 100
+    Silver: 100
