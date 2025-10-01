@@ -11,16 +11,13 @@
 
 # Map files
 /Resources/Prototypes/Maps/** @Ko4ergaPunk
-<<<<<<< HEAD
 /Resources/Prototypes/Corvax/Maps** @Ko4ergaPunk
 /Resources/Maps/** @Ko4ergaPunk
 
 # TTS
 
 /Content.*/Corvax/TTS @Morb0
-=======
 /Resources/Maps/** @Ko4ergaPunk
 
 # Sprites
 /Resources/Textures/** @SonicHDC
->>>>>>> upstream-next/master
