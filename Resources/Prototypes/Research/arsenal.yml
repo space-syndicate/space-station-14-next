@@ -11,6 +11,11 @@
   cost: 5000
   recipeUnlocks:
   - WeaponProtoKineticAccelerator
+  #Corvax-Next-PKA-craft-update-start
+  - WeaponProtoKineticShotgun
+  - WeaponProtoKineticRepeater
+  - WeaponProtoKineticPistol
+  #Corvax-Next-PKA-craft-update-end
   - ShuttleGunKineticCircuitboard
   # These are roundstart but not replenishable for salvage
 
@@ -165,9 +170,15 @@
   tier: 2
   cost: 7500
   recipeUnlocks:
-  - PKAUpgradeDamage
-  - PKAUpgradeRange
-  - PKAUpgradeFireRate
+  #Corvax-Next-PKA-craft-update-start
+  #- PKAUpgradeDamage
+  #- PKAUpgradeRange
+  #- PKAUpgradeFireRate
+  - LavalandPKAUpgradeLight
+  - LavalandPKAUpgradeDamage
+  - LavalandPKAUpgradeRange
+  - LavalandPKAUpgradeFireRate
+  #Corvax-Next-PKA-craft-update-start
 
 - type: technology
   id: BasicShuttleArmament
