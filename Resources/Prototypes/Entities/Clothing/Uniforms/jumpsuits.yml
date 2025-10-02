@@ -1401,3 +1401,16 @@
     sprite: Clothing/Uniforms/Jumpsuit/familiar_garbs.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/familiar_garbs.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitEchoThief
+  name: Echo thief suit
+  description: You ever get the feeling that something bad is gonna happen?... Yeah so, I don't, that's why I end up in jail so much.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/echo_thief.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/echo_thief.rsi
+  - type: Unremoveable
+    deleteOnDrop: true

@@ -201,6 +201,42 @@
             - PowerCell
 
 - type: entity
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseToggleClothing, BaseMajorContraband]
+  id: ClothingOuterEchoThief
+  name: Echo thief coat
+  description: Don't expect me to explain how this all works. Just be happy that it works.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Suits/echo_thief.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Suits/echo_thief.rsi
+  # hardsuit stuff
+  - type: PressureProtection
+    highPressureMultiplier: 0.6
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.01
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.7
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodRad
+    slot: head
+  - type: DashAbility
+  - type: LimitedCharges
+    maxCharges: 2
+    charges: 2
+  - type: AutoRecharge
+    rechargeDuration: 10
+  - type: Unremoveable
+    deleteOnDrop: true
+
+- type: entity
   parent: ClothingOuterBase
   id: ClothingOuterSuitChicken
   name: chicken suit
