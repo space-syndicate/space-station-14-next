@@ -10,6 +10,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Tag;
 using Content.Shared.Construction.Components;
 using Content.Shared.Stacks;
+using Content.Shared.Ghost;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -22,6 +23,7 @@ public sealed class RadiationOutburstRule : StationEventSystem<RadiationOutburst
 
     private EntityQuery<MobStateComponent> _mobStateQuery;
     private EntityQuery<MachineComponent> _machineQuery;
+    private EntityQuery<GhostComponent> _ghostQuery;
     private static readonly ProtoId<TagPrototype> HighRiskItemTag = "HighRiskItem";
 
     public override void Initialize()
@@ -29,6 +31,7 @@ public sealed class RadiationOutburstRule : StationEventSystem<RadiationOutburst
         base.Initialize();
         _mobStateQuery = GetEntityQuery<MobStateComponent>();
         _machineQuery = GetEntityQuery<MachineComponent>();
+        _ghostQuery = GetEntityQuery<GhostComponent>();
     }
 
     protected override void Started(EntityUid uid, RadiationOutburstRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
@@ -38,6 +41,7 @@ public sealed class RadiationOutburstRule : StationEventSystem<RadiationOutburst
 
         MobStateComponent? mobState = null;
         MachineComponent? machine = null;
+        GhostComponent? ghost = null;
 
         var targetList = new List<Entity<ItemComponent>>();
         var query = EntityQueryEnumerator<ItemComponent, TransformComponent>();
@@ -61,6 +65,9 @@ public sealed class RadiationOutburstRule : StationEventSystem<RadiationOutburst
                 continue;
 
             if (EntityManager.HasComponent<StackComponent>(targetUid)) // Не стакается ли объект (если стак из 30 то радиация в 30 раз больше)
+                continue;
+
+            if (_containerSystem.TryFindComponentOnEntityContainerOrParent(targetUid, _ghostQuery, ref ghost)) // Проверка на призрака (Чтобы не работало на предметы агостов)
                 continue;
 
             targetList.Add((targetUid, target));
