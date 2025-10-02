@@ -274,15 +274,26 @@
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
+  # Corvax-Next-uprade-suit-brigmedic-start
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  # Corvax-Next-uprade-suit-brigmedic-end
   - type: Armor
     modifiers:
       coefficients:
         Blunt: 0.8
         Slash: 0.8
         Piercing: 0.7
+  # Corvax-Next-uprade-suit-brigmedic-start
+        Heat: 0.9
+        Radiation: 0.75
+        Caustic: 0.75
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.4
   - type: ClothingSpeedModifier
-    walkModifier: 0.65
-    sprintModifier: 0.65
+    walkModifier: 0.90
+    sprintModifier: 0.90
+  # Corvax-Next-uprade-suit-brigmedic-end
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitBrigmedic
