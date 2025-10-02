@@ -1,0 +1,27 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from space_station_ADT at https://github.com/AdventureTimeSS14/space_station_ADT/commit/7c824eb558188678f5f03c08db7b89c60e0ebc3e",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+  "states": [
+    {
+      "name": "beholder",
+      "directions": 4
+    },
+    {
+      "directions": 4,
+      "name": "iron_jaw"
+    },
+    {
+      "name": "malstrem",
+      "directions": 4
+    },
+    {
+      "name": "terminator",
+      "directions": 4
+    }
+  ]
+}
