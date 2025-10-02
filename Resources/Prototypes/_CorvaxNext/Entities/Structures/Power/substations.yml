@@ -41,3 +41,26 @@
         enum.PowerDeviceVisualLayers.Powered:
           True: { visible: true }
           False: { visible: false }
+  - type: PowerTransit
+  - type: DeviceList
+  - type: DeviceNetwork
+    deviceNetId: Wired
+    receiveFrequencyId: BasicDevice
+  - type: DeviceLinkSink
+    ports:
+    - Transit
+  - type: DeviceLinkSource
+    range: 25
+    ports:
+    - Transit
+
+- type: sinkPort
+  id: Transit
+  name: quantum-telepad-port-name
+  description: quantum-telepad-port-description
+
+- type: sourcePort
+  id: Transit
+  name: quantum-telepad-port-name
+  description: quantum-telepad-port-description
+  defaultLinks: [ Transit ]
