@@ -59,6 +59,7 @@
   storage:
     back:
     - Flash
+    - TelescopicBaton # Corvax-Next-TelescopicBaton
 
 - type: chameleonOutfit
   id: ChiefMedicalOfficerChameleonOutfit
